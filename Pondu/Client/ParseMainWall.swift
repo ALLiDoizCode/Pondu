@@ -11,27 +11,43 @@ import SwiftEventBus
 import Parse
 
 
-func testQuery(){
+
+class ParseMainWall {
     
-    let query = PFQuery(className:"MainWall")
-    query.findObjectsInBackgroundWithBlock {
-        (objects: [PFObject]?, error: NSError?) -> Void in
-        
-        if error == nil {
-            // The find succeeded.
-            print("Successfully retrieved \(objects!.count) names.")
-            
-            // Do something with the found objects
-            if let objects = objects {
-                for object in objects {
+    let Presenter = PresentMainWall()
+    
+            func testQuery(){
+                
+                var EventName:[String] = []
+                self.Presenter.eventDescription()
+                
+                let query = PFQuery(className:"MainWall")
+                query.findObjectsInBackgroundWithBlock {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
                     
-                    let name = object.objectForKey("Name")
-                    print(name)
+                    if error == nil {
+                        // The find succeeded.
+                        print("Successfully retrieved \(objects!.count) names.")
+                        
+                        // Do something with the found objects
+                        if let objects = objects {
+                            for object in objects {
+                                
+                                let name = object.objectForKey("Name") as! String
+                                //print(name)
+                                
+                                EventName.append(name)
+                            }
+                            
+                            SwiftEventBus.post("MainWallEvent", sender: EventName)
+                            
+                        }
+                    } else {
+                        // Log details of the failure
+                        print("Error: \(error!) \(error!.userInfo)")
+                    }
                 }
             }
-        } else {
-            // Log details of the failure
-            print("Error: \(error!) \(error!.userInfo)")
-        }
-    }
+
 }
+
