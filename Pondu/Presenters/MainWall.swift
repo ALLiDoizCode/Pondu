@@ -12,24 +12,34 @@ import Parse
 
 class PresentMainWall {
     
-    func getEventDescription(){
+    /*func getEventPost(){
         
         let mainWall = ParseMainWall()
         
-        mainWall.testQuery()
-    }
+        mainWall.postQuery()
+    }*/
     
-    func eventDescription(){
+    
+    func eventPost(label: UILabel){
+        
+        
+        var post:String = String()
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
-            let name = result.object
+        post = result.object![1] as! String
+            print(post)
             
-            print(name)
-            
+            label.text = post
+
         }
         
+        let mainWall = ParseMainWall()
+        
+        mainWall.postQuery()
+
     }
+    
     
     func eventIcon(){
         

@@ -11,13 +11,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var testLabel: UILabel!
     let mainWall = PresentMainWall()
 
+    
+    override func viewWillAppear(animated: Bool) {
+        
+         mainWall.eventPost(testLabel)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        mainWall.getEventDescription()
+       
     }
 
     override func didReceiveMemoryWarning() {

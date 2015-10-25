@@ -16,10 +16,9 @@ class ParseMainWall {
     
     let Presenter = PresentMainWall()
     
-            func testQuery(){
+            func postQuery(){
                 
-                var EventName:[String] = []
-                self.Presenter.eventDescription()
+                var eventPost:[String] = []
                 
                 let query = PFQuery(className:"MainWall")
                 query.findObjectsInBackgroundWithBlock {
@@ -33,13 +32,13 @@ class ParseMainWall {
                         if let objects = objects {
                             for object in objects {
                                 
-                                let name = object.objectForKey("Name") as! String
+                                let post = object.objectForKey("Post") as! String
                                 //print(name)
                                 
-                                EventName.append(name)
+                                eventPost.append(post)
                             }
                             
-                            SwiftEventBus.post("MainWallEvent", sender: EventName)
+                            SwiftEventBus.post("MainWallEvent", sender: eventPost)
                             
                         }
                     } else {
