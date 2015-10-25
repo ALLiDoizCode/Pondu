@@ -1,7 +1,11 @@
 PODS:
+  - Bolts/Tasks (1.4.0)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
   - SwiftEventBus (1.1.0)
 
 DEPENDENCIES:
+  - Parse (~> 1.9.1)
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
 
 EXTERNAL SOURCES:
@@ -14,6 +18,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 SPEC CHECKSUMS:
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
 
 COCOAPODS: 0.39.0
