@@ -11,7 +11,6 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 
-
 class PresentMainWall {
     
     let mainWall = ParseMainWall()
@@ -135,7 +134,25 @@ class PresentMainWall {
             
         }
         
-        mainWall.profileNameQuery()
+        mainWall.eventAddressQuery()
+        
+    }
+    
+    //need to pass a refrence to a video player
+    func eventVideo(){
+        
+        var video:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "MainWallVideo") { result in
+            
+            video = result.object![3] as! String
+            let URL = NSURL(string: video)!
+            
+            print(URL)
+            
+        }
+        
+        mainWall.videoQuery()
         
     }
 }

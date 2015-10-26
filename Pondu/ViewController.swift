@@ -15,16 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventLikes: UILabel!
     let mainWall = PresentMainWall()
+    let user = users()
 
     
     override func viewWillAppear(animated: Bool) {
         
-        mainWall.eventPost(testLabel)
-        mainWall.eventIcon(eventImage)
+        //mainWall.eventPost(testLabel)
+        //mainWall.eventIcon(eventImage)
         //mainWall.eventCL(eventLikes)
         //mainWall.eventCM(eventLikes)
-        mainWall.profileName(eventLikes)
+        //mainWall.profileName(eventLikes)
         //mainWall.eventAddress(<#T##button: UIButton##UIButton#>)
+        user.userBio(testLabel)
+        user.userStory(eventImage)
     }
     
     override func viewDidLoad() {

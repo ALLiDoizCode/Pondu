@@ -10,8 +10,6 @@ import UIKit
 import SwiftEventBus
 import Parse
 
-
-
 class ParseMainWall {
     
             func postQuery(){
@@ -24,7 +22,7 @@ class ParseMainWall {
                     
                     if error == nil {
                         // The find succeeded.
-                        print("Successfully retrieved \(objects!.count) names.")
+                        print("Successfully retrieved \(objects!.count) Posts.")
                         
                         // Do something with the found objects
                         if let objects = objects {
@@ -56,7 +54,7 @@ class ParseMainWall {
                     
                     if error == nil {
                         // The find succeeded.
-                        print("Successfully retrieved \(objects!.count) names.")
+                        print("Successfully retrieved \(objects!.count) ProfileImages.")
                         
                         // Do something with the found objects
                         if let objects = objects {
@@ -90,7 +88,7 @@ class ParseMainWall {
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) names.")
+                print("Successfully retrieved \(objects!.count) Likes.")
                 
                 // Do something with the found objects
                 if let objects = objects {
@@ -122,7 +120,7 @@ class ParseMainWall {
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) names.")
+                print("Successfully retrieved \(objects!.count) Comments.")
                 
                 // Do something with the found objects
                 if let objects = objects {
@@ -155,7 +153,7 @@ class ParseMainWall {
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) names.")
+                print("Successfully retrieved \(objects!.count) profileNames.")
                 
                 // Do something with the found objects
                 if let objects = objects {
@@ -187,7 +185,7 @@ class ParseMainWall {
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) names.")
+                print("Successfully retrieved \(objects!.count) address.")
                 
                 // Do something with the found objects
                 if let objects = objects {
@@ -200,6 +198,39 @@ class ParseMainWall {
                     }
                     
                     SwiftEventBus.post("MainWallAddress", sender: address)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+    }
+    
+    func videoQuery(){
+        
+        var eventVideo:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) videos.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let video = object.objectForKey("Video") as! PFFile
+                        
+                        
+                        eventVideo.append(video.url!)
+                    }
+                    
+                    SwiftEventBus.post("MainWallVideo", sender: eventVideo)
                     
                 }
             } else {
