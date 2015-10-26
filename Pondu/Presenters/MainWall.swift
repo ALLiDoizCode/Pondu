@@ -60,12 +60,29 @@ class PresentMainWall {
         
     }
     
-    func eventCL(){
+    func eventCL(label:UILabel){
         
+        var eventlikes:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "MainWallLikes") { result in
+            
+            eventlikes = result.object![3] as! String
+            print(eventlikes)
+            
+            //let URL = NSURL(string: eventImage)!
+            
+            //print(URL)
+            
+            label.text = eventlikes
+            
+        }
+        
+        mainWall.likesQuery()
         
     }
     
     func eventCM(){
+        
         
         
     }

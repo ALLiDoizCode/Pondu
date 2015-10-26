@@ -14,8 +14,6 @@ import Parse
 
 class ParseMainWall {
     
-  
-    
             func postQuery(){
                 
                 var eventPost:[String] = []
@@ -81,6 +79,38 @@ class ParseMainWall {
 
         
             }
+    
+    func likesQuery(){
+        
+        var eventLikes:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) names.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let post = object.objectForKey("Likes") as! String
+                        //print(name)
+                        
+                        eventLikes.append(post)
+                    }
+                    
+                    SwiftEventBus.post("MainWallLikes", sender: eventLikes)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
 
 }
 

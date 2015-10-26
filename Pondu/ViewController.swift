@@ -13,13 +13,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var eventLikes: UILabel!
     let mainWall = PresentMainWall()
 
     
     override func viewWillAppear(animated: Bool) {
         
-         mainWall.eventPost(testLabel)
+        mainWall.eventPost(testLabel)
         mainWall.eventIcon(eventImage)
+        mainWall.eventCL(eventLikes)
     }
     
     override func viewDidLoad() {
