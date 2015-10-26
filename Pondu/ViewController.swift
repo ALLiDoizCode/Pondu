@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         //mainWall.eventAddress(<#T##button: UIButton##UIButton#>)
         user.userBio(testLabel)
         user.userStory(eventImage)
+        //user.userFullName(eventLikes)
+        user.userNames(eventLikes)
     }
     
     override func viewDidLoad() {

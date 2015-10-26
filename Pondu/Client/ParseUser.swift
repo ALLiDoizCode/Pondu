@@ -22,7 +22,7 @@ class parseUser {
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) User.")
+                print("Successfully retrieved \(objects!.count) Bios.")
                 
                 // Do something with the found objects
                 if let objects = objects {
@@ -35,6 +35,68 @@ class parseUser {
                     }
                     
                     SwiftEventBus.post("UserBio", sender: userBio)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
+    func fullNameQuery(){
+        
+        let query = PFUser.query()
+        var userFullName:[String] = []
+        query!.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) fullNames.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let fullName = object.objectForKey("FullName") as! String
+                        //print(name)
+                        
+                        userFullName.append(fullName)
+                    }
+                    
+                    SwiftEventBus.post("UserFullName", sender: userFullName)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
+    func userNameQuery(){
+        
+        let query = PFUser.query()
+        var userNames:[String] = []
+        query!.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) userNames.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let userName = object.objectForKey("username") as! String
+                        //print(name)
+                        
+                        userNames.append(userName)
+                    }
+                    
+                    SwiftEventBus.post("UserName", sender: userNames)
                     
                 }
             } else {

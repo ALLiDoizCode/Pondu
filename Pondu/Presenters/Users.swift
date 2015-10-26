@@ -34,6 +34,42 @@ class users {
     }
     
     
+    func userFullName(label: UILabel){
+        
+        
+        var fullName:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "UserFullName") { result in
+            
+            fullName = result.object![0] as! String
+            print(fullName)
+            
+            label.text = fullName
+            
+        }
+        
+        user.fullNameQuery()
+        
+    }
+    
+    func userNames(label: UILabel){
+        
+        
+        var userName:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "UserName") { result in
+            
+            userName = result.object![0] as! String
+            print(userName)
+            
+            label.text = userName
+            
+        }
+        
+        user.userNameQuery()
+        
+    }
+    
     func userStory(imageView:UIImageView){
         
         var story:String = String()
