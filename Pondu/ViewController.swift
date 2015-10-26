@@ -26,10 +26,11 @@ class ViewController: UIViewController {
         //mainWall.eventCM(eventLikes)
         //mainWall.profileName(eventLikes)
         //mainWall.eventAddress(<#T##button: UIButton##UIButton#>)
-        user.userBio(testLabel)
-        user.userStory(eventImage)
+        //user.userBio(testLabel)
+        //user.userStory(eventImage)
         //user.userFullName(eventLikes)
-        user.userNames(eventLikes)
+        //user.userNames(eventLikes)
+        user.userArea(testLabel)
     }
     
     override func viewDidLoad() {

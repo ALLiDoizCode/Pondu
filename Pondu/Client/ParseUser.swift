@@ -106,6 +106,37 @@ class parseUser {
         }
     }
     
+    func userAreaQuery(){
+        
+        let query = PFUser.query()
+        var userArea:[String] = []
+        query!.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) userAreas.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let area = object.objectForKey("Area") as! String
+                        //print(name)
+                        
+                        userArea.append(area)
+                    }
+                    
+                    SwiftEventBus.post("UserArea", sender: userArea)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
     func storyQuery(){
         let query = PFUser.query()
         var userStory:[String] = []

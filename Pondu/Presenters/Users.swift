@@ -70,6 +70,24 @@ class users {
         
     }
     
+    func userArea(label: UILabel){
+        
+        
+        var area:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "UserArea") { result in
+            
+            area = result.object![0] as! String
+            print(area)
+            
+            label.text = area
+            
+        }
+        
+        user.userAreaQuery()
+        
+    }
+    
     func userStory(imageView:UIImageView){
         
         var story:String = String()
