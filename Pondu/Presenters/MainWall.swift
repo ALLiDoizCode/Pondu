@@ -54,6 +54,26 @@ class PresentMainWall {
         mainWall.ImageQuery()
     }
     
+    func eventThumb(imageView:UIImageView){
+        
+        var thumbImage:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "MainWallThumbImage") { result in
+            
+            thumbImage = result.object![0] as! String
+            print(thumbImage)
+            
+            //let URL = NSURL(string: eventImage)!
+            
+            //print(URL)
+            
+            imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
+            
+        }
+        
+        mainWall.ThumbQuery()
+    }
+    
     func eventTime(){
         
         

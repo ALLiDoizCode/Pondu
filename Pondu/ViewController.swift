@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         
         //mainWall.eventPost(testLabel)
         //mainWall.eventIcon(eventImage)
+        //mainWall.eventThumb(eventImage)
         //mainWall.eventCL(eventLikes)
         //mainWall.eventCM(eventLikes)
         //mainWall.profileName(eventLikes)
@@ -30,8 +31,8 @@ class ViewController: UIViewController {
         //user.userStory(eventImage)
         //user.userFullName(eventLikes)
         //user.userNames(eventLikes)
-        user.userArea(testLabel)
-        user.userPhoto(eventImage)
+        //user.userArea(testLabel)
+        //user.userPhoto(eventImage)
     }
     
     override func viewDidLoad() {

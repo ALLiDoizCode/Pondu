@@ -78,6 +78,40 @@ class ParseMainWall {
         
             }
     
+    func ThumbQuery(){
+        
+        var eventThumbImage:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) ProfileImages.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let ThumbImage = object.objectForKey("Mainthumb") as! PFFile
+                        
+                        
+                        eventThumbImage.append(ThumbImage.url!)
+                    }
+                    
+                    SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        
+    }
+    
     func likesQuery(){
         
         var eventLikes:[String] = []
