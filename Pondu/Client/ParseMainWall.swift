@@ -96,13 +96,78 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let post = object.objectForKey("Likes") as! String
+                        let Likes = object.objectForKey("Likes") as! String
                         //print(name)
                         
-                        eventLikes.append(post)
+                        eventLikes.append(Likes)
                     }
                     
                     SwiftEventBus.post("MainWallLikes", sender: eventLikes)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
+    func commentsQuery(){
+        
+        var eventComments:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) names.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let Comments = object.objectForKey("Comments") as! String
+                        //print(name)
+                        
+                        eventComments.append(Comments)
+                    }
+                    
+                    SwiftEventBus.post("MainWallComments", sender: eventComments)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+    }
+    
+    func profileNameQuery(){
+        
+        var eventprofileName:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) names.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let profileName = object.objectForKey("Name") as! String
+                        //print(name)
+                        
+                        eventprofileName.append(profileName)
+                    }
+                    
+                    SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
                     
                 }
             } else {

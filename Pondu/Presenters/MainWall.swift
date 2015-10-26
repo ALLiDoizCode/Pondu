@@ -81,9 +81,45 @@ class PresentMainWall {
         
     }
     
-    func eventCM(){
+    func eventCM(label:UILabel){
         
+        var eventComments:String = String()
         
+        SwiftEventBus.onMainThread(self, name: "MainWallComments") { result in
+            
+            eventComments = result.object![3] as! String
+            print(eventComments)
+            
+            //let URL = NSURL(string: eventImage)!
+            
+            //print(URL)
+            
+            label.text = eventComments
+            
+        }
+        
+        mainWall.commentsQuery()
+        
+    }
+    
+    func profileName(label:UILabel){
+        
+        var eventprofileName:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "MainWallProfileName") { result in
+            
+            eventprofileName = result.object![3] as! String
+            print(eventprofileName)
+            
+            //let URL = NSURL(string: eventImage)!
+            
+            //print(URL)
+            
+            label.text = eventprofileName
+            
+        }
+        
+        mainWall.profileNameQuery()
         
     }
 }

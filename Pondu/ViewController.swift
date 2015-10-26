@@ -21,7 +21,9 @@ class ViewController: UIViewController {
         
         mainWall.eventPost(testLabel)
         mainWall.eventIcon(eventImage)
-        mainWall.eventCL(eventLikes)
+        //mainWall.eventCL(eventLikes)
+        //mainWall.eventCM(eventLikes)
+        mainWall.profileName(eventLikes)
     }
     
     override func viewDidLoad() {
