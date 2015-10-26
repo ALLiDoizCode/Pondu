@@ -176,6 +176,39 @@ class ParseMainWall {
             }
         }
     }
+    
+    func eventAddressQuery(){
+        
+        var address:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) names.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let profileName = object.objectForKey("Location") as! String
+                        //print(name)
+                        
+                        address.append(profileName)
+                    }
+                    
+                    SwiftEventBus.post("MainWallAddress", sender: address)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+    }
 
 }
 

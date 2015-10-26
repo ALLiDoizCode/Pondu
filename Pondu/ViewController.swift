@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         //mainWall.eventCL(eventLikes)
         //mainWall.eventCM(eventLikes)
         mainWall.profileName(eventLikes)
+        //mainWall.eventAddress(<#T##button: UIButton##UIButton#>)
     }
     
     override func viewDidLoad() {

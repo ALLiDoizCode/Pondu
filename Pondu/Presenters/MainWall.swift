@@ -122,5 +122,21 @@ class PresentMainWall {
         mainWall.profileNameQuery()
         
     }
+    
+    func eventAddress(button:UIButton){
+        
+        var address:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "MainWallAddress") { result in
+            
+            address = result.object![3] as! String
+            print(address)
+            button.setTitle(address, forState: UIControlState.Normal)
+            
+        }
+        
+        mainWall.profileNameQuery()
+        
+    }
 }
 
