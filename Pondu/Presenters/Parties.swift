@@ -17,15 +17,13 @@ class PartiesMainWall {
     
     func partiesPost(label: UILabel){
         
-        
-        var post:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallParties") { result in
             
-            post = result.object![1] as! String
+            
+            let post = result.object
             print(post)
             
-            label.text = post
+            
             
         }
         
@@ -36,18 +34,12 @@ class PartiesMainWall {
     
     func partiesIcon(imageView:UIImageView){
         
-        var partiesImage:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesImage") { result in
             
-           partiesImage = result.object![3] as! String
+           let partiesImage = result.object
             print(partiesImage)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            imageView.kf_setImageWithURL(NSURL(string: partiesImage)!)
+            //imageView.kf_setImageWithURL(NSURL(string: partiesImage)!)
             
         }
         
@@ -56,18 +48,12 @@ class PartiesMainWall {
     
     func partiesThumb(imageView:UIImageView){
         
-        var thumbImage:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesThumbImage") { result in
             
-            thumbImage = result.object![0] as! String
+            let thumbImage = result.object
             print(thumbImage)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
+            //imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
             
         }
         
@@ -81,20 +67,12 @@ class PartiesMainWall {
     
     func partiesCL(label:UILabel){
         
-        var partieslikes:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesLikes") { result in
             
-           partieslikes = result.object![3] as! String
+           let partieslikes = result.object
             print(partieslikes)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            label.text = partieslikes
-            
-        }
+    }
         
         Parties.likesQuery()
         
@@ -102,20 +80,12 @@ class PartiesMainWall {
     
     func partiesCM(label:UILabel){
         
-        var partiesComments:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesComments") { result in
             
-            partiesComments = result.object![3] as! String
+            let partiesComments = result.object
             print(partiesComments)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            label.text = partiesComments
-            
-        }
+    }
         
         Parties.commentsQuery()
         
@@ -123,18 +93,11 @@ class PartiesMainWall {
     
     func partiesName(label:UILabel){
         
-        var partiesprofileName:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesProfileName") { result in
             
-           partiesprofileName = result.object![3] as! String
+           let partiesprofileName = result.object!
             print(partiesprofileName)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            label.text = partiesprofileName
             
         }
         
@@ -144,13 +107,11 @@ class PartiesMainWall {
     
     func partiesAddress(button:UIButton){
         
-        var address:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesAddress") { result in
             
-            address = result.object![3] as! String
+            let address = result.object
             print(address)
-            button.setTitle(address, forState: UIControlState.Normal)
+            //button.setTitle(address, forState: UIControlState.Normal)
             
         }
         
@@ -161,14 +122,13 @@ class PartiesMainWall {
     //need to pass a refrence to a video player
     func partiesVideo(){
         
-        var video:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "PartiesVideo") { result in
             
-            video = result.object![3] as! String
-            let URL = NSURL(string: video)!
+            let video = result.object
+            print(video)
+            //let URL = NSURL(string: video)!
             
-            print(URL)
+            //print(URL)
             
         }
         

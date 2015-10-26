@@ -28,10 +28,11 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let post = object.objectForKey("Posts") as! String
-                        //print(name)
-                        
-                        eventPost.append(post)
+                        if let post = object.objectForKey("Posts") as! String! {
+                            
+                            eventPost.append(post)
+                        }
+                       
                     }
                     
                     SwiftEventBus.post("MainWallParties", sender: eventPost)
@@ -60,10 +61,11 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let profileImage = object.objectForKey("ProfilePicture") as! PFFile
+                        if let profileImage = object.objectForKey("ProfilePicture") as! PFFile! {
+                            
+                            eventProfileImage.append(profileImage.url!)
+                        }
                         
-                        
-                        eventProfileImage.append(profileImage.url!)
                     }
                     
                     SwiftEventBus.post("PartiesImage", sender: eventProfileImage)
@@ -94,10 +96,12 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let ThumbImage = object.objectForKey("Mainthumb") as! PFFile
+                        if let ThumbImage = object.objectForKey("Mainthumb") as! PFFile! {
+                            
+                            eventThumbImage.append(ThumbImage.url!)
+                        }
                         
                         
-                        eventThumbImage.append(ThumbImage.url!)
                     }
                     
                     SwiftEventBus.post("PartiesThumbImage", sender: eventThumbImage)
@@ -128,10 +132,11 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let Likes = object.objectForKey("Likes") as! String
-                        //print(name)
+                        if let Likes = object.objectForKey("Likes") as! String! {
+                            
+                            eventLikes.append(Likes)
+                        }
                         
-                        eventLikes.append(Likes)
                     }
                     
                     SwiftEventBus.post("PartiesLikes", sender: eventLikes)
@@ -160,10 +165,11 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let Comments = object.objectForKey("Comments") as! String
-                        //print(name)
+                        if let Comments = object.objectForKey("Comments") as! String!{
+                            
+                            eventComments.append(Comments)
+                        }
                         
-                        eventComments.append(Comments)
                     }
                     
                     SwiftEventBus.post("PartiesComments", sender: eventComments)
@@ -193,10 +199,11 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let profileName = object.objectForKey("Name") as! String
-                        //print(name)
+                        if let profileName = object.objectForKey("Name") as! String!{
+                            
+                            eventprofileName.append(profileName)
+                        }
                         
-                        eventprofileName.append(profileName)
                     }
                     
                     SwiftEventBus.post("PartiesProfileName", sender: eventprofileName)
@@ -225,10 +232,11 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let profileName = object.objectForKey("Location") as! String
-                        //print(name)
+                        if let profileName = object.objectForKey("Location") as! String!{
+                            
+                            address.append(profileName)
+                        }
                         
-                        address.append(profileName)
                     }
                     
                     SwiftEventBus.post("PartiesAddress", sender: address)
@@ -258,10 +266,13 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        let video = object.objectForKey("Video") as! PFFile
+                        if let video = object.objectForKey("Video") as! PFFile!{
+                            
+                            eventVideo.append(video.url!)
+                        }
                         
                         
-                        eventVideo.append(video.url!)
+                       
                     }
                     
                     SwiftEventBus.post("PartiesVideo", sender: eventVideo)

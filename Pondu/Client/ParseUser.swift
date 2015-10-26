@@ -12,8 +12,6 @@ import Parse
 
 class parseUser {
     
-    
-    
     func bioQuery(){
         let query = PFUser.query()
         var userBio:[String] = []
@@ -28,10 +26,11 @@ class parseUser {
                 if let objects = objects {
                     for object in objects {
                         
-                        let bio = object.objectForKey("Bio") as! String
-                        //print(name)
+                        if let bio = object.objectForKey("Bio") as! String! {
+                            
+                            userBio.append(bio)
+                        }
                         
-                        userBio.append(bio)
                     }
                     
                     SwiftEventBus.post("UserBio", sender: userBio)
@@ -59,10 +58,11 @@ class parseUser {
                 if let objects = objects {
                     for object in objects {
                         
-                        let fullName = object.objectForKey("FullName") as! String
-                        //print(name)
-                        
-                        userFullName.append(fullName)
+                        if let fullName = object.objectForKey("FullName") as! String! {
+                            
+                             userFullName.append(fullName)
+                        }
+                       
                     }
                     
                     SwiftEventBus.post("UserFullName", sender: userFullName)
@@ -90,10 +90,11 @@ class parseUser {
                 if let objects = objects {
                     for object in objects {
                         
-                        let userName = object.objectForKey("username") as! String
-                        //print(name)
+                        if let userName = object.objectForKey("username") as! String! {
+                            
+                            userNames.append(userName)
+                        }
                         
-                        userNames.append(userName)
                     }
                     
                     SwiftEventBus.post("UserName", sender: userNames)
@@ -121,10 +122,11 @@ class parseUser {
                 if let objects = objects {
                     for object in objects {
                         
-                        let area = object.objectForKey("Area") as! String
-                        //print(name)
+                        if let area = object.objectForKey("Area") as! String! {
+                            
+                            userArea.append(area)
+                        }
                         
-                        userArea.append(area)
                     }
                     
                     SwiftEventBus.post("UserArea", sender: userArea)
@@ -152,10 +154,11 @@ class parseUser {
                 if let objects = objects {
                     for object in objects {
                         
-                        let phone = object.objectForKey("Area") as! String
-                        //print(name)
+                        if let phone = object.objectForKey("Area") as! String! {
+                            
+                            userPhone.append(phone)
+                        }
                         
-                        userPhone.append(phone)
                     }
                     
                     SwiftEventBus.post("UserPhone", sender: userPhone)
@@ -186,8 +189,6 @@ class parseUser {
                             
                             userStory.append(story.url!)
                         }
-                        
-                        
                         
                     }
                     
@@ -221,8 +222,6 @@ class parseUser {
                             
                             userPhoto.append(photo.url!)
                         }
-                        
-                        
                         
                     }
                     

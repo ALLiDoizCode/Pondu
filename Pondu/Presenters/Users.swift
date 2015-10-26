@@ -17,15 +17,10 @@ class users {
     
     func userBio(label: UILabel){
         
-        
-        var bio:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserBio") { result in
             
-            bio = result.object![0] as! String
+            let bio = result.object
             print(bio)
-            
-            label.text = bio
             
         }
         
@@ -36,15 +31,10 @@ class users {
     
     func userFullName(label: UILabel){
         
-        
-        var fullName:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserFullName") { result in
             
-            fullName = result.object![0] as! String
+            let fullName = result.object
             print(fullName)
-            
-            label.text = fullName
             
         }
         
@@ -54,15 +44,10 @@ class users {
     
     func userNames(label: UILabel){
         
-        
-        var userName:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserName") { result in
             
-            userName = result.object![0] as! String
+            let userName = result.object
             print(userName)
-            
-            label.text = userName
             
         }
         
@@ -72,15 +57,10 @@ class users {
     
     func userArea(label: UILabel){
         
-        
-        var area:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserArea") { result in
             
-            area = result.object![0] as! String
+            let area = result.object
             print(area)
-            
-            label.text = area
             
         }
         
@@ -90,15 +70,12 @@ class users {
     
     func userPhone(button:UIButton){
         
-        
-        var phone:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserArea") { result in
             
-            phone = result.object![0] as! String
+            let phone = result.object
             print(phone)
             
-            button.setTitle(phone, forState: UIControlState.Normal)
+            //button.setTitle(phone, forState: UIControlState.Normal)
             
         }
         
@@ -108,14 +85,12 @@ class users {
     
     func userStory(imageView:UIImageView){
         
-        var story:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserStory") { result in
             
-            story = result.object![0] as! String
+            let story = result.object
             print(story)
             
-            imageView.kf_setImageWithURL(NSURL(string: story)!)
+            //imageView.kf_setImageWithURL(NSURL(string: story)!)
             
         }
         
@@ -124,14 +99,12 @@ class users {
     
     func userPhoto(imageView:UIImageView){
         
-        var photo:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "UserPhoto") { result in
             
-            photo = result.object![1] as! String
+            let photo = result.object
             print(photo)
             
-            imageView.kf_setImageWithURL(NSURL(string: photo)!)
+            //imageView.kf_setImageWithURL(NSURL(string: photo)!)
             
         }
         

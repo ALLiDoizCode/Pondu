@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 
 class ViewController: UIViewController {
@@ -23,19 +24,19 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        //mainWall.eventPost(testLabel)
-        //mainWall.eventIcon(eventImage)
-        //mainWall.eventThumb(eventImage)
-        //mainWall.eventCL(eventLikes)
-        //mainWall.eventCM(eventLikes)
-        //mainWall.profileName(eventLikes)
+        mainWall.eventPost(testLabel)
+        mainWall.eventIcon(eventImage)
+        mainWall.eventThumb(eventImage)
+        mainWall.eventCL(eventLikes)
+        mainWall.eventCM(eventLikes)
+        mainWall.profileName(eventLikes)
         //mainWall.eventAddress(<#T##button: UIButton##UIButton#>)
-        //user.userBio(testLabel)
-        //user.userStory(eventImage)
-        //user.userFullName(eventLikes)
-        //user.userNames(eventLikes)
-        //user.userArea(testLabel)
-        //user.userPhoto(eventImage)
+        user.userBio(testLabel)
+        user.userStory(eventImage)
+        user.userFullName(eventLikes)
+        user.userNames(eventLikes)
+        user.userArea(testLabel)
+        user.userPhoto(eventImage)
         Parties.partiesPost(testLabel)
         //newAccount.AccounSetup(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage)
         //userLogin.beginLogin(<#T##UserName: String##String#>, password: <#T##String#>)
@@ -47,6 +48,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let array = ["bob", "john"]
+        let bigObject = PFObject(className:"MainWall")
+        bigObject["Comments"] = array
+        bigObject.saveInBackground()
        
     }
 

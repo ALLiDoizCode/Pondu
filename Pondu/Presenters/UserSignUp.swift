@@ -17,7 +17,7 @@ class SignUP {
     
     func AccounSetup(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage){
         
-        startSignUp.SignUp(area,fullName,userName,password,Bio,email,phone,photo,stories)
+        startSignUp.SignUp(area,fullName: fullName,userName: userName,password: password,Bio: Bio,email: email,phone: phone,photo: photo,stories: stories)
     
     
     }

@@ -27,11 +27,13 @@ class ParseMainWall {
                         // Do something with the found objects
                         if let objects = objects {
                             for object in objects {
-                                
-                                let post = object.objectForKey("Post") as! String
                                 //print(name)
                                 
-                                eventPost.append(post)
+                                if let post = object.objectForKey("Post") as! String! {
+                                    
+                                      eventPost.append(post)
+                                    
+                                }
                             }
                             
                             SwiftEventBus.post("MainWallEvent", sender: eventPost)
@@ -60,10 +62,16 @@ class ParseMainWall {
                         if let objects = objects {
                             for object in objects {
                                 
-                                let profileImage = object.objectForKey("ProfilePicture") as! PFFile
                                 
+                                //let profileImage:PFFile!
                                 
-                                eventProfileImage.append(profileImage.url!)
+                                if let profileImage = object.objectForKey("ProfilePicture") as! PFFile! {
+                                    
+                                 eventProfileImage.append(profileImage.url!)
+
+                                }
+                                
+                               
                             }
                             
                             SwiftEventBus.post("MainWallImage", sender: eventProfileImage)
@@ -94,10 +102,13 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let ThumbImage = object.objectForKey("Mainthumb") as! PFFile
+                        if let ThumbImage = object.objectForKey("Mainthumb") as! PFFile! {
+                            
+                            eventThumbImage.append(ThumbImage.url!)
+                        }
                         
                         
-                        eventThumbImage.append(ThumbImage.url!)
+                        
                     }
                     
                     SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
@@ -128,10 +139,11 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let Likes = object.objectForKey("Likes") as! String
-                        //print(name)
+                        if let Likes = object.objectForKey("Likes") as! String! {
+                            
+                            eventLikes.append(Likes)
+                        }
                         
-                        eventLikes.append(Likes)
                     }
                     
                     SwiftEventBus.post("MainWallLikes", sender: eventLikes)
@@ -146,7 +158,7 @@ class ParseMainWall {
     
     func commentsQuery(){
         
-        var eventComments:[String] = []
+        var eventComments = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -160,10 +172,11 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let Comments = object.objectForKey("Comments") as! String
-                        //print(name)
-                        
-                        eventComments.append(Comments)
+                        if let Comments = object.objectForKey("Comments") as! NSArray! {
+                            
+                            eventComments = Comments
+                        }
+                      
                     }
                     
                     SwiftEventBus.post("MainWallComments", sender: eventComments)
@@ -193,10 +206,12 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let profileName = object.objectForKey("Name") as! String
-                        //print(name)
+                        if let profileName = object.objectForKey("Name") as! String! {
+                            
+                            eventprofileName.append(profileName)
+                            
+                        }
                         
-                        eventprofileName.append(profileName)
                     }
                     
                     SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
@@ -225,10 +240,13 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let profileName = object.objectForKey("Location") as! String
-                        //print(name)
+                        if let profileName = object.objectForKey("Location") as! String! {
+                            
+                            address.append(profileName)
+                        }
+    
                         
-                        address.append(profileName)
+                        
                     }
                     
                     SwiftEventBus.post("MainWallAddress", sender: address)
@@ -258,10 +276,13 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        let video = object.objectForKey("Video") as! PFFile
-                        
-                        
-                        eventVideo.append(video.url!)
+                        if let video = object.objectForKey("Video") as! PFFile! {
+                            
+                             eventVideo.append(video.url!)
+                            
+                        }
+                           
+                       
                     }
                     
                     SwiftEventBus.post("MainWallVideo", sender: eventVideo)

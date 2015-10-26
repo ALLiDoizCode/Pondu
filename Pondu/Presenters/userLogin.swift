@@ -17,7 +17,7 @@ class startLogin {
     
     func beginLogin(UserName: String, password: String){
         
-        userlogin.userLogin(UserName, password)
+        userlogin.userLogin(UserName, password: password)
     }
 }
 

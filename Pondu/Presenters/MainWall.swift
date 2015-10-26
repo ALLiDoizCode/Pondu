@@ -17,15 +17,11 @@ class PresentMainWall {
     
     func eventPost(label: UILabel){
         
-        
-        var post:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
-        post = result.object![1] as! String
+        let post = result.object
             print(post)
             
-            label.text = post
 
         }
         
@@ -36,18 +32,12 @@ class PresentMainWall {
     
     func eventIcon(imageView:UIImageView){
         
-        var eventImage:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallImage") { result in
             
-            eventImage = result.object![3] as! String
+            let eventImage = result.object
             print(eventImage)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-           imageView.kf_setImageWithURL(NSURL(string: eventImage)!)
+            //imageView.kf_setImageWithURL(NSURL(string: eventImage)!)
             
         }
         
@@ -56,18 +46,12 @@ class PresentMainWall {
     
     func eventThumb(imageView:UIImageView){
         
-        var thumbImage:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallThumbImage") { result in
             
-            thumbImage = result.object![0] as! String
+            let thumbImage = result.object
             print(thumbImage)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
+           // imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
             
         }
         
@@ -81,18 +65,10 @@ class PresentMainWall {
     
     func eventCL(label:UILabel){
         
-        var eventlikes:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallLikes") { result in
             
-            eventlikes = result.object![3] as! String
+           let eventlikes = result.object
             print(eventlikes)
-            
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            label.text = eventlikes
             
         }
         
@@ -102,18 +78,10 @@ class PresentMainWall {
     
     func eventCM(label:UILabel){
         
-        var eventComments:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallComments") { result in
             
-            eventComments = result.object![3] as! String
+            let eventComments = result.object
             print(eventComments)
-            
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            label.text = eventComments
             
         }
         
@@ -123,18 +91,10 @@ class PresentMainWall {
     
     func profileName(label:UILabel){
         
-        var eventprofileName:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallProfileName") { result in
             
-            eventprofileName = result.object![3] as! String
+            let eventprofileName = result.object
             print(eventprofileName)
-            
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
-            label.text = eventprofileName
             
         }
         
@@ -144,13 +104,11 @@ class PresentMainWall {
     
     func eventAddress(button:UIButton){
         
-        var address:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallAddress") { result in
             
-            address = result.object![3] as! String
+           let address = result.object
             print(address)
-            button.setTitle(address, forState: UIControlState.Normal)
+            //button.setTitle(address, forState: UIControlState.Normal)
             
         }
         
@@ -161,14 +119,13 @@ class PresentMainWall {
     //need to pass a refrence to a video player
     func eventVideo(){
         
-        var video:String = String()
-        
         SwiftEventBus.onMainThread(self, name: "MainWallVideo") { result in
             
-            video = result.object![3] as! String
-            let URL = NSURL(string: video)!
+            let video = result.object
+            print(video)
+            //let URL = NSURL(string: video)!
             
-            print(URL)
+            //print(URL)
             
         }
         
