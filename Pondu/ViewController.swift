@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventLikes: UILabel!
     let mainWall = PresentMainWall()
+    let Parties = PartiesMainWall()
     let user = users()
 
     
@@ -33,6 +34,8 @@ class ViewController: UIViewController {
         //user.userNames(eventLikes)
         //user.userArea(testLabel)
         //user.userPhoto(eventImage)
+        Parties.partiesPost(testLabel)
+        
     }
     
     override func viewDidLoad() {
