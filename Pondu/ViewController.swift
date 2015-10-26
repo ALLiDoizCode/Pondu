@@ -12,12 +12,14 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     let mainWall = PresentMainWall()
 
     
     override func viewWillAppear(animated: Bool) {
         
          mainWall.eventPost(testLabel)
+        mainWall.eventIcon(eventImage)
     }
     
     override func viewDidLoad() {

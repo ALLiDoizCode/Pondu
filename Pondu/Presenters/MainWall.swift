@@ -9,16 +9,12 @@
 import UIKit
 import SwiftEventBus
 import Parse
+import Kingfisher
+
 
 class PresentMainWall {
     
-    /*func getEventPost(){
-        
-        let mainWall = ParseMainWall()
-        
-        mainWall.postQuery()
-    }*/
-    
+    let mainWall = ParseMainWall()
     
     func eventPost(label: UILabel){
         
@@ -34,16 +30,29 @@ class PresentMainWall {
 
         }
         
-        let mainWall = ParseMainWall()
-        
         mainWall.postQuery()
 
     }
     
     
-    func eventIcon(){
+    func eventIcon(imageView:UIImageView){
         
+        var eventImage:String = String()
         
+        SwiftEventBus.onMainThread(self, name: "MainWallImage") { result in
+            
+            eventImage = result.object![3] as! String
+            print(eventImage)
+            
+            //let URL = NSURL(string: eventImage)!
+            
+            //print(URL)
+            
+           imageView.kf_setImageWithURL(NSURL(string: eventImage)!)
+            
+        }
+        
+        mainWall.ImageQuery()
     }
     
     func eventTime(){

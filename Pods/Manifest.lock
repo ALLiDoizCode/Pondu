@@ -1,10 +1,12 @@
 PODS:
   - Bolts/Tasks (1.4.0)
+  - Kingfisher (1.7.0)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - SwiftEventBus (1.1.0)
 
 DEPENDENCIES:
+  - Kingfisher (~> 1.7)
   - Parse (~> 1.9.1)
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
 
@@ -19,6 +21,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  Kingfisher: 906bf9821bd32d06d4aaecc60431857e70ccabaa
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
 

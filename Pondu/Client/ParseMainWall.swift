@@ -14,7 +14,7 @@ import Parse
 
 class ParseMainWall {
     
-    let Presenter = PresentMainWall()
+  
     
             func postQuery(){
                 
@@ -46,6 +46,40 @@ class ParseMainWall {
                         print("Error: \(error!) \(error!.userInfo)")
                     }
                 }
+            }
+    
+            func ImageQuery(){
+                
+                var eventProfileImage:[String] = []
+                
+                let query = PFQuery(className:"MainWall")
+                query.findObjectsInBackgroundWithBlock {
+                    (objects: [PFObject]?, error: NSError?) -> Void in
+                    
+                    if error == nil {
+                        // The find succeeded.
+                        print("Successfully retrieved \(objects!.count) names.")
+                        
+                        // Do something with the found objects
+                        if let objects = objects {
+                            for object in objects {
+                                
+                                let profileImage = object.objectForKey("ProfilePicture") as! PFFile
+                                
+                                
+                                eventProfileImage.append(profileImage.url!)
+                            }
+                            
+                            SwiftEventBus.post("MainWallImage", sender: eventProfileImage)
+                            
+                        }
+                    } else {
+                        // Log details of the failure
+                        print("Error: \(error!) \(error!.userInfo)")
+                    }
+                }
+
+        
             }
 
 }
