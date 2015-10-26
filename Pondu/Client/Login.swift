@@ -6,4 +6,21 @@
 //  Copyright © 2015 Jonathan Green. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import SwiftEventBus
+import Parse
+
+class Login {
+    
+    func userLogin(UserName:String,password:String){
+    
+        PFUser.logInWithUsernameInBackground(UserName, password:password) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                // The login failed. Check error to see why.
+            }
+        }
+    }
+}

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let Parties = PartiesMainWall()
     let user = users()
     let newAccount = SignUP()
+    let userLogin = startLogin()
 
     
     override func viewWillAppear(animated: Bool) {
@@ -37,6 +38,8 @@ class ViewController: UIViewController {
         //user.userPhoto(eventImage)
         Parties.partiesPost(testLabel)
         //newAccount.AccounSetup(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage)
+        //userLogin.beginLogin(<#T##UserName: String##String#>, password: <#T##String#>)
+        
         
     }
     
