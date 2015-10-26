@@ -107,8 +107,6 @@ class ParseMainWall {
                             eventThumbImage.append(ThumbImage.url!)
                         }
                         
-                        
-                        
                     }
                     
                     SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
@@ -244,8 +242,7 @@ class ParseMainWall {
                             
                             address.append(profileName)
                         }
-    
-                        
+      
                         
                     }
                     
