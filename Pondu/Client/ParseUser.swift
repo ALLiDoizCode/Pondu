@@ -137,6 +137,37 @@ class parseUser {
         }
     }
     
+    func userPhoneQuery(){
+        
+        let query = PFUser.query()
+        var userPhone:[String] = []
+        query!.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) userAreas.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        let phone = object.objectForKey("Area") as! String
+                        //print(name)
+                        
+                        userPhone.append(phone)
+                    }
+                    
+                    SwiftEventBus.post("UserPhone", sender: userPhone)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
     func storyQuery(){
         let query = PFUser.query()
         var userStory:[String] = []
@@ -161,6 +192,41 @@ class parseUser {
                     }
                     
                     SwiftEventBus.post("UserStory", sender: userStory)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+        
+    }
+    
+    func photoQuery(){
+        let query = PFUser.query()
+        var userPhoto:[String] = []
+        query!.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) Users photos.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        
+                        if let photo = object.objectForKey("photo") as! PFFile! {
+                            
+                            userPhoto.append(photo.url!)
+                        }
+                        
+                        
+                        
+                    }
+                    
+                    SwiftEventBus.post("UserPhoto", sender: userPhoto)
                     
                 }
             } else {

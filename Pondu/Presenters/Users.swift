@@ -88,6 +88,24 @@ class users {
         
     }
     
+    func userPhone(button:UIButton){
+        
+        
+        var phone:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "UserArea") { result in
+            
+            phone = result.object![0] as! String
+            print(phone)
+            
+            button.setTitle(phone, forState: UIControlState.Normal)
+            
+        }
+        
+        user.userPhoneQuery()
+        
+    }
+    
     func userStory(imageView:UIImageView){
         
         var story:String = String()
@@ -97,14 +115,26 @@ class users {
             story = result.object![0] as! String
             print(story)
             
-            //let URL = NSURL(string: eventImage)!
-            
-            //print(URL)
-            
             imageView.kf_setImageWithURL(NSURL(string: story)!)
             
         }
         
         user.storyQuery()
+    }
+    
+    func userPhoto(imageView:UIImageView){
+        
+        var photo:String = String()
+        
+        SwiftEventBus.onMainThread(self, name: "UserPhoto") { result in
+            
+            photo = result.object![1] as! String
+            print(photo)
+            
+            imageView.kf_setImageWithURL(NSURL(string: photo)!)
+            
+        }
+        
+        user.photoQuery()
     }
 }

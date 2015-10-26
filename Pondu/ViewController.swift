@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         //user.userFullName(eventLikes)
         //user.userNames(eventLikes)
         user.userArea(testLabel)
+        user.userPhoto(eventImage)
     }
     
     override func viewDidLoad() {
