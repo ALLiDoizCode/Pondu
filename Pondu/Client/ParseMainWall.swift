@@ -74,12 +74,14 @@ class ParseMainWall {
                                                 
                                                     
                                                     print("queryID \(post)")
-                                                    
+                                                   
+                                                print("recived fav post")
                                                 favPost.append(post)
+                                                 print("successfully recived \(favPost.count) fav post")
                                                 
                                                 }
                                             }
-                                            
+                                            print("sending fav post")
                                             SwiftEventBus.post("FavoritesList", sender: favPost)
                                             
                                         }else{

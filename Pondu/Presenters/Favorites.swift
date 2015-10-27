@@ -33,6 +33,8 @@ class userFavorites {
     
     func getFavorite(){
         
+        print("waiting for fav ids")
+        
         ///favorite id
         SwiftEventBus.onMainThread(self, name: "GetFavorites") { result in
             
@@ -40,6 +42,8 @@ class userFavorites {
                 
                 print("getfavorites \(fav[0])")
                 
+                print("recieved fav id")
+                print("sending fav id")
                 self.mainWall.postQuery(fav)
                 
                 SwiftEventBus.unregister(self, name: "GetFavorites")
@@ -52,7 +56,9 @@ class userFavorites {
             
             if let favList = result.object as! [String]!{
                 
+                print("recieved fav post")
                 print("favList \(favList[0])")
+                print("do something with post data")
                 
                 SwiftEventBus.unregister(self, name: "FavoritesList")
             }
