@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         
         mainWall.eventID(eventID )
         favorite.addFavorite(0)
+        favorite.getFavorite()
         
     }
     

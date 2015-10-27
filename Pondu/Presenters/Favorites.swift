@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 import Kingfisher
 
 class userFavorites {
@@ -22,7 +21,7 @@ class userFavorites {
         SwiftEventBus.onMainThread(self, name: "Favorite") { result in
             
             let objectID = result.object
-            print("favorite \(objectID)")
+            print("favorite id \(objectID)")
             
             self.thisFavorite.userFavorite(objectID![index] as! String)
             SwiftEventBus.unregister(self, name: "Favorite")
@@ -34,12 +33,30 @@ class userFavorites {
     
     func getFavorite(){
         
+        ///favorite id
         SwiftEventBus.onMainThread(self, name: "GetFavorites") { result in
             
-            let fav = result.object
-            print("favorites \(fav)")
+            if let fav = result.object as! [String]!{
+                
+                print("getfavorites \(fav[0])")
+                
+                self.mainWall.postQuery(fav)
+                
+                SwiftEventBus.unregister(self, name: "GetFavorites")
+            }
+           
+        }
+        
+        //gets list of favorites
+        SwiftEventBus.onMainThread(self, name: "FavoritesList") { result in
             
-            SwiftEventBus.unregister(self, name: "GetFavorites")
+            if let favList = result.object as! [String]!{
+                
+                print("favList \(favList[0])")
+                
+                SwiftEventBus.unregister(self, name: "FavoritesList")
+            }
+            
         }
         
         thisFavorite.favoriteList()

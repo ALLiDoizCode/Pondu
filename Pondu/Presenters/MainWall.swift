@@ -16,17 +16,19 @@ class PresentMainWall {
     let mainWall = ParseMainWall()
     let makecomment = userComments()
     
+    let nilArray:[String]! = nil
+    
     func eventPost(label: UILabel){
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
         let post = result.object
-            print(post)
+            print("event post \(post)")
             
         
         }
         
-        mainWall.postQuery()
+        mainWall.postQuery(nilArray)
 
     }
     

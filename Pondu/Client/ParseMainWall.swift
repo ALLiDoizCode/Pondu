@@ -46,10 +46,11 @@ class ParseMainWall {
     
     
     
-            func postQuery(){
-                
+    func postQuery(favId:[String]?){
+        
                 var eventPost:[String] = []
-                
+                var favPost:[String] = []
+        
                 let query = PFQuery(className:"MainWall")
                 query.findObjectsInBackgroundWithBlock {
                     (objects: [PFObject]?, error: NSError?) -> Void in
@@ -63,14 +64,34 @@ class ParseMainWall {
                             for object in objects {
                                 //print(name)
                                 
-                                if let post = object.objectForKey("Post") as! String! {
-                                    
-                                      eventPost.append(post)
+                                    if let post = object.objectForKey("Post") as! String! {
+                                        
+                                        if let favID = favId {
+                                            
+                                            for var i = 0; i<favID.count; i++ {
+                                                
+                                                if object.objectId == favID[i] {
+                                                
+                                                    
+                                                    print("queryID \(post)")
+                                                    
+                                                favPost.append(post)
+                                                
+                                                }
+                                            }
+                                            
+                                            SwiftEventBus.post("FavoritesList", sender: favPost)
+                                            
+                                        }else{
+                                            
+                                            eventPost.append(post)
+                                            
+                                            SwiftEventBus.post("MainWallEvent", sender: eventPost)
+                                        }
                                     
                                 }
+                                
                             }
-                            
-                            SwiftEventBus.post("MainWallEvent", sender: eventPost)
                             
                         }
                     } else {
