@@ -17,14 +17,15 @@ class userFavorites {
     
     let thisFavorite = Favorite()
     
-    func makeComment(index:int){
+    func addFavorite(index:Int){
      
         SwiftEventBus.onMainThread(self, name: "Favorite") { result in
             
             let objectID = result.object
-            print(objectID)
+            print("favorite \(objectID)")
             
-            thisFavorite.userFavorite(objectID[index])
+            self.thisFavorite.userFavorite(objectID![index] as! String)
+            SwiftEventBus.unregister(self, name: "Favorite")
         }
         
         mainWall.idQuery()

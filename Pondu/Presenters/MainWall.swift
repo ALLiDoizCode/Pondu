@@ -23,7 +23,7 @@ class PresentMainWall {
         let post = result.object
             print(post)
             
-
+        
         }
         
         mainWall.postQuery()
@@ -44,6 +44,8 @@ class PresentMainWall {
             }
             
             print("comments\(arrayID)")
+            
+            SwiftEventBus.unregister(self, name: "MainWallID")
             
         }
         

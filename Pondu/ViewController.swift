@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let user = users()
     let newAccount = SignUP()
     let userLogin = startLogin()
+    let favorite = userFavorites()
     let eventID:[String] = []
 
     override func viewWillAppear(animated: Bool) {
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         //userLogin.beginLogin(<#T##UserName: String##String#>, password: <#T##String#>)
         
         mainWall.eventID(eventID )
-        
+        favorite.addFavorite(0)
         
     }
     
