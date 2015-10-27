@@ -41,9 +41,11 @@ class PresentMainWall {
                     self.makecomment.makeComment((arrayID[0])! as! String)
                 }
                 
+                 print("comments\(arrayID)")
+                
             }
             
-            print("comments\(arrayID)")
+           
             
             SwiftEventBus.unregister(self, name: "MainWallID")
             
