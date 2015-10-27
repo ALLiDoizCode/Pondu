@@ -30,4 +30,19 @@ class userFavorites {
         
         mainWall.idQuery()
     }
+    
+    
+    func getFavorite(){
+        
+        SwiftEventBus.onMainThread(self, name: "GetFavorites") { result in
+            
+            let fav = result.object
+            print("favorites \(fav)")
+            
+            SwiftEventBus.unregister(self, name: "GetFavorites")
+        }
+        
+        thisFavorite.favoriteList()
+        
+    }
 }

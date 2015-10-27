@@ -23,8 +23,24 @@ class Favorite {
             
         } else {
             
-            // Show the signup or login screen
+
         }
         
+    }
+    
+    func favoriteList(){
+        
+        let currentUser = PFUser.currentUser()
+        
+        if currentUser != nil {
+            
+            let fav = currentUser!["Favorites"]
+            
+            SwiftEventBus.post("GetFavorites", sender: fav)
+            
+        } else {
+            
+            
+        }
     }
 }
