@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Parse
-
 
 class ViewController: UIViewController {
     
@@ -20,8 +18,8 @@ class ViewController: UIViewController {
     let user = users()
     let newAccount = SignUP()
     let userLogin = startLogin()
+    let eventID:[String] = []
 
-    
     override func viewWillAppear(animated: Bool) {
         
         mainWall.eventPost(testLabel)
@@ -41,6 +39,8 @@ class ViewController: UIViewController {
         //newAccount.AccounSetup(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage)
         //userLogin.beginLogin(<#T##UserName: String##String#>, password: <#T##String#>)
         
+        mainWall.eventID(eventID )
+        
         
     }
     
@@ -48,11 +48,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let array = ["bob", "john"]
-        let bigObject = PFObject(className:"MainWall")
-        bigObject["Comments"] = array
-        bigObject.saveInBackground()
-       
     }
 
     override func didReceiveMemoryWarning() {

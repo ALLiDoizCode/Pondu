@@ -14,6 +14,7 @@ import Kingfisher
 class PresentMainWall {
     
     let mainWall = ParseMainWall()
+    let makecomment = userComments()
     
     func eventPost(label: UILabel){
         
@@ -27,6 +28,20 @@ class PresentMainWall {
         
         mainWall.postQuery()
 
+    }
+    
+    func eventID(arrayID:[String]){
+        
+        SwiftEventBus.onMainThread(self, name: "MainWallID") { result in
+            
+            let arrayID = result.object
+            self.makecomment.makeComment((arrayID?[0])! as! String)
+            print("comments\(arrayID)")
+            
+        }
+        
+        mainWall.idQuery()
+        
     }
     
     

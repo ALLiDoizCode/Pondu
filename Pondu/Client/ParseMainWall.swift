@@ -12,6 +12,38 @@ import Parse
 
 class ParseMainWall {
     
+    func idQuery(){
+        
+        var eventID:[String] = []
+        
+        let query = PFQuery(className:"MainWall")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) Ids.")
+                
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        //print(name)
+                        
+                        eventID.append(object.objectId!)
+                    }
+                    
+                    SwiftEventBus.post("MainWallID", sender: eventID)
+                    
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
+    
+    
             func postQuery(){
                 
                 var eventPost:[String] = []

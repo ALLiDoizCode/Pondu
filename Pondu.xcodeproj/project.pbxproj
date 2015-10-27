@@ -21,6 +21,8 @@
 		4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EEF1BDEC25F006055E9 /* Login.swift */; };
 		4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF11BDEC375006055E9 /* UserSignUp.swift */; };
 		4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF31BDEC7CF006055E9 /* userLogin.swift */; };
+		4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF51BDEF844006055E9 /* ParseComments.swift */; };
+		4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF71BDEFC33006055E9 /* Comments.swift */; };
 		4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038B1BDDDC1E00A56A67 /* Users.swift */; };
 		4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */; };
 		4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038F1BDE99BF00A56A67 /* Parties.swift */; };
@@ -65,6 +67,8 @@
 		4DD73EEF1BDEC25F006055E9 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4DD73EF11BDEC375006055E9 /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
 		4DD73EF31BDEC7CF006055E9 /* userLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userLogin.swift; sourceTree = "<group>"; };
+		4DD73EF51BDEF844006055E9 /* ParseComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseComments.swift; sourceTree = "<group>"; };
+		4DD73EF71BDEFC33006055E9 /* Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		4DF2038B1BDDDC1E00A56A67 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUser.swift; sourceTree = "<group>"; };
 		4DF2038F1BDE99BF00A56A67 /* Parties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parties.swift; sourceTree = "<group>"; };
@@ -135,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				4DD1749E1BDD794E00B64E0B /* Client */,
-				4DD1749D1BDD793F00B64E0B /* Presenters */,
 				4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */,
 				4D01DB6C1BDD639100B30C0D /* ViewController.swift */,
 				4D01DB6E1BDD639100B30C0D /* Main.storyboard */,
@@ -173,8 +176,10 @@
 				4DF2038F1BDE99BF00A56A67 /* Parties.swift */,
 				4DD73EF11BDEC375006055E9 /* UserSignUp.swift */,
 				4DD73EF31BDEC7CF006055E9 /* userLogin.swift */,
+				4DD73EF71BDEFC33006055E9 /* Comments.swift */,
 			);
-			path = Presenters;
+			name = Presenters;
+			path = ../Presenters;
 			sourceTree = "<group>";
 		};
 		4DD1749E1BDD794E00B64E0B /* Client */ = {
@@ -185,6 +190,8 @@
 				4DF203911BDE99EA00A56A67 /* ParseParties.swift */,
 				4DD73EED1BDEC254006055E9 /* SignUp.swift */,
 				4DD73EEF1BDEC25F006055E9 /* Login.swift */,
+				4DD73EF51BDEF844006055E9 /* ParseComments.swift */,
+				4DD1749D1BDD793F00B64E0B /* Presenters */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -382,6 +389,7 @@
 				4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
+				4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
@@ -391,6 +399,7 @@
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
 				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
+				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
