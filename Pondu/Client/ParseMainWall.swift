@@ -33,6 +33,7 @@ class ParseMainWall {
                     }
                     
                     SwiftEventBus.post("MainWallID", sender: eventID)
+                    SwiftEventBus.post("Favorite", sender: eventID)
                     
                 }
             } else {

@@ -14,10 +14,8 @@ class comments {
     
     func userComment(postID:String){
         
-        //let array = ["bob", "john"]
         let bigObject:PFQuery! = PFQuery(className:"MainWall")
-        //bigObject["Comments"] = array
-        //bigObject.addObject("Mike", forKey: "Comments")
+    
         bigObject.getObjectInBackgroundWithId(postID) { (object:PFObject?, error:NSError?) -> Void in
             
             if error != nil {
