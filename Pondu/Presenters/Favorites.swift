@@ -31,7 +31,7 @@ class userFavorites {
     }
     
     
-    func getFavorite(){
+    func getFavorite(label:UILabel,imageView:UIImageView){
         
         print("waiting for fav ids")
         
@@ -45,11 +45,29 @@ class userFavorites {
                 print("recieved fav id")
                 print("sending fav id")
                 self.mainWall.postQuery(fav)
+                self.mainWall.ImageQuery(fav)
+                self.mainWall.ThumbQuery(fav)
+                self.mainWall.likesQuery(fav)
+                self.mainWall.commentsQuery(fav)
+                self.mainWall.profileNameQuery(fav)
+                self.mainWall.eventAddressQuery(fav)
+                self.mainWall.videoQuery(fav)
                 
                 SwiftEventBus.unregister(self, name: "GetFavorites")
             }
            
         }
+        
+        favPost(label)
+        favIcon(imageView)
+        
+        thisFavorite.favoriteList()
+        
+    }
+    
+    
+    
+    func favPost(label:UILabel){
         
         //gets list of favorites
         SwiftEventBus.onMainThread(self, name: "FavoritesList") { result in
@@ -59,13 +77,116 @@ class userFavorites {
                 print("recieved fav post")
                 print("favList \(favList[0])")
                 print("do something with post data")
+                label.text = favList[0]
                 
                 SwiftEventBus.unregister(self, name: "FavoritesList")
             }
             
         }
+
+    }
+
+    
+    func favIcon(imageView:UIImageView){
         
-        thisFavorite.favoriteList()
+        SwiftEventBus.onMainThread(self, name: "favImage") { result in
+            
+            let favImage = result.object as! [String]
+            print(favImage)
+            
+            //imageView.kf_setImageWithURL(NSURL(string: favImage)!)
+            
+        }
+        
+        
+    }
+    
+    func favThumb(imageView:UIImageView){
+        
+        SwiftEventBus.onMainThread(self, name: "favThumbImage") { result in
+            
+            let thumbImage = result.object as! [String]
+            print(thumbImage)
+            
+            // imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
+            
+        }
+        
+       
+    }
+    
+    func favTime(){
+        
+        
+    }
+    
+    func favCL(label:UILabel){
+        
+        SwiftEventBus.onMainThread(self, name: "favLikes") { result in
+            
+            let favlikes = result.object
+            print(favlikes)
+            
+        }
+        
+        
+        
+    }
+    
+    func favCM(label:UILabel){
+        
+        SwiftEventBus.onMainThread(self, name: "favComments") { result in
+            
+            let favComments = result.object
+            print(favComments)
+            
+        }
+        
+        
+        
+    }
+    
+    func favprofileName(label:UILabel){
+        
+        SwiftEventBus.onMainThread(self, name: "favProfileName") { result in
+            
+            let favProfileName = result.object
+            print(favProfileName)
+            
+        }
+        
+        
+        
+    }
+    
+    func favAddress(button:UIButton){
+        
+        SwiftEventBus.onMainThread(self, name: "favAddress") { result in
+            
+            let address = result.object
+            print(address)
+            //button.setTitle(address, forState: UIControlState.Normal)
+            
+        }
+        
+        
+        
+    }
+    
+    //need to pass a refrence to a video player
+    func favVideo(){
+        
+        SwiftEventBus.onMainThread(self, name: "favVideo") { result in
+            
+            let video = result.object
+            print(video)
+            //let URL = NSURL(string: video)!
+            
+            //print(URL)
+            
+        }
+        
+        
         
     }
 }

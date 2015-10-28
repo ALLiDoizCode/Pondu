@@ -103,9 +103,10 @@ class ParseMainWall {
                 }
             }
     
-            func ImageQuery(){
+            func ImageQuery(favId:[String]?){
                 
                 var eventProfileImage:[String] = []
+                var favProfileImage:[String] = []
                 
                 let query = PFQuery(className:"MainWall")
                 query.findObjectsInBackgroundWithBlock {
@@ -124,14 +125,38 @@ class ParseMainWall {
                                 
                                 if let profileImage = object.objectForKey("ProfilePicture") as! PFFile! {
                                     
-                                 eventProfileImage.append(profileImage.url!)
+                                    if let favID = favId {
+                                        
+                                        for var i = 0; i<favID.count; i++ {
+                                            
+                                            if object.objectId == favID[i] {
+                                                
+                                                
+                                                print("queryID \(profileImage.url)")
+                                                
+                                                print("recived fav Image")
+                                                favProfileImage.append(profileImage.url!)
+                                                print("successfully recived \(favProfileImage.count) fav Image")
+                                                
+                                            }
+                                        }
+                                        print("sending fav image")
+                                       SwiftEventBus.post("favImage", sender: favProfileImage)
+                                        
+                                    }else{
+                                        
+                                        eventProfileImage.append(profileImage.url!)
+                                        
+                                        SwiftEventBus.post("MainWallImage", sender: eventProfileImage)
+                                    }
+                                    
+                                 
 
                                 }
                                 
                                
                             }
                             
-                            SwiftEventBus.post("MainWallImage", sender: eventProfileImage)
                             
                         }
                     } else {
@@ -143,7 +168,7 @@ class ParseMainWall {
         
             }
     
-    func ThumbQuery(){
+    func ThumbQuery(favId:[String]?){
         
         var eventThumbImage:[String] = []
         
@@ -178,7 +203,7 @@ class ParseMainWall {
         
     }
     
-    func likesQuery(){
+    func likesQuery(favId:[String]?){
         
         var eventLikes:[String] = []
         
@@ -211,7 +236,7 @@ class ParseMainWall {
         }
     }
     
-    func commentsQuery(){
+    func commentsQuery(favId:[String]?){
         
         var eventComments = []
         
@@ -245,7 +270,7 @@ class ParseMainWall {
         
     }
     
-    func profileNameQuery(){
+    func profileNameQuery(favId:[String]?){
         
         var eventprofileName:[String] = []
         
@@ -279,7 +304,7 @@ class ParseMainWall {
         }
     }
     
-    func eventAddressQuery(){
+    func eventAddressQuery(favId:[String]?){
         
         var address:[String] = []
         
@@ -314,7 +339,7 @@ class ParseMainWall {
         
     }
     
-    func videoQuery(){
+    func videoQuery(favId:[String]?){
         
         var eventVideo:[String] = []
         

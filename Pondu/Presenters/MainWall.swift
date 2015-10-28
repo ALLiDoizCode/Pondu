@@ -69,7 +69,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.ImageQuery()
+        mainWall.ImageQuery(nilArray)
     }
     
     func eventThumb(imageView:UIImageView){
@@ -83,7 +83,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.ThumbQuery()
+        mainWall.ThumbQuery(nilArray)
     }
     
     func eventTime(){
@@ -100,7 +100,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.likesQuery()
+        mainWall.likesQuery(nilArray)
         
     }
     
@@ -113,7 +113,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.commentsQuery()
+        mainWall.commentsQuery(nilArray)
         
     }
     
@@ -126,7 +126,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.profileNameQuery()
+        mainWall.profileNameQuery(nilArray)
         
     }
     
@@ -140,7 +140,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.eventAddressQuery()
+        mainWall.eventAddressQuery(nilArray)
         
     }
     
@@ -157,7 +157,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.videoQuery()
+        mainWall.videoQuery(nilArray)
         
     }
 }
