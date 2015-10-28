@@ -33,6 +33,20 @@
                                     <constraint firstAttribute="width" constant="150" id="ykx-ZV-kLV"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crp-z0-zIY">
+                                <rect key="frame" x="531" y="502" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pf-Vu-vuJ">
+                                <rect key="frame" x="279" y="36" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOG-ac-jvJ">
                                 <rect key="frame" x="20" y="502" width="42" height="21"/>
                                 <animations/>
@@ -46,17 +60,23 @@
                         <constraints>
                             <constraint firstItem="4w5-vS-3ZB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="37d-bo-EPI"/>
                             <constraint firstItem="4w5-vS-3ZB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Asi-iN-7mE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="crp-z0-zIY" secondAttribute="trailing" constant="7" id="Ck0-TC-ytd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4w5-vS-3ZB" secondAttribute="trailing" id="HDb-tN-VdK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="crp-z0-zIY" secondAttribute="bottom" constant="77" id="L4b-eE-Slr"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XOG-ac-jvJ" secondAttribute="leading" id="Qyk-eR-eQ9"/>
                             <constraint firstItem="lIf-TK-qY7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WYS-5i-AVs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XOG-ac-jvJ" secondAttribute="bottom" constant="77" id="bEU-QV-Ejf"/>
+                            <constraint firstItem="lIf-TK-qY7" firstAttribute="top" secondItem="2Pf-Vu-vuJ" secondAttribute="bottom" constant="17" id="cy9-Uc-gzf"/>
                             <constraint firstItem="4w5-vS-3ZB" firstAttribute="top" secondItem="lIf-TK-qY7" secondAttribute="bottom" constant="87" id="kKH-fY-27a"/>
+                            <constraint firstItem="2Pf-Vu-vuJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mCa-tL-nAg"/>
                             <constraint firstItem="lIf-TK-qY7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="srm-Ml-lTR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commetns" destination="crp-z0-zIY" id="H6l-QS-j8V"/>
                         <outlet property="eventImage" destination="lIf-TK-qY7" id="nym-K7-NKu"/>
                         <outlet property="eventLikes" destination="XOG-ac-jvJ" id="ZTy-aq-fUN"/>
+                        <outlet property="name" destination="2Pf-Vu-vuJ" id="hos-wc-eCe"/>
                         <outlet property="testLabel" destination="4w5-vS-3ZB" id="2Sk-sO-XJ6"/>
                     </connections>
                 </viewController>

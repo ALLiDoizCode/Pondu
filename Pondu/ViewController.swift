@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
     let user = users()
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var commetns: UILabel!
     let newAccount = SignUP()
     let userLogin = startLogin()
     let favorite = userFavorites()
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
         
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        favorite.getFavorite(testLabel,imageView: eventImage)
+        favorite.getFavorite(testLabel, icon: eventImage, likes: eventLikes, comments: commetns, name: name)
         
     }
     

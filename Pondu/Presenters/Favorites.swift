@@ -31,7 +31,7 @@ class userFavorites {
     }
     
     
-    func getFavorite(label:UILabel,imageView:UIImageView){
+    func getFavorite(postlabel:UILabel,icon:UIImageView,likes:UILabel,comments:UILabel,name:UILabel){
         
         print("waiting for fav ids")
         
@@ -58,8 +58,15 @@ class userFavorites {
            
         }
         
-        favPost(label)
-        favIcon(imageView)
+        favPost(postlabel)
+        favIcon(icon)
+        //favAddress(<#T##button: UIButton##UIButton#>)
+        favCL(likes)
+        favCM(comments)
+        favprofileName(name)
+        //favThumb(<#T##imageView: UIImageView##UIImageView#>)
+        //favTime()
+        //favVideo()
         
         thisFavorite.favoriteList()
         
@@ -124,8 +131,10 @@ class userFavorites {
         
         SwiftEventBus.onMainThread(self, name: "favLikes") { result in
             
-            let favlikes = result.object
+            let favlikes = result.object as! [String]
             print(favlikes)
+            
+            label.text = favlikes[0]
             
         }
         
@@ -137,8 +146,10 @@ class userFavorites {
         
         SwiftEventBus.onMainThread(self, name: "favComments") { result in
             
-            let favComments = result.object
+            let favComments = result.object as! [String]
             print(favComments)
+            
+            label.text = favComments[0]
             
         }
         
@@ -150,8 +161,9 @@ class userFavorites {
         
         SwiftEventBus.onMainThread(self, name: "favProfileName") { result in
             
-            let favProfileName = result.object
+            let favProfileName = result.object as! [String]
             print(favProfileName)
+            label.text = favProfileName[0]
             
         }
         
@@ -163,7 +175,7 @@ class userFavorites {
         
         SwiftEventBus.onMainThread(self, name: "favAddress") { result in
             
-            let address = result.object
+            let address = result.object as! [String]
             print(address)
             //button.setTitle(address, forState: UIControlState.Normal)
             
@@ -178,7 +190,7 @@ class userFavorites {
         
         SwiftEventBus.onMainThread(self, name: "favVideo") { result in
             
-            let video = result.object
+            let video = result.object as! [String]
             print(video)
             //let URL = NSURL(string: video)!
             
