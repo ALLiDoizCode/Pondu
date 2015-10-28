@@ -12,9 +12,10 @@ import Parse
 
 class ParseParties {
     
-    func postQuery(){
+    func postQuery(favId:[String]?){
         
         var eventPost:[String] = []
+        var favPost:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -27,16 +28,38 @@ class ParseParties {
                 // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
+                        //print(name)
                         
-                        if let post = object.objectForKey("Posts") as! String! {
+                        if let post = object.objectForKey("Post") as! String! {
                             
-                            eventPost.append(post)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(post)")
+                                            print("recived fav post")
+                                            favPost.append(post)
+                                            print("successfully recived \(favPost.count) fav post")
+                                            print("sending fav post")
+                                            SwiftEventBus.post("partyFavoritesList", sender: favPost)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventPost.append(post)
+                                
+                                SwiftEventBus.post("PartyEvent", sender: eventPost)
+                            }
                         }
-                       
+                        
                     }
-                    
-                    SwiftEventBus.post("MainWallParties", sender: eventPost)
-                    
                 }
             } else {
                 // Log details of the failure
@@ -45,9 +68,10 @@ class ParseParties {
         }
     }
     
-    func ImageQuery(){
+    func ImageQuery(favId:[String]?){
         
         var eventProfileImage:[String] = []
+        var favProfileImage:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -61,14 +85,56 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
+                        
+                        //let profileImage:PFFile!
+                        
                         if let profileImage = object.objectForKey("ProfilePicture") as! PFFile! {
                             
-                            eventProfileImage.append(profileImage.url!)
+                            if let favID = favId {
+                                
+                                print("favID not nil")
+                                print(favID.count)
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(profileImage.url)")
+                                            
+                                            print("recived fav Image")
+                                            
+                                            if let favImage:PFFile! = profileImage {
+                                                
+                                                favProfileImage.append(favImage.url!)
+                                                print("successfully recived \(favProfileImage.count) fav Image")
+                                            }
+                                            
+                                            print("sending fav image")
+                                            print(favProfileImage.count)
+                                            SwiftEventBus.post("partyfavImage", sender: favProfileImage)
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                eventProfileImage.append(profileImage.url!)
+                                
+                                SwiftEventBus.post("PartiesImage", sender: eventProfileImage)
+                            }
+                            
+                            
+                            
                         }
+                        
                         
                     }
                     
-                    SwiftEventBus.post("PartiesImage", sender: eventProfileImage)
                     
                 }
             } else {
@@ -80,9 +146,10 @@ class ParseParties {
         
     }
     
-    func ThumbQuery(){
+    func ThumbQuery(favId:[String]?){
         
         var eventThumbImage:[String] = []
+        var favThumbImage:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -98,13 +165,47 @@ class ParseParties {
                         
                         if let ThumbImage = object.objectForKey("Mainthumb") as! PFFile! {
                             
-                            eventThumbImage.append(ThumbImage.url!)
+                            if let favID = favId {
+                                
+                                print("favID not nil")
+                                print(favID.count)
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(ThumbImage.url)")
+                                            
+                                            print("recived fav ThumbImage")
+                                            
+                                            if let favImage:PFFile! = ThumbImage {
+                                                
+                                                favThumbImage.append(favImage.url!)
+                                                print("successfully recived \(favThumbImage.count) fav ThumbImage")
+                                            }
+                                            
+                                            print("sending fav image")
+                                            print(favThumbImage.count)
+                                            SwiftEventBus.post("partyfavThumbImage", sender: favThumbImage)
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                eventThumbImage.append(ThumbImage.url!)
+                                
+                                SwiftEventBus.post("PartiesThumbImage", sender: eventThumbImage)
+                            }
+                            
                         }
                         
-                        
                     }
-                    
-                    SwiftEventBus.post("PartiesThumbImage", sender: eventThumbImage)
                     
                 }
             } else {
@@ -116,9 +217,10 @@ class ParseParties {
         
     }
     
-    func likesQuery(){
+    func likesQuery(favId:[String]?){
         
         var eventLikes:[String] = []
+        var favLikes:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -134,12 +236,36 @@ class ParseParties {
                         
                         if let Likes = object.objectForKey("Likes") as! String! {
                             
-                            eventLikes.append(Likes)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(Likes)")
+                                            print("recived fav Likes")
+                                            favLikes.append(Likes)
+                                            print("successfully recived \(favLikes.count) fav Likes")
+                                            print("sending fav Likes")
+                                            SwiftEventBus.post("partyfavLikes", sender: favLikes)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventLikes.append(Likes)
+                                
+                                SwiftEventBus.post("PartiesLikes", sender: eventLikes)
+                            }
+                            
+                            
                         }
                         
                     }
-                    
-                    SwiftEventBus.post("PartiesLikes", sender: eventLikes)
                     
                 }
             } else {
@@ -149,9 +275,10 @@ class ParseParties {
         }
     }
     
-    func commentsQuery(){
+    func commentsQuery(favId:[String]?){
         
-        var eventComments:[String] = []
+        var eventComments = []
+        var favComments = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -165,14 +292,37 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        if let Comments = object.objectForKey("Comments") as! String!{
+                        if let Comments = object.objectForKey("Comments") as! NSArray! {
                             
-                            eventComments.append(Comments)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(Comments)")
+                                            print("recived fav Comments")
+                                            favComments = Comments
+                                            print("successfully recived \(favComments.count) fav Comments")
+                                            print("sending fav Comments")
+                                            SwiftEventBus.post("partyfavComments", sender: favComments)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventComments = Comments
+                                
+                                SwiftEventBus.post("PartiesComments", sender: eventComments)
+                            }
+                            
                         }
                         
                     }
-                    
-                    SwiftEventBus.post("PartiesComments", sender: eventComments)
                     
                 }
             } else {
@@ -183,9 +333,10 @@ class ParseParties {
         
     }
     
-    func profileNameQuery(){
+    func profileNameQuery(favId:[String]?){
         
         var eventprofileName:[String] = []
+        var favProfileName:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -199,14 +350,38 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        if let profileName = object.objectForKey("Name") as! String!{
+                        if let profileName = object.objectForKey("Name") as! String! {
                             
-                            eventprofileName.append(profileName)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(profileName)")
+                                            print("recived fav profileName")
+                                            favProfileName.append(profileName)
+                                            print("successfully recived \(favProfileName.count) fav profileName")
+                                            print("sending fav profileName")
+                                            SwiftEventBus.post("partyfavProfileName", sender: favProfileName)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventprofileName.append(profileName)
+                                
+                                SwiftEventBus.post("PartiesProfileName", sender: eventprofileName)
+                            }
+                            
                         }
                         
                     }
                     
-                    SwiftEventBus.post("PartiesProfileName", sender: eventprofileName)
                     
                 }
             } else {
@@ -216,9 +391,10 @@ class ParseParties {
         }
     }
     
-    func eventAddressQuery(){
+    func eventAddressQuery(favId:[String]?){
         
         var address:[String] = []
+        var favAddress:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -232,14 +408,38 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        if let profileName = object.objectForKey("Location") as! String!{
+                        if let theAddress = object.objectForKey("Location") as! String! {
                             
-                            address.append(profileName)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(theAddress)")
+                                            print("recived fav address")
+                                            favAddress.append(theAddress)
+                                            print("successfully recived \(favAddress.count) fav address")
+                                            print("sending fav address")
+                                            SwiftEventBus.post("partyfavAddress", sender: favAddress)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                address.append(theAddress)
+                                
+                                SwiftEventBus.post("PartiesAddress", sender: address)
+                            }
+                            
                         }
                         
+                        
                     }
-                    
-                    SwiftEventBus.post("PartiesAddress", sender: address)
                     
                 }
             } else {
@@ -250,9 +450,10 @@ class ParseParties {
         
     }
     
-    func videoQuery(){
+    func videoQuery(favId:[String]?){
         
         var eventVideo:[String] = []
+        var favVideo:[String] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -266,16 +467,50 @@ class ParseParties {
                 if let objects = objects {
                     for object in objects {
                         
-                        if let video = object.objectForKey("Video") as! PFFile!{
+                        if let video = object.objectForKey("Video") as! PFFile! {
                             
-                            eventVideo.append(video.url!)
+                            if let favID = favId {
+                                
+                                print("favID not nil")
+                                print(favID.count)
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(video.url)")
+                                            
+                                            print("recived fav video")
+                                            
+                                            if let theVideo:PFFile! = video {
+                                                
+                                                favVideo.append(theVideo.url!)
+                                                print("successfully recived \(favVideo.count) fav video")
+                                            }
+                                            
+                                            print("sending fav video")
+                                            print(favVideo.count)
+                                            SwiftEventBus.post("partyfavVideo", sender: favVideo)
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                eventVideo.append(video.url!)
+                                
+                                SwiftEventBus.post("PartiesVideo", sender: eventVideo)
+                            }
+                            
                         }
                         
                         
-                       
                     }
-                    
-                    SwiftEventBus.post("PartiesVideo", sender: eventVideo)
                     
                 }
             } else {

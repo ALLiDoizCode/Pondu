@@ -475,8 +475,6 @@ class ParseMainWall {
                         
                     }
                     
-                    SwiftEventBus.post("MainWallAddress", sender: address)
-                    
                 }
             } else {
                 // Log details of the failure

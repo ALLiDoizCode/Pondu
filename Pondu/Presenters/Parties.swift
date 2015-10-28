@@ -14,20 +14,21 @@ import Kingfisher
 class PartiesMainWall {
     
     let Parties = ParseParties()
+    let nilArray:[String]! = nil
     
     func partiesPost(label: UILabel){
         
-        SwiftEventBus.onMainThread(self, name: "MainWallParties") { result in
+        SwiftEventBus.onMainThread(self, name: "PartyEvent") { result in
             
             
             let post = result.object
             print(post)
             
-            
+            SwiftEventBus.unregister(self, name: "PartyEvent")
             
         }
         
-        Parties.postQuery()
+        Parties.postQuery(nilArray)
         
     }
     
@@ -40,10 +41,10 @@ class PartiesMainWall {
             print(partiesImage)
             
             //imageView.kf_setImageWithURL(NSURL(string: partiesImage)!)
-            
+            SwiftEventBus.unregister(self, name: "PartiesImage")
         }
         
-        Parties.ImageQuery()
+        Parties.ImageQuery(nilArray)
     }
     
     func partiesThumb(imageView:UIImageView){
@@ -54,10 +55,10 @@ class PartiesMainWall {
             print(thumbImage)
             
             //imageView.kf_setImageWithURL(NSURL(string: thumbImage)!)
-            
+            SwiftEventBus.unregister(self, name: "PartiesThumbImage")
         }
         
-        Parties.ThumbQuery()
+        Parties.ThumbQuery(nilArray)
     }
     
     func eventTime(){
@@ -71,10 +72,10 @@ class PartiesMainWall {
             
            let partieslikes = result.object
             print(partieslikes)
-            
+            SwiftEventBus.unregister(self, name: "PartiesLikes")
     }
         
-        Parties.likesQuery()
+        Parties.likesQuery(nilArray)
         
     }
     
@@ -84,10 +85,10 @@ class PartiesMainWall {
             
             let partiesComments = result.object
             print(partiesComments)
-            
+            SwiftEventBus.unregister(self, name: "PartiesComments")
     }
         
-        Parties.commentsQuery()
+        Parties.commentsQuery(nilArray)
         
     }
     
@@ -97,11 +98,11 @@ class PartiesMainWall {
             
            let partiesprofileName = result.object!
             print(partiesprofileName)
-            
+            SwiftEventBus.unregister(self, name: "PartiesProfileName")
             
         }
         
-        Parties.profileNameQuery()
+        Parties.profileNameQuery(nilArray)
         
     }
     
@@ -112,10 +113,10 @@ class PartiesMainWall {
             let address = result.object
             print(address)
             //button.setTitle(address, forState: UIControlState.Normal)
-            
+            SwiftEventBus.unregister(self, name: "PartiesAddress")
         }
         
-        Parties.eventAddressQuery()
+        Parties.eventAddressQuery(nilArray)
         
     }
     
@@ -129,10 +130,10 @@ class PartiesMainWall {
             //let URL = NSURL(string: video)!
             
             //print(URL)
-            
+            SwiftEventBus.unregister(self, name: "PartiesVideo")
         }
         
-        Parties.videoQuery()
+        Parties.videoQuery(nilArray)
         
     }
 }
