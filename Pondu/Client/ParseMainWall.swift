@@ -68,33 +68,32 @@ class ParseMainWall {
                                         
                                         if let favID = favId {
                                             
-                                            for var i = 0; i<favID.count; i++ {
+                                            for var i = 0; i<objects.count; i++ {
+                                                
+                                                if i < favID.count {
                                                 
                                                 if object.objectId == favID[i] {
-                                                
-                                                    
+                                        
                                                     print("queryID \(post)")
-                                                   
-                                                print("recived fav post")
-                                                favPost.append(post)
-                                                 print("successfully recived \(favPost.count) fav post")
+                                                    print("recived fav post")
+                                                    favPost.append(post)
+                                                    print("successfully recived \(favPost.count) fav post")
+                                                    print("sending fav post")
+                                                    SwiftEventBus.post("FavoritesList", sender: favPost)
                                                 
+                                                    }
                                                 }
-                                            }
-                                            print("sending fav post")
-                                            SwiftEventBus.post("FavoritesList", sender: favPost)
                                             
+                                            }
                                         }else{
                                             
                                             eventPost.append(post)
                                             
                                             SwiftEventBus.post("MainWallEvent", sender: eventPost)
-                                        }
-                                    
+                                    }
                                 }
                                 
                             }
-                            
                         }
                     } else {
                         // Log details of the failure

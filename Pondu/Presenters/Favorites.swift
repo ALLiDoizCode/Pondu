@@ -44,14 +44,14 @@ class userFavorites {
                 
                 print("recieved fav id")
                 print("sending fav id")
-                //self.mainWall.postQuery(fav)
+                self.mainWall.postQuery(fav)
                 self.mainWall.ImageQuery(fav)
-                //self.mainWall.ThumbQuery(fav)
-                //self.mainWall.likesQuery(fav)
-                //self.mainWall.commentsQuery(fav)
-                //self.mainWall.profileNameQuery(fav)
-                //self.mainWall.eventAddressQuery(fav)
-                //self.mainWall.videoQuery(fav)
+                self.mainWall.ThumbQuery(fav)
+                self.mainWall.likesQuery(fav)
+                self.mainWall.commentsQuery(fav)
+                self.mainWall.profileNameQuery(fav)
+                self.mainWall.eventAddressQuery(fav)
+                self.mainWall.videoQuery(fav)
                 
                 SwiftEventBus.unregister(self, name: "GetFavorites")
             }
