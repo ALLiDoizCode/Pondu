@@ -183,6 +183,7 @@ class ParseMainWall {
     func ThumbQuery(favId:[String]?){
         
         var eventThumbImage:[String] = []
+        var favThumbImage:[String] = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -198,12 +199,47 @@ class ParseMainWall {
                         
                         if let ThumbImage = object.objectForKey("Mainthumb") as! PFFile! {
                             
-                            eventThumbImage.append(ThumbImage.url!)
+                            if let favID = favId {
+                                
+                                print("favID not nil")
+                                print(favID.count)
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(ThumbImage.url)")
+                                            
+                                            print("recived fav ThumbImage")
+                                            
+                                            if let favImage:PFFile! = ThumbImage {
+                                                
+                                                favThumbImage.append(favImage.url!)
+                                                print("successfully recived \(favThumbImage.count) fav ThumbImage")
+                                            }
+                                            
+                                            print("sending fav image")
+                                            print(favThumbImage.count)
+                                            SwiftEventBus.post("favThumbImage", sender: favThumbImage)
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                eventThumbImage.append(ThumbImage.url!)
+                                
+                                 SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
+                            }
+                            
                         }
                         
                     }
-                    
-                    SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
                     
                 }
             } else {
@@ -218,6 +254,7 @@ class ParseMainWall {
     func likesQuery(favId:[String]?){
         
         var eventLikes:[String] = []
+        var favLikes:[String] = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -233,12 +270,36 @@ class ParseMainWall {
                         
                         if let Likes = object.objectForKey("Likes") as! String! {
                             
-                            eventLikes.append(Likes)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(Likes)")
+                                            print("recived fav Likes")
+                                            favLikes.append(Likes)
+                                            print("successfully recived \(favLikes.count) fav Likes")
+                                            print("sending fav Likes")
+                                            SwiftEventBus.post("favLikes", sender: favLikes)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventLikes.append(Likes)
+                                
+                                SwiftEventBus.post("MainWallLikes", sender: eventLikes)
+                            }
+                            
+                            
                         }
                         
                     }
-                    
-                    SwiftEventBus.post("MainWallLikes", sender: eventLikes)
                     
                 }
             } else {
@@ -251,6 +312,7 @@ class ParseMainWall {
     func commentsQuery(favId:[String]?){
         
         var eventComments = []
+        var favComments = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -266,12 +328,35 @@ class ParseMainWall {
                         
                         if let Comments = object.objectForKey("Comments") as! NSArray! {
                             
-                            eventComments = Comments
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(Comments)")
+                                            print("recived fav Comments")
+                                            favComments = Comments
+                                            print("successfully recived \(favComments.count) fav Comments")
+                                            print("sending fav Comments")
+                                            SwiftEventBus.post("favComments", sender: favComments)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventComments = Comments
+                                
+                                SwiftEventBus.post("MainWallComments", sender: eventComments)
+                            }
+                            
                         }
                       
                     }
-                    
-                    SwiftEventBus.post("MainWallComments", sender: eventComments)
                     
                 }
             } else {
@@ -285,6 +370,7 @@ class ParseMainWall {
     func profileNameQuery(favId:[String]?){
         
         var eventprofileName:[String] = []
+        var favProfileName:[String] = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -300,13 +386,36 @@ class ParseMainWall {
                         
                         if let profileName = object.objectForKey("Name") as! String! {
                             
-                            eventprofileName.append(profileName)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(profileName)")
+                                            print("recived fav profileName")
+                                            favProfileName.append(profileName)
+                                            print("successfully recived \(favProfileName.count) fav profileName")
+                                            print("sending fav profileName")
+                                            SwiftEventBus.post("favProfileName", sender: favProfileName)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                eventprofileName.append(profileName)
+                                
+                                SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
+                            }
                             
                         }
                         
                     }
                     
-                    SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
                     
                 }
             } else {
@@ -319,6 +428,7 @@ class ParseMainWall {
     func eventAddressQuery(favId:[String]?){
         
         var address:[String] = []
+        var favAddress:[String] = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -332,9 +442,34 @@ class ParseMainWall {
                 if let objects = objects {
                     for object in objects {
                         
-                        if let profileName = object.objectForKey("Location") as! String! {
+                        if let theAddress = object.objectForKey("Location") as! String! {
                             
-                            address.append(profileName)
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(theAddress)")
+                                            print("recived fav address")
+                                            favAddress.append(theAddress)
+                                            print("successfully recived \(favAddress.count) fav address")
+                                            print("sending fav address")
+                                            SwiftEventBus.post("favAddress", sender: favAddress)
+                                            
+                                        }
+                                    }
+                                    
+                                }
+                            }else{
+                                
+                                address.append(theAddress)
+                                
+                                SwiftEventBus.post("MainWallAddress", sender: address)
+                            }
+    
                         }
       
                         
@@ -354,6 +489,7 @@ class ParseMainWall {
     func videoQuery(favId:[String]?){
         
         var eventVideo:[String] = []
+        var favVideo:[String] = []
         
         let query = PFQuery(className:"MainWall")
         query.findObjectsInBackgroundWithBlock {
@@ -369,14 +505,48 @@ class ParseMainWall {
                         
                         if let video = object.objectForKey("Video") as! PFFile! {
                             
-                             eventVideo.append(video.url!)
+                            if let favID = favId {
+                                
+                                print("favID not nil")
+                                print(favID.count)
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(video.url)")
+                                            
+                                            print("recived fav video")
+                                            
+                                            if let theVideo:PFFile! = video {
+                                                
+                                                favVideo.append(theVideo.url!)
+                                                print("successfully recived \(favVideo.count) fav video")
+                                            }
+                                            
+                                            print("sending fav video")
+                                            print(favVideo.count)
+                                            SwiftEventBus.post("favVideo", sender: favVideo)
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                eventVideo.append(video.url!)
+                                
+                                SwiftEventBus.post("MainWallVideo", sender: eventVideo)
+                            }
                             
                         }
-                           
+                        
                        
                     }
-                    
-                    SwiftEventBus.post("MainWallVideo", sender: eventVideo)
                     
                 }
             } else {
