@@ -28,6 +28,22 @@ class Favorite {
         
     }
     
+    func userPartyFavorite(objectID:String){
+        
+        
+        let currentUser = PFUser.currentUser()
+        
+        if currentUser != nil {
+            
+            currentUser!.addObject(objectID, forKey: "partyFavorites")
+            
+        } else {
+            
+            
+        }
+        
+    }
+    
     func favoriteList(){
         
         print("fav list fired")
