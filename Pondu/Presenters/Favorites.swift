@@ -44,14 +44,14 @@ class userFavorites {
                 
                 print("recieved fav id")
                 print("sending fav id")
-                self.mainWall.postQuery(fav)
+                //self.mainWall.postQuery(fav)
                 self.mainWall.ImageQuery(fav)
-                self.mainWall.ThumbQuery(fav)
-                self.mainWall.likesQuery(fav)
-                self.mainWall.commentsQuery(fav)
-                self.mainWall.profileNameQuery(fav)
-                self.mainWall.eventAddressQuery(fav)
-                self.mainWall.videoQuery(fav)
+                //self.mainWall.ThumbQuery(fav)
+                //self.mainWall.likesQuery(fav)
+                //self.mainWall.commentsQuery(fav)
+                //self.mainWall.profileNameQuery(fav)
+                //self.mainWall.eventAddressQuery(fav)
+                //self.mainWall.videoQuery(fav)
                 
                 SwiftEventBus.unregister(self, name: "GetFavorites")
             }
@@ -92,10 +92,10 @@ class userFavorites {
         SwiftEventBus.onMainThread(self, name: "favImage") { result in
             
             let favImage = result.object as! [String]
-            print(favImage)
+            print("do something with favImage data")
             
-            //imageView.kf_setImageWithURL(NSURL(string: favImage)!)
-            
+            imageView.kf_setImageWithURL(NSURL(string: favImage[0])!)
+            SwiftEventBus.unregister(self, name: "favImage")
         }
         
         

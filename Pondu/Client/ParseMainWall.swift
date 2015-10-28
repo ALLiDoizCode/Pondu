@@ -127,21 +127,34 @@ class ParseMainWall {
                                     
                                     if let favID = favId {
                                         
-                                        for var i = 0; i<favID.count; i++ {
+                                        print("favID not nil")
+                                        print(favID.count)
+                                        
+                                        for var i = 0; i<objects.count; i++ {
                                             
-                                            if object.objectId == favID[i] {
+                                            if i < favID.count {
                                                 
+                                                if object.objectId == favID[i] {
+                                                    
+                                                    print("queryID \(profileImage.url)")
+                                                    
+                                                    print("recived fav Image")
+                                                    
+                                                    if let favImage:PFFile! = profileImage {
+                                                        
+                                                        favProfileImage.append(favImage.url!)
+                                                        print("successfully recived \(favProfileImage.count) fav Image")
+                                                    }
+                                                    
+                                                    print("sending fav image")
+                                                    print(favProfileImage.count)
+                                                    SwiftEventBus.post("favImage", sender: favProfileImage)
+                                                }
                                                 
-                                                print("queryID \(profileImage.url)")
-                                                
-                                                print("recived fav Image")
-                                                favProfileImage.append(profileImage.url!)
-                                                print("successfully recived \(favProfileImage.count) fav Image")
                                                 
                                             }
+                                
                                         }
-                                        print("sending fav image")
-                                       SwiftEventBus.post("favImage", sender: favProfileImage)
                                         
                                     }else{
                                         
