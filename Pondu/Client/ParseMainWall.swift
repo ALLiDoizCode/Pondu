@@ -70,7 +70,7 @@ class ParseMainWall {
                                             
                                             for var i = 0; i<objects.count; i++ {
                                                 
-                                                if i < favID.count {
+                                                if i < favID.count || i == favID.count {
                                                 
                                                 if object.objectId == favID[i] {
                                         
@@ -79,21 +79,33 @@ class ParseMainWall {
                                                     favPost.append(post)
                                                     print("successfully recived \(favPost.count) fav post")
                                                     print("sending fav post")
-                                                    SwiftEventBus.post("FavoritesList", sender: favPost)
+                                                    
+                                            
                                                 
                                                     }
+                                                    
                                                 }
                                             
                                             }
+                                            
                                         }else{
                                             
                                             eventPost.append(post)
                                             
-                                            SwiftEventBus.post("MainWallEvent", sender: eventPost)
+                                           
                                     }
+   
                                 }
                                 
                             }
+                            
+                            if favId != nil {
+                                print("fav count \(favPost.count)")
+                                SwiftEventBus.post("FavoritesList", sender: favPost )
+                            }else {
+                                SwiftEventBus.post("MainWallEvent", sender: eventPost)
+                            }
+                            
                         }
                     } else {
                         // Log details of the failure

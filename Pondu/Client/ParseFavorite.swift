@@ -61,7 +61,7 @@ class Favorite {
             
         }*/
         
-        let fav = ["RO79eVGFgX"]
+        let fav = ["LoFVItdb2n","RO79eVGFgX"]
         
         print("sending fav id")
         

@@ -7,17 +7,13 @@
 //
 
 import UIKit
+import SwiftEventBus
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var testLabel: UILabel!
-    @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var eventLikes: UILabel!
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
     let user = users()
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var commetns: UILabel!
     let newAccount = SignUP()
     let userLogin = startLogin()
     let favorite = userFavorites()
@@ -44,13 +40,14 @@ class ViewController: UIViewController {
         
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        favorite.getFavorite(testLabel, icon: eventImage, likes: eventLikes, comments: commetns, name: name)
+        favorite.getFavorite()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         
     }
 
@@ -59,7 +56,31 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 2
+    }
     
+  
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell:MainCell = tableView.dequeueReusableCellWithIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
+        
+        SwiftEventBus.onMainThread(self, name: "updateCellPost") { notification in
+            //self.textField.text = "\(self.count)"
+            
+            print("passing data\(notification.object)")
+            
+            let array:[String] = notification.object as! [String]
+            
+            print(array.count)
+            
+            cell.post.text = notification.object![indexPath.row] as? String
+        }
+        
+        return cell
+    }
     
 
 }

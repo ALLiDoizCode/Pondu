@@ -31,7 +31,7 @@ class userFavorites {
     }
     
     
-    func getFavorite(postlabel:UILabel,icon:UIImageView,likes:UILabel,comments:UILabel,name:UILabel){
+    func getFavorite(){
         
         print("waiting for fav ids")
         
@@ -45,26 +45,26 @@ class userFavorites {
                 print("recieved fav id")
                 print("sending fav id")
                 self.mainWall.postQuery(fav)
-                self.mainWall.ImageQuery(fav)
-                self.mainWall.ThumbQuery(fav)
-                self.mainWall.likesQuery(fav)
-                self.mainWall.commentsQuery(fav)
-                self.mainWall.profileNameQuery(fav)
-                self.mainWall.eventAddressQuery(fav)
-                self.mainWall.videoQuery(fav)
+                //self.mainWall.ImageQuery(fav)
+                //self.mainWall.ThumbQuery(fav)
+                //self.mainWall.likesQuery(fav)
+                //self.mainWall.commentsQuery(fav)
+                //self.mainWall.profileNameQuery(fav)
+                //self.mainWall.eventAddressQuery(fav)
+                //self.mainWall.videoQuery(fav)
                 
                 SwiftEventBus.unregister(self, name: "GetFavorites")
             }
            
         }
         
-        favPost(postlabel)
-        favIcon(icon)
-        //favAddress(<#T##button: UIButton##UIButton#>)
-        favCL(likes)
-        favCM(comments)
-        favprofileName(name)
-        //favThumb(<#T##imageView: UIImageView##UIImageView#>)
+        favPost()
+        //favIcon()
+        //favAddress()
+        //favCL()
+        //favCM()
+        //favprofileName()
+        //favThumb()
         //favTime()
         //favVideo()
         
@@ -74,19 +74,21 @@ class userFavorites {
     
     
     
-    func favPost(label:UILabel){
+    func favPost(){
         
         //gets list of favorites
-        SwiftEventBus.onMainThread(self, name: "FavoritesList") { result in
+        SwiftEventBus.onBackgroundThread(self, name: "FavoritesList") { result in
             
-            if let favList = result.object as! [String]!{
+            if let favList = result.object{
                 
                 print("recieved fav post")
-                print("favList \(favList[0])")
+                print("favList \(favList)")
                 print("do something with post data")
-                label.text = favList[0]
+                //label.text = favList[0]
                 
-                SwiftEventBus.unregister(self, name: "FavoritesList")
+                SwiftEventBus.postToMainThread("updateCellPost", sender: favList)
+                
+                //SwiftEventBus.unregister(self, name: "FavoritesList")
             }
             
         }
@@ -94,21 +96,21 @@ class userFavorites {
     }
 
     
-    func favIcon(imageView:UIImageView){
+    func favIcon(){
         
         SwiftEventBus.onMainThread(self, name: "favImage") { result in
             
             let favImage = result.object as! [String]
             print("do something with favImage data")
             
-            imageView.kf_setImageWithURL(NSURL(string: favImage[0])!)
+            //imageView.kf_setImageWithURL(NSURL(string: favImage[0])!)
             SwiftEventBus.unregister(self, name: "favImage")
         }
         
         
     }
     
-    func favThumb(imageView:UIImageView){
+    func favThumb(){
         
         SwiftEventBus.onMainThread(self, name: "favThumbImage") { result in
             
@@ -127,14 +129,12 @@ class userFavorites {
         
     }
     
-    func favCL(label:UILabel){
+    func favCL(){
         
         SwiftEventBus.onMainThread(self, name: "favLikes") { result in
             
             let favlikes = result.object as! [String]
             print(favlikes)
-            
-            label.text = favlikes[0]
             SwiftEventBus.unregister(self, name: "favLikes")
         }
         
@@ -142,14 +142,12 @@ class userFavorites {
         
     }
     
-    func favCM(label:UILabel){
+    func favCM(){
         
         SwiftEventBus.onMainThread(self, name: "favComments") { result in
             
             let favComments = result.object as! [String]
             print(favComments)
-            
-            label.text = favComments[0]
             SwiftEventBus.unregister(self, name: "favComments")
         }
         
@@ -157,13 +155,12 @@ class userFavorites {
         
     }
     
-    func favprofileName(label:UILabel){
+    func favprofileName(){
         
         SwiftEventBus.onMainThread(self, name: "favProfileName") { result in
             
             let favProfileName = result.object as! [String]
             print(favProfileName)
-            label.text = favProfileName[0]
             SwiftEventBus.unregister(self, name: "favProfileName")
         }
         
@@ -171,7 +168,7 @@ class userFavorites {
         
     }
     
-    func favAddress(button:UIButton){
+    func favAddress(){
         
         SwiftEventBus.onMainThread(self, name: "favAddress") { result in
             

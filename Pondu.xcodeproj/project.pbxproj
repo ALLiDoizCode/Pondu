@@ -16,6 +16,7 @@
 		4D01DB801BDD639100B30C0D /* PonduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB7F1BDD639100B30C0D /* PonduTests.swift */; };
 		4D01DB8B1BDD639100B30C0D /* PonduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
+		4D7C0CA21BE08B8300CCB2DE /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0CA11BE08B8300CCB2DE /* MainCell.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
 		4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */; };
 		4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EED1BDEC254006055E9 /* SignUp.swift */; };
@@ -64,6 +65,7 @@
 		4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PonduUITests.swift; sourceTree = "<group>"; };
 		4D01DB8C1BDD639100B30C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
+		4D7C0CA11BE08B8300CCB2DE /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4DD174A01BDD8C6600B64E0B /* MainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWall.swift; sourceTree = "<group>"; };
 		4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseMainWall.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		4D01DB691BDD639100B30C0D /* Pondu */ = {
 			isa = PBXGroup;
 			children = (
+				4D7C0CA01BE08B6400CCB2DE /* UI */,
 				4DD1749E1BDD794E00B64E0B /* Client */,
 				4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */,
 				4D01DB6C1BDD639100B30C0D /* ViewController.swift */,
@@ -172,6 +175,14 @@
 				4D01DB8C1BDD639100B30C0D /* Info.plist */,
 			);
 			path = PonduUITests;
+			sourceTree = "<group>";
+		};
+		4D7C0CA01BE08B6400CCB2DE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4D7C0CA11BE08B8300CCB2DE /* MainCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		4DD1749D1BDD793F00B64E0B /* Presenters */ = {
@@ -403,6 +414,7 @@
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
+				4D7C0CA21BE08B8300CCB2DE /* MainCell.swift in Sources */,
 				4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */,
 				4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */,
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
