@@ -60,7 +60,7 @@ class PresentMainWall {
     }
     
     
-    func eventIcon(imageView:UIImageView){
+    func eventIcon(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallImage") { result in
             
@@ -74,7 +74,7 @@ class PresentMainWall {
         mainWall.ImageQuery(nilArray)
     }
     
-    func eventThumb(imageView:UIImageView){
+    func eventThumb(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallThumbImage") { result in
             
@@ -93,7 +93,7 @@ class PresentMainWall {
         
     }
     
-    func eventCL(label:UILabel){
+    func eventCL(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallLikes") { result in
             
@@ -106,7 +106,7 @@ class PresentMainWall {
         
     }
     
-    func eventCM(label:UILabel){
+    func eventCM(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallComments") { result in
             
@@ -119,7 +119,7 @@ class PresentMainWall {
         
     }
     
-    func profileName(label:UILabel){
+    func profileName(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallProfileName") { result in
             
@@ -132,7 +132,7 @@ class PresentMainWall {
         
     }
     
-    func eventAddress(button:UIButton){
+    func eventAddress(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallAddress") { result in
             
