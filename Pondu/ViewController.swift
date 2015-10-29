@@ -18,7 +18,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let userLogin = startLogin()
     let favorite = userFavorites()
     let eventID:[String] = []
-
+    var count:Int = 0
+    var array:[String] = []
+    
+    @IBOutlet weak var tablview: UITableView!
+    
     override func viewWillAppear(animated: Bool) {
         
         //mainWall.eventPost(testLabel)
@@ -40,15 +44,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        favorite.getFavorite()
+        //getArrayCount()
         
+        favorite.getFavorite()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        getArrayCount()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,7 +64,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 2
+        return array.count
     }
     
   
@@ -67,21 +73,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let cell:MainCell = tableView.dequeueReusableCellWithIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
+        cell.post.text = array[indexPath.row]
+        
+        return cell
+    }
+    
+    func getArrayCount(){
+        
         SwiftEventBus.onMainThread(self, name: "updateCellPost") { notification in
             //self.textField.text = "\(self.count)"
             
             print("passing data\(notification.object)")
             
-            let array:[String] = notification.object as! [String]
+            self.array = notification.object as! [String]
             
-            print(array.count)
+            print(self.array.count)
             
-            cell.post.text = notification.object![indexPath.row] as? String
+            self.tablview.reloadData()
+            
         }
-        
-        return cell
     }
-    
 
 }
 

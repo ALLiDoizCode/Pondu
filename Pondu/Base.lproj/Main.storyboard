@@ -64,6 +64,9 @@
                             <constraint firstItem="Axx-Qt-O8Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="loo-qZ-Zxp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tablview" destination="Axx-Qt-O8Q" id="YK9-Nf-mqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
