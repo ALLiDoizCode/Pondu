@@ -70,8 +70,10 @@ class ParseMainWall {
                                             
                                             for var i = 0; i<objects.count; i++ {
                                                 
-                                                if i < favID.count || i == favID.count {
+                                                if i < favID.count {
                                                 
+                                                    print("there are \(favID.count) fav ids")
+                                                    
                                                 if object.objectId == favID[i] {
                                         
                                                     print("queryID \(post)")

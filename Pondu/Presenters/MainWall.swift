@@ -18,14 +18,16 @@ class PresentMainWall {
     
     let nilArray:[String]! = nil
     
-    func eventPost(label: UILabel){
+    func eventPost(){
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
-        let post = result.object
-            print("event post \(post)")
-            
-        
+            if let post = result.object as! [String]! {
+                
+                print("event post \(post)")
+                SwiftEventBus.postToMainThread("updateCell", sender: post)
+            }
+           
         }
         
         mainWall.postQuery(nilArray)

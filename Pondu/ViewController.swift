@@ -47,6 +47,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //getArrayCount()
         
         favorite.getFavorite()
+        //mainWall.eventPost()
     }
     
     override func viewDidLoad() {
@@ -80,7 +81,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func getArrayCount(){
         
-        SwiftEventBus.onMainThread(self, name: "updateCellPost") { notification in
+        SwiftEventBus.onMainThread(self, name: "updateCell") { notification in
             //self.textField.text = "\(self.count)"
             
             print("passing data\(notification.object)")
