@@ -43,9 +43,7 @@ class ParseParties {
                                             print("queryID \(post)")
                                             print("recived fav post")
                                             favPost.append(post)
-                                            print("successfully recived \(favPost.count) fav post")
-                                            print("sending fav post")
-                                            SwiftEventBus.post("partyFavoritesList", sender: favPost)
+                                           
                                             
                                         }
                                     }
@@ -55,12 +53,24 @@ class ParseParties {
                                 
                                 eventPost.append(post)
                                 
-                                SwiftEventBus.post("PartyEvent", sender: eventPost)
+                                
                             }
                         }
                         
                     }
                 }
+                
+                if favId != nil {
+                    
+                    print("successfully recived \(favPost.count) fav post")
+                    print("sending fav post")
+                    SwiftEventBus.post("partyFavoritesList", sender: favPost)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartyEvent", sender: eventPost)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -111,9 +121,7 @@ class ParseParties {
                                                 print("successfully recived \(favProfileImage.count) fav Image")
                                             }
                                             
-                                            print("sending fav image")
-                                            print(favProfileImage.count)
-                                            SwiftEventBus.post("partyfavImage", sender: favProfileImage)
+                                           
                                         }
                                         
                                         
@@ -125,7 +133,7 @@ class ParseParties {
                                 
                                 eventProfileImage.append(profileImage.url!)
                                 
-                                SwiftEventBus.post("PartiesImage", sender: eventProfileImage)
+                                
                             }
                             
                             
@@ -137,6 +145,18 @@ class ParseParties {
                     
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("sending fav image")
+                    print(favProfileImage.count)
+                    SwiftEventBus.post("partyfavImage", sender: favProfileImage)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartiesImage", sender: eventProfileImage)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -186,9 +206,7 @@ class ParseParties {
                                                 print("successfully recived \(favThumbImage.count) fav ThumbImage")
                                             }
                                             
-                                            print("sending fav image")
-                                            print(favThumbImage.count)
-                                            SwiftEventBus.post("partyfavThumbImage", sender: favThumbImage)
+                                            
                                         }
                                         
                                         
@@ -208,6 +226,18 @@ class ParseParties {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("sending fav image")
+                    print(favThumbImage.count)
+                    SwiftEventBus.post("partyfavThumbImage", sender: favThumbImage)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartiesThumbImage", sender: eventThumbImage)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -247,9 +277,7 @@ class ParseParties {
                                             print("queryID \(Likes)")
                                             print("recived fav Likes")
                                             favLikes.append(Likes)
-                                            print("successfully recived \(favLikes.count) fav Likes")
-                                            print("sending fav Likes")
-                                            SwiftEventBus.post("partyfavLikes", sender: favLikes)
+                                            
                                             
                                         }
                                     }
@@ -259,7 +287,7 @@ class ParseParties {
                                 
                                 eventLikes.append(Likes)
                                 
-                                SwiftEventBus.post("PartiesLikes", sender: eventLikes)
+                                
                             }
                             
                             
@@ -268,6 +296,18 @@ class ParseParties {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favLikes.count) fav Likes")
+                    print("sending fav Likes")
+                    SwiftEventBus.post("partyfavLikes", sender: favLikes)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartiesLikes", sender: eventLikes)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -305,9 +345,7 @@ class ParseParties {
                                             print("queryID \(Comments)")
                                             print("recived fav Comments")
                                             favComments = Comments
-                                            print("successfully recived \(favComments.count) fav Comments")
-                                            print("sending fav Comments")
-                                            SwiftEventBus.post("partyfavComments", sender: favComments)
+                                           
                                             
                                         }
                                     }
@@ -317,7 +355,7 @@ class ParseParties {
                                 
                                 eventComments = Comments
                                 
-                                SwiftEventBus.post("PartiesComments", sender: eventComments)
+                                
                             }
                             
                         }
@@ -325,6 +363,17 @@ class ParseParties {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favComments.count) fav Comments")
+                    print("sending fav Comments")
+                    SwiftEventBus.post("partyfavComments", sender: favComments)
+                    
+                }else{
+                    SwiftEventBus.post("PartiesComments", sender: eventComments)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -363,9 +412,7 @@ class ParseParties {
                                             print("queryID \(profileName)")
                                             print("recived fav profileName")
                                             favProfileName.append(profileName)
-                                            print("successfully recived \(favProfileName.count) fav profileName")
-                                            print("sending fav profileName")
-                                            SwiftEventBus.post("partyfavProfileName", sender: favProfileName)
+                                            
                                             
                                         }
                                     }
@@ -375,7 +422,7 @@ class ParseParties {
                                 
                                 eventprofileName.append(profileName)
                                 
-                                SwiftEventBus.post("PartiesProfileName", sender: eventprofileName)
+                                
                             }
                             
                         }
@@ -384,6 +431,18 @@ class ParseParties {
                     
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favProfileName.count) fav profileName")
+                    print("sending fav profileName")
+                    SwiftEventBus.post("partyfavProfileName", sender: favProfileName)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartiesProfileName", sender: eventprofileName)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -421,9 +480,7 @@ class ParseParties {
                                             print("queryID \(theAddress)")
                                             print("recived fav address")
                                             favAddress.append(theAddress)
-                                            print("successfully recived \(favAddress.count) fav address")
-                                            print("sending fav address")
-                                            SwiftEventBus.post("partyfavAddress", sender: favAddress)
+                                            
                                             
                                         }
                                     }
@@ -433,7 +490,7 @@ class ParseParties {
                                 
                                 address.append(theAddress)
                                 
-                                SwiftEventBus.post("PartiesAddress", sender: address)
+                                
                             }
                             
                         }
@@ -442,6 +499,18 @@ class ParseParties {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favAddress.count) fav address")
+                    print("sending fav address")
+                    SwiftEventBus.post("partyfavAddress", sender: favAddress)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartiesAddress", sender: address)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -490,9 +559,7 @@ class ParseParties {
                                                 print("successfully recived \(favVideo.count) fav video")
                                             }
                                             
-                                            print("sending fav video")
-                                            print(favVideo.count)
-                                            SwiftEventBus.post("partyfavVideo", sender: favVideo)
+                                            
                                         }
                                         
                                         
@@ -504,7 +571,7 @@ class ParseParties {
                                 
                                 eventVideo.append(video.url!)
                                 
-                                SwiftEventBus.post("PartiesVideo", sender: eventVideo)
+                                
                             }
                             
                         }
@@ -513,6 +580,18 @@ class ParseParties {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("sending fav video")
+                    print(favVideo.count)
+                    SwiftEventBus.post("partyfavVideo", sender: favVideo)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("PartiesVideo", sender: eventVideo)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
