@@ -183,6 +183,16 @@ class ParseMainWall {
                                
                             }
                             
+                            if favId != nil {
+                                
+                                print("sending fav image")
+                                print(favProfileImage.count)
+                                SwiftEventBus.post("favImage", sender: favProfileImage)
+                                
+                            }else{
+                                
+                                SwiftEventBus.post("MainWallImage", sender: eventProfileImage)
+                            }
                             
                         }
                     } else {
@@ -234,9 +244,7 @@ class ParseMainWall {
                                                 print("successfully recived \(favThumbImage.count) fav ThumbImage")
                                             }
                                             
-                                            print("sending fav image")
-                                            print(favThumbImage.count)
-                                            SwiftEventBus.post("favThumbImage", sender: favThumbImage)
+                                            
                                         }
                                         
                                         
@@ -248,11 +256,21 @@ class ParseMainWall {
                                 
                                 eventThumbImage.append(ThumbImage.url!)
                                 
-                                 SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
+                                
                             }
                             
                         }
                         
+                    }
+                    
+                    if favId != nil {
+                        
+                        print("sending fav image")
+                        print(favThumbImage.count)
+                        SwiftEventBus.post("favThumbImage", sender: favThumbImage)
+                        
+                    }else{
+                        SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
                     }
                     
                 }
@@ -295,9 +313,7 @@ class ParseMainWall {
                                             print("queryID \(Likes)")
                                             print("recived fav Likes")
                                             favLikes.append(Likes)
-                                            print("successfully recived \(favLikes.count) fav Likes")
-                                            print("sending fav Likes")
-                                            SwiftEventBus.post("favLikes", sender: favLikes)
+                                           
                                             
                                         }
                                     }
@@ -307,12 +323,23 @@ class ParseMainWall {
                                 
                                 eventLikes.append(Likes)
                                 
-                                SwiftEventBus.post("MainWallLikes", sender: eventLikes)
+                                
                             }
                             
                             
                         }
                         
+                    }
+                    
+                    if favId != nil{
+                        
+                        print("successfully recived \(favLikes.count) fav Likes")
+                        print("sending fav Likes")
+                        SwiftEventBus.post("favLikes", sender: favLikes)
+                        
+                    }else{
+                        
+                        SwiftEventBus.post("MainWallLikes", sender: eventLikes)
                     }
                     
                 }
@@ -353,9 +380,7 @@ class ParseMainWall {
                                             print("queryID \(Comments)")
                                             print("recived fav Comments")
                                             favComments = Comments
-                                            print("successfully recived \(favComments.count) fav Comments")
-                                            print("sending fav Comments")
-                                            SwiftEventBus.post("favComments", sender: favComments)
+                                            
                                             
                                         }
                                     }
@@ -365,7 +390,7 @@ class ParseMainWall {
                                 
                                 eventComments = Comments
                                 
-                                SwiftEventBus.post("MainWallComments", sender: eventComments)
+                                
                             }
                             
                         }
@@ -373,6 +398,18 @@ class ParseMainWall {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favComments.count) fav Comments")
+                    print("sending fav Comments")
+                    SwiftEventBus.post("favComments", sender: favComments)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("MainWallComments", sender: eventComments)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -411,9 +448,7 @@ class ParseMainWall {
                                             print("queryID \(profileName)")
                                             print("recived fav profileName")
                                             favProfileName.append(profileName)
-                                            print("successfully recived \(favProfileName.count) fav profileName")
-                                            print("sending fav profileName")
-                                            SwiftEventBus.post("favProfileName", sender: favProfileName)
+                                            
                                             
                                         }
                                     }
@@ -423,7 +458,7 @@ class ParseMainWall {
                                 
                                 eventprofileName.append(profileName)
                                 
-                                SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
+                                
                             }
                             
                         }
@@ -432,6 +467,18 @@ class ParseMainWall {
                     
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favProfileName.count) fav profileName")
+                    print("sending fav profileName")
+                    SwiftEventBus.post("favProfileName", sender: favProfileName)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -469,9 +516,7 @@ class ParseMainWall {
                                             print("queryID \(theAddress)")
                                             print("recived fav address")
                                             favAddress.append(theAddress)
-                                            print("successfully recived \(favAddress.count) fav address")
-                                            print("sending fav address")
-                                            SwiftEventBus.post("favAddress", sender: favAddress)
+                                            
                                             
                                         }
                                     }
@@ -481,7 +526,7 @@ class ParseMainWall {
                                 
                                 address.append(theAddress)
                                 
-                                SwiftEventBus.post("MainWallAddress", sender: address)
+                                
                             }
     
                         }
@@ -490,6 +535,18 @@ class ParseMainWall {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("successfully recived \(favAddress.count) fav address")
+                    print("sending fav address")
+                    SwiftEventBus.post("favAddress", sender: favAddress)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("MainWallAddress", sender: address)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
@@ -538,9 +595,7 @@ class ParseMainWall {
                                                 print("successfully recived \(favVideo.count) fav video")
                                             }
                                             
-                                            print("sending fav video")
-                                            print(favVideo.count)
-                                            SwiftEventBus.post("favVideo", sender: favVideo)
+                                           
                                         }
                                         
                                         
@@ -552,7 +607,7 @@ class ParseMainWall {
                                 
                                 eventVideo.append(video.url!)
                                 
-                                SwiftEventBus.post("MainWallVideo", sender: eventVideo)
+                                
                             }
                             
                         }
@@ -561,6 +616,18 @@ class ParseMainWall {
                     }
                     
                 }
+                
+                if favId != nil{
+                    
+                    print("sending fav video")
+                    print(favVideo.count)
+                    SwiftEventBus.post("favVideo", sender: favVideo)
+                    
+                }else{
+                    
+                    SwiftEventBus.post("MainWallVideo", sender: eventVideo)
+                }
+                
             } else {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
