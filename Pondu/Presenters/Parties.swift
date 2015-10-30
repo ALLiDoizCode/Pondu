@@ -16,14 +16,13 @@ class PartiesMainWall {
     let Parties = ParseParties()
     let nilArray:[String]! = nil
     
-    func partiesPost(label: UILabel){
+    func partiesPost(){
         
         SwiftEventBus.onMainThread(self, name: "PartyEvent") { result in
             
-            
-            let post = result.object
+            let post = result.object as! [String]
             print(post)
-            
+            SwiftEventBus.postToMainThread("updateCell", sender: post)
             SwiftEventBus.unregister(self, name: "PartyEvent")
             
         }
@@ -33,7 +32,7 @@ class PartiesMainWall {
     }
     
     
-    func partiesIcon(imageView:UIImageView){
+    func partiesIcon(){
         
         SwiftEventBus.onMainThread(self, name: "PartiesImage") { result in
             
@@ -47,7 +46,7 @@ class PartiesMainWall {
         Parties.ImageQuery(nilArray)
     }
     
-    func partiesThumb(imageView:UIImageView){
+    func partiesThumb(){
         
         SwiftEventBus.onMainThread(self, name: "PartiesThumbImage") { result in
             
@@ -66,7 +65,7 @@ class PartiesMainWall {
         
     }
     
-    func partiesCL(label:UILabel){
+    func partiesCL(){
         
         SwiftEventBus.onMainThread(self, name: "PartiesLikes") { result in
             
@@ -79,7 +78,7 @@ class PartiesMainWall {
         
     }
     
-    func partiesCM(label:UILabel){
+    func partiesCM(){
         
         SwiftEventBus.onMainThread(self, name: "PartiesComments") { result in
             
@@ -92,7 +91,7 @@ class PartiesMainWall {
         
     }
     
-    func partiesName(label:UILabel){
+    func partiesName(){
         
         SwiftEventBus.onMainThread(self, name: "PartiesProfileName") { result in
             
@@ -106,7 +105,7 @@ class PartiesMainWall {
         
     }
     
-    func partiesAddress(button:UIButton){
+    func partiesAddress(){
         
         SwiftEventBus.onMainThread(self, name: "PartiesAddress") { result in
             

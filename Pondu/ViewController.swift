@@ -17,6 +17,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let newAccount = SignUP()
     let userLogin = startLogin()
     let favorite = userFavorites()
+    let favParty = partyFavorites()
     let eventID:[String] = []
     var count:Int = 0
     var array:[String] = []
@@ -39,6 +40,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //user.userArea()
         //user.userPhoto()
         //Parties.partiesPost()
+        favParty.getFavorite()
         //newAccount.AccounSetup(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage)
         //userLogin.beginLogin(<#T##UserName: String##String#>, password: <#T##String#>)
         
@@ -46,7 +48,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //favorite.addFavorite(0)
         //getArrayCount()
         
-        favorite.getFavorite()
+        //favorite.getFavorite()
         //mainWall.eventPost()
     }
     

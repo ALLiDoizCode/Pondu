@@ -67,4 +67,28 @@ class Favorite {
         
         SwiftEventBus.post("GetFavorites", sender: fav)
     }
+    
+    func partyFavoriteList(){
+        
+        print("fav list fired")
+        
+        /*let currentUser = PFUser.currentUser()
+        
+        if currentUser != nil {
+        
+        let fav = currentUser!["Favorites"]
+        
+        SwiftEventBus.post("GetFavorites", sender: fav)
+        
+        } else {
+        
+        
+        }*/
+        
+        let fav = ["ccBnnB6g3Q","8wrbihD723"]
+        
+        print("sending fav id")
+        
+        SwiftEventBus.post("partyGetFavorites", sender: fav)
+    }
 }

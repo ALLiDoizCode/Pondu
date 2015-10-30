@@ -30,7 +30,7 @@ class ParseParties {
                     for object in objects {
                         //print(name)
                         
-                        if let post = object.objectForKey("Post") as! String! {
+                        if let post = object.objectForKey("Posts") as! String! {
                             
                             if let favID = favId {
                                 
@@ -43,32 +43,31 @@ class ParseParties {
                                             print("queryID \(post)")
                                             print("recived fav post")
                                             favPost.append(post)
-                                           
-                                            
                                         }
                                     }
                                     
                                 }
                             }else{
-                                
+                                print(post)
                                 eventPost.append(post)
-                                
                                 
                             }
                         }
                         
                     }
-                }
-                
-                if favId != nil {
                     
-                    print("successfully recived \(favPost.count) fav post")
-                    print("sending fav post")
-                    SwiftEventBus.post("partyFavoritesList", sender: favPost)
-                    
-                }else{
-                    
-                    SwiftEventBus.post("PartyEvent", sender: eventPost)
+                    if favId != nil {
+                        
+                        print("successfully recived \(favPost.count) fav post")
+                        print("sending fav post")
+                        SwiftEventBus.post("partyFavoritesList", sender: favPost)
+                        
+                    }else{
+                        
+                        eventPost.count
+                        
+                        SwiftEventBus.post("PartyEvent", sender: eventPost)
+                    }
                 }
                 
             } else {
