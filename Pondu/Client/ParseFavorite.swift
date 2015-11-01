@@ -18,7 +18,7 @@ class Favorite {
         
         if currentUser != nil {
             
-             currentUser!.addObject(objectID, forKey: "Favorites")
+            currentUser!.addObject(objectID, forKey: "Favorites")
             print("favorite added")
             currentUser?.saveInBackground()
             
@@ -89,7 +89,7 @@ class Favorite {
         
         }*/
         
-        let fav = currentUser?.objectForKey("partyFavorites") as! [String]
+        let fav = currentUser?.objectForKey("partyFavorites")
         
         print("sending fav id")
         

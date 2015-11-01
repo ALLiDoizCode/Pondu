@@ -73,10 +73,10 @@ class partyFavorites {
         //gets list of favorites
         SwiftEventBus.onMainThread(self, name: "partyFavoritesList") { result in
             
-            if let favList = result.object as! [String]!{
+            if let favList = result.object {
                 
                 print("recieved fav post")
-                print("favList \(favList[0])")
+                print("favList \(favList)")
                 print("do something with post data")
                 SwiftEventBus.postToMainThread("updateCell", sender: favList)
                 SwiftEventBus.unregister(self, name: "partyFavoritesList")

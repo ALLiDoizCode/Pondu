@@ -12,6 +12,8 @@ import Parse
 
 class ParseParties {
     
+    var partyMainWallID:[String] = []
+    
     func postQuery(favId:[String]?){
         
         var eventPost:[String] = []
@@ -31,6 +33,8 @@ class ParseParties {
                         //print(name)
                         
                         if let post = object.objectForKey("Posts") as! String! {
+                            
+                            self.partyMainWallID.append(object.objectId!)
                             
                             if let favID = favId {
                                 
@@ -57,16 +61,17 @@ class ParseParties {
                     }
                     
                     if favId != nil {
+                        print("fav count \(favPost.count)")
+                        var postArray:[AnyObject] = []
+                        postArray.append(favPost)
+                        SwiftEventBus.post("partyFavoritesList", sender: postArray )
+                    }else {
                         
-                        print("successfully recived \(favPost.count) fav post")
-                        print("sending fav post")
-                        SwiftEventBus.post("partyFavoritesList", sender: favPost)
-                        
-                    }else{
-                        
-                        eventPost.count
-                        
-                        SwiftEventBus.post("PartyEvent", sender: eventPost)
+                        var mainWallData:[AnyObject] = []
+                        mainWallData.append(eventPost)
+                        mainWallData.append(self.partyMainWallID)
+                        print(mainWallData.count)
+                        SwiftEventBus.post("PartyEvent", sender: mainWallData)
                     }
                 }
                 
@@ -145,15 +150,20 @@ class ParseParties {
                     
                 }
                 
-                if favId != nil{
+                if favId != nil {
                     
                     print("sending fav image")
                     print(favProfileImage.count)
-                    SwiftEventBus.post("partyfavImage", sender: favProfileImage)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favProfileImage)
+                    SwiftEventBus.post("partyfavImage", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("PartiesImage", sender: eventProfileImage)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventProfileImage)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesImage", sender: mainWallData)
                 }
                 
             } else {
@@ -217,7 +227,6 @@ class ParseParties {
                                 
                                 eventThumbImage.append(ThumbImage.url!)
                                 
-                                SwiftEventBus.post("PartiesThumbImage", sender: eventThumbImage)
                             }
                             
                         }
@@ -226,15 +235,20 @@ class ParseParties {
                     
                 }
                 
-                if favId != nil{
+                if favId != nil {
                     
                     print("sending fav image")
                     print(favThumbImage.count)
-                    SwiftEventBus.post("partyfavThumbImage", sender: favThumbImage)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favThumbImage)
+                    SwiftEventBus.post("partyfavThumbImage", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("PartiesThumbImage", sender: eventThumbImage)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventThumbImage)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesThumbImage", sender: mainWallData)
                 }
                 
             } else {
@@ -300,11 +314,16 @@ class ParseParties {
                     
                     print("successfully recived \(favLikes.count) fav Likes")
                     print("sending fav Likes")
-                    SwiftEventBus.post("partyfavLikes", sender: favLikes)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favLikes)
+                    SwiftEventBus.post("partyfavLikes", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("PartiesLikes", sender: eventLikes)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventLikes)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesLikes", sender: mainWallData)
                 }
                 
             } else {
@@ -367,10 +386,16 @@ class ParseParties {
                     
                     print("successfully recived \(favComments.count) fav Comments")
                     print("sending fav Comments")
-                    SwiftEventBus.post("partyfavComments", sender: favComments)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favComments)
+                    SwiftEventBus.post("partyfavComments", sender: postArray)
                     
                 }else{
-                    SwiftEventBus.post("PartiesComments", sender: eventComments)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventComments)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesComments", sender: mainWallData)
                 }
                 
             } else {
@@ -435,11 +460,16 @@ class ParseParties {
                     
                     print("successfully recived \(favProfileName.count) fav profileName")
                     print("sending fav profileName")
-                    SwiftEventBus.post("partyfavProfileName", sender: favProfileName)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favProfileName)
+                    SwiftEventBus.post("partyfavProfileName", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("PartiesProfileName", sender: eventprofileName)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventprofileName)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesProfileName", sender: mainWallData)
                 }
                 
             } else {
@@ -503,11 +533,16 @@ class ParseParties {
                     
                     print("successfully recived \(favAddress.count) fav address")
                     print("sending fav address")
-                    SwiftEventBus.post("partyfavAddress", sender: favAddress)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favAddress)
+                    SwiftEventBus.post("partyfavAddress", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("PartiesAddress", sender: address)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(address)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesAddress", sender: mainWallData)
                 }
                 
             } else {
@@ -584,11 +619,16 @@ class ParseParties {
                     
                     print("sending fav video")
                     print(favVideo.count)
-                    SwiftEventBus.post("partyfavVideo", sender: favVideo)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favVideo)
+                    SwiftEventBus.post("partyfavVideo", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("PartiesVideo", sender: eventVideo)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventVideo)
+                    mainWallData.append(self.partyMainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("PartiesVideo", sender: mainWallData)
                 }
                 
             } else {

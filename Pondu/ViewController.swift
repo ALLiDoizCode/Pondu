@@ -17,7 +17,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let user = users()
     let newAccount = SignUP()
     let userLogin = startLogin()
-    let favParty = partyFavorites()
     let eventID:[String] = []
     var count:Int = 0
     var array:[AnyObject] = []
@@ -42,11 +41,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //user.userArea()
         //user.userPhoto()
         //Parties.partiesPost()
-        //favParty.getFavorite()
-        //
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        //getArrayCount()
         //mainWall.eventPost()
         
         userLogin.beginLogin("bob", password: "password")
@@ -61,13 +57,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        print(PFUser.currentUser()?.username)
-        
         getArrayCount()
         
-        let favorite = userFavorites()
-        favorite.getFavorite()
+        //let favorite = userFavorites()
+        //favorite.getFavorite()
         
+         let favParty = partyFavorites()
+         favParty.getFavorite()
         
     }
 
@@ -89,6 +85,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         cell.post.text = numOfPost[indexPath.row]
         
+        print("post in array \(self.numOfCells)")
+        
         return cell
     }
     
@@ -96,7 +94,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let addFavorite = Favorite()
-        addFavorite.userFavorite(numOfCells[indexPath.row])
+        //addFavorite.userFavorite(numOfCells[indexPath.row])
+        addFavorite.userPartyFavorite(numOfCells[indexPath.row])
     }
     
     func getArrayCount(){
@@ -116,12 +115,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 self.numOfCells = self.array[0] as! [String]
                 self.numOfPost = self.array[0] as! [String]
             }else{
-                print("the Array has \(self.array.count)")
+                print("the Party Array has \(self.array.count)")
                 self.numOfCells = self.array[1] as! [String]
                 self.numOfPost = self.array[0] as! [String]
+                
             }
-            
-           
             
             self.tablview.reloadData()
             
