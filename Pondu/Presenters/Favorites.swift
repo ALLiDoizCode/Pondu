@@ -73,7 +73,7 @@ class userFavorites {
         //gets list of favorites
         SwiftEventBus.onBackgroundThread(self, name: "FavoritesList") { result in
             
-            if let favList = result.object as! [String]!{
+            if let favList = result.object {
                 
                 print("recieved fav post")
                 print("favList \(favList)")

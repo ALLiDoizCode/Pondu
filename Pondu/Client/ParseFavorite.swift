@@ -12,10 +12,9 @@ import Parse
 
 class Favorite {
     
+    let currentUser = PFUser.currentUser()
+    
     func userFavorite(objectID:String){
-        
-        
-        let currentUser = PFUser.currentUser()
         
         if currentUser != nil {
             
@@ -31,9 +30,6 @@ class Favorite {
     }
     
     func userPartyFavorite(objectID:String){
-        
-        
-        let currentUser = PFUser.currentUser()
         
         if currentUser != nil {
             
@@ -65,9 +61,13 @@ class Favorite {
             
         }*/
         
-        let fav = ["LoFVItdb2n","RO79eVGFgX"]
+        let fav = currentUser?.objectForKey("Favorites")
         
         print("sending fav id")
+        
+        print("user is \(currentUser?.username)")
+        
+        print(fav)
         
         SwiftEventBus.post("GetFavorites", sender: fav)
     }
@@ -89,7 +89,7 @@ class Favorite {
         
         }*/
         
-        let fav = ["ccBnnB6g3Q","8wrbihD723"]
+        let fav = currentUser?.objectForKey("partyFavorites") as! [String]
         
         print("sending fav id")
         

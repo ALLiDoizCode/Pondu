@@ -107,12 +107,15 @@ class ParseMainWall {
                             
                             if favId != nil {
                                 print("fav count \(favPost.count)")
-                                SwiftEventBus.post("FavoritesList", sender: favPost )
+                                var postArray:[AnyObject] = []
+                                postArray.append(favPost)
+                                SwiftEventBus.post("FavoritesList", sender: postArray )
                             }else {
                                 
                                 var mainWallData:[AnyObject] = []
                                 mainWallData.append(eventPost)
                                 mainWallData.append(self.mainWallID)
+                                print(mainWallData.count)
                                 SwiftEventBus.post("MainWallEvent", sender: mainWallData)
                             }
                             

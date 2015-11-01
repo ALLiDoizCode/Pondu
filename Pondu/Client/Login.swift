@@ -12,6 +12,8 @@ import Parse
 
 class Login {
     
+    let favorite = userFavorites()
+    
     func userLogin(UserName:String,password:String){
     
         PFUser.logInWithUsernameInBackground(UserName, password:password) {
@@ -20,6 +22,7 @@ class Login {
                 // Do stuff after successful login.
                 
                 print("loged In")
+                print("user is \(user!.username)")
             } else {
                 // The login failed. Check error to see why.
             }
