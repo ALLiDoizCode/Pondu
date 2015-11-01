@@ -18,6 +18,8 @@ class Login {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 // Do stuff after successful login.
+                
+                print("loged In")
             } else {
                 // The login failed. Check error to see why.
             }

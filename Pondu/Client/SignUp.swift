@@ -14,6 +14,12 @@ class userSignUp {
     
     func SignUp(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage){
         
+        let photoData = UIImagePNGRepresentation(photo)
+        let photoFile = PFFile(name:"photo", data:photoData!)
+        
+        let storyData = UIImagePNGRepresentation(stories)
+        let storyFile = PFFile(name:"story", data:storyData!)
+        
         let user = PFUser()
         user.username = userName
         user.password = password
@@ -23,8 +29,8 @@ class userSignUp {
         user["Area"] = area
         user["FullName"] = fullName
         user["Bio"] = Bio
-        user["Stories"] = stories
-        user["photo"] = photo
+        user["Stories"] = storyFile
+        user["photo"] = photoFile
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in

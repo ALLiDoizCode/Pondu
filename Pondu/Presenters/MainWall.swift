@@ -22,7 +22,7 @@ class PresentMainWall {
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
-            if let post = result.object as! [String]! {
+            if let post = result.object {
                 
                 print("event post \(post)")
                 SwiftEventBus.postToMainThread("updateCell", sender: post)

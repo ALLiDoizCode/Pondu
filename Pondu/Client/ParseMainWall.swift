@@ -12,6 +12,8 @@ import Parse
 
 class ParseMainWall {
     
+    var mainWallID:[String] = []
+    
     func idQuery(){
         
         var eventID:[String] = []
@@ -48,7 +50,7 @@ class ParseMainWall {
     
     func postQuery(favId:[String]?){
         
-                var eventPost:[String] = []
+                var eventPost:[AnyObject] = Array()
                 var favPost:[String] = []
         
                 let query = PFQuery(className:"MainWall")
@@ -65,6 +67,8 @@ class ParseMainWall {
                                 //print(name)
                                 
                                     if let post = object.objectForKey("Post") as! String! {
+                                        
+                                        self.mainWallID.append(object.objectId!)
                                         
                                         if let favID = favId {
                                             
@@ -105,7 +109,11 @@ class ParseMainWall {
                                 print("fav count \(favPost.count)")
                                 SwiftEventBus.post("FavoritesList", sender: favPost )
                             }else {
-                                SwiftEventBus.post("MainWallEvent", sender: eventPost)
+                                
+                                var mainWallData:[AnyObject] = []
+                                mainWallData.append(eventPost)
+                                mainWallData.append(self.mainWallID)
+                                SwiftEventBus.post("MainWallEvent", sender: mainWallData)
                             }
                             
                         }

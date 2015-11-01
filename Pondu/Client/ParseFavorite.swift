@@ -20,6 +20,8 @@ class Favorite {
         if currentUser != nil {
             
              currentUser!.addObject(objectID, forKey: "Favorites")
+            print("favorite added")
+            currentUser?.saveInBackground()
             
         } else {
             
@@ -36,6 +38,8 @@ class Favorite {
         if currentUser != nil {
             
             currentUser!.addObject(objectID, forKey: "partyFavorites")
+            print("partyFavorites added")
+            currentUser?.saveInBackground()
             
         } else {
             
