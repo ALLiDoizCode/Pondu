@@ -198,11 +198,16 @@ class ParseMainWall {
                                 
                                 print("sending fav image")
                                 print(favProfileImage.count)
-                                SwiftEventBus.post("favImage", sender: favProfileImage)
+                                var postArray:[AnyObject] = []
+                                postArray.append(favProfileImage)
+                                SwiftEventBus.post("favImage", sender: postArray)
                                 
                             }else{
-                                
-                                SwiftEventBus.post("MainWallImage", sender: eventProfileImage)
+                                var mainWallData:[AnyObject] = []
+                                mainWallData.append(eventProfileImage)
+                                mainWallData.append(self.mainWallID)
+                                print(mainWallData.count)
+                                SwiftEventBus.post("MainWallImage", sender: mainWallData)
                             }
                             
                         }
@@ -278,10 +283,16 @@ class ParseMainWall {
                         
                         print("sending fav image")
                         print(favThumbImage.count)
-                        SwiftEventBus.post("favThumbImage", sender: favThumbImage)
+                        var postArray:[AnyObject] = []
+                        postArray.append(favThumbImage)
+                        SwiftEventBus.post("favThumbImage", sender: postArray)
                         
                     }else{
-                        SwiftEventBus.post("MainWallThumbImage", sender: eventThumbImage)
+                        var mainWallData:[AnyObject] = []
+                        mainWallData.append(eventThumbImage)
+                        mainWallData.append(self.mainWallID)
+                        print(mainWallData.count)
+                        SwiftEventBus.post("MainWallThumbImage", sender: mainWallData)
                     }
                     
                 }
@@ -346,11 +357,16 @@ class ParseMainWall {
                         
                         print("successfully recived \(favLikes.count) fav Likes")
                         print("sending fav Likes")
-                        SwiftEventBus.post("favLikes", sender: favLikes)
+                        var postArray:[AnyObject] = []
+                        postArray.append(favLikes)
+                        SwiftEventBus.post("favLikes", sender: postArray)
                         
                     }else{
-                        
-                        SwiftEventBus.post("MainWallLikes", sender: eventLikes)
+                        var mainWallData:[AnyObject] = []
+                        mainWallData.append(eventLikes)
+                        mainWallData.append(self.mainWallID)
+                        print(mainWallData.count)
+                        SwiftEventBus.post("MainWallLikes", sender: mainWallData)
                     }
                     
                 }
@@ -414,11 +430,16 @@ class ParseMainWall {
                     
                     print("successfully recived \(favComments.count) fav Comments")
                     print("sending fav Comments")
-                    SwiftEventBus.post("favComments", sender: favComments)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favComments)
+                    SwiftEventBus.post("favComments", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("MainWallComments", sender: eventComments)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventComments)
+                    mainWallData.append(self.mainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("MainWallComments", sender: mainWallData)
                 }
                 
             } else {
@@ -483,11 +504,16 @@ class ParseMainWall {
                     
                     print("successfully recived \(favProfileName.count) fav profileName")
                     print("sending fav profileName")
-                    SwiftEventBus.post("favProfileName", sender: favProfileName)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favProfileName)
+                    SwiftEventBus.post("favProfileName", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("MainWallProfileName", sender: eventprofileName)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventprofileName)
+                    mainWallData.append(self.mainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("MainWallProfileName", sender: mainWallData)
                 }
                 
             } else {
@@ -551,11 +577,16 @@ class ParseMainWall {
                     
                     print("successfully recived \(favAddress.count) fav address")
                     print("sending fav address")
-                    SwiftEventBus.post("favAddress", sender: favAddress)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favAddress)
+                    SwiftEventBus.post("favAddress", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("MainWallAddress", sender: address)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(address)
+                    mainWallData.append(self.mainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("MainWallAddress", sender: mainWallData)
                 }
                 
             } else {
@@ -632,11 +663,16 @@ class ParseMainWall {
                     
                     print("sending fav video")
                     print(favVideo.count)
-                    SwiftEventBus.post("favVideo", sender: favVideo)
+                    var postArray:[AnyObject] = []
+                    postArray.append(favVideo)
+                    SwiftEventBus.post("favVideo", sender: postArray)
                     
                 }else{
-                    
-                    SwiftEventBus.post("MainWallVideo", sender: eventVideo)
+                    var mainWallData:[AnyObject] = []
+                    mainWallData.append(eventVideo)
+                    mainWallData.append(self.mainWallID)
+                    print(mainWallData.count)
+                    SwiftEventBus.post("MainWallVideo", sender: mainWallData)
                 }
                 
             } else {
