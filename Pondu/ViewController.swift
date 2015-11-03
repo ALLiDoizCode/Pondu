@@ -19,7 +19,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let userLogin = startLogin()
     let eventID:[String] = []
     var count:Int = 0
-    var array:[AnyObject] = []
+    var array:[Event] = []
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     
@@ -59,11 +59,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         getArrayCount()
         
-        //let favorite = userFavorites()
-        //favorite.getFavorite()
+        let favorite = userFavorites()
+        favorite.getFavorite()
         
-         let favParty = partyFavorites()
-         favParty.getFavorite()
+         //let favParty = partyFavorites()
+         //favParty.getFavorite()
         
     }
 
@@ -74,7 +74,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return numOfCells.count
+        return array.count
     }
     
   
@@ -83,7 +83,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let cell:MainCell = tableView.dequeueReusableCellWithIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        cell.post.text = numOfPost[indexPath.row]
+        cell.post.text = array[indexPath.row].post
         
         print("post in array \(self.numOfCells)")
         
@@ -105,21 +105,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
             print("passing data\(notification.object)")
             
-            self.array = notification.object as! [AnyObject]
+            self.array = notification.object as! [Event]
             
             print(self.array.count)
             
-            if self.array.count == 1 {
+            /*if self.array.count == 1 {
                 
-                print("the Array has \(self.array.count)")
+                /*print("the Array has \(self.array.count)")
                 self.numOfCells = self.array[0] as! [String]
-                self.numOfPost = self.array[0] as! [String]
+                self.numOfPost = self.array[0] as! [String]*/
             }else{
-                print("the Party Array has \(self.array.count)")
+                /*print("the Party Array has \(self.array.count)")
                 self.numOfCells = self.array[1] as! [String]
-                self.numOfPost = self.array[0] as! [String]
+                self.numOfPost = self.array[0] as! [String]*/
                 
-            }
+            }*/
             
             self.tablview.reloadData()
             

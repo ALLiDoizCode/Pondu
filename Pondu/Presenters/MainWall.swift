@@ -26,6 +26,7 @@ class PresentMainWall {
                 
                 print("event post \(post)")
                 SwiftEventBus.postToMainThread("updateCell", sender: post)
+                SwiftEventBus.unregister(self, name: "MainWallEvent")
             }
            
         }
@@ -71,7 +72,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.ImageQuery(nilArray)
+        //mainWall.ImageQuery(nilArray)
     }
     
     func eventThumb(){
@@ -85,7 +86,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.ThumbQuery(nilArray)
+        //mainWall.ThumbQuery(nilArray)
     }
     
     func eventTime(){
@@ -102,7 +103,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.likesQuery(nilArray)
+        //mainWall.likesQuery(nilArray)
         
     }
     
@@ -115,7 +116,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.commentsQuery(nilArray)
+        //mainWall.commentsQuery(nilArray)
         
     }
     
@@ -128,7 +129,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.profileNameQuery(nilArray)
+        //mainWall.profileNameQuery(nilArray)
         
     }
     
@@ -142,7 +143,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.eventAddressQuery(nilArray)
+        //mainWall.eventAddressQuery(nilArray)
         
     }
     
@@ -159,7 +160,7 @@ class PresentMainWall {
             
         }
         
-        mainWall.videoQuery(nilArray)
+        //mainWall.videoQuery(nilArray)
         
     }
 }
