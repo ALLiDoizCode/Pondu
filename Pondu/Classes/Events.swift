@@ -24,8 +24,9 @@ class Event {
     var mainthumb:String = ""
     var comments:[String] = []
     var fav:Bool = false
+    var live:Bool = false
     
-    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theVideo:String,theLikes:String,theLocation:String,theMainThumb:String,theComments:[String],theFav:Bool){
+    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theVideo:String,theLikes:String,theLocation:String,theMainThumb:String,theComments:[String],theFav:Bool,theLive:Bool){
 
         objectID = theID
         name = theName
@@ -38,6 +39,7 @@ class Event {
         mainthumb = theMainThumb
         comments = theComments
         fav = theFav
+        live = theLive
     }
     
 }
