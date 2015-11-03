@@ -16,8 +16,7 @@ class ParseParties {
     
     func postQuery(favId:[String]?){
         
-        var eventPost:[String] = []
-        var favPost:[String] = []
+        var parties:[Event] = []
         
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock {
@@ -32,9 +31,20 @@ class ParseParties {
                     for object in objects {
                         //print(name)
                         
-                        if let post = object.objectForKey("Posts") as! String! {
-                            
-                            self.partyMainWallID.append(object.objectId!)
+                        let theID = object.objectId
+                        let post = object.objectForKey("Posts") as! String!
+                        let profileImage = object.objectForKey("ProfilePicture") as! PFFile!
+                        let thumbImage = object.objectForKey("Mainthumb") as! PFFile!
+                        let likes = object.objectForKey("Likes") as! String!
+                        let comments = object.objectForKey("Comments") as! [String]!
+                        let profileName = object.objectForKey("Name") as! String!
+                        let theAddress = object.objectForKey("Location") as! String!
+                        let video = object.objectForKey("Video") as! PFFile!
+                        //self.mainWallID.append(object.objectId!)
+                        
+                        
+                        
+                        if let theVideo = video, let theThumbImage = thumbImage{
                             
                             if let favID = favId {
                                 
@@ -42,36 +52,169 @@ class ParseParties {
                                     
                                     if i < favID.count {
                                         
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true)
+                                        
+                                        
+                                        
+                                        print("there are \(favID.count) fav ids")
+                                        
                                         if object.objectId == favID[i] {
                                             
-                                            print("queryID \(post)")
+                                            print("queryID \(partiesData)")
                                             print("recived fav post")
-                                            favPost.append(post)
+                                            parties.append(partiesData)
+                                            print("successfully recived \(parties.count) fav post")
+                                            print("sending fav post")
+                                            
+                                            
                                         }
+                                        
                                     }
                                     
                                 }
+                                
                             }else{
-                                print(post)
-                                eventPost.append(post)
+                                
+                                
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: thumbImage.url!, theComments: comments,theFav:false)
+                                
+                                parties.append(partiesData)
+                                
+                            }
+                        }else if let theVideo = video where thumbImage == nil {
+                            
+                            let theThumb = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-47ac8439-6b52-401b-bc20-18a2b6a2c76c-Placeholder.svg"
+                            
+                            if let favID = favId {
+                                
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true)
+                                        
+                                        
+                                        
+                                        print("there are \(favID.count) fav ids")
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(partiesData)")
+                                            print("recived fav post")
+                                            parties.append(partiesData)
+                                            print("successfully recived \(parties.count) fav post")
+                                            print("sending fav post")
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false)
+                                
+                               parties.append(partiesData)
+                                
+                            }
+                            
+                        } else if let theThumbImage = thumbImage where video == nil {
+                            
+                            
+                            let theVideo = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-6a5d1d3d-4319-4fe8-a5fa-16556508f115-SampleVideo_1080x720_1mb.mp4"
+                            
+                            if let favID = favId {
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true)
+                                        
+                                        
+                                        
+                                        print("there are \(favID.count) fav ids")
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(partiesData)")
+                                            print("recived fav post")
+                                            parties.append(partiesData)
+                                            print("successfully recived \(parties.count) fav post")
+                                            print("sending fav post")
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:false)
+                                
+                                parties.append(partiesData)
+                                
+                            }
+                        }else{
+                            let theVideo = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-6a5d1d3d-4319-4fe8-a5fa-16556508f115-SampleVideo_1080x720_1mb.mp4"
+                            
+                            let theThumb = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-47ac8439-6b52-401b-bc20-18a2b6a2c76c-Placeholder.svg"
+                            
+                            if let favID = favId {
+                                
+                                
+                                for var i = 0; i<objects.count; i++ {
+                                    
+                                    if i < favID.count {
+                                        
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true)
+                                        
+                                        
+                                        
+                                        print("there are \(favID.count) fav ids")
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(partiesData)")
+                                            print("recived fav post")
+                                            parties.append(partiesData)
+                                            print("successfully recived \(parties.count) fav post")
+                                            print("sending fav post")
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                                
+                            }else{
+                                
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false)
+                                
+                                parties.append(partiesData)
                                 
                             }
                         }
                         
+                        
+                        
                     }
                     
-                    if favId != nil {
-                        print("fav count \(favPost.count)")
-                        var postArray:[AnyObject] = []
-                        postArray.append(favPost)
-                        SwiftEventBus.post("partyFavoritesList", sender: postArray )
+                    print("items in mainwall \(parties.count)")
+                    
+                    if parties[0].fav == true {
+                        print("fav count \(parties.count)")
+                        SwiftEventBus.post("partyFavoritesList", sender: parties )
                     }else {
-                        
-                        var mainWallData:[AnyObject] = []
-                        mainWallData.append(eventPost)
-                        mainWallData.append(self.partyMainWallID)
-                        print(mainWallData.count)
-                        SwiftEventBus.post("PartyEvent", sender: mainWallData)
+                        print(parties.count)
+                        SwiftEventBus.post("PartyEvent", sender: parties)
                     }
                 }
                 
