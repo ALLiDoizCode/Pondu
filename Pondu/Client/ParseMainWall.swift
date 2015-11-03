@@ -51,7 +51,7 @@ class ParseMainWall {
     func postQuery(favId:[String]?){
         
                 var eventPost:[AnyObject] = Array()
-                var favPost:[String] = []
+                //var favPost:[String] = []
                 var mainWall:[Event] = []
         
                 let query = PFQuery(className:"MainWall")
@@ -90,16 +90,16 @@ class ParseMainWall {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true)
                                                 
-                                                mainWall.append(mainWalldata)
+                                                
                                                 
                                                 print("there are \(favID.count) fav ids")
                                                 
                                                 if object.objectId == favID[i] {
                                                     
-                                                    print("queryID \(post)")
+                                                    print("queryID \(mainWalldata)")
                                                     print("recived fav post")
-                                                    favPost.append(post)
-                                                    print("successfully recived \(favPost.count) fav post")
+                                                    mainWall.append(mainWalldata)
+                                                    print("successfully recived \(mainWall.count) fav post")
                                                     print("sending fav post")
                                                     
                                                     
@@ -130,16 +130,16 @@ class ParseMainWall {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true)
                                                 
-                                                mainWall.append(mainWalldata)
+                                                
                                                 
                                                 print("there are \(favID.count) fav ids")
                                                 
                                                 if object.objectId == favID[i] {
                                                     
-                                                    print("queryID \(post)")
+                                                    print("queryID \(mainWalldata)")
                                                     print("recived fav post")
-                                                    favPost.append(post)
-                                                    print("successfully recived \(favPost.count) fav post")
+                                                    mainWall.append(mainWalldata)
+                                                    print("successfully recived \(mainWall.count) fav post")
                                                     print("sending fav post")
                                                     
                                                     
@@ -170,16 +170,16 @@ class ParseMainWall {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true)
                                                 
-                                                mainWall.append(mainWalldata)
+                                                
                                                 
                                                 print("there are \(favID.count) fav ids")
                                                 
                                                 if object.objectId == favID[i] {
                                                     
-                                                    print("queryID \(post)")
+                                                    print("queryID \(mainWalldata)")
                                                     print("recived fav post")
-                                                    favPost.append(post)
-                                                    print("successfully recived \(favPost.count) fav post")
+                                                    mainWall.append(mainWalldata)
+                                                    print("successfully recived \(mainWall.count) fav post")
                                                     print("sending fav post")
                                                     
                                                     
@@ -211,16 +211,16 @@ class ParseMainWall {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true)
                                                 
-                                                mainWall.append(mainWalldata)
+                                                
                                                 
                                                 print("there are \(favID.count) fav ids")
                                                 
                                                 if object.objectId == favID[i] {
                                                     
-                                                    print("queryID \(post)")
+                                                    print("queryID \(mainWalldata)")
                                                     print("recived fav post")
-                                                    favPost.append(post)
-                                                    print("successfully recived \(favPost.count) fav post")
+                                                    mainWall.append(mainWalldata)
+                                                    print("successfully recived \(mainWall.count) fav post")
                                                     print("sending fav post")
                                                     
                                                     
@@ -246,7 +246,7 @@ class ParseMainWall {
                             print("items in mainwall \(mainWall.count)")
                             
                             if mainWall[0].fav == true {
-                                print("fav count \(favPost.count)")
+                                print("fav count \(mainWall.count)")
                                 /*var postArray:[AnyObject] = []
                                 postArray.append(favPost)*/
                                 SwiftEventBus.post("FavoritesList", sender: mainWall)

@@ -43,7 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Parties.partiesPost()
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        //mainWall.eventPost()
+        mainWall.eventPost()
         
         userLogin.beginLogin("bob", password: "password")
     }
@@ -59,8 +59,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         getArrayCount()
         
-        let favorite = userFavorites()
-        favorite.getFavorite()
+        //let favorite = userFavorites()
+        //favorite.getFavorite()
         
          //let favParty = partyFavorites()
          //favParty.getFavorite()
