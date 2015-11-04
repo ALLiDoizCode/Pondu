@@ -83,6 +83,13 @@
                                                         <constraint firstAttribute="width" constant="65" id="tze-24-QJx"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-Ol-JhD">
+                                                    <rect key="frame" x="150" y="40" width="43" height="24"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -93,6 +100,7 @@
                                             <constraint firstItem="UdJ-Tj-0xj" firstAttribute="centerX" secondItem="yoV-ic-KyR" secondAttribute="centerX" id="1a0-rJ-8wG"/>
                                             <constraint firstItem="6yh-r6-zwP" firstAttribute="leading" secondItem="yoV-ic-KyR" secondAttribute="leading" constant="52" id="1lv-fI-QkP"/>
                                             <constraint firstAttribute="bottom" secondItem="cFD-rb-65m" secondAttribute="bottom" constant="39" id="4q1-jg-aXG"/>
+                                            <constraint firstItem="71a-Ol-JhD" firstAttribute="leading" secondItem="UdJ-Tj-0xj" secondAttribute="trailing" constant="17" id="7uE-IR-m6H"/>
                                             <constraint firstItem="dlg-kG-GHb" firstAttribute="centerY" secondItem="yoV-ic-KyR" secondAttribute="centerY" id="7w2-kL-2k9"/>
                                             <constraint firstItem="xAK-0R-Hbe" firstAttribute="top" secondItem="cFD-rb-65m" secondAttribute="bottom" constant="14" id="Atw-gb-5H2"/>
                                             <constraint firstAttribute="trailing" secondItem="dlg-kG-GHb" secondAttribute="trailing" id="Cy5-IG-6R8"/>
@@ -105,6 +113,7 @@
                                             <constraint firstItem="xAK-0R-Hbe" firstAttribute="leading" secondItem="yoV-ic-KyR" secondAttribute="leading" constant="10" id="cJj-Jb-38K"/>
                                             <constraint firstItem="cFD-rb-65m" firstAttribute="centerX" secondItem="yoV-ic-KyR" secondAttribute="centerX" id="e1y-9v-UTg"/>
                                             <constraint firstItem="cFD-rb-65m" firstAttribute="top" secondItem="6yh-r6-zwP" secondAttribute="bottom" id="ibn-iP-s80"/>
+                                            <constraint firstItem="71a-Ol-JhD" firstAttribute="top" secondItem="yoV-ic-KyR" secondAttribute="top" constant="40" id="mNo-tz-I9g"/>
                                             <constraint firstItem="YsU-fP-h3H" firstAttribute="top" secondItem="cFD-rb-65m" secondAttribute="bottom" constant="14" id="oOi-ZF-u0O"/>
                                             <constraint firstItem="6yh-r6-zwP" firstAttribute="top" secondItem="yoV-ic-KyR" secondAttribute="top" constant="85" id="sge-Fd-0Fp"/>
                                             <constraint firstItem="dlg-kG-GHb" firstAttribute="leading" secondItem="yoV-ic-KyR" secondAttribute="leading" id="xMs-Bf-VQG"/>
@@ -116,6 +125,7 @@
                                             <outlet property="comments" destination="YsU-fP-h3H" id="C0e-zS-2vM"/>
                                             <outlet property="coverView" destination="UDp-06-yGH" id="st7-Pj-qg7"/>
                                             <outlet property="likes" destination="xAK-0R-Hbe" id="Ryq-QN-hvU"/>
+                                            <outlet property="live" destination="71a-Ol-JhD" id="8LB-Dd-qqb"/>
                                             <outlet property="post" destination="cFD-rb-65m" id="qzJ-XQ-Sg7"/>
                                             <outlet property="profileImage" destination="UdJ-Tj-0xj" id="3Jq-nx-lU1"/>
                                         </connections>

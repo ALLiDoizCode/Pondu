@@ -16,6 +16,7 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
     @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var live: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
@@ -39,6 +40,7 @@ class MainCell: UICollectionViewCell {
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         profileImage.transform = CGAffineTransformMakeScale(scale, scale)
+        live.transform = CGAffineTransformMakeScale(scale, scale)
         
         post.alpha = delta
         comments.alpha = delta
