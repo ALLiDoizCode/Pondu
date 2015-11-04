@@ -13,17 +13,18 @@ class makeEvent {
     var name:String = ""
     var post:String = ""
     var profilePicture:NSData!
-    var likes:String = ""
+    var likes:Int = 0
     var location:String = ""
     var live:Bool = false
     
-    init(theName:String,thePost:String,TheProfilePicture:NSData,theLocation:String,theLive:Bool){
+    init(theName:String,thePost:String,TheProfilePicture:NSData,theLocation:String,theLive:Bool,thelikes:Int){
         
         name = theName
         post = thePost
         profilePicture = TheProfilePicture
         location = theLocation
         live = theLive
+        likes = thelikes
     }
     
 }

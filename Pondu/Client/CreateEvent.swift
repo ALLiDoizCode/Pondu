@@ -28,7 +28,9 @@ class createEvent {
             event["Name"] = createdEvent.name
             event["Live"] = createdEvent.live
             event["Comments"] = [""]
+            event["Likes"] = 0
             event["Location"] = createdEvent.location
+            event["ProfilePicture"] = currentUser!["photo"]
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

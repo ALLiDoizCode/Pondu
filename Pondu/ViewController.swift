@@ -43,7 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Parties.partiesPost()
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        //mainWall.eventPost()
+        mainWall.eventPost()
         
         userLogin.beginLogin("bob", password: "password")
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        //getArrayCount()
+        getArrayCount()
         
         //let favorite = userFavorites()
         //favorite.getFavorite()
@@ -66,14 +66,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
          //favParty.getFavorite()
         
         
-            let name = "jonathan"
+            /*let name = "jonathan"
             let post = "just created this post"
             let profileImage = UIImage(named: "bob")
             let location = "3300 University Blvd, Winter Park, FL 32792"
+            let likes = 0
             let live = false
         
          let makeEvent = MakeEvent()
-        makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live)
+        makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
         
         
         

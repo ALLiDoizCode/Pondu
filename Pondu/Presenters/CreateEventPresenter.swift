@@ -15,13 +15,13 @@ class MakeEvent {
     
     let startEvent = createEvent()
     
-    func event(theName: String, thePost: String, TheProfilePicture: UIImage,theLocation: String, theLive: Bool){
+    func event(theName: String, thePost: String, TheProfilePicture: UIImage,theLocation: String, theLive: Bool,thelikes:Int){
         
         startEvent.theEvent()
         
         let profilePictureData = UIImagePNGRepresentation(TheProfilePicture)
         
-        let theEvent:makeEvent = makeEvent(theName: theName, thePost: thePost, TheProfilePicture: profilePictureData!, theLocation: theLocation, theLive: theLive)
+        let theEvent:makeEvent = makeEvent(theName: theName, thePost: thePost, TheProfilePicture: profilePictureData!, theLocation: theLocation, theLive: theLive,thelikes:thelikes)
         
         SwiftEventBus.post("makeEvent", sender: theEvent)
     }

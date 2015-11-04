@@ -18,7 +18,7 @@ class Event {
     var profilePicture:String = ""
     var video:String = ""
     //var type:String = ""
-    var likes:String = ""
+    var likes:Int = 0
     var location:String = ""
     //var story:String = ""
     var mainthumb:String = ""
@@ -26,7 +26,7 @@ class Event {
     var fav:Bool = false
     var live:Bool = false
     
-    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theVideo:String,theLikes:String,theLocation:String,theMainThumb:String,theComments:[String],theFav:Bool,theLive:Bool){
+    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theVideo:String,theLikes:Int,theLocation:String,theMainThumb:String,theComments:[String],theFav:Bool,theLive:Bool){
 
         objectID = theID
         name = theName

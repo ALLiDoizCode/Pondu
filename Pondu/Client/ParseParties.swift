@@ -35,7 +35,7 @@ class ParseParties {
                         let post = object.objectForKey("Posts") as! String!
                         let profileImage = object.objectForKey("ProfilePicture") as! PFFile!
                         let thumbImage = object.objectForKey("Mainthumb") as! PFFile!
-                        let likes = object.objectForKey("Likes") as! String!
+                        let likes = object.objectForKey("Likes") as! Int!
                         let comments = object.objectForKey("Comments") as! [String]!
                         let profileName = object.objectForKey("Name") as! String!
                         let theAddress = object.objectForKey("Location") as! String!

@@ -69,7 +69,7 @@ class ParseMainWall {
                                     let post = object.objectForKey("Post") as! String!
                                     let profileImage = object.objectForKey("ProfilePicture") as! PFFile!
                                     let eventImages = object.objectForKey("EventImages") as! PFFile!
-                                    let likes = object.objectForKey("Likes") as! String!
+                                    let likes = object.objectForKey("Likes") as! Int!
                                     let comments = object.objectForKey("Comments") as! [String]!
                                     let profileName = object.objectForKey("Name") as! String!
                                     let theAddress = object.objectForKey("Location") as! String!
