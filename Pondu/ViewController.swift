@@ -43,7 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Parties.partiesPost()
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        //mainWall.eventPost()
+        mainWall.eventPost()
         
         userLogin.beginLogin("bob", password: "password")
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        //getArrayCount()
+        getArrayCount()
         
         //let favorite = userFavorites()
         //favorite.getFavorite()
@@ -67,13 +67,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
             /*let name = "jonathan"
-            let post = "just created this post"
+            let post = "just created another post"
             let profileImage = UIImage(named: "bob")
             let location = "3300 University Blvd, Winter Park, FL 32792"
             let likes = 0
-            let live = false*/
+            let live = false
         
-        /*let makeEvent = MakingEvent()
+        let makeEvent = MakingEvent()
         makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
         
         /*let makeParty = MakingParty()
@@ -101,7 +101,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         cell.post.text = array[indexPath.row].post
         
-        print("post in array \(self.numOfCells)")
+        print("post in array \(self.array.count)")
         
         return cell
     }
@@ -109,9 +109,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let addFavorite = Favorite()
-        //addFavorite.userFavorite(numOfCells[indexPath.row])
-        addFavorite.userPartyFavorite(numOfCells[indexPath.row])
+        //let addFavorite = Favorite()
+        //addFavorite.userFavorite(array[indexPath.row].objectID)
+        //addFavorite.userPartyFavorite(array[indexPath.row].objectID)
     }
     
     func getArrayCount(){

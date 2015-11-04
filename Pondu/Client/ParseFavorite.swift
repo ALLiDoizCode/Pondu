@@ -16,30 +16,88 @@ class Favorite {
     
     func userFavorite(objectID:String){
         
-        if currentUser != nil {
+        if var favList = currentUser!["Favorites"] as! [String]! {
+            
+            if currentUser != nil {
+                
+                var i:Int = Int()
+                
+                print("favlist count \(favList.count)")
+                
+                for i;(i < favList.count) && (objectID != favList[i]) ; i++ {
+                    
+                    print("I = \(i)")
+                }
+                
+                
+                //print("this is the favID \(favList[i])")
+                //print("this is the objectID \(objectID)")
+                
+                
+                if i >= favList.count {
+                    
+                    currentUser!.addObject(objectID, forKey: "Favorites")
+                    print("favorite added")
+                    currentUser?.saveInBackground()
+                    
+                }else{
+                    
+                    print("this favorite already exist")
+                }
+                
+            } else {
+                
+                
+            }
+        }else{
             
             currentUser!.addObject(objectID, forKey: "Favorites")
             print("favorite added")
             currentUser?.saveInBackground()
-            
-        } else {
-            
-
         }
         
     }
     
     func userPartyFavorite(objectID:String){
         
-        if currentUser != nil {
+        if var favList = currentUser!["partyFavorites"] as! [String]! {
+            
+            if currentUser != nil {
+                
+                var i:Int = Int()
+                
+                print("favlist count \(favList.count)")
+                
+                for i;(i < favList.count) && (objectID != favList[i]) ; i++ {
+                    
+                    print("I = \(i)")
+                }
+                
+                
+                //print("this is the favID \(favList[i])")
+                //print("this is the objectID \(objectID)")
+                
+                
+                if i >= favList.count {
+                    
+                    currentUser!.addObject(objectID, forKey: "partyFavorites")
+                    print("favorite added")
+                    currentUser?.saveInBackground()
+                    
+                }else{
+                    
+                    print("this partyFavorite already exist")
+                }
+                
+            } else {
+                
+                
+            }
+        }else{
             
             currentUser!.addObject(objectID, forKey: "partyFavorites")
-            print("partyFavorites added")
+            print("partyFavorite added")
             currentUser?.saveInBackground()
-            
-        } else {
-            
-            
         }
         
     }
