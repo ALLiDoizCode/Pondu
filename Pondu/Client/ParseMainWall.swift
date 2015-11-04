@@ -244,19 +244,26 @@ class ParseMainWall {
                             
                             print("items in mainwall \(mainWall.count)")
                             
-                            if mainWall[0].fav == true {
-                                print("fav count \(mainWall.count)")
-                                /*var postArray:[AnyObject] = []
-                                postArray.append(favPost)*/
-                                SwiftEventBus.post("FavoritesList", sender: mainWall)
-                            }else {
+                            if mainWall.count >= 1 {
                                 
-                                //var mainWallData:[AnyObject] = []
-                                //mainWallData.append(eventPost)
-                                //mainWallData.append(self.mainWallID)
-                                print("mainwall count \(mainWall.count)")
-                                SwiftEventBus.post("MainWallEvent", sender: mainWall)
+                                if mainWall[0].fav == true {
+                                    print("fav count \(mainWall.count)")
+                                    /*var postArray:[AnyObject] = []
+                                    postArray.append(favPost)*/
+                                    SwiftEventBus.post("FavoritesList", sender: mainWall)
+                                }else {
+                                    
+                                    //var mainWallData:[AnyObject] = []
+                                    //mainWallData.append(eventPost)
+                                    //mainWallData.append(self.mainWallID)
+                                    print("mainwall count \(mainWall.count)")
+                                    SwiftEventBus.post("MainWallEvent", sender: mainWall)
+                                }
+                            }else{
+                                
+                                print("you have no favorites")
                             }
+                            
                             
                         }
                     } else {

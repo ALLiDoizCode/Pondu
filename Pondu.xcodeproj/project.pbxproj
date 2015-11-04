@@ -20,6 +20,9 @@
 		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
 		4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683D1BE9902200591DF6 /* makeEvent.swift */; };
+		4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683F1BE9A98600591DF6 /* MakeParty.swift */; };
+		4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668411BE9A9D100591DF6 /* CreateParty.swift */; };
+		4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */; };
 		4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9CF1BE5F5A600C34281 /* Events.swift */; };
 		4D91A9D21BE5F7F200C34281 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9D11BE5F7F200C34281 /* User.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
@@ -74,6 +77,9 @@
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
 		4D86683D1BE9902200591DF6 /* makeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makeEvent.swift; sourceTree = "<group>"; };
+		4D86683F1BE9A98600591DF6 /* MakeParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeParty.swift; sourceTree = "<group>"; };
+		4D8668411BE9A9D100591DF6 /* CreateParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateParty.swift; sourceTree = "<group>"; };
+		4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePartyPresenter.swift; sourceTree = "<group>"; };
 		4D91A9CF1BE5F5A600C34281 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		4D91A9D11BE5F7F200C34281 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				4D91A9CF1BE5F5A600C34281 /* Events.swift */,
 				4D91A9D11BE5F7F200C34281 /* User.swift */,
 				4D86683D1BE9902200591DF6 /* makeEvent.swift */,
+				4D86683F1BE9A98600591DF6 /* MakeParty.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 				4DD73EFB1BDF11E1006055E9 /* Favorites.swift */,
 				4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */,
 				4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */,
+				4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -226,6 +234,7 @@
 		4DD1749E1BDD794E00B64E0B /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				4D8668411BE9A9D100591DF6 /* CreateParty.swift */,
 				4D8668391BE989B500591DF6 /* CreateEvent.swift */,
 				4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */,
 				4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */,
@@ -434,9 +443,11 @@
 				4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
+				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
 				4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */,
 				4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */,
 				4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */,
+				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
@@ -450,6 +461,7 @@
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
 				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4DD73EFC1BDF11E1006055E9 /* Favorites.swift in Sources */,
+				4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 			);

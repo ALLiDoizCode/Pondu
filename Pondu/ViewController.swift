@@ -43,7 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //Parties.partiesPost()
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        mainWall.eventPost()
+        //mainWall.eventPost()
         
         userLogin.beginLogin("bob", password: "password")
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        getArrayCount()
+        //getArrayCount()
         
         //let favorite = userFavorites()
         //favorite.getFavorite()
@@ -71,10 +71,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             let profileImage = UIImage(named: "bob")
             let location = "3300 University Blvd, Winter Park, FL 32792"
             let likes = 0
-            let live = false
+            let live = false*/
         
-         let makeEvent = MakeEvent()
+        /*let makeEvent = MakingEvent()
         makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
+        
+        /*let makeParty = MakingParty()
+        makeParty.party(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
         
         
         
@@ -114,25 +117,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func getArrayCount(){
         
         SwiftEventBus.onMainThread(self, name: "updateCell") { notification in
-            //self.textField.text = "\(self.count)"
             
             print("passing data\(notification.object)")
             
             self.array = notification.object as! [Event]
             
             print(self.array.count)
-            
-            /*if self.array.count == 1 {
-                
-                /*print("the Array has \(self.array.count)")
-                self.numOfCells = self.array[0] as! [String]
-                self.numOfPost = self.array[0] as! [String]*/
-            }else{
-                /*print("the Party Array has \(self.array.count)")
-                self.numOfCells = self.array[1] as! [String]
-                self.numOfPost = self.array[0] as! [String]*/
-                
-            }*/
             
             self.tablview.reloadData()
             

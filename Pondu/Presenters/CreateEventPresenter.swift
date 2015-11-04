@@ -11,7 +11,7 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 
-class MakeEvent {
+class MakingEvent {
     
     let startEvent = createEvent()
     
