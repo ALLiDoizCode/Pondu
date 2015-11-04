@@ -24,7 +24,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     override func viewWillAppear(animated: Bool) {
         
@@ -54,6 +56,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         //let photo = UIImage(named: "bob")
@@ -105,6 +109,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
         cell.post.text = array[indexPath.row].post
+        cell.PostName.text = array[indexPath.row].name
+        cell.likes.text = "CL:\(array[indexPath.row].likes)"
+        
+        let numComments = array[indexPath.row].comments
+        
+        cell.comments.text = "CM:\(numComments.count)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
         
         print("post in array \(self.array.count)")
@@ -118,6 +128,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         //let addFavorite = Favorite()
         //addFavorite.userFavorite(array[indexPath.row].objectID)
         //addFavorite.userPartyFavorite(array[indexPath.row].objectID)
+        
+        let layout = collectionViewLayout as UltravisualLayout
+        let offset = layout.dragOffset * CGFloat(indexPath.item)
+        if collectionView.contentOffset.y != offset {
+            collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
+        }
     }
   
     

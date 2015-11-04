@@ -45,6 +45,10 @@ class MainCell: UICollectionViewCell {
         profileImage.layer.borderWidth = 1.5
         profileImage.layer.masksToBounds = true
         
+        post.alpha = delta
+        comments.alpha = delta
+        likes.alpha = delta
+
     }
     
    
