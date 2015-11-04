@@ -10,7 +10,7 @@ import UIKit
 import SwiftEventBus
 import Parse
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
@@ -23,7 +23,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     
-    @IBOutlet weak var tablview: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewWillAppear(animated: Bool) {
         
@@ -50,6 +50,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view, typically from a nib.
         
         //let photo = UIImage(named: "bob")
@@ -80,7 +82,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         makeParty.party(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
         
         
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,31 +89,34 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return array.count
+        
     }
     
-  
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell:MainCell = tableView.dequeueReusableCellWithIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
+        let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        cell.post.text = array[indexPath.row].post
+        //cell.post.text = array[indexPath.row].post
         
         print("post in array \(self.array.count)")
         
         return cell
+        
     }
     
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         //let addFavorite = Favorite()
         //addFavorite.userFavorite(array[indexPath.row].objectID)
         //addFavorite.userPartyFavorite(array[indexPath.row].objectID)
     }
+  
     
     func getArrayCount(){
         
@@ -124,10 +128,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
             print(self.array.count)
             
-            self.tablview.reloadData()
+            self.collectionView.reloadData()
             
         }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }
 
