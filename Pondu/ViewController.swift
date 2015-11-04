@@ -52,6 +52,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         super.viewDidLoad()
         
         collectionView.backgroundColor = UIColor.clearColor()
+        collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         // Do any additional setup after loading the view, typically from a nib.
         
         //let photo = UIImage(named: "bob")

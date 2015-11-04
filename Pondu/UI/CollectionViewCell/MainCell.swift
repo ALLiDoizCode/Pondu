@@ -12,6 +12,7 @@ class MainCell: UICollectionViewCell {
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var coverView: UIView!
+    @IBOutlet weak var PostName: UILabel!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
@@ -27,7 +28,12 @@ class MainCell: UICollectionViewCell {
         let minAlpha: CGFloat = 0.3
         let maxAlpha: CGFloat = 0.75
         coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
+        
+        let scale = max(delta, 0.5)
+        PostName.transform = CGAffineTransformMakeScale(scale, scale)
     }
+    
+   
 }
 
 
