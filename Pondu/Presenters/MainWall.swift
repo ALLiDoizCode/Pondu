@@ -9,7 +9,6 @@
 import UIKit
 import SwiftEventBus
 import Parse
-import Kingfisher
 
 class PresentMainWall {
     

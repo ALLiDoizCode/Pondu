@@ -13,6 +13,10 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
+    @IBOutlet weak var post: UILabel!
+    @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
@@ -31,6 +35,16 @@ class MainCell: UICollectionViewCell {
         
         let scale = max(delta, 0.5)
         PostName.transform = CGAffineTransformMakeScale(scale, scale)
+        post.transform = CGAffineTransformMakeScale(scale, scale)
+        comments.transform = CGAffineTransformMakeScale(scale, scale)
+        likes.transform = CGAffineTransformMakeScale(scale, scale)
+        profileImage.transform = CGAffineTransformMakeScale(scale, scale)
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.height/2
+        profileImage.layer.borderColor = UIColor.whiteColor().CGColor
+        profileImage.layer.borderWidth = 1.5
+        profileImage.layer.masksToBounds = true
+        
     }
     
    

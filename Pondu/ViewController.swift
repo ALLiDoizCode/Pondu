@@ -9,6 +9,7 @@
 import UIKit
 import SwiftEventBus
 import Parse
+import Kingfisher
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -103,7 +104,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        //cell.post.text = array[indexPath.row].post
+        cell.post.text = array[indexPath.row].post
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
         
         print("post in array \(self.array.count)")
         
