@@ -40,7 +40,7 @@ class ParseParties {
                         let profileName = object.objectForKey("Name") as! String!
                         let theAddress = object.objectForKey("Location") as! String!
                         let video = object.objectForKey("Video") as! PFFile!
-                        let live = object.objectForKey("LIve") as! Bool
+                        let live = object.objectForKey("Live") as! Bool!
                         
                         if let theVideo = video, let theThumbImage = thumbImage{
                             

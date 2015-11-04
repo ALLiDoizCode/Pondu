@@ -68,7 +68,7 @@ class ParseMainWall {
                                     let theID = object.objectId
                                     let post = object.objectForKey("Post") as! String!
                                     let profileImage = object.objectForKey("ProfilePicture") as! PFFile!
-                                    let thumbImage = object.objectForKey("Mainthumb") as! PFFile!
+                                    let eventImages = object.objectForKey("EventImages") as! PFFile!
                                     let likes = object.objectForKey("Likes") as! String!
                                     let comments = object.objectForKey("Comments") as! [String]!
                                     let profileName = object.objectForKey("Name") as! String!
@@ -79,7 +79,7 @@ class ParseMainWall {
                                 
                                 
                                 
-                                if let theVideo = video, let theThumbImage = thumbImage{
+                                if let theVideo = video, let theEventImages = eventImages{
                                     
                                     if let favID = favId {
                                         
@@ -87,7 +87,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live)
                                                 
                                                 
                                                 
@@ -111,14 +111,14 @@ class ParseMainWall {
                                     }else{
                                         
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: thumbImage.url!, theComments: comments,theFav:false,theLive:live)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: eventImages.url!, theComments: comments,theFav:false,theLive:live)
                                         
                                         mainWall.append(mainWalldata)
                                         
                                     }
-                                }else if let theVideo = video where thumbImage == nil {
+                                }else if let theVideo = video where eventImages == nil {
                                     
-                                    let theThumb = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-47ac8439-6b52-401b-bc20-18a2b6a2c76c-Placeholder.svg"
+                                    let theEventImages = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-47ac8439-6b52-401b-bc20-18a2b6a2c76c-Placeholder.svg"
                                     
                                     if let favID = favId {
                                         
@@ -127,7 +127,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live)
                                                 
                                                 
                                                 
@@ -150,13 +150,13 @@ class ParseMainWall {
                                         
                                     }else{
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:false,theLive:live)
                                         
                                         mainWall.append(mainWalldata)
                                         
                                     }
                     
-                                } else if let theThumbImage = thumbImage where video == nil {
+                                } else if let theEventImages = eventImages where video == nil {
                                     
                                     
                                     let theVideo = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-6a5d1d3d-4319-4fe8-a5fa-16556508f115-SampleVideo_1080x720_1mb.mp4"
@@ -167,7 +167,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live)
                                                 
                                                 
                                                 
@@ -191,7 +191,7 @@ class ParseMainWall {
                                     }else{
                                         
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:false,theLive:live)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:false,theLive:live)
                                         
                                         mainWall.append(mainWalldata)
                                         
@@ -199,7 +199,7 @@ class ParseMainWall {
                                 }else{
                                     let theVideo = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-6a5d1d3d-4319-4fe8-a5fa-16556508f115-SampleVideo_1080x720_1mb.mp4"
                                     
-                                    let theThumb = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-47ac8439-6b52-401b-bc20-18a2b6a2c76c-Placeholder.svg"
+                                    let theEventImages = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-47ac8439-6b52-401b-bc20-18a2b6a2c76c-Placeholder.svg"
                                     
                                     if let favID = favId {
                                         
@@ -208,7 +208,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live)
                                                 
                                                 
                                                 
@@ -231,7 +231,7 @@ class ParseMainWall {
                                         
                                     }else{
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:false,theLive:live)
                                         
                                         mainWall.append(mainWalldata)
                                         

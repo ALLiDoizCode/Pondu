@@ -57,13 +57,25 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        getArrayCount()
+        //getArrayCount()
         
         //let favorite = userFavorites()
         //favorite.getFavorite()
         
-         let favParty = partyFavorites()
-         favParty.getFavorite()
+         //let favParty = partyFavorites()
+         //favParty.getFavorite()
+        
+        
+            let name = "jonathan"
+            let post = "just created this post"
+            let profileImage = UIImage(named: "bob")
+            let location = "3300 University Blvd, Winter Park, FL 32792"
+            let live = false
+        
+         let makeEvent = MakeEvent()
+        makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live)
+        
+        
         
     }
 
