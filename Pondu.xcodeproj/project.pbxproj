@@ -24,6 +24,9 @@
 		4D91A9D21BE5F7F200C34281 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9D11BE5F7F200C34281 /* User.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
 		4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */; };
+		4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */; };
+		4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5851BED312800F15C6C /* PartyViewController.swift */; };
+		4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5871BED338700F15C6C /* PartyCell.swift */; };
 		4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EED1BDEC254006055E9 /* SignUp.swift */; };
 		4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EEF1BDEC25F006055E9 /* Login.swift */; };
 		4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF11BDEC375006055E9 /* UserSignUp.swift */; };
@@ -84,6 +87,9 @@
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4DD174A01BDD8C6600B64E0B /* MainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWall.swift; sourceTree = "<group>"; };
 		4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseMainWall.swift; sourceTree = "<group>"; };
+		4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4DD1E5851BED312800F15C6C /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
+		4DD1E5871BED338700F15C6C /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyCell.swift; sourceTree = "<group>"; };
 		4DD73EED1BDEC254006055E9 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		4DD73EEF1BDEC25F006055E9 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4DD73EF11BDEC375006055E9 /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
@@ -281,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				4D01DB6C1BDD639100B30C0D /* ViewController.swift */,
+				4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */,
+				4DD1E5851BED312800F15C6C /* PartyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */,
+				4DD1E5871BED338700F15C6C /* PartyCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 				TargetAttributes = {
 					4D01DB661BDD639100B30C0D = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 2K5QEB378V;
 					};
 					4D01DB7A1BDD639100B30C0D = {
 						CreatedOnToolsVersion = 7.1;
@@ -504,6 +514,7 @@
 				4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */,
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
+				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
@@ -511,6 +522,7 @@
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
 				4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */,
 				4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */,
+				4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */,
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
@@ -520,6 +532,7 @@
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
+				4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,11 +654,15 @@
 			baseConfigurationReference = 78932290621BC3D56EBC5FA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Pondu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -654,11 +671,15 @@
 			baseConfigurationReference = AEAEA2AD6909E8F8C4063850 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Pondu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
