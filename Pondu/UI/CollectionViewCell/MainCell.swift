@@ -18,6 +18,7 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var live: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    var blurView:UIVisualEffectView!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
@@ -41,12 +42,16 @@ class MainCell: UICollectionViewCell {
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         profileImage.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
+    
         
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
+        
+        
                 
     }
+    
     
     override func awakeFromNib() {
         
@@ -54,6 +59,7 @@ class MainCell: UICollectionViewCell {
         profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         profileImage.layer.borderWidth = 1.5
         profileImage.layer.masksToBounds = true
+        
 
     }
 }

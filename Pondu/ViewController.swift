@@ -117,21 +117,26 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         cell.comments.text = "CM:\(numComments.count)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
+        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
         
         let livePoint = CGPoint(x: cell.live.frame.origin.x + 65
             , y: cell.live.frame.origin.y + 5)
         
         
-        if array[indexPath.row].live == true {
+        let pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:30, position:livePoint)
         
-            let pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:30, position:livePoint)
+        
+        if array[indexPath.row].live == true {
+            
+            
             pulseEffect.backgroundColor = UIColor.redColor().CGColor
             
-          cell.contentView.layer.insertSublayer(pulseEffect, below: cell.live.layer)
+            cell.layer.addSublayer(pulseEffect)
             
            cell.live.text = "Live"
         }else {
             
+
             cell.live.text = "Peak"
         }
         
