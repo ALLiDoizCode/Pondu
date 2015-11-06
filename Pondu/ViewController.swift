@@ -59,6 +59,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         
         
+        
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         //let photo = UIImage(named: "bob")
@@ -119,19 +123,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
         cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
         
-        let livePoint = CGPoint(x: cell.live.frame.origin.x + 65
-            , y: cell.live.frame.origin.y + 5)
-        
-        
-        let pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:30, position:livePoint)
         
         
         if array[indexPath.row].live == true {
             
-            
-            pulseEffect.backgroundColor = UIColor.redColor().CGColor
-            
-            cell.layer.addSublayer(pulseEffect)
+            cell.pulseEffect.hidden = false
             
            cell.live.text = "Live"
         }else {
@@ -139,6 +135,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
 
             cell.live.text = "Peak"
         }
+        
         
         
         print("post in array \(self.array.count)")
@@ -157,6 +154,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let offset = layout.dragOffset * CGFloat(indexPath.item)
         if collectionView.contentOffset.y != offset {
             collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
+        }
+        
+        if indexPath.item == layout.featuredItemIndex {
+            
+            print("featured")
         }
     }
   
@@ -179,5 +181,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
+    
+    
 }
 
