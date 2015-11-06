@@ -22,7 +22,7 @@ class PartiesMainWall {
             
             let post = result.object 
             print(post)
-            SwiftEventBus.postToMainThread("updateCell", sender: post)
+            SwiftEventBus.postToMainThread("updatePartyCell", sender: post)
             SwiftEventBus.unregister(self, name: "PartyEvent")
             
         }

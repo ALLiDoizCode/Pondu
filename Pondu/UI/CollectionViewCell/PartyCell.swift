@@ -1,15 +1,16 @@
 //
-//  MainCell.swift
+//  PartyCell.swift
 //  Pondu
 //
-//  Created by Jonathan Green on 11/4/15.
+//  Created by Jonathan Green on 11/6/15.
 //  Copyright © 2015 Jonathan Green. All rights reserved.
 //
 
 import UIKit
 
-class MainCell: UICollectionViewCell {
+class PartyCell: UICollectionViewCell {
     
+ 
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
@@ -19,6 +20,7 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var live: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+
     var blurView:UIVisualEffectView!
     var pulseEffect:LFTPulseAnimation!
     var pulseEffect2:LFTPulseAnimation!
@@ -46,19 +48,21 @@ class MainCell: UICollectionViewCell {
         profileImage.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
         time.transform = CGAffineTransformMakeScale(scale, scale)
-    
+        //bgImage.transform = CGAffineTransformMakeScale(scale, scale)
+        
         
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
         time.alpha = delta
         
-        
-                
+
+
     }
     
     
     override func awakeFromNib() {
+        
         
         profileImage.layer.cornerRadius = profileImage.frame.size.height/2
         profileImage.layer.borderColor = UIColor.whiteColor().CGColor
@@ -74,10 +78,9 @@ class MainCell: UICollectionViewCell {
         pulseEffect.backgroundColor = UIColor.redColor().CGColor
         self.layer.addSublayer(pulseEffect)
         pulseEffect.hidden = true
-      
         
-
+        
+        
     }
+
 }
-
-
