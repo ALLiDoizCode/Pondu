@@ -188,9 +188,12 @@ class parseUser {
                         if let story = object.objectForKey("Stories") as! PFFile! {
                             
                             userStory.append(story.url!)
+                            print(story.url!)
                         }
                         
                     }
+                    
+                    print("number of stories is \(userStory.count)")
                     
                     SwiftEventBus.post("UserStory", sender: userStory)
                     

@@ -1,0 +1,6 @@
+framework module HoneycombView {
+  umbrella header "HoneycombView-umbrella.h"
+
+  export *
+  module * { export * }
+}

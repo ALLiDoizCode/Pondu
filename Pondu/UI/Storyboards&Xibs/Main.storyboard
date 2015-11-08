@@ -267,6 +267,25 @@
             </objects>
             <point key="canvasLocation" x="1280" y="514"/>
         </scene>
+        <!--Story View Controller-->
+        <scene sceneID="dJE-YH-9Ab">
+            <objects>
+                <viewController storyboardIdentifier="Story" id="LUR-Rf-3Td" customClass="StoryViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4T-zo-2Ds"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Fb-ZM-fkI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f8G-nE-kgv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IiJ-8x-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3786" y="1570"/>
+        </scene>
         <!--Party Wall-->
         <scene sceneID="P8D-JN-mew">
             <objects>

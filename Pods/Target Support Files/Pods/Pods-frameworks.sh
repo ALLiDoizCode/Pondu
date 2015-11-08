@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Bolts.framework"
+  install_framework "Pods/HoneycombView.framework"
   install_framework "Pods/Kingfisher.framework"
   install_framework "Pods/PagingMenuController.framework"
   install_framework "Pods/Parse.framework"
@@ -92,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Bolts.framework"
+  install_framework "Pods/HoneycombView.framework"
   install_framework "Pods/Kingfisher.framework"
   install_framework "Pods/PagingMenuController.framework"
   install_framework "Pods/Parse.framework"

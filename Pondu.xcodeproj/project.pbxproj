@@ -13,6 +13,7 @@
 		4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D01DB711BDD639100B30C0D /* Assets.xcassets */; };
 		4D01DB801BDD639100B30C0D /* PonduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB7F1BDD639100B30C0D /* PonduTests.swift */; };
 		4D01DB8B1BDD639100B30C0D /* PonduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */; };
+		4D0460631BEEDD4A005059E4 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0460621BEEDD4A005059E4 /* StoryViewController.swift */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
 		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
@@ -75,6 +76,7 @@
 		4D01DB861BDD639100B30C0D /* PonduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PonduUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PonduUITests.swift; sourceTree = "<group>"; };
 		4D01DB8C1BDD639100B30C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D0460621BEEDD4A005059E4 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				4D01DB6C1BDD639100B30C0D /* ViewController.swift */,
 				4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */,
 				4DD1E5851BED312800F15C6C /* PartyViewController.swift */,
+				4D0460621BEEDD4A005059E4 /* StoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
 				4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */,
 				4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */,
+				4D0460631BEEDD4A005059E4 /* StoryViewController.swift in Sources */,
 				4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */,
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,

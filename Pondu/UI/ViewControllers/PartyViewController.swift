@@ -16,7 +16,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
 
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
-    let user = users()
+    let user = theUser()
     let newAccount = SignUP()
     let userLogin = startLogin()
     let eventID:[String] = []

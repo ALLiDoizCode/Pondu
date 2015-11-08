@@ -17,11 +17,12 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         UIApplication.sharedApplication().statusBarHidden = true
         super.viewDidLoad()
         let MainWall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! ViewController
-        MainWall.title = "Main Wall"
         
-        let repositoriesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PartyWall") as! PartyViewController
+        let Party = self.storyboard?.instantiateViewControllerWithIdentifier("PartyWall") as! PartyViewController
         
-        let viewControllers = [MainWall,repositoriesViewController]
+        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("Story") as! StoryViewController
+        
+        let viewControllers = [MainWall,Party,Story]
         
         let options = PagingMenuOptions()
         options.menuHeight = 60

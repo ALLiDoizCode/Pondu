@@ -11,7 +11,7 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 
-class users {
+class theUser {
     
     let user = parseUser()
     
@@ -83,12 +83,14 @@ class users {
         
     }
     
-    func userStory(imageView:UIImageView){
+    func userStory(){
         
         SwiftEventBus.onMainThread(self, name: "UserStory") { result in
             
             let story = result.object
             print(story)
+            
+            SwiftEventBus.post("updateStory", sender: story)
             
             //imageView.kf_setImageWithURL(NSURL(string: story)!)
             
