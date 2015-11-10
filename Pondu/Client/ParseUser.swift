@@ -12,9 +12,10 @@ import Parse
 
 class parseUser {
     
-    func bioQuery(){
+    func userQuery(){
         let query = PFUser.query()
-        var userBio:[String] = []
+        var userData:[user] = []
+        var theUser:user!
         query!.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -26,14 +27,30 @@ class parseUser {
                 if let objects = objects {
                     for object in objects {
                         
-                        if let bio = object.objectForKey("Bio") as! String! {
+                        let userID = object.objectId
+                        let bio = object.objectForKey("Bio") as! String!
+                        let fullName = object.objectForKey("FullName") as! String!
+                        let userName = object.objectForKey("username") as! String!
+                        let area = object.objectForKey("Area") as! String!
+                        let phone = object.objectForKey("Phone") as! String!
+                        let story = object.objectForKey("Stories") as! PFFile!
+                        let photo = object.objectForKey("photo") as! PFFile!
                             
-                            userBio.append(bio)
+                        if let userBio = bio {
+                            
+                            theUser = user(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
+                        }else{
+                            
+                             theUser = user(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
                         }
+                        
+                        
                         
                     }
                     
-                    SwiftEventBus.post("UserBio", sender: userBio)
+                    userData.append(theUser)
+                    
+                    SwiftEventBus.post("User", sender: userData)
                     
                 }
             } else {
@@ -43,200 +60,4 @@ class parseUser {
         }
     }
     
-    func fullNameQuery(){
-        
-        let query = PFUser.query()
-        var userFullName:[String] = []
-        query!.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) fullNames.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        
-                        if let fullName = object.objectForKey("FullName") as! String! {
-                            
-                             userFullName.append(fullName)
-                        }
-                       
-                    }
-                    
-                    SwiftEventBus.post("UserFullName", sender: userFullName)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-    
-    func userNameQuery(){
-        
-        let query = PFUser.query()
-        var userNames:[String] = []
-        query!.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) userNames.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        
-                        if let userName = object.objectForKey("username") as! String! {
-                            
-                            userNames.append(userName)
-                        }
-                        
-                    }
-                    
-                    SwiftEventBus.post("UserName", sender: userNames)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-    
-    func userAreaQuery(){
-        
-        let query = PFUser.query()
-        var userArea:[String] = []
-        query!.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) userAreas.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        
-                        if let area = object.objectForKey("Area") as! String! {
-                            
-                            userArea.append(area)
-                        }
-                        
-                    }
-                    
-                    SwiftEventBus.post("UserArea", sender: userArea)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-    
-    func userPhoneQuery(){
-        
-        let query = PFUser.query()
-        var userPhone:[String] = []
-        query!.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) userAreas.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        
-                        if let phone = object.objectForKey("Area") as! String! {
-                            
-                            userPhone.append(phone)
-                        }
-                        
-                    }
-                    
-                    SwiftEventBus.post("UserPhone", sender: userPhone)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-    
-    func storyQuery(){
-        let query = PFUser.query()
-        var userStory:[String] = []
-        query!.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) Story Images.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        
-                        if let story = object.objectForKey("Stories") as! PFFile! {
-                            
-                            userStory.append(story.url!)
-                            print(story.url!)
-                        }
-                        
-                    }
-                    
-                    print("number of stories is \(userStory.count)")
-                    
-                    SwiftEventBus.post("UserStory", sender: userStory)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-        
-        
-    }
-    
-    func photoQuery(){
-        let query = PFUser.query()
-        var userPhoto:[String] = []
-        query!.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) Users photos.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        
-                        if let photo = object.objectForKey("photo") as! PFFile! {
-                            
-                            userPhoto.append(photo.url!)
-                        }
-                        
-                    }
-                    
-                    SwiftEventBus.post("UserPhoto", sender: userPhoto)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-        
-        
-    }
 }

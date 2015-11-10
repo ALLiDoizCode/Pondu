@@ -9,12 +9,10 @@
 import UIKit
 import SwiftEventBus
 import Kingfisher
-import HoneycombView
 
 class StoryViewController: UIViewController {
     
     var array:[String] = []
-    var users = [User]()
     var storyUser:theUser = theUser()
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -22,7 +20,7 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyUser.userStory()
+        storyUser.theUsers()
         
         SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
             
@@ -30,25 +28,6 @@ class StoryViewController: UIViewController {
             
             self.array = notification.object as! [String]
 
-            for var i = 0; i < self.array.count; i++ {
-                let user = User(id: i, profileImageURL: self.array[i])
-                self.users.append(user)
-            }
-            
-            let honeycombView = HoneycombView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
-
-            
-            honeycombView.center = CGPointMake(self.view.frame.width/2, self.view.frame.height/2)
-            honeycombView.diameter = 100
-            honeycombView.margin = 5
-            //honeycombView.honeycombBackgroundColor = UIColor.clearColor()
-            
-            
-            //honeycombView.configrationForHoneycombViewWithImages(images)
-            honeycombView.configrationForHoneycombViewWithURL(self.users.map{ $0.profileImageURL })
-            self.view.addSubview(honeycombView)
-            
-            honeycombView.animate(2.0)
 
         }
 
@@ -56,16 +35,9 @@ class StoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-struct User {
-    var id:Int!
-    var profileImageURL:String!
+
     
-    init(id:Int = 0, profileImageURL:String = "image"){
-        self.id = id
-        self.profileImageURL = profileImageURL
-    }
-    
-}
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

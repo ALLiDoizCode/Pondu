@@ -1,35 +1,34 @@
 //
-//  MainViewcontroller.swift
+//  BaseViewController.swift
 //  Pondu
 //
-//  Created by Jonathan Green on 11/10/15.
+//  Created by Jonathan Green on 11/6/15.
 //  Copyright © 2015 Jonathan Green. All rights reserved.
 //
 
 import UIKit
 import PagingMenuController
 
-class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
+class BaseViewController: UIViewController,PagingMenuControllerDelegate {
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        
         UIApplication.sharedApplication().statusBarHidden = true
-
-        let Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
+        super.viewDidLoad()
+        let Events = self.storyboard?.instantiateViewControllerWithIdentifier("Events") as! ViewController
         
-        let Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
+        let Party = self.storyboard?.instantiateViewControllerWithIdentifier("Party") as! PartyViewController
         
-       // let Story = self.storyboard?.instantiateViewControllerWithIdentifier("Story") as! StoryViewController
+        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("Story") as! StoryViewController
         
-        let viewControllers = [Mainwall,Favorite]
+        let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
         options.menuHeight = 60
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!
-        options.menuPosition = .Bottom
         options.menuItemMode = .RoundRect(radius: 2, horizontalPadding: 4, verticalPadding: 4, selectedColor: UIColor.grayColor())
         let pagingMenuController = self.childViewControllers.first as! PagingMenuController
         pagingMenuController.delegate = self

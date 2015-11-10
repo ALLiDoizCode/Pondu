@@ -11,6 +11,7 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 import QuartzCore
+import SwiftDate
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -31,22 +32,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         
-        //mainWall.eventPost()
-        //mainWall.eventIcon()
-        //mainWall.eventThumb()
-        //mainWall.eventCL()
-        //mainWall.eventCM()
-        //mainWall.profileName()
-        //mainWall.eventAddress()
-        //user.userBio()
-        //user.userStory()
-        //user.userFullName()
-        //user.userNames()
-        //user.userArea()
-        //user.userPhoto()
-        //Parties.partiesPost()
-        //mainWall.eventID(eventID )
-        //favorite.addFavorite(0)
         mainWall.eventPost()
         
         userLogin.beginLogin("bob", password: "password")
@@ -70,13 +55,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
         getArrayCount()
-        
-        //let favorite = userFavorites()
-        //favorite.getFavorite()
-        
-         //let favParty = partyFavorites()
-         //favParty.getFavorite()
-        
         
             /*let name = "jonathan"
             let post = "just created another post"
@@ -145,6 +123,23 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+    /////////////////TimeStamp////////////////////////     
+       /*let today = NSDate.today().weekdayName
+        
+        //print(today)
+        
+        let todaysDate:NSDate = NSDate()
+        let dateFormatter:NSDateFormatter = NSDateFormatter()
+        let theTimeFormat = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = theTimeFormat
+        let DateInFormat:String = dateFormatter.stringFromDate(todaysDate)
+        
+        print(DateInFormat)
+        print(today)*/
+       
+  /////////////////TimeStampEnd////////////////////////
         
         //let addFavorite = Favorite()
         //addFavorite.userFavorite(array[indexPath.row].objectID)

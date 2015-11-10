@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HoneycombView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftEventBus.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02D420F2C450E6FF49CA18C0FDE54780</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>23D4B5C9CC657B68134305BFEB076270</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2B3F596F7428A8EFA7D4F2648E586769</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B15227DFD366F3F6C4CE9DBDBA17B7CC</key>
+		<key>832B49345E384D510EDE149165E12C2C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B75A8E88DFDA693DFB0FE08EEB2AE9D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E304586681E6272A524D798D8458E522</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3DE77505D0FE5B3064166AB817EB1D6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F447F906D101B30F365DA7E6991D212B</key>
+		<key>B9896897A7C563A5ABF2CECF5D02BFC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

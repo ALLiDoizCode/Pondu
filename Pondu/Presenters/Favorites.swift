@@ -66,7 +66,7 @@ class userFavorites {
                 print("do something with post data")
                 //label.text = favList[0]
                 SwiftEventBus.post("Count", sender: favList.count )
-                SwiftEventBus.postToMainThread("updateCell", sender: favList)
+                SwiftEventBus.postToMainThread("updateFavoriteCell", sender: favList)
                 
                 SwiftEventBus.unregister(self, name: "FavoritesList")
             }

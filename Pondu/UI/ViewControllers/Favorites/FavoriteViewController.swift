@@ -1,28 +1,28 @@
 //
-//  BaseViewController.swift
+//  FavoriteViewController.swift
 //  Pondu
 //
-//  Created by Jonathan Green on 11/6/15.
+//  Created by Jonathan Green on 11/10/15.
 //  Copyright © 2015 Jonathan Green. All rights reserved.
 //
 
 import UIKit
 import PagingMenuController
 
+class FavoriteViewController: UIViewController,PagingMenuControllerDelegate {
 
-class BaseViewController: UIViewController,PagingMenuControllerDelegate {
-    
     override func viewDidLoad() {
-        
-        UIApplication.sharedApplication().statusBarHidden = true
         super.viewDidLoad()
-        let MainWall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! ViewController
+
+        UIApplication.sharedApplication().statusBarHidden = true
+
+        let Events = self.storyboard?.instantiateViewControllerWithIdentifier("FavEvents") as! FavEventsViewController
         
-        let Party = self.storyboard?.instantiateViewControllerWithIdentifier("PartyWall") as! PartyViewController
+        let Party = self.storyboard?.instantiateViewControllerWithIdentifier("FavParty") as! FavPartiesViewController
         
-        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("Story") as! StoryViewController
+        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("FavStory") as! FavStoriesViewController
         
-        let viewControllers = [MainWall,Party,Story]
+        let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
         options.menuHeight = 60
