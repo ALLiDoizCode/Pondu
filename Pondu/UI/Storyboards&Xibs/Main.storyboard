@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dRc-1f-bKN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8pl-pP-hVW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Main Wall-->
+        <!--Events-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainWall" title="Main Wall" id="BYZ-38-t0r" customClass="ViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainWall" title="Events" id="BYZ-38-t0r" customClass="ViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -197,7 +197,7 @@
         <!--Base View Controller-->
         <scene sceneID="NZd-vY-PH6">
             <objects>
-                <viewController id="Dbk-xl-mPr" customClass="BaseViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Base" id="Dbk-xl-mPr" customClass="BaseViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2SK-cK-zYe"/>
                         <viewControllerLayoutGuide type="bottom" id="WMq-nN-VLX"/>
@@ -228,6 +228,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87b-tm-8me" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2092" y="514"/>
+        </scene>
+        <!--Main Viewcontroller-->
+        <scene sceneID="zds-EJ-HXU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-dH-dQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ugc-Zl-Ccx" customClass="MainViewcontroller" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JMr-Z0-eCJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="L9L-Ey-0mc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lPI-MB-OZh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-DE-V93">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="3Ub-Ss-jtQ" kind="embed" id="Mwa-iq-6vA"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m5L-DE-V93" secondAttribute="trailing" id="Lwh-xq-cip"/>
+                            <constraint firstItem="m5L-DE-V93" firstAttribute="top" secondItem="JMr-Z0-eCJ" secondAttribute="bottom" id="OR0-d5-I2a"/>
+                            <constraint firstItem="m5L-DE-V93" firstAttribute="leading" secondItem="lPI-MB-OZh" secondAttribute="leading" id="fLu-gv-tZQ"/>
+                            <constraint firstItem="L9L-Ey-0mc" firstAttribute="top" secondItem="m5L-DE-V93" secondAttribute="bottom" id="ngf-qb-ME1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jfy-jk-PRn"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2308" y="1328"/>
         </scene>
         <!--Paging Menu Controller-->
         <scene sceneID="RqK-Oc-7QB">
@@ -267,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="1280" y="514"/>
         </scene>
-        <!--Story View Controller-->
+        <!--Stories-->
         <scene sceneID="dJE-YH-9Ab">
             <objects>
-                <viewController storyboardIdentifier="Story" id="LUR-Rf-3Td" customClass="StoryViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Story" title="Stories" id="LUR-Rf-3Td" customClass="StoryViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4T-zo-2Ds"/>
                         <viewControllerLayoutGuide type="bottom" id="2Fb-ZM-fkI"/>
@@ -279,17 +314,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiJ-8x-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="1570"/>
+            <point key="canvasLocation" x="4598" y="1570"/>
         </scene>
-        <!--Party Wall-->
+        <!--Parties-->
         <scene sceneID="P8D-JN-mew">
             <objects>
-                <viewController storyboardIdentifier="PartyWall" title="Party Wall" id="o55-5M-dCg" customClass="PartyViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PartyWall" title="Parties" id="o55-5M-dCg" customClass="PartyViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zDo-Al-19M"/>
                         <viewControllerLayoutGuide type="bottom" id="vgp-0G-c0Q"/>
@@ -470,7 +505,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoM-29-ILf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="907"/>
+            <point key="canvasLocation" x="4598" y="907"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KXI-wD-zs4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sk-6m-BC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8pl-pP-hVW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ugc-Zl-Ccx" kind="relationship" relationship="rootViewController" id="BbD-mh-Zfk"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1274" y="1354"/>
+        </scene>
+        <!--Paging Menu Controller-->
+        <scene sceneID="RcQ-A7-Lgx">
+            <objects>
+                <viewController id="3Ub-Ss-jtQ" customClass="PagingMenuController" customModule="PagingMenuController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vu5-zz-b8C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Me6-7z-xi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3115" y="1328"/>
         </scene>
     </scenes>
     <resources>

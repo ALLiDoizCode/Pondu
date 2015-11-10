@@ -46,7 +46,6 @@ class MainCell: UICollectionViewCell {
         profileImage.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
         time.transform = CGAffineTransformMakeScale(scale, scale)
-    
         
         post.alpha = delta
         comments.alpha = delta

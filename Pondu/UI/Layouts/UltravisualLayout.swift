@@ -97,6 +97,8 @@ class UltravisualLayout: UICollectionViewLayout {
         
         // Determine the current cell’s status — featured, next or standard. In the case of the latter, you do nothing.
         
+        
+        
         if indexPath.item == featuredItemIndex {
             
             // If the cell is currently in the featured cell position, calculate the yOffset and use that to derive the new y value for the cell. After that, you set the cell’s height to be the featured height.

@@ -62,7 +62,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         
         
-        
         // Do any additional setup after loading the view, typically from a nib.
         
         //let photo = UIImage(named: "bob")
@@ -140,6 +139,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         print("post in array \(self.array.count)")
         
+        
         return cell
         
     }
@@ -159,9 +159,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         if indexPath.item == layout.featuredItemIndex {
             
             print("featured")
+        }else{
+            
+            print("not featured")
         }
     }
-  
+
+
     
     func getArrayCount(){
         
