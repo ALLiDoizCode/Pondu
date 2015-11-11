@@ -232,7 +232,6 @@
         <!--Main Viewcontroller-->
         <scene sceneID="zds-EJ-HXU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-dH-dQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Base" id="ugc-Zl-Ccx" customClass="MainViewcontroller" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JMr-Z0-eCJ"/>
@@ -261,6 +260,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jfy-jk-PRn"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-dH-dQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2126" y="628"/>
         </scene>
@@ -313,13 +313,68 @@
                     <view key="view" contentMode="scaleToFill" id="f8G-nE-kgv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-M8-pNC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="x3g-RG-dNI">
+                                    <size key="itemSize" width="350" height="598"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCell" id="Qg4-dj-bSx" customClass="StoryCell" customModule="Pondu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="400" height="598"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="598"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-5X-iiB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="598"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.84643036220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" id="8VT-pe-NLV"/>
+                                            <constraint firstAttribute="trailing" secondItem="3qp-5X-iiB" secondAttribute="trailing" id="HGN-uw-Vg5"/>
+                                            <constraint firstAttribute="bottom" secondItem="3qp-5X-iiB" secondAttribute="bottom" id="SuY-oo-Ll6"/>
+                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="leading" secondItem="Qg4-dj-bSx" secondAttribute="leading" id="xcl-YK-sF7"/>
+                                        </constraints>
+                                        <size key="customSize" width="400" height="598"/>
+                                        <connections>
+                                            <outlet property="Panaorama" destination="3qp-5X-iiB" id="qj2-B4-6oy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="LUR-Rf-3Td" id="EYF-MJ-Mmv"/>
+                                    <outlet property="delegate" destination="LUR-Rf-3Td" id="wM5-qy-NZN"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="0dv-Y8-Xaj"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="g6Z-Tf-gXt"/>
+                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="p7v-mk-3wb"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="yA9-Mm-glP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Qs4-M8-pNC" id="Mhm-sk-o9L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiJ-8x-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3718" y="-298"/>
+            <point key="canvasLocation" x="3720" y="-298"/>
         </scene>
         <!--Parties-->
         <scene sceneID="P8D-JN-mew">
@@ -510,7 +565,6 @@
         <!--Navigation Controller-->
         <scene sceneID="KXI-wD-zs4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sk-6m-BC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8pl-pP-hVW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
@@ -523,6 +577,7 @@
                         <segue destination="ugc-Zl-Ccx" kind="relationship" relationship="rootViewController" id="BbD-mh-Zfk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sk-6m-BC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2126" y="-278"/>
         </scene>
@@ -530,6 +585,10 @@
         <scene sceneID="RcQ-A7-Lgx">
             <objects>
                 <viewController id="3Ub-Ss-jtQ" customClass="PagingMenuController" customModule="PagingMenuController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WYt-B7-R3I"/>
+                        <viewControllerLayoutGuide type="bottom" id="eOv-mp-5ib"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vu5-zz-b8C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

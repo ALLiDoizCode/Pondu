@@ -27,6 +27,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         let options = PagingMenuOptions()
         options.menuHeight = 60
         options.menuDisplayMode = .SegmentedControl
+        options.scrollEnabled = false
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!
         options.menuPosition = .Bottom

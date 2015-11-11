@@ -25,6 +25,20 @@ class user {
     
     init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,theFavorites:[String],thePartyFavorites:[String],thePhoto:String){
         
+        
+        objectID = theObjectID
+        area = theArea
+        fullName = theFullName
+        userName = theUserName
+        passWord = thePassWord
+        bio = theBio
+        phone = thePhone
+        email = theEmail
+        story = theStory
+        Favorites = theFavorites
+        partyFavorites = thePartyFavorites
+        photo = thePhoto
+        
     }
     
 }

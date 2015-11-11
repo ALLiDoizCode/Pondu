@@ -19,8 +19,10 @@ class theUser {
         
         SwiftEventBus.onMainThread(self, name: "User") { result in
             
-            let bio = result.object
-            print(bio)
+            let userData = result.object
+            print(userData)
+            
+            SwiftEventBus.postToMainThread("updateStory", sender: userData)
             
         }
         

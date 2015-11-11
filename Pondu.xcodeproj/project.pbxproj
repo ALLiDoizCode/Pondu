@@ -21,6 +21,9 @@
 		4D1843EB1BF246E800B2AFA2 /* FavStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EA1BF246E800B2AFA2 /* FavStoriesViewController.swift */; };
 		4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */; };
 		4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */; };
+		4D1843F31BF2DE2A00B2AFA2 /* PanoramaIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843F11BF2DE2A00B2AFA2 /* PanoramaIndicator.swift */; };
+		4D1843F41BF2DE2A00B2AFA2 /* PanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843F21BF2DE2A00B2AFA2 /* PanoramaView.swift */; };
+		4D1843F61BF2DEB300B2AFA2 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
 		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
@@ -91,6 +94,9 @@
 		4D1843EA1BF246E800B2AFA2 /* FavStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavStoriesViewController.swift; sourceTree = "<group>"; };
 		4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavEventCell.swift; sourceTree = "<group>"; };
 		4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartyCell.swift; sourceTree = "<group>"; };
+		4D1843F11BF2DE2A00B2AFA2 /* PanoramaIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaIndicator.swift; sourceTree = "<group>"; };
+		4D1843F21BF2DE2A00B2AFA2 /* PanoramaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaView.swift; sourceTree = "<group>"; };
+		4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
@@ -239,6 +245,15 @@
 			path = MainWall;
 			sourceTree = "<group>";
 		};
+		4D1843F01BF2DE0000B2AFA2 /* Panoramic */ = {
+			isa = PBXGroup;
+			children = (
+				4D1843F11BF2DE2A00B2AFA2 /* PanoramaIndicator.swift */,
+				4D1843F21BF2DE2A00B2AFA2 /* PanoramaView.swift */,
+			);
+			path = Panoramic;
+			sourceTree = "<group>";
+		};
 		4D7C0CA01BE08B6400CCB2DE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +274,7 @@
 				4D91A9D11BE5F7F200C34281 /* User.swift */,
 				4D86683D1BE9902200591DF6 /* makeEvent.swift */,
 				4D86683F1BE9A98600591DF6 /* MakeParty.swift */,
+				4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -301,6 +317,7 @@
 		4DE1A1BB1BEA6F85009BCF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D1843F01BF2DE0000B2AFA2 /* Panoramic */,
 				4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */,
 			);
 			path = Extensions;
@@ -559,6 +576,7 @@
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
+				4D1843F61BF2DEB300B2AFA2 /* StoryCell.swift in Sources */,
 				4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
@@ -579,7 +597,9 @@
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
+				4D1843F41BF2DE2A00B2AFA2 /* PanoramaView.swift in Sources */,
 				4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */,
+				4D1843F31BF2DE2A00B2AFA2 /* PanoramaIndicator.swift in Sources */,
 				4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

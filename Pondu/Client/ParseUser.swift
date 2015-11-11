@@ -39,16 +39,20 @@ class parseUser {
                         if let userBio = bio {
                             
                             theUser = user(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
+                            
+                                userData.append(theUser)
                         }else{
                             
                              theUser = user(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
+                            
+                                userData.append(theUser)
                         }
                         
                         
                         
                     }
                     
-                    userData.append(theUser)
+                   
                     
                     SwiftEventBus.post("User", sender: userData)
                     
