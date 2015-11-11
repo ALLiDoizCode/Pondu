@@ -96,7 +96,7 @@
 		4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartyCell.swift; sourceTree = "<group>"; };
 		4D1843F11BF2DE2A00B2AFA2 /* PanoramaIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaIndicator.swift; sourceTree = "<group>"; };
 		4D1843F21BF2DE2A00B2AFA2 /* PanoramaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoramaView.swift; sourceTree = "<group>"; };
-		4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryCell.swift; path = ../../Classes/StoryCell.swift; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
@@ -274,7 +274,6 @@
 				4D91A9D11BE5F7F200C34281 /* User.swift */,
 				4D86683D1BE9902200591DF6 /* makeEvent.swift */,
 				4D86683F1BE9A98600591DF6 /* MakeParty.swift */,
-				4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -360,6 +359,7 @@
 		4DE1A1C71BEA724B009BCF55 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				4D1843F51BF2DEB300B2AFA2 /* StoryCell.swift */,
 				4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */,
 				4DD1E5871BED338700F15C6C /* PartyCell.swift */,
 				4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */,

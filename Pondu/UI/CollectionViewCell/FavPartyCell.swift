@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class FavPartyCell: UICollectionViewCell {
     
@@ -16,7 +17,7 @@ class FavPartyCell: UICollectionViewCell {
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
     @IBOutlet weak var likes: UILabel!
-    @IBOutlet weak var live: UILabel!
+    @IBOutlet weak var live: SpringLabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     var blurView:UIVisualEffectView!

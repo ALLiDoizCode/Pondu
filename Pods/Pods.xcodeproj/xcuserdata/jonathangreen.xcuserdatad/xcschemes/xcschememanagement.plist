@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Spring.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftDate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>327998BBF36F8D5969CEF6B2EE669B87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5BBB34170986C897E8931C1768FD6EE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A3FE60C5FF33F0026B6BB41A1D98381</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,22 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>832B49345E384D510EDE149165E12C2C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B75A8E88DFDA693DFB0FE08EEB2AE9D5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9896897A7C563A5ABF2CECF5D02BFC1</key>
+		<key>D455E8344C8CFCA82DF1005DF301CDC2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F18EBB986240C387C3F0768F2C8188CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

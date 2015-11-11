@@ -11,6 +11,7 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 import QuartzCore
+import Spring
 
 class PartyViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
@@ -127,13 +128,16 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         if array[indexPath.row].live == true {
             
-            cell.pulseEffect.hidden = false
+            //cell.pulseEffect.hidden = false
             
             cell.live.text = "Live"
+            cell.live.repeatCount = Float.infinity
+            cell.live.animate()
         }else {
             
             
             cell.live.text = "Peak"
+            cell.live.textColor = UIColor.whiteColor()
         }
         
         

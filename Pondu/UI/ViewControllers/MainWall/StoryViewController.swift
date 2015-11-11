@@ -10,11 +10,12 @@ import UIKit
 import SwiftEventBus
 import Kingfisher
 
+
 class StoryViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var array:[user] = []
     var storyUser:theUser = theUser()
-    var imageView:UIImageView!
+    
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -59,7 +60,9 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
         
        cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].photo)!, placeholderImage: UIImage(named: "bob"))
         
-        load_image(cell,indexPath: indexPath)
+        cell.name.text = array[indexPath.item].fullName
+        
+        load_image(cell.motionView,item: indexPath.item)
         
         print(array[indexPath.item].story)
         
@@ -70,18 +73,18 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     
-    func load_image(cell:StoryCell,indexPath: NSIndexPath) {
+    func load_image(view:PanoramaView,item:Int) {
         
-        let imgURL: NSURL = NSURL(string: array[indexPath.item].story)!
+        let imgURL: NSURL = NSURL(string: array[item].story)!
         let request: NSURLRequest = NSURLRequest(URL: imgURL)
         NSURLConnection.sendAsynchronousRequest(
             request, queue: NSOperationQueue.mainQueue(),
             completionHandler: {(response,data,error) -> Void in
                 if error == nil {
                     
-                    let motionView = PanoramaView(frame: cell.Panaorama.bounds)
-                    motionView.setImage(UIImage(data: data!)!)
-                    cell.Panaorama.addSubview(motionView)
+                    
+                    view.setImage(UIImage(data: data!)!)
+                    
                     
                 }
         })

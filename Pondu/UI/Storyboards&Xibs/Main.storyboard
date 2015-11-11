@@ -99,12 +99,15 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-Ol-JhD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-Ol-JhD" customClass="SpringLabel" customModule="Spring">
                                                     <rect key="frame" x="123" y="35" width="64" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.28892833060028944" blue="0.2795022767546349" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="flash"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:00pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-Ua-VEO">
                                                     <rect key="frame" x="15" y="85" width="55" height="21"/>
@@ -318,49 +321,61 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="x3g-RG-dNI">
-                                    <size key="itemSize" width="350" height="598"/>
+                                    <size key="itemSize" width="400" height="598"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCell" id="Qg4-dj-bSx" customClass="StoryCell" customModule="Pondu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="350" height="598"/>
+                                        <rect key="frame" x="0.0" y="1" width="400" height="598"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="598"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="598"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-5X-iiB">
-                                                    <rect key="frame" x="0.0" y="79" width="350" height="440"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="598"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUk-dN-n59">
-                                                    <rect key="frame" x="143" y="400" width="65" height="65"/>
+                                                    <rect key="frame" x="10" y="520" width="65" height="65"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="Efv-UK-FrD"/>
-                                                        <constraint firstAttribute="height" constant="65" id="ZHt-Gm-du2"/>
+                                                        <constraint firstAttribute="width" constant="65" id="Rf2-Y9-sl7"/>
+                                                        <constraint firstAttribute="height" constant="65" id="yGA-Kh-Sd0"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHY-xf-z32">
+                                                    <rect key="frame" x="100" y="535" width="292" height="40"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" constant="79" id="8VT-pe-NLV"/>
-                                            <constraint firstItem="wUk-dN-n59" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" constant="400" id="CC3-PO-6MI"/>
-                                            <constraint firstAttribute="trailing" secondItem="3qp-5X-iiB" secondAttribute="trailing" id="HGN-uw-Vg5"/>
-                                            <constraint firstAttribute="bottom" secondItem="3qp-5X-iiB" secondAttribute="bottom" constant="79" id="SuY-oo-Ll6"/>
-                                            <constraint firstAttribute="bottom" secondItem="wUk-dN-n59" secondAttribute="bottom" constant="133" id="cEo-Nw-aao"/>
-                                            <constraint firstItem="wUk-dN-n59" firstAttribute="centerX" secondItem="Qg4-dj-bSx" secondAttribute="centerX" id="roi-IS-JyU"/>
-                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="leading" secondItem="Qg4-dj-bSx" secondAttribute="leading" id="xcl-YK-sF7"/>
+                                            <constraint firstAttribute="bottom" secondItem="3qp-5X-iiB" secondAttribute="bottom" id="7dg-oI-DqG"/>
+                                            <constraint firstAttribute="bottom" secondItem="cHY-xf-z32" secondAttribute="bottom" constant="23" id="I9m-Rn-68R"/>
+                                            <constraint firstAttribute="trailing" secondItem="cHY-xf-z32" secondAttribute="trailing" constant="8" id="VXM-w2-06t"/>
+                                            <constraint firstItem="cHY-xf-z32" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" constant="535" id="Ywg-ba-477"/>
+                                            <constraint firstAttribute="trailing" secondItem="3qp-5X-iiB" secondAttribute="trailing" id="cqS-9F-TWG"/>
+                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" id="knm-Dk-jL6"/>
+                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="leading" secondItem="Qg4-dj-bSx" secondAttribute="leading" id="mtK-AG-vp5"/>
+                                            <constraint firstAttribute="bottom" secondItem="wUk-dN-n59" secondAttribute="bottom" constant="13" id="pnA-y7-DWy"/>
+                                            <constraint firstItem="wUk-dN-n59" firstAttribute="leading" secondItem="Qg4-dj-bSx" secondAttribute="leading" constant="10" id="qBK-j2-jLK"/>
+                                            <constraint firstItem="wUk-dN-n59" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" constant="520" id="wRG-Vf-OZH"/>
+                                            <constraint firstItem="cHY-xf-z32" firstAttribute="leading" secondItem="wUk-dN-n59" secondAttribute="trailing" constant="25" id="zup-uC-kmn"/>
                                         </constraints>
-                                        <size key="customSize" width="350" height="598"/>
+                                        <size key="customSize" width="400" height="598"/>
                                         <connections>
                                             <outlet property="Panaorama" destination="3qp-5X-iiB" id="qj2-B4-6oy"/>
+                                            <outlet property="name" destination="cHY-xf-z32" id="P07-3B-nKv"/>
                                             <outlet property="userIcon" destination="wUk-dN-n59" id="IVN-B2-ghW"/>
                                         </connections>
                                     </collectionViewCell>
@@ -374,10 +389,10 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="KIa-zo-nVm"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="Sfq-tc-Qz8"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="vSu-Te-GX7"/>
-                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="wTb-Yh-qla"/>
+                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="ToJ-yF-m1R"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="ZLn-ak-NAD"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="gPn-uB-bq6"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="wIW-RC-hcB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -479,12 +494,15 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-Rm-g2Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-Rm-g2Q" customClass="SpringLabel" customModule="Spring">
                                                     <rect key="frame" x="123" y="35" width="64" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.28892833060000001" blue="0.2795022768" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="flash"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:00pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-t0-uHo">
                                                     <rect key="frame" x="15" y="85" width="55" height="21"/>
@@ -779,12 +797,15 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZF-nr-JiP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZF-nr-JiP" customClass="SpringLabel" customModule="Spring">
                                                     <rect key="frame" x="123" y="35" width="64" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.28892833060000001" blue="0.2795022768" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="flash"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:00pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klv-vp-SXW">
                                                     <rect key="frame" x="15" y="85" width="55" height="21"/>
@@ -983,12 +1004,15 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-0u-FlF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-0u-FlF" customClass="SpringLabel" customModule="Spring">
                                                     <rect key="frame" x="123" y="35" width="64" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.28892833060000001" blue="0.2795022768" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="flash"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:00pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK6-Cj-XpR">
                                                     <rect key="frame" x="15" y="85" width="55" height="21"/>

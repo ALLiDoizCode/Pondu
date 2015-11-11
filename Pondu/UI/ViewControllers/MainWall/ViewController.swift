@@ -12,6 +12,7 @@ import Parse
 import Kingfisher
 import QuartzCore
 import SwiftDate
+import Spring
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -104,13 +105,15 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         if array[indexPath.row].live == true {
             
-            cell.pulseEffect.hidden = false
+            cell.live.text = "Live"
+            cell.live.repeatCount = Float.infinity
+            cell.live.animate()
             
-           cell.live.text = "Live"
         }else {
             
 
             cell.live.text = "Peak"
+            cell.live.textColor = UIColor.whiteColor()
         }
         
         

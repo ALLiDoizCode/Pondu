@@ -10,6 +10,7 @@ import UIKit
 import SwiftEventBus
 import Kingfisher
 import QuartzCore
+import Spring
 
 class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
@@ -63,13 +64,15 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         
         if array[indexPath.row].live == true {
             
-            cell.pulseEffect.hidden = false
-            
             cell.live.text = "Live"
+            cell.live.repeatCount = Float.infinity
+            cell.live.animate()
+            
         }else {
             
             
             cell.live.text = "Peak"
+            cell.live.textColor = UIColor.whiteColor()
         }
         
         
