@@ -317,7 +317,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-M8-pNC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="x3g-RG-dNI">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="x3g-RG-dNI">
                                     <size key="itemSize" width="350" height="598"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -325,31 +325,43 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCell" id="Qg4-dj-bSx" customClass="StoryCell" customModule="Pondu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="400" height="598"/>
+                                        <rect key="frame" x="0.0" y="1" width="350" height="598"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="598"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="598"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qp-5X-iiB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="598"/>
+                                                    <rect key="frame" x="0.0" y="79" width="350" height="440"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.84643036220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wUk-dN-n59">
+                                                    <rect key="frame" x="143" y="400" width="65" height="65"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="Efv-UK-FrD"/>
+                                                        <constraint firstAttribute="height" constant="65" id="ZHt-Gm-du2"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" id="8VT-pe-NLV"/>
+                                            <constraint firstItem="3qp-5X-iiB" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" constant="79" id="8VT-pe-NLV"/>
+                                            <constraint firstItem="wUk-dN-n59" firstAttribute="top" secondItem="Qg4-dj-bSx" secondAttribute="top" constant="400" id="CC3-PO-6MI"/>
                                             <constraint firstAttribute="trailing" secondItem="3qp-5X-iiB" secondAttribute="trailing" id="HGN-uw-Vg5"/>
-                                            <constraint firstAttribute="bottom" secondItem="3qp-5X-iiB" secondAttribute="bottom" id="SuY-oo-Ll6"/>
+                                            <constraint firstAttribute="bottom" secondItem="3qp-5X-iiB" secondAttribute="bottom" constant="79" id="SuY-oo-Ll6"/>
+                                            <constraint firstAttribute="bottom" secondItem="wUk-dN-n59" secondAttribute="bottom" constant="133" id="cEo-Nw-aao"/>
+                                            <constraint firstItem="wUk-dN-n59" firstAttribute="centerX" secondItem="Qg4-dj-bSx" secondAttribute="centerX" id="roi-IS-JyU"/>
                                             <constraint firstItem="3qp-5X-iiB" firstAttribute="leading" secondItem="Qg4-dj-bSx" secondAttribute="leading" id="xcl-YK-sF7"/>
                                         </constraints>
-                                        <size key="customSize" width="400" height="598"/>
+                                        <size key="customSize" width="350" height="598"/>
                                         <connections>
                                             <outlet property="Panaorama" destination="3qp-5X-iiB" id="qj2-B4-6oy"/>
+                                            <outlet property="userIcon" destination="wUk-dN-n59" id="IVN-B2-ghW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -362,14 +374,15 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="0dv-Y8-Xaj"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="g6Z-Tf-gXt"/>
-                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="p7v-mk-3wb"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="yA9-Mm-glP"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="KIa-zo-nVm"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="Sfq-tc-Qz8"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="vSu-Te-GX7"/>
+                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="wTb-Yh-qla"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Qs4-M8-pNC" id="Mhm-sk-o9L"/>
+                        <outlet property="layout" destination="x3g-RG-dNI" id="bOD-6i-AWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiJ-8x-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>

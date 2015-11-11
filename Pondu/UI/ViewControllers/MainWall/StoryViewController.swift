@@ -14,10 +14,12 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     var array:[user] = []
     var storyUser:theUser = theUser()
+    var imageView:UIImageView!
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var layout: UICollectionViewFlowLayout!
     
     override func viewWillAppear(animated: Bool) {
         
@@ -55,7 +57,7 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         let cell:StoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("StoryCell", forIndexPath: indexPath) as! StoryCell
         
-        //cell.motionView.setImage(UIImage(named: "bob")!)
+       cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].photo)!, placeholderImage: UIImage(named: "bob"))
         
         load_image(cell,indexPath: indexPath)
         
@@ -76,7 +78,11 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
             request, queue: NSOperationQueue.mainQueue(),
             completionHandler: {(response,data,error) -> Void in
                 if error == nil {
-                    cell.motionView.setImage(UIImage(data: data!)!)
+                    
+                    let motionView = PanoramaView(frame: cell.Panaorama.bounds)
+                    motionView.setImage(UIImage(data: data!)!)
+                    cell.Panaorama.addSubview(motionView)
+                    
                 }
         })
         

@@ -32,13 +32,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         
-        mainWall.eventPost()
-        
         userLogin.beginLogin("bob", password: "password")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainWall.eventPost()
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast

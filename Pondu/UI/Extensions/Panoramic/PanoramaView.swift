@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreMotion
-import Kingfisher
 
 
 class PanoramaView: UIView {
@@ -76,8 +75,16 @@ class PanoramaView: UIView {
     set image for the imageview to display it to the reciever.
     */
     func setImage(image:UIImage){
-    
-        self.image = image
+        
+        if let theImage:UIImage! = image {
+            
+            self.image = theImage
+        }else{
+            
+            self.image = UIImage(named: "bob")
+        }
+        
+        
 
         let width = self.viewFrame.size.height /  self.image.size.height *  self.image.size.width
         self.imageView.frame = CGRectMake(0, 0, width, self.viewFrame.height)

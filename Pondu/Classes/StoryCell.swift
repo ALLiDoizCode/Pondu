@@ -11,15 +11,20 @@ import UIKit
 class StoryCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var userIcon: UIImageView!
   
     @IBOutlet weak var Panaorama: UIView!
     
-    var motionView:PanoramaView!
+   
     
     override func awakeFromNib() {
-         motionView = PanoramaView(frame: self.Panaorama.bounds)
         
-        self.Panaorama.addSubview(motionView)
+        
+        userIcon.layer.cornerRadius = userIcon.frame.height/2
+        userIcon.layer.borderColor = UIColor.whiteColor().CGColor
+        userIcon.layer.borderWidth = 1.5
+        userIcon.layer.masksToBounds = true
+        userIcon.clipsToBounds = true
     }
     
     
