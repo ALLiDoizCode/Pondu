@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import Kingfisher
 
 
 class PanoramaView: UIView {
@@ -26,7 +27,7 @@ class PanoramaView: UIView {
     //Subviews
     private var viewFrame: CGRect!
     private var scrollView: UIScrollView!
-    private var imageView: UIImageView!
+    var imageView: UIImageView!
 
     //Managing Motion
     private var motionRate:CGFloat!
@@ -74,30 +75,21 @@ class PanoramaView: UIView {
     /*
     set image for the imageview to display it to the reciever.
     */
-    func setImage(image:UIImage){
+    func setImage(url:String){
         
-        if let theImage:UIImage! = image {
-            
-            self.image = theImage
-        }else{
-            
-            self.image = UIImage(named: "bob")
-        }
-        
-        
-
-        let width = self.viewFrame.size.height /  self.image.size.height *  self.image.size.width
+        self.imageView.kf_setImageWithURL(NSURL(string:url)!, placeholderImage: UIImage(named: "bob"))
+       
+        let width = self.viewFrame.size.height /   self.imageView.image!.size.height *   self.imageView.image!.size.width
         self.imageView.frame = CGRectMake(0, 0, width, self.viewFrame.height)
         self.imageView.backgroundColor = UIColor.blueColor()
-        self.imageView.image = self.image
-
+        
         self.scrollView.contentSize = CGSizeMake(self.imageView.frame.size.width, self.scrollView.frame.size.height)
         self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width - self.scrollView.frame.size.width) / 2, 0)
-
+        
         //enable panormama indicator.
         self.scrollView.enablePanoramaIndicator()
 
-        self.motionRate = self.image.size.width / self.viewFrame.size.width * CRMotionViewRotationFactor
+        self.motionRate = self.imageView.image!.size.width / self.viewFrame.size.width * CRMotionViewRotationFactor
         self.maximumXOffset = self.scrollView.contentSize.width - self.scrollView.frame.size.width
     }
 

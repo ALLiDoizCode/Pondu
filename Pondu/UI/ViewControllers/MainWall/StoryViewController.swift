@@ -42,11 +42,8 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         
-        
-
         // Do any additional setup after loading the view.
     }
     
@@ -60,36 +57,24 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         let cell:StoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("StoryCell", forIndexPath: indexPath) as! StoryCell
         
-       cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].photo)!, placeholderImage: UIImage(named: "bob"))
+            let motionView = PanoramaView(frame: cell.Panaorama.bounds)
         
-        cell.name.text = array[indexPath.item].fullName
+            cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].photo)!, placeholderImage: UIImage(named: "bob"))
+            
+            cell.name.text = array[indexPath.item].fullName
+
+            motionView.setImage(array[indexPath.item].story)
+            motionView.setScrollIndicatorEnabled(false)
+            cell.Panaorama.addSubview(motionView)
+            
+            print(array[indexPath.item].story)
+            
+            print(array[indexPath.item])
+
         
-        load_image(cell.motionView,item: indexPath.item)
         
-        print(array[indexPath.item].story)
-        
-        print(array[indexPath.item])
         
         return cell
-        
-    }
-    
-    
-    func load_image(view:PanoramaView,item:Int) {
-        
-        let imgURL: NSURL = NSURL(string: array[item].story)!
-        let request: NSURLRequest = NSURLRequest(URL: imgURL)
-        NSURLConnection.sendAsynchronousRequest(
-            request, queue: NSOperationQueue.mainQueue(),
-            completionHandler: {(response,data,error) -> Void in
-                if error == nil {
-                    
-                    
-                    view.setImage(UIImage(data: data!)!)
-                    
-                    
-                }
-        })
         
     }
 
