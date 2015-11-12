@@ -43,6 +43,8 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
         super.viewDidLoad()
         
         
+        collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
+        
         
 
         // Do any additional setup after loading the view.

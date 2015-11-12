@@ -33,6 +33,7 @@
 		4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */; };
 		4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9CF1BE5F5A600C34281 /* Events.swift */; };
 		4D91A9D21BE5F7F200C34281 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9D11BE5F7F200C34281 /* User.swift */; };
+		4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
 		4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */; };
 		4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */; };
@@ -106,6 +107,7 @@
 		4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePartyPresenter.swift; sourceTree = "<group>"; };
 		4D91A9CF1BE5F5A600C34281 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		4D91A9D11BE5F7F200C34281 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryLayout.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4DD174A01BDD8C6600B64E0B /* MainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWall.swift; sourceTree = "<group>"; };
 		4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseMainWall.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */,
+				4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
+				4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */,
 				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
 				4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */,
 				4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */,

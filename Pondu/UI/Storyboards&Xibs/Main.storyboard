@@ -320,8 +320,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-M8-pNC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="x3g-RG-dNI">
-                                    <size key="itemSize" width="400" height="598"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dTD-Ov-S4t" customClass="StoryLayout" customModule="Pondu" customModuleProvider="target">
+                                    <size key="itemSize" width="400" height="600"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -389,15 +389,15 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="ToJ-yF-m1R"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="ZLn-ak-NAD"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="gPn-uB-bq6"/>
-                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="wIW-RC-hcB"/>
+                            <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="FaW-1Z-pOE"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="Sh1-2R-YBH"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="bottom" secondItem="2Fb-ZM-fkI" secondAttribute="top" id="ijP-p6-IpY"/>
+                            <constraint firstItem="Qs4-M8-pNC" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" id="nie-uF-LJX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Qs4-M8-pNC" id="Mhm-sk-o9L"/>
-                        <outlet property="layout" destination="x3g-RG-dNI" id="bOD-6i-AWr"/>
+                        <outlet property="layout" destination="dTD-Ov-S4t" id="fsJ-lv-VWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiJ-8x-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
