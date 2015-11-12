@@ -62,7 +62,7 @@ class PanoramaView: UIView {
         self.imageView = UIImageView(frame: self.viewFrame)
         self.imageView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.imageView.backgroundColor = UIColor.blackColor()
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
         self.scrollView.addSubview(self.imageView)
 
         self.minimumXOffset = 0
@@ -91,6 +91,8 @@ class PanoramaView: UIView {
 
         self.motionRate = self.imageView.image!.size.width / self.viewFrame.size.width * CRMotionViewRotationFactor
         self.maximumXOffset = self.scrollView.contentSize.width - self.scrollView.frame.size.width
+        
+        
     }
 
     /*
@@ -102,6 +104,7 @@ class PanoramaView: UIView {
         if self.motionEnabled{
 
             self.startMonitoring()
+            self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         }
         else{
 
