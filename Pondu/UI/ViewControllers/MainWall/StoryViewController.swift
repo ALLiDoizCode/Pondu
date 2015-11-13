@@ -57,23 +57,20 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         let cell:StoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("StoryCell", forIndexPath: indexPath) as! StoryCell
         
-            let motionView = PanoramaView(frame: cell.Panaorama.bounds)
+        let imageView = UIImageView()
         
             cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].photo)!, placeholderImage: UIImage(named: "bob"))
             
             cell.name.text = array[indexPath.item].fullName
+        
+            imageView.kf_setImageWithURL(NSURL(string: array[indexPath.item].story)!, placeholderImage: nil, optionsInfo: nil) { (image, error, cacheType, imageURL) -> () in
+                
+                let motionView = PanoramaView(frame: cell.Panaorama.bounds)
+                motionView.setImage(imageView.image!)
+                cell.Panaorama.addSubview(motionView)
+                motionView.setScrollIndicatorEnabled(false)
+            }
 
-            motionView.setImage(array[indexPath.item].story)
-            motionView.setScrollIndicatorEnabled(false)
-            cell.Panaorama.addSubview(motionView)
-            
-            print(array[indexPath.item].story)
-            
-            print(array[indexPath.item])
-
-        
-        
-        
         return cell
         
     }

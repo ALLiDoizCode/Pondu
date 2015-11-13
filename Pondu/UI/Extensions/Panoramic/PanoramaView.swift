@@ -62,7 +62,7 @@ class PanoramaView: UIView {
         self.imageView = UIImageView(frame: self.viewFrame)
         self.imageView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.imageView.backgroundColor = UIColor.blackColor()
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         self.scrollView.addSubview(self.imageView)
 
         self.minimumXOffset = 0
@@ -75,21 +75,22 @@ class PanoramaView: UIView {
     /*
     set image for the imageview to display it to the reciever.
     */
-    func setImage(url:String){
+    func setImage(image:UIImage){
         
-        self.imageView.kf_setImageWithURL(NSURL(string:url)!, placeholderImage: UIImage(named: "bob"))
-       
-        let width = self.viewFrame.size.height /   self.imageView.image!.size.height *   self.imageView.image!.size.width
+        self.image = image
+        
+        let width = self.viewFrame.size.height / self.image.size.height * self.image.size.width
         self.imageView.frame = CGRectMake(0, 0, width, self.viewFrame.height)
         self.imageView.backgroundColor = UIColor.blueColor()
+        self.imageView.image = self.image
         
         self.scrollView.contentSize = CGSizeMake(self.imageView.frame.size.width, self.scrollView.frame.size.height)
         self.scrollView.contentOffset = CGPointMake((self.scrollView.contentSize.width - self.scrollView.frame.size.width) / 2, 0)
         
         //enable panormama indicator.
         self.scrollView.enablePanoramaIndicator()
-
-        self.motionRate = self.imageView.image!.size.width / self.viewFrame.size.width * CRMotionViewRotationFactor
+        
+        self.motionRate = self.image.size.width / self.viewFrame.size.width * CRMotionViewRotationFactor
         self.maximumXOffset = self.scrollView.contentSize.width - self.scrollView.frame.size.width
         
         
@@ -104,7 +105,6 @@ class PanoramaView: UIView {
         if self.motionEnabled{
 
             self.startMonitoring()
-            self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         }
         else{
 
