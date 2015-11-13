@@ -67,7 +67,7 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
                 
                 let motionView = PanoramaView(frame: cell.Panaorama.bounds)
                 motionView.setImage(imageView.image!)
-                cell.Panaorama.addSubview(motionView)
+                cell.Panaorama.insertSubview(motionView, belowSubview: cell.userIcon)
                 motionView.setScrollIndicatorEnabled(false)
             }
 
