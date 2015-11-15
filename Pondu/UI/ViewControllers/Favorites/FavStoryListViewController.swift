@@ -46,6 +46,7 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         let mosaicLayout = FMMosaicLayout()
         
         self.collectionView.collectionViewLayout = mosaicLayout
+        self.collectionView.backgroundColor = UIColor.whiteColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,6 +157,13 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         
         return (indexPath.item % 2 == 0) ? FMMosaicCellSize.Big : FMMosaicCellSize.Small;
     }
+    
+    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, interitemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        
+        return 2
+    }
+    
+    
     
     
     
