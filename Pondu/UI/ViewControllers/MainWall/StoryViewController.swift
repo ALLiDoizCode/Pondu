@@ -13,7 +13,7 @@ import Kingfisher
 
 class StoryViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
-    var array:[user] = []
+    var array:[userData] = []
     var storyUser:theUser = theUser()
     
 
@@ -24,7 +24,7 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewWillAppear(animated: Bool) {
         
-        SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
+        /*SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
             
             print("passing data\(notification.object)")
             
@@ -36,7 +36,7 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
             
         }
         
-        storyUser.theUsers()
+        storyUser.theUsers()*/
     }
     
     override func viewDidLoad() {

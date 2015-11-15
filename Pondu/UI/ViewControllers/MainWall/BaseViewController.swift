@@ -20,7 +20,7 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         
         let Party = self.storyboard?.instantiateViewControllerWithIdentifier("Party") as! PartyViewController
         
-        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("Story") as! StoryViewController
+        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("StoryListView") as! StoryListViewController
         
         let viewControllers = [Events,Party,Story]
         

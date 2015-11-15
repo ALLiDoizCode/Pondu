@@ -1,5 +1,6 @@
 PODS:
   - Bolts/Tasks (1.4.0)
+  - FMMosaicLayout (0.1.4)
   - Kingfisher (1.7.1)
   - PagingMenuController (0.7.5)
   - Parse (1.9.1):
@@ -9,6 +10,7 @@ PODS:
   - SwiftEventBus (1.1.0)
 
 DEPENDENCIES:
+  - FMMosaicLayout
   - Kingfisher (~> 1.7)
   - PagingMenuController
   - Parse (~> 1.9.1)
@@ -33,6 +35,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
   PagingMenuController: ea590be94de2332a1f78fbbc45fa6f49405279ea
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMMosaicLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1BDA4D2E2255E21B879874F9BF4E472D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>23D4B5C9CC657B68134305BFEB076270</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>327998BBF36F8D5969CEF6B2EE669B87</key>
+		<key>36FB63FF241288F7AA39800F2610D66E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6A3FE60C5FF33F0026B6BB41A1D98381</key>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<key>8390C85D74BAD6043BE402BB3E3A42AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D455E8344C8CFCA82DF1005DF301CDC2</key>
+		<key>E47B20E97E3268CA17709C29A410A05B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F18EBB986240C387C3F0768F2C8188CD</key>
+		<key>E674B52383BE221B8E55E6DC6C9CA652</key>
 		<dict>
 			<key>primary</key>
 			<true/>

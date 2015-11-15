@@ -6,5 +6,6 @@ pod 'Kingfisher', '~> 1.7'
 pod "PagingMenuController"
 pod 'SwiftDate'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
+pod "FMMosaicLayout"
 
 

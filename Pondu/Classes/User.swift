@@ -8,7 +8,7 @@
 
 import UIKit
 
-class user {
+class userData {
     
     var objectID:String = ""
     var area:String = ""

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C66917E88C7AC8348570EACC'
-               BlueprintName = 'PagingMenuController-PagingMenuController'
+               BlueprintIdentifier = '10F7E9745EF932EA251FF5E7'
+               BlueprintName = 'FMMosaicLayout'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'PagingMenuController.bundle'>
+               BuildableName = 'FMMosaicLayout.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

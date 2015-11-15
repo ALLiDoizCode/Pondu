@@ -14,8 +14,8 @@ class parseUser {
     
     func userQuery(){
         let query = PFUser.query()
-        var userData:[user] = []
-        var theUser:user!
+        var userInfo:[userData] = []
+        var theUser:userData!
         query!.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -38,14 +38,14 @@ class parseUser {
                             
                         if let userBio = bio {
                             
-                            theUser = user(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
+                            theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
                             
-                                userData.append(theUser)
+                                userInfo.append(theUser)
                         }else{
                             
-                             theUser = user(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
+                             theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
                             
-                                userData.append(theUser)
+                                userInfo.append(theUser)
                         }
                         
                         
@@ -54,7 +54,7 @@ class parseUser {
                     
                    
                     
-                    SwiftEventBus.post("User", sender: userData)
+                    SwiftEventBus.post("User", sender: userInfo)
                     
                 }
             } else {
