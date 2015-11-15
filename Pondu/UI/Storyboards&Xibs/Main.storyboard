@@ -400,6 +400,18 @@
                                     <outlet property="delegate" destination="LUR-Rf-3Td" id="wM5-qy-NZN"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paA-vR-7eU">
+                                <rect key="frame" x="220" y="40" width="85" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="4bC-oB-2hJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="LUR-Rf-3Td" eventType="touchUpInside" id="64E-uj-EYQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -408,16 +420,21 @@
                             <constraint firstItem="2Fb-ZM-fkI" firstAttribute="top" secondItem="Qs4-M8-pNC" secondAttribute="bottom" id="71t-AP-HT4"/>
                             <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="91G-nO-z4h"/>
                             <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="M8a-av-p6v"/>
+                            <constraint firstItem="paA-vR-7eU" firstAttribute="top" secondItem="z4T-zo-2Ds" secondAttribute="bottom" constant="20" id="xEY-j5-4iC"/>
+                            <constraint firstItem="paA-vR-7eU" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" constant="220" id="xtT-FH-1PC"/>
+                            <constraint firstItem="2Fb-ZM-fkI" firstAttribute="top" secondItem="paA-vR-7eU" secondAttribute="bottom" constant="530" id="y3B-ve-EgO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DDl-yH-Xa5"/>
                     <connections>
+                        <outlet property="back" destination="paA-vR-7eU" id="zcI-Rc-8w3"/>
                         <outlet property="collectionView" destination="Qs4-M8-pNC" id="Mhm-sk-o9L"/>
                         <outlet property="layout" destination="dTD-Ov-S4t" id="fsJ-lv-VWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiJ-8x-pfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4322" y="-308"/>
+            <point key="canvasLocation" x="4346" y="-308"/>
         </scene>
         <!--Story-->
         <scene sceneID="l1V-Rr-e00">
@@ -484,7 +501,7 @@
                                         <connections>
                                             <outlet property="name" destination="3fB-AZ-c8J" id="ms4-ax-l6z"/>
                                             <outlet property="theImage" destination="ptY-QO-KAe" id="y9h-6T-iWi"/>
-                                            <segue destination="LUR-Rf-3Td" kind="show" identifier="Slide" id="GmK-P4-Oae"/>
+                                            <segue destination="LUR-Rf-3Td" kind="presentation" identifier="Slide" animates="NO" id="YuL-CG-0bP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -503,13 +520,14 @@
                             <constraint firstAttribute="trailing" secondItem="ysc-kj-ID0" secondAttribute="trailing" id="Rnl-fP-37n"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1Pm-8M-V13"/>
                     <connections>
                         <outlet property="collectionView" destination="ysc-kj-ID0" id="ulW-OZ-7QY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mik-Th-HOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3653" y="-308"/>
+            <point key="canvasLocation" x="3685" y="-308"/>
         </scene>
         <!--Parties-->
         <scene sceneID="P8D-JN-mew">

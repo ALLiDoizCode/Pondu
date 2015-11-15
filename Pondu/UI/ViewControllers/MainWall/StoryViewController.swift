@@ -10,34 +10,17 @@ import UIKit
 import SwiftEventBus
 import Kingfisher
 
-
 class StoryViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var array:[userData] = []
     var storyUser:theUser = theUser()
     
+    @IBOutlet weak var back: UIButton!
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        /*SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
-            
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [user]
-            
-            self.collectionView.reloadData()
-            
-            print("this is teh first picture\(self.array[1].story)")
-            
-        }
-        
-        storyUser.theUsers()*/
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +58,10 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
         
     }
 
+    @IBAction func backBtn(sender: AnyObject) {
+        
+        self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
