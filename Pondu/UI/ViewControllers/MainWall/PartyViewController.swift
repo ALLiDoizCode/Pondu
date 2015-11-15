@@ -46,6 +46,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         //user.userArea()
         //user.userPhoto()
         Parties.partiesPost()
+        getArrayCount()
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
         //mainWall.eventPost()
@@ -70,7 +71,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        getArrayCount()
+        
         
         //let favorite = userFavorites()
         //favorite.getFavorite()

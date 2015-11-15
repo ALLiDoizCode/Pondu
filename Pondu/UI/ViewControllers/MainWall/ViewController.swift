@@ -33,13 +33,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         
-        userLogin.beginLogin("bob", password: "password")
+       
+        
+        mainWall.eventPost()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainWall.eventPost()
+        userLogin.beginLogin("bob", password: "password")
+        
+        getArrayCount()
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
@@ -55,7 +60,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        getArrayCount()
+       
         
             /*let name = "jonathan"
             let post = "just created another post"

@@ -446,32 +446,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d1x-na-x2O">
-                                    <size key="itemSize" width="72" height="74"/>
+                                    <size key="itemSize" width="182" height="199"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryList" id="Moo-fV-rzv" customClass="StoryListCell" customModule="Pondu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="74"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="199"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="72" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptY-QO-KAe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="199"/>
                                                     <animations/>
                                                 </imageView>
                                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vex-m7-yRQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="199"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fB-AZ-c8J">
-                                                    <rect key="frame" x="15" y="25" width="43" height="24"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fB-AZ-c8J">
+                                                    <rect key="frame" x="15" y="155" width="116" height="24"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="116" id="IZy-e9-0M1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -481,15 +484,17 @@
                                         </view>
                                         <animations/>
                                         <constraints>
+                                            <constraint firstItem="3fB-AZ-c8J" firstAttribute="leading" secondItem="Moo-fV-rzv" secondAttribute="leading" constant="15" id="5n7-Eh-Jvc"/>
                                             <constraint firstItem="ptY-QO-KAe" firstAttribute="top" secondItem="Moo-fV-rzv" secondAttribute="top" id="7ux-Yf-bLJ"/>
                                             <constraint firstAttribute="trailing" secondItem="vex-m7-yRQ" secondAttribute="trailing" id="BAy-1u-6ZM"/>
+                                            <constraint firstAttribute="trailing" secondItem="3fB-AZ-c8J" secondAttribute="trailing" constant="51" id="ClM-JZ-7cQ"/>
                                             <constraint firstAttribute="trailing" secondItem="ptY-QO-KAe" secondAttribute="trailing" id="EX2-AT-Ksa"/>
                                             <constraint firstItem="vex-m7-yRQ" firstAttribute="top" secondItem="Moo-fV-rzv" secondAttribute="top" id="Hwd-uq-a3f"/>
                                             <constraint firstAttribute="bottom" secondItem="vex-m7-yRQ" secondAttribute="bottom" id="Plh-El-YNH"/>
-                                            <constraint firstItem="3fB-AZ-c8J" firstAttribute="centerX" secondItem="Moo-fV-rzv" secondAttribute="centerX" id="RWQ-lJ-6m3"/>
+                                            <constraint firstAttribute="bottom" secondItem="3fB-AZ-c8J" secondAttribute="bottom" constant="20" id="RrX-Uj-RQ8"/>
                                             <constraint firstAttribute="bottom" secondItem="ptY-QO-KAe" secondAttribute="bottom" id="V4R-3s-9Kh"/>
                                             <constraint firstItem="ptY-QO-KAe" firstAttribute="leading" secondItem="Moo-fV-rzv" secondAttribute="leading" id="WPb-dU-bhl"/>
-                                            <constraint firstItem="3fB-AZ-c8J" firstAttribute="centerY" secondItem="Moo-fV-rzv" secondAttribute="centerY" id="kgP-sr-DQK"/>
+                                            <constraint firstItem="3fB-AZ-c8J" firstAttribute="top" secondItem="Moo-fV-rzv" secondAttribute="top" constant="155" id="sgm-5l-yoH"/>
                                             <constraint firstItem="vex-m7-yRQ" firstAttribute="leading" secondItem="Moo-fV-rzv" secondAttribute="leading" id="wfU-Mt-Opb"/>
                                         </constraints>
                                         <connections>

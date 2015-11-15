@@ -12,7 +12,7 @@ import Parse
 
 class parseUser {
     
-    func userQuery(){
+    func userQuery(favId:[String]?){
         let query = PFUser.query()
         var userInfo:[userData] = []
         var theUser:userData!

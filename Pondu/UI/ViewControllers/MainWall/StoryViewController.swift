@@ -17,7 +17,6 @@ class StoryViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     @IBOutlet weak var back: UIButton!
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var layout: UICollectionViewFlowLayout!

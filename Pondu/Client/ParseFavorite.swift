@@ -13,7 +13,8 @@ import Parse
 class Favorite {
     
     let currentUser = PFUser.currentUser()
-    
+
+ ////////////////////////////////////Adding Favorite//////////////////////////////////////////////////
     func userFavorite(objectID:String){
         
         if var favList = currentUser!["Favorites"] as! [String]! {
@@ -102,6 +103,50 @@ class Favorite {
         
     }
     
+    func userStoryFavorite(objectID:String){
+        
+        if var favList = currentUser!["FavStory"] as! [String]! {
+            
+            if currentUser != nil {
+                
+                var i:Int = Int()
+                
+                print("favlist count \(favList.count)")
+                
+                for i;(i < favList.count) && (objectID != favList[i]) ; i++ {
+                    
+                    print("I = \(i)")
+                }
+                
+                
+                //print("this is the favID \(favList[i])")
+                //print("this is the objectID \(objectID)")
+                
+                
+                if i >= favList.count {
+                    
+                    currentUser!.addObject(objectID, forKey: "FavStory")
+                    print("favorite added")
+                    currentUser?.saveInBackground()
+                    
+                }else{
+                    
+                    print("this FavStory already exist")
+                }
+                
+            } else {
+                
+                
+            }
+        }else{
+            
+            currentUser!.addObject(objectID, forKey: "FavStory")
+            print("FavStory added")
+            currentUser?.saveInBackground()
+        }
+        
+    }
+ ////////////////////////////////////Adding Favorite Ends/////////////////////////////////////////////
     func favoriteList(){
         
         print("fav list fired")
@@ -148,6 +193,30 @@ class Favorite {
         }*/
         
         let fav = currentUser?.objectForKey("partyFavorites")
+        
+        print("sending fav id")
+        
+        SwiftEventBus.post("partyGetFavorites", sender: fav)
+    }
+    
+    func storyFavoriteList(){
+        
+        print("fav list fired")
+        
+        /*let currentUser = PFUser.currentUser()
+        
+        if currentUser != nil {
+        
+        let fav = currentUser!["Favorites"]
+        
+        SwiftEventBus.post("GetFavorites", sender: fav)
+        
+        } else {
+        
+        
+        }*/
+        
+        let fav = currentUser?.objectForKey("FavStory")
         
         print("sending fav id")
         
