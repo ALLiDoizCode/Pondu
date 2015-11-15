@@ -10,43 +10,75 @@ import UIKit
 import SwiftEventBus
 import Kingfisher
 
-class FavStoriesViewController: UIViewController {
+private let reuseIdentifier = "FavStoryCell"
 
-    var array:[String] = []
+class FavStoriesViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+
+    var array:[userData] = []
     var storyUser:theUser = theUser()
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var back: UIButton!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var layout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storyUser.theUsers()
-        
-        SwiftEventBus.onMainThread(self, name: "updateFavStory") { notification in
-            
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [String]
-        }
-        
+        collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         
         // Do any additional setup after loading the view.
     }
-
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return self.array.count
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell:FavStoryCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! FavStoryCell
+        
+        let imageView = UIImageView()
+        
+        cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].photo)!, placeholderImage: UIImage(named: "bob"))
+        
+        cell.name.text = array[indexPath.item].fullName
+        
+        imageView.kf_setImageWithURL(NSURL(string: array[indexPath.item].story)!, placeholderImage: nil, optionsInfo: nil) { (image, error, cacheType, imageURL) -> () in
+            
+            let motionView = PanoramaView(frame: cell.Panaorama.bounds)
+            motionView.setImage(imageView.image!)
+            cell.Panaorama.insertSubview(motionView, belowSubview: cell.userIcon)
+            motionView.setScrollIndicatorEnabled(false)
+        }
+        
+        return cell
+        
+    }
+    
+    @IBAction func backBtn(sender: AnyObject) {
+        
+        self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
+
 
 }

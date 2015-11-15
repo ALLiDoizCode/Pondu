@@ -60,17 +60,15 @@ class theUser {
     
     func userFavStory(){
         
-        SwiftEventBus.onMainThread(self, name: "User") { result in
+        SwiftEventBus.onMainThread(self, name: "FavUser") { result in
             
             let userData = result.object
             print(userData)
             
-            SwiftEventBus.postToMainThread("updateStory", sender: userData)
+            SwiftEventBus.postToMainThread("updateFavStory", sender: userData)
             
         }
-        
-        user.userQuery(nilArray)
-        
+
     }
     
     

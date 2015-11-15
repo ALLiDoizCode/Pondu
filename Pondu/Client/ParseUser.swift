@@ -35,26 +35,105 @@ class parseUser {
                         let phone = object.objectForKey("Phone") as! String!
                         let story = object.objectForKey("Stories") as! PFFile!
                         let photo = object.objectForKey("photo") as! PFFile!
+                        
+                        if let favID = favId {
                             
-                        if let userBio = bio {
+                            for var i = 0; i<objects.count; i++ {
+
+                                if i < favID.count {
+                                    
+                                    if let userBio = bio {
+                                        
+                                        theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true)
+                                        
+                                         print("there are \(favID.count) fav ids")
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(theUser)")
+                                            print("recived fav post")
+                                            userInfo.append(theUser)
+                                            print("successfully recived \(userInfo.count) fav post")
+                                            print("sending fav post")
+                                            
+                                            
+                                        }
+                                        
+                                    }else{
+                                        
+                                        theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true)
+                                        
+                                        if object.objectId == favID[i] {
+                                            
+                                            print("queryID \(theUser)")
+                                            print("recived fav post")
+                                            userInfo.append(theUser)
+                                            print("successfully recived \(userInfo.count) fav post")
+                                            print("sending fav post")
+                                            
+                                            
+                                        }
+                                        
+                                      
+                                    }
+                                    
+                                    
+                                    
+                                }
+                                
+                            }
                             
-                            theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
-                            
-                                userInfo.append(theUser)
                         }else{
                             
-                             theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!)
-                            
-                                userInfo.append(theUser)
+                            if let userBio = bio {
+                                
+                                theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:false)
+                                
+                                
+                                    print("queryID \(theUser)")
+                                    print("recived fav post")
+                                    userInfo.append(theUser)
+                                    print("successfully recived \(userInfo.count) fav post")
+                                    print("sending fav post")
+                                    
+                                    
+                                
+                                
+                            }else{
+                                
+                                theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:false)
+                                
+                                    print("queryID \(theUser)")
+                                    print("recived fav post")
+                                    userInfo.append(theUser)
+                                    print("successfully recived \(userInfo.count) fav post")
+                                    print("sending fav post")
+                                
+                            }
                         }
-                        
-                        
+      
                         
                     }
                     
-                   
+                    if userInfo.count >= 1 {
+                        
+                        if userInfo[0].fav == true {
+                            print("fav count \(userInfo.count)")
+                            SwiftEventBus.post("FavUser", sender: userInfo)
+                            
+                        }else {
+                            
+
+                            print("userInfo count \(userInfo.count)")
+                            SwiftEventBus.post("User", sender: userInfo)
+                        }
+                    }else{
+                        
+                        print("you have no favorites")
+                    }
+
                     
-                    SwiftEventBus.post("User", sender: userInfo)
+                    
                     
                 }
             } else {

@@ -220,6 +220,6 @@ class Favorite {
         
         print("sending fav id")
         
-        SwiftEventBus.post("partyGetFavorites", sender: fav)
+        SwiftEventBus.post("storyGetFavorites", sender: fav)
     }
 }

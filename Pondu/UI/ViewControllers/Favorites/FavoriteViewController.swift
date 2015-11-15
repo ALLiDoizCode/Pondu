@@ -20,7 +20,7 @@ class FavoriteViewController: UIViewController,PagingMenuControllerDelegate {
         
         let Party = self.storyboard?.instantiateViewControllerWithIdentifier("FavParty") as! FavPartiesViewController
         
-        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("FavStory") as! FavStoriesViewController
+        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("FavListStory") as! FavStoryListViewController
         
         let viewControllers = [Events,Party,Story]
         
