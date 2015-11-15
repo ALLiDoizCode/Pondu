@@ -373,6 +373,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="3qp-5X-iiB" secondAttribute="bottom" constant="28" id="FdX-Pj-FVC"/>
                                             <constraint firstItem="3qp-5X-iiB" firstAttribute="height" secondItem="Qg4-dj-bSx" secondAttribute="height" constant="-57" id="OPg-21-COr"/>
@@ -400,14 +401,10 @@
                                     <outlet property="delegate" destination="LUR-Rf-3Td" id="wM5-qy-NZN"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paA-vR-7eU">
-                                <rect key="frame" x="220" y="40" width="85" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paA-vR-7eU">
+                                <rect key="frame" x="10" y="10" width="32" height="32"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="4bC-oB-2hJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back" image="icon_arrow_left"/>
                                 <connections>
                                     <action selector="backBtn:" destination="LUR-Rf-3Td" eventType="touchUpInside" id="64E-uj-EYQ"/>
                                 </connections>
@@ -420,9 +417,6 @@
                             <constraint firstItem="2Fb-ZM-fkI" firstAttribute="top" secondItem="Qs4-M8-pNC" secondAttribute="bottom" id="71t-AP-HT4"/>
                             <constraint firstAttribute="trailing" secondItem="Qs4-M8-pNC" secondAttribute="trailing" id="91G-nO-z4h"/>
                             <constraint firstItem="Qs4-M8-pNC" firstAttribute="top" secondItem="f8G-nE-kgv" secondAttribute="top" id="M8a-av-p6v"/>
-                            <constraint firstItem="paA-vR-7eU" firstAttribute="top" secondItem="z4T-zo-2Ds" secondAttribute="bottom" constant="20" id="xEY-j5-4iC"/>
-                            <constraint firstItem="paA-vR-7eU" firstAttribute="leading" secondItem="f8G-nE-kgv" secondAttribute="leading" constant="220" id="xtT-FH-1PC"/>
-                            <constraint firstItem="2Fb-ZM-fkI" firstAttribute="top" secondItem="paA-vR-7eU" secondAttribute="bottom" constant="530" id="y3B-ve-EgO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DDl-yH-Xa5"/>
@@ -501,7 +495,7 @@
                                         <connections>
                                             <outlet property="name" destination="3fB-AZ-c8J" id="ms4-ax-l6z"/>
                                             <outlet property="theImage" destination="ptY-QO-KAe" id="y9h-6T-iWi"/>
-                                            <segue destination="LUR-Rf-3Td" kind="presentation" identifier="Slide" animates="NO" id="YuL-CG-0bP"/>
+                                            <segue destination="LUR-Rf-3Td" kind="presentation" identifier="Slide" modalTransitionStyle="crossDissolve" id="YuL-CG-0bP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1232,6 +1226,7 @@
     <resources>
         <image name="backgrounds" width="640" height="1136"/>
         <image name="bob" width="359" height="358"/>
+        <image name="icon_arrow_left" width="512" height="512"/>
         <image name="story" width="758" height="505"/>
     </resources>
 </document>
