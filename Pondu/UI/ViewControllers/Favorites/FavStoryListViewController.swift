@@ -9,9 +9,8 @@
 import UIKit
 import SwiftEventBus
 import Kingfisher
-import FMMosaicLayout
 
-private let reuseIdentifier = "FavStoryList"
+private let reuseIdentifier = "StoryList"
 
 class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
@@ -42,10 +41,6 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        let mosaicLayout = FMMosaicLayout()
-        
-        self.collectionView.collectionViewLayout = mosaicLayout
         self.collectionView.backgroundColor = UIColor.whiteColor()
     }
     
@@ -80,11 +75,11 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell:FavStoryListCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! FavStoryListCell
+        let cell:FavoriteStoryCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! FavoriteStoryCell
         
-        cell.name.text = array[indexPath.item].userName
+        //cell.name.text = array[indexPath.item].userName
         
-        cell.theImage.kf_setImageWithURL(NSURL(string: array[indexPath.item].story)!, placeholderImage: UIImage(named: "bob"))
+        //cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].story)!, placeholderImage: UIImage(named: "bob"))
         
         cell.alpha = 0
         
@@ -145,55 +140,4 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     }
     */
     
-    
-    //MARK: FMMosaicLayoutDelegate
-    
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, numberOfColumnsInSection section: Int) -> Int {
-        
-        return 2
-    }
-    
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAtIndexPath indexPath: NSIndexPath!) -> FMMosaicCellSize {
-        
-        return (indexPath.item % 2 == 0) ? FMMosaicCellSize.Big : FMMosaicCellSize.Small;
-    }
-    
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, interitemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        
-        return 2
-    }
-    
-    
-    
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if let cell = sender as? FavStoryListCell, indexPath = self.collectionView.indexPathForCell(cell) {
-            
-            if segue.identifier == "FavSlide" {
-                
-                let destinationViewController = segue.destinationViewController as! FavStoriesViewController
-                
-                
-                let theData = array[indexPath.item]
-                
-                var editedArray:[userData] = array
-                
-                editedArray.insert(theData, atIndex: 0)
-                
-                var newArray:[userData] = editedArray
-                
-                newArray.removeAtIndex(indexPath.item + 1)
-                
-                destinationViewController.array = newArray
-                
-                
-                print("old array name \(array.last!.userName)")
-                print("new arry name \(newArray.last!.userName)")
-            }
-            
-        }
-        
-    }
 }

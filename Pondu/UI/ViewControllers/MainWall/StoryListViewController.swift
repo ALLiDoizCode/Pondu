@@ -9,14 +9,15 @@
 import UIKit
 import SwiftEventBus
 import Kingfisher
-import FMMosaicLayout
  
-
-private let reuseIdentifier = "StoryList"
+private let reuseIdentifier = "StoryCell"
 
 class StoryListViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    @IBOutlet weak var mainImage: UIImageView!
     var array:[userData] = []
     var storyUser:theUser = theUser()
     
@@ -31,7 +32,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
             
             self.collectionView.reloadData()
             
-            print("this is teh first picture\(self.array[1].story)")
+            print("this is the first picture\(self.array[1].story)")
             
         }
         
@@ -44,11 +45,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
 
         // Do any additional setup after loading the view.
         
-        let mosaicLayout = FMMosaicLayout()
-        
-        self.collectionView.collectionViewLayout = mosaicLayout
-        
-        self.collectionView.backgroundColor = UIColor.whiteColor()
+        //self.collectionView.backgroundColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,12 +79,38 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell:StoryListCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! StoryListCell
+        let cell:MainStoryCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MainStoryCell
         
-        cell.name.text = array[indexPath.item].userName
+       let imageView = UIImageView()
         
-        cell.theImage.kf_setImageWithURL(NSURL(string: array[indexPath.item].story)!, placeholderImage: UIImage(named: "bob"))
+        imageView.kf_setImageWithURL(NSURL(string: array[indexPath.row].photo)!, placeholderImage: nil, optionsInfo: nil) { (image, error, cacheType, imageURL) -> () in
+            
+            
+            cell.icon.image = image
+            
+        }
         
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = CGPointMake(CGRectGetMidX(visibleRect), CGRectGetMidY(visibleRect))
+        let visibleIndex = collectionView.indexPathForItemAtPoint(visiblePoint)
+        
+       
+        print(array.count)
+        
+        
+        if (visibleIndex?.item) != nil{
+            
+             print(visibleIndex?.item)
+            
+            let photoUrl:String! = array[(visibleIndex?.item)!].photo
+            
+            self.mainImage.kf_setImageWithURL(NSURL(string:photoUrl)!, placeholderImage: UIImage(named: "bob"))
+        }
+        
+        
+
+        
+        ///////adds a smooth fading effect to cells as they come into view
         cell.alpha = 0
         
         let delay = UInt64((arc4random() % 600 / 1000))
@@ -147,54 +170,4 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     }
     */
     
-    
-    //MARK: FMMosaicLayoutDelegate
-    
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, numberOfColumnsInSection section: Int) -> Int {
-        
-        return 2
-    }
-    
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, mosaicCellSizeForItemAtIndexPath indexPath: NSIndexPath!) -> FMMosaicCellSize {
-        
-        return (indexPath.item % 2 == 0) ? FMMosaicCellSize.Big : FMMosaicCellSize.Small;
-    }
-    
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: FMMosaicLayout!, interitemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        
-        return 2
-    }
-
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if let cell = sender as? StoryListCell, indexPath = self.collectionView.indexPathForCell(cell) {
-            
-            if segue.identifier == "Slide" {
-                
-                let destinationViewController = segue.destinationViewController as! StoryViewController
-        
-                
-                let theData = array[indexPath.item] 
-                
-                var editedArray:[userData] = array
-                
-                editedArray.insert(theData, atIndex: 0)
-               
-                var newArray:[userData] = editedArray
-                
-                newArray.removeAtIndex(indexPath.item + 1)
-                
-                destinationViewController.array = newArray
-                
-                
-                print("old array name \(array.last!.userName)")
-                print("new arry name \(newArray.last!.userName)")
-            }
-        
-        }
-        
-    }
-
 }
