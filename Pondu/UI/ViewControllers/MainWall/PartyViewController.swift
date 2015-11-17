@@ -45,8 +45,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         //user.userNames()
         //user.userArea()
         //user.userPhoto()
-        Parties.partiesPost()
-        getArrayCount()
+        
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
         //mainWall.eventPost()
@@ -55,6 +54,9 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Parties.partiesPost()
+        getArrayCount()
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast

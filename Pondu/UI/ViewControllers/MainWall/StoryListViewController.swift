@@ -22,8 +22,6 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     var storyUser:theUser = theUser()
     
     override func viewWillAppear(animated: Bool) {
-        
-     
         SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
             
             print("passing data\(notification.object)")

@@ -12,7 +12,10 @@ import PagingMenuController
 
 class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     
+    let userLogin = startLogin()
+    
     override func viewDidLoad() {
+         userLogin.beginLogin("bob", password: "password")
         
         UIApplication.sharedApplication().statusBarHidden = true
         super.viewDidLoad()

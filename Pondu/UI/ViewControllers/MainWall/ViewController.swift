@@ -35,22 +35,17 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
        
         
-        mainWall.eventPost()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userLogin.beginLogin("bob", password: "password")
-        
+        mainWall.eventPost()
         getArrayCount()
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
-        
-        
-        
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -109,7 +104,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         
         if array[indexPath.row].live == true {
-            
+        
             cell.live.text = "Live"
             cell.live.repeatCount = Float.infinity
             cell.live.animate()
