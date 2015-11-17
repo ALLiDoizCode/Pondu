@@ -14,16 +14,16 @@ private let reuseIdentifier = "StoryCell"
 
 class StoryListViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
+    @IBOutlet weak var iconView: StoryIconVIew!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     @IBOutlet weak var mainImage: UIImageView!
+
     var array:[userData] = []
     var storyUser:theUser = theUser()
     
     override func viewWillAppear(animated: Bool) {
         
-        
+     
         SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
             
             print("passing data\(notification.object)")
@@ -104,7 +104,12 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
             
             let photoUrl:String! = array[(visibleIndex?.item)!].photo
             
-            self.mainImage.kf_setImageWithURL(NSURL(string:photoUrl)!, placeholderImage: UIImage(named: "bob"))
+            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                
+                self.iconView.subImage.image = image
+            })
+            
+            self.iconView.name.text = array[(visibleIndex?.item)!].userName
         }
         
         
@@ -134,7 +139,14 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        print(indexPath.item)
+        let photoUrl:String! = array[(indexPath.item)].photo
+        
+        self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+            
+            self.iconView.subImage.image = image
+        })
+        
+        self.iconView.name.text = array[(indexPath.item)].userName
         
         
         
