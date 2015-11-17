@@ -22,7 +22,14 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     var storyUser:theUser = theUser()
     
     override func viewWillAppear(animated: Bool) {
+      
+        storyUser.getFavorite()
         
+        self.iconView.layoutSubviews()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         SwiftEventBus.onMainThread(self, name: "updateFavStory") { notification in
             
@@ -35,15 +42,6 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
             print("this is teh first picture\(self.array[1].story)")
             
         }
-        
-        storyUser.getFavorite()
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,7 +79,7 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         
         let imageView = UIImageView()
         
-        imageView.kf_setImageWithURL(NSURL(string: array[indexPath.row].photo)!, placeholderImage: nil, optionsInfo: nil) { (image, error, cacheType, imageURL) -> () in
+        imageView.kf_setImageWithURL(NSURL(string: array[indexPath.row].photo)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil) { (image, error, cacheType, imageURL) -> () in
             
             
             cell.icon.image = image
@@ -100,13 +98,30 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
             
             let photoUrl:String! = array[(visibleIndex?.item)!].photo
             
-            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 
                 self.iconView.subImage.image = image
             })
             
             self.iconView.name.text = array[(visibleIndex?.item)!].userName
+            
+        }else if let photoUrl:String! = array[0].photo {
+            
+                self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                    
+                    self.iconView.subImage.image = image
+                })
+                
+                self.iconView.name.text = array[0].userName
+        }else {
+            
+            let placeHolder = UIImage(named: "placeholder")
+            
+            self.mainImage.image = placeHolder
+            self.iconView.subImage.image = placeHolder
+            self.iconView.name.text = ""
         }
+        
         
         cell.alpha = 0
         
@@ -140,8 +155,6 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         
         self.iconView.name.text = array[(indexPath.item)].userName
 
-        
-        
         
     }
     

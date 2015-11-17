@@ -57,8 +57,8 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         let numComments = array[indexPath.row].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
         
         

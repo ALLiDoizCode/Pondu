@@ -22,6 +22,14 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     var storyUser:theUser = theUser()
     
     override func viewWillAppear(animated: Bool) {
+        
+        storyUser.theUsers()
+    
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
             
             print("passing data\(notification.object)")
@@ -33,15 +41,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
             print("this is the first picture\(self.array[1].story)")
             
         }
-        
-        storyUser.theUsers()
-    
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
     }
 
@@ -101,12 +101,27 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
             
             let photoUrl:String! = array[(visibleIndex?.item)!].photo
             
-            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 
                 self.iconView.subImage.image = image
             })
             
             self.iconView.name.text = array[(visibleIndex?.item)!].userName
+        }else if let photoUrl:String! = array[0].photo{
+            
+            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                
+                self.iconView.subImage.image = image
+            })
+            
+            self.iconView.name.text = array[0].userName
+        }else {
+            
+            let placeHolder = UIImage(named: "placeholder")
+            
+            self.mainImage.image = placeHolder
+            self.iconView.subImage.image = placeHolder
+            self.iconView.name.text = ""
         }
         
         
@@ -138,7 +153,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
         
         let photoUrl:String! = array[(indexPath.item)].photo
         
-        self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+        self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
             
             self.iconView.subImage.image = image
         })

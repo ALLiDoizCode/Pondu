@@ -13,7 +13,7 @@ class FavoriteStoryCell: UICollectionViewCell {
     @IBOutlet weak var icon: UIImageView!
     
     override func layoutSubviews() {
-        
+        super.layoutSubviews()
         self.icon.layer.cornerRadius = icon.layer.frame.height/2
         self.icon.layer.borderColor = UIColor.whiteColor().CGColor
         self.icon.layer.borderWidth = 2

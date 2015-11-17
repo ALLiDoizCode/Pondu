@@ -61,11 +61,6 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
         
-        
-        
-        
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
         
         //let photo = UIImage(named: "bob")
@@ -73,14 +68,11 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        
-        
         //let favorite = userFavorites()
         //favorite.getFavorite()
         
         //let favParty = partyFavorites()
         //favParty.getFavorite()
-        
         
         /*let name = "jonathan"
         let post = "just created another post"
@@ -123,9 +115,9 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         let numComments = array[indexPath.row].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
     
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
+        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
         
         

@@ -58,8 +58,8 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         let numComments = array[indexPath.row].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
         
         if array[indexPath.row].live == true {
