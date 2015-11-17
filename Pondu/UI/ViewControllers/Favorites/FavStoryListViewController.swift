@@ -10,11 +10,14 @@ import UIKit
 import SwiftEventBus
 import Kingfisher
 
-private let reuseIdentifier = "StoryList"
+private let reuseIdentifier = "FavStoryCell"
 
 class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
 
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var iconView: StoryIconVIew!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var array:[userData] = []
     var storyUser:theUser = theUser()
     
@@ -41,7 +44,6 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.collectionView.backgroundColor = UIColor.whiteColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,9 +79,34 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:FavoriteStoryCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! FavoriteStoryCell
         
-        //cell.name.text = array[indexPath.item].userName
+        let imageView = UIImageView()
         
-        //cell.userIcon.kf_setImageWithURL(NSURL(string: array[indexPath.item].story)!, placeholderImage: UIImage(named: "bob"))
+        imageView.kf_setImageWithURL(NSURL(string: array[indexPath.row].photo)!, placeholderImage: nil, optionsInfo: nil) { (image, error, cacheType, imageURL) -> () in
+            
+            
+            cell.icon.image = image
+            
+        }
+        
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = CGPointMake(CGRectGetMidX(visibleRect), CGRectGetMidY(visibleRect))
+        let visibleIndex = collectionView.indexPathForItemAtPoint(visiblePoint)
+        
+        print(array.count)
+        
+        if (visibleIndex?.item) != nil{
+            
+            print(visibleIndex?.item)
+            
+            let photoUrl:String! = array[(visibleIndex?.item)!].photo
+            
+            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                
+                self.iconView.subImage.image = image
+            })
+            
+            self.iconView.name.text = array[(visibleIndex?.item)!].userName
+        }
         
         cell.alpha = 0
         
@@ -104,7 +131,15 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        print(indexPath.item)
+        let photoUrl:String! = array[(indexPath.item)].photo
+        
+        self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "bob"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+            
+            self.iconView.subImage.image = image
+        })
+        
+        self.iconView.name.text = array[(indexPath.item)].userName
+
         
         
         

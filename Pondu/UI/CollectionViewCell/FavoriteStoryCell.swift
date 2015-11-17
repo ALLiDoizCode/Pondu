@@ -10,4 +10,13 @@ import UIKit
 
 class FavoriteStoryCell: UICollectionViewCell {
     
+    @IBOutlet weak var icon: UIImageView!
+    
+    override func layoutSubviews() {
+        
+        self.icon.layer.cornerRadius = icon.layer.frame.height/2
+        self.icon.layer.borderColor = UIColor.whiteColor().CGColor
+        self.icon.layer.borderWidth = 2
+        self.icon.layer.masksToBounds = true
+    }
 }

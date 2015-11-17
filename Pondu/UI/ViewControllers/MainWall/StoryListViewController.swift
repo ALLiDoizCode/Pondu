@@ -45,7 +45,6 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
 
         // Do any additional setup after loading the view.
         
-        //self.collectionView.backgroundColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
