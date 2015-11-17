@@ -40,25 +40,19 @@ class parseUser {
                             
                             for var i = 0; i<objects.count; i++ {
 
-                                if i < favID.count {
+                                if i < favID.count && object.objectId == favID[i] {
                                     
                                     if let userBio = bio {
                                         
                                         theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true)
                                         
-                                         print("there are \(favID.count) fav ids")
-                                        
-                                        if object.objectId == favID[i] {
-                                            
+                                            print("there are \(favID.count) fav ids")
                                             print("queryID \(theUser)")
                                             print("recived fav post")
                                             userInfo.append(theUser)
                                             print("successfully recived \(userInfo.count) fav post")
                                             print("sending fav post")
-                                            
-                                            
-                                        }
-                                        
+                                         
                                     }else{
                                         
                                         theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true)
@@ -115,7 +109,7 @@ class parseUser {
                         
                     }
                     
-                    if userInfo.count >= 1 {
+                    if userInfo.count != 0 {
                         
                         if userInfo[0].fav == true {
                             print("fav count \(userInfo.count)")
@@ -129,7 +123,7 @@ class parseUser {
                         }
                     }else{
                         
-                        print("you have no favorites")
+                        print("you have no Stories")
                     }
 
                     
