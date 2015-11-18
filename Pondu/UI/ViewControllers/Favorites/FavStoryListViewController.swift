@@ -41,6 +41,13 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
             
             print("this is teh first picture\(self.array[1].story)")
             
+            let photoUrl:String! = self.array[0].photo
+            
+            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                
+                self.iconView.subImage.image = image
+            })
+            
         }
     }
     
@@ -86,43 +93,6 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
             
         }
         
-        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
-        let visiblePoint = CGPointMake(CGRectGetMidX(visibleRect), CGRectGetMidY(visibleRect))
-        let visibleIndex = collectionView.indexPathForItemAtPoint(visiblePoint)
-        
-        print(array.count)
-        
-        if (visibleIndex?.item) != nil{
-            
-            print(visibleIndex?.item)
-            
-            let photoUrl:String! = array[(visibleIndex?.item)!].photo
-            
-            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
-                
-                self.iconView.subImage.image = image
-            })
-            
-            self.iconView.name.text = array[(visibleIndex?.item)!].userName
-            
-        }else if let photoUrl:String! = array[0].photo {
-            
-                self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
-                    
-                    self.iconView.subImage.image = image
-                })
-                
-                self.iconView.name.text = array[0].userName
-        }else {
-            
-            let placeHolder = UIImage(named: "placeholder")
-            
-            self.mainImage.image = placeHolder
-            self.iconView.subImage.image = placeHolder
-            self.iconView.name.text = ""
-        }
-        
-        
         cell.alpha = 0
         
         let delay = UInt64((arc4random() % 600 / 1000))
@@ -154,6 +124,8 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
         })
         
         self.iconView.name.text = array[(indexPath.item)].userName
+        
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .Left, animated: true)
 
         
     }

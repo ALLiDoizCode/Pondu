@@ -101,19 +101,19 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
-        
-        
         if array[indexPath.row].live == true {
         
             cell.live.text = "Live"
             cell.live.repeatCount = Float.infinity
-            cell.live.animate()
+            cell.live.autostart = true
+            print("blink")
             
         }else {
             
 
             cell.live.text = "Peak"
             cell.live.textColor = UIColor.whiteColor()
+          
         }
         
         
@@ -124,6 +124,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return cell
         
     }
+    
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
