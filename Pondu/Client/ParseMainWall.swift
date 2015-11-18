@@ -59,6 +59,8 @@ class ParseMainWall {
                     if error == nil {
                         // The find succeeded.
                         print("Successfully retrieved \(objects!.count) Posts.")
+                        print("number of favorites \(favId?.count)")
+                        
                         
                         // Do something with the found objects
                         if let objects = objects {
@@ -75,7 +77,7 @@ class ParseMainWall {
                                     let theAddress = object.objectForKey("Location") as! String!
                                     let video = object.objectForKey("Video") as! PFFile!
                                     let live = object.objectForKey("Live") as! Bool!
-                                    //self.mainWallID.append(object.objectId!)
+                                    let favorite = object.objectForKey("userID") as! String
                                 
                                 
                                 
@@ -85,7 +87,7 @@ class ParseMainWall {
                                         
                                         for var i = 0; i<objects.count; i++ {
                                             
-                                            if i < favID.count && object.objectId == favID[i] {
+                                            if i < favID.count && favorite == favID[i] {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live)
                                                 
@@ -119,7 +121,7 @@ class ParseMainWall {
                                         
                                         for var i = 0; i<objects.count; i++ {
                                             
-                                            if i < favID.count && object.objectId == favID[i] {
+                                            if i < favID.count && favorite == favID[i] {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live)
                                                 
@@ -152,7 +154,7 @@ class ParseMainWall {
                                         
                                         for var i = 0; i<objects.count; i++ {
                                             
-                                            if i < favID.count && object.objectId == favID[i] {
+                                            if i < favID.count && favorite == favID[i] {
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live)
                                                 
@@ -186,7 +188,10 @@ class ParseMainWall {
                                         
                                         for var i = 0; i<objects.count; i++ {
                                             
-                                            if i < favID.count && object.objectId == favID[i] {
+                                            if i < favID.count && favorite == favID[i] {
+                                                
+                                                 print("user id \(favorite)" )
+                                                 print("favorites \(favID[i])")
                                                 
                                                 let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live)
                                                 

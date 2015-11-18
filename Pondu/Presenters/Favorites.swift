@@ -32,9 +32,10 @@ class userFavorites {
         ///favorite id
         SwiftEventBus.onMainThread(self, name: "GetFavorites") { result in
             
-            if let fav = result.object as! [String]!{
+            if let fav = result.object as! [String]! {
                 
-                print("getfavorites \(fav[0])")
+                print("Events")
+                print("getfavorites \(fav)")
                 
                 print("recieved fav id")
                 print("sending fav id")

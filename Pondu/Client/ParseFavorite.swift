@@ -119,8 +119,6 @@ class Favorite {
                 }
                 
                 
-                //print("this is the favID \(favList[i])")
-                //print("this is the objectID \(objectID)")
                 
                 
                 if i >= favList.count {
@@ -151,19 +149,6 @@ class Favorite {
         
         print("fav list fired")
         
-        /*let currentUser = PFUser.currentUser()
-        
-        if currentUser != nil {
-            
-            let fav = currentUser!["Favorites"]
-            
-            SwiftEventBus.post("GetFavorites", sender: fav)
-            
-        } else {
-            
-            
-        }*/
-        
         let fav = currentUser?.objectForKey("Favorites")
         
         print("sending fav id")
@@ -179,20 +164,7 @@ class Favorite {
         
         print("fav list fired")
         
-        /*let currentUser = PFUser.currentUser()
-        
-        if currentUser != nil {
-        
-        let fav = currentUser!["Favorites"]
-        
-        SwiftEventBus.post("GetFavorites", sender: fav)
-        
-        } else {
-        
-        
-        }*/
-        
-        let fav = currentUser?.objectForKey("partyFavorites")
+        let fav = currentUser?.objectForKey("Favorites")
         
         print("sending fav id")
         
@@ -203,20 +175,8 @@ class Favorite {
         
         print("fav list fired")
         
-        /*let currentUser = PFUser.currentUser()
         
-        if currentUser != nil {
-        
-        let fav = currentUser!["Favorites"]
-        
-        SwiftEventBus.post("GetFavorites", sender: fav)
-        
-        } else {
-        
-        
-        }*/
-        
-        let fav = currentUser?.objectForKey("FavStory")
+        let fav = currentUser?.objectForKey("Favorites")
         
         print("sending fav id")
         

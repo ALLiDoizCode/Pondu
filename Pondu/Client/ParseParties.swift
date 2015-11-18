@@ -41,6 +41,7 @@ class ParseParties {
                         let theAddress = object.objectForKey("Location") as! String!
                         let video = object.objectForKey("Video") as! PFFile!
                         let live = object.objectForKey("Live") as! Bool!
+                        let favorite = object.objectForKey("userID") as! String
                         
                         if let theVideo = video, let theThumbImage = thumbImage{
                             
@@ -48,7 +49,7 @@ class ParseParties {
                                 
                                 for var i = 0; i<objects.count; i++ {
                                     
-                                    if i < favID.count && object.objectId == favID[i] {
+                                    if i < favID.count && favorite == favID[i] {
                                         
                                         let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live)
                                         
@@ -88,7 +89,7 @@ class ParseParties {
                                 
                                 for var i = 0; i<objects.count; i++ {
                                     
-                                    if i < favID.count && object.objectId == favID[i] {
+                                    if i < favID.count && favorite == favID[i] {
                                         
                                         let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live)
                                         
@@ -127,7 +128,7 @@ class ParseParties {
                                 
                                 for var i = 0; i<objects.count; i++ {
                                     
-                                    if i < favID.count &&  object.objectId == favID[i]  {
+                                    if i < favID.count && favorite == favID[i]  {
                                         
                                         let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live)
                                         
@@ -168,7 +169,7 @@ class ParseParties {
                                 
                                 for var i = 0; i<objects.count; i++ {
                                     
-                                    if i < favID.count && object.objectId == favID[i] {
+                                    if i < favID.count && favorite == favID[i] {
                                         
                                         let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live)
                                         

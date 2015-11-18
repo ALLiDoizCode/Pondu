@@ -39,7 +39,7 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
             
             self.collectionView.reloadData()
             
-            print("this is teh first picture\(self.array[1].story)")
+            print("this is teh first picture\(self.array[0].story)")
             
             let photoUrl:String! = self.array[0].photo
             
@@ -47,6 +47,7 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
                 
                 self.iconView.subImage.image = image
             })
+            
             
         }
     }
