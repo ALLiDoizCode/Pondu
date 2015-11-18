@@ -1,31 +1,46 @@
 PODS:
   - Bolts/Tasks (1.4.0)
+  - FMMosaicLayout (0.1.4)
   - Kingfisher (1.7.1)
   - PagingMenuController (0.7.5)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
+  - Spring (1.0.3)
+  - SwiftDate (1.2)
   - SwiftEventBus (1.1.0)
 
 DEPENDENCIES:
+  - FMMosaicLayout
   - Kingfisher (~> 1.7)
   - PagingMenuController
   - Parse (~> 1.9.1)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
+  - SwiftDate
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
 
 EXTERNAL SOURCES:
+  Spring:
+    :branch: swift2
+    :git: https://github.com/MengTo/Spring.git
   SwiftEventBus:
     :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 CHECKOUT OPTIONS:
+  Spring:
+    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
+    :git: https://github.com/MengTo/Spring.git
   SwiftEventBus:
     :commit: 4b8cbb5a8227b3c29af75e0416689d26178733d8
     :git: https://github.com/cesarferreira/SwiftEventBus.git
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  FMMosaicLayout: c0febf6876c987c425d7e2176d034fa7a2c98cb5
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
   PagingMenuController: ea590be94de2332a1f78fbbc45fa6f49405279ea
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftDate: 49ebd4efb5f82336cfc2b1d8a6622f47d4b17370
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
 
 COCOAPODS: 0.39.0

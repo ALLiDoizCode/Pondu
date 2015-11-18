@@ -11,103 +11,66 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 
-class users {
+class theUser {
     
     let user = parseUser()
+    let nilArray:[String]! = nil
+    let thisFavorite = Favorite()
     
-    func userBio(label: UILabel){
+    func theUsers(){
         
-        SwiftEventBus.onMainThread(self, name: "UserBio") { result in
+        SwiftEventBus.onMainThread(self, name: "User") { result in
             
-            let bio = result.object
-            print(bio)
+            let userData = result.object
+            print(userData)
+            
+            SwiftEventBus.postToMainThread("updateStory", sender: userData)
             
         }
         
-        user.bioQuery()
+        user.userQuery(nilArray)
         
     }
     
-    
-    func userFullName(label: UILabel){
+    func getFavorite(){
         
-        SwiftEventBus.onMainThread(self, name: "UserFullName") { result in
+        print("waiting for favParty ids")
+        
+        ///favorite id
+        SwiftEventBus.onMainThread(self, name: "storyGetFavorites") { result in
             
-            let fullName = result.object
-            print(fullName)
+            if let fav = result.object as! [String]!{
+                
+                print("getfavorites \(fav)")
+                
+                print("recieved fav id")
+                print("sending fav id")
+                self.user.userQuery(fav)
+                
+                SwiftEventBus.unregister(self, name: "storyGetFavorites")
+            }
             
         }
         
-        user.fullNameQuery()
+        userFavStory()
+        
+        thisFavorite.storyFavoriteList()
         
     }
     
-    func userNames(label: UILabel){
+    func userFavStory(){
         
-        SwiftEventBus.onMainThread(self, name: "UserName") { result in
+        SwiftEventBus.onMainThread(self, name: "FavUser") { result in
             
-            let userName = result.object
-            print(userName)
+            let userData = result.object
+            print(userData)
+            
+            SwiftEventBus.postToMainThread("updateFavStory", sender: userData)
             
         }
-        
-        user.userNameQuery()
-        
+
     }
     
-    func userArea(label: UILabel){
-        
-        SwiftEventBus.onMainThread(self, name: "UserArea") { result in
-            
-            let area = result.object
-            print(area)
-            
-        }
-        
-        user.userAreaQuery()
-        
-    }
     
-    func userPhone(button:UIButton){
-        
-        SwiftEventBus.onMainThread(self, name: "UserArea") { result in
-            
-            let phone = result.object
-            print(phone)
-            
-            //button.setTitle(phone, forState: UIControlState.Normal)
-            
-        }
-        
-        user.userPhoneQuery()
-        
-    }
-    
-    func userStory(imageView:UIImageView){
-        
-        SwiftEventBus.onMainThread(self, name: "UserStory") { result in
-            
-            let story = result.object
-            print(story)
-            
-            //imageView.kf_setImageWithURL(NSURL(string: story)!)
-            
-        }
-        
-        user.storyQuery()
-    }
-    
-    func userPhoto(imageView:UIImageView){
-        
-        SwiftEventBus.onMainThread(self, name: "UserPhoto") { result in
-            
-            let photo = result.object
-            print(photo)
-            
-            //imageView.kf_setImageWithURL(NSURL(string: photo)!)
-            
-        }
-        
-        user.photoQuery()
-    }
+   
 }

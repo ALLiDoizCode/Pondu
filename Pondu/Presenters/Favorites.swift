@@ -32,9 +32,10 @@ class userFavorites {
         ///favorite id
         SwiftEventBus.onMainThread(self, name: "GetFavorites") { result in
             
-            if let fav = result.object as! [String]!{
+            if let fav = result.object as! [String]! {
                 
-                print("getfavorites \(fav[0])")
+                print("Events")
+                print("getfavorites \(fav)")
                 
                 print("recieved fav id")
                 print("sending fav id")
@@ -66,7 +67,7 @@ class userFavorites {
                 print("do something with post data")
                 //label.text = favList[0]
                 SwiftEventBus.post("Count", sender: favList.count )
-                SwiftEventBus.postToMainThread("updateCell", sender: favList)
+                SwiftEventBus.postToMainThread("updateFavoriteCell", sender: favList)
                 
                 SwiftEventBus.unregister(self, name: "FavoritesList")
             }

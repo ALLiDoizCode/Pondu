@@ -63,7 +63,7 @@ class partyFavorites {
                 print("recieved fav post")
                 print("favList \(favList)")
                 print("do something with post data")
-                SwiftEventBus.postToMainThread("updateCell", sender: favList)
+                SwiftEventBus.postToMainThread("updateFavoritePartyCell", sender: favList)
                 SwiftEventBus.unregister(self, name: "partyFavoritesList")
             }
             

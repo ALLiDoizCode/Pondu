@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  PartyViewController.swift
 //  Pondu
 //
-//  Created by Jonathan Green on 10/25/15.
+//  Created by Jonathan Green on 11/6/15.
 //  Copyright © 2015 Jonathan Green. All rights reserved.
 //
 
@@ -11,12 +11,13 @@ import SwiftEventBus
 import Parse
 import Kingfisher
 import QuartzCore
+import Spring
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
-    
+class PartyViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
-    let user = users()
+    let user = theUser()
     let newAccount = SignUP()
     let userLogin = startLogin()
     let eventID:[String] = []
@@ -44,24 +45,21 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         //user.userNames()
         //user.userArea()
         //user.userPhoto()
-        //Parties.partiesPost()
+        
         //mainWall.eventID(eventID )
         //favorite.addFavorite(0)
-        mainWall.eventPost()
+        //mainWall.eventPost()
         
-        userLogin.beginLogin("bob", password: "password")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        Parties.partiesPost()
+        getArrayCount()
+        
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
-        
-        
-        
-        
-        
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -70,21 +68,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
         
-        getArrayCount()
-        
         //let favorite = userFavorites()
         //favorite.getFavorite()
         
-         //let favParty = partyFavorites()
-         //favParty.getFavorite()
+        //let favParty = partyFavorites()
+        //favParty.getFavorite()
         
-        
-            /*let name = "jonathan"
-            let post = "just created another post"
-            let profileImage = UIImage(named: "bob")
-            let location = "3300 University Blvd, Winter Park, FL 32792"
-            let likes = 0
-            let live = false
+        /*let name = "jonathan"
+        let post = "just created another post"
+        let profileImage = UIImage(named: "bob")
+        let location = "3300 University Blvd, Winter Park, FL 32792"
+        let likes = 0
+        let live = false
         
         let makeEvent = MakingEvent()
         makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
@@ -94,7 +89,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -111,7 +106,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
+        let cell:PartyCell = collectionView.dequeueReusableCellWithReuseIdentifier("PartyCell", forIndexPath: indexPath) as! PartyCell
         
         cell.post.text = array[indexPath.row].post
         cell.PostName.text = array[indexPath.row].name
@@ -120,20 +115,24 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let numComments = array[indexPath.row].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: nil)
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+    
+        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
         
         
         if array[indexPath.row].live == true {
             
-            cell.pulseEffect.hidden = false
+            //cell.pulseEffect.hidden = false
             
-           cell.live.text = "Live"
+            cell.live.text = "Live"
+            cell.live.repeatCount = Float.infinity
+            cell.live.animate()
         }else {
             
-
+            
             cell.live.text = "Peak"
+            cell.live.textColor = UIColor.whiteColor()
         }
         
         
@@ -161,11 +160,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             print("featured")
         }
     }
-  
+    
     
     func getArrayCount(){
         
-        SwiftEventBus.onMainThread(self, name: "updateCell") { notification in
+        SwiftEventBus.onMainThread(self, name: "updatePartyCell") { notification in
             
             print("passing data\(notification.object)")
             
@@ -181,7 +180,5 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
-    
-    
-}
 
+}

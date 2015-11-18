@@ -2,52 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>Bolts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Kingfisher.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PagingMenuController-PagingMenuController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PagingMenuController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Parse.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftEventBus.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>090E91924DDE659744DA462A4DD45563</key>
+		<key>1BDA4D2E2255E21B879874F9BF4E472D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>23D4B5C9CC657B68134305BFEB076270</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>36FB63FF241288F7AA39800F2610D66E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,22 +29,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73FD8778A4BF1F345515677ECA878E48</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7408C6244A254C77FBAA20D562396986</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79BB6767DDFE05F8D37B7E4B69CA2889</key>
+		<key>8390C85D74BAD6043BE402BB3E3A42AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E47B20E97E3268CA17709C29A410A05B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E674B52383BE221B8E55E6DC6C9CA652</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class MainCell: UICollectionViewCell {
     
@@ -16,12 +17,10 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
     @IBOutlet weak var likes: UILabel!
-    @IBOutlet weak var live: UILabel!
+    @IBOutlet weak var live: SpringLabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     var blurView:UIVisualEffectView!
-    var pulseEffect:LFTPulseAnimation!
-    var pulseEffect2:LFTPulseAnimation!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
@@ -46,7 +45,6 @@ class MainCell: UICollectionViewCell {
         profileImage.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
         time.transform = CGAffineTransformMakeScale(scale, scale)
-    
         
         post.alpha = delta
         comments.alpha = delta
@@ -65,18 +63,6 @@ class MainCell: UICollectionViewCell {
         profileImage.layer.borderWidth = 1.5
         profileImage.layer.masksToBounds = true
         
-        let livePoint = CGPoint(x: live.frame.origin.x + 160
-            , y: live.frame.origin.y + 17)
-        
-        
-        
-        pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:25, position:livePoint)
-        pulseEffect.backgroundColor = UIColor.redColor().CGColor
-        self.layer.addSublayer(pulseEffect)
-        pulseEffect.hidden = true
-      
-        
-
     }
 }
 

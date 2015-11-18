@@ -12,16 +12,20 @@ import PagingMenuController
 
 class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     
+    let userLogin = startLogin()
+    
     override func viewDidLoad() {
+         userLogin.beginLogin("bob", password: "password")
         
         UIApplication.sharedApplication().statusBarHidden = true
         super.viewDidLoad()
-        let MainWall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! ViewController
-        MainWall.title = "Main Wall"
+        let Events = self.storyboard?.instantiateViewControllerWithIdentifier("Events") as! ViewController
         
-        let repositoriesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PartyWall") as! PartyViewController
+        let Party = self.storyboard?.instantiateViewControllerWithIdentifier("Party") as! PartyViewController
         
-        let viewControllers = [MainWall,repositoriesViewController]
+        let Story = self.storyboard?.instantiateViewControllerWithIdentifier("StoryListView") as! StoryListViewController
+        
+        let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
         options.menuHeight = 60
