@@ -28,7 +28,7 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
-        options.menuHeight = 60
+        options.menuHeight = 40
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!

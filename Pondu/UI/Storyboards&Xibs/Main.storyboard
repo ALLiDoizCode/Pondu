@@ -232,7 +232,7 @@
             </objects>
             <point key="canvasLocation" x="478" y="-268"/>
         </scene>
-        <!--Main Viewcontroller-->
+        <!--Pondu-->
         <scene sceneID="zds-EJ-HXU">
             <objects>
                 <viewController storyboardIdentifier="Base" id="ugc-Zl-Ccx" customClass="MainViewcontroller" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,6 +247,9 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-DE-V93">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
+                                </variation>
                                 <connections>
                                     <segue destination="3Ub-Ss-jtQ" kind="embed" id="Mwa-iq-6vA"/>
                                 </connections>
@@ -261,9 +264,33 @@
                             <constraint firstItem="L9L-Ey-0mc" firstAttribute="top" secondItem="m5L-DE-V93" secondAttribute="bottom" id="ngf-qb-ME1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jfy-jk-PRn"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Pondu" id="Jfy-jk-PRn">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="tuy-G6-foR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UMg-PY-scS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="xrt-0g-1CV" kind="show" id="UVz-e8-xNX"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="CommentBtn" destination="tuy-G6-foR" id="M99-ya-jVv"/>
+                        <outlet property="button" destination="UMg-PY-scS" id="oD1-Bm-mCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-dH-dQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fek-u9-Uw4">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <state key="normal" title="Button"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="-2126" y="628"/>
         </scene>
@@ -790,12 +817,16 @@
         <!--Navigation Controller-->
         <scene sceneID="KXI-wD-zs4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8pl-pP-hVW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.28892390786381383" green="0.41835199769753495" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1570,6 +1601,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOL-Kt-vLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3753" y="931.5"/>
+        </scene>
+        <!--CreateEvent:Party-->
+        <scene sceneID="Avx-4b-r9R">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateEvent:Party" id="xrt-0g-1CV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9E3-cf-DHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1360.5" y="633"/>
         </scene>
     </scenes>
     <resources>
