@@ -24,6 +24,8 @@
 		4D1F8F6F1BFE593400C2A61F /* CreateEvent:Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
+		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
+		4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */; };
 		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
 		4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683D1BE9902200591DF6 /* makeEvent.swift */; };
@@ -101,6 +103,8 @@
 		4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "CreateEvent:Party.storyboard"; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
+		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
 		4D86683D1BE9902200591DF6 /* makeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makeEvent.swift; sourceTree = "<group>"; };
@@ -275,6 +279,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		4D80BCDF1BFE8677000EAB33 /* Creating-Events/Parties */ = {
+			isa = PBXGroup;
+			children = (
+				4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */,
+				4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */,
+			);
+			name = "Creating-Events/Parties";
+			path = "Creating-Events:Parties";
+			sourceTree = "<group>";
+		};
 		4D91A9CE1BE5F56300C34281 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +364,7 @@
 		4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D80BCDF1BFE8677000EAB33 /* Creating-Events/Parties */,
 				4D1843E41BF2450E00B2AFA2 /* Favorites */,
 				4D1843E51BF2454500B2AFA2 /* MainWall */,
 				4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */,
@@ -604,6 +619,8 @@
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
 				4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */,
+				4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */,
+				4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */,
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
 				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4DD73EFC1BDF11E1006055E9 /* Favorites.swift in Sources */,
