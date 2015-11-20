@@ -15,6 +15,8 @@ class WallViewController: UIViewController {
     @IBOutlet weak var mainTitle2: LTMorphingLabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Who's Coming"
 
         mainTitle.text = "Who's allowed to come to come to"
         mainTitle.morphingEffect = .Evaporate

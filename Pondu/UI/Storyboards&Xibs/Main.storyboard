@@ -817,7 +817,7 @@
         <!--Navigation Controller-->
         <scene sceneID="KXI-wD-zs4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

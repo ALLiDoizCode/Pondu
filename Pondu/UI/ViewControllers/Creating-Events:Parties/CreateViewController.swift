@@ -16,6 +16,7 @@ class CreateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Type"
         mainTitle.text = "What are you hosting"
         mainTitle.morphingEffect = .Evaporate
         mainTitle.morphingDuration = 0.8

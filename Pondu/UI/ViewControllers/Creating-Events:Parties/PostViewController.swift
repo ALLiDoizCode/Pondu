@@ -19,6 +19,9 @@ class PostViewController: UIViewController,UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Post"
+        
         textVIew.delegate = self
         mainLabel.text = "Write a post"
         mainLabel.morphingEffect = .Evaporate

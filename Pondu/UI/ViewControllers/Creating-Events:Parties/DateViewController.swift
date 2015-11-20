@@ -17,6 +17,8 @@ class DateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Date"
+        
         mainLabel.text = "When is this Event"
         mainLabel.morphingEffect = .Evaporate
         mainLabel.morphingDuration = 0.8
