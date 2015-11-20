@@ -21,12 +21,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMI-lq-Ngv" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="20" y="101" width="360" height="22"/>
+                                <rect key="frame" x="20" y="101" width="360" height="24"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="VRK-uq-Zqp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -75,13 +75,6 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-Y6-QeI" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="20" y="120" width="360" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwM-md-d7i">
                                 <rect key="frame" x="179" y="579" width="42" height="42"/>
                                 <animations/>
@@ -94,6 +87,13 @@
                                     <segue destination="iUT-LW-qhc" kind="show" id="aXC-hN-N4J"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-Y6-QeI" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="20" y="122" width="360" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,9 +143,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoG-Iw-1Hz" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="170" y="97" width="61" height="33"/>
+                                <rect key="frame" x="179" y="97" width="43" height="24"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -161,7 +161,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jv0-YO-uJx" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                 <rect key="frame" x="20" y="266" width="360" height="33"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -173,6 +173,9 @@
                                     <constraint firstAttribute="width" constant="42" id="yjj-4S-L4o"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrows11"/>
+                                <connections>
+                                    <segue destination="VWy-sT-QBv" kind="show" id="iLj-gM-7p5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6Z-7R-bHh">
                                 <rect key="frame" x="200" y="337" width="1" height="65"/>
@@ -217,9 +220,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTq-3D-WHo" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="20" y="291" width="360" height="33"/>
+                                <rect key="frame" x="20" y="300" width="360" height="24"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -263,6 +266,159 @@
             </objects>
             <point key="canvasLocation" x="-803" y="627"/>
         </scene>
+        <!--Location View Controller-->
+        <scene sceneID="pYL-hM-7gR">
+            <objects>
+                <viewController id="VWy-sT-QBv" customClass="LocationViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5wf-Dp-TyM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cuJ-UQ-u7H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WtK-qi-SI2">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzJ-FM-tVG" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="170" y="97" width="61" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex:4321 College rd, Orlando, FL. 32839" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Wq-zU-omq">
+                                <rect key="frame" x="20" y="195" width="360" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4U-xf-zGC">
+                                <rect key="frame" x="132" y="247" width="137" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="4q0-yr-2Fl"/>
+                                    <constraint firstAttribute="height" constant="30" id="7Mu-1f-mDd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Use My Location"/>
+                                <connections>
+                                    <action selector="locationBtn:" destination="VWy-sT-QBv" eventType="touchUpInside" id="SX2-Lp-FKJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rz-OX-1en">
+                                <rect key="frame" x="179" y="568" width="42" height="42"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="aXg-eV-PV9"/>
+                                    <constraint firstAttribute="width" constant="42" id="hkT-cJ-Mpn"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="down arrows11"/>
+                                <connections>
+                                    <segue destination="jr8-Vr-rHy" kind="show" id="Uvd-3h-iGT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-uO-Gvb" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="179" y="120" width="43" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Wq-zU-omq" firstAttribute="top" secondItem="UzJ-FM-tVG" secondAttribute="bottom" constant="74" id="1cA-MR-M4F"/>
+                            <constraint firstItem="0Wq-zU-omq" firstAttribute="centerX" secondItem="UzJ-FM-tVG" secondAttribute="centerX" id="4A1-hs-qmI"/>
+                            <constraint firstItem="UzJ-FM-tVG" firstAttribute="top" secondItem="5wf-Dp-TyM" secondAttribute="bottom" constant="33" id="4Qw-8L-y3Y"/>
+                            <constraint firstItem="M4U-xf-zGC" firstAttribute="top" secondItem="WtK-qi-SI2" secondAttribute="top" constant="247" id="5WK-3T-n3M"/>
+                            <constraint firstItem="k1o-uO-Gvb" firstAttribute="leading" secondItem="UzJ-FM-tVG" secondAttribute="leading" constant="9" id="C1y-R9-YNR"/>
+                            <constraint firstItem="6rz-OX-1en" firstAttribute="centerX" secondItem="WtK-qi-SI2" secondAttribute="centerX" id="PjN-nz-q0P"/>
+                            <constraint firstItem="6rz-OX-1en" firstAttribute="centerX" secondItem="M4U-xf-zGC" secondAttribute="centerX" id="Ty2-r0-WXP"/>
+                            <constraint firstItem="cuJ-UQ-u7H" firstAttribute="top" secondItem="6rz-OX-1en" secondAttribute="bottom" constant="146" id="Uu0-HK-Xcm"/>
+                            <constraint firstItem="M4U-xf-zGC" firstAttribute="top" secondItem="0Wq-zU-omq" secondAttribute="bottom" constant="22" id="V5c-1B-Vkf"/>
+                            <constraint firstItem="6rz-OX-1en" firstAttribute="centerX" secondItem="UzJ-FM-tVG" secondAttribute="centerX" id="fhs-nz-u92"/>
+                            <constraint firstItem="0Wq-zU-omq" firstAttribute="leading" secondItem="WtK-qi-SI2" secondAttribute="leadingMargin" id="hXN-xM-5YI"/>
+                            <constraint firstItem="0Wq-zU-omq" firstAttribute="top" secondItem="k1o-uO-Gvb" secondAttribute="bottom" constant="51" id="lf1-6O-Ubl"/>
+                            <constraint firstItem="k1o-uO-Gvb" firstAttribute="centerX" secondItem="WtK-qi-SI2" secondAttribute="centerX" id="vWh-xy-Z0n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="location" destination="M4U-xf-zGC" id="xIp-Nq-cuc"/>
+                        <outlet property="mainLabel" destination="UzJ-FM-tVG" id="mqe-Hr-zlZ"/>
+                        <outlet property="mainLabel2" destination="k1o-uO-Gvb" id="ZAC-Ru-QHJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eia-14-oaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-248" y="627"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="3VO-x0-KaN">
+            <objects>
+                <viewController id="jr8-Vr-rHy" customClass="PostViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ak0-07-nKh"/>
+                        <viewControllerLayoutGuide type="bottom" id="nve-ZI-ynF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t3x-2x-9PA">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KP-6S-HIr">
+                                <rect key="frame" x="176" y="598" width="49" height="47"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postBTn:" destination="jr8-Vr-rHy" eventType="touchUpInside" id="Zjb-XV-hnp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-qg-UeX">
+                                <rect key="frame" x="20" y="271" width="360" height="258"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="luo-aI-F6q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jr8-Vr-rHy" id="Ljk-kv-JXX"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leS-cJ-kBQ" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="134" y="115" width="132" height="24"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="pBT-v8-lUt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uXh-qg-UeX" firstAttribute="leading" secondItem="t3x-2x-9PA" secondAttribute="leadingMargin" id="DfC-E8-toN"/>
+                            <constraint firstItem="4KP-6S-HIr" firstAttribute="top" secondItem="uXh-qg-UeX" secondAttribute="bottom" constant="69" id="RJR-92-SqF"/>
+                            <constraint firstItem="leS-cJ-kBQ" firstAttribute="top" secondItem="ak0-07-nKh" secondAttribute="bottom" constant="51" id="bN8-Fy-tyW"/>
+                            <constraint firstItem="uXh-qg-UeX" firstAttribute="trailing" secondItem="t3x-2x-9PA" secondAttribute="trailingMargin" id="ec7-jh-XI0"/>
+                            <constraint firstItem="4KP-6S-HIr" firstAttribute="centerX" secondItem="uXh-qg-UeX" secondAttribute="centerX" id="ehJ-5v-wpD"/>
+                            <constraint firstItem="uXh-qg-UeX" firstAttribute="centerY" secondItem="t3x-2x-9PA" secondAttribute="centerY" id="i56-84-A1p"/>
+                            <constraint firstItem="uXh-qg-UeX" firstAttribute="centerX" secondItem="leS-cJ-kBQ" secondAttribute="centerX" id="ncF-ug-hIS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="leS-cJ-kBQ" id="RIy-FV-80F"/>
+                        <outlet property="post" destination="4KP-6S-HIr" id="p07-eK-wDK"/>
+                        <outlet property="textVIew" destination="uXh-qg-UeX" id="6A9-6Q-0Xi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5G8-AV-Y0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="627"/>
+        </scene>
         <!--Post-->
         <scene sceneID="Yoe-K1-g8w">
             <objects>
@@ -299,17 +455,6 @@
                                     <segue destination="03d-E7-2lS" kind="show" id="7E9-Ym-de6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQw-b5-6PW" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="20" y="182" width="360" height="33"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="AI1-up-u9F"/>
-                                    <constraint firstAttribute="width" constant="360" id="bNG-ez-8Si"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEz-G8-2GT">
                                 <rect key="frame" x="55" y="380" width="109" height="40"/>
                                 <animations/>
@@ -326,6 +471,17 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQw-b5-6PW" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="20" y="182" width="360" height="33"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="AI1-up-u9F"/>
+                                    <constraint firstAttribute="width" constant="360" id="bNG-ez-8Si"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

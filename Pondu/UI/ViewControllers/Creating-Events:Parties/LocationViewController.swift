@@ -1,31 +1,33 @@
 //
-//  WallViewController.swift
+//  LocationViewController.swift
 //  Pondu
 //
-//  Created by Jonathan Green on 11/19/15.
+//  Created by Jonathan Green on 11/20/15.
 //  Copyright © 2015 Jonathan Green. All rights reserved.
 //
 
 import UIKit
 import LTMorphingLabel
 
-class WallViewController: UIViewController {
+class LocationViewController: UIViewController {
 
-    @IBOutlet weak var mainTitle: LTMorphingLabel!
-    @IBOutlet weak var mainTitle2: LTMorphingLabel!
+    @IBOutlet weak var mainLabel: LTMorphingLabel!
+    @IBOutlet weak var mainLabel2: LTMorphingLabel!
+  
+    @IBOutlet weak var location: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainTitle.text = "Who's allowed to come to come to"
-        mainTitle.morphingEffect = .Evaporate
-        mainTitle.morphingDuration = 0.8
-        mainTitle.numberOfLines = 0
+        mainLabel.text = "Where is this Event going to"
+        mainLabel.morphingEffect = .Evaporate
+        mainLabel.morphingDuration = 0.8
+        mainLabel.numberOfLines = 0
         
-        mainTitle2.text = "this Event?"
-        mainTitle2.morphingEffect = .Evaporate
-        mainTitle2.morphingDuration = 0.8
-        mainTitle2.numberOfLines = 0
-        mainTitle2.clipsToBounds = true
+        mainLabel2.text = "be?"
+        mainLabel2.morphingEffect = .Evaporate
+        mainLabel2.morphingDuration = 0.8
+        mainLabel2.numberOfLines = 0
+        mainLabel2.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +35,8 @@ class WallViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func locationBtn(sender: AnyObject) {
+    }
 
     /*
     // MARK: - Navigation
