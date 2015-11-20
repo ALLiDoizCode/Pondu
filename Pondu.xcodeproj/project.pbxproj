@@ -57,6 +57,7 @@
 		4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */; };
 		4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */; };
 		4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */; };
+		4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */; };
 		4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038B1BDDDC1E00A56A67 /* Users.swift */; };
 		4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */; };
 		4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038F1BDE99BF00A56A67 /* Parties.swift */; };
@@ -137,6 +138,7 @@
 		4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
+		4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		4DF2038B1BDDDC1E00A56A67 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUser.swift; sourceTree = "<group>"; };
 		4DF2038F1BDE99BF00A56A67 /* Parties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parties.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */,
 				4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */,
+				4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */,
 			);
 			name = "Creating-Events/Parties";
 			path = "Creating-Events:Parties";
@@ -603,6 +606,7 @@
 				4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */,
 				4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */,
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
+				4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */,
 				4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
