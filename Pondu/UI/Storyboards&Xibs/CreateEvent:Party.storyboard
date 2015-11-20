@@ -84,6 +84,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrows11"/>
                                 <connections>
+                                    <action selector="nextButton:" destination="03d-E7-2lS" eventType="touchUpInside" id="Hsx-wC-ndL"/>
                                     <segue destination="iUT-LW-qhc" kind="show" id="aXC-hN-N4J"/>
                                 </connections>
                             </button>
@@ -632,6 +633,6 @@
         <image name="down arrows11" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPQ-30-xXD"/>
+        <segue reference="fkV-7C-rwz"/>
     </inferredMetricsTieBreakers>
 </document>

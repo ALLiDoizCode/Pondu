@@ -18,7 +18,7 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Date"
+        self.title = "Location"
 
         mainLabel.text = "Where is this Event going to"
         mainLabel.morphingEffect = .Evaporate

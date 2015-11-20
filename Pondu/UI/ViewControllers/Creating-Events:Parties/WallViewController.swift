@@ -10,6 +10,11 @@ import UIKit
 import LTMorphingLabel
 
 class WallViewController: UIViewController {
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.title = "Who's Coming"
+    }
 
     @IBOutlet weak var mainTitle: LTMorphingLabel!
     @IBOutlet weak var mainTitle2: LTMorphingLabel!
@@ -36,6 +41,10 @@ class WallViewController: UIViewController {
     }
     
 
+    @IBAction func nextButton(sender: AnyObject) {
+        
+        self.title = "Coming"
+    }
     /*
     // MARK: - Navigation
 
