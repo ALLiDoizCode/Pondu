@@ -17,7 +17,6 @@ class PostViewController: UIViewController,UITextViewDelegate {
     
     let makeEvent = MakingEvent()
     let makeParty = MakingParty()
-    var type:Bool!
     var name:String!
     var userPost:String!
     var profileImage:UIImage!
@@ -25,7 +24,11 @@ class PostViewController: UIViewController,UITextViewDelegate {
     let likes = 0
     let live = false
 
-    
+    var type:Bool!
+    var wallType:Bool!
+    var timeStart:String!
+    var timeEnd:String!
+    var date:String!
     let PLACEHOLDER_TEXT = "Type here"
     
     override func viewDidLoad() {

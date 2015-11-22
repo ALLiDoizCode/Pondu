@@ -71,10 +71,14 @@ class CreateViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let nextViewController:WallViewController = segue.destinationViewController as! WallViewController
-        nextViewController.type = type
-        
-        print("passing \(type)")
+        if segue.identifier == "Wall" {
+            
+            let nextViewController:WallViewController = segue.destinationViewController as! WallViewController
+            nextViewController.type = type
+            
+            print("passing \(type)")
+        }
+    
     
     }
 

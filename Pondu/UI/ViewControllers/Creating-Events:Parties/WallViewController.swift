@@ -80,6 +80,8 @@ class WallViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        if segue.identifier == "Date" {
+            
             let nextViewController:DateViewController = segue.destinationViewController as! DateViewController
             
             nextViewController.type = type
@@ -87,6 +89,8 @@ class WallViewController: UIViewController {
             
             print("passing \(type)")
             print("passing \(wallType)")
+
+        }
         
     }
     
