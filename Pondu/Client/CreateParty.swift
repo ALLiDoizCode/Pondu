@@ -36,11 +36,13 @@ class createParty {
                     // The object has been saved.
                     
                     print("Party made")
+                    SwiftEventBus.post("PartyMade")
                     
                 } else {
                     // There was a problem, check error.description
                     
                     print("there was an issue creating the Party")
+                    SwiftEventBus.post("PartyNotMade")
                 }
             }
         }

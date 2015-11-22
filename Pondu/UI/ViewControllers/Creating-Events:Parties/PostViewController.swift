@@ -8,6 +8,7 @@
 
 import UIKit
 import LTMorphingLabel
+import SwiftEventBus
 
 class PostViewController: UIViewController,UITextViewDelegate {
 
@@ -17,18 +18,16 @@ class PostViewController: UIViewController,UITextViewDelegate {
     
     let makeEvent = MakingEvent()
     let makeParty = MakingParty()
-    var name:String!
-    var userPost:String!
-    var profileImage:UIImage!
-    var location:String!
+    
     let likes = 0
     let live = false
-
     var type:Bool!
     var wallType:Bool!
     var timeStart:String!
     var timeEnd:String!
     var date:String!
+    var address:String!
+    
     let PLACEHOLDER_TEXT = "Type here"
     
     override func viewDidLoad() {
@@ -44,6 +43,11 @@ class PostViewController: UIViewController,UITextViewDelegate {
         
         applyPlaceholderStyle(textVIew!, placeholderText: PLACEHOLDER_TEXT)
         
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        textVIew.resignFirstResponder()
     }
     
 
@@ -110,14 +114,40 @@ class PostViewController: UIViewController,UITextViewDelegate {
     
     @IBAction func postBTn(sender: AnyObject) {
         
-        if type == false && userPost != nil{
+        if type == false && textVIew.text != ""{
             
-            makeEvent.event(name, thePost: userPost, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)
+            SwiftEventBus.onBackgroundThread(self, name: "EventMade", handler: { (result) -> Void in
+                
+                //success
+                print("event post successful")
+                self.performSegueWithIdentifier("gotoWall", sender: self)
+            })
+            SwiftEventBus.onBackgroundThread(self, name: "EventNotMade", handler: { (result) -> Void in
+                
+                //Failed
+                print("event did not post")
+            })
             
-        }else if type == true && userPost != nil{
+            makeEvent.event("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd)
             
-            makeParty.party(name, thePost: userPost, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)
+        }else if type == true && textVIew.text != ""{
+            
+            SwiftEventBus.onBackgroundThread(self, name: "PartyMade", handler: { (result) -> Void in
+                
+                //success
+                print("party post successful")
+                self.performSegueWithIdentifier("gotoWall", sender: self)
+            })
+            
+            SwiftEventBus.onBackgroundThread(self, name: "PartyNotMade", handler: { (result) -> Void in
+                
+                //Failed
+                print("party did not post")
+            })
+            
+            makeParty.party("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd)
         }else{
+            
             
             print("present alert to users to make a post")
         }

@@ -16,6 +16,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
     @IBOutlet weak var mainLabel2: LTMorphingLabel!
     @IBOutlet weak var location: UIButton!
     @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var next: UIButton!
     var type:Bool!
     var wallType:Bool!
     var timeStart:String!
@@ -170,27 +171,39 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
         print("Error while updating location " + error.localizedDescription)
     }
 
+    @IBAction func nextBtn(sender: AnyObject) {
+        
+        if address.text != "" {
+            
+            self.performSegueWithIdentifier("Post", sender: self)
+            
+        }else{
+            
+            print("post alert for no selection")
+        }
+    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "Location" {
+        if segue.identifier == "Post" {
             
-            let nextViewController:LocationViewController = segue.destinationViewController as! LocationViewController
+            let nextViewController:PostViewController = segue.destinationViewController as! PostViewController
             
             nextViewController.type = type
             nextViewController.wallType = wallType
             nextViewController.timeStart = timeStart
             nextViewController.timeEnd = timeEnd
             nextViewController.date = date
-            
+            nextViewController.address = address.text
             print("passing \(type)")
             print("passing \(wallType)")
             print("passing \(date)")
             print("passing \(timeEnd)")
             print("passing \(timeStart)")
+            print("passing \(address.text)")
             
         }
     }

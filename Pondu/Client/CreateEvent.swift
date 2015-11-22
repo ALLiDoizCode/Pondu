@@ -38,10 +38,13 @@ class createEvent {
                     
                     print("event made")
                     
+                    SwiftEventBus.post("EventMade")
+                    
                 } else {
                     // There was a problem, check error.description
                     
                     print("there was an issue creating the event")
+                    SwiftEventBus.post("EventNotMade")
                 }
             }
         }

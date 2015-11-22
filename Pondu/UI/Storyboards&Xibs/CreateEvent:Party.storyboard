@@ -351,6 +351,9 @@
                                     <constraint firstAttribute="width" constant="42" id="hkT-cJ-Mpn"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrows11"/>
+                                <connections>
+                                    <action selector="nextBtn:" destination="VWy-sT-QBv" eventType="touchUpInside" id="cXV-Up-UL4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-uO-Gvb" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                 <rect key="frame" x="179" y="120" width="43" height="24"/>
@@ -398,6 +401,7 @@
                         <outlet property="location" destination="M4U-xf-zGC" id="xIp-Nq-cuc"/>
                         <outlet property="mainLabel" destination="UzJ-FM-tVG" id="mqe-Hr-zlZ"/>
                         <outlet property="mainLabel2" destination="k1o-uO-Gvb" id="ZAC-Ru-QHJ"/>
+                        <outlet property="next" destination="6rz-OX-1en" id="wv0-TT-CoN"/>
                         <segue destination="jr8-Vr-rHy" kind="show" identifier="Post" id="j16-3L-zu1"/>
                     </connections>
                 </viewController>
@@ -472,9 +476,12 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A3n-2i-14D" kind="show" id="SPQ-30-xXD"/>
+                                    <segue destination="A3n-2i-14D" kind="show" identifier="gotoWall" id="SPQ-30-xXD"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <segue destination="A3n-2i-14D" kind="show" id="nyJ-ui-SXn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -493,7 +500,7 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Nav" id="A3n-2i-14D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUg-io-YqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-726" y="-169"/>
+            <point key="canvasLocation" x="902" y="-110"/>
         </scene>
         <!--Post-->
         <scene sceneID="Yoe-K1-g8w">
@@ -642,6 +649,6 @@
         <image name="down arrows11" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1PM-tC-qnl"/>
+        <segue reference="SPQ-30-xXD"/>
     </inferredMetricsTieBreakers>
 </document>
