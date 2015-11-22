@@ -394,6 +394,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="address" destination="0Wq-zU-omq" id="JOM-yJ-cVM"/>
                         <outlet property="location" destination="M4U-xf-zGC" id="xIp-Nq-cuc"/>
                         <outlet property="mainLabel" destination="UzJ-FM-tVG" id="mqe-Hr-zlZ"/>
                         <outlet property="mainLabel2" destination="k1o-uO-Gvb" id="ZAC-Ru-QHJ"/>
@@ -641,6 +642,6 @@
         <image name="down arrows11" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kvz-t5-C1g"/>
+        <segue reference="1PM-tC-qnl"/>
     </inferredMetricsTieBreakers>
 </document>

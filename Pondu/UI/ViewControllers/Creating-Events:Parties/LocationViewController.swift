@@ -10,11 +10,12 @@ import UIKit
 import LTMorphingLabel
 import CoreLocation
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate {
+class LocationViewController: UIViewController, CLLocationManagerDelegate,UITextFieldDelegate {
 
     @IBOutlet weak var mainLabel: LTMorphingLabel!
     @IBOutlet weak var mainLabel2: LTMorphingLabel!
     @IBOutlet weak var location: UIButton!
+    @IBOutlet weak var address: UITextField!
     var type:Bool!
     var wallType:Bool!
     var timeStart:String!
@@ -25,6 +26,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        address.delegate = self
         
         self.title = "Location"
 
@@ -50,6 +53,20 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         checkLocationAuthorizationStatus()
         
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        address.resignFirstResponder()
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        address.resignFirstResponder()
+        
+        return false
+    }
+    
     
     func checkLocationAuthorizationStatus() {
         
@@ -110,9 +127,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
             print(containsPlacemark.addressDictionary)
             
             // Location name
-            if let locationName = containsPlacemark.addressDictionary!["Name"] as? NSString {
+            /*if let locationName = containsPlacemark.addressDictionary!["Name"] as? NSString {
                 print(locationName)
-            }
+            }*/
             
             // Street address
             /*if let street = containsPlacemark.addressDictionary!["Thoroughfare"] as? NSString {
@@ -120,23 +137,30 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
             }*/
             
             // City
-            if let city = containsPlacemark.addressDictionary!["City"] as? NSString {
+            if let locationName = containsPlacemark.addressDictionary!["Name"] as? NSString ,let city =  containsPlacemark.addressDictionary!["City"] as? NSString, let state = containsPlacemark.addressDictionary!["State"] as? NSString, let zip = containsPlacemark.addressDictionary!["ZIP"] as? NSString, let country = containsPlacemark.addressDictionary!["Country"] as? NSString {
+                
+                print(locationName)
                 print(city)
+                print(state)
+                print(zip)
+                print(country)
+                
+                address.text = "\(locationName) \(city) \(state) \(zip)"
             }
             
-            if let state = containsPlacemark.addressDictionary!["State"] as? NSString {
+            /*if let state = containsPlacemark.addressDictionary!["State"] as? NSString {
                 print(state)
             }
             
             // Zip code
-            if let zip = containsPlacemark.addressDictionary!["ZIP"] as? NSString {
+           if let zip = containsPlacemark.addressDictionary!["ZIP"] as? NSString {
                 print(zip)
             }
             
             // Country
             if let country = containsPlacemark.addressDictionary!["Country"] as? NSString {
                 print(country)
-            }
+            }*/
         }
         
     }
