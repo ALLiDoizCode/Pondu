@@ -11,7 +11,7 @@
         <!--Wall View Controller-->
         <scene sceneID="LbJ-vA-o1U">
             <objects>
-                <viewController id="03d-E7-2lS" customClass="WallViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Wall" id="03d-E7-2lS" customClass="WallViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfT-i8-0OP"/>
                         <viewControllerLayoutGuide type="bottom" id="Ypm-ll-cKR"/>
@@ -52,6 +52,9 @@
                                 <state key="normal" title="Main Wall">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mainwallBtn:" destination="03d-E7-2lS" eventType="touchUpInside" id="G8h-vl-imG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cok-KI-e7F">
                                 <rect key="frame" x="230" y="336" width="120" height="44"/>
@@ -60,6 +63,9 @@
                                 <state key="normal" title="Favorite Wall">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="favoriteWallBtn:" destination="03d-E7-2lS" eventType="touchUpInside" id="XF9-xk-S9U"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(public)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-eg-L4g">
                                 <rect key="frame" x="76" y="388" width="58" height="21"/>
@@ -85,7 +91,6 @@
                                 <state key="normal" title="Button" image="down arrows11"/>
                                 <connections>
                                     <action selector="nextButton:" destination="03d-E7-2lS" eventType="touchUpInside" id="Hsx-wC-ndL"/>
-                                    <segue destination="iUT-LW-qhc" kind="show" id="aXC-hN-N4J"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-Y6-QeI" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
@@ -138,13 +143,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoriteWall" destination="cok-KI-e7F" id="pPy-nY-evV"/>
                         <outlet property="mainTitle" destination="NMI-lq-Ngv" id="jCU-4L-bfE"/>
                         <outlet property="mainTitle2" destination="ggT-Y6-QeI" id="pCj-60-wCw"/>
+                        <outlet property="mainWall" destination="qTn-oa-VI4" id="8c8-cE-yoU"/>
+                        <segue destination="iUT-LW-qhc" kind="show" identifier="Date" id="dQN-je-5et"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0q-yl-M5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="627"/>
+            <point key="canvasLocation" x="-479" y="627"/>
         </scene>
         <!--Date View Controller-->
         <scene sceneID="Qh3-Gd-JqP">
@@ -189,9 +197,6 @@
                                     <constraint firstAttribute="width" constant="42" id="yjj-4S-L4o"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrows11"/>
-                                <connections>
-                                    <segue destination="VWy-sT-QBv" kind="show" id="iLj-gM-7p5"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6Z-7R-bHh">
                                 <rect key="frame" x="200" y="337" width="1" height="65"/>
@@ -291,6 +296,7 @@
                         <outlet property="mainLabel" destination="OoG-Iw-1Hz" id="Cbv-DB-j6e"/>
                         <outlet property="mainLabel2" destination="jv0-YO-uJx" id="vXz-M0-I2N"/>
                         <outlet property="mainLabel2End" destination="OTq-3D-WHo" id="zpf-oy-dAh"/>
+                        <segue destination="VWy-sT-QBv" kind="show" identifier="Location" id="k1d-0h-4nd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95L-Mk-GEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -349,9 +355,6 @@
                                     <constraint firstAttribute="width" constant="42" id="hkT-cJ-Mpn"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrows11"/>
-                                <connections>
-                                    <segue destination="jr8-Vr-rHy" kind="show" id="Uvd-3h-iGT"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-uO-Gvb" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                 <rect key="frame" x="179" y="120" width="43" height="24"/>
@@ -398,6 +401,7 @@
                         <outlet property="location" destination="M4U-xf-zGC" id="xIp-Nq-cuc"/>
                         <outlet property="mainLabel" destination="UzJ-FM-tVG" id="mqe-Hr-zlZ"/>
                         <outlet property="mainLabel2" destination="k1o-uO-Gvb" id="ZAC-Ru-QHJ"/>
+                        <segue destination="jr8-Vr-rHy" kind="show" identifier="Post" id="j16-3L-zu1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eia-14-oaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -527,7 +531,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="down arrows11"/>
                                 <connections>
-                                    <segue destination="03d-E7-2lS" kind="show" id="7E9-Ym-de6"/>
+                                    <action selector="nextBtn:" destination="L8B-HW-y9q" eventType="touchUpInside" id="asj-4H-B5l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEz-G8-2GT">
@@ -537,6 +541,9 @@
                                 <state key="normal" title="Party">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="partyBtn:" destination="L8B-HW-y9q" eventType="touchUpInside" id="nvX-kX-tkK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-yo-JCn">
                                 <rect key="frame" x="237" y="380" width="109" height="40"/>
@@ -545,6 +552,9 @@
                                 <state key="normal" title="Event">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="eventBtn:" destination="L8B-HW-y9q" eventType="touchUpInside" id="VEi-gS-5Id"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQw-b5-6PW" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                 <rect key="frame" x="20" y="182" width="360" height="33"/>
@@ -599,6 +609,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[heightClass=regular-widthClass=compact]"/>
                     <connections>
                         <outlet property="mainTitle" destination="NQw-b5-6PW" id="D5l-ig-k46"/>
+                        <outlet property="next" destination="JX4-sp-Zkk" id="rDb-yK-g4C"/>
+                        <segue destination="03d-E7-2lS" kind="show" identifier="Wall" id="chX-gt-NNY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRc-Wv-W1A" userLabel="First Responder" sceneMemberID="firstResponder"/>

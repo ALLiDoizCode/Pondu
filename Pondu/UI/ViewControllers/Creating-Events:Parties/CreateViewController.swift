@@ -12,6 +12,15 @@ import LTMorphingLabel
 class CreateViewController: UIViewController {
 
     @IBOutlet weak var mainTitle: LTMorphingLabel!
+    @IBOutlet weak var next: UIButton!
+    
+    var type:Bool!
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        type = nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +39,44 @@ class CreateViewController: UIViewController {
     }
     
 
-    /*
+    @IBAction func partyBtn(sender: AnyObject) {
+        
+        type = true
+        
+        print(type)
+        
+    }
+    
+    @IBAction func eventBtn(sender: AnyObject) {
+        
+        type = false
+        
+        print(type)
+    }
+    
+    @IBAction func nextBtn(sender: AnyObject) {
+        
+        if type != nil {
+            
+            self.performSegueWithIdentifier("Wall", sender: self)
+        }else{
+            
+            print("post alert for no selection")
+        }
+        
+    }
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let nextViewController:WallViewController = segue.destinationViewController as! WallViewController
+        nextViewController.type = type
+        
+        print("passing \(type)")
+    
     }
-    */
+
 
 }

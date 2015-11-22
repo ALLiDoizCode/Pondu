@@ -11,19 +11,30 @@ import LTMorphingLabel
 
 class WallViewController: UIViewController {
     
+    
+
+    @IBOutlet weak var mainWall: UIButton!
+    @IBOutlet weak var favoriteWall: UIButton!
+    @IBOutlet weak var mainTitle: LTMorphingLabel!
+    @IBOutlet weak var mainTitle2: LTMorphingLabel!
+    var type:Bool!
+    var wallType:Bool!
+    
     override func viewWillAppear(animated: Bool) {
         
         self.title = "Who's Coming"
+        
+        wallType = nil
     }
-
-    @IBOutlet weak var mainTitle: LTMorphingLabel!
-    @IBOutlet weak var mainTitle2: LTMorphingLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       print("retrieved \(type)")
+        
         self.title = "Who's Coming"
 
-        mainTitle.text = "Who's allowed to come to come to"
+        mainTitle.text = "Who's allowed to come to"
         mainTitle.morphingEffect = .Evaporate
         mainTitle.morphingDuration = 0.8
         mainTitle.numberOfLines = 0
@@ -43,16 +54,41 @@ class WallViewController: UIViewController {
 
     @IBAction func nextButton(sender: AnyObject) {
         
-        self.title = "Coming"
+        if wallType != nil {
+            
+            self.performSegueWithIdentifier("Date", sender: self)
+            
+            self.title = "Coming"
+        }else{
+            
+            print("post alert for no selection")
+        }
+        
+        
     }
-    /*
+    @IBAction func mainwallBtn(sender: AnyObject) {
+        
+        wallType = false
+    }
+    
+    @IBAction func favoriteWallBtn(sender: AnyObject) {
+        
+        wallType = true
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+            let nextViewController:DateViewController = segue.destinationViewController as! DateViewController
+            
+            nextViewController.type = type
+            nextViewController.wallType = wallType
+            
+            print("passing \(type)")
+            print("passing \(wallType)")
+        
     }
-    */
+    
 
 }

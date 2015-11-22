@@ -57,18 +57,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
        
         
-            /*let name = "jonathan"
-            let post = "just created another post"
-            let profileImage = UIImage(named: "bob")
-            let location = "3300 University Blvd, Winter Park, FL 32792"
-            let likes = 0
-            let live = false
-        
-        let makeEvent = MakingEvent()
-        makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
-        
-        /*let makeParty = MakingParty()
-        makeParty.party(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
+           
         
         
     }

@@ -13,8 +13,9 @@ class LocationViewController: UIViewController {
 
     @IBOutlet weak var mainLabel: LTMorphingLabel!
     @IBOutlet weak var mainLabel2: LTMorphingLabel!
-  
     @IBOutlet weak var location: UIButton!
+    var type:Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

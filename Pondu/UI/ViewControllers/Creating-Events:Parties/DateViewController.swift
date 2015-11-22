@@ -14,8 +14,14 @@ class DateViewController: UIViewController {
     @IBOutlet weak var mainLabel: LTMorphingLabel!
     @IBOutlet weak var mainLabel2: LTMorphingLabel!
     @IBOutlet weak var mainLabel2End: LTMorphingLabel!
+    var type:Bool!
+    var wallType:Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("retrieved \(type)")
+        print("retrieved \(wallType)")
         
         self.title = "Date"
         

@@ -15,6 +15,17 @@ class PostViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var textVIew: UITextView!
     @IBOutlet weak var post: UIButton!
     
+    let makeEvent = MakingEvent()
+    let makeParty = MakingParty()
+    var type:Bool!
+    var name:String!
+    var userPost:String!
+    var profileImage:UIImage!
+    var location:String!
+    let likes = 0
+    let live = false
+
+    
     let PLACEHOLDER_TEXT = "Type here"
     
     override func viewDidLoad() {
@@ -95,6 +106,19 @@ class PostViewController: UIViewController,UITextViewDelegate {
     }
     
     @IBAction func postBTn(sender: AnyObject) {
+        
+        if type == false && userPost != nil{
+            
+            makeEvent.event(name, thePost: userPost, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)
+            
+        }else if type == true && userPost != nil{
+            
+            makeParty.party(name, thePost: userPost, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)
+        }else{
+            
+            print("present alert to users to make a post")
+        }
+        
     }
 
     /*
