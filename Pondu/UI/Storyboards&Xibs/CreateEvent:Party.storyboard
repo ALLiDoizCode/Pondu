@@ -181,6 +181,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dateAction:" destination="iUT-LW-qhc" eventType="editingDidBegin" id="he5-Ba-DfJ"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jv0-YO-uJx" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                 <rect key="frame" x="20" y="266" width="360" height="33"/>
@@ -293,6 +296,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="date" destination="B38-3L-YRn" id="MPJ-He-03t"/>
                         <outlet property="mainLabel" destination="OoG-Iw-1Hz" id="Cbv-DB-j6e"/>
                         <outlet property="mainLabel2" destination="jv0-YO-uJx" id="vXz-M0-I2N"/>
                         <outlet property="mainLabel2End" destination="OTq-3D-WHo" id="zpf-oy-dAh"/>
@@ -645,6 +649,6 @@
         <image name="down arrows11" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fkV-7C-rwz"/>
+        <segue reference="kvz-t5-C1g"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,11 +14,14 @@ class DateViewController: UIViewController {
     @IBOutlet weak var mainLabel: LTMorphingLabel!
     @IBOutlet weak var mainLabel2: LTMorphingLabel!
     @IBOutlet weak var mainLabel2End: LTMorphingLabel!
+    @IBOutlet weak var date: UITextField!
     var type:Bool!
     var wallType:Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createPickerToolBar()
         
         print("retrieved \(type)")
         print("retrieved \(wallType)")
@@ -42,7 +45,93 @@ class DateViewController: UIViewController {
         mainLabel2End.numberOfLines = 0
         mainLabel2End.clipsToBounds = true
     }
+    
+    func donePressed(sender: UIBarButtonItem) {
+        
+        date.resignFirstResponder()
+        
+    }
+    
+    func tappedToolBarBtn(sender: UIBarButtonItem) {
+        
+        let dateformatter = NSDateFormatter()
+        
+        dateformatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        dateformatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        date.text = dateformatter.stringFromDate(NSDate())
+        
+        date.resignFirstResponder()
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
+    @IBAction func dateAction(sender: UITextField) {
+        
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }
+    
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        date.text = dateFormatter.stringFromDate(sender.date)
+        
+    }
+    
+    func createPickerToolBar(){
+        
+        let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+        
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        
+        toolBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        toolBar.tintColor = UIColor.whiteColor()
+        
+        toolBar.backgroundColor = UIColor.blackColor()
+        
+        
+        let todayBtn = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.Plain, target: self, action: "tappedToolBarBtn:")
+        
+        let okBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "donePressed:")
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        
+        label.font = UIFont(name: "Helvetica", size: 12)
+        
+        label.backgroundColor = UIColor.clearColor()
+        
+        label.textColor = UIColor.whiteColor()
+        
+        label.text = "Select a date"
+        
+        label.textAlignment = NSTextAlignment.Center
+        
+        let textBtn = UIBarButtonItem(customView: label)
+        
+        toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
+        
+        date.inputAccessoryView = toolBar
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
