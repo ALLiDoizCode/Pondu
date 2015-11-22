@@ -42,6 +42,7 @@ class ParseParties {
                         let video = object.objectForKey("Video") as! PFFile!
                         let live = object.objectForKey("Live") as! Bool!
                         let favorite = object.objectForKey("userID") as! String
+                        let time = object.objectForKey("Time") as! String
                         
                         if let theVideo = video, let theThumbImage = thumbImage{
                             
@@ -51,7 +52,7 @@ class ParseParties {
                                     
                                     if i < favID.count && favorite == favID[i] {
                                         
-                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live)
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live,theTime:time)
                                         
                                         
                                         
@@ -75,7 +76,7 @@ class ParseParties {
                             }else{
                                 
                                 
-                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: thumbImage.url!, theComments: comments,theFav:false,theLive:live)
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: thumbImage.url!, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                 parties.append(partiesData)
                                 
@@ -91,7 +92,7 @@ class ParseParties {
                                     
                                     if i < favID.count && favorite == favID[i] {
                                         
-                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live)
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live,theTime:time)
                                         
                                         
                                         
@@ -113,7 +114,7 @@ class ParseParties {
                                 
                             }else{
                                 
-                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live)
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                parties.append(partiesData)
                                 
@@ -130,7 +131,7 @@ class ParseParties {
                                     
                                     if i < favID.count && favorite == favID[i]  {
                                         
-                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live)
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:true,theLive:live,theTime:time)
                                         
                                         
                                         
@@ -154,7 +155,7 @@ class ParseParties {
                             }else{
                                 
                                 
-                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:false,theLive:live)
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                 parties.append(partiesData)
                                 
@@ -171,7 +172,7 @@ class ParseParties {
                                     
                                     if i < favID.count && favorite == favID[i] {
                                         
-                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live)
+                                        let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:true,theLive:live,theTime:time)
                                         
                                             print("there are \(favID.count) fav ids")
                                         
@@ -187,7 +188,7 @@ class ParseParties {
                                 
                             }else{
                                 
-                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live)
+                                let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                 parties.append(partiesData)
                                 

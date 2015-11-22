@@ -79,13 +79,13 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             locationManager.startUpdatingLocation()
             
             
-            let location = locationManager.location
+            //let location = locationManager.location
             
-            let latitude: Double = location!.coordinate.latitude
-            let longitude: Double = location!.coordinate.longitude
+            //let latitude: Double = location!.coordinate.latitude
+            //et longitude: Double = location!.coordinate.longitude
             
-            print("current latitude :: \(latitude)")
-            print("current longitude :: \(longitude)")
+            //print("current latitude :: \(latitude)")
+            //print("current longitude :: \(longitude)")
            
         } else {
             locationManager.requestWhenInUseAuthorization()

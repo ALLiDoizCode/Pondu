@@ -83,6 +83,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.post.text = array[indexPath.row].post
         cell.PostName.text = array[indexPath.row].name
         cell.likes.text = "Likes:\(array[indexPath.row].likes)"
+        cell.time.text = array[indexPath.row].time
         
         let numComments = array[indexPath.row].comments
         
