@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="height" constant="42" id="fga-KR-IeM"/>
                                     <constraint firstAttribute="width" constant="42" id="gvl-3g-ZHF"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="down arrows11"/>
+                                <state key="normal" title="Button" image="down arrows"/>
                                 <connections>
                                     <action selector="nextButton:" destination="03d-E7-2lS" eventType="touchUpInside" id="Hsx-wC-ndL"/>
                                 </connections>
@@ -199,7 +199,7 @@
                                     <constraint firstAttribute="height" constant="42" id="qFn-dp-HQi"/>
                                     <constraint firstAttribute="width" constant="42" id="yjj-4S-L4o"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="down arrows11"/>
+                                <state key="normal" title="Button" image="down arrows"/>
                                 <connections>
                                     <action selector="nextBtn:" destination="iUT-LW-qhc" eventType="touchUpInside" id="Wtx-qE-qst"/>
                                 </connections>
@@ -350,7 +350,7 @@
                                     <constraint firstAttribute="height" constant="42" id="aXg-eV-PV9"/>
                                     <constraint firstAttribute="width" constant="42" id="hkT-cJ-Mpn"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="down arrows11"/>
+                                <state key="normal" title="Button" image="down arrows"/>
                                 <connections>
                                     <action selector="nextBtn:" destination="VWy-sT-QBv" eventType="touchUpInside" id="cXV-Up-UL4"/>
                                 </connections>
@@ -533,7 +533,7 @@
                                     <constraint firstAttribute="width" constant="42" id="XAL-kp-BW0"/>
                                     <constraint firstAttribute="height" constant="42" id="ozq-n4-RpP"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="down arrows11"/>
+                                <state key="normal" title="Button" image="down arrows"/>
                                 <connections>
                                     <action selector="nextBtn:" destination="L8B-HW-y9q" eventType="touchUpInside" id="asj-4H-B5l"/>
                                 </connections>
@@ -646,9 +646,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="down arrows11" width="64" height="64"/>
+        <image name="down arrows" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPQ-30-xXD"/>
+        <segue reference="1PM-tC-qnl"/>
     </inferredMetricsTieBreakers>
 </document>
