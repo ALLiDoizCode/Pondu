@@ -20,6 +20,7 @@ class DateViewController: UIViewController {
     @IBOutlet weak var next: UIButton!
     var type:Bool!
     var wallType:Bool!
+    var eventBegins:NSDate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +93,11 @@ class DateViewController: UIViewController {
         
         dateformatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
-        startTime.text = dateformatter.stringFromDate(NSDate())
+        let now = dateformatter.stringFromDate(NSDate())
+    
+        startTime.text = now
+        
+        eventBegins = NSDate()
         
         startTime.resignFirstResponder()
     }
@@ -121,12 +126,30 @@ class DateViewController: UIViewController {
         
         let datePickerView:UIDatePicker = UIDatePicker()
         
+        setupDatePicker(datePickerView)
+        
         datePickerView.datePickerMode = UIDatePickerMode.Date
         
         sender.inputView = datePickerView
         
         datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
+    }
+    
+    func setupDatePicker(datePickerView:UIDatePicker){
+        
+        let currentDate: NSDate = NSDate()
+        
+        let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        // let calendar: NSCalendar = NSCalendar.currentCalendar()
+        calendar.timeZone = NSTimeZone(name: "UTC")!
+        
+        let components: NSDateComponents = NSDateComponents()
+        components.calendar = calendar
+        
+        let minDate: NSDate = calendar.dateByAddingComponents(components, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
+        
+        datePickerView.minimumDate = minDate
     }
     
     
@@ -153,17 +176,31 @@ class DateViewController: UIViewController {
         sender.inputView = datePickerView
         
         datePickerView.addTarget(self, action: Selector("startTimePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+        setupDatePicker(datePickerView)
     }
     
     @IBAction func End(sender: UITextField) {
         
-        let datePickerView:UIDatePicker = UIDatePicker()
         
-        datePickerView.datePickerMode = UIDatePickerMode.Time
         
-        sender.inputView = datePickerView
+        if startTime.text == "" {
+            
+            print("You need to set a Start time first")
+            
+        }else {
+            
+            let datePickerView:UIDatePicker = UIDatePicker()
+            
+            datePickerView.datePickerMode = UIDatePickerMode.Time
+            
+            sender.inputView = datePickerView
+            
+            datePickerView.addTarget(self, action: Selector("endTimePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+            
+            datePickerView.minimumDate = eventBegins
+        }
         
-        datePickerView.addTarget(self, action: Selector("endTimePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     
@@ -176,6 +213,8 @@ class DateViewController: UIViewController {
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         startTime.text = dateFormatter.stringFromDate(sender.date)
+        
+        eventBegins = sender.date
         
     }
     
@@ -272,40 +311,43 @@ class DateViewController: UIViewController {
     
     func createEndPickerToolBar(){
         
-        let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
-        
-        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-        
-        toolBar.barStyle = UIBarStyle.Default
-        
-        toolBar.tintColor = UIColor.blackColor()
-        
-        toolBar.backgroundColor = UIColor.lightGrayColor()
-        
-        
-        let todayBtn = UIBarButtonItem(title: "Now", style: UIBarButtonItemStyle.Plain, target: self, action: "endTappedToolBarBtn:")
-        
-        let okBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "endDonePressed:")
-        
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
-        
-        label.font = UIFont(name: "Helvetica", size: 12)
-        
-        label.backgroundColor = UIColor.clearColor()
-        
-        label.textColor = UIColor.blackColor()
-        
-        label.text = "Select a Time"
-        
-        label.textAlignment = NSTextAlignment.Center
-        
-        let textBtn = UIBarButtonItem(customView: label)
-        
-        toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
-        
-        endTime.inputAccessoryView = toolBar
+        if startTime.text != "" {
+            
+            let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+            
+            toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+            
+            toolBar.barStyle = UIBarStyle.Default
+            
+            toolBar.tintColor = UIColor.blackColor()
+            
+            toolBar.backgroundColor = UIColor.lightGrayColor()
+            
+            
+            let todayBtn = UIBarButtonItem(title: "Now", style: UIBarButtonItemStyle.Plain, target: self, action: "endTappedToolBarBtn:")
+            
+            let okBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "endDonePressed:")
+            
+            let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
+            
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+            
+            label.font = UIFont(name: "Helvetica", size: 12)
+            
+            label.backgroundColor = UIColor.clearColor()
+            
+            label.textColor = UIColor.blackColor()
+            
+            label.text = "Select a Time"
+            
+            label.textAlignment = NSTextAlignment.Center
+            
+            let textBtn = UIBarButtonItem(customView: label)
+            
+            toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
+            
+            endTime.inputAccessoryView = toolBar
+        }
     }
     
     override func didReceiveMemoryWarning() {
