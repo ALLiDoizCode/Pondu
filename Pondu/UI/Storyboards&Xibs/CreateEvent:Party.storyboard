@@ -612,8 +612,10 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[heightClass=regular-widthClass=compact]"/>
                     <connections>
+                        <outlet property="event" destination="Mhu-yo-JCn" id="Nyx-VL-Ii0"/>
                         <outlet property="mainTitle" destination="NQw-b5-6PW" id="D5l-ig-k46"/>
                         <outlet property="next" destination="JX4-sp-Zkk" id="rDb-yK-g4C"/>
+                        <outlet property="party" destination="UEz-G8-2GT" id="QF6-Db-AXd"/>
                         <segue destination="03d-E7-2lS" kind="show" identifier="Wall" id="chX-gt-NNY"/>
                     </connections>
                 </viewController>
@@ -649,6 +651,6 @@
         <image name="down arrows" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1PM-tC-qnl"/>
+        <segue reference="fkV-7C-rwz"/>
     </inferredMetricsTieBreakers>
 </document>

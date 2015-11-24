@@ -320,7 +320,7 @@ class DateViewController: UIViewController {
             
             toolBar.backgroundColor = UIColor.lightGrayColor()
             
-            let todayBtn = UIBarButtonItem(title: "Now", style: UIBarButtonItemStyle.Plain, target: self, action: "endTappedToolBarBtn:")
+            //let todayBtn = UIBarButtonItem(title: "Now", style: UIBarButtonItemStyle.Plain, target: self, action: "endTappedToolBarBtn:")
             
             let okBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "endDonePressed:")
             
@@ -340,7 +340,7 @@ class DateViewController: UIViewController {
             
             let textBtn = UIBarButtonItem(customView: label)
             
-            toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
+            toolBar.setItems([flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
             
             endTime.inputAccessoryView = toolBar
     }

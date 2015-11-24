@@ -69,11 +69,17 @@ class WallViewController: UIViewController {
     @IBAction func mainwallBtn(sender: AnyObject) {
         
         wallType = false
+        
+        mainWall.backgroundColor = UIColor.grayColor()
+        favoriteWall.backgroundColor = UIColor.clearColor()
     }
     
     @IBAction func favoriteWallBtn(sender: AnyObject) {
         
         wallType = true
+        
+        favoriteWall.backgroundColor = UIColor.grayColor()
+        mainWall.backgroundColor = UIColor.clearColor()
     }
     // MARK: - Navigation
 

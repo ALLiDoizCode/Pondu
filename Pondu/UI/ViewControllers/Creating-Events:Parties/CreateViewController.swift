@@ -13,6 +13,8 @@ class CreateViewController: UIViewController {
 
     @IBOutlet weak var mainTitle: LTMorphingLabel!
     @IBOutlet weak var next: UIButton!
+    @IBOutlet weak var party: UIButton!
+    @IBOutlet weak var event: UIButton!
     
     var type:Bool!
     
@@ -45,6 +47,9 @@ class CreateViewController: UIViewController {
         
         print(type)
         
+        party.backgroundColor = UIColor.grayColor()
+        event.backgroundColor = UIColor.clearColor()
+        
     }
     
     @IBAction func eventBtn(sender: AnyObject) {
@@ -52,6 +57,9 @@ class CreateViewController: UIViewController {
         type = false
         
         print(type)
+        
+        event.backgroundColor = UIColor.grayColor()
+        party.backgroundColor = UIColor.clearColor()
     }
     
     @IBAction func nextBtn(sender: AnyObject) {
@@ -81,6 +89,5 @@ class CreateViewController: UIViewController {
     
     
     }
-
 
 }
