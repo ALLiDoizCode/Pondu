@@ -30,13 +30,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngA-Uo-4j2">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,12 +172,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ngA-Uo-4j2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="426-Zy-4ke"/>
                             <constraint firstItem="U90-Ij-hAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kps-dB-Esk"/>
                             <constraint firstAttribute="trailing" secondItem="U90-Ij-hAQ" secondAttribute="trailing" id="QKP-jn-OI1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ngA-Uo-4j2" secondAttribute="bottom" constant="67" id="Tq9-ht-jVr"/>
                             <constraint firstItem="U90-Ij-hAQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gIG-DW-bWu"/>
-                            <constraint firstItem="ngA-Uo-4j2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="384" id="hyh-Bv-Mdb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U90-Ij-hAQ" secondAttribute="bottom" id="nwW-eo-r7Y"/>
                         </constraints>
                     </view>
@@ -649,13 +639,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGI-dR-PeT">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -798,11 +781,8 @@
                         <constraints>
                             <constraint firstItem="p9U-YF-siX" firstAttribute="leading" secondItem="afp-ad-sUw" secondAttribute="leading" id="63U-zb-q9f"/>
                             <constraint firstItem="p9U-YF-siX" firstAttribute="top" secondItem="afp-ad-sUw" secondAttribute="top" id="6El-E9-4x3"/>
-                            <constraint firstItem="IGI-dR-PeT" firstAttribute="centerX" secondItem="afp-ad-sUw" secondAttribute="centerX" id="HPu-2a-HKn"/>
                             <constraint firstAttribute="trailing" secondItem="p9U-YF-siX" secondAttribute="trailing" id="fwy-NG-zhp"/>
-                            <constraint firstItem="IGI-dR-PeT" firstAttribute="top" secondItem="zDo-Al-19M" secondAttribute="bottom" constant="384" id="h4Q-Kl-bGG"/>
                             <constraint firstItem="vgp-0G-c0Q" firstAttribute="top" secondItem="p9U-YF-siX" secondAttribute="bottom" id="qfo-9v-vfl"/>
-                            <constraint firstItem="vgp-0G-c0Q" firstAttribute="top" secondItem="IGI-dR-PeT" secondAttribute="bottom" constant="67" id="xJW-lb-xif"/>
                         </constraints>
                     </view>
                     <connections>
@@ -953,13 +933,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBC-m2-2ge">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1105,10 +1078,7 @@
                             <constraint firstItem="ftq-OO-FXr" firstAttribute="leading" secondItem="eAv-yV-5Cp" secondAttribute="leading" id="00S-cs-StF"/>
                             <constraint firstItem="qwi-mU-4Ut" firstAttribute="top" secondItem="ftq-OO-FXr" secondAttribute="bottom" id="ITL-Tq-2Ep"/>
                             <constraint firstAttribute="trailing" secondItem="ftq-OO-FXr" secondAttribute="trailing" id="Qud-AS-bmM"/>
-                            <constraint firstItem="dBC-m2-2ge" firstAttribute="top" secondItem="wKA-ZO-iKK" secondAttribute="bottom" constant="384" id="bYX-Vq-zBc"/>
                             <constraint firstItem="ftq-OO-FXr" firstAttribute="top" secondItem="eAv-yV-5Cp" secondAttribute="top" id="oFc-ST-Icv"/>
-                            <constraint firstItem="dBC-m2-2ge" firstAttribute="centerX" secondItem="eAv-yV-5Cp" secondAttribute="centerX" id="wjI-w8-9l2"/>
-                            <constraint firstItem="qwi-mU-4Ut" firstAttribute="top" secondItem="dBC-m2-2ge" secondAttribute="bottom" constant="67" id="zfP-yV-6qf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1144,13 +1114,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-Nu-AIK">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1293,10 +1256,7 @@
                         <constraints>
                             <constraint firstItem="NQo-LL-eRM" firstAttribute="top" secondItem="lNn-Ws-RqC" secondAttribute="top" id="1SL-jw-rcc"/>
                             <constraint firstItem="NQo-LL-eRM" firstAttribute="leading" secondItem="lNn-Ws-RqC" secondAttribute="leading" id="1TZ-uo-Arp"/>
-                            <constraint firstItem="r0c-Nu-AIK" firstAttribute="top" secondItem="oxi-cG-7QC" secondAttribute="bottom" constant="384" id="Mn4-8t-CJz"/>
                             <constraint firstItem="tQu-xF-nFG" firstAttribute="top" secondItem="NQo-LL-eRM" secondAttribute="bottom" id="SgB-xl-XGS"/>
-                            <constraint firstItem="tQu-xF-nFG" firstAttribute="top" secondItem="r0c-Nu-AIK" secondAttribute="bottom" constant="67" id="hsq-kf-MRh"/>
-                            <constraint firstItem="r0c-Nu-AIK" firstAttribute="centerX" secondItem="lNn-Ws-RqC" secondAttribute="centerX" id="u6J-Kv-9Fj"/>
                             <constraint firstAttribute="trailing" secondItem="NQo-LL-eRM" secondAttribute="trailing" id="yvl-Nb-hk6"/>
                         </constraints>
                     </view>
