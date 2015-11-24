@@ -27,8 +27,7 @@ class DateViewController: UIViewController {
         
         createPickerToolBar()
         createStartPickerToolBar()
-        createEndPickerToolBar()
-        
+
         print("retrieved \(type)")
         print("retrieved \(wallType)")
         
@@ -182,13 +181,13 @@ class DateViewController: UIViewController {
     
     @IBAction func End(sender: UITextField) {
         
-        
-        
         if startTime.text == "" {
             
             print("You need to set a Start time first")
             
         }else {
+            
+            createEndPickerToolBar()
             
             let datePickerView:UIDatePicker = UIDatePicker()
             
@@ -310,8 +309,6 @@ class DateViewController: UIViewController {
     }
     
     func createEndPickerToolBar(){
-        
-        if startTime.text != "" {
             
             let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
             
@@ -322,7 +319,6 @@ class DateViewController: UIViewController {
             toolBar.tintColor = UIColor.blackColor()
             
             toolBar.backgroundColor = UIColor.lightGrayColor()
-            
             
             let todayBtn = UIBarButtonItem(title: "Now", style: UIBarButtonItemStyle.Plain, target: self, action: "endTappedToolBarBtn:")
             
@@ -347,7 +343,6 @@ class DateViewController: UIViewController {
             toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
             
             endTime.inputAccessoryView = toolBar
-        }
     }
     
     override func didReceiveMemoryWarning() {
