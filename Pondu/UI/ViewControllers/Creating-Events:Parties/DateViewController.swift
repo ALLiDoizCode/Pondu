@@ -21,6 +21,7 @@ class DateViewController: UIViewController {
     var type:Bool!
     var wallType:Bool!
     var eventBegins:NSDate!
+    var privacy:Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -378,12 +379,14 @@ class DateViewController: UIViewController {
             nextViewController.timeStart = startTime.text
             nextViewController.timeEnd = endTime.text
             nextViewController.date = date.text
+            nextViewController.privacy = privacy
             
             print("passing \(type)")
             print("passing \(wallType)")
             print("passing \(date.text)")
             print("passing \(endTime.text)")
             print("passing \(startTime.text)")
+            print("passing \(privacy)")
             
         }
     }

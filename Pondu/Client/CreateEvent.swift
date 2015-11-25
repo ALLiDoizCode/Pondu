@@ -32,6 +32,7 @@ class createEvent {
             event["Location"] = createdEvent.location
             event["ProfilePicture"] = currentUser!["photo"]
             event["Time"] = createdEvent.startTime
+            event["Privacy"] = createdEvent.privacy
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

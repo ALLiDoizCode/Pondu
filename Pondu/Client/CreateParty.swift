@@ -31,6 +31,7 @@ class createParty {
             event["Location"] = createdParty.location
             event["ProfilePicture"] = currentUser!["photo"]
             event["Time"] = createdParty.startTime
+            event["Privacy"] = createdParty.privacy
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

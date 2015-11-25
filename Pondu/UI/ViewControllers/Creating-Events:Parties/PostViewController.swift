@@ -27,6 +27,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
     var timeEnd:String!
     var date:String!
     var address:String!
+    var privacy:Bool!
     
     let PLACEHOLDER_TEXT = "Type here"
     
@@ -128,7 +129,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
                 print("event did not post")
             })
             
-            makeEvent.event("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd)
+            makeEvent.event("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy)
             
         }else if type == true && textVIew.text != ""{
             
@@ -145,7 +146,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
                 print("party did not post")
             })
             
-            makeParty.party("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd)
+            makeParty.party("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy)
         }else{
             
             

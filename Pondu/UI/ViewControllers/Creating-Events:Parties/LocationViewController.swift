@@ -22,6 +22,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
     var timeStart:String!
     var timeEnd:String!
     var date:String!
+    var privacy:Bool!
     
     let locationManager = CLLocationManager()
     
@@ -198,12 +199,14 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             nextViewController.timeEnd = timeEnd
             nextViewController.date = date
             nextViewController.address = address.text
+            nextViewController.privacy = privacy
             print("passing \(type)")
             print("passing \(wallType)")
             print("passing \(date)")
             print("passing \(timeEnd)")
             print("passing \(timeStart)")
             print("passing \(address.text)")
+            print("passing \(privacy)")
             
         }
     }

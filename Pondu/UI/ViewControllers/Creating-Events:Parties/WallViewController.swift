@@ -19,6 +19,7 @@ class WallViewController: UIViewController {
     @IBOutlet weak var mainTitle2: LTMorphingLabel!
     var type:Bool!
     var wallType:Bool!
+    var privacy:Bool!
     
     override func viewWillAppear(animated: Bool) {
         
@@ -69,6 +70,7 @@ class WallViewController: UIViewController {
     @IBAction func mainwallBtn(sender: AnyObject) {
         
         wallType = false
+        privacy = false
         
         mainWall.backgroundColor = UIColor.darkGrayColor()
         mainWall.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -79,6 +81,7 @@ class WallViewController: UIViewController {
     @IBAction func favoriteWallBtn(sender: AnyObject) {
         
         wallType = true
+        privacy = true
         
         favoriteWall.backgroundColor = UIColor.darkGrayColor()
         favoriteWall.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -96,9 +99,11 @@ class WallViewController: UIViewController {
             
             nextViewController.type = type
             nextViewController.wallType = wallType
+            nextViewController.privacy = privacy
             
             print("passing \(type)")
             print("passing \(wallType)")
+            print("passing \(privacy)")
 
         }
         

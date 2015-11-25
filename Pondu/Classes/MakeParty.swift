@@ -20,8 +20,9 @@ class makeParty {
     var date:String!
     var startTime:String!
     var endTime:String!
+    var privacy:Bool!
     
-    init(theName:String,thePost:String,TheProfilePicture:PFFile,theLocation:String,theLive:Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String){
+    init(theName:String,thePost:String,TheProfilePicture:PFFile,theLocation:String,theLive:Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool){
         
         name = theName
         post = thePost
@@ -32,7 +33,7 @@ class makeParty {
         date = theDate
         startTime = theStartTime
         endTime = theEndTime
-
+        privacy = thePrivacy
     }
     
 }
