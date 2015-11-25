@@ -48,7 +48,7 @@ class CreateViewController: UIViewController {
         print(type)
         
         party.backgroundColor = UIColor.darkGrayColor()
-        party.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        party.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         event.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         event.backgroundColor = UIColor.clearColor()
         
@@ -61,7 +61,7 @@ class CreateViewController: UIViewController {
         print(type)
         
         event.backgroundColor = UIColor.darkGrayColor()
-        event.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        event.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         party.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         party.backgroundColor = UIColor.clearColor()
     }

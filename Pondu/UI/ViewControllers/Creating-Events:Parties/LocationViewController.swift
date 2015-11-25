@@ -82,7 +82,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             //let location = locationManager.location
             
             //let latitude: Double = location!.coordinate.latitude
-            //et longitude: Double = location!.coordinate.longitude
+            //let longitude: Double = location!.coordinate.longitude
             
             //print("current latitude :: \(latitude)")
             //print("current longitude :: \(longitude)")

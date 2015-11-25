@@ -71,7 +71,7 @@ class WallViewController: UIViewController {
         wallType = false
         
         mainWall.backgroundColor = UIColor.darkGrayColor()
-        mainWall.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        mainWall.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         favoriteWall.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         favoriteWall.backgroundColor = UIColor.clearColor()
     }
@@ -81,7 +81,7 @@ class WallViewController: UIViewController {
         wallType = true
         
         favoriteWall.backgroundColor = UIColor.darkGrayColor()
-        favoriteWall.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        favoriteWall.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         mainWall.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         mainWall.backgroundColor = UIColor.clearColor()
     }

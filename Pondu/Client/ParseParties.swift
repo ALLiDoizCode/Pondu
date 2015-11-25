@@ -43,6 +43,7 @@ class ParseParties {
                         let live = object.objectForKey("Live") as! Bool!
                         let favorite = object.objectForKey("userID") as! String
                         let time = object.objectForKey("Time") as! String
+                        let privacy = object.objectForKey("Privacy") as! Bool!
                         
                         if let theVideo = video, let theThumbImage = thumbImage{
                             
@@ -75,11 +76,13 @@ class ParseParties {
                                 
                             }else{
                                 
+                                 if privacy != true {
                                 
                                 let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: thumbImage.url!, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                 parties.append(partiesData)
                                 
+                                }
                             }
                         }else if let theVideo = video where thumbImage == nil {
                             
@@ -114,10 +117,13 @@ class ParseParties {
                                 
                             }else{
                                 
+                                 if privacy != true {
+                                
                                 let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                parties.append(partiesData)
-                                
+                                    
+                                }
                             }
                             
                         } else if let theThumbImage = thumbImage where video == nil {
@@ -154,11 +160,13 @@ class ParseParties {
                                 
                             }else{
                                 
+                                if privacy != true {
                                 
                                 let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumbImage.url!, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                 parties.append(partiesData)
                                 
+                                }
                             }
                         }else{
                             let theVideo = "http://files.parsetfss.com/bab4026e-aa7e-4962-8128-6876de5fccc3/tfss-6a5d1d3d-4319-4fe8-a5fa-16556508f115-SampleVideo_1080x720_1mb.mp4"
@@ -188,10 +196,13 @@ class ParseParties {
                                 
                             }else{
                                 
+                                if privacy != true {
+                                
                                 let partiesData:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theThumb, theComments: comments,theFav:false,theLive:live,theTime:time)
                                 
                                 parties.append(partiesData)
                                 
+                                }
                             }
                         }
                         
