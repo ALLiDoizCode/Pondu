@@ -20,10 +20,12 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var live: SpringLabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
-    var blurView:UIVisualEffectView!
+    var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
+        
+       
         
         // These are the two convenience height constants
         let standardHeight = UltravisualLayoutConstants.Cell.standardHeight
@@ -33,7 +35,7 @@ class MainCell: UICollectionViewCell {
         let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
         
         // Based on the range constants, update the cell’s alpha based on the delta value.
-        let minAlpha: CGFloat = 0.3
+        let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
         coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
@@ -45,6 +47,7 @@ class MainCell: UICollectionViewCell {
         profileImage.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
         time.transform = CGAffineTransformMakeScale(scale, scale)
+        //visualEffectView.transform = CGAffineTransformMakeScale(scale, scale)
         
         post.alpha = delta
         comments.alpha = delta
@@ -52,8 +55,13 @@ class MainCell: UICollectionViewCell {
         time.alpha = delta
         
         
+        //visualEffectView.frame = bgImage.frame
+        //visualEffectView.clipsToBounds = true
+        //bgImage.addSubview(visualEffectView)
+        
                 
     }
+    
     
     
     override func awakeFromNib() {
@@ -62,6 +70,10 @@ class MainCell: UICollectionViewCell {
         profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         profileImage.layer.borderWidth = 1.5
         profileImage.layer.masksToBounds = true
+        
+        
+        
+       
         
     }
 }

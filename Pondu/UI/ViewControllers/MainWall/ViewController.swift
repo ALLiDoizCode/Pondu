@@ -26,6 +26,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var array:[Event] = []
     var numOfCells:[String] = []
     var numOfPost:[String] = []
+    var indexOfUrl:[Character] = []
     
     
     @IBOutlet weak var collectionView: UICollectionView!
