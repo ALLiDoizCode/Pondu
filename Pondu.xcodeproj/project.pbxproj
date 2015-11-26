@@ -14,6 +14,9 @@
 		4D01DB801BDD639100B30C0D /* PonduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB7F1BDD639100B30C0D /* PonduTests.swift */; };
 		4D01DB8B1BDD639100B30C0D /* PonduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */; };
 		4D0512551C0788C200FB414D /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0512541C0788C200FB414D /* LiveViewController.swift */; };
+		4D0512571C078FAB00FB414D /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0512561C078FAB00FB414D /* Live.storyboard */; };
+		4D0512591C07900B00FB414D /* LiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0512581C07900B00FB414D /* LiveCell.swift */; };
+		4D05125B1C07984200FB414D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05125A1C07984200FB414D /* Player.swift */; };
 		4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */; };
 		4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */; };
 		4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E21BF2449A00B2AFA2 /* FavoriteViewController.swift */; };
@@ -96,6 +99,9 @@
 		4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PonduUITests.swift; sourceTree = "<group>"; };
 		4D01DB8C1BDD639100B30C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D0512541C0788C200FB414D /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		4D0512561C078FAB00FB414D /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
+		4D0512581C07900B00FB414D /* LiveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCell.swift; sourceTree = "<group>"; };
+		4D05125A1C07984200FB414D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
 		4D1843E21BF2449A00B2AFA2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +352,7 @@
 		4DE1A1BB1BEA6F85009BCF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D05125A1C07984200FB414D /* Player.swift */,
 				4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */,
 				4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */,
 			);
@@ -386,6 +393,7 @@
 			children = (
 				4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */,
 				4DE1A1C21BEA7133009BCF55 /* Main.storyboard */,
+				4D0512561C078FAB00FB414D /* Live.storyboard */,
 				4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */,
 			);
 			path = "Storyboards&Xibs";
@@ -400,6 +408,7 @@
 				4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */,
 				4DC5FAE91BFA5BF6006AFE00 /* MainStoryCell.swift */,
 				4DC5FAEB1BFA5C05006AFE00 /* FavoriteStoryCell.swift */,
+				4D0512581C07900B00FB414D /* LiveCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -523,6 +532,7 @@
 				4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */,
 				4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */,
 				4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */,
+				4D0512571C078FAB00FB414D /* Live.storyboard in Resources */,
 				4D1F8F6F1BFE593400C2A61F /* CreateEvent:Party.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +616,7 @@
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
+				4D0512591C07900B00FB414D /* LiveCell.swift in Sources */,
 				4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */,
 				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
 				4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */,
@@ -639,6 +650,7 @@
 				4DD73EFC1BDF11E1006055E9 /* Favorites.swift in Sources */,
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,
 				4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */,
+				4D05125B1C07984200FB414D /* Player.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,

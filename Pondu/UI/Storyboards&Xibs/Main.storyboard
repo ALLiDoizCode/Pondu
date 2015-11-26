@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="collectionView" destination="U90-Ij-hAQ" id="LpF-wH-4dI"/>
                         <outlet property="collectionViewLayout" destination="6nn-m5-y0W" id="tZ3-cM-Hj5"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="v1I-Tb-H5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -258,7 +259,7 @@
                     <navigationItem key="navigationItem" title="Pondu" id="Jfy-jk-PRn">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="tuy-G6-foR">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UMg-PY-scS">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="534" y="7" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
@@ -358,7 +359,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-LX-ebq">
@@ -788,6 +789,7 @@
                     <connections>
                         <outlet property="collectionView" destination="p9U-YF-siX" id="zbf-gy-7ac"/>
                         <outlet property="collectionViewLayout" destination="Zya-cA-PVr" id="wlD-EI-sLu"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="o5p-0m-eGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoM-29-ILf" sceneMemberID="firstResponder"/>
@@ -869,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rip-HQ-yBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="952"/>
+            <point key="canvasLocation" x="504" y="1644.75"/>
         </scene>
         <!--Paging Menu Controller-->
         <scene sceneID="qVC-uE-Fyr">
@@ -888,7 +890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO4-Q3-gxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1353" y="962"/>
+            <point key="canvasLocation" x="1353" y="1639.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hme-s6-uX6">
@@ -907,7 +909,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Y4-Jr-Yo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="926"/>
+            <point key="canvasLocation" x="-468" y="1639.5"/>
         </scene>
         <!--FavEvents-->
         <scene sceneID="XVu-sY-hWC">
@@ -1084,11 +1086,12 @@
                     <connections>
                         <outlet property="collectionView" destination="ftq-OO-FXr" id="M8y-qP-Klg"/>
                         <outlet property="collectionViewLayout" destination="6gw-jr-Ez3" id="Ocw-mI-Wty"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="Zoc-lS-je3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCC-AX-O8G" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="926"/>
+            <point key="canvasLocation" x="2203.5" y="1639.5"/>
         </scene>
         <!--FavParties-->
         <scene sceneID="NJv-4e-24u">
@@ -1263,11 +1266,12 @@
                     <connections>
                         <outlet property="collectionView" destination="NQo-LL-eRM" id="ZCr-RH-INr"/>
                         <outlet property="collectionViewLayout" destination="k6z-FY-53R" id="jYQ-3o-NZO"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="YhB-De-rNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDG-dv-vPi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2976" y="932"/>
+            <point key="canvasLocation" x="3019.5" y="1644.75"/>
         </scene>
         <!--FavStory-->
         <scene sceneID="Wv7-dX-LAe">
@@ -1305,7 +1309,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N8T-4z-qPn">
@@ -1560,7 +1564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOL-Kt-vLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3753" y="931.5"/>
+            <point key="canvasLocation" x="3897" y="1644.75"/>
         </scene>
         <!--CreateEvent:Party-->
         <scene sceneID="Avx-4b-r9R">
@@ -1570,10 +1574,21 @@
             </objects>
             <point key="canvasLocation" x="-1360.5" y="633"/>
         </scene>
+        <!--Live-->
+        <scene sceneID="XHE-yf-lb2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Live" id="PTy-wZ-yIu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-gO-3Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5265" y="711.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backgrounds" width="640" height="1136"/>
         <image name="bob" width="359" height="358"/>
         <image name="story" width="758" height="505"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YhB-De-rNi"/>
+    </inferredMetricsTieBreakers>
 </document>

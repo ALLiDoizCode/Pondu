@@ -149,6 +149,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         if indexPath.item == layout.featuredItemIndex {
             
             print("featured")
+            
+            self.performSegueWithIdentifier("Live", sender: indexPath);
+            
         }else{
             
             print("not featured")
@@ -176,6 +179,22 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return UIStatusBarStyle.LightContent
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "Live" {
+            
+            let liveController = segue.destinationViewController as! LiveViewController
+            let item = (sender as! NSIndexPath).item
+            
+            let imageData = PFUser.currentUser()?.objectForKey("photo") as! PFFile
+            let imageData2 = PFUser.currentUser()?.objectForKey("testVideo") as! PFFile
+            
+            liveController.testImage = imageData.url
+            liveController.testVideo = imageData2.url
+            print(item)
+            
+        }
+    }
     
 }
 
