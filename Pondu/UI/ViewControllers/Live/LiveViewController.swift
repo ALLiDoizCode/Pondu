@@ -19,16 +19,17 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
+   
     @IBOutlet weak var textViewBg: UIView!
     @IBOutlet weak var send: UIButton!
     
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
     let videoTypes:[String] = ["mov","mp4", "m4v","3gp"]
-    let comments:[String] = ["test comment", "more comments", "3rd test commemnt"]
+    let comments:[String] = ["asdasdasdsadasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
     
     var fileArray:[String]!
     
-    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
+    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableview: UITableView!
@@ -39,21 +40,21 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         textView.layer.borderColor = UIColor.lightGrayColor().CGColor
         textView.layer.borderWidth = 1
         textView.layer.masksToBounds = true
-
-        visualEffectView.frame = self.view.frame
-        visualEffectView.clipsToBounds = true
-       
+        
+        //visualEffectView.frame = self.view.frame
+        //visualEffectView.clipsToBounds = true
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*let image = UIImage(named: "bg")
+        /*let image = UIImage(named: "girl")
         applyBlurEffect(image!)*/
         
         //visualEffectView.alpha = 0.8
         
-        self.view.insertSubview(visualEffectView, aboveSubview: bg)
+        //self.view.insertSubview(visualEffectView, aboveSubview: bg)
         
         tableview.separatorStyle = .None
         
@@ -135,6 +136,7 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         var imageViewObject:UIImageView!
         imageViewObject = UIImageView(frame:cell.contentView.frame);
         imageViewObject.kf_setImageWithURL(NSURL(string:image)!, placeholderImage: UIImage(named: "placeholder"))
+        imageViewObject.contentMode = .ScaleAspectFill
         cell.contentView.addSubview(imageViewObject)
     }
     
@@ -232,13 +234,15 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     func applyBlurEffect(image: UIImage){
         let imageToBlur = CIImage(image: image)
         let blurfilter = CIFilter(name: "CIGaussianBlur")
-        blurfilter!.setValue(30, forKey: kCIInputRadiusKey)
+        blurfilter!.setValue(5, forKey: kCIInputRadiusKey)
         blurfilter!.setValue(imageToBlur, forKey: "inputImage")
         let resultImage = blurfilter!.valueForKey("outputImage") as! CIImage
         var blurredImage = UIImage(CIImage: resultImage)
         let cropped:CIImage=resultImage.imageByCroppingToRect(CGRectMake(0, 0,imageToBlur!.extent.size.width, imageToBlur!.extent.size.height))
         blurredImage = UIImage(CIImage: cropped)
         self.bg.image = blurredImage
+        
+        
     }
     
     

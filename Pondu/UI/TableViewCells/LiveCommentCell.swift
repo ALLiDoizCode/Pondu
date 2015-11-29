@@ -10,6 +10,7 @@ import UIKit
 
 class LiveCommentCell: UITableViewCell {
 
+    @IBOutlet weak var tiniView: UIView!
     @IBOutlet weak var comment: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     override func awakeFromNib() {
@@ -25,6 +26,10 @@ class LiveCommentCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        
+        tiniView.layer.cornerRadius = 2
+        tiniView.layer.masksToBounds = true
         
         self.contentView.backgroundColor = UIColor.clearColor()
         avatar.layer.cornerRadius = avatar.frame.height/2
