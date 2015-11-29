@@ -33,8 +33,15 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var middleView: UIView!
     
     override func viewDidLayoutSubviews() {
+        
+       
+        //middleView.layer.cornerRadius = 2
+        middleView.layer.borderColor = UIColor.blackColor().CGColor
+        middleView.layer.borderWidth = 0.5
+        middleView.layer.masksToBounds = true
         
         textView.layer.cornerRadius = 2
         textView.layer.borderColor = UIColor.lightGrayColor().CGColor
