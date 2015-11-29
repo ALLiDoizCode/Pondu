@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18AA288CE9F1A161EF6EE751 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED51165405F57B97F81F9F11 /* Pods.framework */; };
+		4D01CA7E1C0A8FA60000F367 /* LiveCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01CA7D1C0A8FA60000F367 /* LiveCommentCell.swift */; };
 		4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */; };
 		4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6C1BDD639100B30C0D /* ViewController.swift */; };
 		4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D01DB711BDD639100B30C0D /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D01CA7D1C0A8FA60000F367 /* LiveCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCommentCell.swift; sourceTree = "<group>"; };
 		4D01DB671BDD639100B30C0D /* Pondu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pondu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D01DB6C1BDD639100B30C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4D01CA7C1C0A8F670000F367 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4D01CA7D1C0A8FA60000F367 /* LiveCommentCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		4D01DB5E1BDD639100B30C0D = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +290,7 @@
 		4D7C0CA01BE08B6400CCB2DE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4D01CA7C1C0A8F670000F367 /* TableViewCells */,
 				4DE1A1C71BEA724B009BCF55 /* CollectionViewCell */,
 				4DE1A1C01BEA6FC8009BCF55 /* Storyboards&Xibs */,
 				4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */,
@@ -630,6 +641,7 @@
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */,
+				4D01CA7E1C0A8FA60000F367 /* LiveCommentCell.swift in Sources */,
 				4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,

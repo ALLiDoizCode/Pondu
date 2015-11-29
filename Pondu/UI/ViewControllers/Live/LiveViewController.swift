@@ -9,24 +9,53 @@
 import UIKit
 import Kingfisher
 
-class LiveViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,PlayerDelegate {
+class LiveViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,PlayerDelegate {
     
     var player:Player!
     
     var testImage:String!
     var testVideo:String!
     
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var textViewBg: UIView!
+    @IBOutlet weak var send: UIButton!
     
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
     let videoTypes:[String] = ["mov","mp4", "m4v","3gp"]
+    let comments:[String] = ["test comment", "more comments", "3rd test commemnt"]
     
     var fileArray:[String]!
+    
+    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableview: UITableView!
     
+    override func viewDidLayoutSubviews() {
+        
+        textView.layer.cornerRadius = 2
+        textView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        textView.layer.borderWidth = 1
+        textView.layer.masksToBounds = true
+
+        visualEffectView.frame = self.view.frame
+        visualEffectView.clipsToBounds = true
+       
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*let image = UIImage(named: "bg")
+        applyBlurEffect(image!)*/
+        
+        //visualEffectView.alpha = 0.8
+        
+        self.view.insertSubview(visualEffectView, aboveSubview: bg)
+        
+        tableview.separatorStyle = .None
         
         fileArray = [testImage,testVideo]
         
@@ -36,6 +65,7 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
 
     }
     
+    ///Mark CollectionView datasource protocols
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
        return fileArray.count
@@ -58,6 +88,8 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         return cell
     }
     
+    
+   
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         
         
@@ -65,7 +97,29 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         
     }
     
+     ///Mark TableView datasource protocols
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return comments.count
+    }
     
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell:LiveCommentCell = tableView.dequeueReusableCellWithIdentifier("Comment", forIndexPath: indexPath) as! LiveCommentCell
+        
+            cell.comment.text = comments[indexPath.row]
+        
+            cell.avatar.image = UIImage(named: "bob")
+        
+        return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
 
     override func didReceiveMemoryWarning() {
@@ -173,6 +227,22 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     }
     
     func playerPlaybackDidEnd(player: Player) {
+    }
+    
+    func applyBlurEffect(image: UIImage){
+        let imageToBlur = CIImage(image: image)
+        let blurfilter = CIFilter(name: "CIGaussianBlur")
+        blurfilter!.setValue(30, forKey: kCIInputRadiusKey)
+        blurfilter!.setValue(imageToBlur, forKey: "inputImage")
+        let resultImage = blurfilter!.valueForKey("outputImage") as! CIImage
+        var blurredImage = UIImage(CIImage: resultImage)
+        let cropped:CIImage=resultImage.imageByCroppingToRect(CGRectMake(0, 0,imageToBlur!.extent.size.width, imageToBlur!.extent.size.height))
+        blurredImage = UIImage(CIImage: cropped)
+        self.bg.image = blurredImage
+    }
+    
+    
+    @IBAction func sendBtn(sender: AnyObject) {
     }
 
     /*
