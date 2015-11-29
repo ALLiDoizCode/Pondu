@@ -78,13 +78,13 @@
                                                         <constraint firstAttribute="height" constant="50" id="T8q-VL-8ET"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view alpha="0.55000000000000004" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="msY-YO-Mix">
-                                                    <rect key="frame" x="66" y="25" width="326" height="52"/>
+                                                <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="msY-YO-Mix">
+                                                    <rect key="frame" x="66" y="13" width="326" height="74"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-5D-UZl">
-                                                    <rect key="frame" x="83" y="25" width="292" height="52"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekg-5D-UZl">
+                                                    <rect key="frame" x="83" y="13" width="292" height="74"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="292" id="CWC-Sc-RTw"/>
@@ -93,13 +93,28 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4Z-vW-aQ4">
+                                                    <rect key="frame" x="8" y="59" width="50" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="YMe-gQ-qY0"/>
+                                                        <constraint firstAttribute="height" constant="21" id="rhd-Dz-SN1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ekg-5D-UZl" secondAttribute="bottom" constant="-8" id="2Gm-Ii-Wip"/>
-                                                <constraint firstItem="ekg-5D-UZl" firstAttribute="top" secondItem="UcD-2o-IZd" secondAttribute="topMargin" constant="17" id="FTV-0H-W41"/>
+                                                <constraint firstItem="j4Z-vW-aQ4" firstAttribute="centerX" secondItem="2Sm-xN-cce" secondAttribute="centerX" id="0uk-jl-ok3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ekg-5D-UZl" secondAttribute="bottom" constant="4" id="2Gm-Ii-Wip"/>
+                                                <constraint firstItem="msY-YO-Mix" firstAttribute="leading" secondItem="j4Z-vW-aQ4" secondAttribute="trailing" constant="8" id="3Qk-HE-MBk"/>
+                                                <constraint firstItem="j4Z-vW-aQ4" firstAttribute="top" secondItem="2Sm-xN-cce" secondAttribute="bottom" constant="-4" id="4ua-PC-LSv"/>
+                                                <constraint firstItem="ekg-5D-UZl" firstAttribute="top" secondItem="UcD-2o-IZd" secondAttribute="topMargin" constant="5" id="FTV-0H-W41"/>
                                                 <constraint firstItem="2Sm-xN-cce" firstAttribute="leading" secondItem="UcD-2o-IZd" secondAttribute="leading" constant="8" id="FXF-Nb-6GW"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="j4Z-vW-aQ4" secondAttribute="leading" id="GVa-I7-WA3"/>
                                                 <constraint firstItem="msY-YO-Mix" firstAttribute="top" secondItem="ekg-5D-UZl" secondAttribute="top" id="HUi-a7-0C6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="msY-YO-Mix" secondAttribute="trailing" id="Jtt-EZ-sIJ"/>
                                                 <constraint firstItem="msY-YO-Mix" firstAttribute="leading" secondItem="2Sm-xN-cce" secondAttribute="trailing" constant="8" id="PZB-ad-sSa"/>
