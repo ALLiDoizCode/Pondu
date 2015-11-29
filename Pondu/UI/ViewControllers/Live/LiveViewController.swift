@@ -9,12 +9,13 @@
 import UIKit
 import Kingfisher
 
-class LiveViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,PlayerDelegate {
+class LiveViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,UITextViewDelegate,PlayerDelegate {
     
     var player:Player!
     
     var testImage:String!
     var testVideo:String!
+    let PLACEHOLDER_TEXT = "Leave a comment..."
     
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var textView: UITextView!
@@ -46,10 +47,15 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         textView.layer.cornerRadius = 2
         textView.layer.borderColor = UIColor.lightGrayColor().CGColor
         textView.layer.borderWidth = 1
+        textView.textColor = UIColor.whiteColor()
         textView.layer.masksToBounds = true
+        
+        textView.delegate = self
         
         //visualEffectView.frame = self.view.frame
         //visualEffectView.clipsToBounds = true
+        
+         applyPlaceholderStyle(textView!, placeholderText: PLACEHOLDER_TEXT)
     
     }
     
@@ -156,6 +162,69 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         
+    }
+    
+    //mark textview delegates
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        textView.resignFirstResponder()
+    }
+    
+    func applyPlaceholderStyle(aTextview: UITextView, placeholderText: String) {
+        // make it look (initially) like a placeholder
+        aTextview.textColor = UIColor.lightGrayColor()
+        aTextview.text = placeholderText
+    }
+    
+    func applyNonPlaceholderStyle(aTextview: UITextView) {
+        // make it look like normal text instead of a placeholder
+        aTextview.textColor = UIColor.lightTextColor()
+        aTextview.alpha = 1.0
+    }
+    
+    func textViewShouldBeginEditing(aTextView: UITextView) -> Bool {
+        if aTextView == textView && aTextView.text == PLACEHOLDER_TEXT {
+            // move cursor to start
+            moveCursorToStart(aTextView)
+        }
+        return true
+    }
+    
+    func moveCursorToStart(aTextView: UITextView) {
+        dispatch_async(dispatch_get_main_queue(), {
+            aTextView.selectedRange = NSMakeRange(0, 0);
+        })
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        // remove the placeholder text when they start typing
+        // first, see if the field is empty
+        // if it's not empty, then the text should be black and not italic
+        // BUT, we also need to remove the placeholder text if that's the only text
+        // if it is empty, then the text should be the placeholder
+        let newLength = textView.text.utf16.count + text.utf16.count - range.length
+        if newLength > 0 // have text, so don't show the placeholder
+        {
+            // check if the only text is the placeholder and remove it if needed
+            // unless they've hit the delete button with the placeholder displayed
+            if textView == textView && textView.text == PLACEHOLDER_TEXT
+            {
+                if text.utf16.count == 0 // they hit the back button
+                {
+                    return false // ignore it
+                }
+                applyNonPlaceholderStyle(textView)
+                textView.text = ""
+            }
+            return true
+        }
+        else  // no text, so show the placeholder
+        {
+            applyPlaceholderStyle(textView, placeholderText: PLACEHOLDER_TEXT)
+            moveCursorToStart(textView)
+            return false
+        }
     }
     
     
