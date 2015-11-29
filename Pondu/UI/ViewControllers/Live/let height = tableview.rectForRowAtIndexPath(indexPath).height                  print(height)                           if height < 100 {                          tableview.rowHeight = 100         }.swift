@@ -25,7 +25,7 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
     let videoTypes:[String] = ["mov","mp4", "m4v","3gp"]
-    let comments:[String] = ["asdasdasdsadasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
+    let comments:[String] = ["asdasdasdsadasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
     
     var fileArray:[String]!
     
@@ -48,6 +48,12 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // tableview.estimatedRowHeight = 75
+        //tableview.rowHeight = UITableViewAutomaticDimension
+        
+        //self.tableview.estimatedRowHeight = 75
+        //self.tableview.rowHeight = UITableViewAutomaticDimension
         
         /*let image = UIImage(named: "girl")
         applyBlurEffect(image!)*/
@@ -114,15 +120,37 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         
             cell.avatar.image = UIImage(named: "bob")
         
+        
+        
+        if comments[indexPath.row].characters.count > 26 {
+            
+            tableview.estimatedRowHeight = 75
+            tableview.rowHeight = UITableViewAutomaticDimension
+        }else {
+            
+            tableview.rowHeight = 75
+        }
+        
+        
+       
+        
         return cell
     }
     
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
+        
+        
     }
-
-
+    
+    
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
