@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9om-a1-miq">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="338"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="267"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fwm-GF-szV">
                                     <size key="itemSize" width="397" height="338"/>
@@ -28,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LiveCell" id="lyO-fk-3oe" customClass="LiveCell" customModule="Pondu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="397" height="338"/>
+                                        <rect key="frame" x="0.0" y="-36" width="397" height="338"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="397" height="338"/>
@@ -44,12 +44,67 @@
                                     <outlet property="delegate" destination="9v5-Az-cYl" id="LLb-W9-Wn9"/>
                                 </connections>
                             </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-A7-96z">
+                                <rect key="frame" x="0.0" y="265" width="400" height="451"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h9J-gD-hIF">
+                                        <rect key="frame" x="0.0" y="28" width="400" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h9J-gD-hIF" id="UcD-2o-IZd">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-on-URd">
+                                <rect key="frame" x="0.0" y="716" width="400" height="84"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0t3-7B-eZh">
+                                        <rect key="frame" x="8" y="8" width="293" height="68"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoV-ug-DwV">
+                                        <rect key="frame" x="314" y="27" width="67" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                        <state key="normal" title="Send"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AoV-ug-DwV" secondAttribute="trailing" constant="19" id="IUr-4O-ubY"/>
+                                    <constraint firstAttribute="bottom" secondItem="0t3-7B-eZh" secondAttribute="bottom" constant="8" id="QzP-PS-oK4"/>
+                                    <constraint firstAttribute="bottom" secondItem="AoV-ug-DwV" secondAttribute="bottom" constant="27" id="RHE-B7-KFh"/>
+                                    <constraint firstAttribute="width" constant="400" id="Sbi-Nm-RXO"/>
+                                    <constraint firstItem="0t3-7B-eZh" firstAttribute="leading" secondItem="hKx-on-URd" secondAttribute="leading" constant="8" id="gEu-8Q-8Dh"/>
+                                    <constraint firstItem="0t3-7B-eZh" firstAttribute="top" secondItem="hKx-on-URd" secondAttribute="top" constant="8" id="gFG-Bu-11g"/>
+                                    <constraint firstAttribute="trailing" secondItem="0t3-7B-eZh" secondAttribute="trailing" constant="99" id="rCT-vl-J2P"/>
+                                    <constraint firstItem="AoV-ug-DwV" firstAttribute="leading" secondItem="0t3-7B-eZh" secondAttribute="trailing" constant="13" id="s2A-Xb-zUO"/>
+                                    <constraint firstItem="AoV-ug-DwV" firstAttribute="top" secondItem="hKx-on-URd" secondAttribute="top" constant="27" id="vJL-A0-IGR"/>
+                                    <constraint firstAttribute="height" constant="84" id="zrH-44-pVe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hKx-on-URd" secondAttribute="trailing" id="5d7-dO-7g6"/>
+                            <constraint firstItem="hKx-on-URd" firstAttribute="leading" secondItem="AT8-Nn-ajJ" secondAttribute="leading" id="MGI-l4-rQT"/>
+                            <constraint firstItem="Bn0-vM-wCZ" firstAttribute="top" secondItem="hKx-on-URd" secondAttribute="bottom" id="iJH-HE-6Au"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[heightClass=regular-widthClass=compact]"/>
                     <connections>
                         <outlet property="collectionView" destination="9om-a1-miq" id="8dI-vY-VsC"/>
+                        <outlet property="tableview" destination="AAk-A7-96z" id="lLh-0a-Kmj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5K1-SX-gBl" userLabel="First Responder" sceneMemberID="firstResponder"/>

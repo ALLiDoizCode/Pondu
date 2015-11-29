@@ -22,9 +22,8 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     
     var fileArray:[String]!
     
-    
-
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,7 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:LiveCell = collectionView.dequeueReusableCellWithReuseIdentifier("LiveCell", forIndexPath: indexPath) as! LiveCell
         
-        cell.contentView.backgroundColor = UIColor.blueColor()
+        //cell.contentView.backgroundColor = UIColor.blueColor()
         
         /*var imageViewObject:UIImageView!
         imageViewObject = UIImageView(frame:cell.contentView.frame);
@@ -104,7 +103,7 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
         tapGestureRecognizer.numberOfTapsRequired = 1
         self.player.view.addGestureRecognizer(tapGestureRecognizer)
     
-        self.player.playFromBeginning()
+        //self.player.playFromBeginning()
         
     }
     
