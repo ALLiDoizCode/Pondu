@@ -49,6 +49,7 @@ class LiveViewController: UIViewController,UICollectionViewDataSource,UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
        // tableview.estimatedRowHeight = 75
         //tableview.rowHeight = UITableViewAutomaticDimension
         

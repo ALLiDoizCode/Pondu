@@ -19,19 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-be-W8f">
-                                <rect key="frame" x="0.0" y="111" width="400" height="689"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 <animations/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFi-XI-tWK">
-                                <rect key="frame" x="0.0" y="111" width="400" height="689"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9om-a1-miq">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="230"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="267" id="A3n-mA-Rdj"/>
+                                    <constraint firstAttribute="height" constant="230" id="A3n-mA-Rdj"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fwm-GF-szV">
                                     <size key="itemSize" width="400" height="259"/>
@@ -41,7 +42,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LiveCell" id="lyO-fk-3oe" customClass="LiveCell" customModule="Pondu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4" width="400" height="259"/>
+                                        <rect key="frame" x="0.0" y="-15" width="400" height="259"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="259"/>
@@ -50,7 +51,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
-                                        <color key="backgroundColor" red="1" green="0.28892833060000001" blue="0.2795022768" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -59,7 +60,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-A7-96z">
-                                <rect key="frame" x="0.0" y="243" width="400" height="492"/>
+                                <rect key="frame" x="0.0" y="206" width="400" height="529"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -198,8 +199,8 @@
                         </subviews>
                         <animations/>
                         <constraints>
-                            <constraint firstItem="nFi-XI-tWK" firstAttribute="top" secondItem="lIB-HH-tkf" secondAttribute="bottom" constant="91" id="25Z-ce-VGD"/>
-                            <constraint firstItem="7ta-be-W8f" firstAttribute="height" secondItem="AAk-A7-96z" secondAttribute="height" constant="197" id="6Lv-Es-cln"/>
+                            <constraint firstItem="nFi-XI-tWK" firstAttribute="top" secondItem="lIB-HH-tkf" secondAttribute="bottom" constant="-20" id="25Z-ce-VGD"/>
+                            <constraint firstItem="7ta-be-W8f" firstAttribute="height" secondItem="AAk-A7-96z" secondAttribute="height" constant="271" id="6Lv-Es-cln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hKx-on-URd" secondAttribute="trailing" constant="-20" id="723-1Q-0jI"/>
                             <constraint firstItem="hKx-on-URd" firstAttribute="leading" secondItem="AT8-Nn-ajJ" secondAttribute="leadingMargin" constant="-20" id="8aq-4o-cF0"/>
                             <constraint firstItem="nFi-XI-tWK" firstAttribute="width" secondItem="7ta-be-W8f" secondAttribute="width" id="99k-v8-sIy"/>
@@ -208,7 +209,7 @@
                             <constraint firstItem="Bn0-vM-wCZ" firstAttribute="top" secondItem="nFi-XI-tWK" secondAttribute="bottom" id="DbB-Vz-Zoi"/>
                             <constraint firstAttribute="trailing" secondItem="nFi-XI-tWK" secondAttribute="trailing" id="Eko-yg-Faw"/>
                             <constraint firstItem="Bn0-vM-wCZ" firstAttribute="top" secondItem="hKx-on-URd" secondAttribute="bottom" id="EyL-QW-zCm"/>
-                            <constraint firstItem="7ta-be-W8f" firstAttribute="top" secondItem="lIB-HH-tkf" secondAttribute="bottom" constant="91" id="JY8-XU-pkK"/>
+                            <constraint firstItem="7ta-be-W8f" firstAttribute="top" secondItem="lIB-HH-tkf" secondAttribute="bottom" constant="-20" id="JY8-XU-pkK"/>
                             <constraint firstItem="9om-a1-miq" firstAttribute="top" secondItem="AT8-Nn-ajJ" secondAttribute="top" id="PKl-Rl-zyU"/>
                             <constraint firstAttribute="trailing" secondItem="7ta-be-W8f" secondAttribute="trailing" id="UMN-og-Td5"/>
                             <constraint firstItem="AAk-A7-96z" firstAttribute="leading" secondItem="9om-a1-miq" secondAttribute="leading" id="W3M-Lk-2yW"/>
