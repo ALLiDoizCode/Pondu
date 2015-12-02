@@ -25,12 +25,14 @@ class createEvent {
             
             event["userID"] = currentUser?.objectId
             event["Post"] = createdEvent.post
-            event["Name"] = createdEvent.name
+            event["Name"] = currentUser?.username
             event["Live"] = createdEvent.live
             event["Comments"] = [""]
             event["Likes"] = 0
             event["Location"] = createdEvent.location
             event["ProfilePicture"] = currentUser!["photo"]
+            event["Time"] = createdEvent.startTime
+            event["Privacy"] = createdEvent.privacy
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
@@ -38,10 +40,13 @@ class createEvent {
                     
                     print("event made")
                     
+                    SwiftEventBus.post("EventMade")
+                    
                 } else {
                     // There was a problem, check error.description
                     
                     print("there was an issue creating the event")
+                    SwiftEventBus.post("EventNotMade")
                 }
             }
         }

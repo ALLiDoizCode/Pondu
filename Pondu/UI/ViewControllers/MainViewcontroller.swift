@@ -11,8 +11,21 @@ import PagingMenuController
 
 class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
+    @IBOutlet weak var CommentBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var button: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createCommetnBtn()
+    
+        for parent in self.navigationController!.navigationBar.subviews {
+            for childView in parent.subviews {
+                if(childView is UIImageView) {
+                    childView.removeFromSuperview()
+                }
+            }
+        }
         
         print(UIScreen.screens())
 
@@ -57,6 +70,21 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
         
     }
+    
+    func createCommetnBtn(){
+        
+        //let button: UIButton = UIButton(type: .Custom)
+        //button.buttonType = UIButton(type: .Custom)
+        //set image for button
+        button.setImage(UIImage(named: "ColumPost"), forState: UIControlState.Normal)
+        //add function for button
+       /* button.addTarget(self, action: "fbButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        //set frame
+        button.frame = CGRectMake(0, 0, 53, 31)
+        
+        CommentBtn.customView = button*/
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

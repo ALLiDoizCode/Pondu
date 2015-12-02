@@ -20,27 +20,31 @@ class createParty {
         
         SwiftEventBus.onMainThread(self, name: "makeParty") { result in
             
-            let createdEvent = result.object as! makeParty
+            let createdParty = result.object as! makeParty
             
             event["userID"] = currentUser?.objectId
-            event["Posts"] = createdEvent.post
-            event["Name"] = createdEvent.name
-            event["Live"] = createdEvent.live
+            event["Posts"] = createdParty.post
+            event["Name"] = currentUser?.username
+            event["Live"] = createdParty.live
             event["Comments"] = [""]
             event["Likes"] = 0
-            event["Location"] = createdEvent.location
+            event["Location"] = createdParty.location
             event["ProfilePicture"] = currentUser!["photo"]
+            event["Time"] = createdParty.startTime
+            event["Privacy"] = createdParty.privacy
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     // The object has been saved.
                     
                     print("Party made")
+                    SwiftEventBus.post("PartyMade")
                     
                 } else {
                     // There was a problem, check error.description
                     
                     print("there was an issue creating the Party")
+                    SwiftEventBus.post("PartyNotMade")
                 }
             }
         }

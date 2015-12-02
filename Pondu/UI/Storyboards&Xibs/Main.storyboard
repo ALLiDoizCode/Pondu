@@ -30,13 +30,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngA-Uo-4j2">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,18 +172,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ngA-Uo-4j2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="426-Zy-4ke"/>
                             <constraint firstItem="U90-Ij-hAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kps-dB-Esk"/>
                             <constraint firstAttribute="trailing" secondItem="U90-Ij-hAQ" secondAttribute="trailing" id="QKP-jn-OI1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ngA-Uo-4j2" secondAttribute="bottom" constant="67" id="Tq9-ht-jVr"/>
                             <constraint firstItem="U90-Ij-hAQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gIG-DW-bWu"/>
-                            <constraint firstItem="ngA-Uo-4j2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="384" id="hyh-Bv-Mdb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U90-Ij-hAQ" secondAttribute="bottom" id="nwW-eo-r7Y"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="U90-Ij-hAQ" id="LpF-wH-4dI"/>
                         <outlet property="collectionViewLayout" destination="6nn-m5-y0W" id="tZ3-cM-Hj5"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="v1I-Tb-H5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -232,7 +223,7 @@
             </objects>
             <point key="canvasLocation" x="478" y="-268"/>
         </scene>
-        <!--Main Viewcontroller-->
+        <!--Pondu-->
         <scene sceneID="zds-EJ-HXU">
             <objects>
                 <viewController storyboardIdentifier="Base" id="ugc-Zl-Ccx" customClass="MainViewcontroller" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
@@ -244,9 +235,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-DE-V93">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-DE-V93">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="780"/>
+                                </variation>
                                 <connections>
                                     <segue destination="3Ub-Ss-jtQ" kind="embed" id="Mwa-iq-6vA"/>
                                 </connections>
@@ -261,9 +255,33 @@
                             <constraint firstItem="L9L-Ey-0mc" firstAttribute="top" secondItem="m5L-DE-V93" secondAttribute="bottom" id="ngf-qb-ME1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jfy-jk-PRn"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Pondu" id="Jfy-jk-PRn">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="tuy-G6-foR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UMg-PY-scS">
+                                <rect key="frame" x="534" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="xrt-0g-1CV" kind="show" id="UVz-e8-xNX"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="CommentBtn" destination="tuy-G6-foR" id="M99-ya-jVv"/>
+                        <outlet property="button" destination="UMg-PY-scS" id="oD1-Bm-mCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-dH-dQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fek-u9-Uw4">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <state key="normal" title="Button"/>
+                </button>
             </objects>
             <point key="canvasLocation" x="-2126" y="628"/>
         </scene>
@@ -341,7 +359,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-LX-ebq">
@@ -622,13 +640,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGI-dR-PeT">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -771,16 +782,14 @@
                         <constraints>
                             <constraint firstItem="p9U-YF-siX" firstAttribute="leading" secondItem="afp-ad-sUw" secondAttribute="leading" id="63U-zb-q9f"/>
                             <constraint firstItem="p9U-YF-siX" firstAttribute="top" secondItem="afp-ad-sUw" secondAttribute="top" id="6El-E9-4x3"/>
-                            <constraint firstItem="IGI-dR-PeT" firstAttribute="centerX" secondItem="afp-ad-sUw" secondAttribute="centerX" id="HPu-2a-HKn"/>
                             <constraint firstAttribute="trailing" secondItem="p9U-YF-siX" secondAttribute="trailing" id="fwy-NG-zhp"/>
-                            <constraint firstItem="IGI-dR-PeT" firstAttribute="top" secondItem="zDo-Al-19M" secondAttribute="bottom" constant="384" id="h4Q-Kl-bGG"/>
                             <constraint firstItem="vgp-0G-c0Q" firstAttribute="top" secondItem="p9U-YF-siX" secondAttribute="bottom" id="qfo-9v-vfl"/>
-                            <constraint firstItem="vgp-0G-c0Q" firstAttribute="top" secondItem="IGI-dR-PeT" secondAttribute="bottom" constant="67" id="xJW-lb-xif"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="p9U-YF-siX" id="zbf-gy-7ac"/>
                         <outlet property="collectionViewLayout" destination="Zya-cA-PVr" id="wlD-EI-sLu"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="o5p-0m-eGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoM-29-ILf" sceneMemberID="firstResponder"/>
@@ -790,12 +799,16 @@
         <!--Navigation Controller-->
         <scene sceneID="KXI-wD-zs4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8pl-pP-hVW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.28892390786381383" green="0.41835199769753495" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -858,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rip-HQ-yBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="952"/>
+            <point key="canvasLocation" x="504" y="1644.75"/>
         </scene>
         <!--Paging Menu Controller-->
         <scene sceneID="qVC-uE-Fyr">
@@ -877,7 +890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GO4-Q3-gxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1353" y="962"/>
+            <point key="canvasLocation" x="1353" y="1639.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hme-s6-uX6">
@@ -896,7 +909,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Y4-Jr-Yo9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="926"/>
+            <point key="canvasLocation" x="-468" y="1639.5"/>
         </scene>
         <!--FavEvents-->
         <scene sceneID="XVu-sY-hWC">
@@ -922,13 +935,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBC-m2-2ge">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1074,20 +1080,18 @@
                             <constraint firstItem="ftq-OO-FXr" firstAttribute="leading" secondItem="eAv-yV-5Cp" secondAttribute="leading" id="00S-cs-StF"/>
                             <constraint firstItem="qwi-mU-4Ut" firstAttribute="top" secondItem="ftq-OO-FXr" secondAttribute="bottom" id="ITL-Tq-2Ep"/>
                             <constraint firstAttribute="trailing" secondItem="ftq-OO-FXr" secondAttribute="trailing" id="Qud-AS-bmM"/>
-                            <constraint firstItem="dBC-m2-2ge" firstAttribute="top" secondItem="wKA-ZO-iKK" secondAttribute="bottom" constant="384" id="bYX-Vq-zBc"/>
                             <constraint firstItem="ftq-OO-FXr" firstAttribute="top" secondItem="eAv-yV-5Cp" secondAttribute="top" id="oFc-ST-Icv"/>
-                            <constraint firstItem="dBC-m2-2ge" firstAttribute="centerX" secondItem="eAv-yV-5Cp" secondAttribute="centerX" id="wjI-w8-9l2"/>
-                            <constraint firstItem="qwi-mU-4Ut" firstAttribute="top" secondItem="dBC-m2-2ge" secondAttribute="bottom" constant="67" id="zfP-yV-6qf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="ftq-OO-FXr" id="M8y-qP-Klg"/>
                         <outlet property="collectionViewLayout" destination="6gw-jr-Ez3" id="Ocw-mI-Wty"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="Zoc-lS-je3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCC-AX-O8G" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="926"/>
+            <point key="canvasLocation" x="2203.5" y="1639.5"/>
         </scene>
         <!--FavParties-->
         <scene sceneID="NJv-4e-24u">
@@ -1113,13 +1117,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of The Road" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-Nu-AIK">
-                                            <rect key="frame" x="130" y="404" width="341" height="129"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="38"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1262,21 +1259,19 @@
                         <constraints>
                             <constraint firstItem="NQo-LL-eRM" firstAttribute="top" secondItem="lNn-Ws-RqC" secondAttribute="top" id="1SL-jw-rcc"/>
                             <constraint firstItem="NQo-LL-eRM" firstAttribute="leading" secondItem="lNn-Ws-RqC" secondAttribute="leading" id="1TZ-uo-Arp"/>
-                            <constraint firstItem="r0c-Nu-AIK" firstAttribute="top" secondItem="oxi-cG-7QC" secondAttribute="bottom" constant="384" id="Mn4-8t-CJz"/>
                             <constraint firstItem="tQu-xF-nFG" firstAttribute="top" secondItem="NQo-LL-eRM" secondAttribute="bottom" id="SgB-xl-XGS"/>
-                            <constraint firstItem="tQu-xF-nFG" firstAttribute="top" secondItem="r0c-Nu-AIK" secondAttribute="bottom" constant="67" id="hsq-kf-MRh"/>
-                            <constraint firstItem="r0c-Nu-AIK" firstAttribute="centerX" secondItem="lNn-Ws-RqC" secondAttribute="centerX" id="u6J-Kv-9Fj"/>
                             <constraint firstAttribute="trailing" secondItem="NQo-LL-eRM" secondAttribute="trailing" id="yvl-Nb-hk6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="NQo-LL-eRM" id="ZCr-RH-INr"/>
                         <outlet property="collectionViewLayout" destination="k6z-FY-53R" id="jYQ-3o-NZO"/>
+                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="YhB-De-rNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDG-dv-vPi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2976" y="932"/>
+            <point key="canvasLocation" x="3019.5" y="1644.75"/>
         </scene>
         <!--FavStory-->
         <scene sceneID="Wv7-dX-LAe">
@@ -1314,7 +1309,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N8T-4z-qPn">
@@ -1569,7 +1564,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOL-Kt-vLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3753" y="931.5"/>
+            <point key="canvasLocation" x="3897" y="1644.75"/>
+        </scene>
+        <!--CreateEvent:Party-->
+        <scene sceneID="Avx-4b-r9R">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateEvent:Party" id="xrt-0g-1CV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9E3-cf-DHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1360.5" y="633"/>
+        </scene>
+        <!--Live-->
+        <scene sceneID="XHE-yf-lb2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Live" id="PTy-wZ-yIu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-gO-3Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5265" y="711.75"/>
         </scene>
     </scenes>
     <resources>
@@ -1577,4 +1588,7 @@
         <image name="bob" width="359" height="358"/>
         <image name="story" width="758" height="505"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YhB-De-rNi"/>
+    </inferredMetricsTieBreakers>
 </document>

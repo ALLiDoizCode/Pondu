@@ -26,6 +26,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var array:[Event] = []
     var numOfCells:[String] = []
     var numOfPost:[String] = []
+    var indexOfUrl:[Character] = []
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -57,18 +58,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
        
         
-            /*let name = "jonathan"
-            let post = "just created another post"
-            let profileImage = UIImage(named: "bob")
-            let location = "3300 University Blvd, Winter Park, FL 32792"
-            let likes = 0
-            let live = false
-        
-        let makeEvent = MakingEvent()
-        makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
-        
-        /*let makeParty = MakingParty()
-        makeParty.party(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
+           
         
         
     }
@@ -94,6 +84,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.post.text = array[indexPath.row].post
         cell.PostName.text = array[indexPath.row].name
         cell.likes.text = "Likes:\(array[indexPath.row].likes)"
+        cell.time.text = array[indexPath.row].time
         
         let numComments = array[indexPath.row].comments
         
@@ -158,6 +149,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         if indexPath.item == layout.featuredItemIndex {
             
             print("featured")
+            
+            self.performSegueWithIdentifier("Live", sender: indexPath);
+            
         }else{
             
             print("not featured")
@@ -185,6 +179,22 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return UIStatusBarStyle.LightContent
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "Live" {
+            
+            let liveController = segue.destinationViewController as! LiveViewController
+            let item = (sender as! NSIndexPath).item
+            
+            let imageData = PFUser.currentUser()?.objectForKey("photo") as! PFFile
+            let imageData2 = PFUser.currentUser()?.objectForKey("testVideo") as! PFFile
+            
+            liveController.testImage = imageData.url
+            liveController.testVideo = imageData2.url
+            print(item)
+            
+        }
+    }
     
 }
 
