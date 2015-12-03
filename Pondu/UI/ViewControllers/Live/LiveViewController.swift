@@ -29,6 +29,7 @@ class LiveViewController: UIViewController,PlayerDelegate {
     
     
     let tapRect = UITapGestureRecognizer()
+    let swipeDownRect = UISwipeGestureRecognizer()
     
     var fileCount = 1
     
@@ -47,6 +48,13 @@ class LiveViewController: UIViewController,PlayerDelegate {
         tapRect.numberOfTouchesRequired = 1
         self.view!.addGestureRecognizer(tapRect)
         
+        swipeDownRect.addTarget(self, action: "swippedDown:")
+        swipeDownRect.numberOfTouchesRequired = 1
+        swipeDownRect.direction = .Down
+        self.view!.addGestureRecognizer(swipeDownRect)
+        
+        
+        
         fileArray = [testImage,testVideo]
         
         getFileType(fileArray[0])
@@ -61,6 +69,12 @@ class LiveViewController: UIViewController,PlayerDelegate {
             fileCount++
         }
         
+    }
+    
+    
+    func swippedDown(sender:UISwipeGestureRecognizer) {
+        
+        self.performSegueWithIdentifier("Home", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

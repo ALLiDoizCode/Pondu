@@ -20,10 +20,21 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[heightClass=regular-widthClass=compact]"/>
+                    <connections>
+                        <segue destination="3eg-JL-D1y" kind="show" identifier="Home" id="erJ-Wc-ilh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5K1-SX-gBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3110" y="465"/>
+        </scene>
+        <!--Nav-->
+        <scene sceneID="tXG-mr-QQG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Nav" id="3eg-JL-D1y" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csD-Cj-07g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3435" y="242"/>
         </scene>
     </scenes>
 </document>
