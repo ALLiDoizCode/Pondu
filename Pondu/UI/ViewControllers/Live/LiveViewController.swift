@@ -18,7 +18,7 @@ class LiveViewController: UIViewController,PlayerDelegate {
     var imageViewObject:UIImageView!
 
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
-    let videoTypes:[String] = ["mov","mp4", "m4v","3gp"]
+    let videoTypes:[String] = ["mov","mp4", "m4v","3gp","MOV"]
     let comments:[String] = ["asdasdasdsadasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
     
     var fileArray:[String]!
@@ -63,12 +63,6 @@ class LiveViewController: UIViewController,PlayerDelegate {
         
     }
     
-    
-    /*override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        let orientation: UIInterfaceOrientationMask = [UIInterfaceOrientationMask.Landscape, UIInterfaceOrientationMask.LandscapeLeft]
-        return orientation
-    }*/
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,11 +98,6 @@ class LiveViewController: UIViewController,PlayerDelegate {
     
     func isVideo(video:String){
         
-        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
-        
-        self.interfaceOrientation.isLandscape
-        
         if imageViewObject.hidden == false {
             
             imageViewObject.hidden = true
@@ -123,12 +112,8 @@ class LiveViewController: UIViewController,PlayerDelegate {
             
             self.player.playbackLoops = true
             
-            
-            //let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGestureRecognizer:")
-            //tapGestureRecognizer.numberOfTapsRequired = 1
-            //self.player.view.addGestureRecognizer(tapGestureRecognizer)
-            
             self.player.playFromBeginning()
+            
         }else {
             
             player = Player()
@@ -142,11 +127,6 @@ class LiveViewController: UIViewController,PlayerDelegate {
             self.player.setUrl(NSURL(string: video)!)
             
             self.player.playbackLoops = true
-            
-            
-            //let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGestureRecognizer:")
-            //tapGestureRecognizer.numberOfTapsRequired = 1
-            //self.player.view.addGestureRecognizer(tapGestureRecognizer)
             
             self.player.playFromBeginning()
         }
@@ -173,7 +153,7 @@ class LiveViewController: UIViewController,PlayerDelegate {
         
         let fileType = "\(chac3)\(chac2)\(chac1)"
         
-        if (fileType == videoTypes[0]) || (fileType == videoTypes[1]) || (fileType == videoTypes[2]) || (fileType == videoTypes[3]) {
+        if (fileType == videoTypes[0]) || (fileType == videoTypes[1]) || (fileType == videoTypes[2]) || (fileType == videoTypes[3]) || (fileType == videoTypes[4]) {
             
             isVideo(thefile)
             //print(fileType)
