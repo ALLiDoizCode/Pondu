@@ -293,28 +293,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/UI/ViewControllers/Live/LiveViewController.swift"
-            timestampString = "470474125.387452"
+            timestampString = "470810758.501786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "getFileType(_:cell:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pondu/UI/ViewControllers/Live/LiveViewController.swift"
-            timestampString = "470474125.387452"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
-            landmarkName = "applyBlurEffect(_:)"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "getFileType(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
