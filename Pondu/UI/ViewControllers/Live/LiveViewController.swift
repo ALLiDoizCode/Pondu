@@ -38,7 +38,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        transition.duration = 0.3
+        transition.duration = 0.4
         
         self.navigationController?.navigationBarHidden = true
         
@@ -71,6 +71,9 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         if fileCount < fileArray.count {
             getFileType(fileArray[fileCount])
             fileCount++
+            
+            
+    
         }
         
     }
@@ -78,6 +81,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     func swippedDown(sender:UISwipeGestureRecognizer) {
         
+        player.stop()
         self.performSegueWithIdentifier("Home", sender: self)
     }
     
