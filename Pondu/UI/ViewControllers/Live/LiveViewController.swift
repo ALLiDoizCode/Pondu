@@ -8,9 +8,11 @@
 
 import UIKit
 import Kingfisher
+import BubbleTransition
 
-
-class LiveViewController: UIViewController,PlayerDelegate {
+class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate,PlayerDelegate {
+    
+    let transition = BubbleTransition()
     
     var player:Player!
     var testImage:String!
@@ -35,6 +37,8 @@ class LiveViewController: UIViewController,PlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        transition.duration = 0.3
         
         self.navigationController?.navigationBarHidden = true
         
@@ -221,16 +225,32 @@ class LiveViewController: UIViewController,PlayerDelegate {
     
     @IBAction func sendBtn(sender: AnyObject) {
     }
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Present
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.whiteColor()
+        return transition
+    }
 
-    /*
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Dismiss
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.blueColor()
+        return transition
+    }
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let controller = segue.destinationViewController
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .Custom
     }
-    */
+    
     
    
 }

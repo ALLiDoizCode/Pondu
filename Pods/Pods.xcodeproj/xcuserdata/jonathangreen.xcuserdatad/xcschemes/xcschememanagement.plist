@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BubbleTransition.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,22 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1E5B4896E12EE41652CE4112D071FB4E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>20551074B50FFADB8A8567E525197B20</key>
+		<key>0EC7484085BD9330ED0009FB469D03C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>23D4B5C9CC657B68134305BFEB076270</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>580E6B18A3E17261B546E8E1E0EA8CD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +87,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96F0A164BC35453A985DD9A7D47B927C</key>
+		<key>7372CA79CE92E7AC032175441663EBE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C22D3EB2C81684C282EBAB0BC21F27B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDEE849D40C54D448A2F09F05E24CDD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F85BFEE11322110F35A39071AE985CDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
