@@ -1086,7 +1086,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ftq-OO-FXr" id="M8y-qP-Klg"/>
                         <outlet property="collectionViewLayout" destination="6gw-jr-Ez3" id="Ocw-mI-Wty"/>
-                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="Zoc-lS-je3"/>
+                        <segue destination="PTy-wZ-yIu" kind="presentation" identifier="Live" id="Zoc-lS-je3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCC-AX-O8G" sceneMemberID="firstResponder"/>
@@ -1266,7 +1266,7 @@
                     <connections>
                         <outlet property="collectionView" destination="NQo-LL-eRM" id="ZCr-RH-INr"/>
                         <outlet property="collectionViewLayout" destination="k6z-FY-53R" id="jYQ-3o-NZO"/>
-                        <segue destination="PTy-wZ-yIu" kind="show" identifier="Live" id="YhB-De-rNi"/>
+                        <segue destination="PTy-wZ-yIu" kind="presentation" identifier="Live" id="YhB-De-rNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDG-dv-vPi" sceneMemberID="firstResponder"/>
@@ -1589,6 +1589,6 @@
         <image name="story" width="758" height="505"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o5p-0m-eGd"/>
+        <segue reference="YhB-De-rNi"/>
     </inferredMetricsTieBreakers>
 </document>
