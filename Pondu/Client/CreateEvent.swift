@@ -26,7 +26,8 @@ class createEvent {
         let imageData3 = UIImagePNGRepresentation(UIImage(named: "girl")!)
         let imageFile3 = PFFile(name:"image.png", data:imageData3!)*/
         
-        let file = currentUser?.objectForKey("testVideo") as! PFFile!
+        
+        let file = currentUser?.objectForKey("testVideo")
         
         //let videoUrl = NSURL(fileURLWithPath: path!)
         //let videoData = NSData(contentsOfURL: videoUrl)
@@ -49,7 +50,7 @@ class createEvent {
             event["Time"] = createdEvent.startTime
             event["Privacy"] = createdEvent.privacy
             //event["LiveContent"] = fileArray
-            event.addObject(file, forKey: "LiveContent")
+            event.addObject(file!, forKey: "LiveContent")
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
