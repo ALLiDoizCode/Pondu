@@ -19,14 +19,20 @@ class createEvent {
         let event = PFObject(className: "MainWall")
         let currentUser = PFUser.currentUser()
         
-        let imageData = UIImagePNGRepresentation(UIImage(named: "bg")!)
+        /*let imageData = UIImagePNGRepresentation(UIImage(named: "bg")!)
         let imageFile = PFFile(name:"image.png", data:imageData!)
         let imageData2 = UIImagePNGRepresentation(UIImage(named: "girl")!)
         let imageFile2 = PFFile(name:"image.png", data:imageData2!)
         let imageData3 = UIImagePNGRepresentation(UIImage(named: "girl")!)
-        let imageFile3 = PFFile(name:"image.png", data:imageData3!)
+        let imageFile3 = PFFile(name:"image.png", data:imageData3!)*/
         
-        let fileArray:[PFFile] = [imageFile!,imageFile2!,imageFile3!]
+        let file = currentUser?.objectForKey("testVideo") as! PFFile!
+        
+        //let videoUrl = NSURL(fileURLWithPath: path!)
+        //let videoData = NSData(contentsOfURL: videoUrl)
+        //let videoFile = PFFile(data: videoData!, contentType: "mp4")
+        
+        //let fileArray:[PFFile] = [imageFile!,imageFile2!,imageFile3!]
         
         SwiftEventBus.onMainThread(self, name: "makeEvent") { result in
             
@@ -42,8 +48,8 @@ class createEvent {
             event["ProfilePicture"] = currentUser!["photo"]
             event["Time"] = createdEvent.startTime
             event["Privacy"] = createdEvent.privacy
-            event["LiveContent"] = fileArray
-            //event.addObject(fileArray, forKey: "LiveContent")
+            //event["LiveContent"] = fileArray
+            event.addObject(file, forKey: "LiveContent")
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

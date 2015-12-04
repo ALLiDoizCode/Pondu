@@ -63,14 +63,12 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     
     func tappedView(sender:UITapGestureRecognizer) {
+        
+        let max = UInt32(fileArray.count)
        
-        if fileCount < fileArray.count {
-            getFileType(fileArray[fileCount])
-            fileCount++
-            
-            
-    
-        }
+        let random = Int(arc4random_uniform(max))
+        
+            getFileType(fileArray[random])
         
     }
     
