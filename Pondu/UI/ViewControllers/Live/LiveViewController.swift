@@ -57,10 +57,6 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         swipeDownRect.direction = .Down
         self.view!.addGestureRecognizer(swipeDownRect)
         
-        
-        
-        fileArray = [testImage,testVideo]
-        
         getFileType(fileArray[0])
 
     }

@@ -208,11 +208,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
 
             let item = (sender as! NSIndexPath).item
             
-            let imageData = PFUser.currentUser()?.objectForKey("photo") as! PFFile
-            let imageData2 = PFUser.currentUser()?.objectForKey("testVideo") as! PFFile
-            
-            liveController.testImage = imageData.url
-            liveController.testVideo = imageData2.url
+            liveController.fileArray = array[item].liveContent
             print(item)
             
         }
