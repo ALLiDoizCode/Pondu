@@ -32,8 +32,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     let tapRect = UITapGestureRecognizer()
     let swipeDownRect = UISwipeGestureRecognizer()
-    
-    var fileCount = 1
+    let swipeRightRect = UISwipeGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +51,8 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         tapRect.numberOfTouchesRequired = 1
         self.view!.addGestureRecognizer(tapRect)
         
-        swipeDownRect.addTarget(self, action: "swippedDown:")
+        
+       swipeDownRect.addTarget(self, action: "swippedDown:")
         swipeDownRect.numberOfTouchesRequired = 1
         swipeDownRect.direction = .Down
         self.view!.addGestureRecognizer(swipeDownRect)
@@ -63,20 +63,22 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     
     func tappedView(sender:UITapGestureRecognizer) {
+       
         
         let max = UInt32(fileArray.count)
-       
-        let random = Int(arc4random_uniform(max))
         
-            getFileType(fileArray[random])
+        let ran = Int(arc4random_uniform(max))
+       
+            getFileType(fileArray[ran])
+        
         
     }
     
-    
     func swippedDown(sender:UISwipeGestureRecognizer) {
         
-        player.stop()
-        self.performSegueWithIdentifier("Home", sender: self)
+            player.stop()
+            self.performSegueWithIdentifier("Home", sender: self)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,7 +91,6 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         
         if player.view.hidden == false {
             
-            player.view.hidden = true
             player.stop()
             
             print("got image \(image)")
@@ -115,8 +116,6 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     func isVideo(video:String){
         
         if imageViewObject.hidden == false {
-            
-            imageViewObject.hidden = true
             
             player.view.frame = self.view.bounds
             
