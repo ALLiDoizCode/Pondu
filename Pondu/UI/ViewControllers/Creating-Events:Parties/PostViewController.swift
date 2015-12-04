@@ -34,6 +34,8 @@ class PostViewController: UIViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        postDidFinish()
+        
         self.title = "Post"
         
         textVIew.delegate = self
@@ -113,38 +115,46 @@ class PostViewController: UIViewController,UITextViewDelegate {
         }
     }
     
+    func postDidFinish(){
+        
+        SwiftEventBus.onMainThread(self, name: "EventMade", handler: { (result) -> Void in
+            
+            //success
+            print("event post successful")
+            self.performSegueWithIdentifier("Home", sender: self)
+            
+        })
+        SwiftEventBus.onMainThread(self, name: "EventNotMade", handler: { (result) -> Void in
+            
+            //Failed
+            print("event did not post")
+        })
+        
+        SwiftEventBus.onMainThread(self, name: "PartyMade", handler: { (result) -> Void in
+            
+            //success
+            print("party post successful")
+            self.performSegueWithIdentifier("Home", sender: self)
+            
+        })
+        
+        SwiftEventBus.onMainThread(self, name: "PartyNotMade", handler: { (result) -> Void in
+            
+            //Failed
+            print("party did not post")
+        })
+
+    }
+    
     @IBAction func postBTn(sender: AnyObject) {
         
         if type == false && textVIew.text != ""{
             
-            SwiftEventBus.onBackgroundThread(self, name: "EventMade", handler: { (result) -> Void in
-                
-                //success
-                print("event post successful")
-                self.performSegueWithIdentifier("gotoWall", sender: self)
-            })
-            SwiftEventBus.onBackgroundThread(self, name: "EventNotMade", handler: { (result) -> Void in
-                
-                //Failed
-                print("event did not post")
-            })
             
             makeEvent.event("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy)
             
         }else if type == true && textVIew.text != ""{
             
-            SwiftEventBus.onBackgroundThread(self, name: "PartyMade", handler: { (result) -> Void in
-                
-                //success
-                print("party post successful")
-                self.performSegueWithIdentifier("gotoWall", sender: self)
-            })
-            
-            SwiftEventBus.onBackgroundThread(self, name: "PartyNotMade", handler: { (result) -> Void in
-                
-                //Failed
-                print("party did not post")
-            })
             
             makeParty.party("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy)
         }else{
@@ -154,15 +164,15 @@ class PostViewController: UIViewController,UITextViewDelegate {
         }
         
     }
-
-    /*
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }*/
+    
 
 }
