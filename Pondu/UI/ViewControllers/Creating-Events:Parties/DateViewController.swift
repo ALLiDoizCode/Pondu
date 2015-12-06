@@ -198,7 +198,7 @@ class DateViewController: UIViewController {
             
             datePickerView.addTarget(self, action: Selector("endTimePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
             
-            datePickerView.minimumDate = eventBegins.add(years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 30, seconds: 0)
+            //datePickerView.minimumDate = eventBegins
         }
         
     }

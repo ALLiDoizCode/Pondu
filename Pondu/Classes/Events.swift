@@ -26,8 +26,9 @@ class Event {
     var fav:Bool = false
     var live:Bool = false
     var time:String!
+    var liveContent:[String] = []
     
-    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theVideo:String,theLikes:Int,theLocation:String,theMainThumb:String,theComments:[String],theFav:Bool,theLive:Bool,theTime:String){
+    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theVideo:String,theLikes:Int,theLocation:String,theMainThumb:String,theComments:[String],theFav:Bool,theLive:Bool,theTime:String,theliveContent:[String]){
 
         objectID = theID
         name = theName
@@ -42,6 +43,7 @@ class Event {
         fav = theFav
         live = theLive
         time = theTime
+        liveContent = theliveContent
     }
     
 }

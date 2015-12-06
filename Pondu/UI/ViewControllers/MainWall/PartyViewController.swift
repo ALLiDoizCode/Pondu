@@ -12,8 +12,9 @@ import Parse
 import Kingfisher
 import QuartzCore
 import Spring
+import BubbleTransition
 
-class PartyViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class PartyViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate{
 
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
@@ -25,6 +26,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     var array:[Event] = []
     var numOfCells:[String] = []
     var numOfPost:[String] = []
+    let transition = BubbleTransition()
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -54,6 +56,8 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        transition.duration = 0.4
         
         Parties.partiesPost()
         getArrayCount()
@@ -159,6 +163,12 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         if indexPath.item == layout.featuredItemIndex {
             
             print("featured")
+            
+            self.performSegueWithIdentifier("Live", sender: indexPath);
+            
+        }else{
+            
+            print("not featured")
         }
     }
     
@@ -180,6 +190,39 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+    }
+    
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Present
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.whiteColor()
+        return transition
+    }
+    
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Dismiss
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.blueColor()
+        return transition
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "Live" {
+            
+            let liveController = segue.destinationViewController as! LiveViewController
+            
+            liveController.transitioningDelegate = self
+            liveController.modalPresentationStyle = .Custom
+            
+            let item = (sender as! NSIndexPath).item
+            
+            liveController.fileArray = array[item].liveContent
+            print(item)
+            
+        }
     }
 
 }

@@ -18,6 +18,9 @@ class createParty {
         let event = PFObject(className: "Parties")
         let currentUser = PFUser.currentUser()
         
+        
+        let file = currentUser?.objectForKey("testVideo") as! PFFile
+        
         SwiftEventBus.onMainThread(self, name: "makeParty") { result in
             
             let createdParty = result.object as! makeParty
@@ -32,6 +35,7 @@ class createParty {
             event["ProfilePicture"] = currentUser!["photo"]
             event["Time"] = createdParty.startTime
             event["Privacy"] = createdParty.privacy
+             event.addObject(file, forKey: "LiveContent")
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

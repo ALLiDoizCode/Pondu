@@ -457,7 +457,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
-                                    <action selector="postBTn:" destination="jr8-Vr-rHy" eventType="touchUpInside" id="Zjb-XV-hnp"/>
+                                    <action selector="postBTn:" destination="jr8-Vr-rHy" eventType="touchUpInside" id="FuF-Uq-iho"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-qg-UeX">
@@ -509,20 +509,18 @@
                                     <segue destination="A3n-2i-14D" kind="show" identifier="gotoWall" id="SPQ-30-xXD"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="A3n-2i-14D" kind="show" id="nyJ-ui-SXn"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainLabel" destination="leS-cJ-kBQ" id="RIy-FV-80F"/>
-                        <outlet property="post" destination="4KP-6S-HIr" id="p07-eK-wDK"/>
+                        <outlet property="post" destination="4KP-6S-HIr" id="Q8b-mE-XYl"/>
                         <outlet property="textVIew" destination="uXh-qg-UeX" id="6A9-6Q-0Xi"/>
+                        <segue destination="A3n-2i-14D" kind="presentation" identifier="Home" id="iQm-hj-tiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5G8-AV-Y0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="627"/>
+            <point key="canvasLocation" x="1490" y="163"/>
         </scene>
         <!--Nav-->
         <scene sceneID="cFA-l6-cXQ">
@@ -711,6 +709,6 @@
         <image name="down arrows" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fkV-7C-rwz"/>
+        <segue reference="SPQ-30-xXD"/>
     </inferredMetricsTieBreakers>
 </document>

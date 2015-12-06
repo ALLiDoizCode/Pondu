@@ -19,6 +19,8 @@ class createEvent {
         let event = PFObject(className: "MainWall")
         let currentUser = PFUser.currentUser()
         
+        let file = currentUser?.objectForKey("testVideo") as! PFFile
+        
         SwiftEventBus.onMainThread(self, name: "makeEvent") { result in
             
             let createdEvent = result.object as! makeEvent
@@ -33,6 +35,7 @@ class createEvent {
             event["ProfilePicture"] = currentUser!["photo"]
             event["Time"] = createdEvent.startTime
             event["Privacy"] = createdEvent.privacy
+            event.addObject(file, forKey: "LiveContent")
             event.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

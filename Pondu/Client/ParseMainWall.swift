@@ -51,6 +51,7 @@ class ParseMainWall {
     func postQuery(favId:[String]?){
         
                 var mainWall:[Event] = []
+                var liveURls:[String] = []
         
                 let query = PFQuery(className:"MainWall")
                 query.findObjectsInBackgroundWithBlock {
@@ -80,8 +81,14 @@ class ParseMainWall {
                                     let favorite = object.objectForKey("userID") as! String
                                     let time = object.objectForKey("Time") as! String
                                     let privacy = object.objectForKey("Privacy") as! Bool!
+                                    let liveContent = object.objectForKey("LiveContent") as! [PFFile]!
                                 
-                                
+                                for url in liveContent{
+                                    
+                                    liveURls.append(url.url!)
+                                    
+                                    print(url.url)
+                                }
                                 
                                 if let theVideo = video, let theEventImages = eventImages{
                                     
@@ -91,7 +98,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count && favorite == favID[i] {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live,theTime:time)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live,theTime:time,theliveContent:liveURls)
                                                 
                                                     print("there are \(favID.count) fav ids")
                                                 
@@ -111,7 +118,7 @@ class ParseMainWall {
                                         
                                         if privacy != true {
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: eventImages.url!, theComments: comments,theFav:false,theLive:live,theTime:time)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: eventImages.url!, theComments: comments,theFav:false,theLive:live,theTime:time,theliveContent:liveURls)
                                         
                                         mainWall.append(mainWalldata)
                                             
@@ -128,7 +135,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count && favorite == favID[i] {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live,theTime:time)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live,theTime:time,theliveContent:liveURls)
                                                 
                                                     print("there are \(favID.count) fav ids")
                                                 
@@ -146,7 +153,7 @@ class ParseMainWall {
                                         
                                          if privacy != true {
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:false,theLive:live,theTime:time)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: video.url!, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:false,theLive:live,theTime:time,theliveContent:liveURls)
                                         
                                         mainWall.append(mainWalldata)
                                             
@@ -164,7 +171,7 @@ class ParseMainWall {
                                             
                                             if i < favID.count && favorite == favID[i] {
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live,theTime:time)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:true,theLive:live,theTime:time,theliveContent:liveURls)
                                                 
                                                     print("there are \(favID.count) fav ids")
                                                 
@@ -182,7 +189,7 @@ class ParseMainWall {
                                         
                                          if privacy != true {
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:false,theLive:live,theTime:time)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages.url!, theComments: comments,theFav:false,theLive:live,theTime:time,theliveContent:liveURls)
                                         
                                         mainWall.append(mainWalldata)
                                         
@@ -203,7 +210,7 @@ class ParseMainWall {
                                                  print("user id \(favorite)" )
                                                  print("favorites \(favID[i])")
                                                 
-                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live,theTime:time)
+                                                let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:true,theLive:live,theTime:time,theliveContent:liveURls)
                                                 
                                                     print("there are \(favID.count) fav ids")
                                                     print("queryID \(mainWalldata)")
@@ -220,7 +227,7 @@ class ParseMainWall {
                                         
                                          if privacy != true {
                                         
-                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:false,theLive:live,theTime:time)
+                                        let mainWalldata:Event = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!, theVideo: theVideo, theLikes: likes, theLocation: theAddress, theMainThumb: theEventImages, theComments: comments,theFav:false,theLive:live,theTime:time,theliveContent:liveURls)
                                         
                                         mainWall.append(mainWalldata)
                                         

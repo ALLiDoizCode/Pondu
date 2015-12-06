@@ -13,8 +13,9 @@ import Kingfisher
 import QuartzCore
 import SwiftDate
 import Spring
+import BubbleTransition
 
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate {
     
     let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
@@ -27,6 +28,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     var indexOfUrl:[Character] = []
+    let transition = BubbleTransition()
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -42,6 +44,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        transition.duration = 0.4
         mainWall.eventPost()
         getArrayCount()
         
@@ -179,18 +182,33 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return UIStatusBarStyle.LightContent
     }
     
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Present
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.whiteColor()
+        return transition
+    }
+    
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Dismiss
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.blueColor()
+        return transition
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "Live" {
             
             let liveController = segue.destinationViewController as! LiveViewController
+            
+            liveController.transitioningDelegate = self
+            liveController.modalPresentationStyle = .Custom
+
             let item = (sender as! NSIndexPath).item
             
-            let imageData = PFUser.currentUser()?.objectForKey("photo") as! PFFile
-            let imageData2 = PFUser.currentUser()?.objectForKey("testVideo") as! PFFile
-            
-            liveController.testImage = imageData.url
-            liveController.testVideo = imageData2.url
+            liveController.fileArray = array[item].liveContent
             print(item)
             
         }
