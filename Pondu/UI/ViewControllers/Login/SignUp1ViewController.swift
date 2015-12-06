@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  SignUp1ViewController.swift
 //  Pondu
 //
 //  Created by Jonathan Green on 12/6/15.
@@ -7,35 +7,20 @@
 //
 
 import UIKit
-import LTMorphingLabel
-import FXBlurView
 
+class SignUp1ViewController: UIViewController {
 
-class WelcomeViewController: UIViewController {
-
-    @IBOutlet weak var topLabel: LTMorphingLabel!
-    @IBOutlet weak var bottomLabel: LTMorphingLabel!
-    @IBOutlet weak var bg: UIImageView!
-    @IBOutlet weak var bottemView: UIView!
     
+    let segueID = "next"
+    
+    @IBOutlet weak var next: UIButton!
     override func viewWillAppear(animated: Bool) {
         
-        topLabel.text = "Welcome"
-        topLabel.morphingEffect = .Evaporate
-        topLabel.morphingDuration = 1
-        
-        bottomLabel.text = "To Pondu."
-        bottomLabel.morphingEffect = .Evaporate
-        bottomLabel.morphingDuration = 1
-        
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        bg.image = bg.image?.blurredImageWithRadius(20, iterations: 15, tintColor: UIColor.blackColor())
-       
         
         // Do any additional setup after loading the view.
     }
@@ -45,12 +30,14 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    
+    @IBAction func nextBtn(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier(segueID, sender: self)
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -58,6 +45,6 @@ class WelcomeViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

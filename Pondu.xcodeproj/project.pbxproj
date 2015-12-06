@@ -32,6 +32,8 @@
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
 		4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */; };
+		4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */; };
+		4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */; };
 		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
 		4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683D1BE9902200591DF6 /* makeEvent.swift */; };
@@ -120,6 +122,8 @@
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
+		4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
+		4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
 		4D86683D1BE9902200591DF6 /* makeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makeEvent.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 			children = (
 				4D2436291C13D0330032FB27 /* LoginViewController.swift */,
 				4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */,
+				4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */,
+				4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,
 				4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */,
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
+				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
 				4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
@@ -664,6 +671,7 @@
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
 				4D0018F91C148A4A00BC28A3 /* WelcomeViewController.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
+				4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */,
 				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
