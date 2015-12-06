@@ -24,6 +24,9 @@
 		4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */; };
 		4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */; };
 		4D1F8F6F1BFE593400C2A61F /* CreateEvent:Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */; };
+		4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */; };
+		4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */; };
+		4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436291C13D0330032FB27 /* LoginViewController.swift */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
@@ -108,6 +111,9 @@
 		4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavEventCell.swift; sourceTree = "<group>"; };
 		4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartyCell.swift; sourceTree = "<group>"; };
 		4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "CreateEvent:Party.storyboard"; sourceTree = "<group>"; };
+		4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login-SignUp.storyboard"; sourceTree = "<group>"; };
+		4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GradientView:Button.swift"; sourceTree = "<group>"; };
+		4D2436291C13D0330032FB27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +288,14 @@
 			path = MainWall;
 			sourceTree = "<group>";
 		};
+		4D2436281C13D0150032FB27 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4D2436291C13D0330032FB27 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		4D7C0CA01BE08B6400CCB2DE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +375,7 @@
 				4D05125A1C07984200FB414D /* Player.swift */,
 				4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */,
 				4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */,
+				4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +400,7 @@
 		4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D2436281C13D0150032FB27 /* Login */,
 				4D0512531C07889000FB414D /* Live */,
 				4D80BCDF1BFE8677000EAB33 /* Creating-Events/Parties */,
 				4D1843E41BF2450E00B2AFA2 /* Favorites */,
@@ -401,6 +417,7 @@
 				4DE1A1C21BEA7133009BCF55 /* Main.storyboard */,
 				4D0512561C078FAB00FB414D /* Live.storyboard */,
 				4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */,
+				4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */,
 			);
 			path = "Storyboards&Xibs";
 			sourceTree = "<group>";
@@ -537,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */,
 				4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */,
 				4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */,
 				4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */,
@@ -639,8 +657,10 @@
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */,
 				4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */,
+				4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
+				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
 				4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */,
