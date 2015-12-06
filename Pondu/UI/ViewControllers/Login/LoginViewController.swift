@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SwiftEventBus
+import BubbleTransition
 
-class LoginViewController: UIViewController,UITextFieldDelegate {
+class LoginViewController: UIViewController,UITextFieldDelegate,UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var login: DesignableButton!
-    
     @IBOutlet var mainVIew: UIView!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var signUpImage: UIImageView!
@@ -20,6 +21,17 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    let userLogin = startLogin()
+    let transition = BubbleTransition()
+    
+    let mainSegue = "Login"
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController?.navigationBarHidden = false
+    }
+    
     override func viewDidLayoutSubviews() {
 
         if UIScreen.mainScreen().bounds.width == 320.0 {
@@ -32,6 +44,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        transition.duration = 0.4
+        
         username.delegate = self
         password.delegate = self
         
@@ -39,11 +53,24 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         login.layer.cornerRadius = 5
         login.layer.masksToBounds = true
-
+        
         // Do any additional setup after loading the view.
     }
 
     @IBAction func loginBtn(sender: AnyObject) {
+        
+        userLogin.beginLogin(username.text!, password: password.text!)
+        
+        SwiftEventBus.onMainThread(self, name: "login") { (result) -> Void in
+            
+            self.performSegueWithIdentifier(self.mainSegue, sender: self)
+        }
+        
+        SwiftEventBus.onMainThread(self, name: "loginFailed") { (result) -> Void in
+            
+            print("login failed")
+        }
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -67,14 +94,34 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
-    */
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Present
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.whiteColor()
+        return transition
+    }
+    
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Dismiss
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.blueColor()
+        return transition
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == mainSegue {
+            
+            let controller = segue.destinationViewController
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .Custom
+                        
+        }
+    }
 
 }

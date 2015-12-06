@@ -217,7 +217,9 @@
                             <constraint firstItem="3pW-yA-sbm" firstAttribute="top" secondItem="TqR-MS-tRB" secondAttribute="bottom" constant="10" id="8B7-k9-qsL">
                                 <variation key="heightClass=regular-widthClass=compact" constant="9"/>
                             </constraint>
-                            <constraint firstItem="Nl4-sT-sNR" firstAttribute="top" secondItem="yak-xh-KmY" secondAttribute="top" id="BdW-CS-8Pf"/>
+                            <constraint firstItem="Nl4-sT-sNR" firstAttribute="top" secondItem="yak-xh-KmY" secondAttribute="top" id="BdW-CS-8Pf">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-14"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="2b9-99-4ZC" secondAttribute="trailing" constant="-20" id="DsC-fE-hWC"/>
                             <constraint firstItem="GIr-dp-gEO" firstAttribute="top" secondItem="dig-gr-bQP" secondAttribute="bottom" constant="570" id="EbE-6f-j33">
                                 <variation key="heightClass=regular-widthClass=compact" constant="484"/>
@@ -375,11 +377,20 @@
                         <outlet property="passwordImage" destination="dig-gr-bQP" id="FCu-vk-MUd"/>
                         <outlet property="signUpImage" destination="TqR-MS-tRB" id="JZV-lU-TfP"/>
                         <outlet property="username" destination="QD9-TH-JDS" id="N5a-gF-pc7"/>
+                        <segue destination="6P7-He-K80" kind="presentation" identifier="Login" id="2aL-Qe-I4p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbw-Qt-8pS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1774.5" y="48.75"/>
+        </scene>
+        <!--Nav-->
+        <scene sceneID="TXX-eH-kcF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Nav" id="6P7-He-K80" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siy-CF-214" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2451.75" y="-140.25"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="0X9-Gy-Ilo">
@@ -494,6 +505,9 @@
                                         <include reference="VBx-7W-ZdE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="yPf-fr-2x5" kind="show" id="ewI-8y-Kqf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTu-dS-lZl" customClass="DesignableButton" customModule="Pondu" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>

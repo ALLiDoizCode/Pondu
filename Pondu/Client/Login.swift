@@ -23,8 +23,13 @@ class Login {
                 
                 print("loged In")
                 print("user is \(user!.username)")
+                
+                SwiftEventBus.post("login")
+                
             } else {
                 // The login failed. Check error to see why.
+                
+                 SwiftEventBus.post("loginFailed")
             }
         }
     }

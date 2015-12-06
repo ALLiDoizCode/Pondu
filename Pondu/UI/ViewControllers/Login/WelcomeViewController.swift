@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var bottemView: UIView!
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         
         topLabel.text = "Welcome"
         topLabel.morphingEffect = .Evaporate
@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
         bottomLabel.morphingEffect = .Evaporate
         bottomLabel.morphingDuration = 1
         
-    
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func viewDidLoad() {
@@ -36,8 +36,6 @@ class WelcomeViewController: UIViewController {
         
         bg.image = bg.image?.blurredImageWithRadius(20, iterations: 15, tintColor: UIColor.blackColor())
        
-        
-       self.navigationController?.navigationBarHidden = true
         
         // Do any additional setup after loading the view.
     }
