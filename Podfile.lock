@@ -2,6 +2,7 @@ PODS:
   - Bolts/Tasks (1.4.0)
   - BubbleTransition (1.0.1)
   - FXBlurView (1.6.4)
+  - ImagePickerSheetController (0.9.1)
   - Kingfisher (1.7.1)
   - LTMorphingLabel (0.0.9)
   - PagingMenuController (0.7.5)
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - BubbleTransition (~> 1.0.0)
   - FXBlurView (~> 1.6.4)
+  - ImagePickerSheetController (~> 0.9.1)
   - Kingfisher (~> 1.7)
   - LTMorphingLabel (~> 0.0.9)
   - PagingMenuController
@@ -41,6 +43,7 @@ SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   BubbleTransition: 76d5e306dbda0f622260ea7d082c971d976422ab
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  ImagePickerSheetController: 3c58c9fee6dcf36485222358a021f6b734f997ba
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
   LTMorphingLabel: 4235a403f99f0e0e503389da660e0fec324549d9
   PagingMenuController: ea590be94de2332a1f78fbbc45fa6f49405279ea
