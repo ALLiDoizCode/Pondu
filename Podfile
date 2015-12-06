@@ -8,6 +8,7 @@ pod 'SwiftDate'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
 pod 'LTMorphingLabel', '~> 0.0.9'
 pod 'BubbleTransition', '~> 1.0.0'
+pod 'FXBlurView', '~> 1.6.4'
 
 
 

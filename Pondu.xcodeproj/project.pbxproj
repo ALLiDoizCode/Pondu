@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18AA288CE9F1A161EF6EE751 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED51165405F57B97F81F9F11 /* Pods.framework */; };
+		4D0018F91C148A4A00BC28A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */; };
 		4D01CA801C0AD3FB0000F367 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01CA7F1C0AD3FB0000F367 /* LiveViewController.swift */; };
 		4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */; };
 		4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6C1BDD639100B30C0D /* ViewController.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4D01CA7F1C0AD3FB0000F367 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		4D01DB671BDD639100B30C0D /* Pondu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pondu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				4D2436291C13D0330032FB27 /* LoginViewController.swift */,
+				4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */,
 				4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
+				4D0018F91C148A4A00BC28A3 /* WelcomeViewController.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
 				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
@@ -806,6 +810,7 @@
 			baseConfigurationReference = 78932290621BC3D56EBC5FA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
@@ -814,6 +819,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Pondu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -823,6 +830,7 @@
 			baseConfigurationReference = AEAEA2AD6909E8F8C4063850 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
@@ -831,6 +839,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Pondu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

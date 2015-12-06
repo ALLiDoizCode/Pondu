@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FXBlurView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0EC7484085BD9330ED0009FB469D03C5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>23D4B5C9CC657B68134305BFEB076270</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5476C45B3186DEC142C76926A70A140B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5BBB34170986C897E8931C1768FD6EE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6ED1B7D02F3FFBAAD3D1B6FD72E8CA9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C22D3EB2C81684C282EBAB0BC21F27B</key>
+		<key>7485E9E34133015F1AABE70AE9DFBCAC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E0B370AAF24B07E9C9A38104017CD60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDEE849D40C54D448A2F09F05E24CDD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F85BFEE11322110F35A39071AE985CDD</key>
+		<key>CD378EDFF42487A7E1BB47D45223953B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
