@@ -51,10 +51,15 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate {
 
     @IBAction func nextBtn(sender: AnyObject) {
         
-        let photo = UIImage(named: "bob")
-        let story = UIImage(named: "story")
+        if username.text != "" && password.text != "" && verifyPassword != "" && password.text == verifyPassword.text {
+            
+            let photo = UIImage(named: "bob")
+            let story = UIImage(named: "story")
+            
+            newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:photo!,stories:story!)
+        }
         
-        newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:photo!,stories:story!)
+        
     }
     
     /*
