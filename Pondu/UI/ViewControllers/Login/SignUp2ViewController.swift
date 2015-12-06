@@ -13,12 +13,23 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate {
     var email:String!
     var fullName:String!
     
+    @IBOutlet weak var addImage: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var verifyPassword: UITextField!
     @IBOutlet weak var next: UIBarButtonItem!
     
     let newAccount = SignUP()
+    
+    
+    override func viewWillLayoutSubviews() {
+        
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.layer.borderColor = UIColor.whiteColor().CGColor
+        profileImage.layer.borderWidth = 2
+        profileImage.layer.masksToBounds = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +59,9 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate {
         return true
     }
     
+    
+    @IBAction func addImageBtn(sender: AnyObject) {
+    }
 
     @IBAction func nextBtn(sender: AnyObject) {
         
@@ -56,7 +70,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate {
             let photo = UIImage(named: "bob")
             let story = UIImage(named: "story")
             
-            newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:photo!,stories:story!)
+        newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:photo!,stories:story!)
         }
         
         
