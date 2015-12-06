@@ -96,7 +96,8 @@
                                         <exclude reference="zfj-cg-0v5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="308" width="340" height="12"/>
                                     <mask key="constraints">
                                         <include reference="zfj-cg-0v5"/>
                                     </mask>
@@ -1082,7 +1083,7 @@
                         <outlet property="email" destination="SaC-tz-8zA" id="a7W-HU-tLK"/>
                         <outlet property="fullName" destination="H1L-SP-o4J" id="mU5-XM-aCX"/>
                         <outlet property="next" destination="566-hS-Y0U" id="PAC-Jo-O2x"/>
-                        <segue destination="5jy-tH-uV9" kind="show" identifier="next" id="JH7-Pm-LC0"/>
+                        <segue destination="5jy-tH-uV9" kind="show" identifier="next" id="JqW-R5-BVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTj-Dv-HUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1092,7 +1093,7 @@
         <!--SignUp-->
         <scene sceneID="y2p-uF-N5p">
             <objects>
-                <viewController title="SignUp" id="5jy-tH-uV9" customClass="SignUp1ViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SignUp" id="5jy-tH-uV9" customClass="SignUp2ViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YdC-xN-79e"/>
                         <viewControllerLayoutGuide type="bottom" id="0v3-0E-XRa"/>
@@ -1104,9 +1105,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUpBack" translatesAutoresizingMaskIntoConstraints="NO" id="7gg-gL-wFM">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="-15" width="400" height="814"/>
-                                </variation>
                             </imageView>
                             <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-GK-nuJ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1357,7 +1355,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="24"/>
                             </constraint>
                             <constraint firstItem="7gg-gL-wFM" firstAttribute="top" secondItem="Ktg-Uh-U5S" secondAttribute="top" id="l0D-EV-8iR">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-14"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-15"/>
                             </constraint>
                             <constraint firstItem="ZFC-pu-CRp" firstAttribute="width" secondItem="ZFC-pu-CRp" secondAttribute="height" multiplier="340:31" id="pfh-TD-bwx"/>
                             <constraint firstItem="yvQ-oP-qAg" firstAttribute="leading" secondItem="vj1-f8-6Uq" secondAttribute="leading" id="q4l-U5-iYn"/>
@@ -1370,7 +1368,9 @@
                             <constraint firstItem="yzd-RV-V58" firstAttribute="leading" secondItem="vj1-f8-6Uq" secondAttribute="trailing" constant="17" id="vBR-em-9rG"/>
                             <constraint firstItem="7gg-gL-wFM" firstAttribute="leading" secondItem="pwc-u4-aXO" secondAttribute="leading" id="vMD-8r-7i3"/>
                             <constraint firstItem="CZ4-s5-gph" firstAttribute="leading" secondItem="yvQ-oP-qAg" secondAttribute="leading" id="wNw-lz-9G3"/>
-                            <constraint firstItem="7gg-gL-wFM" firstAttribute="bottom" secondItem="0v3-0E-XRa" secondAttribute="top" id="xtc-K1-isD"/>
+                            <constraint firstItem="7gg-gL-wFM" firstAttribute="bottom" secondItem="0v3-0E-XRa" secondAttribute="top" id="xtc-K1-isD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1500,15 +1500,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nextBtn:" destination="5jy-tH-uV9" eventType="touchUpInside" id="fBz-at-0ib"/>
+                                    <action selector="nextBtn:" destination="5jy-tH-uV9" eventType="touchUpInside" id="gJU-FN-agf"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="email" destination="yzd-RV-V58" id="tLe-kR-iNB"/>
-                        <outlet property="fullName" destination="c6z-ie-rLG" id="FMV-5c-RIb"/>
-                        <outlet property="next" destination="yXD-Hm-Waf" id="AsQ-Fa-7fh"/>
+                        <outlet property="next" destination="En8-hb-g8P" id="lpS-gz-PpY"/>
+                        <outlet property="password" destination="c6z-ie-rLG" id="Uy2-Lc-c9l"/>
+                        <outlet property="username" destination="yzd-RV-V58" id="AiS-C8-cRU"/>
+                        <outlet property="verifyPassword" destination="ZFC-pu-CRp" id="eSZ-cd-htq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ylx-Qx-FdX" userLabel="First Responder" sceneMemberID="firstResponder"/>

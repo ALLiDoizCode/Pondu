@@ -18,10 +18,6 @@ import BubbleTransition
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate {
     
     let mainWall = PresentMainWall()
-    let Parties = PartiesMainWall()
-    let user = theUser()
-    let newAccount = SignUP()
-    let userLogin = startLogin()
     let eventID:[String] = []
     var count:Int = 0
     var array:[Event] = []
@@ -30,15 +26,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var indexOfUrl:[Character] = []
     let transition = BubbleTransition()
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     override func viewWillAppear(animated: Bool) {
         
        
-        
-        
     }
     
     override func viewDidLoad() {
@@ -50,20 +43,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //let photo = UIImage(named: "bob")
-        //let story = UIImage(named: "story")
-        
-        //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
-        
-       
-        
-           
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

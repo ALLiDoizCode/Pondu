@@ -35,8 +35,6 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         
         let Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
-       // let Story = self.storyboard?.instantiateViewControllerWithIdentifier("Story") as! StoryViewController
-        
         let viewControllers = [Mainwall,Favorite]
         
         let options = PagingMenuOptions()

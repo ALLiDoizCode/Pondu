@@ -8,15 +8,25 @@
 
 import UIKit
 
-class SignUp2ViewController: UIViewController {
+class SignUp2ViewController: UIViewController,UITextFieldDelegate {
 
     var email:String!
     var fullName:String!
     
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var verifyPassword: UITextField!
+    @IBOutlet weak var next: UIBarButtonItem!
+    
+    let newAccount = SignUP()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        username.delegate = self
+        password.delegate = self
+        verifyPassword.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +34,29 @@ class SignUp2ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        username.resignFirstResponder()
+        password.resignFirstResponder()
+        verifyPassword.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
 
+    @IBAction func nextBtn(sender: AnyObject) {
+        
+        let photo = UIImage(named: "bob")
+        let story = UIImage(named: "story")
+        
+        newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:photo!,stories:story!)
+    }
+    
     /*
     // MARK: - Navigation
 
