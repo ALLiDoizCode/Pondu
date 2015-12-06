@@ -194,11 +194,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukX-Mi-hGw">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <constraints>
                             <constraint firstItem="e7e-Bl-kzr" firstAttribute="top" secondItem="QD9-TH-JDS" secondAttribute="bottom" constant="20" id="1DY-Ul-Duu">
                                 <variation key="heightClass=regular-widthClass=compact" constant="21"/>
+                            </constraint>
+                            <constraint firstItem="aVz-Ny-kX9" firstAttribute="leading" secondItem="ukX-Mi-hGw" secondAttribute="trailing" constant="20" id="3CF-F4-rTC">
+                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="QD9-TH-JDS" firstAttribute="top" secondItem="VmB-Wn-ET6" secondAttribute="bottom" constant="130" id="5h1-K2-k2a">
                                 <variation key="heightClass=regular-widthClass=compact" constant="179"/>
@@ -218,6 +229,9 @@
                             <constraint firstItem="2b9-99-4ZC" firstAttribute="leading" secondItem="yak-xh-KmY" secondAttribute="leadingMargin" constant="-20" id="FXT-kC-qmh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aVz-Ny-kX9" secondAttribute="trailing" constant="-12" id="FeI-rD-Rck"/>
                             <constraint firstItem="GIr-dp-gEO" firstAttribute="top" secondItem="aVz-Ny-kX9" secondAttribute="bottom" constant="446" id="GCg-4H-ogO"/>
+                            <constraint firstItem="ukX-Mi-hGw" firstAttribute="leading" secondItem="yak-xh-KmY" secondAttribute="leadingMargin" constant="40" id="H5B-eH-asl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
                             <constraint firstItem="TqR-MS-tRB" firstAttribute="top" secondItem="VmB-Wn-ET6" secondAttribute="bottom" constant="135" id="Iod-Qf-4cL">
                                 <variation key="heightClass=regular-widthClass=compact" constant="183"/>
                             </constraint>
@@ -232,6 +246,7 @@
                             <constraint firstItem="Nl4-sT-sNR" firstAttribute="bottom" secondItem="GIr-dp-gEO" secondAttribute="top" id="Xd4-Wp-W97"/>
                             <constraint firstItem="rwy-v1-8HD" firstAttribute="bottom" secondItem="GIr-dp-gEO" secondAttribute="top" id="Ytg-NL-1p5"/>
                             <constraint firstItem="TqR-MS-tRB" firstAttribute="leading" secondItem="yak-xh-KmY" secondAttribute="leadingMargin" constant="-5" id="ZWh-gZ-MwR"/>
+                            <constraint firstItem="ukX-Mi-hGw" firstAttribute="centerY" secondItem="aVz-Ny-kX9" secondAttribute="centerY" id="b8y-8Z-drs"/>
                             <constraint firstItem="3pW-yA-sbm" firstAttribute="leading" secondItem="yak-xh-KmY" secondAttribute="leading" id="bQP-5I-Y5h"/>
                             <constraint firstItem="aVz-Ny-kX9" firstAttribute="leading" secondItem="yak-xh-KmY" secondAttribute="leadingMargin" constant="265" id="d9n-YG-XzF">
                                 <variation key="heightClass=regular-widthClass=compact" constant="195"/>
@@ -264,6 +279,7 @@
                                 <exclude reference="TqR-MS-tRB"/>
                                 <exclude reference="dig-gr-bQP"/>
                                 <exclude reference="3pW-yA-sbm"/>
+                                <exclude reference="ukX-Mi-hGw"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BdW-CS-8Pf"/>
@@ -293,6 +309,9 @@
                                 <exclude reference="JFf-8s-TAs"/>
                                 <exclude reference="fQ1-Fs-JSc"/>
                                 <exclude reference="mrs-7K-4nJ"/>
+                                <exclude reference="H5B-eH-asl"/>
+                                <exclude reference="b8y-8Z-drs"/>
+                                <exclude reference="3CF-F4-rTC"/>
                                 <exclude reference="FeI-rD-Rck"/>
                                 <exclude reference="d9n-YG-XzF"/>
                                 <exclude reference="u0n-p0-B8R"/>
@@ -312,6 +331,7 @@
                                 <include reference="TqR-MS-tRB"/>
                                 <include reference="dig-gr-bQP"/>
                                 <include reference="3pW-yA-sbm"/>
+                                <include reference="ukX-Mi-hGw"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="BdW-CS-8Pf"/>
@@ -341,6 +361,9 @@
                                 <include reference="JFf-8s-TAs"/>
                                 <include reference="fQ1-Fs-JSc"/>
                                 <include reference="mrs-7K-4nJ"/>
+                                <include reference="H5B-eH-asl"/>
+                                <include reference="b8y-8Z-drs"/>
+                                <include reference="3CF-F4-rTC"/>
                                 <include reference="FeI-rD-Rck"/>
                                 <include reference="d9n-YG-XzF"/>
                                 <include reference="u0n-p0-B8R"/>
