@@ -1079,6 +1079,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="email" destination="SaC-tz-8zA" id="a7W-HU-tLK"/>
+                        <outlet property="fullName" destination="H1L-SP-o4J" id="mU5-XM-aCX"/>
                         <outlet property="next" destination="566-hS-Y0U" id="PAC-Jo-O2x"/>
                         <segue destination="8NT-L3-Fjc" kind="show" identifier="next" id="hCJ-iM-PNj"/>
                     </connections>

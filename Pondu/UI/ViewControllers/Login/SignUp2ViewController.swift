@@ -10,6 +10,9 @@ import UIKit
 
 class SignUp2ViewController: UIViewController {
 
+    var email:String!
+    var fullName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
