@@ -8,11 +8,34 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var login: DesignableButton!
+    
+    @IBOutlet var mainVIew: UIView!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var signUpImage: UIImageView!
+    @IBOutlet weak var passwordImage: UIImageView!
+    @IBOutlet weak var border: UILabel!
+    @IBOutlet weak var loginView: UIView!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    override func viewDidLayoutSubviews() {
+
+        if UIScreen.mainScreen().bounds.width == 320.0 {
+            
+            login.layer.frame = CGRectMake(login.frame.origin.x - 10
+                , login.frame.origin.y - 5, login.frame.size.width + 10, login.frame.size.height + 10)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        username.delegate = self
+        password.delegate = self
+        
+        print(UIScreen.mainScreen().bounds.width)
         
         login.layer.cornerRadius = 5
         login.layer.masksToBounds = true
@@ -22,6 +45,21 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginBtn(sender: AnyObject) {
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        username.resignFirstResponder()
+        password.resignFirstResponder()
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+
+        return true
+    }
+    
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
