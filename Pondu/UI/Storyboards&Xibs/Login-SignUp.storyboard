@@ -1083,7 +1083,7 @@
                         <outlet property="email" destination="SaC-tz-8zA" id="a7W-HU-tLK"/>
                         <outlet property="fullName" destination="H1L-SP-o4J" id="mU5-XM-aCX"/>
                         <outlet property="next" destination="566-hS-Y0U" id="PAC-Jo-O2x"/>
-                        <segue destination="5jy-tH-uV9" kind="show" identifier="next" id="JqW-R5-BVG"/>
+                        <segue destination="5jy-tH-uV9" kind="show" identifier="nextSIgnup" id="gzP-D7-ssl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTj-Dv-HUs" userLabel="First Responder" sceneMemberID="firstResponder"/>

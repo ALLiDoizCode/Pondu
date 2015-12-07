@@ -13,7 +13,7 @@ class SignUp1ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var fullName: UITextField!
-    let segueID = "next"
+    let segueID = "nextSIgnup"
     
     @IBOutlet weak var next: UIButton!
     override func viewWillAppear(animated: Bool) {
@@ -69,12 +69,15 @@ class SignUp1ViewController: UIViewController,UITextFieldDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue == segueID {
+        if segue.identifier == segueID {
             
             let controller = segue.destinationViewController as! SignUp2ViewController
             
             controller.fullName = fullName.text
             controller.email = email.text
+            
+            print("passing \(fullName.text)")
+            print("passing \(email.text)")
         }
     }
     

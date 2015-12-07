@@ -65,6 +65,9 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     @IBAction func addImageBtn(sender: AnyObject) {
         
         let manager = PHImageManager.defaultManager()
+        let initialRequestOptions = PHImageRequestOptions()
+        initialRequestOptions.resizeMode = .Fast
+        initialRequestOptions.deliveryMode = .FastFormat
         
         let presentImagePickerController: UIImagePickerControllerSourceType -> () = { source in
             let controller = UIImagePickerController()
@@ -79,33 +82,23 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
             self.presentViewController(controller, animated: true, completion: nil)
         }
         
-        let controller = ImagePickerSheetController(mediaType: .ImageAndVideo)
-        controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo Or Video", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use  This Image", comment: "Action Title"), handler: { _ in
+        let controller = ImagePickerSheetController(mediaType: .Image)
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use This Image", comment: "Action Title"), handler: { _ in
             presentImagePickerController(.Camera)
             }, secondaryHandler: { action, numberOfPhotos in
                 print("Comment \(numberOfPhotos) photos")
-                
-                
-
-        
-        }))
-        controller.addAction(ImagePickerAction(title: NSLocalizedString("Photo Library", comment: "Action Title"), secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("ImagePickerSheet.button1.Send %lu Photo", comment: "Action Title"), $0) as String}, handler: { _ in
-            presentImagePickerController(.PhotoLibrary)
-            }, secondaryHandler: { _, numberOfPhotos in
-                print("Send \(controller.selectedImageAssets)")
                 
                 manager.requestImageForAsset(controller.selectedImageAssets[0],
                     targetSize: PHImageManagerMaximumSize,
                     contentMode: .AspectFit,
                     options: nil) { (finalResult, _) in
                         self.profileImage.image = finalResult
+                        print(finalResult)
                 }
-                
-                
-                
+
         
         }))
-        controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
+            controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
             print("Cancelled")
         }))
         
@@ -126,12 +119,19 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
 
     @IBAction func nextBtn(sender: AnyObject) {
         
-        if username.text != "" && password.text != "" && verifyPassword != "" && password.text == verifyPassword.text {
+        if username.text != "" && password.text != "" && verifyPassword != "" && profileImage.image != nil && password.text == verifyPassword.text {
             
-            let photo = UIImage(named: "bob")
-            let story = UIImage(named: "story")
+        newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:profileImage.image!,stories:profileImage.image!)
             
-        newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:photo!,stories:story!)
+            print(username.text)
+            print(password.text)
+            print(verifyPassword.text)
+            print(verifyPassword.text)
+            print(email)
+            print(fullName)
+        }else{
+            
+           
         }
         
         
