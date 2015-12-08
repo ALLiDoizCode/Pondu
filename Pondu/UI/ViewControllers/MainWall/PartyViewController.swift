@@ -16,11 +16,7 @@ import BubbleTransition
 
 class PartyViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate{
 
-    let mainWall = PresentMainWall()
     let Parties = PartiesMainWall()
-    let user = theUser()
-    let newAccount = SignUP()
-    let userLogin = startLogin()
     let eventID:[String] = []
     var count:Int = 0
     var array:[Event] = []
@@ -34,63 +30,16 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewWillAppear(animated: Bool) {
         
-        //mainWall.eventPost()
-        //mainWall.eventIcon()
-        //mainWall.eventThumb()
-        //mainWall.eventCL()
-        //mainWall.eventCM()
-        //mainWall.profileName()
-        //mainWall.eventAddress()
-        //user.userBio()
-        //user.userStory()
-        //user.userFullName()
-        //user.userNames()
-        //user.userArea()
-        //user.userPhoto()
-        
-        //mainWall.eventID(eventID )
-        //favorite.addFavorite(0)
-        //mainWall.eventPost()
-        
+        getArrayCount()
+        Parties.partiesPost()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         transition.duration = 0.4
-        
-        Parties.partiesPost()
-        getArrayCount()
-        
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //let photo = UIImage(named: "bob")
-        //let story = UIImage(named: "story")
-        
-        //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
-        
-        //let favorite = userFavorites()
-        //favorite.getFavorite()
-        
-        //let favParty = partyFavorites()
-        //favParty.getFavorite()
-        
-        /*let name = "jonathan"
-        let post = "just created another post"
-        let profileImage = UIImage(named: "bob")
-        let location = "3300 University Blvd, Winter Park, FL 32792"
-        let likes = 0
-        let live = false
-        
-        let makeEvent = MakingEvent()
-        makeEvent.event(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
-        
-        /*let makeParty = MakingParty()
-        makeParty.party(name, thePost: post, TheProfilePicture: profileImage!, theLocation: location, theLive: live,thelikes:likes)*/
-        
         
     }
     
@@ -112,12 +61,14 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         let cell:PartyCell = collectionView.dequeueReusableCellWithReuseIdentifier("PartyCell", forIndexPath: indexPath) as! PartyCell
         
-        cell.post.text = array[indexPath.row].post
-        cell.PostName.text = array[indexPath.row].name
-        cell.likes.text = "Likes:\(array[indexPath.row].likes)"
-        cell.time.text = array[indexPath.row].time
+       
         
-        let numComments = array[indexPath.row].comments
+        cell.post.text = array[indexPath.item].post
+        cell.PostName.text = array[indexPath.item].name
+        cell.likes.text = "Likes:\(array[indexPath.item].likes)"
+        cell.time.text = array[indexPath.item].time
+        
+        let numComments = array[indexPath.item].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
@@ -126,7 +77,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         
         
-        if array[indexPath.row].live == true {
+        if array[indexPath.item].live == true {
             
             //cell.pulseEffect.hidden = false
             
@@ -180,11 +131,11 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
             print("passing data\(notification.object)")
             
             self.array = notification.object as! [Event]
+            self.array = self.array.reverse()
             
             print(self.array.count)
             
             self.collectionView.reloadData()
-            
         }
     }
     

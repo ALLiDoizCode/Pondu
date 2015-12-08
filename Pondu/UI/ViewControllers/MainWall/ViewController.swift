@@ -31,16 +31,14 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         
-       
+        getArrayCount()
+        mainWall.eventPost()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         transition.duration = 0.4
-        mainWall.eventPost()
-        getArrayCount()
-        
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
     }
@@ -63,18 +61,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        cell.post.text = array[indexPath.row].post
-        cell.PostName.text = array[indexPath.row].name
-        cell.likes.text = "Likes:\(array[indexPath.row].likes)"
-        cell.time.text = array[indexPath.row].time
+        cell.post.text = array[indexPath.item].post
+        cell.PostName.text = array[indexPath.item].name
+        cell.likes.text = "Likes:\(array[indexPath.item].likes)"
+        cell.time.text = array[indexPath.item].time
         
-        let numComments = array[indexPath.row].comments
+        let numComments = array[indexPath.item].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
-        if array[indexPath.row].live == true {
+        if array[indexPath.item].live == true {
         
             cell.live.text = "Live"
             cell.live.repeatCount = Float.infinity
