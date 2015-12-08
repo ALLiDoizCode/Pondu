@@ -41,6 +41,8 @@ class userSignUp {
                 
                 print("signUp Success")
                 
+                SwiftEventBus.post("SignUP")
+                
                 // Hooray! Let them use the app now.
             }
         }

@@ -96,8 +96,7 @@
                                         <exclude reference="zfj-cg-0v5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="57" y="308" width="340" height="12"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="zfj-cg-0v5"/>
                                     </mask>
@@ -1397,7 +1396,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="-15"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="5ea-2v-HE3" secondAttribute="trailing" constant="30" id="nBP-kg-lP0">
-                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="6"/>
                             </constraint>
                             <constraint firstItem="ZFC-pu-CRp" firstAttribute="width" secondItem="ZFC-pu-CRp" secondAttribute="height" multiplier="340:31" id="pfh-TD-bwx"/>
                             <constraint firstItem="yvQ-oP-qAg" firstAttribute="leading" secondItem="vj1-f8-6Uq" secondAttribute="leading" id="q4l-U5-iYn"/>
@@ -1572,6 +1571,7 @@
                         <outlet property="profileImage" destination="mWt-KA-i6S" id="Kzf-zf-E2L"/>
                         <outlet property="username" destination="yzd-RV-V58" id="AiS-C8-cRU"/>
                         <outlet property="verifyPassword" destination="ZFC-pu-CRp" id="eSZ-cd-htq"/>
+                        <segue destination="6P7-He-K80" kind="presentation" identifier="Home" id="0Z6-HZ-xb1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ylx-Qx-FdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1588,4 +1588,7 @@
         <image name="bike" width="2048" height="1356"/>
         <image name="placeholder" width="1181" height="1672"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Z6-HZ-xb1"/>
+    </inferredMetricsTieBreakers>
 </document>

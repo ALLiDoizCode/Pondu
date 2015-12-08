@@ -96,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftEventBus.framework"
+  install_framework "Pods/SwiftSpinner.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Bolts.framework"
@@ -110,4 +111,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftEventBus.framework"
+  install_framework "Pods/SwiftSpinner.framework"
 fi

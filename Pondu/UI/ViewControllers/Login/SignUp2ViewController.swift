@@ -9,11 +9,15 @@
 import UIKit
 import ImagePickerSheetController
 import Photos
+import SwiftSpinner
+import SwiftEventBus
+import BubbleTransition
 
-class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate{
 
     var email:String!
     var fullName:String!
+    let segueID = "Home"
     
     @IBOutlet weak var addImage: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
@@ -23,6 +27,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     @IBOutlet weak var next: UIBarButtonItem!
     
     let newAccount = SignUP()
+    let transition = BubbleTransition()
     
     
     override func viewWillLayoutSubviews() {
@@ -40,6 +45,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         username.delegate = self
         password.delegate = self
         verifyPassword.delegate = self
+        transition.duration = 0.4
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +73,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         let manager = PHImageManager.defaultManager()
         let initialRequestOptions = PHImageRequestOptions()
         initialRequestOptions.resizeMode = .Fast
-        initialRequestOptions.deliveryMode = .FastFormat
+        initialRequestOptions.deliveryMode = .HighQualityFormat
         
         let presentImagePickerController: UIImagePickerControllerSourceType -> () = { source in
             let controller = UIImagePickerController()
@@ -88,14 +94,16 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
             }, secondaryHandler: { action, numberOfPhotos in
                 print("Comment \(numberOfPhotos) photos")
                 
+                let size = CGSize(width: controller.selectedImageAssets[0].pixelWidth, height: controller.selectedImageAssets[0].pixelHeight)
+                
                 manager.requestImageForAsset(controller.selectedImageAssets[0],
-                    targetSize: PHImageManagerMaximumSize,
-                    contentMode: .AspectFit,
-                    options: nil) { (finalResult, _) in
+                    targetSize: size,
+                    contentMode: .AspectFill,
+                    options:initialRequestOptions) { (finalResult, _) in
                         self.profileImage.image = finalResult
                         print(finalResult)
                 }
-
+                
         
         }))
             controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
@@ -125,7 +133,20 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
 
     @IBAction func nextBtn(sender: AnyObject) {
         
-        if username.text != "" && password.text != "" && verifyPassword != "" && profileImage.image != nil && password.text == verifyPassword.text {
+        let placeholder = UIImage(named: "placeholder")
+        
+        SwiftEventBus.onMainThread(self, name: "SignUp") { (result) -> Void in
+            
+            SwiftSpinner.hide({
+                
+                self.performSegueWithIdentifier(self.segueID, sender: self)
+            
+            })
+        }
+        
+        if username.text != "" && password.text != "" && verifyPassword != "" && profileImage.image != placeholder && password.text == verifyPassword.text {
+            
+             SwiftSpinner.show("Uploading Image...")
             
         newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:profileImage.image!,stories:profileImage.image!)
             
@@ -145,14 +166,21 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == segueID {
+            
+            let controller = segue.destinationViewController
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .Custom
+            
+        }
+        
     }
-    */
+    
 
 }
