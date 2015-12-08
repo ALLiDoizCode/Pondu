@@ -116,6 +116,12 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        profileImage.image = image
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     @IBAction func nextBtn(sender: AnyObject) {
         
@@ -136,6 +142,8 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         
         
     }
+    
+    
     
     /*
     // MARK: - Navigation
