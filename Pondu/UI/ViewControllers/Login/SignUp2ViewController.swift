@@ -89,6 +89,8 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         }
         
         let controller = ImagePickerSheetController(mediaType: .Image)
+        controller.maximumSelection = 1
+        
         controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use This Image", comment: "Action Title"), handler: { _ in
             presentImagePickerController(.Camera)
             }, secondaryHandler: { action, numberOfPhotos in
@@ -100,6 +102,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
                     targetSize: size,
                     contentMode: .AspectFill,
                     options:initialRequestOptions) { (finalResult, _) in
+
                         self.profileImage.image = finalResult
                         print(finalResult)
                 }
@@ -135,7 +138,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         
         let placeholder = UIImage(named: "placeholder")
         
-        SwiftEventBus.onMainThread(self, name: "SignUp") { (result) -> Void in
+        SwiftEventBus.onMainThread(self, name: "SignUpSucess") { (result) -> Void in
             
             SwiftSpinner.hide({
                 

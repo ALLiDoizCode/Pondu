@@ -1396,7 +1396,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="-15"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="5ea-2v-HE3" secondAttribute="trailing" constant="30" id="nBP-kg-lP0">
-                                <variation key="heightClass=regular-widthClass=compact" constant="6"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-17"/>
                             </constraint>
                             <constraint firstItem="ZFC-pu-CRp" firstAttribute="width" secondItem="ZFC-pu-CRp" secondAttribute="height" multiplier="340:31" id="pfh-TD-bwx"/>
                             <constraint firstItem="yvQ-oP-qAg" firstAttribute="leading" secondItem="vj1-f8-6Uq" secondAttribute="leading" id="q4l-U5-iYn"/>
