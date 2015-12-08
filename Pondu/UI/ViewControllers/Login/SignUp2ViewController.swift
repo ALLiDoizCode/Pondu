@@ -17,7 +17,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
 
     var email:String!
     var fullName:String!
-    let segueID = "Home"
+    let segueID = "school"
     
     @IBOutlet weak var addImage: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
@@ -138,27 +138,10 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         
         let placeholder = UIImage(named: "placeholder")
         
-        SwiftEventBus.onMainThread(self, name: "SignUpSucess") { (result) -> Void in
-            
-            SwiftSpinner.hide({
-                
-                self.performSegueWithIdentifier(self.segueID, sender: self)
-            
-            })
-        }
-        
         if username.text != "" && password.text != "" && verifyPassword != "" && profileImage.image != placeholder && password.text == verifyPassword.text {
             
-             SwiftSpinner.show("Uploading Image...")
+                 self.performSegueWithIdentifier(self.segueID, sender: self)
             
-        newAccount.AccounSetup("",fullName:fullName,userName:username.text!,password:password.text!,Bio:"",email:email,phone:"",photo:profileImage.image!,stories:profileImage.image!)
-            
-            print(username.text)
-            print(password.text)
-            print(verifyPassword.text)
-            print(verifyPassword.text)
-            print(email)
-            print(fullName)
         }else{
             
            
@@ -168,8 +151,6 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     }
     
     
-    
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -177,9 +158,15 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         
         if segue.identifier == segueID {
             
-            let controller = segue.destinationViewController
+            let controller = segue.destinationViewController as! SignUp3ViewController
             controller.transitioningDelegate = self
             controller.modalPresentationStyle = .Custom
+            
+            controller.fullName = fullName
+            controller.email = email
+            controller.username = username.text
+            controller.password = password.text
+            controller.image = profileImage.image
             
         }
         

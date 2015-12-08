@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18AA288CE9F1A161EF6EE751 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED51165405F57B97F81F9F11 /* Pods.framework */; };
 		4D0018F91C148A4A00BC28A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */; };
+		4D0187581C175BE600288835 /* SignUp3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0187571C175BE600288835 /* SignUp3ViewController.swift */; };
 		4D01CA801C0AD3FB0000F367 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01CA7F1C0AD3FB0000F367 /* LiveViewController.swift */; };
 		4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */; };
 		4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6C1BDD639100B30C0D /* ViewController.swift */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4D0187571C175BE600288835 /* SignUp3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp3ViewController.swift; sourceTree = "<group>"; };
 		4D01CA7F1C0AD3FB0000F367 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		4D01DB671BDD639100B30C0D /* Pondu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pondu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */,
 				4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */,
 				4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */,
+				4D0187571C175BE600288835 /* SignUp3ViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */,
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */,
+				4D0187581C175BE600288835 /* SignUp3ViewController.swift in Sources */,
 				4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,

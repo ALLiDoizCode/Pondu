@@ -23,8 +23,9 @@ class userData {
     var partyFavorites:[String] = []
     var photo:String = ""
     var fav:Bool!
+    var year:String!
     
-    init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,theFavorites:[String],thePartyFavorites:[String],thePhoto:String,theFav:Bool){
+    init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,theFavorites:[String],thePartyFavorites:[String],thePhoto:String,theFav:Bool,theYear:String){
         
         
         objectID = theObjectID
@@ -40,6 +41,7 @@ class userData {
         partyFavorites = thePartyFavorites
         photo = thePhoto
         fav = theFav
+        year = theYear
         
     }
     
