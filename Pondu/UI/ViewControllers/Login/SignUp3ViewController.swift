@@ -85,6 +85,12 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
     
     @IBAction func pickSchoolBtn(sender: AnyObject) {
         
+        
+        self.schools = []
+        
+        self.pickerView.reloadAllComponents()
+
+        
         var alertController:UIAlertController?
         alertController = UIAlertController(title: "Enter Text",
             message: "Enter some text below",
