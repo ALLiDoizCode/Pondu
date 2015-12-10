@@ -1736,12 +1736,12 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah6-I7-o0A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ah6-I7-o0A">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="MOh-fh-U9s">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="123"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="330"/>
                                     </constraint>
                                 </constraints>
                                 <state key="normal" title="Pick Your School">

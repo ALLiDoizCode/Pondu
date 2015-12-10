@@ -174,6 +174,11 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
         
         return schools[row]
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        pickSchool.setTitle(schools[row], forState: UIControlState.Normal)
+    }
 
     
         func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
