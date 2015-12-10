@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/BubbleTransition.framework"
   install_framework "Pods/FXBlurView.framework"
@@ -99,6 +100,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SwiftSpinner.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/BubbleTransition.framework"
   install_framework "Pods/FXBlurView.framework"

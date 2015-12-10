@@ -12,6 +12,7 @@ pod 'FXBlurView', '~> 1.6.4'
 pod "ImagePickerSheetController", "~> 0.9.1"
 pod 'IQKeyboardManagerSwift'
 pod "SwiftSpinner"
+pod 'Alamofire', '~> 3.1.3'
 
 
 

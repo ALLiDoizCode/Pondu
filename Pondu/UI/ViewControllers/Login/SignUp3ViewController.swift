@@ -12,21 +12,27 @@ import Photos
 import SwiftSpinner
 import SwiftEventBus
 import BubbleTransition
+import Alamofire
 
-class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDelegate,UITextFieldDelegate,UINavigationControllerDelegate{
+class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDelegate,UITextFieldDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIAlertViewDelegate{
     
     let segueID = "Home"
     
     let newAccount = SignUP()
     let transition = BubbleTransition()
+    let client:college = college()
     
     var username:String!
     var password:String!
     var email:String!
     var fullName:String!
     var image:UIImage!
+    
+    var schools:[String] = []
 
+    @IBOutlet weak var pickerView: UIPickerView!
   
+    @IBOutlet weak var pickSchool: UIButton!
     @IBOutlet weak var graduation: UITextField!
     @IBOutlet weak var next: UIButton!
     
@@ -35,8 +41,22 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
         createUser()
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SwiftEventBus.onMainThread(self, name:"school") { (result) -> Void in
+            
+            self.schools = result.object as! [String]
+            
+            self.pickerView.reloadAllComponents()
+            
+        }
         
         transition.duration = 0.4
         
@@ -63,6 +83,46 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func pickSchoolBtn(sender: AnyObject) {
+        
+        var alertController:UIAlertController?
+        alertController = UIAlertController(title: "Enter Text",
+            message: "Enter some text below",
+            preferredStyle: .Alert)
+        
+        
+        alertController!.addTextFieldWithConfigurationHandler(
+            {(textField: UITextField!) in
+                textField.placeholder = "Enter something"
+        })
+        
+        let action = UIAlertAction(title: "Submit",
+            style: UIAlertActionStyle.Default,
+            handler: {[weak self]
+                (paramAction:UIAlertAction!) in
+                if let textFields = alertController?.textFields{
+                    let theTextFields = textFields as [UITextField]
+                    let enteredText = theTextFields[0].text
+                    self!.client.getData(enteredText!)
+                    print("Entered text \(enteredText)")
+                    
+                    //self!.displayLabel.text = enteredText
+                }
+            })
+        
+        
+    
+        alertController?.addAction(action)
+        self.presentViewController(alertController!,
+            animated: true,completion:{
+                
+                
+        })
+        
+        self.pickerView.reloadAllComponents()
+    }
+    
+
     
     func createUser(){
         
@@ -89,6 +149,26 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             print(fullName)
     }
 }
+    
+    
+    
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return schools.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return schools[row]
+    }
+
     
         func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
             transition.transitionMode = .Present
