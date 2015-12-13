@@ -77,6 +77,17 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
         
         return true
     }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let maxLength = 4
+        let currentString: NSString = textField.text!
+        let newString: NSString =
+        currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -109,8 +120,10 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
                 if let textFields = alertController?.textFields{
                     let theTextFields = textFields as [UITextField]
                     let enteredText = theTextFields[0].text
-                    self!.client.getData(enteredText!)
-                    print("Entered Shool Name \(enteredText)")
+                    let newString = enteredText!.stringByReplacingOccurrencesOfString(" ", withString: "_")
+
+                    self!.client.getData(newString)
+                    print("Entered Shool Name \(newString)")
                     
                     //self!.displayLabel.text = enteredText
                 }
@@ -135,9 +148,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
 
     
     func createUser(){
-        
-        let placeholder = UIImage(named: "placeholder")
-        
+                
         SwiftEventBus.onMainThread(self, name: "SignUpSucess") { (result) -> Void in
             
             SwiftSpinner.hide({
@@ -166,14 +177,6 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             
             SweetAlert().showAlert("Enter Graduation Date", subTitle: ":(", style: AlertStyle.Error)
         }
-}
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
-        let maxLength = 4
-        let currentString: NSString = textField.text!
-        let newString: NSString =
-        currentString.stringByReplacingCharactersInRange(range, withString: string)
-        return newString.length <= maxLength
     }
     
     
