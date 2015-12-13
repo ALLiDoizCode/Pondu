@@ -96,7 +96,8 @@
                                         <exclude reference="zfj-cg-0v5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="308" width="340" height="12"/>
                                     <mask key="constraints">
                                         <include reference="zfj-cg-0v5"/>
                                     </mask>
@@ -473,7 +474,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Jc5-e6-FIn"/>
                                     <constraint firstAttribute="width" constant="70" id="VBx-7W-ZdE">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="95"/>
                                     </constraint>
                                 </constraints>
                                 <state key="normal" title="Sign-in">
@@ -594,7 +595,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="cyj-KU-Mwh" firstAttribute="leading" secondItem="IwQ-2c-gHg" secondAttribute="trailing" constant="62" id="PQt-zI-xhr">
-                                <variation key="heightClass=regular-widthClass=compact" constant="57"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="52"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="xdQ-Bk-juy" secondAttribute="trailing" id="RzJ-0K-s5X"/>
                             <constraint firstItem="kcc-j4-BM2" firstAttribute="top" secondItem="IwQ-2c-gHg" secondAttribute="bottom" constant="10" id="SNL-wI-gRa">
