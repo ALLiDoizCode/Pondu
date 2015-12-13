@@ -75,7 +75,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         return true
     }
     
-    
+    // func thata fires with tappig on profile image
     func addImage(sender: UITapGestureRecognizer) {
         
         let manager = PHImageManager.defaultManager()
