@@ -125,7 +125,11 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
                 
         })
         
-        self.pickerView.reloadAllComponents()
+        if schools.count > 0 {
+            
+            self.pickerView.reloadAllComponents()
+            
+        }
     }
     
 
@@ -187,12 +191,29 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return schools[row].name
+       
+        if schools.count > 0 {
+            
+            return schools[row].name
+            
+        }else {
+            
+             return ""
+        }
+
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        pickSchool.setTitle(schools[row].name, forState: UIControlState.Normal)
+        if schools.count > 0 {
+            
+            pickSchool.setTitle(schools[row].name, forState: UIControlState.Normal)
+            
+        }else {
+            
+            SweetAlert().showAlert(":(", subTitle: "Sorry We Can't Find Your School", style: AlertStyle.Error)
+        }
+        
     }
 
     
