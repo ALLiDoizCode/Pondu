@@ -142,12 +142,23 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
             
                  self.performSegueWithIdentifier(self.segueID, sender: self)
             
+        }else if username.text == "" && password.text == "" && verifyPassword.text == "" && profileImage.image == placeholder {
+            
+            SweetAlert().showAlert(":(", subTitle: "One or More Fields Are Empty", style: AlertStyle.Error)
+            
         }else if profileImage.image == placeholder {
             
              SweetAlert().showAlert("Choose a Picture", subTitle: ":(", style: AlertStyle.Error)
-        }
-        
-        else if password.text != verifyPassword.text {
+            
+        }else if username.text == "" {
+            
+            SweetAlert().showAlert("Choose a User Name", subTitle: ":(", style: AlertStyle.Error)
+            
+        }else if password.text == "" && verifyPassword.text == "" {
+            
+            SweetAlert().showAlert("Choose a Password", subTitle: ":(", style: AlertStyle.Error)
+            
+        }else if password.text != verifyPassword.text {
             
            SweetAlert().showAlert("Passwords Don't Match", subTitle: ":(", style: AlertStyle.Error)
             
