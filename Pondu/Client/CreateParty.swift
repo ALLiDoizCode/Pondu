@@ -19,7 +19,7 @@ class createParty {
         let currentUser = PFUser.currentUser()
         
         
-        let file = currentUser?.objectForKey("testVideo") as! PFFile
+        let file = currentUser?.objectForKey("photo") as! PFFile
         
         SwiftEventBus.onMainThread(self, name: "makeParty") { result in
             

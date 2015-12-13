@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/BubbleTransition.framework"
+  install_framework "Pods/FXBlurView.framework"
+  install_framework "Pods/IQKeyboardManagerSwift.framework"
+  install_framework "Pods/ImagePickerSheetController.framework"
   install_framework "Pods/Kingfisher.framework"
   install_framework "Pods/LTMorphingLabel.framework"
   install_framework "Pods/PagingMenuController.framework"
@@ -93,10 +97,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftEventBus.framework"
+  install_framework "Pods/SwiftSpinner.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/BubbleTransition.framework"
+  install_framework "Pods/FXBlurView.framework"
+  install_framework "Pods/IQKeyboardManagerSwift.framework"
+  install_framework "Pods/ImagePickerSheetController.framework"
   install_framework "Pods/Kingfisher.framework"
   install_framework "Pods/LTMorphingLabel.framework"
   install_framework "Pods/PagingMenuController.framework"
@@ -104,4 +113,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftEventBus.framework"
+  install_framework "Pods/SwiftSpinner.framework"
 fi

@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        //enables IQKeyboardManager
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

@@ -35,6 +35,7 @@ class parseUser {
                         let phone = object.objectForKey("Phone") as! String!
                         let story = object.objectForKey("Stories") as! PFFile!
                         let photo = object.objectForKey("photo") as! PFFile!
+                        let year = object.objectForKey("Year") as! String!
                         
                         if let favID = favId {
                             
@@ -44,7 +45,7 @@ class parseUser {
                                     
                                     if let userBio = bio {
                                         
-                                        theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true)
+                                        theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true,theYear:year )
                                         
                                             print("there are \(favID.count) fav ids")
                                             print("queryID \(theUser)")
@@ -55,7 +56,7 @@ class parseUser {
                                          
                                     }else{
                                         
-                                        theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true)
+                                        theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true,theYear:year)
                                         
                                         if object.objectId == favID[i] {
                                             
@@ -81,7 +82,7 @@ class parseUser {
                             
                             if let userBio = bio {
                                 
-                                theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:false)
+                                theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: userBio, thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:false,theYear:year)
                                 
                                 
                                     print("queryID \(theUser)")
@@ -95,7 +96,7 @@ class parseUser {
                                 
                             }else{
                                 
-                                theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:false)
+                                theUser = userData(theObjectID: userID!, theArea: area, theFullName: fullName, theUserName: userName, thePassWord: "", theBio: "", thePhone: phone, theEmail: "", theStory: story.url!, theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:false,theYear:year)
                                 
                                     print("queryID \(theUser)")
                                     print("recived fav post")

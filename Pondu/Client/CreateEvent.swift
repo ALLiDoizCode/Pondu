@@ -19,7 +19,7 @@ class createEvent {
         let event = PFObject(className: "MainWall")
         let currentUser = PFUser.currentUser()
         
-        let file = currentUser?.objectForKey("testVideo") as! PFFile
+        let file = currentUser?.objectForKey("photo") as! PFFile
         
         SwiftEventBus.onMainThread(self, name: "makeEvent") { result in
             

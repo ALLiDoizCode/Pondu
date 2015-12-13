@@ -35,7 +35,7 @@ class PartyCell: UICollectionViewCell {
         let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
         
         // Based on the range constants, update the cell’s alpha based on the delta value.
-        let minAlpha: CGFloat = 0.3
+        let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
         coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         

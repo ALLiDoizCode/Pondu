@@ -14,40 +14,6 @@ class ParseMainWall {
     
     var mainWallID:[String] = []
     
-    func idQuery(){
-        
-        var eventID:[String] = []
-        
-        let query = PFQuery(className:"MainWall")
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            if error == nil {
-                // The find succeeded.
-                print("Successfully retrieved \(objects!.count) Ids.")
-                
-                // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        //print(name)
-                        
-                        eventID.append(object.objectId!)
-                    }
-                    
-                    SwiftEventBus.post("MainWallID", sender: eventID)
-                    
-                    SwiftEventBus.post("Favorite", sender: eventID)
-                    
-                }
-            } else {
-                // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-    
-    
-    
     func postQuery(favId:[String]?){
         
                 var mainWall:[Event] = []
@@ -243,14 +209,8 @@ class ParseMainWall {
                                 
                                 if mainWall[0].fav == true {
                                     print("fav count \(mainWall.count)")
-                                    /*var postArray:[AnyObject] = []
-                                    postArray.append(favPost)*/
                                     SwiftEventBus.post("FavoritesList", sender: mainWall)
                                 }else {
-                                    
-                                    //var mainWallData:[AnyObject] = []
-                                    //mainWallData.append(eventPost)
-                                    //mainWallData.append(self.mainWallID)
                                     print("mainwall count \(mainWall.count)")
                                     SwiftEventBus.post("MainWallEvent", sender: mainWall)
                                 }

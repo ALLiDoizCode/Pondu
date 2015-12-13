@@ -18,10 +18,6 @@ import BubbleTransition
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate {
     
     let mainWall = PresentMainWall()
-    let Parties = PartiesMainWall()
-    let user = theUser()
-    let newAccount = SignUP()
-    let userLogin = startLogin()
     let eventID:[String] = []
     var count:Int = 0
     var array:[Event] = []
@@ -30,40 +26,21 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var indexOfUrl:[Character] = []
     let transition = BubbleTransition()
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     override func viewWillAppear(animated: Bool) {
         
-       
-        
-        
+        getArrayCount()
+        mainWall.eventPost()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         transition.duration = 0.4
-        mainWall.eventPost()
-        getArrayCount()
-        
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //let photo = UIImage(named: "bob")
-        //let story = UIImage(named: "story")
-        
-        //newAccount.AccounSetup("Miami",fullName:"bob",userName:"bob",password:"password",Bio:"bob's bio",email:"bob@bob.com",phone:"555-555-555",photo:photo!,stories:story!)
-        
-       
-        
-           
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,18 +61,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        cell.post.text = array[indexPath.row].post
-        cell.PostName.text = array[indexPath.row].name
-        cell.likes.text = "Likes:\(array[indexPath.row].likes)"
-        cell.time.text = array[indexPath.row].time
+        cell.post.text = array[indexPath.item].post
+        cell.PostName.text = array[indexPath.item].name
+        cell.likes.text = "Likes:\(array[indexPath.item].likes)"
+        cell.time.text = array[indexPath.item].time
         
-        let numComments = array[indexPath.row].comments
+        let numComments = array[indexPath.item].comments
         
         cell.comments.text = "Comments:\(numComments.count)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
-        if array[indexPath.row].live == true {
+        if array[indexPath.item].live == true {
         
             cell.live.text = "Live"
             cell.live.repeatCount = Float.infinity

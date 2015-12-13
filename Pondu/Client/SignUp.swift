@@ -12,12 +12,12 @@ import Parse
 
 class userSignUp {
     
-    func SignUp(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage){
+    func SignUp(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage,theYear:String,TheSchool:String){
         
-        let photoData = UIImagePNGRepresentation(photo)
+        let photoData = UIImageJPEGRepresentation(photo, 0.5)
         let photoFile = PFFile(name:"photo", data:photoData!)
         
-        let storyData = UIImagePNGRepresentation(stories)
+        let storyData =  UIImageJPEGRepresentation(stories, 0.5)
         let storyFile = PFFile(name:"story", data:storyData!)
         
         let user = PFUser()
@@ -31,6 +31,8 @@ class userSignUp {
         user["Bio"] = Bio
         user["Stories"] = storyFile
         user["photo"] = photoFile
+        user["Year"] = theYear
+        user["Schhol"] = TheSchool
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
@@ -40,6 +42,8 @@ class userSignUp {
             } else {
                 
                 print("signUp Success")
+                
+                SwiftEventBus.postToMainThread("SignUpSucess")
                 
                 // Hooray! Let them use the app now.
             }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18AA288CE9F1A161EF6EE751 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED51165405F57B97F81F9F11 /* Pods.framework */; };
+		4D0018F91C148A4A00BC28A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */; };
+		4D0187581C175BE600288835 /* SignUp3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0187571C175BE600288835 /* SignUp3ViewController.swift */; };
 		4D01CA801C0AD3FB0000F367 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01CA7F1C0AD3FB0000F367 /* LiveViewController.swift */; };
 		4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */; };
 		4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB6C1BDD639100B30C0D /* ViewController.swift */; };
@@ -17,6 +19,7 @@
 		4D0512571C078FAB00FB414D /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0512561C078FAB00FB414D /* Live.storyboard */; };
 		4D05125B1C07984200FB414D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05125A1C07984200FB414D /* Player.swift */; };
 		4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */; };
+		4D14C6341C193E9200BAEA1F /* school.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14C6331C193E9200BAEA1F /* school.swift */; };
 		4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */; };
 		4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E21BF2449A00B2AFA2 /* FavoriteViewController.swift */; };
 		4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E61BF246CD00B2AFA2 /* FavEventsViewController.swift */; };
@@ -24,10 +27,18 @@
 		4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */; };
 		4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */; };
 		4D1F8F6F1BFE593400C2A61F /* CreateEvent:Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */; };
+		4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */; };
+		4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */; };
+		4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436291C13D0330032FB27 /* LoginViewController.swift */; };
+		4D2BE9A91C1CF893001810BB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9A81C1CF893001810BB /* School.swift */; };
+		4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */; };
+		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
 		4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */; };
+		4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */; };
+		4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */; };
 		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
 		4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683D1BE9902200591DF6 /* makeEvent.swift */; };
@@ -39,6 +50,8 @@
 		4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */; };
 		4DC5FAEA1BFA5BF6006AFE00 /* MainStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FAE91BFA5BF6006AFE00 /* MainStoryCell.swift */; };
 		4DC5FAEC1BFA5C05006AFE00 /* FavoriteStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FAEB1BFA5C05006AFE00 /* FavoriteStoryCell.swift */; };
+		4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */; };
+		4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */; };
 		4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */; };
 		4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
@@ -86,6 +99,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4D0187571C175BE600288835 /* SignUp3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp3ViewController.swift; sourceTree = "<group>"; };
 		4D01CA7F1C0AD3FB0000F367 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		4D01DB671BDD639100B30C0D /* Pondu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pondu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01DB6A1BDD639100B30C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +116,7 @@
 		4D0512561C078FAB00FB414D /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		4D05125A1C07984200FB414D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
+		4D14C6331C193E9200BAEA1F /* school.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = school.swift; sourceTree = "<group>"; };
 		4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
 		4D1843E21BF2449A00B2AFA2 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		4D1843E61BF246CD00B2AFA2 /* FavEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavEventsViewController.swift; sourceTree = "<group>"; };
@@ -108,10 +124,18 @@
 		4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavEventCell.swift; sourceTree = "<group>"; };
 		4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartyCell.swift; sourceTree = "<group>"; };
 		4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "CreateEvent:Party.storyboard"; sourceTree = "<group>"; };
+		4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login-SignUp.storyboard"; sourceTree = "<group>"; };
+		4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GradientView:Button.swift"; sourceTree = "<group>"; };
+		4D2436291C13D0330032FB27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4D2BE9A81C1CF893001810BB /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
+		4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
+		4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
 		4D86683D1BE9902200591DF6 /* makeEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = makeEvent.swift; sourceTree = "<group>"; };
@@ -123,6 +147,8 @@
 		4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryLayout.swift; sourceTree = "<group>"; };
 		4DC5FAE91BFA5BF6006AFE00 /* MainStoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryCell.swift; sourceTree = "<group>"; };
 		4DC5FAEB1BFA5C05006AFE00 /* FavoriteStoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStoryCell.swift; sourceTree = "<group>"; };
+		4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListViewController.swift; sourceTree = "<group>"; };
 		4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavStoryListViewController.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -223,6 +249,7 @@
 		4D01DB691BDD639100B30C0D /* Pondu */ = {
 			isa = PBXGroup;
 			children = (
+				4D7B58CF1C19217B006B71CA /* JSON */,
 				4D91A9CE1BE5F56300C34281 /* Classes */,
 				4D7C0CA01BE08B6400CCB2DE /* UI */,
 				4DD1749E1BDD794E00B64E0B /* Client */,
@@ -282,6 +309,26 @@
 			path = MainWall;
 			sourceTree = "<group>";
 		};
+		4D2436281C13D0150032FB27 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4D2436291C13D0330032FB27 /* LoginViewController.swift */,
+				4D0018F81C148A4A00BC28A3 /* WelcomeViewController.swift */,
+				4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */,
+				4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */,
+				4D0187571C175BE600288835 /* SignUp3ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4D7B58CF1C19217B006B71CA /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4D7B58D41C192251006B71CA /* SwiftyJSON.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		4D7C0CA01BE08B6400CCB2DE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,8 +363,17 @@
 				4D91A9D11BE5F7F200C34281 /* User.swift */,
 				4D86683D1BE9902200591DF6 /* makeEvent.swift */,
 				4D86683F1BE9A98600591DF6 /* MakeParty.swift */,
+				4D2BE9A81C1CF893001810BB /* School.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		4DC8BC201C1E2F5200E6D2F5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4DD1749D1BDD793F00B64E0B /* Presenters */ = {
@@ -341,6 +397,7 @@
 		4DD1749E1BDD794E00B64E0B /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				4D14C6331C193E9200BAEA1F /* school.swift */,
 				4D8668411BE9A9D100591DF6 /* CreateParty.swift */,
 				4D8668391BE989B500591DF6 /* CreateEvent.swift */,
 				4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */,
@@ -358,9 +415,11 @@
 		4DE1A1BB1BEA6F85009BCF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */,
 				4D05125A1C07984200FB414D /* Player.swift */,
 				4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */,
 				4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */,
+				4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +444,8 @@
 		4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DC8BC201C1E2F5200E6D2F5 /* Home */,
+				4D2436281C13D0150032FB27 /* Login */,
 				4D0512531C07889000FB414D /* Live */,
 				4D80BCDF1BFE8677000EAB33 /* Creating-Events/Parties */,
 				4D1843E41BF2450E00B2AFA2 /* Favorites */,
@@ -399,8 +460,10 @@
 			children = (
 				4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */,
 				4DE1A1C21BEA7133009BCF55 /* Main.storyboard */,
+				4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */,
 				4D0512561C078FAB00FB414D /* Live.storyboard */,
 				4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */,
+				4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */,
 			);
 			path = "Storyboards&Xibs";
 			sourceTree = "<group>";
@@ -537,6 +600,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */,
+				4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */,
 				4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */,
 				4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */,
 				4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */,
@@ -618,7 +683,9 @@
 				4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */,
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,
 				4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */,
+				4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */,
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
+				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
 				4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
@@ -633,14 +700,20 @@
 				4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */,
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */,
+				4D0187581C175BE600288835 /* SignUp3ViewController.swift in Sources */,
 				4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */,
 				4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */,
+				4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */,
 				4D91A9D21BE5F7F200C34281 /* User.swift in Sources */,
+				4D0018F91C148A4A00BC28A3 /* WelcomeViewController.swift in Sources */,
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
+				4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */,
+				4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */,
+				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
 				4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */,
@@ -650,6 +723,8 @@
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
 				4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */,
+				4D14C6341C193E9200BAEA1F /* school.swift in Sources */,
+				4D2BE9A91C1CF893001810BB /* School.swift in Sources */,
 				4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */,
 				4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */,
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
@@ -663,6 +738,7 @@
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
 				4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */,
+				4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */,
 				4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */,
 				4DC5FAEC1BFA5C05006AFE00 /* FavoriteStoryCell.swift in Sources */,
 			);
@@ -786,6 +862,7 @@
 			baseConfigurationReference = 78932290621BC3D56EBC5FA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
@@ -794,6 +871,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Pondu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Header.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -803,6 +882,7 @@
 			baseConfigurationReference = AEAEA2AD6909E8F8C4063850 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
@@ -811,6 +891,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Pondu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

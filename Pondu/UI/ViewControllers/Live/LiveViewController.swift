@@ -52,7 +52,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         self.view!.addGestureRecognizer(tapRect)
         
         
-       swipeDownRect.addTarget(self, action: "swippedDown:")
+        swipeDownRect.addTarget(self, action: "swippedDown:")
         swipeDownRect.numberOfTouchesRequired = 1
         swipeDownRect.direction = .Down
         self.view!.addGestureRecognizer(swipeDownRect)
@@ -89,6 +89,10 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     func isImage(image:String){
         
+        imageViewObject = UIImageView(frame:self.view.frame);
+        imageViewObject.contentMode = .ScaleAspectFill
+        imageViewObject.clipsToBounds = true
+        
         if player.view.hidden == false {
             
             player.stop()
@@ -96,19 +100,18 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
             print("got image \(image)")
             
             imageViewObject.kf_setImageWithURL(NSURL(string:image)!, placeholderImage: UIImage(named: "placeholder"))
-            imageViewObject.contentMode = .ScaleAspectFill
-            self.view.addSubview(imageViewObject)
+           
+            
         }else {
             
             print("got image \(image)")
             
-            imageViewObject = UIImageView(frame:self.view.frame);
+            
             imageViewObject.kf_setImageWithURL(NSURL(string:image)!, placeholderImage: UIImage(named: "placeholder"))
-            imageViewObject.contentMode = .ScaleAspectFill
-            self.view.addSubview(imageViewObject)
+        
         }
         
-        
+        self.view.addSubview(imageViewObject)
         
     }
     
