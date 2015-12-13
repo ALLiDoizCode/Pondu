@@ -12,7 +12,7 @@ import SwiftEventBus
 
 class college {
     
-    var listSchool:[String] = []
+    var listSchool:[School] = []
     
     func getData(name:String){
         
@@ -35,11 +35,20 @@ class college {
                     
                     for var i = 0; i < schoolList.count; i++ {
                         
-                        print("jsonData:\(schoolList[i]["INSTNM"])")
+                        //print("jsonData:\(schoolList[i]["INSTNM"])")
+                        print("jsonData:\(schoolList[i])")
                         
                         let names = schoolList[i]["INSTNM"].stringValue
+                        let city = schoolList[i]["CITY"].stringValue
+                        let zipcode = schoolList[i]["ZIP"].stringValue
+                        let address = schoolList[i]["ADDR"].stringValue
+                        let long = schoolList[i]["LONGITUD"].stringValue
+                        let lat = schoolList[i]["LATITUDE"].stringValue
+                        let county = schoolList[i]["COUNTYNM"].stringValue
                         
-                        self.listSchool.append(names)
+                        var theSchool = School(theName: names, theCity: city, theZip: zipcode, theAddress: address, theCounty: county, theLong: long, theLat: lat)
+                        
+                        self.listSchool.append(theSchool)
 
                     }
                     

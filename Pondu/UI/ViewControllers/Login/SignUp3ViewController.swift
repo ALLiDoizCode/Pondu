@@ -28,7 +28,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
     var fullName:String!
     var image:UIImage!
     
-    var schools:[String] = []
+    var schools:[School] = []
 
     @IBOutlet weak var pickerView: UIPickerView!
   
@@ -52,7 +52,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
         
         SwiftEventBus.onMainThread(self, name:"school") { (result) -> Void in
             
-            self.schools = result.object as! [String]
+            self.schools = result.object as! [School]
             
             self.pickerView.reloadAllComponents()
             
@@ -92,17 +92,17 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
 
         
         var alertController:UIAlertController?
-        alertController = UIAlertController(title: "Enter Text",
-            message: "Enter some text below",
+        alertController = UIAlertController(title: "Search",
+            message: "Entered Shool Name",
             preferredStyle: .Alert)
         
         
         alertController!.addTextFieldWithConfigurationHandler(
             {(textField: UITextField!) in
-                textField.placeholder = "Enter something"
+                textField.placeholder = "School Name"
         })
         
-        let action = UIAlertAction(title: "Submit",
+        let action = UIAlertAction(title: "Search",
             style: UIAlertActionStyle.Default,
             handler: {[weak self]
                 (paramAction:UIAlertAction!) in
@@ -110,7 +110,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
                     let theTextFields = textFields as [UITextField]
                     let enteredText = theTextFields[0].text
                     self!.client.getData(enteredText!)
-                    print("Entered text \(enteredText)")
+                    print("Entered Shool Name \(enteredText)")
                     
                     //self!.displayLabel.text = enteredText
                 }
@@ -143,16 +143,17 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             })
         }
         
-        if graduation.text != "" {
+        if graduation.text != "" && pickSchool.titleLabel?.text != "Pick Your School"  {
             
             SwiftSpinner.show("Uploading Image...")
             
-            newAccount.AccounSetup("",fullName:fullName,userName:username,password:password,Bio:"",email:email,phone:"",photo:image!,stories:image!,theYear:graduation.text!)
+            newAccount.AccounSetup("",fullName:fullName,userName:username,password:password,Bio:"",email:email,phone:"",photo:image!,stories:image!,theYear:graduation.text!,theSchool:(pickSchool.titleLabel?.text)! )
             
             print(username)
             print(password)
             print(email)
             print(fullName)
+            print(pickSchool.titleLabel?.text)
     }
 }
     
@@ -172,12 +173,12 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return schools[row]
+        return schools[row].name
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        pickSchool.setTitle(schools[row], forState: UIControlState.Normal)
+        pickSchool.setTitle(schools[row].name, forState: UIControlState.Normal)
     }
 
     

@@ -12,7 +12,7 @@ import Parse
 
 class userSignUp {
     
-    func SignUp(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage,theYear:String){
+    func SignUp(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage,theYear:String,TheSchool:String){
         
         let photoData = UIImageJPEGRepresentation(photo, 0.5)
         let photoFile = PFFile(name:"photo", data:photoData!)
@@ -32,6 +32,7 @@ class userSignUp {
         user["Stories"] = storyFile
         user["photo"] = photoFile
         user["Year"] = theYear
+        user["Schhol"] = TheSchool
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in

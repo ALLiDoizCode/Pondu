@@ -30,6 +30,7 @@
 		4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */; };
 		4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */; };
 		4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436291C13D0330032FB27 /* LoginViewController.swift */; };
+		4D2BE9A91C1CF893001810BB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9A81C1CF893001810BB /* School.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
@@ -123,6 +124,7 @@
 		4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login-SignUp.storyboard"; sourceTree = "<group>"; };
 		4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GradientView:Button.swift"; sourceTree = "<group>"; };
 		4D2436291C13D0330032FB27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4D2BE9A81C1CF893001810BB /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteParties.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				4D91A9D11BE5F7F200C34281 /* User.swift */,
 				4D86683D1BE9902200591DF6 /* makeEvent.swift */,
 				4D86683F1BE9A98600591DF6 /* MakeParty.swift */,
+				4D2BE9A81C1CF893001810BB /* School.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
 				4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */,
 				4D14C6341C193E9200BAEA1F /* school.swift in Sources */,
+				4D2BE9A91C1CF893001810BB /* School.swift in Sources */,
 				4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */,
 				4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */,
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
