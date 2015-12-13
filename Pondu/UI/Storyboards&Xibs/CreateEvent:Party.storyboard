@@ -167,7 +167,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A3n-2i-14D" kind="show" id="fkV-7C-rwz"/>
+                                    <segue destination="A3n-2i-14D" kind="presentation" id="fkV-7C-rwz"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -309,7 +309,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A3n-2i-14D" kind="show" id="kvz-t5-C1g"/>
+                                    <segue destination="A3n-2i-14D" kind="presentation" id="kvz-t5-C1g"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -421,7 +421,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A3n-2i-14D" kind="show" id="1PM-tC-qnl"/>
+                                    <segue destination="A3n-2i-14D" kind="presentation" id="1PM-tC-qnl"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -506,7 +506,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A3n-2i-14D" kind="show" identifier="gotoWall" id="SPQ-30-xXD"/>
+                                    <segue destination="A3n-2i-14D" kind="presentation" identifier="gotoWall" id="SPQ-30-xXD"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -522,10 +522,10 @@
             </objects>
             <point key="canvasLocation" x="1490" y="163"/>
         </scene>
-        <!--Nav-->
+        <!--Main-->
         <scene sceneID="cFA-l6-cXQ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Nav" id="A3n-2i-14D" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="A3n-2i-14D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUg-io-YqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902" y="-110"/>
@@ -659,7 +659,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A3n-2i-14D" kind="show" id="OPr-qa-GFA"/>
+                                    <segue destination="A3n-2i-14D" kind="presentation" id="OPr-qa-GFA"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -709,6 +709,6 @@
         <image name="down arrows" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SPQ-30-xXD"/>
+        <segue reference="iQm-hj-tiU"/>
     </inferredMetricsTieBreakers>
 </document>

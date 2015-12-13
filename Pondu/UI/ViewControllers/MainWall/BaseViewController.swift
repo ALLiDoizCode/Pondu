@@ -12,10 +12,15 @@ import PagingMenuController
 
 class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     
+    @IBOutlet weak var post: UIButton!
     override func viewDidLoad() {
-        
-        UIApplication.sharedApplication().statusBarHidden = true
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+         UIApplication.sharedApplication().statusBarHidden = true
+        
         let Events = self.storyboard?.instantiateViewControllerWithIdentifier("Events") as! ViewController
         
         let Party = self.storyboard?.instantiateViewControllerWithIdentifier("Party") as! PartyViewController
@@ -29,10 +34,15 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!
-        options.menuItemMode = .RoundRect(radius: 2, horizontalPadding: 4, verticalPadding: 4, selectedColor: UIColor.grayColor())
+        options.menuItemMode = .RoundRect(radius: 2, horizontalPadding: 4, verticalPadding: 1, selectedColor: UIColor.grayColor())
         let pagingMenuController = self.childViewControllers.first as! PagingMenuController
         pagingMenuController.delegate = self
         pagingMenuController.setup(viewControllers: viewControllers, options: options)
+    }
+   
+    @IBAction func postBtn(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("post", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
