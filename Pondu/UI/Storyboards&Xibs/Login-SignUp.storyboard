@@ -90,14 +90,13 @@
                                     <constraint firstAttribute="width" secondItem="e7e-Bl-kzr" secondAttribute="height" multiplier="340:31" id="zfj-cg-0v5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="zfj-cg-0v5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="57" y="308" width="340" height="12"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="zfj-cg-0v5"/>
                                     </mask>
@@ -1140,7 +1139,7 @@
                                     <constraint firstAttribute="width" secondItem="c6z-ie-rLG" secondAttribute="height" multiplier="340:31" id="GBj-If-K4S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GBj-If-K4S"/>
@@ -1220,7 +1219,7 @@
                                     <constraint firstAttribute="width" secondItem="ZFC-pu-CRp" secondAttribute="height" multiplier="340:31" id="eeo-ku-HpK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="eeo-ku-HpK"/>
@@ -1625,7 +1624,7 @@
                                     <constraint firstAttribute="width" constant="196" id="fBw-oK-G7y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="fBw-oK-G7y"/>
@@ -2024,6 +2023,6 @@
         <image name="placeholder" width="1181" height="1672"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nPV-tG-lHP"/>
+        <segue reference="2aL-Qe-I4p"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -163,7 +163,14 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             SweetAlert().showAlert("Enter Graduation Date", subTitle: ":(", style: AlertStyle.Error)
         }
 }
-    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let maxLength = 4
+        let currentString: NSString = textField.text!
+        let newString: NSString =
+        currentString.stringByReplacingCharactersInRange(range, withString: string)
+        return newString.length <= maxLength
+    }
     
     
     
