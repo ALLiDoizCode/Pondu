@@ -13,5 +13,4 @@
 #endif /* Header_h */
 
 #import <Parse/Parse.h>
-#import <FMMosaicLayout/FMMosaicLayout.h>
 #import "FXBlurView/FXBlurView.h"

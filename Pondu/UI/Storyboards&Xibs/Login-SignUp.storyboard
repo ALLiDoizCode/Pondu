@@ -96,8 +96,7 @@
                                         <exclude reference="zfj-cg-0v5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="57" y="308" width="340" height="12"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="zfj-cg-0v5"/>
                                     </mask>
