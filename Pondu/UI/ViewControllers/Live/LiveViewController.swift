@@ -89,6 +89,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     func isImage(image:String){
         
+        imageViewObject = UIImageView(frame:self.view.frame);
         imageViewObject.contentMode = .ScaleAspectFill
         imageViewObject.clipsToBounds = true
         
@@ -100,18 +101,17 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
             
             imageViewObject.kf_setImageWithURL(NSURL(string:image)!, placeholderImage: UIImage(named: "placeholder"))
            
-            self.view.addSubview(imageViewObject)
+            
         }else {
             
             print("got image \(image)")
             
-            imageViewObject = UIImageView(frame:self.view.frame);
+            
             imageViewObject.kf_setImageWithURL(NSURL(string:image)!, placeholderImage: UIImage(named: "placeholder"))
         
-            self.view.addSubview(imageViewObject)
         }
         
-        
+        self.view.addSubview(imageViewObject)
         
     }
     
