@@ -69,6 +69,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewController
         SwiftEventBus.onMainThread(self, name: "loginFailed") { (result) -> Void in
             
             print("login failed")
+            SweetAlert().showAlert("Wrong Password or Email", subTitle: ":(", style: AlertStyle.Error)
         }
         
     }

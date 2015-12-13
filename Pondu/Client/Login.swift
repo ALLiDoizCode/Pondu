@@ -29,6 +29,8 @@ class Login {
             } else {
                 // The login failed. Check error to see why.
                 
+                //print(error?.localizedFailureReason)
+                
                  SwiftEventBus.post("loginFailed")
             }
         }
