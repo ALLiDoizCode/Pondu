@@ -150,6 +150,9 @@
                                                 <include reference="1SN-W8-8cc"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <segue destination="tKd-Q7-qa7" kind="show" id="1JA-lI-yGG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -280,6 +283,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOj-4K-1my" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1152" y="1220.25"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="M2t-Lc-MLG">
+            <objects>
+                <viewController title="Settings" id="tKd-Q7-qa7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="42B-kQ-pjN"/>
+                        <viewControllerLayoutGuide type="bottom" id="wqH-E7-Ekq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m0d-u8-fSW">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgQ-T7-25s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917" y="1220.25"/>
         </scene>
     </scenes>
     <resources>
