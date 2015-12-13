@@ -154,7 +154,14 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             print(email)
             print(fullName)
             print(pickSchool.titleLabel?.text)
-    }
+        }else if pickSchool.titleLabel?.text == "Pick Your School" {
+            
+             SweetAlert().showAlert("Pick a School", subTitle: ":(", style: AlertStyle.Error)
+            
+        }else if graduation.text == "" {
+            
+            SweetAlert().showAlert("Enter Graduation Date", subTitle: ":(", style: AlertStyle.Error)
+        }
 }
     
     

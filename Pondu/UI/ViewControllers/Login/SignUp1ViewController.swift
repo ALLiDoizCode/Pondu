@@ -43,9 +43,22 @@ class SignUp1ViewController: UIViewController,UITextFieldDelegate {
         if email.text != "" && fullName.text != "" {
             
             self.performSegueWithIdentifier(segueID, sender: self)
-        }else {
+        }else if  email.text == "" && fullName.text == "" {
             
-            print("One or more textfields is empty")
+             SweetAlert().showAlert("Email & Name is Empty", subTitle: ":(", style: AlertStyle.Error)
+            
+            print("Email and FullName textfield is empty")
+            
+        }else if email.text == "" {
+            
+            SweetAlert().showAlert("Email is Incorrent", subTitle: ":(", style: AlertStyle.Error)
+            
+            print("Email textfield is empty")
+        }else if fullName.text == "" {
+            
+            SweetAlert().showAlert("Full Name is Incorrent", subTitle: ":(", style: AlertStyle.Error)
+            
+            print("Full Name textfield is empty")
         }
         
         
