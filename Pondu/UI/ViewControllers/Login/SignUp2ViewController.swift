@@ -19,7 +19,6 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     var fullName:String!
     let segueID = "school"
     
-    @IBOutlet weak var addImage: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -28,6 +27,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     
     let newAccount = SignUP()
     let transition = BubbleTransition()
+    let tapRect = UITapGestureRecognizer()
     
     
     override func viewWillLayoutSubviews() {
@@ -46,6 +46,14 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
         password.delegate = self
         verifyPassword.delegate = self
         transition.duration = 0.4
+        
+        // add tap to profileImage
+        tapRect.addTarget(self, action:"addImage:")
+        tapRect.numberOfTapsRequired = 1
+        tapRect.numberOfTouchesRequired = 1
+        profileImage.userInteractionEnabled = true
+        profileImage.addGestureRecognizer(tapRect)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +76,7 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     }
     
     
-    @IBAction func addImageBtn(sender: AnyObject) {
+    func addImage(sender: UITapGestureRecognizer) {
         
         let manager = PHImageManager.defaultManager()
         let initialRequestOptions = PHImageRequestOptions()

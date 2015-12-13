@@ -1322,16 +1322,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ea-2v-HE3">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Add Image">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addImageBtn:" destination="5jy-tH-uV9" eventType="touchUpInside" id="SCJ-Lo-yPl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <constraints>
@@ -1372,7 +1362,6 @@
                             </constraint>
                             <constraint firstItem="SQu-L6-hCj" firstAttribute="top" secondItem="ZFC-pu-CRp" secondAttribute="bottom" constant="23" id="Sg8-oO-5WH"/>
                             <constraint firstItem="2pw-0B-QYu" firstAttribute="leading" secondItem="pwc-u4-aXO" secondAttribute="leading" id="W3Z-KE-1O8"/>
-                            <constraint firstItem="5ea-2v-HE3" firstAttribute="leading" secondItem="mWt-KA-i6S" secondAttribute="trailing" constant="8" symbolic="YES" id="WqB-lU-bfN"/>
                             <constraint firstItem="c6z-ie-rLG" firstAttribute="leading" secondItem="yvQ-oP-qAg" secondAttribute="trailing" constant="17" id="XLx-bV-8ZN"/>
                             <constraint firstItem="CZ4-s5-gph" firstAttribute="top" secondItem="2pw-0B-QYu" secondAttribute="bottom" constant="10" id="XZf-sI-Q0B"/>
                             <constraint firstItem="SQu-L6-hCj" firstAttribute="centerX" secondItem="c6z-ie-rLG" secondAttribute="centerX" id="ZwQ-yf-bYV">
@@ -1395,9 +1384,6 @@
                             <constraint firstItem="7gg-gL-wFM" firstAttribute="top" secondItem="Ktg-Uh-U5S" secondAttribute="top" id="l0D-EV-8iR">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-15"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="5ea-2v-HE3" secondAttribute="trailing" constant="30" id="nBP-kg-lP0">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-17"/>
-                            </constraint>
                             <constraint firstItem="ZFC-pu-CRp" firstAttribute="width" secondItem="ZFC-pu-CRp" secondAttribute="height" multiplier="340:31" id="pfh-TD-bwx"/>
                             <constraint firstItem="yvQ-oP-qAg" firstAttribute="leading" secondItem="vj1-f8-6Uq" secondAttribute="leading" id="q4l-U5-iYn"/>
                             <constraint firstItem="vj1-f8-6Uq" firstAttribute="leading" secondItem="Ktg-Uh-U5S" secondAttribute="leadingMargin" constant="-5" id="rRX-XJ-iwz"/>
@@ -1412,7 +1398,6 @@
                             <constraint firstItem="7gg-gL-wFM" firstAttribute="bottom" secondItem="0v3-0E-XRa" secondAttribute="top" id="xtc-K1-isD">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
                             </constraint>
-                            <constraint firstItem="5ea-2v-HE3" firstAttribute="centerY" secondItem="mWt-KA-i6S" secondAttribute="centerY" id="zEO-Kz-aQC"/>
                             <constraint firstItem="mWt-KA-i6S" firstAttribute="top" secondItem="Re7-bE-9we" secondAttribute="bottom" constant="28" id="zqV-pd-ya2"/>
                         </constraints>
                         <variation key="default">
@@ -1430,7 +1415,6 @@
                                 <exclude reference="Re7-bE-9we"/>
                                 <exclude reference="SQu-L6-hCj"/>
                                 <exclude reference="mWt-KA-i6S"/>
-                                <exclude reference="5ea-2v-HE3"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4xu-Da-tN7"/>
@@ -1447,9 +1431,6 @@
                                 <exclude reference="2Eo-cY-Bb7"/>
                                 <exclude reference="u1D-Gm-PH6"/>
                                 <exclude reference="vBR-em-9rG"/>
-                                <exclude reference="WqB-lU-bfN"/>
-                                <exclude reference="nBP-kg-lP0"/>
-                                <exclude reference="zEO-Kz-aQC"/>
                                 <exclude reference="5d6-13-U5m"/>
                                 <exclude reference="Sg8-oO-5WH"/>
                                 <exclude reference="ZwQ-yf-bYV"/>
@@ -1497,7 +1478,6 @@
                                 <include reference="Re7-bE-9we"/>
                                 <include reference="SQu-L6-hCj"/>
                                 <include reference="mWt-KA-i6S"/>
-                                <include reference="5ea-2v-HE3"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4xu-Da-tN7"/>
@@ -1514,9 +1494,6 @@
                                 <include reference="2Eo-cY-Bb7"/>
                                 <include reference="u1D-Gm-PH6"/>
                                 <include reference="vBR-em-9rG"/>
-                                <include reference="WqB-lU-bfN"/>
-                                <include reference="nBP-kg-lP0"/>
-                                <include reference="zEO-Kz-aQC"/>
                                 <include reference="5d6-13-U5m"/>
                                 <include reference="Sg8-oO-5WH"/>
                                 <include reference="ZwQ-yf-bYV"/>
@@ -1565,7 +1542,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addImage" destination="5ea-2v-HE3" id="ojU-5p-BvF"/>
                         <outlet property="next" destination="En8-hb-g8P" id="lpS-gz-PpY"/>
                         <outlet property="password" destination="c6z-ie-rLG" id="Uy2-Lc-c9l"/>
                         <outlet property="profileImage" destination="mWt-KA-i6S" id="Kzf-zf-E2L"/>
