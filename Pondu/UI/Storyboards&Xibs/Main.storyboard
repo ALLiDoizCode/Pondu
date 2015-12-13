@@ -1645,11 +1645,22 @@
                     <connections>
                         <segue destination="dRc-1f-bKN" kind="relationship" relationship="viewControllers" id="5YK-Im-RR0"/>
                         <segue destination="S2n-cQ-MxY" kind="relationship" relationship="viewControllers" id="JcA-Bo-n40"/>
+                        <segue destination="iRU-1K-d9k" kind="relationship" relationship="viewControllers" id="y5H-kv-9WV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j36-vX-SWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="118"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="8Ng-e8-q4W">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="Home" referencedIdentifier="Profile" id="iRU-1K-d9k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="NPc-mi-Pec"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n02-Or-wDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="1216"/>
         </scene>
     </scenes>
     <resources>
