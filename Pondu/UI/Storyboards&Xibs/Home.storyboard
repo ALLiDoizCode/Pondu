@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="pmY-29-L0Q">
             <objects>
-                <viewController storyboardIdentifier="Profile" id="cUe-gl-agj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="cUe-gl-agj" customClass="HomeViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sx3-0G-hYN"/>
                         <viewControllerLayoutGuide type="bottom" id="fet-Un-58c"/>
@@ -269,6 +269,13 @@
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="favorites" destination="Kzc-m5-mhY" id="kZF-Z1-MqF"/>
+                        <outlet property="image" destination="W6U-MX-L0b" id="CAs-WD-5uG"/>
+                        <outlet property="location" destination="hZ0-rE-jJ5" id="tEU-cb-fy1"/>
+                        <outlet property="settings" destination="f7F-U1-VN8" id="osQ-qJ-cMP"/>
+                        <outlet property="userName" destination="7yQ-3i-Pd1" id="bOT-sG-a0D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOj-4K-1my" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

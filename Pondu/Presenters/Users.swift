@@ -17,15 +17,15 @@ class theUser {
     let nilArray:[String]! = nil
     let thisFavorite = Favorite()
     
-    func theUsers(){
+    func theUsers(Completion:(([userData])->Void)){
         
         SwiftEventBus.onMainThread(self, name: "User") { result in
             
-            let userData = result.object
-            print(userData)
+            let theData = result.object
+            print(theData)
             
-            SwiftEventBus.postToMainThread("updateStory", sender: userData)
-            
+            //SwiftEventBus.postToMainThread("updateStory", sender: theData)
+            Completion(theData as! [userData])
         }
         
         user.userQuery(nilArray)

@@ -23,32 +23,22 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     
     override func viewWillAppear(animated: Bool) {
         
-        storyUser.theUsers()
-    
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        SwiftEventBus.onMainThread(self, name: "updateStory") { notification in
+        
+        storyUser.theUsers { (theData) -> Void in
             
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [userData]
-            
+            print(theData[0].fullName)
+            self.array = theData
             self.collectionView.reloadData()
-            
-            print("this is the first picture\(self.array[1].story)")
-            
             let photoUrl:String! = self.array[0].photo
-            
             self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 
                 self.iconView.subImage.image = image
             })
-            
         }
-
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
     }
 
