@@ -19,7 +19,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var bio: UITextView!
-    @IBOutlet weak var currentPass: UITextField!
     @IBOutlet weak var newPass: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var help: UIButton!
@@ -49,7 +48,6 @@ class SettingsViewController: UIViewController {
         phone.hidden = true
         bio.hidden = true
         
-        currentPass.hidden = true
         newPass.hidden = true
         confirmPass.hidden = true
         
@@ -109,20 +107,13 @@ class SettingsViewController: UIViewController {
     
     @IBAction func changePassWordBtn(sender: AnyObject) {
         
-        currentPass.hidden = false
-        newPass.hidden = false
-        confirmPass.hidden = false
-        
-        if currentPass.hidden == false &&
-        newPass.hidden == false &&
+        if newPass.hidden == false &&
         confirmPass.hidden == false {
             
-            if currentPass == currentUser?.password &&
-                newPass.text != "" && confirmPass.text == newPass.text {
+            if newPass.text != "" && confirmPass.text == newPass.text {
                     
                     // save changes
-                    
-                    currentPass.hidden = true
+                
                     newPass.hidden = true
                     confirmPass.hidden = true
                     
@@ -131,6 +122,10 @@ class SettingsViewController: UIViewController {
                 
                 //alert issued with new password
             }
+        }else {
+            
+            newPass.hidden = false
+            confirmPass.hidden = false
         }
     }
    
