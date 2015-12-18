@@ -320,6 +320,9 @@
                                                 <include reference="7ux-iP-M4r"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="addFriendsBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="7eg-0U-prC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2N-0A-v0F">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -346,6 +349,9 @@
                                                 <include reference="sdG-hL-B4c"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="searchContactBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="ZUO-Fz-uVf"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqO-ZH-eE5">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -571,7 +577,7 @@
                                                 <variation key="heightClass=regular-widthClass=compact" constant="232"/>
                                             </constraint>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
@@ -811,12 +817,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOs-iz-Iv3">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General/Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1T-zF-bGb">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
@@ -831,6 +831,9 @@
                                         <state key="normal" title="Help">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="helpBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="kOW-tW-lsA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJP-Ys-R2U">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -839,6 +842,9 @@
                                         <state key="normal" title="Terms of Service">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="termsBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="RH7-CX-qSR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia1-R7-EeS">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -847,6 +853,9 @@
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="policyBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="Wi7-WL-Er5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzR-po-0ZK">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -855,6 +864,9 @@
                                         <state key="normal" title="Pondu-app.com">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="siteBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="oZ7-oT-is3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-JZ-dAB">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -975,6 +987,9 @@
                                         <state key="normal" title="Clear Search History">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clearBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="R38-67-jA5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGe-r9-jO4">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -983,6 +998,9 @@
                                         <state key="normal" title="Blocked Users">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="blockedBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="TyU-6U-aSs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-ji-A64">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -991,6 +1009,9 @@
                                         <state key="normal" title="Logout">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logout:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="H0x-Wh-KNi"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS1-zR-zU0">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1040,7 +1061,23 @@
                                                 <include reference="nFz-8k-kNE"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="deleteBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="6sx-d3-mHj"/>
+                                        </connections>
                                     </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3CS-K5-pab">
+                                        <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                        <animations/>
+                                        <connections>
+                                            <action selector="privacyBtn:" destination="TaJ-fc-Buu" eventType="valueChanged" id="NnR-eb-tbm"/>
+                                        </connections>
+                                    </switch>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOs-iz-Iv3">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -1066,6 +1103,7 @@
                                     <constraint firstItem="tS1-zR-zU0" firstAttribute="trailing" secondItem="MO4-Z9-ZGG" secondAttribute="trailing" id="85s-UA-nsC"/>
                                     <constraint firstItem="LXN-QO-fXy" firstAttribute="trailing" secondItem="eio-to-YS9" secondAttribute="trailing" id="8BF-6f-Nxh"/>
                                     <constraint firstItem="EOs-iz-Iv3" firstAttribute="top" secondItem="t9z-5I-RFa" secondAttribute="bottom" constant="8" symbolic="YES" id="8Wa-DO-KQ6"/>
+                                    <constraint firstAttribute="trailing" secondItem="3CS-K5-pab" secondAttribute="trailing" constant="46" id="8fH-cB-Udh"/>
                                     <constraint firstItem="eiM-Un-gAf" firstAttribute="leading" secondItem="EFN-q6-tgD" secondAttribute="leading" id="9Nk-iK-dOE"/>
                                     <constraint firstItem="1wG-eW-ZyO" firstAttribute="leading" secondItem="cNh-eF-HG8" secondAttribute="leading" id="9XR-Lh-3g0"/>
                                     <constraint firstItem="bzR-po-0ZK" firstAttribute="top" secondItem="ia1-R7-EeS" secondAttribute="bottom" constant="30" id="9aY-o4-Zyk">
@@ -1093,6 +1131,7 @@
                                     </constraint>
                                     <constraint firstItem="Eoc-lT-IzC" firstAttribute="trailing" secondItem="eiM-Un-gAf" secondAttribute="trailing" id="JGC-rg-qlM"/>
                                     <constraint firstItem="iUR-YM-fnX" firstAttribute="leading" secondItem="hz4-fL-tEc" secondAttribute="leading" id="KmK-eW-GdO"/>
+                                    <constraint firstItem="3CS-K5-pab" firstAttribute="top" secondItem="1Ry-gz-mPa" secondAttribute="top" id="KnR-JV-bPR"/>
                                     <constraint firstItem="cNh-eF-HG8" firstAttribute="trailing" secondItem="SpD-Mn-wed" secondAttribute="trailing" id="KqB-Qg-Rjl"/>
                                     <constraint firstItem="eio-to-YS9" firstAttribute="leading" secondItem="DxB-Up-fvD" secondAttribute="leading" id="Ks4-iJ-VCh"/>
                                     <constraint firstItem="1Ry-gz-mPa" firstAttribute="leading" secondItem="Ifw-EA-Xq2" secondAttribute="leading" id="KwI-6I-agm"/>
@@ -1239,7 +1278,6 @@
                                         <exclude reference="1wG-eW-ZyO"/>
                                         <exclude reference="I9f-nO-OnD"/>
                                         <exclude reference="GaI-Bw-TzA"/>
-                                        <exclude reference="EOs-iz-Iv3"/>
                                         <exclude reference="X1T-zF-bGb"/>
                                         <exclude reference="gmY-vc-q28"/>
                                         <exclude reference="wJP-Ys-R2U"/>
@@ -1257,6 +1295,8 @@
                                         <exclude reference="tS1-zR-zU0"/>
                                         <exclude reference="d2C-e5-leJ"/>
                                         <exclude reference="DB2-OZ-X8l"/>
+                                        <exclude reference="3CS-K5-pab"/>
+                                        <exclude reference="EOs-iz-Iv3"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="db6-yS-LcR"/>
@@ -1370,6 +1410,8 @@
                                         <exclude reference="Awi-9f-6ny"/>
                                         <exclude reference="oA0-5l-7EP"/>
                                         <exclude reference="rBR-rV-3l4"/>
+                                        <exclude reference="8fH-cB-Udh"/>
+                                        <exclude reference="KnR-JV-bPR"/>
                                         <exclude reference="64f-y1-BLy"/>
                                         <exclude reference="iou-tA-hCt"/>
                                         <exclude reference="Kxa-y1-lmM"/>
@@ -1425,7 +1467,6 @@
                                         <include reference="1wG-eW-ZyO"/>
                                         <include reference="I9f-nO-OnD"/>
                                         <include reference="GaI-Bw-TzA"/>
-                                        <include reference="EOs-iz-Iv3"/>
                                         <include reference="X1T-zF-bGb"/>
                                         <include reference="gmY-vc-q28"/>
                                         <include reference="wJP-Ys-R2U"/>
@@ -1443,6 +1484,8 @@
                                         <include reference="tS1-zR-zU0"/>
                                         <include reference="d2C-e5-leJ"/>
                                         <include reference="DB2-OZ-X8l"/>
+                                        <include reference="3CS-K5-pab"/>
+                                        <include reference="EOs-iz-Iv3"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="db6-yS-LcR"/>
@@ -1556,6 +1599,8 @@
                                         <include reference="Awi-9f-6ny"/>
                                         <include reference="oA0-5l-7EP"/>
                                         <include reference="rBR-rV-3l4"/>
+                                        <include reference="8fH-cB-Udh"/>
+                                        <include reference="KnR-JV-bPR"/>
                                         <include reference="64f-y1-BLy"/>
                                         <include reference="iou-tA-hCt"/>
                                         <include reference="Kxa-y1-lmM"/>
@@ -1615,7 +1660,26 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="1350"/>
                     <connections>
+                        <outlet property="addFriends" destination="iR8-sL-wiy" id="044-9Q-Vvn"/>
+                        <outlet property="bio" destination="Gam-D8-bNd" id="XEj-GP-2cC"/>
+                        <outlet property="blocked" destination="IGe-r9-jO4" id="fZX-7e-yeC"/>
+                        <outlet property="clear" destination="Kqu-JY-gSG" id="tGI-l5-wIw"/>
+                        <outlet property="confirmPass" destination="EOs-iz-Iv3" id="Sfo-Uf-h0w"/>
+                        <outlet property="currentPass" destination="I9f-nO-OnD" id="9aO-L6-XYf"/>
+                        <outlet property="delete" destination="DB2-OZ-X8l" id="xb2-ZU-R1m"/>
+                        <outlet property="email" destination="n8t-Cx-zpH" id="VAS-ZP-rsh"/>
+                        <outlet property="help" destination="gmY-vc-q28" id="FZo-NN-gXK"/>
+                        <outlet property="logout" destination="h3r-ji-A64" id="RBB-Gj-t5O"/>
+                        <outlet property="name" destination="OUU-4k-XMG" id="Cjp-f9-FAu"/>
+                        <outlet property="newPass" destination="GaI-Bw-TzA" id="CI1-LO-8GG"/>
+                        <outlet property="phone" destination="YF5-Ae-YZb" id="tLI-ld-MhK"/>
+                        <outlet property="policy" destination="ia1-R7-EeS" id="QTb-2F-DNJ"/>
+                        <outlet property="privacy" destination="3CS-K5-pab" id="UfB-L1-Xxq"/>
                         <outlet property="scrollView" destination="Lcz-EJ-pE0" id="OyT-f2-W9D"/>
+                        <outlet property="searchContacts" destination="K2N-0A-v0F" id="RMp-rz-TLG"/>
+                        <outlet property="site" destination="bzR-po-0ZK" id="6Xq-9T-Jo5"/>
+                        <outlet property="terms" destination="wJP-Ys-R2U" id="iTB-SX-HoD"/>
+                        <outlet property="userName" destination="LXN-QO-fXy" id="w2f-3h-KBa"/>
                     </connections>
                 </viewController>
             </objects>
