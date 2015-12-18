@@ -282,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOj-4K-1my" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2955" y="942"/>
+            <point key="canvasLocation" x="2964" y="1014"/>
         </scene>
         <!--Settings-->
         <scene sceneID="FvG-s4-cmb">
@@ -1013,6 +1013,34 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remove Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2C-e5-leJ">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB2-OZ-X8l">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="nFz-8k-kNE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Delete Profile">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="nFz-8k-kNE"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="nFz-8k-kNE"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -1023,6 +1051,7 @@
                                     <constraint firstItem="zH7-Sw-L0X" firstAttribute="top" secondItem="EFN-q6-tgD" secondAttribute="bottom" constant="41" id="2qo-fh-Sbi"/>
                                     <constraint firstItem="qF8-11-gQx" firstAttribute="trailing" secondItem="eio-to-YS9" secondAttribute="trailing" id="3NY-1Q-9Cj"/>
                                     <constraint firstItem="t9z-5I-RFa" firstAttribute="top" secondItem="GaI-Bw-TzA" secondAttribute="bottom" constant="8" symbolic="YES" id="3xg-Su-Soy"/>
+                                    <constraint firstItem="DB2-OZ-X8l" firstAttribute="trailing" secondItem="1Ry-gz-mPa" secondAttribute="trailing" id="4JG-mN-W2D"/>
                                     <constraint firstItem="DxB-Up-fvD" firstAttribute="leading" secondItem="K2N-0A-v0F" secondAttribute="leading" id="4QW-Eq-c9e"/>
                                     <constraint firstItem="SpD-Mn-wed" firstAttribute="trailing" secondItem="N8p-JS-3zw" secondAttribute="trailing" id="4o7-Oa-lxx"/>
                                     <constraint firstItem="I9f-nO-OnD" firstAttribute="trailing" secondItem="GaI-Bw-TzA" secondAttribute="trailing" id="5ML-pN-eKe"/>
@@ -1089,6 +1118,7 @@
                                     <constraint firstItem="iUR-YM-fnX" firstAttribute="top" secondItem="hTY-BL-J3p" secondAttribute="bottom" constant="66" id="Rp5-hI-CZW">
                                         <variation key="heightClass=regular-widthClass=compact" constant="251"/>
                                     </constraint>
+                                    <constraint firstItem="d2C-e5-leJ" firstAttribute="leading" secondItem="tS1-zR-zU0" secondAttribute="leading" id="S71-vK-hoQ"/>
                                     <constraint firstItem="m7r-WD-Fpf" firstAttribute="centerY" secondItem="n8t-Cx-zpH" secondAttribute="centerY" id="SeB-qt-aGy"/>
                                     <constraint firstItem="eiM-Un-gAf" firstAttribute="top" secondItem="Gam-D8-bNd" secondAttribute="bottom" constant="8" symbolic="YES" id="ShL-Ec-dWl"/>
                                     <constraint firstItem="qF8-11-gQx" firstAttribute="top" secondItem="eio-to-YS9" secondAttribute="bottom" constant="54" id="SnA-pE-vgb"/>
@@ -1146,19 +1176,23 @@
                                     <constraint firstItem="YyM-Nt-05w" firstAttribute="leading" secondItem="SpD-Mn-wed" secondAttribute="leading" id="hRi-DS-XPr"/>
                                     <constraint firstItem="OUU-4k-XMG" firstAttribute="leading" secondItem="LXN-QO-fXy" secondAttribute="leading" id="hUX-kl-wyx"/>
                                     <constraint firstItem="ltH-JZ-dAB" firstAttribute="leading" secondItem="cNh-eF-HG8" secondAttribute="leading" id="iRr-a0-y2B"/>
+                                    <constraint firstItem="DB2-OZ-X8l" firstAttribute="top" secondItem="d2C-e5-leJ" secondAttribute="bottom" constant="8" symbolic="YES" id="iXt-HH-qn4"/>
                                     <constraint firstItem="Kqu-JY-gSG" firstAttribute="leading" secondItem="MGO-8e-lRw" secondAttribute="leading" id="iou-tA-hCt"/>
                                     <constraint firstItem="K2N-0A-v0F" firstAttribute="leading" secondItem="iR8-sL-wiy" secondAttribute="leading" id="kKT-cv-qKZ"/>
                                     <constraint firstItem="1Ry-gz-mPa" firstAttribute="leading" secondItem="Kqu-JY-gSG" secondAttribute="leading" id="kWb-uu-3d5"/>
                                     <constraint firstItem="hTY-BL-J3p" firstAttribute="top" secondItem="N8p-JS-3zw" secondAttribute="bottom" constant="35" id="kls-Sp-Ozw">
                                         <variation key="heightClass=regular-widthClass=compact" constant="-167"/>
                                     </constraint>
+                                    <constraint firstItem="d2C-e5-leJ" firstAttribute="top" secondItem="tS1-zR-zU0" secondAttribute="bottom" constant="20" id="lJw-nj-vnO"/>
                                     <constraint firstItem="zH7-Sw-L0X" firstAttribute="leading" secondItem="EFN-q6-tgD" secondAttribute="leading" id="mHX-Y1-hYI"/>
+                                    <constraint firstItem="d2C-e5-leJ" firstAttribute="trailing" secondItem="X1T-zF-bGb" secondAttribute="trailing" id="mwX-1t-mba"/>
                                     <constraint firstItem="YF5-Ae-YZb" firstAttribute="leading" secondItem="n8t-Cx-zpH" secondAttribute="leading" id="o8f-Bf-3si"/>
                                     <constraint firstItem="LkJ-LW-YyN" firstAttribute="top" secondItem="1Ry-gz-mPa" secondAttribute="bottom" constant="8" symbolic="YES" id="oA0-5l-7EP"/>
                                     <constraint firstItem="wJP-Ys-R2U" firstAttribute="top" secondItem="gmY-vc-q28" secondAttribute="bottom" constant="31" id="oKf-vl-Vpc">
                                         <variation key="heightClass=regular-widthClass=compact" constant="23"/>
                                     </constraint>
                                     <constraint firstItem="eio-to-YS9" firstAttribute="trailing" secondItem="IqO-ZH-eE5" secondAttribute="trailing" id="onS-4N-g9A"/>
+                                    <constraint firstItem="DB2-OZ-X8l" firstAttribute="leading" secondItem="d2C-e5-leJ" secondAttribute="leading" id="pG1-Ph-Ixt"/>
                                     <constraint firstItem="MGO-8e-lRw" firstAttribute="top" secondItem="Kqu-JY-gSG" secondAttribute="bottom" constant="14" id="qXN-I8-AA4"/>
                                     <constraint firstItem="LkJ-LW-YyN" firstAttribute="trailing" secondItem="iUR-YM-fnX" secondAttribute="trailing" id="rBR-rV-3l4"/>
                                     <constraint firstItem="tS1-zR-zU0" firstAttribute="leading" secondItem="h3r-ji-A64" secondAttribute="leading" id="rRb-RQ-ISG"/>
@@ -1221,6 +1255,8 @@
                                         <exclude reference="IGe-r9-jO4"/>
                                         <exclude reference="h3r-ji-A64"/>
                                         <exclude reference="tS1-zR-zU0"/>
+                                        <exclude reference="d2C-e5-leJ"/>
+                                        <exclude reference="DB2-OZ-X8l"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="db6-yS-LcR"/>
@@ -1348,6 +1384,12 @@
                                         <exclude reference="85s-UA-nsC"/>
                                         <exclude reference="b6r-C6-ySs"/>
                                         <exclude reference="rRb-RQ-ISG"/>
+                                        <exclude reference="S71-vK-hoQ"/>
+                                        <exclude reference="lJw-nj-vnO"/>
+                                        <exclude reference="mwX-1t-mba"/>
+                                        <exclude reference="4JG-mN-W2D"/>
+                                        <exclude reference="iXt-HH-qn4"/>
+                                        <exclude reference="pG1-Ph-Ixt"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1399,6 +1441,8 @@
                                         <include reference="IGe-r9-jO4"/>
                                         <include reference="h3r-ji-A64"/>
                                         <include reference="tS1-zR-zU0"/>
+                                        <include reference="d2C-e5-leJ"/>
+                                        <include reference="DB2-OZ-X8l"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="db6-yS-LcR"/>
@@ -1526,6 +1570,12 @@
                                         <include reference="85s-UA-nsC"/>
                                         <include reference="b6r-C6-ySs"/>
                                         <include reference="rRb-RQ-ISG"/>
+                                        <include reference="S71-vK-hoQ"/>
+                                        <include reference="lJw-nj-vnO"/>
+                                        <include reference="mwX-1t-mba"/>
+                                        <include reference="4JG-mN-W2D"/>
+                                        <include reference="iXt-HH-qn4"/>
+                                        <include reference="pG1-Ph-Ixt"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -1563,7 +1613,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="1600"/>
+                    <size key="freeformSize" width="400" height="1350"/>
                     <connections>
                         <outlet property="scrollView" destination="Lcz-EJ-pE0" id="OyT-f2-W9D"/>
                     </connections>
