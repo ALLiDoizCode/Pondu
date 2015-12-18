@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController {
 
@@ -33,6 +34,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var editProfile: UIButton!
     @IBOutlet weak var changePassWord: UIButton!
     
+    var currentUser = PFUser.currentUser()
+    
     override func viewWillAppear(animated: Bool) {
         
          self.navigationController?.navigationBarHidden = false
@@ -49,6 +52,12 @@ class SettingsViewController: UIViewController {
         currentPass.hidden = true
         newPass.hidden = true
         confirmPass.hidden = true
+        
+        //name.text = currentUser?.objectForKey(<#T##key: String##String#>)
+        email.text = currentUser?.email
+        userName.text = currentUser?.username
+        //phone.text = currentUser?.objectForKey(<#T##key: String##String#>)
+        //bio.text = currentUser?.objectForKey(<#T##key: String##String#>)
 
         // Do any additional setup after loading the view.
     }
@@ -66,19 +75,23 @@ class SettingsViewController: UIViewController {
         email.hidden == false &&
         phone.hidden == false &&
         bio.hidden == false {
-        
-            if  name.text == "" &&
-            userName.text == "" &&
-            email.text == "" &&
-            phone.text == "" &&
-                bio.text == "" {
+            
+           if name.text != "" &&
+                userName.text != "" &&
+                email.text != "" &&
+                phone.text != "" &&
+                bio.text != "" {
                     
                     name.hidden = true
                     userName.hidden = true
                     email.hidden = true
                     phone.hidden = true
                     bio.hidden = true
+                    //save changes
                     
+            }else {
+                
+                // a field or more is empty
             }
         
         }else {
@@ -99,6 +112,26 @@ class SettingsViewController: UIViewController {
         currentPass.hidden = false
         newPass.hidden = false
         confirmPass.hidden = false
+        
+        if currentPass.hidden == false &&
+        newPass.hidden == false &&
+        confirmPass.hidden == false {
+            
+            if currentPass == currentUser?.password &&
+                newPass.text != "" && confirmPass.text == newPass.text {
+                    
+                    // save changes
+                    
+                    currentPass.hidden = true
+                    newPass.hidden = true
+                    confirmPass.hidden = true
+                    
+                    
+            }else {
+                
+                //alert issued with new password
+            }
+        }
     }
    
     @IBAction func addFriendsBtn(sender: AnyObject) {

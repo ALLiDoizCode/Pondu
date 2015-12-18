@@ -325,11 +325,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/UI/ViewControllers/Home/SettingsViewController.swift"
-            timestampString = "472105013.557727"
+            timestampString = "472160003.816613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "editProfileBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
