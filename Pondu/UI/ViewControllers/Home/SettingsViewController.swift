@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import BubbleTransition
 
-class SettingsViewController: UIViewController,UIViewControllerTransitioningDelegate {
+class SettingsViewController: UIViewController,UIViewControllerTransitioningDelegate,UITextFieldDelegate,UITextViewDelegate {
     
     
 
@@ -45,6 +45,15 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        name.delegate = self
+        userName.delegate = self
+        email.delegate = self
+        phone.delegate = self
+        bio.delegate = self
+        newPass.delegate = self
+        confirmPass.delegate = self
         
         transition.duration = 0.4
         
@@ -168,8 +177,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     
     func deleteUser(){
         
-        currentUser?.deleteEventually()
-    
+        currentUser?.deleteEventually()    
     }
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
