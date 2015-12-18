@@ -161,6 +161,15 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         
     }
     @IBAction func deleteBtn(sender: AnyObject) {
+        
+        deleteUser()
+        self.performSegueWithIdentifier("logout", sender: self)
+    }
+    
+    func deleteUser(){
+        
+        currentUser?.deleteEventually()
+    
     }
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
