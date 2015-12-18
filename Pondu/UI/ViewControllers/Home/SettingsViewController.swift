@@ -8,8 +8,11 @@
 
 import UIKit
 import Parse
+import BubbleTransition
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController,UIViewControllerTransitioningDelegate {
+    
+    
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var searchContacts: UIButton!
@@ -34,6 +37,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var changePassWord: UIButton!
     
     var currentUser = PFUser.currentUser()
+    let transition = BubbleTransition()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -41,6 +45,8 @@ class SettingsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        transition.duration = 0.4
         
         name.hidden = true
         userName.hidden = true
@@ -148,17 +154,40 @@ class SettingsViewController: UIViewController {
     @IBAction func blockedBtn(sender: AnyObject) {
     }
     @IBAction func logout(sender: AnyObject) {
+        
+        PFUser.logOut()
+        
+        self.performSegueWithIdentifier("logout", sender: self)
+        
     }
     @IBAction func deleteBtn(sender: AnyObject) {
     }
-    /*
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Present
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.whiteColor()
+        return transition
+    }
+    
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .Dismiss
+        transition.startingPoint = self.view.center
+        transition.bubbleColor = UIColor.blueColor()
+        return transition
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let controller = segue.destinationViewController
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .Custom
     }
-    */
+    
 
 }

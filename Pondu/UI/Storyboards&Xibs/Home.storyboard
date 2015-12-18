@@ -1658,11 +1658,20 @@
                         <outlet property="site" destination="bzR-po-0ZK" id="6Xq-9T-Jo5"/>
                         <outlet property="terms" destination="wJP-Ys-R2U" id="iTB-SX-HoD"/>
                         <outlet property="userName" destination="LXN-QO-fXy" id="w2f-3h-KBa"/>
+                        <segue destination="obA-IX-iM7" kind="show" identifier="logout" id="4Rn-Rv-fzq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oV-bg-Te7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3702" y="1220.25"/>
+        </scene>
+        <!--login-->
+        <scene sceneID="gIN-6r-WY2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login-SignUp" referencedIdentifier="login" id="obA-IX-iM7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9G8-WX-Ch8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4236.75" y="744"/>
         </scene>
     </scenes>
     <resources>

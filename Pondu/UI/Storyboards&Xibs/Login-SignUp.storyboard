@@ -96,7 +96,8 @@
                                         <exclude reference="zfj-cg-0v5"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="308" width="340" height="12"/>
                                     <mask key="constraints">
                                         <include reference="zfj-cg-0v5"/>
                                     </mask>
@@ -743,7 +744,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Eel-ru-PW0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3qt-3k-RJS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="login" automaticallyAdjustsScrollViewInsets="NO" id="3qt-3k-RJS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erg-O3-TFm">
