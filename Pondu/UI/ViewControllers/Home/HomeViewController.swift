@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        self.navigationController?.navigationBarHidden = true
+        
         storyUser.theUsers { (theData) -> Void in
             
             for user in theData {

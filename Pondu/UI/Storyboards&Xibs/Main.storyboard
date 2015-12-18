@@ -1645,7 +1645,7 @@
                     <connections>
                         <segue destination="dRc-1f-bKN" kind="relationship" relationship="viewControllers" id="5YK-Im-RR0"/>
                         <segue destination="S2n-cQ-MxY" kind="relationship" relationship="viewControllers" id="JcA-Bo-n40"/>
-                        <segue destination="iRU-1K-d9k" kind="relationship" relationship="viewControllers" id="y5H-kv-9WV"/>
+                        <segue destination="kOM-la-LYg" kind="relationship" relationship="viewControllers" id="y5H-kv-9WV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j36-vX-SWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1656,16 +1656,39 @@
         <scene sceneID="8Ng-e8-q4W">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="Home" referencedIdentifier="Profile" id="iRU-1K-d9k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NPc-mi-Pec"/>
+                    <navigationItem key="navigationItem" id="chB-QU-fdU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n02-Or-wDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="1216"/>
+            <point key="canvasLocation" x="1968" y="1216"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qh6-gC-lp9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kOM-la-LYg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="HomeTabReg" selectedImage="HomeTabReg" id="NPc-mi-Pec">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FNU-QZ-ikc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iRU-1K-d9k" kind="relationship" relationship="rootViewController" id="nNL-zj-hEs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDD-ey-8cK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="1363"/>
         </scene>
     </scenes>
     <resources>
         <image name="ColumPost" width="74" height="32"/>
         <image name="FavTabReg" width="126" height="70"/>
+        <image name="HomeTabReg" width="128" height="70"/>
         <image name="MainTabReg" width="128" height="70"/>
         <image name="backgrounds" width="640" height="1136"/>
         <image name="bob" width="359" height="358"/>
