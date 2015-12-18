@@ -377,27 +377,6 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-Up-fvD">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="jnj-Zg-R1D"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Edit Profile">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="jnj-Zg-R1D"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="jnj-Zg-R1D"/>
-                                            </mask>
-                                        </variation>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eio-to-YS9">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
@@ -681,6 +660,9 @@
                                         <state key="normal" title="Change Password">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changePassWordBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="Mvj-vz-1OV"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUR-YM-fnX">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -812,6 +794,12 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-Bw-TzA">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOs-iz-Iv3">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1072,12 +1060,30 @@
                                             <action selector="privacyBtn:" destination="TaJ-fc-Buu" eventType="valueChanged" id="NnR-eb-tbm"/>
                                         </connections>
                                     </switch>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOs-iz-Iv3">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxB-Up-fvD">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="jnj-Zg-R1D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Edit Profile">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jnj-Zg-R1D"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="jnj-Zg-R1D"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="editProfileBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="3Mm-qn-YeG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <constraints>
@@ -1250,7 +1256,6 @@
                                         <exclude reference="iR8-sL-wiy"/>
                                         <exclude reference="K2N-0A-v0F"/>
                                         <exclude reference="IqO-ZH-eE5"/>
-                                        <exclude reference="DxB-Up-fvD"/>
                                         <exclude reference="eio-to-YS9"/>
                                         <exclude reference="qF8-11-gQx"/>
                                         <exclude reference="TVH-dU-sZ1"/>
@@ -1278,6 +1283,7 @@
                                         <exclude reference="1wG-eW-ZyO"/>
                                         <exclude reference="I9f-nO-OnD"/>
                                         <exclude reference="GaI-Bw-TzA"/>
+                                        <exclude reference="EOs-iz-Iv3"/>
                                         <exclude reference="X1T-zF-bGb"/>
                                         <exclude reference="gmY-vc-q28"/>
                                         <exclude reference="wJP-Ys-R2U"/>
@@ -1296,7 +1302,7 @@
                                         <exclude reference="d2C-e5-leJ"/>
                                         <exclude reference="DB2-OZ-X8l"/>
                                         <exclude reference="3CS-K5-pab"/>
-                                        <exclude reference="EOs-iz-Iv3"/>
+                                        <exclude reference="DxB-Up-fvD"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="db6-yS-LcR"/>
@@ -1439,7 +1445,6 @@
                                         <include reference="iR8-sL-wiy"/>
                                         <include reference="K2N-0A-v0F"/>
                                         <include reference="IqO-ZH-eE5"/>
-                                        <include reference="DxB-Up-fvD"/>
                                         <include reference="eio-to-YS9"/>
                                         <include reference="qF8-11-gQx"/>
                                         <include reference="TVH-dU-sZ1"/>
@@ -1467,6 +1472,7 @@
                                         <include reference="1wG-eW-ZyO"/>
                                         <include reference="I9f-nO-OnD"/>
                                         <include reference="GaI-Bw-TzA"/>
+                                        <include reference="EOs-iz-Iv3"/>
                                         <include reference="X1T-zF-bGb"/>
                                         <include reference="gmY-vc-q28"/>
                                         <include reference="wJP-Ys-R2U"/>
@@ -1485,7 +1491,7 @@
                                         <include reference="d2C-e5-leJ"/>
                                         <include reference="DB2-OZ-X8l"/>
                                         <include reference="3CS-K5-pab"/>
-                                        <include reference="EOs-iz-Iv3"/>
+                                        <include reference="DxB-Up-fvD"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="db6-yS-LcR"/>
@@ -1663,10 +1669,12 @@
                         <outlet property="addFriends" destination="iR8-sL-wiy" id="044-9Q-Vvn"/>
                         <outlet property="bio" destination="Gam-D8-bNd" id="XEj-GP-2cC"/>
                         <outlet property="blocked" destination="IGe-r9-jO4" id="fZX-7e-yeC"/>
+                        <outlet property="changePassWord" destination="hTY-BL-J3p" id="v0n-cn-IeO"/>
                         <outlet property="clear" destination="Kqu-JY-gSG" id="tGI-l5-wIw"/>
                         <outlet property="confirmPass" destination="EOs-iz-Iv3" id="Sfo-Uf-h0w"/>
                         <outlet property="currentPass" destination="I9f-nO-OnD" id="9aO-L6-XYf"/>
                         <outlet property="delete" destination="DB2-OZ-X8l" id="xb2-ZU-R1m"/>
+                        <outlet property="editProfile" destination="DxB-Up-fvD" id="n1F-dj-pHB"/>
                         <outlet property="email" destination="n8t-Cx-zpH" id="VAS-ZP-rsh"/>
                         <outlet property="help" destination="gmY-vc-q28" id="FZo-NN-gXK"/>
                         <outlet property="logout" destination="h3r-ji-A64" id="RBB-Gj-t5O"/>

@@ -198,7 +198,7 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "471417947.109104"
+                  timestampString = "472105013.607834"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -213,7 +213,7 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "471417947.109217"
+                  timestampString = "472105013.60794"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -228,7 +228,7 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "471417947.109308"
+                  timestampString = "472105013.608024"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -315,6 +315,22 @@
             startingLineNumber = "125"
             endingLineNumber = "125"
             landmarkName = "pickSchoolBtn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pondu/UI/ViewControllers/Home/SettingsViewController.swift"
+            timestampString = "472105013.557727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "editProfileBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

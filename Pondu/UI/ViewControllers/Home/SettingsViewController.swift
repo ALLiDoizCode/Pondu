@@ -30,6 +30,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var blocked: UIButton!
     @IBOutlet weak var logout: UIButton!
     @IBOutlet weak var delete: UIButton!
+    @IBOutlet weak var editProfile: UIButton!
+    @IBOutlet weak var changePassWord: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         
@@ -38,7 +40,15 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        name.hidden = true
+        userName.hidden = true
+        email.hidden = true
+        phone.hidden = true
+        bio.hidden = true
+        
+        currentPass.hidden = true
+        newPass.hidden = true
+        confirmPass.hidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -49,6 +59,48 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func editProfileBtn(sender: AnyObject) {
+        
+        if  name.hidden == false &&
+        userName.hidden == false &&
+        email.hidden == false &&
+        phone.hidden == false &&
+        bio.hidden == false {
+        
+            if  name.text == "" &&
+            userName.text == "" &&
+            email.text == "" &&
+            phone.text == "" &&
+                bio.text == "" {
+                    
+                    name.hidden = true
+                    userName.hidden = true
+                    email.hidden = true
+                    phone.hidden = true
+                    bio.hidden = true
+                    
+            }
+        
+        }else {
+            
+            name.hidden = false
+            userName.hidden = false
+            email.hidden = false
+            phone.hidden = false
+            bio.hidden = false
+
+        }
+        
+       
+    }
+    
+    @IBAction func changePassWordBtn(sender: AnyObject) {
+        
+        currentPass.hidden = false
+        newPass.hidden = false
+        confirmPass.hidden = false
+    }
+   
     @IBAction func addFriendsBtn(sender: AnyObject) {
     }
     @IBAction func searchContactBtn(sender: AnyObject) {
