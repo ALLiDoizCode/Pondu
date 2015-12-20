@@ -19,6 +19,8 @@
 		4D0512571C078FAB00FB414D /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0512561C078FAB00FB414D /* Live.storyboard */; };
 		4D05125B1C07984200FB414D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05125A1C07984200FB414D /* Player.swift */; };
 		4D09D9691C26456D00D3FF81 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09D9681C26456D00D3FF81 /* WebViewController.swift */; };
+		4D09D96B1C26575D00D3FF81 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D09D96A1C26575D00D3FF81 /* Discover.storyboard */; };
+		4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09D96D1C26664200D3FF81 /* CameraViewController.swift */; };
 		4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */; };
 		4D14C6341C193E9200BAEA1F /* school.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14C6331C193E9200BAEA1F /* school.swift */; };
 		4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */; };
@@ -118,6 +120,8 @@
 		4D0512561C078FAB00FB414D /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		4D05125A1C07984200FB414D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D09D9681C26456D00D3FF81 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4D09D96A1C26575D00D3FF81 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		4D09D96D1C26664200D3FF81 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		4D14C6331C193E9200BAEA1F /* school.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = school.swift; sourceTree = "<group>"; };
 		4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
@@ -291,6 +295,14 @@
 			path = Live;
 			sourceTree = "<group>";
 		};
+		4D09D96C1C2665FF00D3FF81 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				4D09D96D1C26664200D3FF81 /* CameraViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
 		4D1843E41BF2450E00B2AFA2 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +462,7 @@
 		4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D09D96C1C2665FF00D3FF81 /* Discover */,
 				4DC8BC201C1E2F5200E6D2F5 /* Home */,
 				4D2436281C13D0150032FB27 /* Login */,
 				4D0512531C07889000FB414D /* Live */,
@@ -466,6 +479,7 @@
 			children = (
 				4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */,
 				4DE1A1C21BEA7133009BCF55 /* Main.storyboard */,
+				4D09D96A1C26575D00D3FF81 /* Discover.storyboard */,
 				4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */,
 				4D0512561C078FAB00FB414D /* Live.storyboard */,
 				4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */,
@@ -607,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */,
+				4D09D96B1C26575D00D3FF81 /* Discover.storyboard in Resources */,
 				4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */,
 				4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */,
 				4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */,
@@ -741,6 +756,7 @@
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,
 				4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */,
 				4D05125B1C07984200FB414D /* Player.swift in Sources */,
+				4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,

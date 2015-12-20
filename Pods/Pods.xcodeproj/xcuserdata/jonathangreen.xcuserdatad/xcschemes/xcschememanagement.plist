@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LLSimpleCamera.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LTMorphingLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,12 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<key>30B19E7FE0724354EFA66ECC7D2E0288</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F7620537715DAC21D2D1F9BBD9CF3D8</key>
+		<key>3AFBB09DF1D6DAE98D8756EBF012FED4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BC03C45016BA95CE1ADB8E9B290348E</key>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<key>72F028D9A2AC980FB0663E35B64B2BA8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BD667BA37AD88F16105A1F9A9567ECE</key>
+		<key>85B1FEF88DC61F1AFD2DD378A5378E6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A44A45BDA443C2CE18E220933001B9CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,17 +162,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBB4B388CC8E0E9A455909C4162C51A2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE8A344F753F3CFDD8FC9A0792749AFE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CD378EDFF42487A7E1BB47D45223953B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE0CC7E2B5B550BC4172F6FF9CC5D50A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
