@@ -8,6 +8,7 @@
 
 import UIKit
 import LLSimpleCamera
+import CircleSlider
 
 
 class CameraViewController: UIViewController {
@@ -17,6 +18,10 @@ class CameraViewController: UIViewController {
     var camera:LLSimpleCamera!
     var snapButton:UIButton!
     var switchButton:UIButton!
+    var circleSlider:CircleSlider!
+    var circleProgress: CircleSlider!
+    var timer:NSTimer!
+    var progressValue:Float = 0
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,9 +42,13 @@ class CameraViewController: UIViewController {
         
         makeSnap()
         toggleCameraPosition()
+        
     }
     
     func makeSnap(){
+        
+        
+        
         
         self.snapButton = UIButton(type: .System)
         self.snapButton = UIButton(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70))
@@ -52,6 +61,16 @@ class CameraViewController: UIViewController {
         self.snapButton.layer.shouldRasterize = true
         self.snapButton.addTarget(self, action: "captureVideo", forControlEvents: .TouchUpInside)
         self.view.addSubview(self.snapButton)
+    }
+    
+    func tap() {
+        
+        print("Tap happend")
+    }
+    
+    func long() {
+        
+        print("Long press")
     }
     
     func toggleCameraPosition(){
@@ -96,6 +115,11 @@ class CameraViewController: UIViewController {
         
         if self.camera.recording != true {
             
+            snapButton.layer.borderColor = UIColor.clearColor().CGColor
+            snapButton.layer.borderWidth = 0
+            circle()
+            progress()
+            
             switchButton.hidden = true
             
             let outputUrl = self.applicationDocumentsDirectory().URLByAppendingPathComponent("test").URLByAppendingPathExtension("mov")
@@ -125,6 +149,66 @@ class CameraViewController: UIViewController {
     func applicationDocumentsDirectory() -> NSURL {
         
        return NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last!
+    }
+    
+    func circle(){
+        
+        let purple = UIColor.purpleColor()
+        
+        var sliderOptions: [CircleSliderOption] {
+            return [
+                .BarColor(UIColor(red: 255/255, green: 190/255, blue: 190/255, alpha: 0.3)),
+                .ThumbColor(UIColor(red: 141/255, green: 185/255, blue: 204/255, alpha: 1)),
+                .TrackingColor(purple),
+                .BarWidth(4),
+                .StartAngle(-45),
+                .MaxValue(150),
+                .MinValue(0)
+            ]
+        }
+        
+        self.circleSlider = CircleSlider(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70), options: sliderOptions)
+        //self.circleSlider?.addTarget(self, action: Selector("valueChange:"), forControlEvents: .ValueChanged)
+        self.view.addSubview(self.circleSlider!)
+      
+        
+    }
+    
+    
+    func buildCircleProgress() {
+        
+        let purple = UIColor.purpleColor()
+        
+        var progressOptions: [CircleSliderOption] {
+            return [
+                .BarColor(UIColor(red: 141/255, green: 185/255, blue: 204/255, alpha: 1)),
+                .TrackingColor(UIColor(red: 141/255, green: 185/255, blue: 204/255, alpha: 1)),
+                .BarWidth(20),
+                .SliderEnabled(false)
+            ]
+        }
+        
+            self.circleProgress = CircleSlider(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70), options: progressOptions)
+            //self.circleProgress?.addTarget(self, action: Selector("valueChange:"), forControlEvents: .ValueChanged)
+            self.view.addSubview(self.circleProgress!)
+        }
+    
+    func progress(){
+        
+        if self.timer == nil {
+            self.progressValue = 0
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(0.02, target: self, selector: Selector("fire:"), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func fire(timer: NSTimer) {
+        self.progressValue = progressValue + 0.5
+        /*if self.progressValue > 100 {
+            self.timer?.invalidate()
+            self.timer = nil
+            self.progressValue = 0
+        }*/
+        self.circleSlider.value = self.progressValue
     }
     
 

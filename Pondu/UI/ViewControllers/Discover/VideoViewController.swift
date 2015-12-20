@@ -14,8 +14,23 @@ class VideoViewController: UIViewController,PlayerDelegate {
         var player:Player!
         var videoUrl:NSURL!
     
+    let tapRect = UITapGestureRecognizer()
+    let swipeDownRect = UISwipeGestureRecognizer()
+    let swipeRightRect = UISwipeGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tapRect.addTarget(self, action: "tappedView:")
+        tapRect.numberOfTapsRequired = 1
+        tapRect.numberOfTouchesRequired = 1
+        self.view!.addGestureRecognizer(tapRect)
+        
+        
+        swipeDownRect.addTarget(self, action: "swippedDown:")
+        swipeDownRect.numberOfTouchesRequired = 1
+        swipeDownRect.direction = .Down
+        self.view!.addGestureRecognizer(swipeDownRect)
         
         player = Player()
         player.delegate = self
@@ -38,6 +53,30 @@ class VideoViewController: UIViewController,PlayerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tappedView(sender:UITapGestureRecognizer) {
+        
+        switch (self.player.playbackState.rawValue) {
+        case PlaybackState.Stopped.rawValue:
+            self.player.playFromBeginning()
+        case PlaybackState.Paused.rawValue:
+            self.player.playFromCurrentTime()
+        case PlaybackState.Playing.rawValue:
+            self.player.pause()
+        case PlaybackState.Failed.rawValue:
+            self.player.pause()
+        default:
+            self.player.pause()
+        }
+        
+    }
+    
+    func swippedDown(sender:UISwipeGestureRecognizer) {
+        
+        player.stop()
+        self.performSegueWithIdentifier("Home", sender: self)
+        
     }
     
     // MARK: PlayerDelegate

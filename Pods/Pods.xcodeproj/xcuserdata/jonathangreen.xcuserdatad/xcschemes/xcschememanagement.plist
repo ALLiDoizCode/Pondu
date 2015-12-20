@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CircleSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FXBlurView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,7 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0E3CB515EB886E5DE3FDA944C99685B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>192C8C2413796E089B0A00D1D53C6C09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23C3401E0C7BD19DA994AC41B9306B6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,16 +127,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30B19E7FE0724354EFA66ECC7D2E0288</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3AFBB09DF1D6DAE98D8756EBF012FED4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
@@ -132,12 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<key>5ED1961DDCDE947A06DC8C16287018D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>72F028D9A2AC980FB0663E35B64B2BA8</key>
+		<key>708E01B006A9F88B3C13711562282B5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,17 +152,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85B1FEF88DC61F1AFD2DD378A5378E6D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A44A45BDA443C2CE18E220933001B9CE</key>
+		<key>7A96C9943E9B79454CF07CA41B7BF014</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA1C4CC317FDA7DF80ABE51C32FC3728</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -168,6 +173,11 @@
 			<true/>
 		</dict>
 		<key>CE0CC7E2B5B550BC4172F6FF9CC5D50A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9EA00B6B3B7E4B6D17B7DDCE408030A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

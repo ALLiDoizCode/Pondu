@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '965FD5939833F1BA29890EFF'
-               BlueprintName = 'Spring'
+               BlueprintIdentifier = '36461403FF60DB146C694099'
+               BlueprintName = 'CircleSlider'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Spring.framework'>
+               BuildableName = 'CircleSlider.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
