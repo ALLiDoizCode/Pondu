@@ -12,6 +12,27 @@ import Parse
 
 class parseUser {
     
+    func saveUserInfo(name:String,userName:String,email:String,phone:String,bio:String){
+        
+        let user = PFUser.currentUser()
+        
+        user!["FullName"] = name
+        user!["Phone"] = phone
+        user!["Bio"] = bio
+        
+        user?.username = userName
+        user?.email = email
+    
+        user?.saveInBackground()
+        
+    }
+    
+    func savePassWord(email:String){
+        
+       PFUser.requestPasswordResetForEmailInBackground(email)
+        
+    }
+    
     func userQuery(favId:[String]?){
         let query = PFUser.query()
         var userInfo:[userData] = []

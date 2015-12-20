@@ -71,6 +71,16 @@ class theUser {
 
     }
     
+    func editProfile(name:String,userName:String,email:String,phone:String,bio:String){
+        
+        user.saveUserInfo(name, userName: userName, email: email, phone: phone, bio: bio)
+    }
+    
+    func changePassWord(email:String){
+        
+        user.savePassWord(email)
+    }
+    
     
    
 }

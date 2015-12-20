@@ -743,7 +743,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Eel-ru-PW0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3qt-3k-RJS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="login" automaticallyAdjustsScrollViewInsets="NO" id="3qt-3k-RJS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erg-O3-TFm">
