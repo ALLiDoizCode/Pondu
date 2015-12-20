@@ -162,7 +162,7 @@ class CameraViewController: UIViewController {
                 .TrackingColor(purple),
                 .BarWidth(4),
                 .StartAngle(-45),
-                .MaxValue(150),
+                .MaxValue(250),
                 .MinValue(0)
             ]
         }
