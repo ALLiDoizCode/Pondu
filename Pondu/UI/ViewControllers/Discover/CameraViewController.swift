@@ -16,6 +16,7 @@ class CameraViewController: UIViewController {
     
     var camera:LLSimpleCamera!
     var snapButton:UIButton!
+    var switchButton:UIButton!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,6 +35,12 @@ class CameraViewController: UIViewController {
         
         self.camera.attachToViewController(self, withFrame: CGRectMake(0, 0, screenRect.size.width, screenRect.size.height))
         
+        makeSnap()
+        toggleCameraPosition()
+    }
+    
+    func makeSnap(){
+        
         self.snapButton = UIButton(type: .System)
         self.snapButton = UIButton(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70))
         self.snapButton.clipsToBounds = true
@@ -43,17 +50,31 @@ class CameraViewController: UIViewController {
         self.snapButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
         self.snapButton.layer.rasterizationScale = UIScreen.mainScreen().scale
         self.snapButton.layer.shouldRasterize = true
-        self.snapButton.addTarget(self, action: "capturePhoto", forControlEvents: .TouchUpInside)
+        self.snapButton.addTarget(self, action: "captureVideo", forControlEvents: .TouchUpInside)
         self.view.addSubview(self.snapButton)
+    }
+    
+    func toggleCameraPosition(){
         
+        if LLSimpleCamera.isFrontCameraAvailable() && LLSimpleCamera.isRearCameraAvailable() {
+            
+            //button that toggl camera postion
+            
+            self.switchButton = UIButton(type: .System)
+            self.switchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 49, height: 49))
+            self.switchButton.tintColor = UIColor.whiteColor()
+            self.switchButton.setImage(UIImage(named:"switch"), forState: .Normal)
+            self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+            self.switchButton.addTarget(self, action: "switchCam", forControlEvents: .TouchUpInside)
+            self.switchButton.contentMode = .ScaleAspectFill
+            self.view.addSubview(self.switchButton)
+            
+        }
+    }
+    
+    func switchCam(){
         
-        
-       capturePhoto()
-        
-        
-        //captureVideo()
-
-        // Do any additional setup after loading the view.
+        self.camera.togglePosition()
     }
     
     func capturePhoto(){
@@ -73,7 +94,9 @@ class CameraViewController: UIViewController {
     
     func captureVideo(){
         
-       self.camera.start()
+        let outputUrl = self.applicationDocumentsDirectory().URLByAppendingPathComponent("test").URLByAppendingPathExtension("mov")
+        
+       self.camera.startRecordingWithOutputUrl(outputUrl)
         
     }
     
@@ -85,6 +108,10 @@ class CameraViewController: UIViewController {
         }
     }
     
+    func applicationDocumentsDirectory() -> NSURL {
+        
+       return NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last!
+    }
     
 
     override func didReceiveMemoryWarning() {
