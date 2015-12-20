@@ -15,11 +15,14 @@ class CameraViewController: UIViewController {
     
     
     var camera:LLSimpleCamera!
+    var snapButton:UIButton!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.camera.start()
+        self.navigationController?.navigationBarHidden = true
+        self.tabBarController?.tabBar.hidden = true
     }
 
     override func viewDidLoad() {
@@ -31,7 +34,22 @@ class CameraViewController: UIViewController {
         
         self.camera.attachToViewController(self, withFrame: CGRectMake(0, 0, screenRect.size.width, screenRect.size.height))
         
+        self.snapButton = UIButton(type: .System)
+        self.snapButton = UIButton(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70))
+        self.snapButton.clipsToBounds = true
+        self.snapButton.layer.cornerRadius = self.snapButton.frame.height/2
+        self.snapButton.layer.borderColor = UIColor.whiteColor().CGColor
+        self.snapButton.layer.borderWidth = 2
+        self.snapButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        self.snapButton.layer.rasterizationScale = UIScreen.mainScreen().scale
+        self.snapButton.layer.shouldRasterize = true
+        self.snapButton.addTarget(self, action: "capturePhoto", forControlEvents: .TouchUpInside)
+        self.view.addSubview(self.snapButton)
+        
+        
+        
        capturePhoto()
+        
         
         //captureVideo()
 
