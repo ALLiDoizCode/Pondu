@@ -12,8 +12,6 @@ import BubbleTransition
 
 class SettingsViewController: UIViewController,UIViewControllerTransitioningDelegate,UITextFieldDelegate,UITextViewDelegate {
     
-    
-
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var searchContacts: UIButton!
     @IBOutlet weak var addFriends: UIButton!
@@ -104,6 +102,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
                     email.hidden = true
                     phone.hidden = true
                     bio.hidden = true
+                    editProfile.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
                     
             }else {
                 
@@ -117,6 +116,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
             email.hidden = false
             phone.hidden = false
             bio.hidden = false
+            editProfile.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
 
         }
         
@@ -132,7 +132,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
                 user.changePassWord(newPass.text!)
                 
                     newPass.hidden = true
-                
+                    changePassWord.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
                     
                     
             }else {
@@ -142,6 +142,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         }else {
             
             newPass.hidden = false
+            changePassWord.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
             
         }
     }

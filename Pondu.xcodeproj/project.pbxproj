@@ -18,6 +18,7 @@
 		4D01DB8B1BDD639100B30C0D /* PonduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01DB8A1BDD639100B30C0D /* PonduUITests.swift */; };
 		4D0512571C078FAB00FB414D /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D0512561C078FAB00FB414D /* Live.storyboard */; };
 		4D05125B1C07984200FB414D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D05125A1C07984200FB414D /* Player.swift */; };
+		4D09D9691C26456D00D3FF81 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09D9681C26456D00D3FF81 /* WebViewController.swift */; };
 		4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */; };
 		4D14C6341C193E9200BAEA1F /* school.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14C6331C193E9200BAEA1F /* school.swift */; };
 		4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */; };
@@ -116,6 +117,7 @@
 		4D01DB8C1BDD639100B30C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D0512561C078FAB00FB414D /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		4D05125A1C07984200FB414D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D09D9681C26456D00D3FF81 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		4D14C6331C193E9200BAEA1F /* school.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = school.swift; sourceTree = "<group>"; };
 		4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			children = (
 				4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */,
 				4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */,
+				4D09D9681C26456D00D3FF81 /* WebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */,
 				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
 				4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */,
+				4D09D9691C26456D00D3FF81 /* WebViewController.swift in Sources */,
 				4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */,
 				4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */,
 				4D01CA801C0AD3FB0000F367 /* LiveViewController.swift in Sources */,

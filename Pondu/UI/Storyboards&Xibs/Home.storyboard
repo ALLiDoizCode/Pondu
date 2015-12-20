@@ -773,6 +773,7 @@
                                         </state>
                                         <connections>
                                             <action selector="termsBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="RH7-CX-qSR"/>
+                                            <segue destination="GLz-w5-dox" kind="show" id="0Ti-nl-RoL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ia1-R7-EeS">
@@ -795,6 +796,7 @@
                                         </state>
                                         <connections>
                                             <action selector="siteBtn:" destination="TaJ-fc-Buu" eventType="touchUpInside" id="oZ7-oT-is3"/>
+                                            <segue destination="7o4-Yw-OfS" kind="show" id="U6l-p6-nHt"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-JZ-dAB">
@@ -1547,6 +1549,235 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oV-bg-Te7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3702" y="1220.25"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="omZ-Yu-5g6">
+            <objects>
+                <viewController id="7o4-Yw-OfS" customClass="WebViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BUX-hs-fbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="0zI-oI-xMX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dcG-sM-exw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryB-lN-qYC">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ryB-lN-qYC" firstAttribute="bottom" secondItem="0zI-oI-xMX" secondAttribute="top" id="0J0-MA-HTl"/>
+                            <constraint firstItem="ryB-lN-qYC" firstAttribute="leading" secondItem="dcG-sM-exw" secondAttribute="leading" id="KMp-JW-Y6H"/>
+                            <constraint firstAttribute="trailing" secondItem="ryB-lN-qYC" secondAttribute="trailing" id="KeS-AO-UzK"/>
+                            <constraint firstItem="ryB-lN-qYC" firstAttribute="top" secondItem="dcG-sM-exw" secondAttribute="top" id="bei-WH-tuE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ryB-lN-qYC"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0J0-MA-HTl"/>
+                                <exclude reference="KMp-JW-Y6H"/>
+                                <exclude reference="KeS-AO-UzK"/>
+                                <exclude reference="bei-WH-tuE"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ryB-lN-qYC"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0J0-MA-HTl"/>
+                                <include reference="KMp-JW-Y6H"/>
+                                <include reference="KeS-AO-UzK"/>
+                                <include reference="bei-WH-tuE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="800"/>
+                    <connections>
+                        <outlet property="webView" destination="ryB-lN-qYC" id="cm4-KC-r5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qv7-ev-EVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3702" y="2300.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XQ4-ol-Mcu">
+            <objects>
+                <viewController id="GLz-w5-dox" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hnu-z5-G2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="7gJ-Oo-c2S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tlq-cj-GRy">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYl-Kp-rEN">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-uR-pmb">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="384" id="9fl-sr-KLL"/>
+                                            <constraint firstAttribute="height" constant="4123" id="BUA-oq-P6l">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="4102"/>
+                                            </constraint>
+                                        </constraints>
+                                        <mutableString key="text">Pondu Terms of Service
+
+Please read these Terms of Service (“Terms”) carefully. By downloading, accessing, or using the mobile applications, websites, or other products or services (“Service”) of Pondu, and our affiliates  (“Pondu”, “we” or “us”), or the Services, features, as well as any materials such as videos, images, text, graphics, etc (collectively referred to as “Content”), or functionality jointly offered with other companies through our mobile application or website, you agree to be bound by these Terms. These Terms affect your legal rights and obligations, so if you do not agree to these Terms, do not use the Services.
+
+
+Basic Terms
+
+You must be at least 17 years old to use the Service
+You are responsible for your use of the Service, for any Content you post to the Services, and for any consequences thereof
+You should only post Content that you are comfortable sharing with others publicly
+You may not post Content that is violent, unlawful, threatening, defamatory, hateful, racist, nude, sexually explicit, or pornographic in nature
+You agree that you may only use the Services for yourself in compliance with these Terms, and that you are the only person using your account, unless you are authorized to do so on behalf of another organization, government, or legal entity
+You agree to comply with all the laws, rules, and regulations applicable to your use of the Service and your Content
+You are solely responsible for choosing strong passwords for your account and safeguarding them
+You must not encourage or advocate harassment towards any other users of the Service, or facilitate violations of these Terms
+We reserve the rights to add, modify, or remove certain features provided in the Services, with or without prior notice to you, at our sole discretion
+We reserve the rights to remove, edit, or ban Content that we determine as violating these Terms
+You agree that you are using the Service at your own risk, and that you might be exposed to Content that might be offensive or inappropriate for you
+Pondu, its parent company Pondu Social Networking, or any of its partners and affiliates are not responsible for the Content posted on the Service, and shall not be in any way liable for any Content or result of the use of Content made available via the Service
+Violations of these Terms may result in the termination of your Pondu account
+Privacy, Rights, and Restrictions
+
+The information that you provide us with, is subject to our Privacy Policy. In order to enable your use of the Services, you may receive Service-related communications (e.g., critical changes to Service features, security notices) that you may not be able to opt-out from. 
+
+You retain your rights and ownership to any Content posted publicly through the Services. By using the Services, you hereby grant Pondu and its Partners a non-exclusive, sub-licensable, perpetual, irrevocable, fully-paid, royalty-free, worldwide license to use, copy, modify and distribute the Content that you post as public on or through the Service. The Content you post publicly may not be confidential or proprietary or violate or infringe on the rights of any third party, and you represent and warrant that you have all the necessary rights to grant the permissions described. Pondu and its Partners will be held neither responsible nor liable for using it. 
+
+Pondu grants you a personal, non-assignable, non-exclusive, non-transferrable, and non sub-licensable license to use the Services. Although not intentionally, we reserve the rights to interrupt or suspend the Services for scheduled maintenance, from time to time, without prior notice.
+
+Any Content available as part of the Service that is not provided by its users is an exclusive property of Pondu and its Partners, and is protected by copyright, trademark, patent, trade secret and other laws.
+
+By agreeing with these Terms, you consent that you may not modify, create derivative works based on, publish, sell, broadcast, distribute, assign, share, license, adapt, rent, or otherwise exploit any Pondu Content or Services. You may also not reverse engineer, or disassemble any source code part of the Services, or remove or modify any copyright, trademark, or other proprietary notices part of the Pondu Content or Services.
+
+We reserve the right, without obligation, to remove, edit, or ban Content that we determine as violating the Terms, and/or to terminate any account that violates the Terms, without prior notice.
+
+Disclaimers of Warranties
+
+The Pondu Services, including, without limitation, any Pondu Content, is provided “as is”. Pondu, Pondu Social Networking, or any of its Partners hereby disclaim all warranties of any kind, expressed or implied, including, without limitation: i) the Pondu Services; ii) the Pondu Content; iii) any user generated Content; iv) any loss, damage, injury, or other harm that results from your access to the Service or Content; v) all implied warranties and conditions of merchantability, fitness for a particular purpose, title, and non-infringement.
+
+You acknowledge that your use of the Service is at your own risk, and that you might be exposed to Content that might be offensive or inappropriate for you. We do not make any representation or warranties that the Content or information available as part of the Service is accurate, complete, or useful. In addition, we do not warrant that the Service will be available on an uninterrupted, error-free basis.
+
+Any links to third party websites or services provided as part of the Service are not the responsibility of Pondu, Pondu Social Networking, or its Partners, and you acknowledge and agree that your usage of them is done at your own risk.
+
+Limitation of Liability
+
+Under no circumstances shall Pondu, Pondu Social Networking, or any of its Partners be liable for any loss, damage, injury, or other harm, whether directly or indirectly, that results from your access to or inability to access or use of the Service or the Content.
+
+In no event shall the total liability of Pondu, Pondu Social Networking or its Partners to you for all damages, exceed One Hundred U.S. Dollars ($100.00).
+
+General Terms
+
+if we suspect you are violating these Terms, we may suspend or terminate your account, or restrict access to all or part of the Services
+these Terms will be in effect until you choose to deactivate your account. If you decide to do so, please contact us
+any failure by any party to enforce at any time any right or provision of these Terms will not be considered a waiver of such right or provision
+if any provision of these Terms is declared invalid, unenforceable, unlawful, illegal, or void, the remainder of these Terms will be valid and enforceable to the extent permitted by law. We agree to use our best efforts to limit or eliminate the invalid provision to the minimum extent necessary
+these Terms are governed by and construed in accordance with the laws of the State of Florida, without regard to or application of its conflict of law of your state, country, or residence. You agree to dispute any action at law, claim, or proceeding related to the Services, Content, or these Terms, exclusively in the federal or state courts located in Orange County, Florida, United States
+these Terms and our Privacy Policy, constitute the entire agreement between you and Pondu, Pondu Social Networking, and its Partners, and supersede any other communications with respect to the Services
+we reserve the right to revise these Terms from time to time. Even though we will provide forms of notice as appropriate under the circumstances, please review the Terms directly periodically. Your continued use of Pondu or the Service after any modification to these Terms will constitute your acceptance of such modification. The most current version of the Terms will always be available at http://fyu.se/terms
+Effective: February 07, 2015</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9fl-sr-KLL"/>
+                                                <exclude reference="BUA-oq-P6l"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="9fl-sr-KLL"/>
+                                                <include reference="BUA-oq-P6l"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Fc1-uR-pmb" secondAttribute="bottom" constant="-42" id="IOg-Am-xMb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="Fc1-uR-pmb" firstAttribute="leading" secondItem="MYl-Kp-rEN" secondAttribute="leadingMargin" id="TWP-2N-TiN"/>
+                                    <constraint firstItem="Fc1-uR-pmb" firstAttribute="top" secondItem="MYl-Kp-rEN" secondAttribute="top" constant="39" id="go8-Zj-JHz"/>
+                                    <constraint firstItem="Fc1-uR-pmb" firstAttribute="trailing" secondItem="MYl-Kp-rEN" secondAttribute="trailingMargin" id="jQP-ag-aQs"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Fc1-uR-pmb"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="IOg-Am-xMb"/>
+                                        <exclude reference="TWP-2N-TiN"/>
+                                        <exclude reference="go8-Zj-JHz"/>
+                                        <exclude reference="jQP-ag-aQs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Fc1-uR-pmb"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="IOg-Am-xMb"/>
+                                        <include reference="TWP-2N-TiN"/>
+                                        <include reference="go8-Zj-JHz"/>
+                                        <include reference="jQP-ag-aQs"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MYl-Kp-rEN" firstAttribute="leading" secondItem="Tlq-cj-GRy" secondAttribute="leading" id="2yI-ra-7dd"/>
+                            <constraint firstAttribute="trailing" secondItem="MYl-Kp-rEN" secondAttribute="trailing" id="4sK-po-yCJ"/>
+                            <constraint firstItem="MYl-Kp-rEN" firstAttribute="top" secondItem="Tlq-cj-GRy" secondAttribute="top" id="Qdt-tV-G5b"/>
+                            <constraint firstItem="7gJ-Oo-c2S" firstAttribute="top" secondItem="MYl-Kp-rEN" secondAttribute="bottom" constant="31" id="mo8-yF-cXP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MYl-Kp-rEN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2yI-ra-7dd"/>
+                                <exclude reference="4sK-po-yCJ"/>
+                                <exclude reference="Qdt-tV-G5b"/>
+                                <exclude reference="mo8-yF-cXP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MYl-Kp-rEN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2yI-ra-7dd"/>
+                                <include reference="4sK-po-yCJ"/>
+                                <include reference="Qdt-tV-G5b"/>
+                                <include reference="mo8-yF-cXP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="4190"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qb-Yn-at7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4650" y="1220.25"/>
         </scene>
         <!--login-->
         <scene sceneID="gIN-6r-WY2">
