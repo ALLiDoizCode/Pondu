@@ -94,9 +94,23 @@ class CameraViewController: UIViewController {
     
     func captureVideo(){
         
-        let outputUrl = self.applicationDocumentsDirectory().URLByAppendingPathComponent("test").URLByAppendingPathExtension("mov")
+        if self.camera.recording != true {
+            
+            switchButton.hidden = true
+            
+            let outputUrl = self.applicationDocumentsDirectory().URLByAppendingPathComponent("test").URLByAppendingPathExtension("mov")
+            
+            self.camera.startRecordingWithOutputUrl(outputUrl)
+        }else {
+            
+            switchButton.hidden = false
+            
+            stopRecording()
+        }
         
-       self.camera.startRecordingWithOutputUrl(outputUrl)
+        
+        
+       
         
     }
     
@@ -104,7 +118,7 @@ class CameraViewController: UIViewController {
         
         self.camera.stopRecording { (camera, url, error) -> Void in
             
-            print(url)
+           self.performSegueWithIdentifier("video", sender: url)
         }
     }
     
@@ -120,14 +134,21 @@ class CameraViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "video" {
+            
+            let controller = segue.destinationViewController as! VideoViewController
+            
+            controller.videoUrl = sender as! NSURL
+        }
     }
-    */
+
 
 }

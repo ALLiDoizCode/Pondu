@@ -21,6 +21,7 @@
 		4D09D9691C26456D00D3FF81 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09D9681C26456D00D3FF81 /* WebViewController.swift */; };
 		4D09D96B1C26575D00D3FF81 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D09D96A1C26575D00D3FF81 /* Discover.storyboard */; };
 		4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09D96D1C26664200D3FF81 /* CameraViewController.swift */; };
+		4D0CC3D61C2746C000843328 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC3D51C2746C000843328 /* VideoViewController.swift */; };
 		4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */; };
 		4D14C6341C193E9200BAEA1F /* school.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14C6331C193E9200BAEA1F /* school.swift */; };
 		4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */; };
@@ -122,6 +123,7 @@
 		4D09D9681C26456D00D3FF81 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4D09D96A1C26575D00D3FF81 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		4D09D96D1C26664200D3FF81 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4D0CC3D51C2746C000843328 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		4D14C6331C193E9200BAEA1F /* school.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = school.swift; sourceTree = "<group>"; };
 		4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				4D09D96D1C26664200D3FF81 /* CameraViewController.swift */,
+				4D0CC3D51C2746C000843328 /* VideoViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				4D2BE9A91C1CF893001810BB /* School.swift in Sources */,
 				4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */,
 				4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */,
+				4D0CC3D61C2746C000843328 /* VideoViewController.swift in Sources */,
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
 				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4DD73EFC1BDF11E1006055E9 /* Favorites.swift in Sources */,
