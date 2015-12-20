@@ -23,7 +23,6 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var bio: UITextView!
     @IBOutlet weak var newPass: UITextField!
-    @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var help: UIButton!
     @IBOutlet weak var terms: UIButton!
     @IBOutlet weak var policy: UIButton!
@@ -38,6 +37,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     
     var currentUser = PFUser.currentUser()
     let transition = BubbleTransition()
+    let user = theUser()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -53,7 +53,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         phone.delegate = self
         bio.delegate = self
         newPass.delegate = self
-        confirmPass.delegate = self
+        
         
         transition.duration = 0.4
         
@@ -64,13 +64,15 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         bio.hidden = true
         
         newPass.hidden = true
-        confirmPass.hidden = true
         
-        //name.text = currentUser?.objectForKey(<#T##key: String##String#>)
+        
+       
         email.text = currentUser?.email
         userName.text = currentUser?.username
-        //phone.text = currentUser?.objectForKey(<#T##key: String##String#>)
-        //bio.text = currentUser?.objectForKey(<#T##key: String##String#>)
+        bio.text = currentUser!["Bio"] as! String
+        phone.text = currentUser!["Phone"] as? String
+        name.text = currentUser!["FullName"] as? String
+        
 
         // Do any additional setup after loading the view.
     }
@@ -95,12 +97,13 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
                 phone.text != "" &&
                 bio.text != "" {
                     
+                    user.editProfile(name.text!, userName: userName.text!, email: email.text!, phone: phone.text!, bio: bio.text)
+                    
                     name.hidden = true
                     userName.hidden = true
                     email.hidden = true
                     phone.hidden = true
                     bio.hidden = true
-                    //save changes
                     
             }else {
                 
@@ -122,15 +125,14 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     
     @IBAction func changePassWordBtn(sender: AnyObject) {
         
-        if newPass.hidden == false &&
-        confirmPass.hidden == false {
+        if newPass.hidden == false {
             
-            if newPass.text != "" && confirmPass.text == newPass.text {
-                    
-                    // save changes
+            if newPass.text != ""  {
+                
+                user.changePassWord(newPass.text!)
                 
                     newPass.hidden = true
-                    confirmPass.hidden = true
+                
                     
                     
             }else {
@@ -140,7 +142,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         }else {
             
             newPass.hidden = false
-            confirmPass.hidden = false
+            
         }
     }
    
