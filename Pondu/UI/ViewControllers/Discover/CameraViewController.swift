@@ -94,6 +94,7 @@ class CameraViewController: UIViewController {
     func switchCam(){
         
         self.camera.togglePosition()
+        
     }
     
     func capturePhoto(){
@@ -103,9 +104,13 @@ class CameraViewController: UIViewController {
                 // we should stop the camera, since we don't need it anymore. We will open a new vc.
                 // this very important, otherwise you may experience memory crashes
                 
-                //camera.stop()
+               
                 
                 //show the image
+                
+                self.performSegueWithIdentifier("image", sender: image)
+                camera.stop()
+                
                
             }
         }
@@ -229,8 +234,13 @@ class CameraViewController: UIViewController {
         if segue.identifier == "video" {
             
             let controller = segue.destinationViewController as! VideoViewController
-            
             controller.videoUrl = sender as! NSURL
+            
+        }
+        if segue.identifier == "image" {
+            
+            let controller:ImageViewController = segue.destinationViewController as! ImageViewController
+            controller.theImage = sender as! UIImage
         }
     }
 

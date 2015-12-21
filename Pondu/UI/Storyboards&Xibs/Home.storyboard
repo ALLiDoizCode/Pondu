@@ -1005,7 +1005,7 @@
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1692,7 +1692,7 @@ these Terms and our Privacy Policy, constitute the entire agreement between you 
 we reserve the right to revise these Terms from time to time. Even though we will provide forms of notice as appropriate under the circumstances, please review the Terms directly periodically. Your continued use of Pondu or the Service after any modification to these Terms will constitute your acceptance of such modification. The most current version of the Terms will always be available at http://fyu.se/terms
 Effective: February 07, 2015</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">

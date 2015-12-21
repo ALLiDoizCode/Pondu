@@ -24,6 +24,40 @@
             </objects>
             <point key="canvasLocation" x="1557" y="2385"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="ZCo-cx-tZa">
+            <objects>
+                <viewController id="rJZ-X8-OjG" customClass="ImageViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xeD-NG-rad"/>
+                        <viewControllerLayoutGuide type="bottom" id="tpf-XB-hDJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mh1-gA-J1n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jZ7-f6-Mn4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jZ7-f6-Mn4" firstAttribute="bottom" secondItem="tpf-XB-hDJ" secondAttribute="top" id="9RN-1A-dqa"/>
+                            <constraint firstItem="jZ7-f6-Mn4" firstAttribute="top" secondItem="Mh1-gA-J1n" secondAttribute="top" id="gUj-sk-kgt"/>
+                            <constraint firstAttribute="trailing" secondItem="jZ7-f6-Mn4" secondAttribute="trailing" id="o6x-AV-Dcx"/>
+                            <constraint firstItem="jZ7-f6-Mn4" firstAttribute="leading" secondItem="Mh1-gA-J1n" secondAttribute="leading" id="sb5-ZI-dVG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="jZ7-f6-Mn4" id="okr-Rh-SAX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ia3-wt-VfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="3256"/>
+        </scene>
         <!--Camera View Controller-->
         <scene sceneID="Y4i-Pj-yAJ">
             <objects>
@@ -44,6 +78,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="Me5-9H-hXx" kind="show" identifier="video" id="g7p-27-DPw"/>
+                        <segue destination="rJZ-X8-OjG" kind="show" identifier="image" id="asH-3L-Smb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1L-s4-jUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
