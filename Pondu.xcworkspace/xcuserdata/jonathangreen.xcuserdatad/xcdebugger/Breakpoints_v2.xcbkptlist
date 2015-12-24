@@ -198,7 +198,7 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "472278939.728101"
+                  timestampString = "472613916.267835"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -213,7 +213,7 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "472278939.728346"
+                  timestampString = "472613916.267974"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -228,7 +228,7 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "472278939.72849"
+                  timestampString = "472613916.268062"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -362,6 +362,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pondu/UI/ViewControllers/Discover/SearchViewController.swift"
+            timestampString = "472615817.159663"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "tableView(_:willDisplayCell:forRowAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

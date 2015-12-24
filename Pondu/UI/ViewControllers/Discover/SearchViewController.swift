@@ -8,25 +8,45 @@
 
 import UIKit
 
-class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
     let identifier = "Search"
     
-    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
+    var searchBtn:UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.showsCancelButton = true
-        searchBar.placeholder = "Your placeholder"
-        let leftNavBarButton = UIBarButtonItem(customView:searchBar)
-        self.navigationItem.leftBarButtonItem = leftNavBarButton
+        searchBtn = UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: "toggleSearch")
+        self.navigationItem.leftBarButtonItem = searchBtn
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func toggleSearch(){
+        
+        if searchBar.hidden == true {
+            
+            searchBar.hidden = false
+            self.navigationItem.leftBarButtonItem = nil
+            
+        }else {
+            
+            searchBar.delegate = self
+            searchBar.showsCancelButton = true
+            searchBar.placeholder = "Your placeholder"
+            self.navigationItem.titleView = searchBar
+            self.navigationItem.leftBarButtonItem = nil
+        }
+        
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -45,6 +65,14 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
      
+    }
+    
+    //Mark searbar delgate protocol
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        
+        searchBar.hidden = true
+        self.navigationItem.leftBarButtonItem = searchBtn
+        
     }
 
     /*
