@@ -290,6 +290,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="837-fA-ggp" kind="show" identifier="camera" id="jRJ-2I-fg3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTS-TU-zkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
