@@ -1685,21 +1685,23 @@
             </objects>
             <point key="canvasLocation" x="1156" y="1437"/>
         </scene>
-        <!--Page1-->
+        <!--Search-->
         <scene sceneID="KZ1-K1-XP9">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Page1" storyboardName="Discover" referencedIdentifier="Page1" id="Ak8-KE-6wo" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Page1" storyboardName="Discover" referencedIdentifier="Search" id="Ak8-KE-6wo" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kM8-Lq-qip"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ew-Qy-W1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.5" y="2287"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ZCz-Zg-Yoz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5kh-Sa-I3G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dxv-qt-ynh"/>
+                    <tabBarItem key="tabBarItem" title="" image="DirTabReg" id="dxv-qt-ynh">
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VEJ-BE-WVq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1718,6 +1720,7 @@
     </scenes>
     <resources>
         <image name="ColumPost" width="74" height="32"/>
+        <image name="DirTabReg" width="124" height="70"/>
         <image name="FavTabReg" width="126" height="70"/>
         <image name="HomeTabReg" width="128" height="70"/>
         <image name="MainTabReg" width="128" height="70"/>
