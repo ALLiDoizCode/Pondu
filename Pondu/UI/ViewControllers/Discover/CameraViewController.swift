@@ -17,6 +17,7 @@ class CameraViewController: UIViewController {
     
     var camera:LLSimpleCamera!
     var snapButton:UIButton!
+    var exit:UIButton!
     var switchButton:UIButton!
     var circleSlider:CircleSlider!
     var circleProgress: CircleSlider!
@@ -42,14 +43,12 @@ class CameraViewController: UIViewController {
         
         makeSnap()
         toggleCameraPosition()
+        makeExit()
         
     }
     
     func makeSnap(){
-        
-        
-        
-        
+    
         self.snapButton = UIButton(type: .System)
         self.snapButton = UIButton(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70))
         self.snapButton.clipsToBounds = true
@@ -61,6 +60,14 @@ class CameraViewController: UIViewController {
         self.snapButton.layer.shouldRasterize = true
         self.snapButton.addTarget(self, action: "captureVideo", forControlEvents: .TouchUpInside)
         self.view.addSubview(self.snapButton)
+    }
+    
+    func makeExit(){
+        
+        self.exit = UIButton(type: .System)
+        self.exit = UIButton(frame: CGRect(x:270, y:10, width: 40, height: 40))
+        self.exit.setImage(UIImage(named: "exit"), forState: .Normal)
+        self.view.addSubview(self.exit)
     }
     
     func tap() {
@@ -77,13 +84,13 @@ class CameraViewController: UIViewController {
         
         if LLSimpleCamera.isFrontCameraAvailable() && LLSimpleCamera.isRearCameraAvailable() {
             
-            //button that toggl camera postion
+            //button that toggle camera postion
             
             self.switchButton = UIButton(type: .System)
             self.switchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 49, height: 49))
             self.switchButton.tintColor = UIColor.whiteColor()
             self.switchButton.setImage(UIImage(named:"switch"), forState: .Normal)
-            self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
+            self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 40, 40)
             self.switchButton.addTarget(self, action: "switchCam", forControlEvents: .TouchUpInside)
             self.switchButton.contentMode = .ScaleAspectFill
             self.view.addSubview(self.switchButton)
