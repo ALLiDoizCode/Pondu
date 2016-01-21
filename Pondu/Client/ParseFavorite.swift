@@ -25,7 +25,7 @@ class Favorite {
                 
                 print("favlist count \(favList.count)")
                 
-                for i;(i < favList.count) && (objectID != favList[i]) ; i++ {
+                for var i = 0;(i < favList.count) && (objectID != favList[i]) ; i++ {
                     
                     print("I = \(i)")
                 }
@@ -69,7 +69,7 @@ class Favorite {
                 
                 print("favlist count \(favList.count)")
                 
-                for i;(i < favList.count) && (objectID != favList[i]) ; i++ {
+                for var i = 0;(i < favList.count) && (objectID != favList[i]) ; i++ {
                     
                     print("I = \(i)")
                 }
@@ -113,7 +113,7 @@ class Favorite {
                 
                 print("favlist count \(favList.count)")
                 
-                for i;(i < favList.count) && (objectID != favList[i]) ; i++ {
+                for var i = 0;(i < favList.count) && (objectID != favList[i]) ; i++ {
                     
                     print("I = \(i)")
                 }

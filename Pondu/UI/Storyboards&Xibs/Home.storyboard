@@ -217,6 +217,7 @@
                             <constraint firstItem="xe7-gW-V8o" firstAttribute="top" secondItem="W6U-MX-L0b" secondAttribute="bottom" constant="3" id="YGW-vw-X8v">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="xe7-gW-V8o" firstAttribute="top" secondItem="W6U-MX-L0b" secondAttribute="bottom" id="Zm5-bn-Yva"/>
                             <constraint firstAttribute="trailing" secondItem="W6U-MX-L0b" secondAttribute="trailing" id="ay8-nD-WsR"/>
                             <constraint firstItem="fet-Un-58c" firstAttribute="top" secondItem="xe7-gW-V8o" secondAttribute="bottom" id="e3e-T7-TQ6">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -232,16 +233,17 @@
                                 <exclude reference="KBg-P0-6dz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="MoD-zj-S15"/>
-                                <exclude reference="YGW-vw-X8v"/>
-                                <exclude reference="ySo-CZ-h7N"/>
-                                <exclude reference="e3e-T7-TQ6"/>
                                 <exclude reference="0xf-ek-asC"/>
                                 <exclude reference="8V4-sE-Dgi"/>
                                 <exclude reference="Ogp-zP-ah8"/>
                                 <exclude reference="6ft-Q0-IHn"/>
                                 <exclude reference="ay8-nD-WsR"/>
                                 <exclude reference="jiA-Iq-aKz"/>
+                                <exclude reference="MoD-zj-S15"/>
+                                <exclude reference="YGW-vw-X8v"/>
+                                <exclude reference="Zm5-bn-Yva"/>
+                                <exclude reference="ySo-CZ-h7N"/>
+                                <exclude reference="e3e-T7-TQ6"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -250,16 +252,17 @@
                                 <include reference="KBg-P0-6dz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="MoD-zj-S15"/>
-                                <exclude reference="YGW-vw-X8v"/>
-                                <include reference="ySo-CZ-h7N"/>
-                                <include reference="e3e-T7-TQ6"/>
                                 <include reference="0xf-ek-asC"/>
                                 <include reference="8V4-sE-Dgi"/>
                                 <include reference="Ogp-zP-ah8"/>
                                 <include reference="6ft-Q0-IHn"/>
                                 <include reference="ay8-nD-WsR"/>
                                 <include reference="jiA-Iq-aKz"/>
+                                <include reference="MoD-zj-S15"/>
+                                <exclude reference="YGW-vw-X8v"/>
+                                <include reference="Zm5-bn-Yva"/>
+                                <include reference="ySo-CZ-h7N"/>
+                                <include reference="e3e-T7-TQ6"/>
                             </mask>
                         </variation>
                     </view>
@@ -951,7 +954,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions will be sent to your email." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orG-KD-Uyz">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1633,7 +1636,7 @@ these Terms and our Privacy Policy, constitute the entire agreement between you 
 we reserve the right to revise these Terms from time to time. Even though we will provide forms of notice as appropriate under the circumstances, please review the Terms directly periodically. Your continued use of Pondu or the Service after any modification to these Terms will constitute your acceptance of such modification. The most current version of the Terms will always be available at http://fyu.se/terms
 Effective: February 07, 2015</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">

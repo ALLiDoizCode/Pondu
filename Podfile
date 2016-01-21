@@ -13,6 +13,8 @@ pod "ImagePickerSheetController", "~> 0.9.1"
 pod 'IQKeyboardManagerSwift'
 pod "SwiftSpinner"
 pod 'Alamofire', '~> 3.1.3'
+pod 'LLSimpleCamera', '~> 4.0'
+pod "CircleSlider"
 
 
 
