@@ -233,17 +233,17 @@
                                 <exclude reference="KBg-P0-6dz"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="MoD-zj-S15"/>
+                                <exclude reference="YGW-vw-X8v"/>
+                                <exclude reference="Zm5-bn-Yva"/>
+                                <exclude reference="ySo-CZ-h7N"/>
+                                <exclude reference="e3e-T7-TQ6"/>
                                 <exclude reference="0xf-ek-asC"/>
                                 <exclude reference="8V4-sE-Dgi"/>
                                 <exclude reference="Ogp-zP-ah8"/>
                                 <exclude reference="6ft-Q0-IHn"/>
                                 <exclude reference="ay8-nD-WsR"/>
                                 <exclude reference="jiA-Iq-aKz"/>
-                                <exclude reference="MoD-zj-S15"/>
-                                <exclude reference="YGW-vw-X8v"/>
-                                <exclude reference="Zm5-bn-Yva"/>
-                                <exclude reference="ySo-CZ-h7N"/>
-                                <exclude reference="e3e-T7-TQ6"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -252,17 +252,17 @@
                                 <include reference="KBg-P0-6dz"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="MoD-zj-S15"/>
+                                <exclude reference="YGW-vw-X8v"/>
+                                <include reference="Zm5-bn-Yva"/>
+                                <include reference="ySo-CZ-h7N"/>
+                                <include reference="e3e-T7-TQ6"/>
                                 <include reference="0xf-ek-asC"/>
                                 <include reference="8V4-sE-Dgi"/>
                                 <include reference="Ogp-zP-ah8"/>
                                 <include reference="6ft-Q0-IHn"/>
                                 <include reference="ay8-nD-WsR"/>
                                 <include reference="jiA-Iq-aKz"/>
-                                <include reference="MoD-zj-S15"/>
-                                <exclude reference="YGW-vw-X8v"/>
-                                <include reference="Zm5-bn-Yva"/>
-                                <include reference="ySo-CZ-h7N"/>
-                                <include reference="e3e-T7-TQ6"/>
                             </mask>
                         </variation>
                     </view>
