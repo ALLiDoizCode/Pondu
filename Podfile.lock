@@ -2,10 +2,12 @@ PODS:
   - Alamofire (3.1.3)
   - Bolts/Tasks (1.4.0)
   - BubbleTransition (1.0.1)
+  - CircleSlider (0.1.0)
   - FXBlurView (1.6.4)
   - ImagePickerSheetController (0.9.1)
   - IQKeyboardManagerSwift (3.3.4)
   - Kingfisher (1.7.1)
+  - LLSimpleCamera (4.0.0)
   - LTMorphingLabel (0.0.9)
   - PagingMenuController (0.7.5)
   - Parse (1.9.1):
@@ -18,10 +20,12 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.1.3)
   - BubbleTransition (~> 1.0.0)
+  - CircleSlider
   - FXBlurView (~> 1.6.4)
   - ImagePickerSheetController (~> 0.9.1)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 1.7)
+  - LLSimpleCamera (~> 4.0)
   - LTMorphingLabel (~> 0.0.9)
   - PagingMenuController
   - Parse (~> 1.9.1)
@@ -49,10 +53,12 @@ SPEC CHECKSUMS:
   Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   BubbleTransition: 76d5e306dbda0f622260ea7d082c971d976422ab
+  CircleSlider: d195e672f7b7a644bb07743c90f271d939ef63f0
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   ImagePickerSheetController: 3c58c9fee6dcf36485222358a021f6b734f997ba
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
+  LLSimpleCamera: 4acecd6fabca1cb5841302ee03e03123e290af3d
   LTMorphingLabel: 4235a403f99f0e0e503389da660e0fec324549d9
   PagingMenuController: ea590be94de2332a1f78fbbc45fa6f49405279ea
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
