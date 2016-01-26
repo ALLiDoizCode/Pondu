@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="etL-BN-oLY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8pl-pP-hVW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="3858" y="-308"/>
         </scene>
-        <!--Main Wall-->
+        <!--Base View Controller-->
         <scene sceneID="NZd-vY-PH6">
             <objects>
-                <viewController storyboardIdentifier="MainWall" title="Main Wall" id="Dbk-xl-mPr" customClass="BaseViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainWall" id="Dbk-xl-mPr" customClass="BaseViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2SK-cK-zYe"/>
                         <viewControllerLayoutGuide type="bottom" id="WMq-nN-VLX"/>
@@ -186,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-o6-cCo">
-                                <rect key="frame" x="0.0" y="39" width="600" height="512"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <segue destination="OCU-v5-ODj" kind="embed" id="hcw-cZ-9Y6"/>
                                 </connections>
@@ -195,18 +195,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e9y-o6-cCo" firstAttribute="leading" secondItem="kJS-KV-5oL" secondAttribute="leading" id="BC5-El-cYX"/>
-                            <constraint firstItem="e9y-o6-cCo" firstAttribute="top" secondItem="kJS-KV-5oL" secondAttribute="top" constant="39" id="HCj-i1-GTi"/>
-                            <constraint firstAttribute="bottom" secondItem="e9y-o6-cCo" secondAttribute="bottom" constant="49" id="Mvg-0O-eBs"/>
+                            <constraint firstItem="e9y-o6-cCo" firstAttribute="top" secondItem="kJS-KV-5oL" secondAttribute="top" id="HCj-i1-GTi"/>
+                            <constraint firstAttribute="bottom" secondItem="e9y-o6-cCo" secondAttribute="bottom" id="Mvg-0O-eBs"/>
                             <constraint firstAttribute="trailing" secondItem="e9y-o6-cCo" secondAttribute="trailing" id="Zj2-J8-M3o"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="MainTabReg" id="VtU-9h-XsM">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" id="HiM-au-Prn">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="gWt-df-5T8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Dh-TW-8s5">
-                                <rect key="frame" x="504" y="6" width="76" height="32"/>
+                                <rect key="frame" x="521" y="6" width="59" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="ColumPost"/>
                                 <connections>
@@ -288,7 +285,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IPq-1L-pFx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2e6-YC-OqK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="512"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -770,7 +767,7 @@
         <!--Navigation Controller-->
         <scene sceneID="KXI-wD-zs4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -807,10 +804,10 @@
             </objects>
             <point key="canvasLocation" x="-2131" y="1408"/>
         </scene>
-        <!--Favorites-->
+        <!--Favorite View Controller-->
         <scene sceneID="8gi-hG-TYx">
             <objects>
-                <viewController storyboardIdentifier="FavWall" title="Favorites" id="35W-5P-cFK" customClass="FavoriteViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavWall" id="35W-5P-cFK" customClass="FavoriteViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9qc-xQ-JGQ"/>
                         <viewControllerLayoutGuide type="bottom" id="rhL-qi-t2u"/>
@@ -820,7 +817,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpd-xQ-nxM">
-                                <rect key="frame" x="0.0" y="39" width="600" height="512"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <segue destination="tKi-WO-cIJ" kind="embed" id="67U-Vs-Pu1"/>
                                 </connections>
@@ -829,21 +826,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Hpd-xQ-nxM" firstAttribute="leading" secondItem="FuL-He-gMo" secondAttribute="leading" id="CI4-cT-KZi"/>
-                            <constraint firstItem="Hpd-xQ-nxM" firstAttribute="top" secondItem="FuL-He-gMo" secondAttribute="top" constant="39" id="anv-Kx-2sL"/>
-                            <constraint firstAttribute="bottom" secondItem="Hpd-xQ-nxM" secondAttribute="bottom" constant="49" id="bxQ-5e-TCj"/>
+                            <constraint firstItem="Hpd-xQ-nxM" firstAttribute="top" secondItem="FuL-He-gMo" secondAttribute="top" id="anv-Kx-2sL"/>
+                            <constraint firstAttribute="bottom" secondItem="Hpd-xQ-nxM" secondAttribute="bottom" id="bxQ-5e-TCj"/>
                             <constraint firstAttribute="trailing" secondItem="Hpd-xQ-nxM" secondAttribute="trailing" id="wmX-J2-zba"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="FavTabReg" id="qtZ-kN-3Xo">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
-                    </tabBarItem>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4zs-aX-CtY">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="xgF-f6-kmP">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qk6-FG-PpM">
-                                <rect key="frame" x="504" y="6" width="76" height="32"/>
+                        <barButtonItem key="rightBarButtonItem" image="ColumPost-2" style="plain" id="xgF-f6-kmP">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="Qk6-FG-PpM">
+                                <rect key="frame" x="521" y="6" width="59" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ColumPost"/>
+                                <state key="normal" image="post"/>
                                 <connections>
                                     <action selector="postBtn:" destination="35W-5P-cFK" eventType="touchUpInside" id="gTz-kT-HWM"/>
                                 </connections>
@@ -868,7 +862,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dnk-ix-f5h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0T5-ty-gYi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="512"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1533,28 +1527,6 @@
             </objects>
             <point key="canvasLocation" x="5265" y="711.75"/>
         </scene>
-        <!--TabHome-->
-        <scene sceneID="usC-fn-ow2">
-            <objects>
-                <tabBarController storyboardIdentifier="Nav" title="TabHome" automaticallyAdjustsScrollViewInsets="NO" id="etL-BN-oLY" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="K7m-v5-5OL">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.5"/>
-                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="3" right="8"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="dRc-1f-bKN" kind="relationship" relationship="viewControllers" id="5YK-Im-RR0"/>
-                        <segue destination="S2n-cQ-MxY" kind="relationship" relationship="viewControllers" id="JcA-Bo-n40"/>
-                        <segue destination="5kh-Sa-I3G" kind="relationship" relationship="viewControllers" id="3RV-Yy-Yme"/>
-                        <segue destination="kOM-la-LYg" kind="relationship" relationship="viewControllers" id="y5H-kv-9WV"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j36-vX-SWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="52" y="118"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="8Ng-e8-q4W">
             <objects>
@@ -1569,7 +1541,7 @@
         <scene sceneID="qh6-gC-lp9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kOM-la-LYg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="HomeTabReg" selectedImage="HomeTabReg" id="NPc-mi-Pec">
+                    <tabBarItem key="tabBarItem" title="" selectedImage="HomeTabReg" id="NPc-mi-Pec">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1600,7 +1572,7 @@
         <scene sceneID="ZCz-Zg-Yoz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5kh-Sa-I3G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="DirTabReg" id="dxv-qt-ynh">
+                    <tabBarItem key="tabBarItem" title="" id="dxv-qt-ynh">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1621,16 +1593,15 @@
     </scenes>
     <resources>
         <image name="ColumPost" width="74" height="32"/>
-        <image name="DirTabReg" width="124" height="70"/>
-        <image name="FavTabReg" width="126" height="70"/>
+        <image name="ColumPost-2" width="37" height="16"/>
         <image name="HomeTabReg" width="128" height="70"/>
-        <image name="MainTabReg" width="128" height="70"/>
         <image name="backgrounds" width="640" height="1136"/>
         <image name="bob" width="359" height="358"/>
+        <image name="post" width="148" height="74"/>
         <image name="story" width="758" height="505"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YhB-De-rNi"/>
         <segue reference="mqY-hu-va7"/>
+        <segue reference="YhB-De-rNi"/>
     </inferredMetricsTieBreakers>
 </document>

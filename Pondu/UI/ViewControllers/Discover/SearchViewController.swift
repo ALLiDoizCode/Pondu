@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     let identifier = "Search"
     let identifier2 = "camera"
     
@@ -21,6 +23,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let messageBtn = UIButton(frame: CGRectMake(0, 0, 20, 20))
         let cameraBtn = UIButton(frame: CGRectMake(0, 0, 30, 30))
@@ -41,6 +44,16 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.tableView.reloadData()
+            
+        });
     }
     
     func camera(){

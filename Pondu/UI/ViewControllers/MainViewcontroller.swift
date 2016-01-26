@@ -30,37 +30,46 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         print(UIScreen.screens())
 
         UIApplication.sharedApplication().statusBarHidden = true
+        
+        let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
+        let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
 
         let Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
         
         let Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
-        let viewControllers = [Mainwall,Favorite]
+        let discover = discoverBoard.instantiateViewControllerWithIdentifier("Search") as! SearchViewController
+        
+        let home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
+        
+        let viewControllers = [Mainwall,Favorite,discover,home]
         
         let options = PagingMenuOptions()
         
+        options.backgroundColor = UIColor.lightGrayColor()
+        
         if UIScreen.mainScreen().bounds.height <= 1136.0  {
             
-            options.menuHeight = 30
+            options.menuHeight = 20
             options.menuDisplayMode = .SegmentedControl
-            options.scrollEnabled = false
+            options.scrollEnabled = true
             options.font = UIFont(name: "Avenir", size: 20)!
             options.selectedFont = UIFont(name: "Avenir", size: 20)!
             options.menuPosition = .Bottom
-            options.menuItemMode = .RoundRect(radius: 2, horizontalPadding: 4, verticalPadding: 4, selectedColor: UIColor.grayColor())
+            options.menuItemMode = .RoundRect(radius: 0, horizontalPadding: 4, verticalPadding: 0.5, selectedColor: UIColor.darkGrayColor())
             let pagingMenuController = self.childViewControllers.first as! PagingMenuController
             pagingMenuController.delegate = self
             pagingMenuController.setup(viewControllers: viewControllers, options: options)
             
         }else{
             
-            options.menuHeight = 60
+            options.menuHeight = 40
             options.menuDisplayMode = .SegmentedControl
             options.scrollEnabled = false
             options.font = UIFont(name: "Avenir", size: 20)!
             options.selectedFont = UIFont(name: "Avenir", size: 20)!
             options.menuPosition = .Bottom
-            options.menuItemMode = .RoundRect(radius: 2, horizontalPadding: 4, verticalPadding: 4, selectedColor: UIColor.grayColor())
+            options.menuItemMode = .RoundRect(radius: 0, horizontalPadding: 4, verticalPadding: 0.5, selectedColor: UIColor.groupTableViewBackgroundColor())
             let pagingMenuController = self.childViewControllers.first as! PagingMenuController
             pagingMenuController.delegate = self
             pagingMenuController.setup(viewControllers: viewControllers, options: options)
