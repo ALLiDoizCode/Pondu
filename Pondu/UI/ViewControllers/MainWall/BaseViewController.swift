@@ -16,6 +16,8 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.parentViewController?.navigationItem.title = "Main Wall"
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -30,7 +32,7 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
-        options.menuHeight = 40
+        options.menuHeight = 0
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!

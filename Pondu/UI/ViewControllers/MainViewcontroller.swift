@@ -32,15 +32,19 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         UIApplication.sharedApplication().statusBarHidden = true
         
         let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
+        
         let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
 
         let Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
         
+       
         let Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
         let discover = discoverBoard.instantiateViewControllerWithIdentifier("Search") as! SearchViewController
         
+        
         let home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
+        
         
         let viewControllers = [Mainwall,Favorite,discover,home]
         
@@ -92,6 +96,34 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     // MARK: - PagingMenuControllerDelegate
     
     func willMoveToMenuPage(page: Int) {
+        
+        switch page {
+            
+        case 0:
+            
+            self.navigationItem.title = "MainWall"
+            self.navigationController?.navigationBarHidden = false
+          
+            
+        case 1:
+            
+            self.navigationItem.title = "Favorites"
+            self.navigationController?.navigationBarHidden = false
+           
+            
+        case 2:
+            
+            self.navigationItem.title = "Discover"
+            self.navigationController?.navigationBarHidden = false
+            
+            
+        case 3:
+            
+            self.navigationItem.title = "Home"
+            self.navigationController?.navigationBarHidden = true
+            
+        default: break
+        }
     }
     
     func didMoveToMenuPage(page: Int) {
