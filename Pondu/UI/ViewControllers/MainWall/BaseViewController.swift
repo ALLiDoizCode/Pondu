@@ -15,9 +15,7 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     @IBOutlet weak var post: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.parentViewController?.navigationItem.title = "Main Wall"
-        
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -29,10 +27,14 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         
         let Story = self.storyboard?.instantiateViewControllerWithIdentifier("StoryListView") as! StoryListViewController
         
+        Events.title = "Events"
+        Party.title = "Parties"
+        Story.title = "Stories"
+        
         let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
-        options.menuHeight = 0
+        options.menuHeight = 30
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!
