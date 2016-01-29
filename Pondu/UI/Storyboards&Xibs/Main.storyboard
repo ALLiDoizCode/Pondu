@@ -1484,7 +1484,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n02-Or-wDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968" y="1216"/>
+            <point key="canvasLocation" x="2138" y="-18"/>
         </scene>
         <!--Search-->
         <scene sceneID="KZ1-K1-XP9">
@@ -1494,7 +1494,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ew-Qy-W1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008.5" y="2287"/>
+            <point key="canvasLocation" x="2139.5" y="41"/>
         </scene>
     </scenes>
     <resources>
