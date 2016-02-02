@@ -11,9 +11,8 @@ import PagingMenuController
 
 class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
-    @IBOutlet weak var CommentBtn: UIBarButtonItem!
-    
-    @IBOutlet weak var button: UIButton!
+    var CommentBtn:UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,9 +81,16 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         
     }
     
+    func gotoCommetns(){
+        
+        self.performSegueWithIdentifier("comment", sender: self)
+    }
+    
     func createPostBtn(){
         
-        button.setImage(UIImage(named: "ColumPost"), forState: UIControlState.Normal)
+        CommentBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+        CommentBtn.setImage(UIImage(named: "ColumPost"), forState: UIControlState.Normal)
+        CommentBtn.addTarget(self, action: "gotoCommetns", forControlEvents: .TouchUpInside)
     }
     
 
@@ -103,12 +109,26 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             
             self.navigationItem.title = "MainWall"
             self.navigationController?.navigationBarHidden = false
+            self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+            
+            self.navigationItem.rightBarButtonItems?.removeAll()
+            self.navigationItem.leftBarButtonItems?.removeAll()
+            createPostBtn()
+            let comment = UIBarButtonItem(customView: CommentBtn)
+            self.navigationItem.rightBarButtonItem = comment
           
             
         case 1:
             
             self.navigationItem.title = "Favorites"
             self.navigationController?.navigationBarHidden = false
+            self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+            
+            self.navigationItem.rightBarButtonItems?.removeAll()
+            self.navigationItem.leftBarButtonItems?.removeAll()
+            createPostBtn()
+            let comment = UIBarButtonItem(customView: CommentBtn)
+            self.navigationItem.rightBarButtonItem = comment
            
             
         case 2:
@@ -126,7 +146,6 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             messageBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
             messageBtn.setImage(UIImage(named: "Message"), forState: .Normal)
 
-            
             let camera = UIBarButtonItem(customView: cameraBtn)
             let search = UIBarButtonItem(customView: searchBtn)
             let message = UIBarButtonItem(customView: messageBtn)

@@ -252,22 +252,10 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Jfy-jk-PRn">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="tuy-G6-foR">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UMg-PY-scS">
-                                <rect key="frame" x="534" y="7" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="xrt-0g-1CV" kind="show" id="mF9-k2-t06"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Jfy-jk-PRn"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="CommentBtn" destination="tuy-G6-foR" id="M99-ya-jVv"/>
-                        <outlet property="button" destination="UMg-PY-scS" id="oD1-Bm-mCJ"/>
+                        <segue destination="xrt-0g-1CV" kind="presentation" identifier="comment" id="A2Y-Gh-dfv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hT-dH-dQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
