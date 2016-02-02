@@ -113,8 +113,29 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             
         case 2:
             
+            let cameraBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+            let messageBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            
+            cameraBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
+            cameraBtn.setImage(UIImage(named: "camera"), forState: .Normal)
+            
+            searchBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
+            searchBtn.setImage(UIImage(named: "search"), forState: .Normal)
+            
+            messageBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
+            messageBtn.setImage(UIImage(named: "Message"), forState: .Normal)
+
+            
+            let camera = UIBarButtonItem(customView: cameraBtn)
+            let search = UIBarButtonItem(customView: searchBtn)
+            let message = UIBarButtonItem(customView: messageBtn)
+            
             self.navigationItem.title = "Discover"
             self.navigationController?.navigationBarHidden = false
+            self.navigationController?.navigationBar.barTintColor = UIColor.lightGrayColor()
+            self.navigationItem.rightBarButtonItems = [search,camera]
+            self.navigationItem.leftBarButtonItem = message
             
             
         case 3:
@@ -127,6 +148,12 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     }
     
     func didMoveToMenuPage(page: Int) {
+    }
+    
+    
+    func cameraSelected(){
+        
+        print("Camera")
     }
     
 
