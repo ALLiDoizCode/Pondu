@@ -10,9 +10,24 @@ import UIKit
 
 class MessagesCell: UITableViewCell {
 
+    @IBOutlet weak var icon: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.icon.layer.cornerRadius = self.icon.frame.height/2
+            self.icon.layer.masksToBounds = true
+            
+            
+        });
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

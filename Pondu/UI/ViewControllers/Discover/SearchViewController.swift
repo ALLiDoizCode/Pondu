@@ -24,7 +24,6 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let messageBtn = UIButton(frame: CGRectMake(0, 0, 20, 20))
         let cameraBtn = UIButton(frame: CGRectMake(0, 0, 30, 30))
         
@@ -76,7 +75,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             searchBar.delegate = self
             searchBar.showsCancelButton = true
-            searchBar.placeholder = "Your placeholder"
+            searchBar.placeholder = "Looking for someone"
             self.navigationItem.titleView = searchBar
             self.navigationItem.leftBarButtonItem = nil
         }

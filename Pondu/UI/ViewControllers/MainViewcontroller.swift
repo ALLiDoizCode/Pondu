@@ -12,7 +12,15 @@ import PagingMenuController
 class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
     var CommentBtn:UIButton!
-
+    
+    let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
+    let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+    
+    var discover:SearchViewController!
+    var Favorite:FavoriteViewController!
+    var home:HomeViewController!
+    var Mainwall:BaseViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,20 +38,17 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
         UIApplication.sharedApplication().statusBarHidden = true
         
-        let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
+        //let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
         
-        let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        //let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
 
-        let Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
+        Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
         
-       
-        let Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
+        Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
-        let discover = discoverBoard.instantiateViewControllerWithIdentifier("Search") as! SearchViewController
+        discover = discoverBoard.instantiateViewControllerWithIdentifier("Search") as! SearchViewController
         
-        
-        let home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
-        
+        home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
         
         let viewControllers = [Mainwall,Favorite,discover,home]
         
@@ -143,7 +148,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             searchBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
             searchBtn.setImage(UIImage(named: "search"), forState: .Normal)
             
-            messageBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
+            messageBtn.addTarget(self, action: "messages", forControlEvents: .TouchUpInside)
             messageBtn.setImage(UIImage(named: "Message"), forState: .Normal)
 
             let camera = UIBarButtonItem(customView: cameraBtn)
@@ -173,6 +178,12 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     func cameraSelected(){
         
         print("Camera")
+    }
+    
+    func messages(){
+        
+        self.discover.performSegueWithIdentifier("Messages", sender: self)
+        
     }
     
 
