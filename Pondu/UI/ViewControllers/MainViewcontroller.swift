@@ -143,13 +143,13 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             let messageBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             
             cameraBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
-            cameraBtn.setImage(UIImage(named: "camera"), forState: .Normal)
+            cameraBtn.setImage(UIImage(named: "camera131"), forState: .Normal)
             
             searchBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
-            searchBtn.setImage(UIImage(named: "search"), forState: .Normal)
+            searchBtn.setImage(UIImage(named: "zoom77"), forState: .Normal)
             
             messageBtn.addTarget(self, action: "messages", forControlEvents: .TouchUpInside)
-            messageBtn.setImage(UIImage(named: "Message"), forState: .Normal)
+            messageBtn.setImage(UIImage(named: "message30"), forState: .Normal)
 
             let camera = UIBarButtonItem(customView: cameraBtn)
             let search = UIBarButtonItem(customView: searchBtn)
