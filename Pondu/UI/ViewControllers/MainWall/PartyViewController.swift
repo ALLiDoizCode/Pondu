@@ -28,7 +28,10 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
+    
+    
     override func viewWillAppear(animated: Bool) {
+        
         
         getArrayCount()
         Parties.partiesPost()

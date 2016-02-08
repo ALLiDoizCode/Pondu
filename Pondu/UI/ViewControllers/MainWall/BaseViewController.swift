@@ -8,7 +8,7 @@
 
 import UIKit
 import PagingMenuController
-
+import SwiftEventBus
 
 class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     
@@ -60,6 +60,19 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     }
     
     func didMoveToMenuPage(page: Int) {
+        
+        switch page {
+            
+        case 0:SwiftEventBus.post("NavShow")
+            
+        case 1: SwiftEventBus.post("NavShow")
+        
+        case 2: SwiftEventBus.post("NavHide")
+         
+        default:break
+        }
+        
+        
     }
     
 

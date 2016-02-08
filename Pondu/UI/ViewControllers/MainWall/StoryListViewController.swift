@@ -21,6 +21,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     var array:[userData] = []
     var storyUser:theUser = theUser()
     
+    
     override func viewWillAppear(animated: Bool) {
         
         

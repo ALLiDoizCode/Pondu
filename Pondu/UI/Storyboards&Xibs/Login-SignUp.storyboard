@@ -379,7 +379,7 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Nav" id="6P7-He-K80" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siy-CF-214" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2451.75" y="-140.25"/>
+            <point key="canvasLocation" x="1470" y="-314.25"/>
         </scene>
         <!--Login-->
         <scene sceneID="0X9-Gy-Ilo">
@@ -713,6 +713,7 @@
                         <outlet property="bottemView" destination="ogH-pL-I02" id="Xgj-eN-knY"/>
                         <outlet property="bottomLabel" destination="bMa-F8-G2z" id="0yA-KC-Khb"/>
                         <outlet property="topLabel" destination="oq6-6X-l1e" id="3aS-Pe-mvr"/>
+                        <segue destination="6P7-He-K80" kind="presentation" identifier="Login" id="CSr-RW-GxC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5W-U8-tSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1936,6 +1937,6 @@
         <image name="placeholder" width="1181" height="1672"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2aL-Qe-I4p"/>
+        <segue reference="CSr-RW-GxC"/>
     </inferredMetricsTieBreakers>
 </document>

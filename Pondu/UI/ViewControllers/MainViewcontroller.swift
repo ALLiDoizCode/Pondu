@@ -8,6 +8,7 @@
 
 import UIKit
 import PagingMenuController
+import SwiftEventBus
 
 class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
@@ -16,6 +17,8 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
     let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
     
+    let options = PagingMenuOptions()
+    
     var discover:SearchViewController!
     var Favorite:FavoriteViewController!
     var home:HomeViewController!
@@ -23,6 +26,25 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SwiftEventBus.onMainThread(self, name: "NavHide") { (result) -> Void in
+            
+            self.navigationController?.navigationBarHidden = true
+            
+            
+            self.options.backgroundColor = UIColor.clearColor()
+    
+            
+        }
+        
+        
+        SwiftEventBus.onMainThread(self, name: "NavShow") { (result) -> Void in
+            
+            self.navigationController?.navigationBarHidden = false
+            
+           
+            
+        }
         
         createPostBtn()
     
@@ -51,8 +73,6 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
         
         let viewControllers = [Mainwall,Favorite,discover,home]
-        
-        let options = PagingMenuOptions()
         
         options.backgroundColor = UIColor.lightGrayColor()
         
