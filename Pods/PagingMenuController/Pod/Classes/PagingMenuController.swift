@@ -32,7 +32,7 @@ final public class PagingMenuController: UIViewController, UIScrollViewDelegate 
     private var menuItemTitles: [String] {
         get {
             return pagingViewControllers.map {
-                return $0.title ?? "Menu"
+                return $0.title ?? ""
             }
         }
     }

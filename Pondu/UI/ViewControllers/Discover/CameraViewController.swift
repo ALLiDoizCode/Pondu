@@ -18,11 +18,12 @@ class CameraViewController: UIViewController {
     var camera:LLSimpleCamera!
     var snapButton:UIButton!
     var exit:UIButton!
-    var switchButton:UIButton!
+    var switchButton:UIButton! = UIButton()
     var circleSlider:CircleSlider!
     var circleProgress: CircleSlider!
     var timer:NSTimer!
     var progressValue:Float = 0
+    var tapRect:UITapGestureRecognizer!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,6 +49,13 @@ class CameraViewController: UIViewController {
     }
     
     func makeSnap(){
+        
+        tapRect = UITapGestureRecognizer(target: self, action: "tap:")
+        tapRect.numberOfTapsRequired = 1
+        tapRect.numberOfTouchesRequired = 1
+            
+        
+        
     
         self.snapButton = UIButton(type: .System)
         self.snapButton = UIButton(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70))
@@ -58,7 +66,7 @@ class CameraViewController: UIViewController {
         self.snapButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
         self.snapButton.layer.rasterizationScale = UIScreen.mainScreen().scale
         self.snapButton.layer.shouldRasterize = true
-        self.snapButton.addTarget(self, action: "captureVideo", forControlEvents: .TouchUpInside)
+        self.snapButton.addGestureRecognizer(tapRect)
         self.view.addSubview(self.snapButton)
     }
     
@@ -70,14 +78,16 @@ class CameraViewController: UIViewController {
         self.view.addSubview(self.exit)
     }
     
-    func tap() {
+    func tap(sender:UITapGestureRecognizer) {
         
         print("Tap happend")
+        self.snapButton.addTarget(self, action: "capturePhoto", forControlEvents: .TouchUpInside)
     }
     
     func long() {
         
         print("Long press")
+        self.snapButton.addTarget(self, action: "captureVideo", forControlEvents: .TouchUpInside)
     }
     
     func toggleCameraPosition(){
@@ -129,8 +139,8 @@ class CameraViewController: UIViewController {
             
             snapButton.layer.borderColor = UIColor.clearColor().CGColor
             snapButton.layer.borderWidth = 0
-            circle()
-            progress()
+           // circle()
+           // progress()
             
             switchButton.hidden = true
             
@@ -163,7 +173,7 @@ class CameraViewController: UIViewController {
        return NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last!
     }
     
-    func circle(){
+   /* func circle(){
         
         let purple = UIColor.purpleColor()
         
@@ -184,10 +194,10 @@ class CameraViewController: UIViewController {
         self.view.addSubview(self.circleSlider!)
       
         
-    }
+    }*/
     
     
-    func buildCircleProgress() {
+    /*func buildCircleProgress() {
         
         let purple = UIColor.purpleColor()
         
@@ -221,7 +231,7 @@ class CameraViewController: UIViewController {
             self.progressValue = 0
         }*/
         self.circleSlider.value = self.progressValue
-    }
+    }*/
     
 
     override func didReceiveMemoryWarning() {

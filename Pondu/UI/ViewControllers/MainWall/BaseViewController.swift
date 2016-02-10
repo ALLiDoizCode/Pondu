@@ -8,14 +8,14 @@
 
 import UIKit
 import PagingMenuController
-
+import SwiftEventBus
 
 class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     
     @IBOutlet weak var post: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -27,10 +27,14 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         
         let Story = self.storyboard?.instantiateViewControllerWithIdentifier("StoryListView") as! StoryListViewController
         
+        Events.title = "Events"
+        Party.title = "Parties"
+        Story.title = "Stories"
+        
         let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
-        options.menuHeight = 40
+        options.menuHeight = 30
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!
@@ -56,6 +60,19 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     }
     
     func didMoveToMenuPage(page: Int) {
+        
+        switch page {
+            
+        case 0:SwiftEventBus.post("NavShow")
+            
+        case 1: SwiftEventBus.post("NavShow")
+        
+        case 2: SwiftEventBus.post("NavHide")
+         
+        default:break
+        }
+        
+        
     }
     
 

@@ -78,6 +78,8 @@
 		4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */; };
 		4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */; };
 		4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */; };
+		4DF1C90E1C5BC35200F4269A /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */; };
+		4DF1C9101C5BC5BD00F4269A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */; };
 		4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */; };
 		4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F11E1BFF93B6001A96C5 /* LocationViewController.swift */; };
 		4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F1201BFF93C0001A96C5 /* PostViewController.swift */; };
@@ -184,6 +186,8 @@
 		4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
+		4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
+		4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		4DF1F11E1BFF93B6001A96C5 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4DF1F1201BFF93C0001A96C5 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +196,7 @@
 		4DF2038F1BDE99BF00A56A67 /* Parties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parties.swift; sourceTree = "<group>"; };
 		4DF203911BDE99EA00A56A67 /* ParseParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseParties.swift; sourceTree = "<group>"; };
 		4DF91A881C2B683B008E39AF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCell.swift; path = Pondu/UI/ViewControllers/Discover/SearchCell.swift; sourceTree = SOURCE_ROOT; };
+		4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCell.swift; path = Pondu/UI/TableViewCells/SearchCell.swift; sourceTree = SOURCE_ROOT; };
 		78932290621BC3D56EBC5FA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AEAEA2AD6909E8F8C4063850 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ED51165405F57B97F81F9F11 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */,
+				4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				4D0CC3D51C2746C000843328 /* VideoViewController.swift */,
 				4D0CC3D71C27719900843328 /* ImageViewController.swift */,
 				4DF91A881C2B683B008E39AF /* SearchViewController.swift */,
+				4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */,
 				4DF91A8B1C2B68AD008E39AF /* SearchCell.swift in Sources */,
+				4DF1C9101C5BC5BD00F4269A /* MessagesViewController.swift in Sources */,
 				4D0187581C175BE600288835 /* SignUp3ViewController.swift in Sources */,
 				4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */,
 				4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */,
@@ -751,6 +758,7 @@
 				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
+				4DF1C90E1C5BC35200F4269A /* MessagesCell.swift in Sources */,
 				4D7C0C9C1BE06D0300CCB2DE /* FavoriteParties.swift in Sources */,
 				4DC5FAEA1BFA5BF6006AFE00 /* MainStoryCell.swift in Sources */,
 				4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */,

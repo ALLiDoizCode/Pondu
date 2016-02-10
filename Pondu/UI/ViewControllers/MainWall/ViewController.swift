@@ -29,7 +29,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
+    
     override func viewWillAppear(animated: Bool) {
+        
+       
         
         getArrayCount()
         mainWall.eventPost()

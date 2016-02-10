@@ -14,10 +14,10 @@ class userSignUp {
     
     func SignUp(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage,theYear:String,TheSchool:String){
         
-        let photoData = UIImageJPEGRepresentation(photo, 0.5)
+        let photoData = UIImageJPEGRepresentation(photo, 1.8)
         let photoFile = PFFile(name:"photo", data:photoData!)
         
-        let storyData =  UIImageJPEGRepresentation(stories, 0.5)
+        let storyData =  UIImageJPEGRepresentation(stories, 0.8)
         let storyFile = PFFile(name:"story", data:storyData!)
         
         let user = PFUser()

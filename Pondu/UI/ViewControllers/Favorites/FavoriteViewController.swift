@@ -26,10 +26,14 @@ class FavoriteViewController: UIViewController,PagingMenuControllerDelegate {
         
         let Story = self.storyboard?.instantiateViewControllerWithIdentifier("FavListStory") as! FavStoryListViewController
         
+        Events.title = "Events"
+        Party.title = "Parties"
+        Story.title = "Stories"
+        
         let viewControllers = [Events,Party,Story]
         
         let options = PagingMenuOptions()
-        options.menuHeight = 40
+        options.menuHeight = 30
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
         options.selectedFont = UIFont(name: "Avenir", size: 20)!

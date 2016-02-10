@@ -21,6 +21,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     var array:[userData] = []
     var storyUser:theUser = theUser()
     
+    
     override func viewWillAppear(animated: Bool) {
         
         
@@ -28,7 +29,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
             
             print(theData[0].fullName)
             self.array = theData
-            self.collectionView.reloadData()
+            self.reloadMessagesView()
             let photoUrl:String! = self.array[0].photo
             self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
                 
@@ -39,6 +40,17 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    func reloadMessagesView() {
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.collectionView?.reloadData()
+            
+        });
+        
         
     }
 

@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     let identifier = "Search"
     let identifier2 = "camera"
     
@@ -43,6 +45,16 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.tableView.reloadData()
+            
+        });
+    }
+    
     func camera(){
         
         self.performSegueWithIdentifier(identifier2, sender: self)
@@ -63,7 +75,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             searchBar.delegate = self
             searchBar.showsCancelButton = true
-            searchBar.placeholder = "Your placeholder"
+            searchBar.placeholder = "Looking for someone"
             self.navigationItem.titleView = searchBar
             self.navigationItem.leftBarButtonItem = nil
         }

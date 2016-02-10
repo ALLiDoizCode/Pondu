@@ -31,8 +31,14 @@ class SearchCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.icon.layer.cornerRadius = self.icon.frame.height/2
-        self.icon.layer.masksToBounds = true
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.icon.layer.cornerRadius = self.icon.frame.height/2
+            self.icon.layer.masksToBounds = true
+            
+            
+        });
+        
         
     }
     
