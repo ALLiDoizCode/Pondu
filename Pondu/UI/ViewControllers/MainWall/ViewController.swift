@@ -94,6 +94,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         print("post in array \(self.array.count)")
         
+        cell.layoutSubviews()
         
         return cell
         

@@ -11,6 +11,9 @@ import Spring
 
 class MainCell: UICollectionViewCell {
     
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var descriptionHead: UILabel!
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
@@ -40,19 +43,35 @@ class MainCell: UICollectionViewCell {
         coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
         let scale = max(delta, 0.5)
-        PostName.transform = CGAffineTransformMakeScale(scale, scale)
+        descriptionHead.transform = CGAffineTransformMakeScale(scale, scale)
         post.transform = CGAffineTransformMakeScale(scale, scale)
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
-        profileImage.transform = CGAffineTransformMakeScale(scale, scale)
+        iconView.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
-        time.transform = CGAffineTransformMakeScale(scale, scale)
+        //time.transform = CGAffineTransformMakeScale(scale, scale)
         //visualEffectView.transform = CGAffineTransformMakeScale(scale, scale)
         
+        descriptionHead.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
-        time.alpha = delta
+        //time.alpha = delta
+        
+        
+        if delta > 0.1 {
+            
+            eventTitle.hidden = true
+            
+            
+        }else{
+            
+            eventTitle.hidden = false
+            
+        }
+        
+        eventTitle.alpha = 1 - delta
+
         
         
         //visualEffectView.frame = bgImage.frame
@@ -70,6 +89,7 @@ class MainCell: UICollectionViewCell {
         profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         profileImage.layer.borderWidth = 1.5
         profileImage.layer.masksToBounds = true
+       
         
         
         
