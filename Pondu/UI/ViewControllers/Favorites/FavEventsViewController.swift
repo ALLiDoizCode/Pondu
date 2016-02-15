@@ -57,11 +57,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         cell.post.text = array[indexPath.row].post
         cell.PostName.text = array[indexPath.row].name
         cell.likes.text = "Likes:\(array[indexPath.row].likes)"
-        cell.time.text = array[indexPath.row].time
-        
-        let numComments = array[indexPath.row].comments
-        
-        cell.comments.text = "Comments:\(numComments.count)"
+       
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
@@ -156,7 +152,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             
             let item = (sender as! NSIndexPath).item
             
-            liveController.fileArray = array[item].liveContent
+         
             print(item)
             
         }

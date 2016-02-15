@@ -16,30 +16,40 @@ class createEvent {
     
     func theEvent(){
         
-        let event = PFObject(className: "MainWall")
+        let wall = PFObject(className: "MainWall")
+        let event = PFObject(withoutDataWithClassName: "Events", objectId: "gUHWW0VeZD")
         let currentUser = PFUser.currentUser()
         
-        let file = currentUser?.objectForKey("photo") as! PFFile
+        //let file = currentUser?.objectForKey("photo") as! PFFile
         
         SwiftEventBus.onMainThread(self, name: "makeEvent") { result in
             
             let createdEvent = result.object as! makeEvent
             
-            event["userID"] = currentUser?.objectId
-            event["Post"] = createdEvent.post
-            event["Name"] = currentUser?.username
-            event["Live"] = createdEvent.live
-            event["Comments"] = [""]
-            event["Likes"] = 0
-            event["Location"] = createdEvent.location
-            event["ProfilePicture"] = currentUser!["photo"]
-            event["Time"] = createdEvent.startTime
-            event["Privacy"] = createdEvent.privacy
-            event.addObject(file, forKey: "LiveContent")
-            event.saveInBackgroundWithBlock {
+            //event["userID"] = currentUser?.objectId
+            wall["Post"] = createdEvent.post
+            wall["Name"] = currentUser?.username
+            wall["Live"] = createdEvent.live
+            //event["Comments"] = [""]
+            wall["Likes"] = 0
+            //event["Location"] = createdEvent.location
+            wall["ProfilePicture"] = currentUser!["photo"]
+            //event["Time"] = createdEvent.startTime
+            wall["Privacy"] = createdEvent.privacy
+            //event.addObject(file, forKey: "LiveContent")
+            
+            
+            let relation = event.relationForKey("Events")
+            relation.addObject(wall)
+            
+            wall.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     // The object has been saved.
+                    
+                    let relation = event.relationForKey("Events")
+                    relation.addObject(wall)
+                    event.saveInBackground()
                     
                     print("event made")
                     

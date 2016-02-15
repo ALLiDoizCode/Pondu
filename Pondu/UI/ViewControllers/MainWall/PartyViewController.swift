@@ -69,11 +69,8 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         cell.post.text = array[indexPath.item].post
         cell.PostName.text = array[indexPath.item].name
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
-        cell.time.text = array[indexPath.item].time
         
-        let numComments = array[indexPath.item].comments
         
-        cell.comments.text = "Comments:\(numComments.count)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
     
         cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
@@ -173,7 +170,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
             
             let item = (sender as! NSIndexPath).item
             
-            liveController.fileArray = array[item].liveContent
+           
             print(item)
             
         }
