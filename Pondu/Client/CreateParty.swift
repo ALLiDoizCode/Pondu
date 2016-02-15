@@ -15,40 +15,42 @@ class createParty {
     
     func theParty(){
         
-        let event = PFObject(className: "Parties")
+        let wall = PFObject(className: "MainWall")
+        let party = PFObject(withoutDataWithClassName: "Parties", objectId: "F4NvBwtn3v")
         let currentUser = PFUser.currentUser()
-        
-        
-        let file = currentUser?.objectForKey("photo") as! PFFile
         
         SwiftEventBus.onMainThread(self, name: "makeParty") { result in
             
             let createdParty = result.object as! makeParty
             
-            event["userID"] = currentUser?.objectId
-            event["Posts"] = createdParty.post
-            event["Name"] = currentUser?.username
-            event["Live"] = createdParty.live
-            event["Comments"] = [""]
-            event["Likes"] = 0
-            event["Location"] = createdParty.location
-            event["ProfilePicture"] = currentUser!["photo"]
-            event["Time"] = createdParty.startTime
-            event["Privacy"] = createdParty.privacy
-             event.addObject(file, forKey: "LiveContent")
-            event.saveInBackgroundWithBlock {
+            wall["CreatedBy"] = currentUser
+            wall["Post"] = createdParty.post
+            wall["Name"] = currentUser?.username
+            wall["Live"] = createdParty.live
+            wall["Likes"] = 0
+            wall["Privacy"] = createdParty.privacy
+            
+            let relation = party.relationForKey("Parties")
+            relation.addObject(wall)
+            
+            wall.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     // The object has been saved.
                     
-                    print("Party made")
-                    SwiftEventBus.post("PartyMade")
+                    let relation = party.relationForKey("Events")
+                    relation.addObject(wall)
+                    party.saveInBackground()
+                    
+                    print("event made")
+                    
+                    SwiftEventBus.post("EventMade")
                     
                 } else {
                     // There was a problem, check error.description
                     
-                    print("there was an issue creating the Party")
-                    SwiftEventBus.post("PartyNotMade")
+                    print("there was an issue creating the event")
+                    SwiftEventBus.post("EventNotMade")
                 }
             }
         }

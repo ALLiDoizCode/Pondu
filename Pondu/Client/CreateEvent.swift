@@ -26,18 +26,12 @@ class createEvent {
             
             let createdEvent = result.object as! makeEvent
             
-            //event["userID"] = currentUser?.objectId
+            wall["CreatedBy"] = currentUser
             wall["Post"] = createdEvent.post
             wall["Name"] = currentUser?.username
             wall["Live"] = createdEvent.live
-            //event["Comments"] = [""]
             wall["Likes"] = 0
-            //event["Location"] = createdEvent.location
-            wall["ProfilePicture"] = currentUser!["photo"]
-            //event["Time"] = createdEvent.startTime
             wall["Privacy"] = createdEvent.privacy
-            //event.addObject(file, forKey: "LiveContent")
-            
             
             let relation = event.relationForKey("Events")
             relation.addObject(wall)

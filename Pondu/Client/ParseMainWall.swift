@@ -47,18 +47,15 @@ class ParseMainWall {
                                     
                                     let theID = object.objectId
                                     let post = object.objectForKey("Post") as! String!
-                                    let profileImage = object.objectForKey("ProfilePicture") as! PFFile!
-                                    let eventImages = object.objectForKey("EventImages") as! PFFile!
-                                    let likes = object.objectForKey("Likes") as! Int!
-                                    //let comments = object.objectForKey("Comments") as! [String]!
+                                    //let eventImages = object.objectForKey("EventImages") as! PFFile!
+                                    //let likes = object.objectForKey("Likes") as! Int!
                                     let profileName = object.objectForKey("Name") as! String!
-                                    let theAddress = object.objectForKey("Location") as! String!
-                                    let video = object.objectForKey("Video") as! PFFile!
-                                    let live = object.objectForKey("Live") as! Bool!
-                                    //let favorite = object.objectForKey("userID") as! String
-                                    //let time = object.objectForKey("Time") as! String
-                                    let privacy = object.objectForKey("Privacy") as! Bool!
-                                    //let liveContent = object.objectForKey("LiveContent") as! [PFFile]!
+                                    //let theAddress = object.objectForKey("Location") as! String!
+                                    //let video = object.objectForKey("Video") as! PFFile!
+                                    //let live = object.objectForKey("Live") as! Bool!
+                                    //let privacy = object.objectForKey("Privacy") as! Bool!
+                                    let createdBy = object.objectForKey("CreatedBy") as! PFObject
+                                    let profileImage = createdBy.objectForKey("photo") as! PFFile
                                     
                                     print(post)
                                     

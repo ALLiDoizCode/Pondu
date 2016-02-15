@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -41,19 +42,19 @@
                                 </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCell" id="yoV-ic-KyR" customClass="MainCell" customModule="Pondu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="102" y="0.0" width="397" height="199"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="397" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bob" translatesAutoresizingMaskIntoConstraints="NO" id="dlg-kG-GHb">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bob" translatesAutoresizingMaskIntoConstraints="NO" id="dlg-kG-GHb">
                                                     <rect key="frame" x="0.0" y="-40" width="200" height="280"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="280" id="HvB-gq-4U3"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDp-06-yGH">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDp-06-yGH">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -87,7 +88,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFD-rb-65m">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFD-rb-65m">
                                                     <rect key="frame" x="8" y="125" width="185" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="76" id="2xh-yN-Fs2"/>
@@ -109,7 +110,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsU-fP-h3H">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsU-fP-h3H">
                                                     <rect key="frame" x="149" y="175" width="43" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="43" id="cRx-zd-qt4">
@@ -130,7 +131,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-0R-Hbe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-0R-Hbe">
                                                     <rect key="frame" x="10" y="175" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="CKo-vv-2Gf"/>
@@ -149,7 +150,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-Ol-JhD" customClass="SpringLabel" customModule="Spring">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-Ol-JhD" customClass="SpringLabel" customModule="Spring">
                                                     <rect key="frame" x="123" y="35" width="64" height="35"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
                                                     <color key="textColor" red="1" green="0.28892833060028944" blue="0.2795022767546349" alpha="1" colorSpace="calibratedRGB"/>
@@ -350,15 +351,15 @@
                                                 <exclude reference="YS8-s6-Ndv"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="BKF-GU-BtS"/>
-                                                <exclude reference="sWn-t9-Wdl"/>
-                                                <exclude reference="tYp-1e-6uO"/>
                                                 <exclude reference="LvN-c0-2k3"/>
                                                 <exclude reference="mdg-YH-7G3"/>
-                                                <exclude reference="EEB-fb-C15"/>
                                                 <exclude reference="YYy-kW-dgh"/>
                                                 <exclude reference="bHx-76-rgK"/>
                                                 <exclude reference="rgo-q6-yM8"/>
+                                                <exclude reference="BKF-GU-BtS"/>
+                                                <exclude reference="sWn-t9-Wdl"/>
+                                                <exclude reference="tYp-1e-6uO"/>
+                                                <exclude reference="EEB-fb-C15"/>
                                                 <exclude reference="39H-Pv-0ES"/>
                                                 <exclude reference="GE2-hN-Yhk"/>
                                                 <exclude reference="Byv-RC-69i"/>
@@ -374,15 +375,15 @@
                                                 <include reference="YS8-s6-Ndv"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="BKF-GU-BtS"/>
-                                                <include reference="sWn-t9-Wdl"/>
-                                                <include reference="tYp-1e-6uO"/>
                                                 <include reference="LvN-c0-2k3"/>
                                                 <include reference="mdg-YH-7G3"/>
-                                                <include reference="EEB-fb-C15"/>
                                                 <include reference="YYy-kW-dgh"/>
                                                 <include reference="bHx-76-rgK"/>
                                                 <include reference="rgo-q6-yM8"/>
+                                                <include reference="BKF-GU-BtS"/>
+                                                <include reference="sWn-t9-Wdl"/>
+                                                <include reference="tYp-1e-6uO"/>
+                                                <include reference="EEB-fb-C15"/>
                                                 <include reference="39H-Pv-0ES"/>
                                                 <include reference="GE2-hN-Yhk"/>
                                                 <exclude reference="cJj-Jb-38K"/>
@@ -1756,6 +1757,6 @@
         <image name="story" width="758" height="505"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v1I-Tb-H5O"/>
+        <segue reference="o5p-0m-eGd"/>
     </inferredMetricsTieBreakers>
 </document>
