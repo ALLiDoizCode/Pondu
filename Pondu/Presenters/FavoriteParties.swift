@@ -25,34 +25,6 @@ class partyFavorites {
     }
     
     
-    func getFavorite(){
-        
-        print("waiting for favParty ids")
-        
-        ///favorite id
-        SwiftEventBus.onMainThread(self, name: "partyGetFavorites") { result in
-            
-            if let fav = result.object as! [String]!{
-                
-                print("getfavorites \(fav)")
-                
-                print("recieved fav id")
-                print("sending fav id")
-                self.party.postQuery(fav)
-                
-                SwiftEventBus.unregister(self, name: "partyGetFavorites")
-            }
-            
-        }
-        
-        favPost()
-        
-        thisFavorite.partyFavoriteList()
-        
-    }
-    
-    
-    
     func favPost(){
         
         //gets list of favorites
@@ -69,6 +41,7 @@ class partyFavorites {
             
         }
         
+        party.favParties()
     }
     
 }

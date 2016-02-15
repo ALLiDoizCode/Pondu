@@ -25,7 +25,6 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
     override func viewWillAppear(animated: Bool) {
         
         getArrayCount()
-        favParty.getFavorite()
         
     }
     
@@ -119,6 +118,8 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
             self.collectionView.reloadData()
             
         }
+        
+        favParty.favPost()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

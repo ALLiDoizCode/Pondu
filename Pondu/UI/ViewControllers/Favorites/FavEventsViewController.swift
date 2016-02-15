@@ -25,7 +25,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
     override func viewWillAppear(animated: Bool) {
         
         getArrayCount()
-        favorite.getFavorite()
+       
     }
     
     override func viewDidLoad() {
@@ -120,6 +120,8 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             self.collectionView.reloadData()
             
         }
+        
+        favorite.favPost()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/Presenters/Favorites.swift"
-            timestampString = "469569920.632945"
+            timestampString = "477262684.650091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "favPost()"
             landmarkType = "5">
          </BreakpointContent>
@@ -355,11 +355,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/Client/ParseMainWall.swift"
-            timestampString = "477259133.839665"
+            timestampString = "477262292.468895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "postQuery(_:)"
             landmarkType = "5">
             <Locations>

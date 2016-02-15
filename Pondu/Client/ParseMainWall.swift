@@ -14,6 +14,8 @@ class ParseMainWall {
     
     var mainWallID:[String] = []
     
+    let currentUser = PFUser.currentUser()
+    
     func postQuery(favId:[String]?){
         
                 var wall:[Event] = []
@@ -69,7 +71,7 @@ class ParseMainWall {
                                 
                                 
                                 SwiftEventBus.post("MainWallEvent", sender: wall)
-                                //SwiftEventBus.post("FavoritesList", sender: mainWall)
+                                
                                 
                             } else {
                                 
@@ -90,5 +92,39 @@ class ParseMainWall {
         
 
 }
+    
+    func favEvents(){
+        
+        let relation = currentUser?.relationForKey("FavEvents")
+        let query = relation?.query()
+        
+        var wall:[Event] = []
+        
+        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            
+            if let objects = objects {
+                
+                for object in objects {
+                    
+                    let party = object.objectForKey("FavEvents") as! PFObject
+                    
+                    let theID = party.objectId
+                    let post = party.objectForKey("Post") as! String!
+                    let profileName = party.objectForKey("Name") as! String!
+                    let createdBy = party.objectForKey("User") 
+                    let profileImage = createdBy!.objectForKey("photo") as! PFFile
+                    
+                    print(post)
+                    
+                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!)
+                    
+                    wall.append(theEvent)
+                    
+                }
+                
+               SwiftEventBus.post("FavoritesList", sender: wall)
+            }
+        })
+    }
 
 }

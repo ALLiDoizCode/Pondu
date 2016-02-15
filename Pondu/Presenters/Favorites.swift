@@ -23,36 +23,7 @@ class userFavorites {
         print(eventID)
         
     }
-    
-    
-    func getFavorite(){
-        
-        print("waiting for fav ids")
-        
-        ///favorite id
-        SwiftEventBus.onMainThread(self, name: "GetFavorites") { result in
-            
-            if let fav = result.object as! [String]! {
-                
-                print("Events")
-                print("getfavorites \(fav)")
-                
-                print("recieved fav id")
-                print("sending fav id")
-                self.mainWall.postQuery(fav)
-           
-                
-                SwiftEventBus.unregister(self, name: "GetFavorites")
-            }
-           
-        }
-        
-        favPost()
-        
-        thisFavorite.favoriteList()
-        
-    }
-    
+
     
     
     func favPost(){
@@ -73,6 +44,8 @@ class userFavorites {
             }
             
         }
+        
+        mainWall.favEvents()
 
     }
 

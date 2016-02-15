@@ -13,6 +13,7 @@ import Parse
 class ParseParties {
     
     var partyMainWallID:[String] = []
+    var currentUser = PFUser.currentUser()
     
     func postQuery(favId:[String]?){
         
@@ -66,7 +67,7 @@ class ParseParties {
                                 
                                 
                                 SwiftEventBus.post("PartyEvent", sender: wall)
-                                //SwiftEventBus.post("FavoritesList", sender: wall)
+                               
                                 
                             } else {
                                 
@@ -83,5 +84,40 @@ class ParseParties {
         }
     
 }
+    
+    func favParties(){
+        
+        let relation = currentUser?.relationForKey("favParties")
+        let query = relation?.query()
+        
+        var wall:[Event] = []
+        
+        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            
+            if let objects = objects {
+                
+                for object in objects {
+                    
+                    let party = object.objectForKey("Parties") as! PFObject
+                    
+                    let theID = party.objectId
+                    let post = party.objectForKey("Post") as! String!
+                    let profileName = party.objectForKey("Name") as! String!
+                    let createdBy = party.objectForKey("CreatedBy") as! PFObject
+                    let profileImage = createdBy.objectForKey("photo") as! PFFile
+                    
+                    print(post)
+                    print("boom\(theID)")
+                    
+                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!)
+                    
+                    wall.append(theEvent)
+                    
+                }
+                
+                 SwiftEventBus.post("partyFavoritesList", sender: wall)
+            }
+        })
+    }
 
 }
