@@ -12,41 +12,9 @@ import Kingfisher
 
 class userFavorites {
     
-    let mainWall = ParseMainWall()
-    
-    let thisFavorite = Favorite()
-    
-    func addFavorite(eventID:String){
-     
-        self.thisFavorite.userFavorite(eventID)
-        
-        print(eventID)
-        
-    }
-
+    let events = ParseMainWall()
     
     
-    func favPost(){
-        
-        //gets list of favorites
-        SwiftEventBus.onBackgroundThread(self, name: "FavoritesList") { result in
-            
-            if let favList = result.object {
-                
-                print("recieved fav post")
-                print("favList \(favList)")
-                print("do something with post data")
-                //label.text = favList[0]
-                SwiftEventBus.post("Count", sender: favList.count )
-                SwiftEventBus.postToMainThread("updateFavoriteCell", sender: favList)
-                
-                SwiftEventBus.unregister(self, name: "FavoritesList")
-            }
-            
-        }
-        
-        mainWall.favEvents()
-
-    }
+    
 
 }

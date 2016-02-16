@@ -22,8 +22,6 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     var storyUser:theUser = theUser()
     
     override func viewWillAppear(animated: Bool) {
-      
-        storyUser.getFavorite()
         
         self.iconView.layoutSubviews()
     }
@@ -31,25 +29,8 @@ class FavStoryListViewController: UIViewController,UICollectionViewDataSource,UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SwiftEventBus.onMainThread(self, name: "updateFavStory") { notification in
-            
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [userData]
-            
-            self.collectionView.reloadData()
-            
-            print("this is teh first picture\(self.array[0].story)")
-            
-            let photoUrl:String! = self.array[0].photo
-            
-            self.mainImage.kf_setImageWithURL(NSURL(string: photoUrl)!, placeholderImage: UIImage(named: "placeholder"), optionsInfo: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
-                
-                self.iconView.subImage.image = image
-            })
-            
-            
-        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

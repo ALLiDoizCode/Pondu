@@ -12,36 +12,25 @@ import Kingfisher
 
 class partyFavorites {
     
-    let party = ParseParties()
+    let fav = ParseParties()
     
-    let mainWall = ParseMainWall()
-    
-    let thisFavorite = Favorite()
-    
-    func addFavorite(partyID:String){
+    func favPost(completion:(result:[Event]) -> Void){
         
-        self.thisFavorite.userFavorite(partyID)
-        print(partyID)
-    }
-    
-    
-    func favPost(){
-        
-        //gets list of favorites
-        SwiftEventBus.onMainThread(self, name: "partyFavoritesList") { result in
+        SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
-            if let favList = result.object {
+            if let data:[Event] = result.object as? [Event] {
                 
-                print("recieved fav post")
-                print("favList \(favList)")
-                print("do something with post data")
-                SwiftEventBus.postToMainThread("updateFavoritePartyCell", sender: favList)
-                SwiftEventBus.unregister(self, name: "partyFavoritesList")
+                SwiftEventBus.unregister(self, name: "MainWallEvent")
+                completion(result: data)
             }
+            
+            
+
             
         }
         
-        party.favParties()
+       fav.favParties()
+        
     }
     
 }

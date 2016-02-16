@@ -13,10 +13,4 @@ import Kingfisher
 
 class userComments {
     
-    let thiscomment = comments()
-    
-    func makeComment(postID:String){
-        
-        thiscomment.userComment(postID)
     }
-}

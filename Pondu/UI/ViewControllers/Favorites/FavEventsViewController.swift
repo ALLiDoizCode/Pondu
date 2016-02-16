@@ -16,20 +16,32 @@ import BubbleTransition
 class FavEventsViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIViewControllerTransitioningDelegate {
     
     var array:[Event] = []
-    let favorite = userFavorites()
     let transition = BubbleTransition()
+    let events = PresentMainWall()
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     override func viewWillAppear(animated: Bool) {
         
-        getArrayCount()
-       
+        events.favPost { (result) -> Void in
+            
+            self.array = result
+            print("favEvents fired")
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                self.collectionView.reloadData()
+            }
+            
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         transition.duration = 0.4
         
@@ -105,25 +117,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         }
     }
     
-    
-    
-    func getArrayCount(){
-        
-        SwiftEventBus.onMainThread(self, name: "updateFavoriteCell") { notification in
-            
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [Event]
-            
-            print(self.array.count)
-            
-            self.collectionView.reloadData()
-            
-        }
-        
-        favorite.favPost()
-    }
-    
+
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }

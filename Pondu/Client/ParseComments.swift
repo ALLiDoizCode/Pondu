@@ -12,20 +12,4 @@ import Parse
 
 class comments {
     
-    func userComment(postID:String){
-        
-        let bigObject:PFQuery! = PFQuery(className:"MainWall")
-    
-        bigObject.getObjectInBackgroundWithId(postID) { (object:PFObject?, error:NSError?) -> Void in
-            
-            if error != nil {
-                print(error)
-            } else if let _ = object{
-                object!.addObject("Jerry", forKey: "Comments")
-                object!.saveInBackground()
-            }
-            
-        }
-    }
-    
 }

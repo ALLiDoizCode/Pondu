@@ -25,7 +25,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
     override func viewWillAppear(animated: Bool) {
         
         
-        storyUser.theUsers { (theData) -> Void in
+        /*storyUser.theUsers { (theData) -> Void in
             
             print(theData[0].fullName)
             self.array = theData
@@ -35,7 +35,7 @@ class StoryListViewController: UIViewController,UICollectionViewDataSource,UICol
                 
                 self.iconView.subImage.image = image
             })
-        }
+        }*/
     }
     
     override func viewDidLoad() {

@@ -32,14 +32,20 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         
-       
-        
-        getArrayCount()
-        mainWall.eventPost()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainWall.eventPost { (result) -> Void in
+            
+            self.array = result
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                self.collectionView.reloadData()
+            }
+        }
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
@@ -138,22 +144,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         }
     }
 
-
-    
-    func getArrayCount(){
-        
-        SwiftEventBus.onMainThread(self, name: "updateCell") { notification in
-            
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [Event]
-            
-            print(self.array.count)
-            
-            self.collectionView.reloadData()
-            
-        }
-    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent

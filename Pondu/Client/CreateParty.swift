@@ -30,15 +30,12 @@ class createParty {
             wall["Likes"] = 0
             wall["Privacy"] = createdParty.privacy
             
-            let relation = party.relationForKey("Parties")
-            relation.addObject(wall)
-            
             wall.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     // The object has been saved.
                     
-                    let relation = party.relationForKey("Events")
+                    let relation = party.relationForKey("Parties")
                     relation.addObject(wall)
                     party.saveInBackground()
                     

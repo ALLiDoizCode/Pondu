@@ -32,13 +32,21 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewWillAppear(animated: Bool) {
         
-        
-        getArrayCount()
-        Parties.partiesPost()
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Parties.partiesPost { (result) -> Void in
+            
+            self.array = result
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                self.collectionView.reloadData()
+            }
+        }
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
@@ -124,20 +132,6 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     
-    func getArrayCount(){
-        
-        SwiftEventBus.onMainThread(self, name: "updatePartyCell") { notification in
-            
-            print("passing data\(notification.object)")
-            
-            self.array = notification.object as! [Event]
-            self.array = self.array.reverse()
-            
-            print(self.array.count)
-            
-            self.collectionView.reloadData()
-        }
-    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent

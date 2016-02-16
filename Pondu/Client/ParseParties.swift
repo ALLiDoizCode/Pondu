@@ -15,7 +15,7 @@ class ParseParties {
     var partyMainWallID:[String] = []
     var currentUser = PFUser.currentUser()
     
-    func postQuery(favId:[String]?){
+    func postQuery(){
         
         var wall:[Event] = []
         let query = PFQuery(className:"Parties")
@@ -35,7 +35,7 @@ class ParseParties {
                         if error == nil {
                             // The find succeeded.
                             print("Successfully retrieved \(objects!.count) Posts.")
-                            print("number of favorites \(favId?.count)")
+                           
                             
                             
                             // Do something with the found objects
@@ -45,13 +45,7 @@ class ParseParties {
                                     
                                     let theID = object.objectId
                                     let post = object.objectForKey("Post") as! String!
-                                    //let eventImages = object.objectForKey("EventImages") as! PFFile!
-                                    //let likes = object.objectForKey("Likes") as! Int!
                                     let profileName = object.objectForKey("Name") as! String!
-                                    //let theAddress = object.objectForKey("Location") as! String!
-                                    //let video = object.objectForKey("Video") as! PFFile!
-                                    //let live = object.objectForKey("Live") as! Bool!
-                                    //let privacy = object.objectForKey("Privacy") as! Bool!
                                     let createdBy = object.objectForKey("CreatedBy") as! PFObject
                                     let profileImage = createdBy.objectForKey("photo") as! PFFile
                                     
@@ -94,12 +88,13 @@ class ParseParties {
         
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             
+            print("boom \(objects?.count)")
+            
             if let objects = objects {
                 
                 for object in objects {
                     
                     let party = object.objectForKey("Parties") as! PFObject
-                    
                     let theID = party.objectId
                     let post = party.objectForKey("Post") as! String!
                     let profileName = party.objectForKey("Name") as! String!
@@ -109,15 +104,22 @@ class ParseParties {
                     print(post)
                     print("boom\(theID)")
                     
+                    print("the favparty is firing \(post)")
+                    
                     let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!)
                     
                     wall.append(theEvent)
                     
                 }
                 
-                 SwiftEventBus.post("partyFavoritesList", sender: wall)
+                SwiftEventBus.post("FavoriteParties", sender: wall)
             }
+            
+            
         })
+        
+        
     }
-
+    
+    
 }

@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         
         self.navigationController?.navigationBarHidden = true
         
-        storyUser.theUsers { (theData) -> Void in
+        /*storyUser.theUsers { (theData) -> Void in
             
             for user in theData {
                 
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
                 }
             }
             
-        }
+        }*/
     }
 
     override func viewDidLoad() {

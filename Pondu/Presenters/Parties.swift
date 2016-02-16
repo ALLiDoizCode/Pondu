@@ -13,21 +13,23 @@ import Kingfisher
 
 class PartiesMainWall {
     
-    let Parties = ParseParties()
-    let nilArray:[String]! = nil
-    
-    func partiesPost(){
+    func partiesPost(completion:(result:[Event]) -> Void){
+        
+        let Parties = ParseParties()
         
         SwiftEventBus.onMainThread(self, name: "PartyEvent") { result in
             
-            let post = result.object 
+            let post:[Event] = (result.object as? [Event])!
             print(post)
-            SwiftEventBus.postToMainThread("updatePartyCell", sender: post)
+            
             SwiftEventBus.unregister(self, name: "PartyEvent")
+            completion(result: post)
+            
+            
             
         }
         
-        Parties.postQuery(nilArray)
+        Parties.postQuery()
         
     }
     

@@ -16,7 +16,7 @@ class ParseMainWall {
     
     let currentUser = PFUser.currentUser()
     
-    func postQuery(favId:[String]?){
+    func postQuery(){
         
                 var wall:[Event] = []
                 var liveURls:[String] = []
@@ -38,9 +38,7 @@ class ParseMainWall {
                         
                         if error == nil {
                             // The find succeeded.
-                            print("Successfully retrieved \(objects!.count) Posts.")
-                            print("number of favorites \(favId?.count)")
-                            
+                            print("Successfully retrieved \(objects!.count) Posts.")                            
                             
                             // Do something with the found objects
                             if let objects = objects {
@@ -102,19 +100,23 @@ class ParseMainWall {
         
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             
+            print("boom \(objects?.count)")
+            
             if let objects = objects {
                 
                 for object in objects {
                     
                     let party = object.objectForKey("FavEvents") as! PFObject
-                    
                     let theID = party.objectId
                     let post = party.objectForKey("Post") as! String!
                     let profileName = party.objectForKey("Name") as! String!
-                    let createdBy = party.objectForKey("User") 
-                    let profileImage = createdBy!.objectForKey("photo") as! PFFile
+                    let createdBy = party.objectForKey("CreatedBy") as! PFObject
+                    let profileImage = createdBy.objectForKey("photo") as! PFFile
                     
                     print(post)
+                    print("boom\(theID)")
+                    
+                    print("the favEvent is firing \(post)")
                     
                     let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!)
                     
@@ -122,9 +124,12 @@ class ParseMainWall {
                     
                 }
                 
-               SwiftEventBus.post("FavoritesList", sender: wall)
+                SwiftEventBus.post("FavEvent", sender: wall)
             }
+            
+            
         })
+
     }
 
 }
