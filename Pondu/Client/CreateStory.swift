@@ -12,7 +12,7 @@ import SwiftEventBus
 
 class CreateStory {
     
-    func theStory(){
+    func theStory(media:NSData){
         
         let story = PFObject(className: "Story")
         let comments = PFObject(className: "CommentTable")

@@ -52,6 +52,7 @@
 		4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668411BE9A9D100591DF6 /* CreateParty.swift */; };
 		4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */; };
 		4D88281E1C7684EF00604DE3 /* CreateStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281D1C7684EF00604DE3 /* CreateStory.swift */; };
+		4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281F1C7689BF00604DE3 /* MakeStory.swift */; };
 		4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9CF1BE5F5A600C34281 /* Events.swift */; };
 		4D91A9D21BE5F7F200C34281 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9D11BE5F7F200C34281 /* User.swift */; };
 		4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */; };
@@ -160,6 +161,7 @@
 		4D8668411BE9A9D100591DF6 /* CreateParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateParty.swift; sourceTree = "<group>"; };
 		4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePartyPresenter.swift; sourceTree = "<group>"; };
 		4D88281D1C7684EF00604DE3 /* CreateStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStory.swift; sourceTree = "<group>"; };
+		4D88281F1C7689BF00604DE3 /* MakeStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeStory.swift; sourceTree = "<group>"; };
 		4D91A9CF1BE5F5A600C34281 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		4D91A9D11BE5F7F200C34281 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryLayout.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				4D7C0C9B1BE06D0300CCB2DE /* FavoriteParties.swift */,
 				4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */,
 				4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */,
+				4D88281F1C7689BF00604DE3 /* MakeStory.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -758,6 +761,7 @@
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
 				4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */,
 				4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */,
+				4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */,
 				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,

@@ -25,7 +25,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var numOfPost:[String] = []
     var indexOfUrl:[Character] = []
     let transition = BubbleTransition()
-    let story = CreateStory()
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
@@ -46,9 +46,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       story.theStory()
-        SwiftEventBus.post("MakeStory")
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
