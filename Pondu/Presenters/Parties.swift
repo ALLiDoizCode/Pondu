@@ -13,9 +13,9 @@ import Kingfisher
 
 class PartiesMainWall {
     
+    let Parties = ParseParties()
+    
     func partiesPost(completion:(result:[Event]) -> Void){
-        
-        let Parties = ParseParties()
         
         SwiftEventBus.onMainThread(self, name: "PartyEvent") { result in
             
@@ -33,6 +33,22 @@ class PartiesMainWall {
         
     }
     
-    
+    func favPost(completion:(result:[Event]) -> Void){
+        
+        let fav = ParseParties()
+        
+        SwiftEventBus.onMainThread(self, name: "FavoriteParties") { result in
+            
+            let post:[Event] = (result.object as? [Event])!
+            print(post)
+            
+            SwiftEventBus.unregister(self, name: "FavoriteParties")
+            completion(result: post)
+            
+        }
+        
+        fav.favParties()
+        
+    }
     
 }

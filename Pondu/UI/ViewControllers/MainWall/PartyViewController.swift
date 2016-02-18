@@ -32,12 +32,6 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewWillAppear(animated: Bool) {
         
-       
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
         Parties.partiesPost { (result) -> Void in
             
             self.array = result
@@ -47,6 +41,12 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()

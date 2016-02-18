@@ -17,18 +17,12 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
 
     var array:[Event] = []
     let transition = BubbleTransition()
-    let party = partyFavorites()
+    let party = PartiesMainWall()
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     override func viewWillAppear(animated: Bool) {
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         party.favPost { (result) -> Void in
             
@@ -41,6 +35,12 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
             
             print("we got the fav data")
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       
         
         transition.duration = 0.4
         

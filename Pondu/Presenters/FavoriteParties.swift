@@ -12,26 +12,7 @@ import Kingfisher
 
 class partyFavorites {
     
-    let fav = ParseParties()
     
-    func favPost(completion:(result:[Event]) -> Void){
-        
-        SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
-            
-            if let data:[Event] = result.object as? [Event] {
-                
-                SwiftEventBus.unregister(self, name: "MainWallEvent")
-                completion(result: data)
-            }
-            
-            
-
-            
-        }
-        
-       fav.favParties()
-        
-    }
     
 }
 

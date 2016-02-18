@@ -32,11 +32,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
         mainWall.eventPost { (result) -> Void in
             
             self.array = result
@@ -46,6 +41,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()

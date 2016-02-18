@@ -17,6 +17,8 @@ class createEvent {
     func theEvent(){
         
         let wall = PFObject(className: "MainWall")
+        let comments = PFObject(className: "CommentTable")
+        let liveContent = PFObject(className: "LiveContentTable")
         let event = PFObject(withoutDataWithClassName: "Events", objectId: "gUHWW0VeZD")
         let currentUser = PFUser.currentUser()
         
@@ -43,11 +45,41 @@ class createEvent {
                     
                     let relation = event.relationForKey("Events")
                     relation.addObject(wall)
-                    event.saveInBackground()
                     
-                    print("event made")
+                    event.saveInBackgroundWithBlock({ (sucess:Bool, error:NSError?) -> Void in
+                        
+                        if success {
+                            
+                            print("wall ID is \(wall.objectId)")
+                            
+                            comments["CreatedBy"] = wall
+                            
+                            comments.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                
+                                if success {
+                                    
+                                    print("comments ID is \(comments.objectId)")
+                                    
+                                    wall["Comments"] = comments
+                                    
+                                    wall.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                        
+                                        if success {
+                                         
+                                            print("event made")
+                                            
+                                            SwiftEventBus.post("EventMade")
+                                        }
+                                    })
+                                }
+                                
+                            })
+                        }
+                        
+                        
+                    })
                     
-                    SwiftEventBus.post("EventMade")
+                   
                     
                 } else {
                     // There was a problem, check error.description
