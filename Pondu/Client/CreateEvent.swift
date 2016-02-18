@@ -46,41 +46,6 @@ class createEvent {
                     let relation = event.relationForKey("Events")
                     relation.addObject(wall)
                     
-                    event.saveInBackgroundWithBlock({ (sucess:Bool, error:NSError?) -> Void in
-                        
-                        if success {
-                            
-                            print("wall ID is \(wall.objectId)")
-                            
-                            comments["CreatedBy"] = wall
-                            
-                            comments.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
-                                
-                                if success {
-                                    
-                                    print("comments ID is \(comments.objectId)")
-                                    
-                                    wall["Comments"] = comments
-                                    
-                                    wall.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
-                                        
-                                        if success {
-                                         
-                                            print("event made")
-                                            
-                                            SwiftEventBus.post("EventMade")
-                                        }
-                                    })
-                                }
-                                
-                            })
-                        }
-                        
-                        
-                    })
-                    
-                   
-                    
                 } else {
                     // There was a problem, check error.description
                     
