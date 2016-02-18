@@ -17,7 +17,7 @@ class userSignUp {
         let photoData = UIImageJPEGRepresentation(photo, 1.8)
         let photoFile = PFFile(name:"photo", data:photoData!)
         
-        let storyData =  UIImageJPEGRepresentation(stories, 0.8)
+        let storyData =  UIImageJPEGRepresentation(stories, 1.8)
         let storyFile = PFFile(name:"story", data:storyData!)
         
         let user = PFUser()
