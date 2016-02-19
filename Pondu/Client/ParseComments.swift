@@ -12,4 +12,42 @@ import Parse
 
 class comments {
     
+    let id = "zggmMhP9VJ"
+    
+    let wall = PFQuery(className: "MainWall")
+    let commentList = PFObject(className: "Comments")
+    let currentUser = PFUser.currentUser()
+    
+    func addComment(objectId:String,description:String){
+        
+        commentList["Description"] = description
+        commentList["CreatedBy"] = currentUser
+        
+        commentList.saveInBackgroundWithBlock { (success, error) -> Void in
+            
+            if success {
+                
+                self.wall.getObjectInBackgroundWithId(self.id) { (object, error) -> Void in
+                    
+                    if error == nil {
+                        
+                        let comment = object?.objectForKey("Comments") as! PFObject
+                        
+                        let relation = comment.relationForKey("Comments")
+                        
+                        relation.addObject(self.commentList)
+                        
+                        comment.saveInBackgroundWithBlock({ (success, error) -> Void in
+                            
+                            if success {
+                                
+                                print("Sucessfully added comment")
+                            }
+                        })
+                        
+                    }
+                }
+            }
+        }
+    }
 }

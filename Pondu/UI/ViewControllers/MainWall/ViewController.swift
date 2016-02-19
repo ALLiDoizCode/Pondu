@@ -26,6 +26,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var indexOfUrl:[Character] = []
     let transition = BubbleTransition()
     
+    let comment = AddComment()
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!

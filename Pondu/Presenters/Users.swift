@@ -15,8 +15,6 @@ class theUser {
     
     let user = parseUser()
     let nilArray:[String]! = nil
-    let thisFavorite = Favorite()
-    
     
     func editProfile(name:String,userName:String,email:String,phone:String,bio:String){
         

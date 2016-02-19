@@ -53,6 +53,7 @@
 		4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */; };
 		4D88281E1C7684EF00604DE3 /* CreateStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281D1C7684EF00604DE3 /* CreateStory.swift */; };
 		4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281F1C7689BF00604DE3 /* MakeStory.swift */; };
+		4D8828221C768FD900604DE3 /* AddComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828211C768FD900604DE3 /* AddComment.swift */; };
 		4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9CF1BE5F5A600C34281 /* Events.swift */; };
 		4D91A9D21BE5F7F200C34281 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91A9D11BE5F7F200C34281 /* User.swift */; };
 		4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */; };
@@ -73,7 +74,6 @@
 		4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF31BDEC7CF006055E9 /* userLogin.swift */; };
 		4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF51BDEF844006055E9 /* ParseComments.swift */; };
 		4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF71BDEFC33006055E9 /* Comments.swift */; };
-		4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF91BDF0E04006055E9 /* ParseFavorite.swift */; };
 		4DD73EFC1BDF11E1006055E9 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EFB1BDF11E1006055E9 /* Favorites.swift */; };
 		4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */; };
 		4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C21BEA7133009BCF55 /* Main.storyboard */; };
@@ -162,6 +162,7 @@
 		4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePartyPresenter.swift; sourceTree = "<group>"; };
 		4D88281D1C7684EF00604DE3 /* CreateStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStory.swift; sourceTree = "<group>"; };
 		4D88281F1C7689BF00604DE3 /* MakeStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeStory.swift; sourceTree = "<group>"; };
+		4D8828211C768FD900604DE3 /* AddComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddComment.swift; sourceTree = "<group>"; };
 		4D91A9CF1BE5F5A600C34281 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		4D91A9D11BE5F7F200C34281 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DBF2E991BF4DB3D00BD9B2A /* StoryLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryLayout.swift; sourceTree = "<group>"; };
@@ -183,7 +184,6 @@
 		4DD73EF31BDEC7CF006055E9 /* userLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userLogin.swift; sourceTree = "<group>"; };
 		4DD73EF51BDEF844006055E9 /* ParseComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseComments.swift; sourceTree = "<group>"; };
 		4DD73EF71BDEFC33006055E9 /* Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
-		4DD73EF91BDF0E04006055E9 /* ParseFavorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseFavorite.swift; sourceTree = "<group>"; };
 		4DD73EFB1BDF11E1006055E9 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DE1A1C21BEA7133009BCF55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -430,6 +430,7 @@
 				4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */,
 				4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */,
 				4D88281F1C7689BF00604DE3 /* MakeStory.swift */,
+				4D8828211C768FD900604DE3 /* AddComment.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -448,7 +449,6 @@
 				4DD73EED1BDEC254006055E9 /* SignUp.swift */,
 				4DD73EEF1BDEC25F006055E9 /* Login.swift */,
 				4DD73EF51BDEF844006055E9 /* ParseComments.swift */,
-				4DD73EF91BDF0E04006055E9 /* ParseFavorite.swift */,
 				4DD1749D1BDD793F00B64E0B /* Presenters */,
 			);
 			path = Client;
@@ -743,7 +743,6 @@
 				4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */,
 				4DD73EF81BDEFC33006055E9 /* Comments.swift in Sources */,
 				4D01CA801C0AD3FB0000F367 /* LiveViewController.swift in Sources */,
-				4DD73EFA1BDF0E04006055E9 /* ParseFavorite.swift in Sources */,
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */,
 				4DF91A8B1C2B68AD008E39AF /* SearchCell.swift in Sources */,
@@ -787,6 +786,7 @@
 				4DD73EFC1BDF11E1006055E9 /* Favorites.swift in Sources */,
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,
 				4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */,
+				4D8828221C768FD900604DE3 /* AddComment.swift in Sources */,
 				4D05125B1C07984200FB414D /* Player.swift in Sources */,
 				4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
