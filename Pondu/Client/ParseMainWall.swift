@@ -86,24 +86,28 @@ class ParseMainWall {
                                                 
                                                 for object in objects {
                                                     
-                                                    let media = createdBy["Media"] as! PFFile
-                                                    let title = object.objectForKey("Title") as! String
-                                                    
-                                                    let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
-                                                    
-                                                    liveContent.append(contentInfo)
+                                                    if let media:PFFile = createdBy["Media"] as? PFFile {
+                                                        
+                                                        let title = object.objectForKey("Title") as! String
+                                                        
+                                                        let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
+                                                        
+                                                        liveContent.append(contentInfo)
+                                                    }
                                                 }
                                                 
                                             }
                                             
                                         })
                                         
-                                        print("the Event is firing \(post)")
                                         
-                                        let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
-                                        
-                                        wall.append(theEvent)
                                     })
+                                    
+                                    print("the Event is firing \(post)")
+                                    
+                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                                    
+                                    wall.append(theEvent)
                                     
                                 }
                                 
@@ -142,14 +146,15 @@ class ParseMainWall {
                 
                 for object in objects {
                     
-                    let party = object.objectForKey("FavEvents") as! PFObject
-                    let theID = party.objectId
-                    let post = party.objectForKey("Post") as! String!
-                    let profileName = party.objectForKey("Name") as! String!
-                    let createdBy = party.objectForKey("CreatedBy") as! PFObject
+                    
+                    let event = object.objectForKey("FavEvents") as! PFObject
+                    let theID = event.objectId
+                    let post = event.objectForKey("Post") as! String!
+                    let profileName = event.objectForKey("Name") as! String!
+                    let createdBy = event.objectForKey("CreatedBy") as! PFObject
                     let profileImage = createdBy.objectForKey("photo") as! PFFile
-                    let comments = object.objectForKey("Comments") as! PFObject
-                    let content = object.objectForKey("LiveContent") as! PFObject
+                    let comments = event.objectForKey("Comments") as! PFObject
+                    let content = event.objectForKey("LiveContent") as! PFObject
                     
                     let contentData = content.relationForKey("Content")
                     
@@ -183,24 +188,27 @@ class ParseMainWall {
                                 
                                 for object in objects {
                                    
-                                    let media = createdBy["Media"] as! PFFile
-                                    let title = object.objectForKey("Title") as! String
-                                    
-                                    let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
-                                    
-                                    liveContent.append(contentInfo)
+                                    if let media:PFFile = createdBy["Media"] as? PFFile {
+                                        
+                                        let title = object.objectForKey("Title") as! String
+                                        
+                                        let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
+                                        
+                                        liveContent.append(contentInfo)
+                                    }
                                 }
                                 
                             }
                             
                         })
-                        
-                        print("the favEvent is firing \(post)")
-                        
-                        let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
-                        
-                        wall.append(theEvent)
+                
                     })
+                    
+                    print("the favEvent is firing \(post)")
+                    
+                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                    
+                    wall.append(theEvent)
                     
                 }
                 

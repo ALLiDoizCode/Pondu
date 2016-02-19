@@ -18,6 +18,9 @@ class ParseParties {
     func postQuery(){
         
         var wall:[Event] = []
+        var comment:[Comment] = []
+        var liveContent:[Content] = []
+        
         let query = PFQuery(className:"Parties")
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             
@@ -48,13 +51,62 @@ class ParseParties {
                                     let profileName = object.objectForKey("Name") as! String!
                                     let createdBy = object.objectForKey("CreatedBy") as! PFObject
                                     let profileImage = createdBy.objectForKey("photo") as! PFFile
+                                    let comments = object.objectForKey("Comments") as! PFObject
+                                    let content = object.objectForKey("LiveContent") as! PFObject
                                     
-                                    print(post)
+                                    let contentData = content.relationForKey("Content")
                                     
-                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!)
+                                    let contentQuery = contentData.query()
+                                    
+                                    let commentsData = comments.relationForKey("Comments")
+                                    
+                                    let commentQuery = commentsData.query()
+                                    
+                                    commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                                        
+                                        if let objects = objects {
+                                            
+                                            for object in objects {
+                                                
+                                                let createdBy = object.objectForKey("CreatedBy") as! PFUser
+                                                let userImage = createdBy["photo"] as! PFFile
+                                                let description = object.objectForKey("Description") as! String
+                                                let date = object.createdAt
+                                                
+                                                let commentInfo:Comment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: createdBy.username!, theTime: date!)
+                                                
+                                                comment.append(commentInfo)
+                                            }
+                                            
+                                        }
+                                        
+                                        contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                                            
+                                            if let objects = objects {
+                                                
+                                                for object in objects {
+                                                    
+                                                    if let media:PFFile = createdBy["Media"] as? PFFile {
+                                                        
+                                                        let title = object.objectForKey("Title") as! String
+                                                        
+                                                        let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
+                                                        
+                                                        liveContent.append(contentInfo)
+                                                    }
+                                                    
+                                                }
+                                                
+                                            }
+                                            
+                                        })
+                                    })
+                                    
+                                    print("the Party is firing \(post)")
+                                    
+                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                                     
                                     wall.append(theEvent)
-                                    
                                     
                                 }
                                 
@@ -85,6 +137,8 @@ class ParseParties {
         let query = relation?.query()
         
         var wall:[Event] = []
+        var comment:[Comment] = []
+        var liveContent:[Content] = []
         
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             
@@ -93,20 +147,69 @@ class ParseParties {
             if let objects = objects {
                 
                 for object in objects {
+                    print(object.objectId)
                     
                     let party = object.objectForKey("Parties") as! PFObject
+                    
                     let theID = party.objectId
                     let post = party.objectForKey("Post") as! String!
                     let profileName = party.objectForKey("Name") as! String!
                     let createdBy = party.objectForKey("CreatedBy") as! PFObject
                     let profileImage = createdBy.objectForKey("photo") as! PFFile
+                    let comments = party.objectForKey("Comments") as! PFObject
+                    let content = party.objectForKey("LiveContent") as! PFObject
                     
-                    print(post)
-                    print("boom\(theID)")
+                    let contentData = content.relationForKey("Content")
                     
-                    print("the favparty is firing \(post)")
+                    let contentQuery = contentData.query()
                     
-                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!)
+                    let commentsData = comments.relationForKey("Comments")
+                    
+                    let commentQuery = commentsData.query()
+                    
+                    commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                        
+                        if let objects = objects {
+                            
+                            for object in objects {
+                                
+                                let createdBy = object.objectForKey("CreatedBy") as! PFUser
+                                let userImage = createdBy["photo"] as! PFFile
+                                let description = object.objectForKey("Description") as! String
+                                let date = object.createdAt
+                                
+                                let commentInfo:Comment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: createdBy.username!, theTime: date!)
+                                
+                                comment.append(commentInfo)
+                            }
+                            
+                        }
+                        
+                        contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                            
+                            if let objects = objects {
+                                
+                                for object in objects {
+                                    
+                                    if let media:PFFile = createdBy["Media"] as! PFFile {
+                                        
+                                        let title = object.objectForKey("Title") as! String
+                                        
+                                        let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
+                                        
+                                        liveContent.append(contentInfo)
+                                    }
+                                }
+                                
+                            }
+                            
+                        })
+                    
+                    })
+                    
+                    print("the fav party is firing \(post)")
+                    
+                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                     
                     wall.append(theEvent)
                     
