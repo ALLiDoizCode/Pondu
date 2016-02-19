@@ -12,6 +12,8 @@ import Parse
 
 class ParseMainWall {
     
+    static let sharedInstance = ParseMainWall()
+    
     var mainWallID:[String] = []
     
     let currentUser = PFUser.currentUser()

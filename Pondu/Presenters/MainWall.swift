@@ -12,7 +12,9 @@ import Parse
 
 class PresentMainWall {
     
-    let mainWall = ParseMainWall()
+    let mainWall = ParseMainWall.sharedInstance
+    
+    static let sharedInstance = PresentMainWall()
     
     func eventPost(completion:(result:[Event]) -> Void){
         

@@ -12,6 +12,8 @@ import Parse
 
 class ParseParties {
     
+    static let sharedInstance = ParseParties()
+    
     var partyMainWallID:[String] = []
     var currentUser = PFUser.currentUser()
     
@@ -191,7 +193,7 @@ class ParseParties {
                                 
                                 for object in objects {
                                     
-                                    if let media:PFFile = createdBy["Media"] as! PFFile {
+                                    if let media:PFFile = createdBy["Media"] as? PFFile {
                                         
                                         let title = object.objectForKey("Title") as! String
                                         

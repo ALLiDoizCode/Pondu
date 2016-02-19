@@ -13,7 +13,7 @@ import Kingfisher
 
 class PartiesMainWall {
     
-    let Parties = ParseParties()
+    let Parties = ParseParties.sharedInstance
     
     func partiesPost(completion:(result:[Event]) -> Void){
         
