@@ -50,11 +50,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let id = "DHGw3Kk2FA"
-        let title = "this is a girl"
-        
-        liveConent.newContent(id, title: title)
-        
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
