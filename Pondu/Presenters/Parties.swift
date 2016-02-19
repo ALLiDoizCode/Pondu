@@ -25,8 +25,6 @@ class PartiesMainWall {
             SwiftEventBus.unregister(self, name: "PartyEvent")
             completion(result: post)
             
-            
-            
         }
         
         Parties.postQuery()

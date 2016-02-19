@@ -47,6 +47,8 @@ class createParty {
                             print("wall ID is \(wall.objectId)")
                             
                             comments["CreatedBy"] = wall
+                            liveContent["CreatedBy"] = wall
+                            
                             
                             comments.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
                                 
@@ -56,15 +58,30 @@ class createParty {
                                     
                                     wall["Comments"] = comments
                                     
-                                    wall.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                    
+                                    liveContent.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
                                         
                                         if success {
                                             
-                                            print("event made")
+                                            print("liveContent ID is \(liveContent.objectId)")
                                             
-                                            SwiftEventBus.post("EventMade")
+                                            wall["LiveContent"] = liveContent
+                                            
+                                            wall.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                                
+                                                if success {
+                                                    
+                                                    print("party made")
+                                                    
+                                                    SwiftEventBus.post("PartyMade")
+                                                }
+                                            })
+                                            
                                         }
+                                        
                                     })
+                                    
+                                    
                                 }
                                 
                             })
@@ -72,15 +89,11 @@ class createParty {
                         
                     })
                     
-                    print("event made")
-                    
-                    SwiftEventBus.post("EventMade")
-                    
                 } else {
                     // There was a problem, check error.description
                     
-                    print("there was an issue creating the event")
-                    SwiftEventBus.post("EventNotMade")
+                    print("there was an issue creating the party")
+                    SwiftEventBus.post("PartyNotMade")
                 }
             }
         }

@@ -12,8 +12,6 @@ import Parse
 
 class Login {
     
-    let favorite = userFavorites()
-    
     func userLogin(UserName:String,password:String){
     
         PFUser.logInWithUsernameInBackground(UserName, password:password) {

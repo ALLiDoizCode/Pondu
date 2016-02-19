@@ -27,6 +27,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let transition = BubbleTransition()
     
     let comment = AddComment()
+    let liveConent = AddContent()
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -48,6 +49,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let id = "DHGw3Kk2FA"
+        let title = "this is a girl"
+        
+        liveConent.newContent(id, title: title)
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()

@@ -22,8 +22,6 @@ class createEvent {
         let event = PFObject(withoutDataWithClassName: "Events", objectId: "gUHWW0VeZD")
         let currentUser = PFUser.currentUser()
         
-        //let file = currentUser?.objectForKey("photo") as! PFFile
-        
         SwiftEventBus.onMainThread(self, name: "makeEvent") { result in
             
             let createdEvent = result.object as! makeEvent
@@ -34,17 +32,62 @@ class createEvent {
             wall["Live"] = createdEvent.live
             wall["Likes"] = 0
             wall["Privacy"] = createdEvent.privacy
-            
-            let relation = event.relationForKey("Events")
-            relation.addObject(wall)
-            
+
             wall.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
-                    // The object has been saved.
                     
                     let relation = event.relationForKey("Events")
                     relation.addObject(wall)
+                    
+                    event.saveInBackgroundWithBlock({ (sucess:Bool, error:NSError?) -> Void in
+                        
+                        if success {
+                            
+                            print("wall ID is \(wall.objectId)")
+                            
+                            comments["CreatedBy"] = wall
+                            liveContent["CreatedBy"] = wall
+                            
+                            
+                            comments.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                
+                                if success {
+                                    
+                                    print("comments ID is \(comments.objectId)")
+                                    
+                                    wall["Comments"] = comments
+                                    
+                                    
+                                    liveContent.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                        
+                                        if success {
+                                            
+                                            print("liveContent ID is \(liveContent.objectId)")
+                                            
+                                            wall["LiveContent"] = liveContent
+                                            
+                                            wall.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
+                                                
+                                                if success {
+                                                    
+                                                    print("event made")
+                                                    
+                                                    SwiftEventBus.post("EventMade")
+                                                }
+                                            })
+                                            
+                                        }
+                                        
+                                    })
+                                    
+                                    
+                                }
+                                
+                            })
+                        }
+                        
+                    })
                     
                 } else {
                     // There was a problem, check error.description

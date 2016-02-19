@@ -13,9 +13,6 @@ import Parse
 class PresentMainWall {
     
     let mainWall = ParseMainWall()
-    let makecomment = userComments()
-    
-    
     
     func eventPost(completion:(result:[Event]) -> Void){
         

@@ -11,9 +11,7 @@ import SwiftEventBus
 import Parse
 
 class comments {
-    
-    let id = "zggmMhP9VJ"
-    
+
     let wall = PFQuery(className: "MainWall")
     let commentList = PFObject(className: "Comments")
     let currentUser = PFUser.currentUser()
@@ -27,7 +25,7 @@ class comments {
             
             if success {
                 
-                self.wall.getObjectInBackgroundWithId(self.id) { (object, error) -> Void in
+                self.wall.getObjectInBackgroundWithId(objectId) { (object, error) -> Void in
                     
                     if error == nil {
                         
