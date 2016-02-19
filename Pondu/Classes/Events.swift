@@ -16,14 +16,18 @@ class Event {
     var profilePicture:String = ""
     var likes:Int = 0
     var live:Bool = false
+    var comments:[Comment]!
+    var content:[Content]!
     
     
-    init(theID:String,theName:String,thePost:String,TheProfilePicture:String){
+    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theComments:[Comment],theContent:[Content]){
 
         objectID = theID
         name = theName
         post = thePost
         profilePicture = TheProfilePicture
+        comments = theComments
+        content = theContent
        
     }
 }
