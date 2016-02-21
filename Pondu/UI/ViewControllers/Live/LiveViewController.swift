@@ -23,7 +23,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     let videoTypes:[String] = ["mov","mp4", "m4v","3gp","MOV"]
     let comments:[String] = ["asdasdasdsadasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
     
-    var fileArray:[String]!
+    var fileArray:[Content]! = []
     
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
@@ -33,6 +33,10 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     let tapRect = UITapGestureRecognizer()
     let swipeDownRect = UISwipeGestureRecognizer()
     let swipeRightRect = UISwipeGestureRecognizer()
+    
+    override func viewWillAppear(animated: Bool) {
+         imageViewObject.image = nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +61,9 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         swipeDownRect.direction = .Down
         self.view!.addGestureRecognizer(swipeDownRect)
         
-        getFileType(fileArray[0])
+        print(fileArray[0].media)
+        getFileType(fileArray[0].media)
+        
 
     }
     
@@ -69,7 +75,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         
         let ran = Int(arc4random_uniform(max))
        
-            getFileType(fileArray[ran])
+            getFileType(fileArray[ran].media)
         
         
     }

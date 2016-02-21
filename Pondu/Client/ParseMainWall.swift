@@ -47,7 +47,6 @@ class ParseMainWall {
                             if let objects = objects {
                                 for object in objects {
                                     print(object.objectId)
-                                    
                                     let theID = object.objectId
                                     let post = object.objectForKey("Post") as! String!
                                     let profileName = object.objectForKey("Name") as! String!
@@ -63,6 +62,7 @@ class ParseMainWall {
                                     let commentsData = comments.relationForKey("Comments")
                                     
                                     let commentQuery = commentsData.query()
+                                    
                                     
                                     commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                                         
@@ -82,39 +82,55 @@ class ParseMainWall {
                                             
                                         }
                                         
-                                        contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                                       
+                                    })
+                                    
+                                    contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                                        
+                                        print("number of content\(objects?.count)")
+                                        
+                                        if let objects = objects {
                                             
-                                            if let objects = objects {
+                                            for object in objects {
                                                 
-                                                for object in objects {
+                                                if let media:PFFile = object.objectForKey("Media") as? PFFile {
                                                     
-                                                    if let media:PFFile = createdBy["Media"] as? PFFile {
-                                                        
-                                                        let title = object.objectForKey("Title") as! String
-                                                        
-                                                        let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
-                                                        
-                                                        liveContent.append(contentInfo)
-                                                    }
+                                                    let title = object.objectForKey("Title") as! String
+                                                    
+                                                    let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
+                                                    
+                                                    liveContent.append(contentInfo)
+                                                    
+                                                    print("the Event is firing \(post)")
+                                                    
+                                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                                                    
+                                                    wall.append(theEvent)
+                                                    
+                                                    print("number of media items \(liveContent.count) ")
                                                 }
+                                                
                                                 
                                             }
                                             
-                                        })
+                                            SwiftEventBus.post("AddContent")
+                                        }
                                         
                                         
                                     })
                                     
-                                    print("the Event is firing \(post)")
                                     
-                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+    
+                                }
+                                
+                                SwiftEventBus.onMainThread(self, name:"AddContent") { result in
                                     
-                                    wall.append(theEvent)
+                                    SwiftEventBus.post("MainWallEvent", sender: wall)
+                                    print("end")
                                     
                                 }
                                 
-                                SwiftEventBus.post("MainWallEvent", sender: wall)
-                                
+                               
                                 
                             } else {
                                 

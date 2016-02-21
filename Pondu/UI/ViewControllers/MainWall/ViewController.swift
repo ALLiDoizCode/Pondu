@@ -180,6 +180,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
 
             let item = (sender as! NSIndexPath).item
             
+            liveController.fileArray = array[item].content
+            
           
             print(item)
             
