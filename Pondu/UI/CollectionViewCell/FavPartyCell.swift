@@ -11,6 +11,7 @@ import Spring
 
 class FavPartyCell: UICollectionViewCell {
     
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
@@ -20,12 +21,31 @@ class FavPartyCell: UICollectionViewCell {
     @IBOutlet weak var live: SpringLabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var TitleEvent: UILabel!
+    @IBOutlet weak var descriptionHead: UILabel!
+    
     var blurView:UIVisualEffectView!
     var pulseEffect:LFTPulseAnimation!
     var pulseEffect2:LFTPulseAnimation!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
+        
+        
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            
+            self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2
+            self.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
+            self.profileImage.layer.borderWidth = 1.5
+            self.profileImage.layer.masksToBounds = true
+            self.live.layer.cornerRadius = self.live.frame.size.height/2
+            self.live.layer.borderColor = UIColor.whiteColor().CGColor
+            self.live.layer.borderWidth = 1.5
+            self.live.layer.masksToBounds = true
+            
+            
+        }
+
         
         // These are the two convenience height constants
         let standardHeight = UltravisualLayoutConstants.Cell.standardHeight
@@ -40,42 +60,37 @@ class FavPartyCell: UICollectionViewCell {
         coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
         let scale = max(delta, 0.5)
-        PostName.transform = CGAffineTransformMakeScale(scale, scale)
+       
+        iconView.transform = CGAffineTransformMakeScale(scale, scale)
         post.transform = CGAffineTransformMakeScale(scale, scale)
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
-        profileImage.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
-        time.transform = CGAffineTransformMakeScale(scale, scale)
         
+        descriptionHead.alpha = delta
+        live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
         time.alpha = delta
         
+        if delta > 0.1 {
+            
+            TitleEvent.hidden = true
+            
+            
+        }else{
+            
+            TitleEvent.hidden = false
+            
+        }
         
+        TitleEvent.alpha = 1 - delta
         
     }
     
     
     override func awakeFromNib() {
-        
-        profileImage.layer.cornerRadius = profileImage.frame.size.height/2
-        profileImage.layer.borderColor = UIColor.whiteColor().CGColor
-        profileImage.layer.borderWidth = 1.5
-        profileImage.layer.masksToBounds = true
-        
-        let livePoint = CGPoint(x: live.frame.origin.x + 160
-            , y: live.frame.origin.y + 17)
-        
-        
-        
-        pulseEffect = LFTPulseAnimation(repeatCount: Float.infinity, radius:25, position:livePoint)
-        pulseEffect.backgroundColor = UIColor.redColor().CGColor
-        self.layer.addSublayer(pulseEffect)
-        pulseEffect.hidden = true
-        
-        
         
     }
 }

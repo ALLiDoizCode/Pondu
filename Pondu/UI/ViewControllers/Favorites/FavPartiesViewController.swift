@@ -89,6 +89,7 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         
         print("post in array \(self.array.count)")
         
+        cell.layoutSubviews()
         
         return cell
         

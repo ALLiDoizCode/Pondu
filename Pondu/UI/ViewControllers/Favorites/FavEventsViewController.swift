@@ -92,6 +92,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         
         print("post in array \(self.array.count)")
         
+        cell.layoutSubviews()
         
         return cell
         

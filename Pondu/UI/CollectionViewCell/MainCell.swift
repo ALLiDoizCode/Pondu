@@ -25,10 +25,27 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
+    
+    override func awakeFromNib() {
+        
+    }
+    
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
         
-       
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            
+            self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2
+            self.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
+            self.profileImage.layer.borderWidth = 1.5
+            self.profileImage.layer.masksToBounds = true
+            self.live.layer.cornerRadius = self.live.frame.size.height/2
+            self.live.layer.borderColor = UIColor.whiteColor().CGColor
+            self.live.layer.borderWidth = 1.5
+            self.live.layer.masksToBounds = true
+            
+            
+        }
         
         // These are the two convenience height constants
         let standardHeight = UltravisualLayoutConstants.Cell.standardHeight
@@ -53,6 +70,7 @@ class MainCell: UICollectionViewCell {
         //visualEffectView.transform = CGAffineTransformMakeScale(scale, scale)
         
         descriptionHead.alpha = delta
+        live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
@@ -79,22 +97,6 @@ class MainCell: UICollectionViewCell {
         //bgImage.addSubview(visualEffectView)
         
                 
-    }
-    
-    
-    
-    override func awakeFromNib() {
-        
-        profileImage.layer.cornerRadius = profileImage.frame.size.height/2
-        profileImage.layer.borderColor = UIColor.whiteColor().CGColor
-        profileImage.layer.borderWidth = 1.5
-        profileImage.layer.masksToBounds = true
-       
-        
-        
-        
-       
-        
     }
 }
 

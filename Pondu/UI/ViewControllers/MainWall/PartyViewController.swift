@@ -99,7 +99,19 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
             cell.live.textColor = UIColor.whiteColor()
         }
         
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            
+            cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.height/2
+            cell.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
+            cell.profileImage.layer.borderWidth = 1.5
+            cell.profileImage.layer.masksToBounds = true
+            cell.live.layer.cornerRadius = cell.live.frame.size.height/2
+            cell.live.layer.borderColor = UIColor.whiteColor().CGColor
+            cell.live.layer.borderWidth = 1.5
+            cell.live.layer.masksToBounds = true
+        }
         
+        cell.layoutSubviews()
         
         print("post in array \(self.array.count)")
         
