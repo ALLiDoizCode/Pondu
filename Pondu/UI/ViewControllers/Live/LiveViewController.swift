@@ -14,6 +14,8 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     let transition = BubbleTransition()
     
+    let presenter = WallContent()
+    
     var player:Player!
     var testImage:String!
     var testVideo:String!
@@ -23,7 +25,9 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     let videoTypes:[String] = ["mov","mp4", "m4v","3gp","MOV"]
     let comments:[String] = ["asdasdasdsadasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
     
-    var fileArray:[Content]! = []
+    var fileArray:[String]! = []
+    
+    var eventId:String = ""
     
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
@@ -36,6 +40,15 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     
     override func viewWillAppear(animated: Bool) {
          imageViewObject.image = nil
+        
+        presenter.getContent(eventId) { (Data) -> Void in
+            
+            self.fileArray = Data
+            
+            print(self.fileArray[0])
+            self.getFileType(self.fileArray[0])
+
+        }
     }
     
     override func viewDidLoad() {
@@ -61,10 +74,6 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         swipeDownRect.direction = .Down
         self.view!.addGestureRecognizer(swipeDownRect)
         
-        print(fileArray[0].media)
-        getFileType(fileArray[0].media)
-        
-
     }
     
     
@@ -75,7 +84,8 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         
         let ran = Int(arc4random_uniform(max))
        
-            getFileType(fileArray[ran].media)
+            getFileType(fileArray[ran]
+        )
         
         
     }

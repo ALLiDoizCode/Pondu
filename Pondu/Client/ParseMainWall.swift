@@ -64,6 +64,14 @@ class ParseMainWall {
                                     let commentQuery = commentsData.query()
                                     
                                     
+                                    print("the Event is firing \(post)")
+                                    
+                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                                    
+                                    wall.append(theEvent)
+                                    
+                                    print("number of media items \(liveContent.count) ")
+                                    
                                     commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                                         
                                         if let objects = objects {
@@ -85,51 +93,12 @@ class ParseMainWall {
                                        
                                     })
                                     
-                                    contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                                        
-                                        print("count")
-                                        
-                                        print("number of content\(objects?.count)")
-                                        
-                                        if let objects = objects {
-                                            
-                                            for object in objects {
-                                                
-                                                if let media:PFFile = object.objectForKey("Media") as? PFFile {
-                                                    
-                                                    let title = object.objectForKey("Title") as! String
-                                                    
-                                                    let contentInfo:Content = Content(theMedia: media.url!, theTitle: title)
-                                                    
-                                                    liveContent.append(contentInfo)
-                                                    
-                                                }
-                                                
-                                            }
-                                            
-                                            SwiftEventBus.post("AddContent")
-                                        }
-                                        
-                                            print("the Event is firing \(post)")
-                                            
-                                            let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
-                                            
-                                            wall.append(theEvent)
-                                            
-                                            print("number of media items \(liveContent.count) ")
-                                    })
+                                    
                                     
                                 }
                                 
-                                SwiftEventBus.onMainThread(self, name:"AddContent") { result in
-                                    
-                                    if wall.count == eventObjects.count {
-                                        
-                                        SwiftEventBus.post("MainWallEvent", sender: wall)
-                                        print("end")
-                                    }
-                                }
-                                
+                               
+                               SwiftEventBus.post("MainWallEvent", sender: wall)
                                
                                 
                             } else {
@@ -146,6 +115,41 @@ class ParseMainWall {
             
         }
 }
+    
+    func liveContent(objectId:String){
+        
+        
+        var data:[String] = []
+        let query = PFQuery(className: "MainWall")
+        query.getObjectInBackgroundWithId(objectId) { (object, error) -> Void in
+            
+            if let object = object {
+                
+                let content = object.objectForKey("LiveContent") as! PFObject
+                
+                let relation = content.relationForKey("Content")
+                
+                let contentQuery = relation.query()
+                
+                contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                    
+                    if let objects = objects {
+                        
+                        for object in objects {
+                            
+                            let media = object.objectForKey("Media") as! PFFile
+                            
+                            data.append(media.url!)
+                            print(media.url)
+                        }
+                        
+                        
+                        SwiftEventBus.post("EventContent", sender: data)
+                    }
+                })
+            }
+        }
+    }
     
     func favEvents(){
         
