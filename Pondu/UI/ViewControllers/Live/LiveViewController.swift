@@ -45,9 +45,15 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
             
             self.fileArray = Data
             
-            print(self.fileArray[0])
-            self.getFileType(self.fileArray[0])
-
+            if self.fileArray.count == 0 {
+                
+                
+            }else {
+                
+                print(self.fileArray[0])
+                self.getFileType(self.fileArray[0])
+            }
+            
         }
     }
     
@@ -84,8 +90,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
         
         let ran = Int(arc4random_uniform(max))
        
-            getFileType(fileArray[ran]
-        )
+            getFileType(fileArray[ran])
         
         
     }

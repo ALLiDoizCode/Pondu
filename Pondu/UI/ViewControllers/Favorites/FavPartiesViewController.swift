@@ -145,7 +145,7 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
             liveController.modalPresentationStyle = .Custom
             
             let item = (sender as! NSIndexPath).item
-            
+            liveController.eventId = array[item].objectID
           
             print(item)
             

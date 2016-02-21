@@ -175,7 +175,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
             liveController.modalPresentationStyle = .Custom
             
             let item = (sender as! NSIndexPath).item
-            
+            liveController.eventId = array[item].objectID
            
             print(item)
             
