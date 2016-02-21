@@ -338,54 +338,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pondu/Client/ParseMainWall.swift"
-            timestampString = "477541999.135676"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "postQuery()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pondu.ParseMainWall.postQuery (Pondu.ParseMainWall)() -&gt; ()"
-                  moduleName = "Pondu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Client/ParseMainWall.swift"
-                  timestampString = "477782114.588428"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "440">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pondu.ParseMainWall.(postQuery (Pondu.ParseMainWall) -&gt; () -&gt; ()).(closure #1)"
-                  moduleName = "Pondu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Client/ParseMainWall.swift"
-                  timestampString = "477782114.588522"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pondu/Client/ParseParties.swift"
             timestampString = "477541999.135676"
             startingColumnNumber = "9223372036854775807"

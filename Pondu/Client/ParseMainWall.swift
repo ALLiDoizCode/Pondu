@@ -37,15 +37,15 @@ class ParseMainWall {
                     let eventQuery = relation.query()
                     
                     eventQuery!.findObjectsInBackgroundWithBlock {
-                        (objects: [PFObject]?, error: NSError?) -> Void in
+                        (eventObjects: [PFObject]?, error: NSError?) -> Void in
                         
                         if error == nil {
                             // The find succeeded.
-                            print("Successfully retrieved \(objects!.count) Posts.")                            
+                            print("Successfully retrieved \(eventObjects!.count) Posts.")
                             
                             // Do something with the found objects
-                            if let objects = objects {
-                                for object in objects {
+                            if let eventObjects = eventObjects {
+                                for object in eventObjects {
                                     print(object.objectId)
                                     let theID = object.objectId
                                     let post = object.objectForKey("Post") as! String!
@@ -87,6 +87,8 @@ class ParseMainWall {
                                     
                                     contentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                                         
+                                        print("count")
+                                        
                                         print("number of content\(objects?.count)")
                                         
                                         if let objects = objects {
@@ -101,33 +103,31 @@ class ParseMainWall {
                                                     
                                                     liveContent.append(contentInfo)
                                                     
-                                                    print("the Event is firing \(post)")
-                                                    
-                                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
-                                                    
-                                                    wall.append(theEvent)
-                                                    
-                                                    print("number of media items \(liveContent.count) ")
                                                 }
-                                                
                                                 
                                             }
                                             
                                             SwiftEventBus.post("AddContent")
                                         }
                                         
-                                        
+                                            print("the Event is firing \(post)")
+                                            
+                                            let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                                            
+                                            wall.append(theEvent)
+                                            
+                                            print("number of media items \(liveContent.count) ")
                                     })
                                     
-                                    
-    
                                 }
                                 
                                 SwiftEventBus.onMainThread(self, name:"AddContent") { result in
                                     
-                                    SwiftEventBus.post("MainWallEvent", sender: wall)
-                                    print("end")
-                                    
+                                    if wall.count == eventObjects.count {
+                                        
+                                        SwiftEventBus.post("MainWallEvent", sender: wall)
+                                        print("end")
+                                    }
                                 }
                                 
                                
