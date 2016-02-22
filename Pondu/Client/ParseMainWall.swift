@@ -116,6 +116,46 @@ class ParseMainWall {
         }
 }
     
+    func comments(objectId:String){
+        
+        var data:[Comment] = []
+        let query = PFQuery(className: "MainWall")
+        query.getObjectInBackgroundWithId(objectId) { (object, error) -> Void in
+            
+            if let object = object {
+                
+                let comment = object.objectForKey("Comments") as! PFObject
+                
+                let relation = comment.relationForKey("Comments")
+                
+                let commentQuery = relation.query()
+                
+                commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                    
+                    if let objects = objects {
+                        
+                        for object in objects {
+                            
+                            let description = object.objectForKey("Description") as! String
+                            let createdBy = object.objectForKey("CreatedBy") as! PFUser
+                            let userImage = createdBy.objectForKey("photo") as! PFFile
+                            let userName = createdBy.username
+                            let time = object.createdAt
+                            
+                            let theComment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: userName!, theTime: time!)
+                            
+                            data.append(theComment)
+                            print(description)
+                        }
+                        
+                        
+                        SwiftEventBus.post("EventComments", sender: data)
+                    }
+                })
+            }
+        }
+    }
+    
     func liveContent(objectId:String){
         
         

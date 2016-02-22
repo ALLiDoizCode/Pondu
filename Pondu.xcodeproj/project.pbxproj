@@ -65,6 +65,7 @@
 		4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */; };
 		4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */; };
 		4DC9AFC01C7A7F4C00C205B8 /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */; };
+		4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */; };
 		4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */; };
 		4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
@@ -176,6 +177,7 @@
 		4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
+		4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCommetns.swift; sourceTree = "<group>"; };
 		4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListViewController.swift; sourceTree = "<group>"; };
 		4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavStoryListViewController.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				4D8828211C768FD900604DE3 /* AddComment.swift */,
 				4D8828251C7697D200604DE3 /* AddContent.swift */,
 				4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */,
+				4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -732,6 +735,7 @@
 			files = (
 				4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */,
 				4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */,
+				4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */,
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,
 				4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */,
 				4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */,
