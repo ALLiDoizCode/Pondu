@@ -57,7 +57,14 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         presenter.comment(objectId, description: text) { (success) -> Void in
             
-            self.reload()
+            self.presenter.getComments(self.objectId) { (data) -> Void in
+                
+                self.comments = data
+                
+                self.reload()
+            }
+            
+            self.textField.text = ""
         }
     }
     
