@@ -30,7 +30,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let comment = AddComment()
     let liveConent = AddContent()
     
-    @IBOutlet weak var blur: FXBlurView!
+    @IBOutlet weak var blur: UIView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailName: UILabel!
@@ -49,12 +49,19 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     
     override func viewWillAppear(animated: Bool) {
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        blur.addSubview(blurEffectView)
+        blur.backgroundColor = UIColor.clearColor()
         detailView.backgroundColor = UIColor.whiteColor()
         detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
         detailView.layer.borderWidth = 0.5
         detailView.hidden = true
         blur.hidden = true
-        blur.blurRadius = 5
+       // blur.blurRadius = 5
         
         mainWall.eventPost { (result) -> Void in
             
