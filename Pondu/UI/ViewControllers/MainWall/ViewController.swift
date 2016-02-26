@@ -14,6 +14,7 @@ import QuartzCore
 import SwiftDate
 import Spring
 import BubbleTransition
+import FXBlurView
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate {
     
@@ -29,6 +30,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let comment = AddComment()
     let liveConent = AddContent()
     
+    @IBOutlet weak var blur: FXBlurView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailName: UILabel!
@@ -45,7 +47,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     
+    
     override func viewWillAppear(animated: Bool) {
+        detailView.backgroundColor = UIColor.whiteColor()
+        detailView.hidden = true
+        blur.hidden = true
+        blur.blurRadius = 5
         
         mainWall.eventPost { (result) -> Void in
             
@@ -54,12 +61,17 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             dispatch_async(dispatch_get_main_queue()) {
                 
                 self.collectionView.reloadData()
+                
+                self.detailImage.layer.cornerRadius = self.detailImage.layer.frame.height/2
+                self.detailImage.layer.masksToBounds = true
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
@@ -117,7 +129,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        
     /////////////////TimeStamp////////////////////////     
        /*let today = NSDate.today().weekdayName
         
@@ -148,7 +159,27 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             
             print("featured")
             
-            self.performSegueWithIdentifier("Live", sender: indexPath);
+            blur.hidden = false
+            detailView.hidden = false
+            detailPost.text = array[indexPath.item].post
+            detailName.text = array[indexPath.item].name
+            //detailTitle.text = cell.descriptionHead.text
+            //detailTime.text = cell.time.text
+            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+            
+            
+            if array[indexPath.item].live == true {
+                
+                detailLive.setTitle("Live", forState: UIControlState.Normal)
+                
+                
+            }else {
+                
+                
+                detailLive.setTitle("Peak", forState: UIControlState.Normal)
+               detailLive.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+                
+            }
             
         }else{
             
