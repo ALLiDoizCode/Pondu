@@ -29,6 +29,17 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let comment = AddComment()
     let liveConent = AddContent()
     
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var detailName: UILabel!
+    @IBOutlet weak var detailLive: UIButton!
+    @IBOutlet weak var detailTitle: UILabel!
+    @IBOutlet weak var detailPost: UILabel!
+    @IBOutlet weak var detailLocation: UILabel!
+    @IBOutlet weak var detailAddress: UIButton!
+    @IBOutlet weak var detailTimteLabel: UILabel!
+    @IBOutlet weak var detailTime: UILabel!
+    @IBOutlet weak var detailDate: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
@@ -76,22 +87,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.post.text = array[indexPath.item].post
         cell.PostName.text = array[indexPath.item].name
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
-        
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
         if array[indexPath.item].live == true {
         
-            cell.live.text = "Live"
-            cell.live.repeatCount = Float.infinity
-            cell.live.autostart = true
-            print("blink")
+            cell.live.setTitle("Live", forState: UIControlState.Normal)
+
             
         }else {
             
 
-            cell.live.text = "Peak"
-            cell.live.textColor = UIColor.whiteColor()
+            cell.live.setTitle("Peak", forState: UIControlState.Normal)
+            cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
           
         }
         
@@ -148,7 +155,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             print("not featured")
         }
     }
-
+    
+    func goToLive(sender:AnyObject){
+        
+        self.performSegueWithIdentifier("Live", sender: sender)
+    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -177,13 +188,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             
             liveController.transitioningDelegate = self
             liveController.modalPresentationStyle = .Custom
+            
+            let cell = sender as! MainCell
 
-            let item = (sender as! NSIndexPath).item
+            let indexPath = self.collectionView!.indexPathForCell(cell)
             
-            liveController.eventId = array[item].objectID
-            
-          
-            print(item)
+            liveController.eventId = array[(indexPath?.item)!].objectID
             
         }
     }

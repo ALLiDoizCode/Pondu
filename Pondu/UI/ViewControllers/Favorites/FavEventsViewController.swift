@@ -71,9 +71,6 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         cell.likes.text = "Likes:\(array[indexPath.row].likes)"
        
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
-        
-        
         
         if array[indexPath.row].live == true {
             

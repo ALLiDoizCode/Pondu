@@ -12,8 +12,6 @@ import Spring
 class FavPartyCell: UICollectionViewCell {
     
     @IBOutlet weak var iconView: UIView!
-    @IBOutlet weak var bgImage: UIImageView!
-    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
@@ -57,7 +55,6 @@ class FavPartyCell: UICollectionViewCell {
         // Based on the range constants, update the cell’s alpha based on the delta value.
         let minAlpha: CGFloat = 0.3
         let maxAlpha: CGFloat = 0.75
-        coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
         let scale = max(delta, 0.5)
        

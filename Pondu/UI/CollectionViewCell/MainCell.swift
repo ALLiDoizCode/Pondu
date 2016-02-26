@@ -14,13 +14,11 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var descriptionHead: UILabel!
     @IBOutlet weak var iconView: UIView!
-    @IBOutlet weak var bgImage: UIImageView!
-    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
     @IBOutlet weak var likes: UILabel!
-    @IBOutlet weak var live: SpringLabel!
+    @IBOutlet weak var live: UIButton!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
@@ -40,9 +38,10 @@ class MainCell: UICollectionViewCell {
             self.profileImage.layer.borderWidth = 1.5
             self.profileImage.layer.masksToBounds = true
             self.live.layer.cornerRadius = self.live.frame.size.height/2
-            self.live.layer.borderColor = UIColor.whiteColor().CGColor
+            self.live.layer.borderColor = UIColor.grayColor().CGColor
             self.live.layer.borderWidth = 1.5
             self.live.layer.masksToBounds = true
+            self.layoutSubviews()
             
             
         }
@@ -57,7 +56,7 @@ class MainCell: UICollectionViewCell {
         // Based on the range constants, update the cell’s alpha based on the delta value.
         let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
-        coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
+    
         
         let scale = max(delta, 0.5)
         descriptionHead.transform = CGAffineTransformMakeScale(scale, scale)
@@ -66,16 +65,12 @@ class MainCell: UICollectionViewCell {
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         iconView.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
-        //time.transform = CGAffineTransformMakeScale(scale, scale)
-        //visualEffectView.transform = CGAffineTransformMakeScale(scale, scale)
         
         descriptionHead.alpha = delta
         live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
-        //time.alpha = delta
-        
         
         if delta > 0.1 {
             
@@ -89,13 +84,6 @@ class MainCell: UICollectionViewCell {
         }
         
         eventTitle.alpha = 1 - delta
-
-        
-        
-        //visualEffectView.frame = bgImage.frame
-        //visualEffectView.clipsToBounds = true
-        //bgImage.addSubview(visualEffectView)
-        
                 
     }
 }

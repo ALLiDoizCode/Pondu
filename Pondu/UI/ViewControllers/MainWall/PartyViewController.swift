@@ -80,35 +80,17 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
-    
-        cell.bgImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
-        
-        
-        
+
         if array[indexPath.item].live == true {
             
             //cell.pulseEffect.hidden = false
             
-            cell.live.text = "Live"
-            cell.live.repeatCount = Float.infinity
-            cell.live.animate()
+             cell.live.setTitle("Live", forState: UIControlState.Normal)
         }else {
             
             
-            cell.live.text = "Peak"
-            cell.live.textColor = UIColor.whiteColor()
-        }
-        
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            
-            cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.height/2
-            cell.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
-            cell.profileImage.layer.borderWidth = 1.5
-            cell.profileImage.layer.masksToBounds = true
-            cell.live.layer.cornerRadius = cell.live.frame.size.height/2
-            cell.live.layer.borderColor = UIColor.whiteColor().CGColor
-            cell.live.layer.borderWidth = 1.5
-            cell.live.layer.masksToBounds = true
+            cell.live.setTitle("Peak", forState: UIControlState.Normal)
+            cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
         }
         
         cell.layoutSubviews()

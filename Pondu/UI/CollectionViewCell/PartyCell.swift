@@ -11,14 +11,11 @@ import Spring
 
 class PartyCell: UICollectionViewCell {
     
- 
-    @IBOutlet weak var bgImage: UIImageView!
-    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
     @IBOutlet weak var likes: UILabel!
-    @IBOutlet weak var live: SpringLabel!
+    @IBOutlet weak var live: UIButton!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var eventTitle: UILabel!
@@ -38,7 +35,7 @@ class PartyCell: UICollectionViewCell {
             self.profileImage.layer.borderWidth = 1.5
             self.profileImage.layer.masksToBounds = true
             self.live.layer.cornerRadius = self.live.frame.size.height/2
-            self.live.layer.borderColor = UIColor.whiteColor().CGColor
+            self.live.layer.borderColor = UIColor.grayColor().CGColor
             self.live.layer.borderWidth = 1.5
             self.live.layer.masksToBounds = true
             
@@ -55,7 +52,6 @@ class PartyCell: UICollectionViewCell {
         // Based on the range constants, update the cell’s alpha based on the delta value.
         let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
-        coverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
         let scale = max(delta, 0.5)
         
@@ -65,16 +61,12 @@ class PartyCell: UICollectionViewCell {
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
-        //bgImage.transform = CGAffineTransformMakeScale(scale, scale)
         
         descriptionHead.alpha = delta
         live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
-        //time.alpha = delta
-        
-        
         
         if delta > 0.1 {
             
