@@ -21,6 +21,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let mainWall = PresentMainWall()
     let eventID:[String] = []
     var count:Int = 0
+    var objectId:String!
     var array:[Event] = []
     var numOfCells:[String] = []
     var numOfPost:[String] = []
@@ -45,8 +46,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
-    
-    
     
     override func viewWillAppear(animated: Bool) {
         
@@ -167,7 +166,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         if indexPath.item == layout.featuredItemIndex {
             
             print("featured")
-            
+            objectId = array[indexPath.item].objectID
             blur.hidden = false
             detailView.hidden = false
             detailPost.text = array[indexPath.item].post
@@ -220,6 +219,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return transition
     }
     
+    @IBAction func commentBtn(sender: AnyObject) {
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "Live" {
@@ -234,6 +235,17 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             let indexPath = self.collectionView!.indexPathForCell(cell)
             
             liveController.eventId = array[(indexPath?.item)!].objectID
+            
+        }
+        
+        if segue.identifier == "Comment" {
+            
+            let commentViewController = segue.destinationViewController as! CommentViewController
+            
+            commentViewController.transitioningDelegate = self
+            commentViewController.modalPresentationStyle = .Custom
+            
+            commentViewController.objectId = objectId
             
         }
     }

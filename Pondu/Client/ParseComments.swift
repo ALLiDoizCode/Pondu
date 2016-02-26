@@ -16,7 +16,7 @@ class comments {
     let commentList = PFObject(className: "Comments")
     let currentUser = PFUser.currentUser()
     
-    func addComment(objectId:String,description:String){
+    func addComment(objectId:String,description:String,completion:(success:Bool) -> Void){
         
         commentList["Description"] = description
         commentList["CreatedBy"] = currentUser
@@ -40,6 +40,8 @@ class comments {
                             if success {
                                 
                                 print("Sucessfully added comment")
+                                
+                                completion(success: success)
                             }
                         })
                         

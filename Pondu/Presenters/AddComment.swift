@@ -10,11 +10,5 @@ import Foundation
 
 class AddComment {
     
-    let makeComment = comments()
     
-    func comment(objectId:String,description:String){
-        
-        makeComment.addComment(objectId, description: description)
-        
-    }
 }

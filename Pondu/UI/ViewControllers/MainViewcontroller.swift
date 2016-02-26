@@ -27,6 +27,12 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SwiftEventBus.onMainThread(self, name:"Title") { (result) -> Void in
+            
+            
+            
+        }
+        
         SwiftEventBus.onMainThread(self, name: "NavHide") { (result) -> Void in
             
             self.navigationController?.navigationBarHidden = true
