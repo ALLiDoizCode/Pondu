@@ -748,10 +748,10 @@
                             <constraint firstItem="SuO-jT-dMX" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Xw0-Yi-vJ2"/>
                             <constraint firstItem="SuO-jT-dMX" firstAttribute="top" secondItem="U90-Ij-hAQ" secondAttribute="top" id="avf-BM-itc"/>
                             <constraint firstItem="SuO-jT-dMX" firstAttribute="trailing" secondItem="U90-Ij-hAQ" secondAttribute="trailing" id="bq7-az-p69"/>
-                            <constraint firstItem="SuO-jT-dMX" firstAttribute="leading" secondItem="U90-Ij-hAQ" secondAttribute="leading" id="p6a-na-zV5"/>
-                            <constraint firstItem="Xip-jQ-Rv5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tOL-Ge-j9B">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-22.5"/>
+                            <constraint firstItem="Xip-jQ-Rv5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="161" id="j1p-78-5fh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="66"/>
                             </constraint>
+                            <constraint firstItem="SuO-jT-dMX" firstAttribute="leading" secondItem="U90-Ij-hAQ" secondAttribute="leading" id="p6a-na-zV5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xip-jQ-Rv5" secondAttribute="trailing" constant="8" id="ynJ-nh-Mua"/>
                             <constraint firstItem="SuO-jT-dMX" firstAttribute="centerX" secondItem="Xip-jQ-Rv5" secondAttribute="centerX" id="ytc-td-t6M"/>
                         </constraints>
@@ -770,7 +770,7 @@
                                 <exclude reference="p6a-na-zV5"/>
                                 <exclude reference="ytc-td-t6M"/>
                                 <exclude reference="GgH-q2-k2d"/>
-                                <exclude reference="tOL-Ge-j9B"/>
+                                <exclude reference="j1p-78-5fh"/>
                                 <exclude reference="ynJ-nh-Mua"/>
                             </mask>
                         </variation>
@@ -789,7 +789,7 @@
                                 <include reference="p6a-na-zV5"/>
                                 <include reference="ytc-td-t6M"/>
                                 <include reference="GgH-q2-k2d"/>
-                                <include reference="tOL-Ge-j9B"/>
+                                <include reference="j1p-78-5fh"/>
                                 <include reference="ynJ-nh-Mua"/>
                             </mask>
                         </variation>

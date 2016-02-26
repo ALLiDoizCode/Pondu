@@ -50,6 +50,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         detailView.backgroundColor = UIColor.whiteColor()
+        detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        detailView.layer.borderWidth = 0.5
         detailView.hidden = true
         blur.hidden = true
         blur.blurRadius = 5
