@@ -90,6 +90,13 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.userImage.kf_setImageWithURL(NSURL(string: comments[indexPath.row].creatorImage)!)
         cell.userName.text = comments[indexPath.row].creatorName
         
+        let Date:NSDate = comments[indexPath.row].time
+        let dateFormatter:NSDateFormatter = NSDateFormatter()
+        let theTimeFormat = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = theTimeFormat
+        let DateInFormat:String = dateFormatter.stringFromDate(Date)
+        
+        cell.time.text = DateInFormat
         return cell
     
     }
