@@ -27,6 +27,8 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        
         SwiftEventBus.onMainThread(self, name:"Title") { (result) -> Void in
             
             
