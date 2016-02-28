@@ -72,19 +72,18 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
         
-        if array[indexPath.row].live == true {
+        if array[indexPath.item].live == true {
             
-            cell.live.text = "Live"
-            cell.live.repeatCount = Float.infinity
-            cell.live.animate()
+            cell.live.setTitle("Live", forState: UIControlState.Normal)
+            
             
         }else {
             
             
-            cell.live.text = "Peak"
-            cell.live.textColor = UIColor.whiteColor()
+            cell.live.setTitle("Peak", forState: UIControlState.Normal)
+            cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+            
         }
-        
         
         print("post in array \(self.array.count)")
         

@@ -11,22 +11,25 @@ import Spring
 
 class FavEventCell: UICollectionViewCell {
     
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var descriptionHead: UILabel!
     @IBOutlet weak var iconView: UIView!
-    @IBOutlet weak var titleEvent: UILabel!
-    @IBOutlet weak var bgImage: UIImageView!
-    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var PostName: UILabel!
     @IBOutlet weak var post: UILabel!
     @IBOutlet weak var comments: UILabel!
     @IBOutlet weak var likes: UILabel!
-    @IBOutlet weak var live: SpringLabel!
+    @IBOutlet weak var live: UIButton!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var descriptionHead: UILabel!
+    var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
-    var blurView:UIVisualEffectView!
-    var pulseEffect:LFTPulseAnimation!
-    var pulseEffect2:LFTPulseAnimation!
+    
+    override func awakeFromNib() {
+        
+        
+        
+    }
+    
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
@@ -38,9 +41,10 @@ class FavEventCell: UICollectionViewCell {
             self.profileImage.layer.borderWidth = 1.5
             self.profileImage.layer.masksToBounds = true
             self.live.layer.cornerRadius = self.live.frame.size.height/2
-            self.live.layer.borderColor = UIColor.whiteColor().CGColor
+            self.live.layer.borderColor = UIColor.grayColor().CGColor
             self.live.layer.borderWidth = 1.5
             self.live.layer.masksToBounds = true
+            self.layoutSubviews()
             
             
         }
@@ -53,15 +57,16 @@ class FavEventCell: UICollectionViewCell {
         let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
         
         // Based on the range constants, update the cell’s alpha based on the delta value.
-        let minAlpha: CGFloat = 0.3
+        let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
         
+        
         let scale = max(delta, 0.5)
-        iconView.transform = CGAffineTransformMakeScale(scale, scale)
         descriptionHead.transform = CGAffineTransformMakeScale(scale, scale)
         post.transform = CGAffineTransformMakeScale(scale, scale)
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
+        iconView.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
         
         descriptionHead.alpha = delta
@@ -69,25 +74,19 @@ class FavEventCell: UICollectionViewCell {
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
-        time.alpha = delta
-        
         
         if delta > 0.1 {
             
-            titleEvent.hidden = true
+            eventTitle.hidden = true
             
             
         }else{
             
-            titleEvent.hidden = false
+            eventTitle.hidden = false
             
         }
         
-        titleEvent.alpha = 1 - delta
-    }
-    
-    
-    override func awakeFromNib() {
+        eventTitle.alpha = 1 - delta
         
     }
 }
