@@ -15,15 +15,47 @@ import BubbleTransition
 
 class FavEventsViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var blur: UIView!
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var detailName: UILabel!
+    @IBOutlet weak var detailLive: UIButton!
+    @IBOutlet weak var detailTitle: UILabel!
+    @IBOutlet weak var detailPost: UILabel!
+    @IBOutlet weak var detailLocation: UILabel!
+    @IBOutlet weak var detailAddress: UIButton!
+    @IBOutlet weak var detailTimteLabel: UILabel!
+    @IBOutlet weak var detailTime: UILabel!
+    @IBOutlet weak var detailDate: UILabel!
+    
     var array:[Event] = []
+    let eventID:[String] = []
+    var count:Int = 0
+    var objectId:String!
+    var numOfCells:[String] = []
+    var numOfPost:[String] = []
+    var indexOfUrl:[Character] = []
     let transition = BubbleTransition()
     let events = PresentMainWall()
+    let swipeDownRect = UISwipeGestureRecognizer()
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
     override func viewWillAppear(animated: Bool) {
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        blur.addSubview(blurEffectView)
+        blur.backgroundColor = UIColor.clearColor()
+        detailView.backgroundColor = UIColor.whiteColor()
+        detailView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        detailView.layer.borderWidth = 0.5
+        detailView.hidden = true
+        blur.hidden = true
         
         events.favPost { (result) -> Void in
             
@@ -33,6 +65,8 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             dispatch_async(dispatch_get_main_queue()) {
                 
                 self.collectionView.reloadData()
+                self.detailImage.layer.cornerRadius = self.detailImage.layer.frame.height/2
+                self.detailImage.layer.masksToBounds = true
             }
             
         }
@@ -105,7 +139,34 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             
             print("featured")
             
-            self.performSegueWithIdentifier("Live", sender: indexPath);
+            swipeDownRect.addTarget(self, action: "swippedDown:")
+            swipeDownRect.numberOfTouchesRequired = 1
+            swipeDownRect.direction = .Down
+            self.view!.addGestureRecognizer(swipeDownRect)
+            
+            print("featured")
+            objectId = array[indexPath.item].objectID
+            blur.hidden = false
+            detailView.hidden = false
+            detailPost.text = array[indexPath.item].post
+            detailName.text = array[indexPath.item].name
+            //detailTitle.text = cell.descriptionHead.text
+            //detailTime.text = cell.time.text
+            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+            
+            
+            if array[indexPath.item].live == true {
+                
+                detailLive.setTitle("Live", forState: UIControlState.Normal)
+                
+                
+            }else {
+                
+                
+                detailLive.setTitle("Peak", forState: UIControlState.Normal)
+                detailLive.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+                
+            }
             
         }else{
             
@@ -113,6 +174,12 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         }
     }
     
+    func swippedDown(sender:UISwipeGestureRecognizer) {
+        
+        detailView.hidden = true
+        blur.hidden = true
+        
+    }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -146,6 +213,17 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             liveController.eventId = array[item].objectID
          
             print(item)
+            
+        }
+        
+        if segue.identifier == "Comment" {
+            
+            let commentViewController = segue.destinationViewController as! CommentViewController
+            
+            commentViewController.transitioningDelegate = self
+            commentViewController.modalPresentationStyle = .Custom
+            
+            commentViewController.objectId = objectId
             
         }
     }
