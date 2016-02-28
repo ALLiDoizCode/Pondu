@@ -47,6 +47,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
+    let swipeDownRect = UISwipeGestureRecognizer()
+    
     override func viewWillAppear(animated: Bool) {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
@@ -164,6 +166,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         }
         
         if indexPath.item == layout.featuredItemIndex {
+    
+            swipeDownRect.addTarget(self, action: "swippedDown:")
+            swipeDownRect.numberOfTouchesRequired = 1
+            swipeDownRect.direction = .Down
+            self.view!.addGestureRecognizer(swipeDownRect)
             
             print("featured")
             objectId = array[indexPath.item].objectID
@@ -193,6 +200,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             
             print("not featured")
         }
+    }
+    
+    func swippedDown(sender:UISwipeGestureRecognizer) {
+        
+        detailView.hidden = true
+        blur.hidden = true
+        
     }
     
     func goToLive(sender:AnyObject){
