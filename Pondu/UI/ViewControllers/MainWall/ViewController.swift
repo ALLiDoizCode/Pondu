@@ -28,7 +28,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     var indexOfUrl:[Character] = []
     let transition = BubbleTransition()
     
-    let comment = AddComment()
     let liveConent = AddContent()
     
     @IBOutlet weak var blur: UIView!
