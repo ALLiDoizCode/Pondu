@@ -97,6 +97,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let DateInFormat:String = dateFormatter.stringFromDate(Date)
         
         cell.time.text = DateInFormat
+        
+        cell.layoutSubviews()
         return cell
     
     }

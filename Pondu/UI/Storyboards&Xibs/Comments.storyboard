@@ -101,21 +101,43 @@
                                                     <color key="textColor" red="0.42655369640000002" green="0.475846082" blue="0.4802647531" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-3Z-3mv">
+                                                    <rect key="frame" x="0.0" y="62" width="319" height="1"/>
+                                                    <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="319" id="dvp-SP-LFz"/>
+                                                        <constraint firstAttribute="height" constant="1" id="jjj-PL-G6m"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wMo-Lf-CfR" firstAttribute="leading" secondItem="m2v-2P-T4e" secondAttribute="trailing" constant="8" id="0Gw-6C-fE7"/>
+                                                <constraint firstItem="eRB-3Z-3mv" firstAttribute="bottom" secondItem="m2v-2P-T4e" secondAttribute="bottom" constant="9" id="7Dj-EW-O0i"/>
                                                 <constraint firstItem="rpa-tA-fQB" firstAttribute="leading" secondItem="oIb-XI-tTo" secondAttribute="trailing" constant="8" id="IYO-ER-7D8"/>
                                                 <constraint firstItem="m2v-2P-T4e" firstAttribute="top" secondItem="rpa-tA-fQB" secondAttribute="bottom" constant="3" id="J9w-Vh-Oyh"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="m2v-2P-T4e" secondAttribute="bottom" constant="10" id="LgJ-rx-WkV"/>
+                                                <constraint firstItem="eRB-3Z-3mv" firstAttribute="top" secondItem="m2v-2P-T4e" secondAttribute="bottom" constant="16" id="OVy-dd-mkQ"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="oIb-XI-tTo" secondAttribute="leading" id="WLt-An-EdL"/>
                                                 <constraint firstItem="wMo-Lf-CfR" firstAttribute="top" secondItem="8vt-jf-8hZ" secondAttribute="topMargin" constant="35" id="bR4-Gp-5LT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wMo-Lf-CfR" secondAttribute="trailing" id="bir-2J-e83"/>
                                                 <constraint firstItem="m2v-2P-T4e" firstAttribute="leading" secondItem="oIb-XI-tTo" secondAttribute="trailing" constant="8" id="eo1-Mp-hTo"/>
                                                 <constraint firstItem="m2v-2P-T4e" firstAttribute="top" secondItem="8vt-jf-8hZ" secondAttribute="topMargin" constant="25" id="hMy-zL-bhS"/>
                                                 <constraint firstAttribute="topMargin" secondItem="oIb-XI-tTo" secondAttribute="top" id="n3m-3g-c5Y"/>
+                                                <constraint firstItem="wMo-Lf-CfR" firstAttribute="leading" secondItem="eRB-3Z-3mv" secondAttribute="trailing" constant="9" id="pvA-L5-y6D"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="OVy-dd-mkQ"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="eRB-3Z-3mv" firstAttribute="leading" secondItem="fw4-hS-kiA" secondAttribute="leading" id="SVW-Rp-eme"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="border" destination="eRB-3Z-3mv" id="K1m-o0-hed"/>
                                             <outlet property="comment" destination="m2v-2P-T4e" id="PbO-bx-StE"/>
                                             <outlet property="time" destination="wMo-Lf-CfR" id="5g8-6z-6wq"/>
                                             <outlet property="userImage" destination="oIb-XI-tTo" id="BUy-Yf-bU6"/>

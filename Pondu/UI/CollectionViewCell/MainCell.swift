@@ -26,7 +26,10 @@ class MainCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         
+       
+        
     }
+    
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         super.applyLayoutAttributes(layoutAttributes)
