@@ -130,6 +130,7 @@ class ParseMainWall {
                 
                 let commentQuery = relation.query()
                 
+                commentQuery?.orderByDescending("createdAt")
                 commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                     
                     if let objects = objects {

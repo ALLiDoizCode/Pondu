@@ -83,6 +83,7 @@
 		4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */; };
 		4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */; };
 		4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */; };
+		4DE7CC961C82B19300D83075 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7CC951C82B19300D83075 /* Date.swift */; };
 		4DF1C90E1C5BC35200F4269A /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */; };
 		4DF1C9101C5BC5BD00F4269A /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */; };
 		4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */; };
@@ -199,6 +200,7 @@
 		4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
+		4DE7CC951C82B19300D83075 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
 		4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				4D2BE9A81C1CF893001810BB /* School.swift */,
 				4D8828271C76A7DA00604DE3 /* Comment.swift */,
 				4D8828291C76A90800604DE3 /* Content.swift */,
+				4DE7CC951C82B19300D83075 /* Date.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
 				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
 				4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */,
+				4DE7CC961C82B19300D83075 /* Date.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
