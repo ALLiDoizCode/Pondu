@@ -13,6 +13,7 @@ import SwiftEventBus
 class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let presenter = Comments()
+    let theCloud = Cloud()
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +33,9 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewWillAppear(animated: Bool) {
         
-        SwiftEventBus.onMainThread(self, name: "New Comments") { result in
+        theCloud.addChannel(objectId)
+        
+        SwiftEventBus.onMainThread(self, name: "NewComments") { result in
             
             
         }
@@ -50,7 +53,10 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
-    
+    override func viewDidDisappear(animated: Bool) {
+        
+        theCloud.removeChannel(objectId)
+    }
     
     @IBAction func sendBtn(sender: AnyObject) {
         
@@ -69,6 +75,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
             }
             
             self.textField.text = ""
+            
+            self.theCloud.pushComment(self.objectId)
         }
     }
     
