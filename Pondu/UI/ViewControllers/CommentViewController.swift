@@ -13,6 +13,7 @@ import SwiftEventBus
 class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let presenter = Comments()
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -31,9 +32,12 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewWillAppear(animated: Bool) {
         
-        self.title = "Comments"
+        SwiftEventBus.onMainThread(self, name: "New Comments") { result in
+            
+            
+        }
         
-        //SwiftEventBus.postToMainThread("Title", sender: "Comments")
+        self.title = "Comments"
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0

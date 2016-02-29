@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Pondu": {
+      "applicationId": "jP23z6l3YNkvb4FtELq4wtEN0zzqcVyax7Dv32EG"
+    },
+    "_default": {
+      "link": "Pondu"
+    }
+  }
+}
