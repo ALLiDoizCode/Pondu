@@ -12,6 +12,7 @@ import Parse
 
 class PresentMainWall {
     
+    
     let mainWall = ParseMainWall.sharedInstance
     
     static let sharedInstance = PresentMainWall()
@@ -19,6 +20,8 @@ class PresentMainWall {
     func eventPost(completion:(result:[Event]) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
+            
+            print("MainWall Fired")
             
             if let post = result.object as? [Event] {
                 

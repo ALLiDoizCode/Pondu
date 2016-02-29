@@ -27,7 +27,7 @@ class createParty {
             
             wall["CreatedBy"] = currentUser
             wall["Post"] = createdParty.post
-            wall["Name"] = currentUser?.username
+            wall["Name"] = createdParty.name
             wall["Live"] = createdParty.live
             wall["Likes"] = 0
             wall["Privacy"] = createdParty.privacy

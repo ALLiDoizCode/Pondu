@@ -28,7 +28,7 @@ class createEvent {
             
             wall["CreatedBy"] = currentUser
             wall["Post"] = createdEvent.post
-            wall["Name"] = currentUser?.username
+            wall["Name"] = createdEvent.name
             wall["Live"] = createdEvent.live
             wall["Likes"] = 0
             wall["Privacy"] = createdEvent.privacy

@@ -28,6 +28,7 @@ class ParseMainWall {
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             
+            print("getting main wall")
             
             if let objects = objects {
                 
@@ -45,15 +46,19 @@ class ParseMainWall {
                             
                             // Do something with the found objects
                             if let eventObjects = eventObjects {
-                                for object in eventObjects {
-                                    print(object.objectId)
-                                    let theID = object.objectId
-                                    let post = object.objectForKey("Post") as! String!
-                                    let profileName = object.objectForKey("Name") as! String!
-                                    let createdBy = object.objectForKey("CreatedBy") as! PFObject
+                                
+                               print("got main wall \(eventObjects.count)")
+                                
+                                for event in eventObjects {
+                                    
+                                    print("got main wall \(event.objectId)")
+                                    let theID = event.objectId
+                                    let post = event.objectForKey("Post") as! String!
+                                    let profileName = event.objectForKey("Name") as! String!
+                                    let createdBy = event.objectForKey("CreatedBy") as! PFObject
                                     let profileImage = createdBy.objectForKey("photo") as! PFFile
-                                    let comments = object.objectForKey("Comments") as! PFObject
-                                    let content = object.objectForKey("LiveContent") as! PFObject
+                                    let comments = event.objectForKey("Comments") as! PFObject
+                                    let content = event.objectForKey("LiveContent") as! PFObject
                                     
                                     let contentData = content.relationForKey("Content")
                                     
@@ -99,6 +104,8 @@ class ParseMainWall {
                                 
                                
                                SwiftEventBus.post("MainWallEvent", sender: wall)
+                                
+                                
                                
                                 
                             } else {
