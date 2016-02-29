@@ -100,7 +100,7 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         let cell:FavPartyCell = collectionView.dequeueReusableCellWithReuseIdentifier("FavPartyCell", forIndexPath: indexPath) as! FavPartyCell
         
         cell.post.text = array[indexPath.row].post
-        cell.PostName.text = array[indexPath.row].name
+        cell.PostName.text = array[indexPath.item].userName
         cell.likes.text = "Likes:\(array[indexPath.row].likes)"
         
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
@@ -147,7 +147,7 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
             blur.hidden = false
             detailView.hidden = false
             detailPost.text = array[indexPath.item].post
-            detailName.text = array[indexPath.item].name
+            detailName.text = array[indexPath.item].userName
             //detailTitle.text = cell.descriptionHead.text
             //detailTime.text = cell.time.text
             detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))

@@ -51,7 +51,8 @@ class ParseParties {
                                     let theID = object.objectId
                                     let post = object.objectForKey("Post") as! String!
                                     let profileName = object.objectForKey("Name") as! String!
-                                    let createdBy = object.objectForKey("CreatedBy") as! PFObject
+                                    let createdBy = object.objectForKey("CreatedBy") as! PFUser
+                                    let userName = createdBy.username
                                     let profileImage = createdBy.objectForKey("photo") as! PFFile
                                     let comments = object.objectForKey("Comments") as! PFObject
                                     let content = object.objectForKey("LiveContent") as! PFObject
@@ -106,7 +107,7 @@ class ParseParties {
                                     
                                     print("the Party is firing \(post)")
                                     
-                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                                    let theEvent = Event(theID: theID!, theName: profileName,theUserName: userName!, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                                     
                                     wall.append(theEvent)
                                     
@@ -156,7 +157,8 @@ class ParseParties {
                     let theID = party.objectId
                     let post = party.objectForKey("Post") as! String!
                     let profileName = party.objectForKey("Name") as! String!
-                    let createdBy = party.objectForKey("CreatedBy") as! PFObject
+                    let createdBy = party.objectForKey("CreatedBy") as! PFUser
+                    let userName = createdBy.username
                     let profileImage = createdBy.objectForKey("photo") as! PFFile
                     let comments = party.objectForKey("Comments") as! PFObject
                     let content = party.objectForKey("LiveContent") as! PFObject
@@ -211,7 +213,7 @@ class ParseParties {
                     
                     print("the fav party is firing \(post)")
                     
-                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                    let theEvent = Event(theID: theID!, theName: profileName,theUserName:userName!, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                     
                     wall.append(theEvent)
                     

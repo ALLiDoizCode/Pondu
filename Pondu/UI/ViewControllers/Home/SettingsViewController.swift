@@ -167,9 +167,13 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     }
     @IBAction func logout(sender: AnyObject) {
         
-        PFUser.logOut()
-        
-        self.performSegueWithIdentifier("logout", sender: self)
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            
+            if error == nil {
+                
+                self.performSegueWithIdentifier("logout", sender: self)
+            }
+        }
         
     }
     @IBAction func deleteBtn(sender: AnyObject) {

@@ -12,6 +12,7 @@ class Event {
     
     var objectID:String = ""
     var name:String = ""
+    var userName = ""
     var post:String = ""
     var profilePicture:String = ""
     var likes:Int = 0
@@ -20,7 +21,7 @@ class Event {
     var content:[Content]!
     
     
-    init(theID:String,theName:String,thePost:String,TheProfilePicture:String,theComments:[Comment],theContent:[Content]){
+    init(theID:String,theName:String,theUserName:String,thePost:String,TheProfilePicture:String,theComments:[Comment],theContent:[Content]){
 
         objectID = theID
         name = theName
@@ -28,6 +29,7 @@ class Event {
         profilePicture = TheProfilePicture
         comments = theComments
         content = theContent
+        userName = theUserName
        
     }
 }

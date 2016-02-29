@@ -55,8 +55,9 @@ class ParseMainWall {
                                     let theID = event.objectId
                                     let post = event.objectForKey("Post") as! String!
                                     let profileName = event.objectForKey("Name") as! String!
-                                    let createdBy = event.objectForKey("CreatedBy") as! PFObject
+                                    let createdBy = event.objectForKey("CreatedBy") as! PFUser
                                     let profileImage = createdBy.objectForKey("photo") as! PFFile
+                                    let userName = createdBy.username
                                     let comments = event.objectForKey("Comments") as! PFObject
                                     let content = event.objectForKey("LiveContent") as! PFObject
                                     
@@ -71,7 +72,7 @@ class ParseMainWall {
                                     
                                     print("the Event is firing \(post)")
                                     
-                                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                                    let theEvent = Event(theID: theID!, theName: profileName,theUserName:userName!, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                                     
                                     wall.append(theEvent)
                                     
@@ -221,8 +222,9 @@ class ParseMainWall {
                     let theID = event.objectId
                     let post = event.objectForKey("Post") as! String!
                     let profileName = event.objectForKey("Name") as! String!
-                    let createdBy = event.objectForKey("CreatedBy") as! PFObject
+                    let createdBy = event.objectForKey("CreatedBy") as! PFUser
                     let profileImage = createdBy.objectForKey("photo") as! PFFile
+                    let userName = createdBy.username
                     let comments = event.objectForKey("Comments") as! PFObject
                     let content = event.objectForKey("LiveContent") as! PFObject
                     
@@ -276,7 +278,7 @@ class ParseMainWall {
                     
                     print("the favEvent is firing \(post)")
                     
-                    let theEvent = Event(theID: theID!, theName: profileName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
+                    let theEvent = Event(theID: theID!, theName: profileName,theUserName:userName!, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                     
                     wall.append(theEvent)
                     

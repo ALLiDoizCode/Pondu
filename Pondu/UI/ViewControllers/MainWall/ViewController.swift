@@ -104,7 +104,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
         cell.post.text = array[indexPath.item].post
-        cell.PostName.text = array[indexPath.item].name
+        cell.PostName.text = array[indexPath.item].userName
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
         cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
         
@@ -174,7 +174,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             blur.hidden = false
             detailView.hidden = false
             detailPost.text = array[indexPath.item].post
-            detailName.text = array[indexPath.item].name
+            detailName.text = array[indexPath.item].userName
             //detailTitle.text = cell.descriptionHead.text
             //detailTime.text = cell.time.text
             detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
