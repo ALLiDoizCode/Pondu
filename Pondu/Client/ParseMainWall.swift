@@ -134,41 +134,66 @@ class ParseMainWall {
         
         var data:[Comment] = []
         let query = PFQuery(className: "MainWall")
-        query.getObjectInBackgroundWithId(objectId) { (object, error) -> Void in
+        var object:PFObject!
+        var theUser:PFObject!
+        
+        do {
             
-            if let object = object {
+            try object = query.getFirstObject()
+            
+        }catch _{
+            
+        }
+        
+        
+        if let object = object {
+            
+            let comment = object.objectForKey("Comments") as! PFObject
+            
+            let relation = comment.relationForKey("Comments")
+            
+            let commentQuery = relation.query()
+            
+            commentQuery?.orderByAscending("createdAt")
+            
+            do {
                 
-                let comment = object.objectForKey("Comments") as! PFObject
+                let objects = try commentQuery?.findObjects()
                 
-                let relation = comment.relationForKey("Comments")
-                
-                let commentQuery = relation.query()
-                
-                commentQuery?.orderByAscending("createdAt")
-                commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                if let objects = objects {
                     
-                    if let objects = objects {
+                    for object in objects {
                         
-                        for object in objects {
+                        let description = object.objectForKey("Description") as! String
+                        let createdBy = object.objectForKey("CreatedBy") as! PFUser
+                        
+                        do {
                             
-                            let description = object.objectForKey("Description") as! String
-                            let createdBy = object.objectForKey("CreatedBy") as! PFUser
-                            let userImage = createdBy.objectForKey("photo") as! PFFile
-                            let userName = createdBy.username
-                            let time = object.createdAt
+                            try theUser = createdBy.fetch()
                             
-                            let theComment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: userName!, theTime: time!)
+                        }catch _{
                             
-                            data.append(theComment)
-                            print(description)
                         }
                         
+                        let userImage = createdBy.objectForKey("photo") as! PFFile
+                        let userName = createdBy.username
+                        let time = object.createdAt
                         
-                        SwiftEventBus.post("EventComments", sender: data)
+                        let theComment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: userName!, theTime: time!)
+                        
+                        data.append(theComment)
+                        print(description)
                     }
-                })
+                    
+                    
+                    SwiftEventBus.post("EventComments", sender: data)
+                }
+                
+            }catch _ {
+                
             }
         }
+        
     }
     
     func liveContent(objectId:String){

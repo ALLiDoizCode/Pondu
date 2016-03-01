@@ -52,22 +52,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
-        PFPush.handlePush(userInfo)
+         SwiftEventBus.postToMainThread("NewComments")
         
         
         if UIApplication.sharedApplication().applicationState == .Active {
             
-            SwiftEventBus.post("NewComments")
+            SwiftEventBus.postToMainThread("NewComments")
             
         }else if UIApplication.sharedApplication().applicationState == .Background {
             
             PFPush.handlePush(userInfo)
-            SwiftEventBus.post("NewComments")
+            SwiftEventBus.postToMainThread("NewComments")
             
         }else if UIApplication.sharedApplication().applicationState == .Inactive {
             
             PFPush.handlePush(userInfo)
-            SwiftEventBus.post("NewComments")
+            SwiftEventBus.postToMainThread("NewComments")
         }
     }
 

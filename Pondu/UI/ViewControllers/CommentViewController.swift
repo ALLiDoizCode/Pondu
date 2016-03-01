@@ -42,6 +42,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 self.comments = data
                 
                 self.reload()
+                
+                print("reloaded comments")
             }
         }
         
