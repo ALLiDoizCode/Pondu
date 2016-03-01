@@ -18,7 +18,7 @@ import FXBlurView
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate {
     
-    let mainWall = PresentMainWall()
+    let mainWall = PresentMainWall.sharedInstance
     let eventID:[String] = []
     var count:Int = 0
     var objectId:String!

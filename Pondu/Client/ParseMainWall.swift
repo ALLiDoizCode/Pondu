@@ -26,6 +26,7 @@ class ParseMainWall {
         var objects:[PFObject]!
         var eventObjects:[PFObject]!
         var commentObjects:[PFObject]!
+        var user:PFObject!
         
         let query = PFQuery(className: "Events")
         
@@ -61,6 +62,20 @@ class ParseMainWall {
                         
                         print("got main wall \(event.objectId)")
                         
+                        
+                        guard let createdBy:PFUser = event.objectForKey("CreatedBy") as? PFUser else {
+                            
+                            return
+                        }
+                        
+                        do {
+                            
+                            try user = createdBy.fetch()
+                            
+                        }catch _{
+                            
+                        }
+                        
                         guard let theID = event.objectId else {
                             
                             return
@@ -73,15 +88,13 @@ class ParseMainWall {
                             
                             return
                         }
-                        guard let createdBy:PFUser = event.objectForKey("CreatedBy") as? PFUser else {
+                        
+                        guard let profileImage:PFFile = user.objectForKey("photo") as? PFFile else {
                             
                             return
                         }
-                        guard let profileImage:PFFile = createdBy.objectForKey("photo") as? PFFile else {
-                            
-                            return
-                        }
-                        guard let userName = createdBy.username else {
+                        
+                        guard let userName = user.objectForKey("username") as? String else {
                             
                             return
                         }
@@ -94,73 +107,18 @@ class ParseMainWall {
                             return
                         }
                         
-                        guard let contentData:PFRelation = content.relationForKey("Content") else {
-                            
-                            return
-                        }
-                        
-                        guard let contentQuery = contentData.query() else {
-                            
-                            return
-                        }
-                        
-                        guard let commentsData:PFRelation = comments.relationForKey("Comments") else {
-                            
-                            return
-                        }
-                        
-                        let commentQuery = commentsData.query()
-                        
-                        
                         print("the Event is firing \(post)")
                         
                         let theEvent = Event(theID: theID, theName: profileName,theUserName:userName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                         
                         wall.append(theEvent)
                         
-                        print("number of media items \(liveContent.count) ")
-                        
-                        do {
-                            try commentObjects = commentQuery?.findObjects()
-                            
-                        }catch _{
-                            
-                        }
-                        
-                        /*if let commentObjects = commentObjects {
-                            
-                            for commentObject in commentObjects {
-                                
-                                guard let createdBy:PFUser = commentObject.objectForKey("CreatedBy") as? PFUser else {
-                                    
-                                    return
-                                }
-                                guard let userImage:PFFile = createdBy["photo"] as? PFFile else {
-                                    
-                                    return
-                                }
-                                guard let description:String = commentObject.objectForKey("Description") as? String else {
-                                    
-                                    return
-                                }
-                                
-                                guard let date = object.createdAt else {
-                                    
-                                    return
-                                }
-                                
-                                let commentInfo:Comment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: createdBy.username!, theTime: date)
-                                
-                                comment.append(commentInfo)
-                            }
-                            
-                        }*/
-                        
-                        
-                        
+
                     }
                     
-                    
+                }
+                
+                
                     print("sending \(objects.count) events")
                     
                     SwiftEventBus.post("MainWallEvent", sender: wall)
@@ -168,14 +126,8 @@ class ParseMainWall {
                     
                     
                     
-                } else {
-                    
-                    
                 }
-                
-                }
-            
-            }
+        }
 }
 
     func comments(objectId:String){
