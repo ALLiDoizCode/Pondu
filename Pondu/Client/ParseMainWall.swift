@@ -127,7 +127,7 @@ class ParseMainWall {
                             
                         }
                         
-                        if let commentObjects = commentObjects {
+                        /*if let commentObjects = commentObjects {
                             
                             for commentObject in commentObjects {
                                 
@@ -154,7 +154,7 @@ class ParseMainWall {
                                 comment.append(commentInfo)
                             }
                             
-                        }
+                        }*/
                         
                         
                         
@@ -192,7 +192,7 @@ class ParseMainWall {
                 
                 let commentQuery = relation.query()
                 
-                commentQuery?.orderByDescending("createdAt")
+                commentQuery?.orderByAscending("createdAt")
                 commentQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                     
                     if let objects = objects {

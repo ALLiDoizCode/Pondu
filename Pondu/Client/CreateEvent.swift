@@ -19,7 +19,7 @@ class createEvent {
         let wall = PFObject(className: "MainWall")
         let comments = PFObject(className: "CommentTable")
         let liveContent = PFObject(className: "LiveContentTable")
-        let event = PFObject(withoutDataWithClassName: "Events", objectId: "gUHWW0VeZD")
+        let event = PFObject(withoutDataWithClassName: "Events", objectId: "ZfwScsZpev")
         let currentUser = PFUser.currentUser()
         
         SwiftEventBus.onMainThread(self, name: "makeEvent") { result in

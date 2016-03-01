@@ -37,7 +37,12 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         SwiftEventBus.onMainThread(self, name: "NewComments") { result in
             
-            
+            self.presenter.getComments(self.objectId) { (data) -> Void in
+                
+                self.comments = data
+                
+                self.reload()
+            }
         }
         
         self.title = "Comments"

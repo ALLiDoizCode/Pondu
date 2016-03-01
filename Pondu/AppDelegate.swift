@@ -53,7 +53,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
         PFPush.handlePush(userInfo)
-        SwiftEventBus.post("NewComments")
+        
+        
+        if UIApplication.sharedApplication().applicationState == .Active {
+            
+            SwiftEventBus.post("NewComments")
+            
+        }else if UIApplication.sharedApplication().applicationState == .Background {
+            
+            PFPush.handlePush(userInfo)
+            SwiftEventBus.post("NewComments")
+            
+        }else if UIApplication.sharedApplication().applicationState == .Inactive {
+            
+            PFPush.handlePush(userInfo)
+            SwiftEventBus.post("NewComments")
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

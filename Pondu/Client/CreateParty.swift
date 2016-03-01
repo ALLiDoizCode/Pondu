@@ -18,7 +18,7 @@ class createParty {
         let wall = PFObject(className: "MainWall")
         let comments = PFObject(className: "CommentTable")
         let liveContent = PFObject(className: "LiveContentTable")
-        let party = PFObject(withoutDataWithClassName: "Parties", objectId: "F4NvBwtn3v")
+        let party = PFObject(withoutDataWithClassName: "Parties", objectId: "BEqYGSwslT")
         let currentUser = PFUser.currentUser()
         
         SwiftEventBus.onMainThread(self, name: "makeParty") { result in
