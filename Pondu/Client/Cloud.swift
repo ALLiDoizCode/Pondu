@@ -16,14 +16,14 @@ class Cloud {
 
     func addChannel(objectId:String){
         
-        currentInstallation.addUniqueObject("Giants", forKey: "channels")
+        currentInstallation.addUniqueObject(objectId, forKey: "channels")
         currentInstallation.saveInBackground()
         
     }
     
     func removeChannel(objectId:String){
         
-        currentInstallation.removeObject("Giants", forKey: "channels")
+        currentInstallation.removeObject(objectId, forKey: "channels")
         currentInstallation.saveInBackground()
     }
     
