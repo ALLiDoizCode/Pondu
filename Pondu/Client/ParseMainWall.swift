@@ -129,7 +129,7 @@ class ParseMainWall {
                         
                         if let commentObjects = commentObjects {
                             
-                            /*for commentObject in commentObjects {
+                            for commentObject in commentObjects {
                                 
                                 guard let createdBy:PFUser = commentObject.objectForKey("CreatedBy") as? PFUser else {
                                     
@@ -152,7 +152,7 @@ class ParseMainWall {
                                 let commentInfo:Comment = Comment(theDescription: description, theCreatorImage: userImage.url!, theCreatorName: createdBy.username!, theTime: date)
                                 
                                 comment.append(commentInfo)
-                            }*/
+                            }
                             
                         }
                         

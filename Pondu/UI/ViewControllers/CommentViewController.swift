@@ -53,7 +53,7 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
         
         theCloud.removeChannel(objectId)
     }

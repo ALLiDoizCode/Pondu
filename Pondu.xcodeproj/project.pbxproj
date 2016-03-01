@@ -956,7 +956,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Markinson Sainvil (F3B3S4LZWF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Markinson Sainvil (F3B3S4LZWF)";
 				INFOPLIST_FILE = Pondu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -976,7 +976,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Markinson Sainvil (F3B3S4LZWF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Markinson Sainvil (F3B3S4LZWF)";
 				INFOPLIST_FILE = Pondu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
