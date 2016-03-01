@@ -63,6 +63,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         blur.hidden = true
        // blur.blurRadius = 5
         
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         mainWall.eventPost { (result) -> Void in
             
             self.array = result
@@ -75,11 +81,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
                 self.detailImage.layer.masksToBounds = true
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
