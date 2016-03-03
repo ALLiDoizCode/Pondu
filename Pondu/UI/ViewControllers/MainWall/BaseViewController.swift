@@ -12,10 +12,17 @@ import SwiftEventBus
 
 class BaseViewController: UIViewController,PagingMenuControllerDelegate {
     
+    let options = PagingMenuOptions()
+
+    let dropShadow = DropShadow()
+
     @IBOutlet weak var post: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
@@ -33,7 +40,7 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         
         let viewControllers = [Events,Party,Story]
         
-        let options = PagingMenuOptions()
+        
         options.menuHeight = 30
         options.menuDisplayMode = .SegmentedControl
         options.font = UIFont(name: "Avenir", size: 20)!
@@ -42,6 +49,8 @@ class BaseViewController: UIViewController,PagingMenuControllerDelegate {
         let pagingMenuController = self.childViewControllers.first as! PagingMenuController
         pagingMenuController.delegate = self
         pagingMenuController.setup(viewControllers: viewControllers, options: options)
+       
+        //dropShadow.shadow(pagingMenuController.menuView, color: UIColor.lightGrayColor())
     }
    
     @IBAction func postBtn(sender: AnyObject) {

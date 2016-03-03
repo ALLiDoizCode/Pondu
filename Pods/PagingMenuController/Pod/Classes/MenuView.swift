@@ -10,13 +10,16 @@ import UIKit
 
 final public class MenuView: UIScrollView {
     
+    
     public private(set) var menuItemViews = [MenuItemView]()
     private var sortedMenuItemViews = [MenuItemView]()
     private var options: PagingMenuOptions!
-    private var contentView: UIView!
+    var contentView: UIView!
     private var underlineView: UIView!
     private var roundRectView: UIView!
     private var currentPage: Int = 0
+    
+    
     
     // MARK: - Lifecycle
     

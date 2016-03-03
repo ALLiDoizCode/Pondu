@@ -8,12 +8,15 @@
 
 import UIKit
 
+
 @objc public protocol PagingMenuControllerDelegate: class {
     optional func willMoveToMenuPage(page: Int)
     optional func didMoveToMenuPage(page: Int)
 }
 
 final public class PagingMenuController: UIViewController, UIScrollViewDelegate {
+    
+   
     
     public weak var delegate: PagingMenuControllerDelegate?
     private var options: PagingMenuOptions!
@@ -72,6 +75,7 @@ final public class PagingMenuController: UIViewController, UIScrollViewDelegate 
         super.init(nibName: nil, bundle: nil)
         
         setup(viewControllers: viewControllers, options: options)
+
     }
     
     convenience public init(viewControllers: [UIViewController]) {
@@ -91,6 +95,7 @@ final public class PagingMenuController: UIViewController, UIScrollViewDelegate 
     
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         
         // fix unnecessary inset for menu view when implemented by programmatically
         menuView.contentInset.top = 0
@@ -208,6 +213,9 @@ final public class PagingMenuController: UIViewController, UIScrollViewDelegate 
     // MARK: - Constructor
     
     private func constructMenuView() {
+        
+       
+        
         menuView = MenuView(menuItemTitles: menuItemTitles, options: options)
         menuView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(menuView)

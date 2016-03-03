@@ -16,9 +16,10 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     
     let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
     let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+
     
     let options = PagingMenuOptions()
-    
+    let dropShadow = DropShadow()
     var discover:SearchViewController!
     var Favorite:FavoriteViewController!
     var home:HomeViewController!
@@ -26,6 +27,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         

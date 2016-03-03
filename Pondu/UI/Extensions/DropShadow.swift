@@ -15,8 +15,8 @@ class DropShadow {
     func shadow(view:UIView,color:UIColor) {
         
         view.layer.shadowColor = color.CGColor
-        view.layer.shadowOffset = CGSizeMake(0,5)
-        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSizeMake(0,2.5)
+        view.layer.shadowOpacity = 0.5
         view.layer.shadowRadius = 1
         
     }
