@@ -22,6 +22,8 @@ class PresentMessage {
                 return
             }
             
+            print("presenting \(messageData.count) messages")
+            
             completion(data: messageData)
             SwiftEventBus.unregister("Messages")
         }

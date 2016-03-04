@@ -55,6 +55,15 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
         
         cell.icon.kf_setImageWithURL(NSURL(string: self.myMessages[indexPath.row].icon)!, placeholderImage: UIImage(named: "placeholder"))
         
+        cell.userName.text = self.myMessages[indexPath.row].name
+        
+        
+        let date:NSDate = self.myMessages[indexPath.row].time
+        
+        let time = NSDate().offsetFrom(date)
+        
+        cell.time.text = time
+        
         return cell
     }
 
