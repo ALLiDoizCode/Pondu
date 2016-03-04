@@ -10,4 +10,8 @@ import Foundation
 
 class Message {
     
+    var objectId:String!
+    var description:String!
+    var media:String!
+    var sender:String!
 }

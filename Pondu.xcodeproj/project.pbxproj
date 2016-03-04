@@ -479,10 +479,10 @@
 				4DD73EED1BDEC254006055E9 /* SignUp.swift */,
 				4DD73EEF1BDEC25F006055E9 /* Login.swift */,
 				4DD73EF51BDEF844006055E9 /* ParseComments.swift */,
+				4D32A8291C88D94A0053FBCD /* Messages.swift */,
 				4D8828231C76958400604DE3 /* LiveContent.swift */,
 				4DD1749D1BDD793F00B64E0B /* Presenters */,
 				4DC648A61C83CB1B00F92C74 /* Cloud.swift */,
-				4D32A8291C88D94A0053FBCD /* Messages.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
