@@ -134,12 +134,12 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "478502868.438753"
+                  timestampString = "478799223.440102"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -149,12 +149,12 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "478502868.43889"
+                  timestampString = "478799223.440192"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "216">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "54">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -164,12 +164,12 @@
                   moduleName = "Pondu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/CollectionViewCell/MainStoryCell.swift"
-                  timestampString = "478502868.438986"
+                  timestampString = "478799223.440278"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -632,38 +632,22 @@
             endingLineNumber = "66"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pondu.ViewController.viewWillAppear (Pondu.ViewController)(Swift.Bool) -&gt; ()"
-                  moduleName = "Pondu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/ViewControllers/MainWall/ViewController.swift"
-                  timestampString = "478502868.407401"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "2192">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Pondu.ViewController.(viewWillAppear (Pondu.ViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1)"
-                  moduleName = "Pondu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/UI/ViewControllers/MainWall/ViewController.swift"
-                  timestampString = "478502868.407568"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pondu/Client/Messages.swift"
+            timestampString = "478799223.372202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getMessages()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

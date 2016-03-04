@@ -12,6 +12,18 @@ class Message {
     
     var objectId:String!
     var description:String!
-    var media:String!
+    var media:String?
     var sender:String!
+    var icon:String!
+    var date:NSDate!
+    
+    init(theObjectId:String,theDescription:String,theMedia:String,theSender:String,theIcon:String,theDate:NSDate){
+        
+        objectId = theObjectId
+        description = theDescription
+        media = theMedia
+        sender = theSender
+        icon = theIcon
+        date = theDate
+    }
 }

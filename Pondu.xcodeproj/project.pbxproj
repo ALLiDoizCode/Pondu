@@ -41,6 +41,7 @@
 		4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82D1C88DF7A0053FBCD /* MessageList.swift */; };
 		4D32A8301C88E10D0053FBCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82F1C88E10D0053FBCD /* Message.swift */; };
 		4D32A8321C88E4580053FBCD /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8311C88E4580053FBCD /* DropShadow.swift */; };
+		4D32A8341C89E6EF0053FBCD /* PresentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */; };
 		4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
@@ -162,6 +163,7 @@
 		4D32A82D1C88DF7A0053FBCD /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
 		4D32A82F1C88E10D0053FBCD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4D32A8311C88E4580053FBCD /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
+		4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentMessage.swift; sourceTree = "<group>"; };
 		4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				4D8828251C7697D200604DE3 /* AddContent.swift */,
 				4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */,
 				4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */,
+				4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -809,6 +812,7 @@
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
 				4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */,
 				4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */,
+				4D32A8341C89E6EF0053FBCD /* PresentMessage.swift in Sources */,
 				4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */,
 				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
