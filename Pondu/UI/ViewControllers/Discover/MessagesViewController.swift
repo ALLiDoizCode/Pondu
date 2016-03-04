@@ -28,6 +28,8 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
             self.reload()
 
         }
+        
+       
     }
 
     override func viewDidLoad() {

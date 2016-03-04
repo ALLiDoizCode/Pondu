@@ -26,6 +26,8 @@ class Messages {
     
     func getMessages(){
         
+        convo = []
+        
         print("convo")
         
         let listQuery = PFQuery(className: "Messages")

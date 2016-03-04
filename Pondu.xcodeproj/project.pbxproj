@@ -42,6 +42,8 @@
 		4D32A8301C88E10D0053FBCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82F1C88E10D0053FBCD /* Message.swift */; };
 		4D32A8321C88E4580053FBCD /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8311C88E4580053FBCD /* DropShadow.swift */; };
 		4D32A8341C89E6EF0053FBCD /* PresentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */; };
+		4D32A8361C8A0B1B0053FBCD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */; };
+		4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8371C8A0B620053FBCD /* ChatCell.swift */; };
 		4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
@@ -164,6 +166,8 @@
 		4D32A82F1C88E10D0053FBCD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4D32A8311C88E4580053FBCD /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
 		4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentMessage.swift; sourceTree = "<group>"; };
+		4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4D32A8371C8A0B620053FBCD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */,
 				4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */,
 				4DFADB101C81006B00A61AAA /* CommentCell.swift */,
+				4D32A8371C8A0B620053FBCD /* ChatCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				4D0CC3D71C27719900843328 /* ImageViewController.swift */,
 				4DF91A881C2B683B008E39AF /* SearchViewController.swift */,
 				4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */,
+				4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -783,6 +789,7 @@
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
 				4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */,
+				4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
 				4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */,
 				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
@@ -851,6 +858,7 @@
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
 				4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */,
+				4D32A8361C8A0B1B0053FBCD /* ChatViewController.swift in Sources */,
 				4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */,
 				4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */,
 				4DC5FAEC1BFA5C05006AFE00 /* FavoriteStoryCell.swift in Sources */,
