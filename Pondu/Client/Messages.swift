@@ -117,6 +117,7 @@ class Messages {
                 }
                 
                 let messageQuery = messageRelation.query()
+                messageQuery?.orderByAscending("createdAt")
                 
                 do {
                     
@@ -194,6 +195,7 @@ class Messages {
                 }
                 
                 let messageQuery = messageRelation.query()
+                messageQuery?.orderByAscending("createdAt")
                 
                 do {
                     

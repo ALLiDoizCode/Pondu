@@ -81,7 +81,14 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        let index = tableView.indexPathForSelectedRow
         
+        if segue.identifier == "message" {
+            
+            let controller = segue.destinationViewController as! ChatViewController
+            
+            controller.data = self.myMessages[(index?.row)!].messages
+        }
     }
     
 }

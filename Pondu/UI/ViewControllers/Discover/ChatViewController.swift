@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
+import Parse
 
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    @IBOutlet weak var navView: UIView!
+    
+    var data:[Message]!
+    
+    let currentUser = PFUser.currentUser()
+    let dropShawdow = DropShadow()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -17,11 +25,14 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0
+        
     }
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dropShawdow.shadow(navView, color: UIColor.darkGrayColor())
 
         // Do any additional setup after loading the view.
     }
@@ -33,12 +44,26 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return data.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell") as! ChatCell
+        
+        cell.message.text = data[indexPath.row].description
+        cell.userName.text = data[indexPath.row].sender
+        
+        let date:NSDate = self.data[indexPath.row].date
+        let time = NSDate().offsetFrom(date)
+        
+        cell.time.text = time
+        
+        if data[indexPath.row].sender != currentUser?.username {
+            
+            cell.bar.image = UIImage(named: "msgred")
+            cell.userName.textColor = UIColor.lightGrayColor()
+        }
         
         return cell
     }
