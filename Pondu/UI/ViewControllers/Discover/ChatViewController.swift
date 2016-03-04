@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Parse
+import SwiftEventBus
 
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -23,14 +24,36 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     let currentUser = PFUser.currentUser()
     let dropShawdow = DropShadow()
     let presenter = PresentMessage()
+    let theCloud = Cloud()
     
     override func viewWillAppear(animated: Bool) {
+        
+        theCloud.addChannel(objectId)
+        
+        SwiftEventBus.onMainThread(self, name: "NewComments") { result in
+            
+            self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
+                
+                self.data = msgData
+                
+                self.reload()
+                
+                self.textField.text = ""
+                
+                print("Reloaded Messges")
+            })
+        }
         
         self.navigationController?.navigationBarHidden = true
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        theCloud.removeChannel(objectId)
     }
 
     @IBOutlet weak var tableView: UITableView!
@@ -61,6 +84,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     
                     self.textField.text = ""
                 })
+                
+                self.theCloud.pushComment(self.objectId,type: "Msg")
             }
         }
     }

@@ -83,7 +83,7 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             self.textField.text = ""
             
-            self.theCloud.pushComment(self.objectId)
+            self.theCloud.pushComment(self.objectId,type: "Comment")
         }
     }
     
