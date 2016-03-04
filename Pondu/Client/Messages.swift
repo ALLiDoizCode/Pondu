@@ -14,6 +14,8 @@ class Messages {
     
     let currentUser = PFUser.currentUser()
     
+    static let sharedInstance = Messages()
+    
     var messages:[Message]!
     var convo:[MessageList]!
     var listObject:[PFObject]!
@@ -215,7 +217,7 @@ class Messages {
             
         }
         
-        SwiftEventBus.post("Message")
+        SwiftEventBus.post("Messages")
     }
     
     func sendMessages(){

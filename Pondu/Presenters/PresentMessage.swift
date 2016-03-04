@@ -7,3 +7,25 @@
 //
 
 import Foundation
+import SwiftEventBus
+
+class PresentMessage {
+    
+    let client = Messages.sharedInstance
+    
+    func getMessages(completion:(data:[MessageList]) -> Void){
+        
+        SwiftEventBus.onMainThread(self, name: "Messages") { result in
+            
+            guard let messageData:[MessageList] = result.object as? [MessageList] else {
+                
+                return
+            }
+            
+            completion(data: messageData)
+            SwiftEventBus.unregister("Messages")
+        }
+        
+        client.getMessages()
+    }
+}
