@@ -30,4 +30,33 @@ class PresentMessage {
         
         client.getMessages()
     }
+    
+    func messageWithId(objectId:String,completion:(data:[Message]) -> Void){
+        
+        SwiftEventBus.onMainThread(self, name: "MsgWithId") { result in
+            
+            guard let messageData:[Message] = result.object as? [Message] else {
+                
+                return
+            }
+            
+            print("presenting \(messageData.count) messages")
+            
+            completion(data: messageData)
+            SwiftEventBus.unregister("MsgWithId")
+        }
+        
+        client.getMessageWithId(objectId)
+    }
+    
+    func sendMessage(objectId:String,text:String,completion:() -> Void){
+        
+        SwiftEventBus.onMainThread(self, name: "SentMessage") { result in
+            
+            completion()
+            SwiftEventBus.unregister("SentMessage")
+        }
+        
+        client.sendMessages(objectId, text: text)
+    }
 }

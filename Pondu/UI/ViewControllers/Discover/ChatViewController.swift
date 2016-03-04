@@ -12,12 +12,17 @@ import Parse
 
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var navView: UIView!
+    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var cameraBtn: UIButton!
     
     var data:[Message]!
+    var objectId:String!
     
     let currentUser = PFUser.currentUser()
     let dropShawdow = DropShadow()
+    let presenter = PresentMessage()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -40,6 +45,36 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func send(sender: AnyObject) {
+        
+        if textField.text != "" {
+            
+            presenter.sendMessage(objectId, text: textField.text!) { () -> Void in
+                
+                self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
+                    
+                    self.data = msgData
+                    
+                    self.reload()
+                    
+                    self.textField.text = ""
+                })
+            }
+        }
+    }
+    
+    @IBAction func camera(sender: AnyObject) {
+        
+    }
+    
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tableView.reloadData()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

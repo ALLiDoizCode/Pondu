@@ -273,8 +273,110 @@ class Messages {
         SwiftEventBus.post("Messages", sender: convo)
     }
     
-    func sendMessages(){
+    func getMessageWithId(objectId:String){
         
+        messages = []
+        
+        let messageWithId = PFQuery(className: "Messages")
+        
+        messageWithId.getObjectInBackgroundWithId(objectId) { (object, error) -> Void in
+            
+            let relation = object?.relationForKey("Message")
+            
+            let relationQuery = relation?.query()
+            relationQuery?.orderByAscending("createdAt")
+            
+            relationQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                
+                
+                guard let objects = objects else {
+                    
+                    return
+                }
+                
+                for object in objects {
+                    
+                    guard let sender:PFUser = object.objectForKey("Sender") as? PFUser else {
+                        
+                        return
+                    }
+                    
+                    do {
+                        
+                        try self.theSender = sender.fetch()
+                        
+                    }catch _{
+                        
+                    }
+                    
+                    guard let userName = sender.username else {
+                        
+                        return
+                    }
+                    
+                    guard let userIcon:PFFile = self.theSender.objectForKey("photo") as? PFFile else {
+                        
+                        return
+                    }
+                    
+                    guard let description:String = object.objectForKey("Description") as? String else {
+                        
+                        return
+                    }
+                    
+                    guard let date = object.createdAt else {
+                        
+                        return
+                    }
+                    
+                    if let media:PFFile = object.objectForKey("Media") as? PFFile {
+                        
+                        let senderMessage = Message(theObjectId: object.objectId!, theDescription: description, theMedia: media.url!, theSender: userName, theIcon: userIcon.url!,theDate: date)
+                        
+                        self.messages.append(senderMessage)
+                        
+                    }else {
+                        
+                        let senderMessage = Message(theObjectId: object.objectId!, theDescription: description, theMedia: "", theSender: userName, theIcon: userIcon.url!,theDate: date)
+                        
+                        self.messages.append(senderMessage)
+                    }
+                }
+                
+                SwiftEventBus.post("MsgWithId", sender: self.messages)
+            })
+            
+        }
+    }
+    
+    func sendMessages(objectId:String,text:String){
+        
+        let room = PFQuery(className: "Messages")
+        
+        let msg = PFObject(className: "Message")
+        
+        msg["Description"] = text
+        msg["Sender"] = currentUser
+        
+        msg.saveInBackgroundWithBlock { (success, error) -> Void in
+            
+            if success {
+                
+                room.getObjectInBackgroundWithId(objectId, block: { (object, error) -> Void in
+                    
+                    let relation = object!.relationForKey("Message")
+                    relation.addObject(msg)
+                    
+                    object?.saveInBackgroundWithBlock({ (success, error) -> Void in
+                        
+                        SwiftEventBus.post("SentMessage")
+                    })
+                    
+                })
+                
+                
+            }
+        }
         
     }
 }

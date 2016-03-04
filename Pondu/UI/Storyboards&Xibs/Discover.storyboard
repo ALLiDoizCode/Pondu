@@ -602,11 +602,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-xN-z8r">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLL-nZ-eyU">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqX-tR-d1y">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
@@ -626,6 +621,9 @@
                                                 <include reference="c8K-Ae-DSa"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="send:" destination="6ig-Ea-jbW" eventType="touchUpInside" id="GPl-KS-QzL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDO-a0-kim">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -650,7 +648,16 @@
                                                 <include reference="t3F-km-raG"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="camera:" destination="6ig-Ea-jbW" eventType="touchUpInside" id="wij-kA-bPb"/>
+                                            <action selector="send:" destination="6ig-Ea-jbW" eventType="touchUpInside" id="quC-Ib-d5G"/>
+                                        </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLL-nZ-eyU">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -670,9 +677,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="XLL-nZ-eyU"/>
                                         <exclude reference="gqX-tR-d1y"/>
                                         <exclude reference="QDO-a0-kim"/>
+                                        <exclude reference="XLL-nZ-eyU"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="hE5-Pl-iuz"/>
@@ -688,9 +695,9 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="XLL-nZ-eyU"/>
                                         <include reference="gqX-tR-d1y"/>
                                         <include reference="QDO-a0-kim"/>
+                                        <include reference="XLL-nZ-eyU"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="hE5-Pl-iuz"/>
@@ -853,8 +860,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cameraBtn" destination="QDO-a0-kim" id="Qp8-sB-PYF"/>
                         <outlet property="navView" destination="amT-Gn-WpB" id="S9J-6H-sIj"/>
+                        <outlet property="sendBtn" destination="gqX-tR-d1y" id="Scr-YM-W0y"/>
                         <outlet property="tableView" destination="YlY-EY-6qz" id="Xbl-C6-OW3"/>
+                        <outlet property="textField" destination="XLL-nZ-eyU" id="LaX-S5-nr1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8U7-ly-IqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
