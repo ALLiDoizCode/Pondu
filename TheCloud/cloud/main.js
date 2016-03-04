@@ -2,43 +2,28 @@
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
 Parse.Cloud.define("PushComment", function(request, response) {
-
-	var message = "Msg"
-  
+   
   var theChannel = request.params.channel
   var theType = request.params.theType
+  var msg = "msg"
+  var theAlert = "New Comment"
 
-  Parse.Push.send({
+  if (theType == msg) {
 
-  	if theType == message {
-  	
-  		channels: [ theChannel ],
-            data: {
-            alert: "New Message" ,
-            }}, {
-                success: function() {
-                response.success();
-   },
-   error: function(error) {
-       response.error(error);   
-
-   }else{
-
-   	channels: [ theChannel ],
-            data: {
-            alert: "New Comment" ,
-            }}, {
-                success: function() {
-                response.success();
-   },
-   error: function(error) {
-       response.error(error);   
-   }
-
-   }
-
+      theAlert = "New Message"
   }
-            
+ 
+  Parse.Push.send({
+            channels: [ theChannel ],
+            data: {
+            alert: theAlert ,
+            }}, {
+                success: function() {
+                response.success();
+   },
+   error: function(error) {
+       response.error(error);   
+   }
 });
-
+ 
 });
