@@ -87,7 +87,7 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
             
             let controller = segue.destinationViewController as! ChatViewController
             
-            controller.data = self.myMessages[(index?.row)!].messages
+            //controller.data = self.myMessages[(index?.row)!].messages
             controller.objectId = self.myMessages[(index?.row)!].objectId
         }
     }

@@ -18,7 +18,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var cameraBtn: UIButton!
     
-    var data:[Message]!
+    var data:[Message] = []
     var objectId:String!
     
     let currentUser = PFUser.currentUser()
@@ -28,9 +28,23 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewWillAppear(animated: Bool) {
         
+        print("msg id is \(objectId)")
+        
         theCloud.addChannel(objectId)
         
-        
+        self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
+            
+            self.data = msgData
+            
+            self.reload()
+            
+            self.textField.text = ""
+            
+            print("Reloaded Messges")
+            
+            print("we have \(self.data.count) messages")
+            
+        })
         
         self.navigationController?.navigationBarHidden = true
         
@@ -42,6 +56,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewWillDisappear(animated: Bool) {
         
         theCloud.removeChannel(objectId)
+        
     }
 
     @IBOutlet weak var tableView: UITableView!
@@ -56,7 +71,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 
                 self.data = msgData
                 
-                self.tableView.reloadData()
+                self.reload()
                 
                 self.textField.text = ""
                 

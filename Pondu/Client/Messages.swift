@@ -132,7 +132,7 @@ class Messages {
                     return
                 }
                 
-                for userMessage in userMessages {
+                /*for userMessage in userMessages {
                     
                     guard let sender:PFUser = userMessage.objectForKey("Sender") as? PFUser else {
                         
@@ -179,7 +179,7 @@ class Messages {
                         
                         messages.append(senderMessage)
                     }
-                }
+                }*/
                 
                 let theList = MessageList(theIcon: recipientIcon.url, theName: theRecipient.username!, theTime: list.createdAt!, theStatus: status, theMessages: messages, theCreadtedBy: theCreatedBy.objectId!, theRecipient: theRecipient.objectId!, theObjectId: objectId)
                 
@@ -210,7 +210,7 @@ class Messages {
                     return
                 }
                 
-                for userMessage in userMessages {
+                /*for userMessage in userMessages {
                     
                     guard let sender:PFUser = userMessage.objectForKey("Sender") as? PFUser else {
                         
@@ -258,7 +258,7 @@ class Messages {
                         messages.append(senderMessage)
                     }
                     
-                }
+                }*/
                 
                 let theList = MessageList(theIcon: createdByIcon.url, theName: theRecipient.username!, theTime: list.createdAt!, theStatus: status, theMessages: messages, theCreadtedBy: theCreatedBy.objectId!, theRecipient: theRecipient.objectId!, theObjectId: objectId)
                 
