@@ -30,19 +30,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         theCloud.addChannel(objectId)
         
-        SwiftEventBus.onMainThread(self, name: "NewComments") { result in
-            
-            self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
-                
-                self.data = msgData
-                
-                self.reload()
-                
-                self.textField.text = ""
-                
-                print("Reloaded Messges")
-            })
-        }
+        
         
         self.navigationController?.navigationBarHidden = true
         
@@ -60,6 +48,25 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SwiftEventBus.onBackgroundThread(self, name: "New") { result in
+            
+            print("incoming push")
+            
+            self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
+                
+                self.data = msgData
+                
+                self.tableView.reloadData()
+                
+                self.textField.text = ""
+                
+                print("Reloaded Messges")
+                
+                print("we have \(self.data.count) messages")
+                
+            })
+        }
+        
         dropShawdow.shadow(navView, color: UIColor.darkGrayColor())
 
         // Do any additional setup after loading the view.
@@ -76,17 +83,11 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             presenter.sendMessage(objectId, text: textField.text!) { () -> Void in
                 
-                self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
-                    
-                    self.data = msgData
-                    
-                    self.reload()
-                    
-                    self.textField.text = ""
-                })
+                print("sending push")
                 
-                self.theCloud.pushComment(self.objectId,type: "Msg")
             }
+            
+            self.theCloud.pushComment(self.objectId,type: "msg")
         }
     }
     

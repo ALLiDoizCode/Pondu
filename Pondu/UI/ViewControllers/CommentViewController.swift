@@ -35,7 +35,7 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         theCloud.addChannel(objectId)
         
-        SwiftEventBus.onMainThread(self, name: "NewComments") { result in
+        SwiftEventBus.onMainThread(self, name: "New") { result in
             
             self.presenter.getComments(self.objectId) { (data) -> Void in
                 

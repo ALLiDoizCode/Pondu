@@ -275,8 +275,6 @@ class Messages {
     
     func getMessageWithId(objectId:String){
         
-        messages = []
-        
         let messageWithId = PFQuery(className: "Messages")
         
         messageWithId.getObjectInBackgroundWithId(objectId) { (object, error) -> Void in
