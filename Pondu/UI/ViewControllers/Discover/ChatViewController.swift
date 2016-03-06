@@ -73,8 +73,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 
                 self.reload()
                 
-                
-                
+
                 self.textField.text = ""
                 
                 print("Reloaded Messges")
@@ -126,7 +125,10 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             self.tableView.reloadData()
             
-            self.scrollToBottom(true)
+            if self.data.count > 0 {
+                
+                self.scrollToBottom(true)
+            }
         }
     }
     
