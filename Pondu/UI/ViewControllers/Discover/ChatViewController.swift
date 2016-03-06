@@ -102,8 +102,10 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 
             }
             
-            self.theCloud.pushComment(self.objectId,type: "msg")
+            
         }
+        
+        self.theCloud.pushComment(self.objectId,type: "msg")
     }
     
     @IBAction func camera(sender: AnyObject) {
