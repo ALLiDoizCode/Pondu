@@ -73,6 +73,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 
                 self.reload()
                 
+                
+                
                 self.textField.text = ""
                 
                 print("Reloaded Messges")
@@ -90,6 +92,12 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scrollToBottom(animated: Bool = true) {
+        let sections = self.tableView.numberOfSections
+        let rows = self.tableView.numberOfRowsInSection(sections - 1)
+        self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: rows - 1, inSection: sections - 1), atScrollPosition: .Bottom, animated: true)
     }
     
     @IBAction func send(sender: AnyObject) {
@@ -117,6 +125,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         dispatch_async(dispatch_get_main_queue()) {
             
             self.tableView.reloadData()
+            
+            self.scrollToBottom(true)
         }
     }
     
