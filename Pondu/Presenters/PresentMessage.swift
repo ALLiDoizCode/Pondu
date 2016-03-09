@@ -49,7 +49,7 @@ class PresentMessage {
         client.getMessageWithId(objectId)
     }
     
-    func sendMessage(objectId:String,text:String,completion:() -> Void){
+    func sendMessage(objectId:String,text:String,hasImage:Bool,image:UIImage?,completion:() -> Void){
         
         SwiftEventBus.onMainThread(self, name: "SentMessage") { result in
             
@@ -57,6 +57,6 @@ class PresentMessage {
             SwiftEventBus.unregister("SentMessage")
         }
         
-        client.sendMessages(objectId, text: text)
+        client.sendMessages(objectId, text: text,hasImage: hasImage,image:image)
     }
 }

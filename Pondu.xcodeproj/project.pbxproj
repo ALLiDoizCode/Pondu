@@ -37,6 +37,7 @@
 		4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436291C13D0330032FB27 /* LoginViewController.swift */; };
 		4D2BE9A91C1CF893001810BB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9A81C1CF893001810BB /* School.swift */; };
 		4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */; };
+		4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2ED4FF1C8FD216007B6632 /* MessageImageCell.swift */; };
 		4D32A82A1C88D94A0053FBCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8291C88D94A0053FBCD /* Messages.swift */; };
 		4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82D1C88DF7A0053FBCD /* MessageList.swift */; };
 		4D32A8301C88E10D0053FBCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82F1C88E10D0053FBCD /* Message.swift */; };
@@ -161,6 +162,7 @@
 		4D2436291C13D0330032FB27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D2BE9A81C1CF893001810BB /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		4D2ED4FF1C8FD216007B6632 /* MessageImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageImageCell.swift; sourceTree = "<group>"; };
 		4D32A8291C88D94A0053FBCD /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		4D32A82D1C88DF7A0053FBCD /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
 		4D32A82F1C88E10D0053FBCD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */,
 				4DFADB101C81006B00A61AAA /* CommentCell.swift */,
 				4D32A8371C8A0B620053FBCD /* ChatCell.swift */,
+				4D2ED4FF1C8FD216007B6632 /* MessageImageCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */,
+				4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */,
 				4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */,
 				4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */,
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,

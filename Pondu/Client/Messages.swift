@@ -324,6 +324,7 @@ class Messages {
                         return
                     }
                     
+                    
                     guard let date = object.createdAt else {
                         
                         return
@@ -349,11 +350,19 @@ class Messages {
         }
     }
     
-    func sendMessages(objectId:String,text:String){
+    func sendMessages(objectId:String,text:String,hasImage:Bool,image:UIImage?){
         
         let room = PFQuery(className: "Messages")
         
         let msg = PFObject(className: "Message")
+        
+        if hasImage {
+            
+            let photoData = UIImageJPEGRepresentation(image!, 1.8)
+            let photoFile = PFFile(name:"photo", data:photoData!)
+            
+            msg["Media"] = photoFile
+        }
         
         msg["Description"] = text
         msg["Sender"] = currentUser
@@ -373,7 +382,6 @@ class Messages {
                     })
                     
                 })
-                
                 
             }
         }

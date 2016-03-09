@@ -576,6 +576,59 @@
                                             <outlet property="userName" destination="0vn-9z-iFF" id="PYQ-dM-kOr"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="image" rowHeight="171" id="0Cw-b8-XYq" customClass="MessageImageCell" customModule="Pondu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Cw-b8-XYq" id="cQk-eG-0v6">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDk-tu-cMw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="384" id="DsW-qz-gU9"/>
+                                                        <constraint firstAttribute="height" constant="155" id="Jof-9n-m9P"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="DsW-qz-gU9"/>
+                                                            <exclude reference="Jof-9n-m9P"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="DsW-qz-gU9"/>
+                                                            <include reference="Jof-9n-m9P"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qDk-tu-cMw" firstAttribute="top" secondItem="cQk-eG-0v6" secondAttribute="topMargin" id="TSS-5c-EFm"/>
+                                                <constraint firstItem="qDk-tu-cMw" firstAttribute="leading" secondItem="cQk-eG-0v6" secondAttribute="leadingMargin" id="zsN-Tc-HQJ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="qDk-tu-cMw"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="TSS-5c-EFm"/>
+                                                    <exclude reference="zsN-Tc-HQJ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="qDk-tu-cMw"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="TSS-5c-EFm"/>
+                                                    <include reference="zsN-Tc-HQJ"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="sentImage" destination="qDk-tu-cMw" id="ukq-Et-sfZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="6ig-Ea-jbW" id="rLH-rb-zHK"/>
@@ -652,7 +705,6 @@
                                         </variation>
                                         <connections>
                                             <action selector="camera:" destination="6ig-Ea-jbW" eventType="touchUpInside" id="wij-kA-bPb"/>
-                                            <action selector="send:" destination="6ig-Ea-jbW" eventType="touchUpInside" id="quC-Ib-d5G"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLL-nZ-eyU">

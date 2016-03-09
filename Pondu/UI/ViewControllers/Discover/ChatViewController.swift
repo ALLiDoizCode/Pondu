@@ -10,8 +10,10 @@ import UIKit
 import Kingfisher
 import Parse
 import SwiftEventBus
+import ImagePickerSheetController
+import Photos
 
-class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var navView: UIView!
@@ -20,6 +22,10 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     var data:[Message] = []
     var objectId:String!
+    var theImage:UIImage!
+    
+    let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
+    let videoTypes:[String] = ["mov","mp4", "m4v","3gp","MOV"]
     
     let currentUser = PFUser.currentUser()
     let dropShawdow = DropShadow()
@@ -103,12 +109,11 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         if textField.text != "" {
             
-            presenter.sendMessage(objectId, text: textField.text!) { () -> Void in
+            presenter.sendMessage(objectId, text: textField.text!,hasImage:false,image:nil) { () -> Void in
                 
                 print("sending push")
                 
             }
-            
             
         }
         
@@ -117,8 +122,71 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBAction func camera(sender: AnyObject) {
         
+        let manager = PHImageManager.defaultManager()
+        let initialRequestOptions = PHImageRequestOptions()
+        initialRequestOptions.resizeMode = .Fast
+        initialRequestOptions.deliveryMode = .HighQualityFormat
+        
+        let presentImagePickerController: UIImagePickerControllerSourceType -> () = { source in
+            let controller = UIImagePickerController()
+            controller.delegate = self
+            var sourceType = source
+            if (!UIImagePickerController.isSourceTypeAvailable(sourceType)) {
+                sourceType = .PhotoLibrary
+                print("Fallback to camera roll as a source since the simulator doesn't support taking pictures")
+            }
+            controller.sourceType = sourceType
+            
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+        
+        let controller = ImagePickerSheetController(mediaType: .Image)
+        controller.maximumSelection = 1
+        
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use This Image", comment: "Action Title"), handler: { _ in
+            presentImagePickerController(.Camera)
+            }, secondaryHandler: { action, numberOfPhotos in
+                print("Comment \(numberOfPhotos) photos")
+                
+                let size = CGSize(width: controller.selectedImageAssets[0].pixelWidth, height: controller.selectedImageAssets[0].pixelHeight)
+                
+                manager.requestImageForAsset(controller.selectedImageAssets[0],
+                    targetSize: size,
+                    contentMode: .AspectFill,
+                    options:initialRequestOptions) { (finalResult, _) in
+                        
+                        self.theImage = finalResult
+                        print(finalResult)
+                }
+                
+                
+        }))
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
+            print("Cancelled")
+        }))
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            controller.modalPresentationStyle = .Popover
+            controller.popoverPresentationController?.sourceView = view
+            controller.popoverPresentationController?.sourceRect = CGRect(origin: view.center, size: CGSize())
+        }
+        
+        presentViewController(controller, animated: true, completion: nil)
     }
     
+
+// MARK: UIImagePickerControllerDelegate
+
+func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    dismissViewControllerAnimated(true, completion: nil)
+}
+
+func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    
+    theImage = image
+    dismissViewControllerAnimated(true, completion: nil)
+}
+
     func reload(){
         
         dispatch_async(dispatch_get_main_queue()) {
@@ -131,7 +199,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }
         }
     }
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return data.count
@@ -139,23 +207,48 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell") as! ChatCell
-        
-        cell.message.text = data[indexPath.row].description
-        cell.userName.text = data[indexPath.row].sender
-        
-        let date:NSDate = self.data[indexPath.row].date
-        let time = NSDate().offsetFrom(date)
-        
-        cell.time.text = time
-        
-        if data[indexPath.row].sender != currentUser?.username {
+        if data[indexPath.row].media != "" {
             
-            cell.bar.image = UIImage(named: "msgred")
-            cell.userName.textColor = UIColor.lightGrayColor()
+            let imageCell = tableView.dequeueReusableCellWithIdentifier("image") as! MessageImageCell
+            
+            imageCell.sentImage.kf_setImageWithURL(NSURL(string: data[indexPath.row].media!)!, placeholderImage:UIImage(named: "placeholder"))
+            
+            return imageCell
+        
+        }else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell") as! ChatCell
+            
+            cell.message.text = data[indexPath.row].description
+            cell.userName.text = data[indexPath.row].sender
+            
+            let date:NSDate = self.data[indexPath.row].date
+            let time = NSDate().offsetFrom(date)
+            
+            cell.time.text = time
+            
+            if data[indexPath.row].sender != currentUser?.username {
+                
+                cell.bar.image = UIImage(named: "msgred")
+                cell.userName.textColor = UIColor.lightGrayColor()
+            }
+            
+            return cell
         }
         
-        return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        if data[indexPath.row].media != "" {
+            
+            return 171
+            
+        }else {
+            
+            return 86
+        }
     }
     
 
