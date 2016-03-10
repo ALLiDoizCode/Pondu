@@ -358,7 +358,7 @@ class Messages {
         
         if hasImage {
             
-            let photoData = UIImageJPEGRepresentation(image!, 1.8)
+            let photoData = UIImageJPEGRepresentation(image!, 0.9)
             let photoFile = PFFile(name:"photo", data:photoData!)
             
             msg["Media"] = photoFile

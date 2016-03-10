@@ -107,15 +107,29 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBAction func send(sender: AnyObject) {
         
-        if textField.text != "" {
+        if theImage == nil {
             
-            presenter.sendMessage(objectId, text: textField.text!,hasImage:false,image:nil) { () -> Void in
+            if textField.text != "" {
                 
-                print("sending push")
+                presenter.sendMessage(objectId, text: textField.text!,hasImage:false,image:nil) { () -> Void in
+                    
+                    print("sending push")
+                    
+                }
                 
             }
+        }else {
             
+            presenter.sendMessage(objectId, text: textField.text!,hasImage:true,image:theImage) { () -> Void in
+                
+                print("sending push with Image")
+                
+                self.theImage = nil
+                
+            }
         }
+        
+       
         
         self.theCloud.pushComment(self.objectId,type: "msg")
     }
