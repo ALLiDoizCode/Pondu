@@ -170,6 +170,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     options:initialRequestOptions) { (finalResult, _) in
                         
                         self.theImage = finalResult
+                        self.cameraBtn.setImage(self.theImage, forState: UIControlState.Normal)
                         print(finalResult)
                 }
                 
@@ -221,11 +222,18 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let date:NSDate = self.data[indexPath.row].date
+        let time = NSDate().offsetFrom(date)
+        
         if data[indexPath.row].media != "" {
             
             let imageCell = tableView.dequeueReusableCellWithIdentifier("image") as! MessageImageCell
             
             imageCell.sentImage.kf_setImageWithURL(NSURL(string: data[indexPath.row].media!)!, placeholderImage:UIImage(named: "placeholder"))
+            
+            imageCell.msg.text = data[indexPath.row].description
+            imageCell.name.text = data[indexPath.row].sender
+            imageCell.time.text = time
             
             return imageCell
         
@@ -235,10 +243,6 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             
             cell.message.text = data[indexPath.row].description
             cell.userName.text = data[indexPath.row].sender
-            
-            let date:NSDate = self.data[indexPath.row].date
-            let time = NSDate().offsetFrom(date)
-            
             cell.time.text = time
             
             if data[indexPath.row].sender != currentUser?.username {
@@ -257,7 +261,7 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
         
         if data[indexPath.row].media != "" {
             
-            return 171
+            return 346
             
         }else {
             
