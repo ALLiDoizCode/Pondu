@@ -261,7 +261,9 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
         
         if data[indexPath.row].media != "" {
             
-            return 346
+            tableView.rowHeight = UITableViewAutomaticDimension
+            
+            return 246
             
         }else {
             
