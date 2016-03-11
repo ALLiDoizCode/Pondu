@@ -1071,7 +1071,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="YlY-EY-6qz" secondAttribute="trailing" constant="-20" id="edZ-g9-hKa"/>
                             <constraint firstItem="YlY-EY-6qz" firstAttribute="leading" secondItem="ZNK-Om-H07" secondAttribute="leadingMargin" constant="-20" id="fQC-9Q-5VW"/>
                             <constraint firstItem="amT-Gn-WpB" firstAttribute="top" secondItem="gH6-W5-0lM" secondAttribute="bottom" constant="-20" id="fU1-PJ-HpK">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-64"/>
                             </constraint>
                             <constraint firstItem="YlY-EY-6qz" firstAttribute="top" secondItem="amT-Gn-WpB" secondAttribute="bottom" id="pN0-Sf-4RO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
@@ -1458,7 +1458,7 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EJQ-JW-wKP"/>
+        <segue reference="xRK-j8-Vnl"/>
         <segue reference="Lb5-lk-x21"/>
     </inferredMetricsTieBreakers>
 </document>

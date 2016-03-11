@@ -27,6 +27,7 @@ class Messages {
     func makeRoom(creator:String,recipient:String){
         
         let room = PFObject(className: "Messages")
+        let roomQuery = PFQuery(className: "Messages")
         
         let userQuery = PFUser.query()
         
@@ -46,16 +47,65 @@ class Messages {
         room["Recipient"] = otherUser
         room["Status"] = false
         
+        var checkArray:[Int] = []
+        var existing:String!
+        
         do {
             
-            try room.save()
+            
+            let chatRoom = try roomQuery.findObjects()
+            
+            for theRoom in chatRoom {
+                
+                let createdBy = theRoom.objectForKey("CreatedBy") as! PFUser
+                let recipient = theRoom.objectForKey("Recipient") as! PFUser
+                
+                if (createdBy == currentUser && recipient == otherUser) || (createdBy == otherUser && recipient == currentUser) {
+                    
+                    checkArray.append(1)
+                }
+                
+            }
+            
+            if checkArray.contains(1) {
+                
+                let existingRoom = PFQuery(className:"Messages")
+                
+                
+                
+                do {
+                    
+                    let chatRoom = try existingRoom.findObjects()
+                    
+                    for theRoom in chatRoom {
+                        
+                        let createdBy = theRoom.objectForKey("CreatedBy") as! PFUser
+                        let recipient = theRoom.objectForKey("Recipient") as! PFUser
+                        
+                        if (createdBy == currentUser && recipient == otherUser) || (createdBy == otherUser && recipient == currentUser) {
+                            
+                            existing = theRoom.objectId
+                        }
+                    }
+                    
+                }catch _{
+                    
+                }
+                
+                print("Room Exist")
+                SwiftEventBus.post("RoomMade", sender: existing)
+                
+            }else {
+                
+                try room.save()
+                
+                SwiftEventBus.post("RoomMade", sender: room.objectId)
+            }
             
             
         }catch _{
             
         }
-        
-        SwiftEventBus.post("RoomMade", sender: room.objectId)
         
     }
     
