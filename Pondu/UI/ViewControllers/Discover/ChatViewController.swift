@@ -277,28 +277,37 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
     }
     
     
-    /*func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if data[indexPath.row].media != "" {
             
-            
-            return 246
-            
-        }else {
-            
-            return 86
+           self.performSegueWithIdentifier("showImage", sender: indexPath)
         }
-    }*/
+        
+    }
     
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showImage" {
+            
+            let indexPath = sender as! NSIndexPath
+            
+            let controller = segue.destinationViewController as! ChatImageController
+            
+            controller.image = data[indexPath.row].media
+            controller.objectId = objectId
+        }
+        
+        
+        
+        
     }
-    */
+    
 
 }

@@ -283,7 +283,7 @@ class Messages {
             
             let relation = object?.relationForKey("Message")
             
-            let then = NSDate(timeIntervalSinceNow: -1200)
+            let then = NSDate(timeIntervalSinceNow: -1600)
             
             let relationQuery = relation?.query()
             relationQuery?.limit = 15

@@ -402,6 +402,66 @@
             </objects>
             <point key="canvasLocation" x="175.5" y="2385"/>
         </scene>
+        <!--Chat Image Controller-->
+        <scene sceneID="5TQ-IW-Ir3">
+            <objects>
+                <viewController id="jDC-By-EGG" customClass="ChatImageController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bDf-uI-W32"/>
+                        <viewControllerLayoutGuide type="bottom" id="8yq-Rp-zKc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pSU-ev-15P">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zw7-af-9sy">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zw7-af-9sy" firstAttribute="top" secondItem="pSU-ev-15P" secondAttribute="top" id="4OX-D3-hzf"/>
+                            <constraint firstItem="Zw7-af-9sy" firstAttribute="leading" secondItem="pSU-ev-15P" secondAttribute="leading" id="FT6-bp-gvW"/>
+                            <constraint firstAttribute="trailing" secondItem="Zw7-af-9sy" secondAttribute="trailing" id="haH-8X-yFH"/>
+                            <constraint firstItem="Zw7-af-9sy" firstAttribute="height" secondItem="pSU-ev-15P" secondAttribute="height" id="hj4-Bh-p9y"/>
+                            <constraint firstItem="Zw7-af-9sy" firstAttribute="width" secondItem="pSU-ev-15P" secondAttribute="width" id="tF4-sb-GqZ"/>
+                            <constraint firstItem="Zw7-af-9sy" firstAttribute="bottom" secondItem="8yq-Rp-zKc" secondAttribute="top" id="ujN-v5-OOZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Zw7-af-9sy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4OX-D3-hzf"/>
+                                <exclude reference="FT6-bp-gvW"/>
+                                <exclude reference="haH-8X-yFH"/>
+                                <exclude reference="hj4-Bh-p9y"/>
+                                <exclude reference="tF4-sb-GqZ"/>
+                                <exclude reference="ujN-v5-OOZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Zw7-af-9sy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4OX-D3-hzf"/>
+                                <include reference="FT6-bp-gvW"/>
+                                <include reference="haH-8X-yFH"/>
+                                <include reference="hj4-Bh-p9y"/>
+                                <include reference="tF4-sb-GqZ"/>
+                                <include reference="ujN-v5-OOZ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="theImage" destination="Zw7-af-9sy" id="a0h-OD-j7H"/>
+                        <segue destination="6ig-Ea-jbW" kind="show" identifier="back" id="eRB-RM-exC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfA-bO-spH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-549" y="3125.25"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="Xov-dk-Sr0">
             <objects>
@@ -1079,6 +1139,7 @@
                         <outlet property="sendBtn" destination="gqX-tR-d1y" id="Scr-YM-W0y"/>
                         <outlet property="tableView" destination="YlY-EY-6qz" id="Xbl-C6-OW3"/>
                         <outlet property="textField" destination="XLL-nZ-eyU" id="LaX-S5-nr1"/>
+                        <segue destination="jDC-By-EGG" kind="show" identifier="showImage" id="qr8-as-IWG"/>
                     </connections>
                 </viewController>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msgblue" translatesAutoresizingMaskIntoConstraints="NO" id="MSv-E8-0ET">
@@ -1391,6 +1452,7 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="eRB-RM-exC"/>
         <segue reference="pJG-VO-6ob"/>
     </inferredMetricsTieBreakers>
 </document>

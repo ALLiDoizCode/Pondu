@@ -70,7 +70,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
         UIApplication.sharedApplication().statusBarHidden = true
         
-        //let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
+        let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
         
         //let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
 
