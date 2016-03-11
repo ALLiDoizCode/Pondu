@@ -250,6 +250,7 @@
                                         <connections>
                                             <outlet property="icon" destination="U2b-Pr-pfT" id="XR9-2z-hz4"/>
                                             <outlet property="label" destination="cBD-kO-Mk6" id="WfR-kW-N3q"/>
+                                            <segue destination="6ig-Ea-jbW" kind="show" identifier="room" id="xRK-j8-Vnl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -327,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTS-TU-zkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093.5" y="2385"/>
+            <point key="canvasLocation" x="1009.5" y="2403"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="ZCo-cx-tZa">
@@ -1006,7 +1007,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="z9g-cS-2T5" kind="show" id="pJG-VO-6ob"/>
+                                    <segue destination="z9g-cS-2T5" kind="show" id="Lb5-lk-x21"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke6-87-N0E">
@@ -1069,7 +1070,9 @@
                             <constraint firstItem="PCE-hN-nvx" firstAttribute="centerX" secondItem="ZNK-Om-H07" secondAttribute="centerX" id="aWJ-Tv-p0W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YlY-EY-6qz" secondAttribute="trailing" constant="-20" id="edZ-g9-hKa"/>
                             <constraint firstItem="YlY-EY-6qz" firstAttribute="leading" secondItem="ZNK-Om-H07" secondAttribute="leadingMargin" constant="-20" id="fQC-9Q-5VW"/>
-                            <constraint firstItem="amT-Gn-WpB" firstAttribute="top" secondItem="gH6-W5-0lM" secondAttribute="bottom" constant="-20" id="fU1-PJ-HpK"/>
+                            <constraint firstItem="amT-Gn-WpB" firstAttribute="top" secondItem="gH6-W5-0lM" secondAttribute="bottom" constant="-20" id="fU1-PJ-HpK">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-20"/>
+                            </constraint>
                             <constraint firstItem="YlY-EY-6qz" firstAttribute="top" secondItem="amT-Gn-WpB" secondAttribute="bottom" id="pN0-Sf-4RO">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
                             </constraint>
@@ -1167,7 +1170,7 @@
                 </imageView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8U7-ly-IqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286.5" y="3137.25"/>
+            <point key="canvasLocation" x="232.5" y="3089.25"/>
         </scene>
         <!--Messages-->
         <scene sceneID="kvA-ED-pA8">
@@ -1455,7 +1458,7 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eRB-RM-exC"/>
-        <segue reference="Kfl-j1-99f"/>
+        <segue reference="EJQ-JW-wKP"/>
+        <segue reference="Lb5-lk-x21"/>
     </inferredMetricsTieBreakers>
 </document>

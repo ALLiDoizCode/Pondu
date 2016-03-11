@@ -24,6 +24,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var searchActive : Bool = false
     
     let presenter = theUser()
+    let room = PresentMessage()
     
     lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
     
@@ -207,28 +208,44 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return cell;
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-     
-    }
-    
-    //Mark searbar delgate protocol
-    /*func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        
-        searchBar.hidden = true
-        searchBar.resignFirstResponder()
-        self.navigationItem.leftBarButtonItem = searchBtn
-        
-    }*/
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "room" {
+            
+            print("room made")
+            
+            let controller = segue.destinationViewController as! ChatViewController
+            
+            let indexPath = self.tableView.indexPathForSelectedRow
+            
+             if searchActive {
+                
+                room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: filtered[(indexPath?.row)!].objectID, completion: { (data) -> Void in
+                    
+                   print("user objectID \(self.filtered[(indexPath?.row)!].objectID)")
+                    
+                    controller.objectId = data
+                })
+                
+             }else {
+                
+                room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: users[(indexPath?.row)!].objectID, completion: { (data) -> Void in
+                    
+                    print("user objectID \(self.users[(indexPath?.row)!].objectID)")
+                    
+                    controller.objectId = data
+                })
+            }
+            
+        }
     }
-    */
+    
 
 }

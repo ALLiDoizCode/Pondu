@@ -37,7 +37,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         print("msg id is \(objectId)")
         
-        theCloud.addChannel(objectId)
+        theCloud.addChannel("M\(objectId)")
         
         self.data.removeAll()
         
@@ -64,7 +64,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewWillDisappear(animated: Bool) {
         
-        theCloud.removeChannel(objectId)
+        theCloud.removeChannel("M\(objectId)")
         
     }
 
@@ -303,9 +303,6 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             controller.image = data[indexPath.row].media
             controller.objectId = objectId
         }
-        
-        
-        
         
     }
     

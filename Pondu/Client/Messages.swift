@@ -24,6 +24,41 @@ class Messages {
     var theCreatedBy:PFUser!
     var theRecipient:PFUser!
     
+    func makeRoom(creator:String,recipient:String){
+        
+        let room = PFObject(className: "Messages")
+        
+        let userQuery = PFUser.query()
+        
+        var otherUser:PFUser!
+        
+        do {
+            
+            try otherUser = userQuery?.getObjectWithId(recipient) as! PFUser
+            
+        }catch _{
+            
+        }
+        
+        print("user id is \(otherUser.objectId)")
+        
+        room["CreatedBy"] = currentUser
+        room["Recipient"] = otherUser
+        room["Status"] = false
+        
+        do {
+            
+            try room.save()
+            
+            
+        }catch _{
+            
+        }
+        
+        SwiftEventBus.post("RoomMade", sender: room.objectId)
+        
+    }
+    
     func getMessages(){
         
         convo = []

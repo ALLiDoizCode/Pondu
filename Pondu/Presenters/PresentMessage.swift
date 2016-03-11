@@ -13,6 +13,22 @@ class PresentMessage {
     
     let client = Messages.sharedInstance
     
+    func makeRoom(creator:String,recipient:String,completion:(data:String) -> Void){
+        
+        SwiftEventBus.onMainThread(self, name: "RoomMade") { result in
+            
+            guard let roomData:String = result.object as? String else {
+                
+                return
+            }
+            completion(data: roomData)
+            
+            SwiftEventBus.unregister("RoomMade")
+        }
+        
+        client.makeRoom(creator, recipient: recipient)
+    }
+    
     func getMessages(completion:(data:[MessageList]) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "Messages") { result in

@@ -63,6 +63,7 @@ class parseUser {
                     if userInfo.count != 0 {
                         
                         print("userInfo \(userInfo.count)")
+                        
                         SwiftEventBus.post("User", sender: userInfo)
                         
                     }
