@@ -283,8 +283,11 @@ class Messages {
             
             let relation = object?.relationForKey("Message")
             
+            let then = NSDate(timeIntervalSinceNow: -1200)
+            
             let relationQuery = relation?.query()
-            //relationQuery?.limit = 15
+            relationQuery?.limit = 15
+            relationQuery?.whereKey("createdAt", greaterThanOrEqualTo: then)
             relationQuery?.orderByAscending("createdAt")
             
             relationQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
