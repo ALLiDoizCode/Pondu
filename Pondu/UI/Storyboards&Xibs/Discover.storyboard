@@ -57,6 +57,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RZd-5L-UbZ" id="Gkg-Y5-pu3"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tlc-38-q4c">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1453,6 +1456,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eRB-RM-exC"/>
-        <segue reference="pJG-VO-6ob"/>
+        <segue reference="Kfl-j1-99f"/>
     </inferredMetricsTieBreakers>
 </document>
