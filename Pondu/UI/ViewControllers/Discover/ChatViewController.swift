@@ -12,6 +12,7 @@ import Parse
 import SwiftEventBus
 import ImagePickerSheetController
 import Photos
+import SwiftSpinner
 
 class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate {
     
@@ -37,6 +38,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         print("msg id is \(objectId)")
         
         theCloud.addChannel(objectId)
+        
+        self.data.removeAll()
         
         self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
             
@@ -69,17 +72,19 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.data.removeAll()
+        
         SwiftEventBus.onBackgroundThread(self, name: "New") { result in
             
             print("incoming push")
-            
-            self.data.removeAll()
             
             self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
                 
                 self.data = msgData
                 
                 self.reload()
+                
+                self.stopSpin()
                 
                 self.textField.text = ""
                 
@@ -98,6 +103,18 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func startSpin(){
+        
+        SwiftSpinner.show("Uploading").addTapHandler({
+            SwiftSpinner.hide()
+            }, subtitle: "Tap to hide while connecting! This will affect only the current operation.")
+    }
+    
+    func stopSpin(){
+        
+        SwiftSpinner.hide()
     }
     
     func scrollToBottom(animated: Bool = true) {
@@ -125,7 +142,9 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         if theImage != nil {
 
-              presenter.sendMessage(objectId, text: textField.text!,hasImage:true,image:theImage)
+            presenter.sendMessage(objectId, text: textField.text!,hasImage:true,image:theImage)
+            startSpin()
+            theImage = nil
             
         }else if textField.text != "" {
             
@@ -202,7 +221,7 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
     theImage = image
     dismissViewControllerAnimated(true, completion: nil)
 }
-
+    
     func reload(){
         
         dispatch_async(dispatch_get_main_queue()) {

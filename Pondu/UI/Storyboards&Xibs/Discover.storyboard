@@ -888,12 +888,12 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="hE5-Pl-iuz"/>
+                                        <exclude reference="Art-cd-Gj8"/>
+                                        <exclude reference="oz5-pE-i03"/>
                                         <exclude reference="aow-Nb-Y2U"/>
                                         <exclude reference="gRW-rV-e4U"/>
                                         <exclude reference="mUP-uP-zba"/>
                                         <exclude reference="seA-4v-vUZ"/>
-                                        <exclude reference="Art-cd-Gj8"/>
-                                        <exclude reference="oz5-pE-i03"/>
                                         <exclude reference="6pc-Qp-2R8"/>
                                         <exclude reference="maW-za-GPH"/>
                                     </mask>
@@ -906,12 +906,12 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="hE5-Pl-iuz"/>
+                                        <include reference="Art-cd-Gj8"/>
+                                        <include reference="oz5-pE-i03"/>
                                         <include reference="aow-Nb-Y2U"/>
                                         <include reference="gRW-rV-e4U"/>
                                         <include reference="mUP-uP-zba"/>
                                         <include reference="seA-4v-vUZ"/>
-                                        <include reference="Art-cd-Gj8"/>
-                                        <include reference="oz5-pE-i03"/>
                                         <include reference="6pc-Qp-2R8"/>
                                         <include reference="maW-za-GPH"/>
                                     </mask>
