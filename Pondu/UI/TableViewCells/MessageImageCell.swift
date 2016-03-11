@@ -19,6 +19,11 @@ class MessageImageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.sentImage.layer.cornerRadius = 3
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

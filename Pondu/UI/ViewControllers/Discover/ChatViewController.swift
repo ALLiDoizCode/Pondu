@@ -55,7 +55,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         self.navigationController?.navigationBarHidden = true
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 160.0
+        tableView.estimatedRowHeight = 246.0
         
     }
     
@@ -257,11 +257,10 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
     }
     
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    /*func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if data[indexPath.row].media != "" {
             
-            tableView.rowHeight = UITableViewAutomaticDimension
             
             return 246
             
@@ -269,7 +268,7 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             
             return 86
         }
-    }
+    }*/
     
 
     /*
