@@ -73,13 +73,14 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             print("incoming push")
             
+            self.data.removeAll()
+            
             self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
                 
                 self.data = msgData
                 
                 self.reload()
                 
-
                 self.textField.text = ""
                 
                 print("Reloaded Messges")
@@ -107,31 +108,31 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBAction func send(sender: AnyObject) {
         
-        if theImage == nil {
+        
+        SwiftEventBus.onMainThread(self, name: "updateMsg") { result in
             
-            if textField.text != "" {
-                
-                presenter.sendMessage(objectId, text: textField.text!,hasImage:false,image:nil) { () -> Void in
-                    
-                    print("sending push")
-                    
-                }
-                
-            }
-        }else {
+            print("sending push with Image")
             
-            presenter.sendMessage(objectId, text: textField.text!,hasImage:true,image:theImage) { () -> Void in
-                
-                print("sending push with Image")
-                
-                self.theImage = nil
-                
-            }
+            self.cameraBtn.setImage(UIImage(named: "cameraImg"), forState: UIControlState.Normal)
+            
+            self.textField.text = ""
+            
+            self.theCloud.pushComment(self.objectId,type: "msg")
+            
+            SwiftEventBus.unregister(self, name: "updateMsg")
+            
         }
         
-       
+        if theImage != nil {
+
+              presenter.sendMessage(objectId, text: textField.text!,hasImage:true,image:theImage)
+            
+        }else if textField.text != "" {
+            
+            presenter.sendMessage(objectId, text: textField.text!,hasImage:false,image:nil)
         
-        self.theCloud.pushComment(self.objectId,type: "msg")
+        }
+        
     }
     
     @IBAction func camera(sender: AnyObject) {

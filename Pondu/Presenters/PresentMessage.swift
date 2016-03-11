@@ -49,14 +49,19 @@ class PresentMessage {
         client.getMessageWithId(objectId)
     }
     
-    func sendMessage(objectId:String,text:String,hasImage:Bool,image:UIImage?,completion:() -> Void){
+    func sendMessage(objectId:String,text:String,hasImage:Bool,image:UIImage?){
         
-        SwiftEventBus.onMainThread(self, name: "SentMessage") { result in
+        SwiftEventBus.onBackgroundThread(self, name: "SentMsg") { result in
             
-            completion()
-            SwiftEventBus.unregister("SentMessage")
+            print("fire sent presenter")
+            
+            SwiftEventBus.postToMainThread("updateMsg")
+            
+            SwiftEventBus.unregister(self, name: "SentMsg")
         }
         
         client.sendMessages(objectId, text: text,hasImage: hasImage,image:image)
+        
+        
     }
 }

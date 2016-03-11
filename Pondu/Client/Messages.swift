@@ -284,10 +284,12 @@ class Messages {
             let relation = object?.relationForKey("Message")
             
             let relationQuery = relation?.query()
+            //relationQuery?.limit = 15
             relationQuery?.orderByAscending("createdAt")
             
             relationQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                 
+
                 
                 guard let objects = objects else {
                     
@@ -345,6 +347,7 @@ class Messages {
                 }
                 
                 SwiftEventBus.post("MsgWithId", sender: self.messages)
+            
             })
             
         }
@@ -369,6 +372,8 @@ class Messages {
         
         msg.saveInBackgroundWithBlock { (success, error) -> Void in
             
+            print("Saving Msg")
+            
             if success {
                 
                 room.getObjectInBackgroundWithId(objectId, block: { (object, error) -> Void in
@@ -378,7 +383,9 @@ class Messages {
                     
                     object?.saveInBackgroundWithBlock({ (success, error) -> Void in
                         
-                        SwiftEventBus.post("SentMessage")
+                        print("Saving reltion")
+                        
+                        SwiftEventBus.post("SentMsg")
                     })
                     
                 })
