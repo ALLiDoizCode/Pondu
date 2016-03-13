@@ -72,11 +72,13 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.data.removeAll()
+        
         
         SwiftEventBus.onBackgroundThread(self, name: "New") { result in
             
             print("incoming push")
+            
+            self.data.removeAll()
             
             self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
                 
@@ -134,7 +136,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             self.textField.text = ""
             
-            self.theCloud.pushComment(self.objectId,type: "msg")
+            self.theCloud.pushComment("M\(self.objectId)",type: "msg")
             
             SwiftEventBus.unregister(self, name: "updateMsg")
             
@@ -299,6 +301,8 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             let indexPath = sender as! NSIndexPath
             
             let controller = segue.destinationViewController as! ChatImageController
+            
+            print(data[indexPath.row].media)
             
             controller.image = data[indexPath.row].media
             controller.objectId = objectId

@@ -20,7 +20,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     
     let options = PagingMenuOptions()
     let dropShadow = DropShadow()
-    var discover:SearchViewController!
+    var discover:DiscoverViewController!
     var Favorite:FavoriteViewController!
     var home:HomeViewController!
     var Mainwall:BaseViewController!
@@ -78,7 +78,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         
         Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
-        discover = discoverBoard.instantiateViewControllerWithIdentifier("Search") as! SearchViewController
+        discover = discoverBoard.instantiateViewControllerWithIdentifier("Discover") as! DiscoverViewController
         
         home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
         
@@ -170,7 +170,8 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             
         case 2:
             
-            let cameraBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            
+            /*let cameraBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
             let messageBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             
@@ -191,7 +192,9 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             self.navigationController?.navigationBarHidden = false
             self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
             self.navigationItem.rightBarButtonItems = [search,camera]
-            self.navigationItem.leftBarButtonItem = message
+            self.navigationItem.leftBarButtonItem = message*/
+            
+            self.navigationController?.navigationBarHidden = true
             
             
         case 3:

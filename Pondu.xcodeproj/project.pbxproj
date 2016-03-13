@@ -47,6 +47,7 @@
 		4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8371C8A0B620053FBCD /* ChatCell.swift */; };
 		4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */; };
 		4D4278841C9368240012B72D /* ChatImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278831C9368240012B72D /* ChatImageController.swift */; };
+		4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278851C952FD90012B72D /* DiscoverViewController.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
@@ -173,6 +174,7 @@
 		4D32A8371C8A0B620053FBCD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4D4278831C9368240012B72D /* ChatImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatImageController.swift; sourceTree = "<group>"; };
+		4D4278851C952FD90012B72D /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */,
 				4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */,
 				4D4278831C9368240012B72D /* ChatImageController.swift */,
+				4D4278851C952FD90012B72D /* DiscoverViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */,
 				4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */,
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
+				4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */,
 				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
 				4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */,
 				4DE7CC961C82B19300D83075 /* Date.swift in Sources */,
