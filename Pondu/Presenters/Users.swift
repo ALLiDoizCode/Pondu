@@ -26,6 +26,19 @@ class theUser {
         user.savePassWord(email)
     }
     
-    
+    func getUsers(completion:(users:[userData]) -> Void){
+        
+        SwiftEventBus.onBackgroundThread(self, name: "User") { result in
+            
+            let data:[userData] = (result.object as? [userData])!
+            
+            
+            SwiftEventBus.unregister(self, name: "User")
+            
+            completion(users: data)
+        }
+        
+        user.userQuery()
+    }
    
 }

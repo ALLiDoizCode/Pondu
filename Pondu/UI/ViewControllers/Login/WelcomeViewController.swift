@@ -21,12 +21,12 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        /*let user = PFUser.currentUser()
+        let user = PFUser.currentUser()
         
         if user?.username != nil {
             
             self.performSegueWithIdentifier("Login", sender: self)
-        }*/
+        }
         
         topLabel.text = "Welcome"
         topLabel.morphingEffect = .Evaporate

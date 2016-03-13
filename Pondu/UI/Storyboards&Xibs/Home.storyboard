@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -54,9 +54,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="157" y="11" width="86" height="21"/>
-                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7F-U1-VN8">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -149,11 +146,11 @@
                                         <exclude reference="cfr-6S-57o"/>
                                         <exclude reference="mZZ-sO-UYP"/>
                                         <exclude reference="uFj-SM-EaJ"/>
-                                        <exclude reference="0Yc-tF-De1"/>
-                                        <exclude reference="GTh-VZ-xO7"/>
                                         <exclude reference="af4-vY-6hb"/>
                                         <exclude reference="l7z-vJ-ao8"/>
                                         <exclude reference="tQQ-oU-A3Z"/>
+                                        <exclude reference="0Yc-tF-De1"/>
+                                        <exclude reference="GTh-VZ-xO7"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -168,11 +165,11 @@
                                         <include reference="cfr-6S-57o"/>
                                         <include reference="mZZ-sO-UYP"/>
                                         <include reference="uFj-SM-EaJ"/>
-                                        <include reference="0Yc-tF-De1"/>
-                                        <include reference="GTh-VZ-xO7"/>
                                         <include reference="af4-vY-6hb"/>
                                         <include reference="l7z-vJ-ao8"/>
                                         <include reference="tQQ-oU-A3Z"/>
+                                        <include reference="0Yc-tF-De1"/>
+                                        <include reference="GTh-VZ-xO7"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -277,6 +274,9 @@
                                 <exclude reference="0xf-ek-asC"/>
                                 <exclude reference="8V4-sE-Dgi"/>
                                 <exclude reference="Ogp-zP-ah8"/>
+                                <exclude reference="8HH-bi-6oj"/>
+                                <exclude reference="dhK-8P-r9O"/>
+                                <exclude reference="tAU-pd-ts4"/>
                                 <exclude reference="6ft-Q0-IHn"/>
                                 <exclude reference="ay8-nD-WsR"/>
                                 <exclude reference="jiA-Iq-aKz"/>
@@ -284,9 +284,6 @@
                                 <exclude reference="G3K-Ic-DQj"/>
                                 <exclude reference="Xnq-kq-zP9"/>
                                 <exclude reference="ZkB-pd-gVg"/>
-                                <exclude reference="8HH-bi-6oj"/>
-                                <exclude reference="dhK-8P-r9O"/>
-                                <exclude reference="tAU-pd-ts4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -300,6 +297,9 @@
                                 <include reference="0xf-ek-asC"/>
                                 <include reference="8V4-sE-Dgi"/>
                                 <include reference="Ogp-zP-ah8"/>
+                                <include reference="8HH-bi-6oj"/>
+                                <include reference="dhK-8P-r9O"/>
+                                <include reference="tAU-pd-ts4"/>
                                 <include reference="6ft-Q0-IHn"/>
                                 <include reference="ay8-nD-WsR"/>
                                 <include reference="jiA-Iq-aKz"/>
@@ -307,9 +307,6 @@
                                 <include reference="G3K-Ic-DQj"/>
                                 <include reference="Xnq-kq-zP9"/>
                                 <include reference="ZkB-pd-gVg"/>
-                                <include reference="8HH-bi-6oj"/>
-                                <include reference="dhK-8P-r9O"/>
-                                <include reference="tAU-pd-ts4"/>
                             </mask>
                         </variation>
                     </view>

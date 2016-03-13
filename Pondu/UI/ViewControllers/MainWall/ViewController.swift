@@ -69,6 +69,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         mainWall.eventPost { (result) -> Void in
             
             self.array = result

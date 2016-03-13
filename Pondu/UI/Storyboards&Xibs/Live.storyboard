@@ -8,7 +8,7 @@
         <!--Live View Controller-->
         <scene sceneID="Zce-xM-y9y">
             <objects>
-                <viewController id="9v5-Az-cYl" customClass="LiveViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Live" id="9v5-Az-cYl" customClass="LiveViewController" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lIB-HH-tkf"/>
                         <viewControllerLayoutGuide type="bottom" id="Bn0-vM-wCZ"/>

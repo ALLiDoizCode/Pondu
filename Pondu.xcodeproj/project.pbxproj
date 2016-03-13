@@ -37,7 +37,16 @@
 		4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436291C13D0330032FB27 /* LoginViewController.swift */; };
 		4D2BE9A91C1CF893001810BB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9A81C1CF893001810BB /* School.swift */; };
 		4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */; };
+		4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2ED4FF1C8FD216007B6632 /* MessageImageCell.swift */; };
+		4D32A82A1C88D94A0053FBCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8291C88D94A0053FBCD /* Messages.swift */; };
+		4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82D1C88DF7A0053FBCD /* MessageList.swift */; };
+		4D32A8301C88E10D0053FBCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A82F1C88E10D0053FBCD /* Message.swift */; };
+		4D32A8321C88E4580053FBCD /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8311C88E4580053FBCD /* DropShadow.swift */; };
+		4D32A8341C89E6EF0053FBCD /* PresentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */; };
+		4D32A8361C8A0B1B0053FBCD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */; };
+		4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8371C8A0B620053FBCD /* ChatCell.swift */; };
 		4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */; };
+		4D4278841C9368240012B72D /* ChatImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278831C9368240012B72D /* ChatImageController.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
@@ -154,7 +163,16 @@
 		4D2436291C13D0330032FB27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4D2BE9A81C1CF893001810BB /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		4D2ED4FF1C8FD216007B6632 /* MessageImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageImageCell.swift; sourceTree = "<group>"; };
+		4D32A8291C88D94A0053FBCD /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		4D32A82D1C88DF7A0053FBCD /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
+		4D32A82F1C88E10D0053FBCD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4D32A8311C88E4580053FBCD /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
+		4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentMessage.swift; sourceTree = "<group>"; };
+		4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4D32A8371C8A0B620053FBCD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4D4278831C9368240012B72D /* ChatImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatImageController.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +281,8 @@
 				4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */,
 				4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */,
 				4DFADB101C81006B00A61AAA /* CommentCell.swift */,
+				4D32A8371C8A0B620053FBCD /* ChatCell.swift */,
+				4D2ED4FF1C8FD216007B6632 /* MessageImageCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -338,6 +358,8 @@
 				4D0CC3D71C27719900843328 /* ImageViewController.swift */,
 				4DF91A881C2B683B008E39AF /* SearchViewController.swift */,
 				4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */,
+				4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */,
+				4D4278831C9368240012B72D /* ChatImageController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -422,6 +444,8 @@
 				4D8828271C76A7DA00604DE3 /* Comment.swift */,
 				4D8828291C76A90800604DE3 /* Content.swift */,
 				4DE7CC951C82B19300D83075 /* Date.swift */,
+				4D32A82D1C88DF7A0053FBCD /* MessageList.swift */,
+				4D32A82F1C88E10D0053FBCD /* Message.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -451,6 +475,7 @@
 				4D8828251C7697D200604DE3 /* AddContent.swift */,
 				4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */,
 				4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */,
+				4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -469,6 +494,7 @@
 				4DD73EED1BDEC254006055E9 /* SignUp.swift */,
 				4DD73EEF1BDEC25F006055E9 /* Login.swift */,
 				4DD73EF51BDEF844006055E9 /* ParseComments.swift */,
+				4D32A8291C88D94A0053FBCD /* Messages.swift */,
 				4D8828231C76958400604DE3 /* LiveContent.swift */,
 				4DD1749D1BDD793F00B64E0B /* Presenters */,
 				4DC648A61C83CB1B00F92C74 /* Cloud.swift */,
@@ -484,6 +510,7 @@
 				4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */,
 				4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */,
 				4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */,
+				4D32A8311C88E4580053FBCD /* DropShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -755,6 +782,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */,
+				4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */,
+				4D4278841C9368240012B72D /* ChatImageController.swift in Sources */,
 				4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */,
 				4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */,
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,
@@ -767,6 +796,8 @@
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
+				4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */,
+				4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
 				4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */,
 				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
@@ -775,6 +806,7 @@
 				4DC9AFC01C7A7F4C00C205B8 /* MediaData.swift in Sources */,
 				4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */,
 				4D01CA801C0AD3FB0000F367 /* LiveViewController.swift in Sources */,
+				4D32A8321C88E4580053FBCD /* DropShadow.swift in Sources */,
 				4D8668401BE9A98600591DF6 /* MakeParty.swift in Sources */,
 				4D8828281C76A7DA00604DE3 /* Comment.swift in Sources */,
 				4DF1F11D1BFF922C001A96C5 /* DateViewController.swift in Sources */,
@@ -795,6 +827,7 @@
 				4D86683E1BE9902200591DF6 /* makeEvent.swift in Sources */,
 				4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */,
 				4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */,
+				4D32A8341C89E6EF0053FBCD /* PresentMessage.swift in Sources */,
 				4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */,
 				4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
@@ -807,6 +840,7 @@
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
 				4D0CC3D81C27719900843328 /* ImageViewController.swift in Sources */,
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
+				4D32A8301C88E10D0053FBCD /* Message.swift in Sources */,
 				4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */,
 				4D88281E1C7684EF00604DE3 /* CreateStory.swift in Sources */,
 				4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */,
@@ -818,6 +852,7 @@
 				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
 				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4DF91A891C2B683B008E39AF /* SearchViewController.swift in Sources */,
+				4D32A82A1C88D94A0053FBCD /* Messages.swift in Sources */,
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,
 				4D8828241C76958400604DE3 /* LiveContent.swift in Sources */,
 				4D88282A1C76A90900604DE3 /* Content.swift in Sources */,
@@ -831,6 +866,7 @@
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
 				4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */,
+				4D32A8361C8A0B1B0053FBCD /* ChatViewController.swift in Sources */,
 				4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */,
 				4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */,
 				4DC5FAEC1BFA5C05006AFE00 /* FavoriteStoryCell.swift in Sources */,
@@ -959,14 +995,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Markinson Sainvil (F3B3S4LZWF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Mission8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Downloads/Pondu-ReBuilding-Wall 10/Pondu/Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -979,14 +1015,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Markinson Sainvil (F3B3S4LZWF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pondu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Mission8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Downloads/Pondu-ReBuilding-Wall 10/Pondu/Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Pondu/Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

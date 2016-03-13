@@ -27,9 +27,9 @@ class Cloud {
         currentInstallation.saveInBackground()
     }
     
-    func pushComment(objectId:String){
+    func pushComment(objectId:String,type:String){
         
-        PFCloud.callFunctionInBackground("PushComment", withParameters: ["channel":objectId]) {
+        PFCloud.callFunctionInBackground("PushComment", withParameters: ["channel":objectId,"theType":type]) {
             (response: AnyObject?, error: NSError?) -> Void in
             
             if error != nil {

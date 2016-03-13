@@ -23,6 +23,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
 
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
     let videoTypes:[String] = ["mov","mp4", "m4v","3gp","MOV"]
+    
     let comments:[String] = ["asdasdasdsadasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdsadasdasdasdasdasdasdasdasdsadasasdasdasdasdasdasdasdasdsadas comment", "more comments", "3rd test commemnt"]
     
     var fileArray:[String]! = []
@@ -39,7 +40,7 @@ class LiveViewController: UIViewController,UIViewControllerTransitioningDelegate
     let swipeRightRect = UISwipeGestureRecognizer()
     
     override func viewWillAppear(animated: Bool) {
-         imageViewObject.image = nil
+        imageViewObject.image = nil
         
         presenter.getContent(eventId) { (Data) -> Void in
             

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
+import SwiftEventBus
+import Parse
 
 class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
@@ -15,14 +18,42 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     let identifier = "Search"
     let identifier2 = "camera"
     
+    var users:[userData] = []
+    var filtered:[userData] = []
+    
+    var searchActive : Bool = false
+    
+    let presenter = theUser()
+    let room = PresentMessage()
+    
     lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
     
     var searchBtn:UIBarButtonItem!
     var cameraRightBtn:UIBarButtonItem!
     var messageRightBtn:UIBarButtonItem!
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        searchActive = false
+        
+        self.users.removeAll()
+        
+        presenter.getUsers { (usersInfo) -> Void in
+            
+            self.users = usersInfo
+            
+            print("we have \(self.users.count) users")
+            
+            self.reload()
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
         
         let messageBtn = UIButton(frame: CGRectMake(0, 0, 20, 20))
         let cameraBtn = UIButton(frame: CGRectMake(0, 0, 30, 30))
@@ -82,43 +113,139 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
     }
     
+    //Mark searcbar Protocols
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        var tempArray:[String] = []
+        var tempFilter:[String] = []
+        
+        for var i = 0; i < users.count; i++ {
+            
+            tempArray.append(users[i].userName)
+            
+        }
+        
+        tempFilter = tempArray.filter({ (text) -> Bool in
+            let tmp: NSString = text
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(tempFilter.count == 0){
+            searchActive = false;
+        } else {
+            
+            searchActive = true;
+            
+            filtered = []
+            
+            for var i = 0; i < tempFilter.count; i++ {
+                
+                for var j = 0; j < users.count; j++ {
+                    
+                    if tempFilter[i] == users[j].userName {
+                        
+                        filtered.append(users[j])
+                    }
+                    
+                }
+            }
+        }
+        
+        self.reload()
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        if searchActive {
+            
+            return filtered.count;
+            
+        }else{
+            
+            return users.count;
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! SearchCell
         
-    
+        if searchActive {
+            
+            if filtered.count != 0 {
+                
+                print(filtered.count)
+                cell.icon.kf_setImageWithURL(NSURL(string:filtered[indexPath.row].photo)!, placeholderImage: UIImage(named: "placeholder"))
+                cell.label.text = filtered[indexPath.row].userName
+            }
+            
+        }else {
+            
+            cell.icon.kf_setImageWithURL(NSURL(string:users[indexPath.row].photo)!, placeholderImage: UIImage(named: "placeholder"))
+            cell.label.text = users[indexPath.row].userName
+            
+        }
         
-        return cell
+        return cell;
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-     
-    }
-    
-    //Mark searbar delgate protocol
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        
-        searchBar.hidden = true
-        searchBar.resignFirstResponder()
-        self.navigationItem.leftBarButtonItem = searchBtn
-        
-    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "room" {
+            
+            print("room made")
+            
+            let controller = segue.destinationViewController as! ChatViewController
+            
+            let indexPath = self.tableView.indexPathForSelectedRow
+            
+             if searchActive {
+                
+                room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: filtered[(indexPath?.row)!].objectID, completion: { (data) -> Void in
+                    
+                   print("user objectID \(self.filtered[(indexPath?.row)!].objectID)")
+                    
+                    controller.objectId = data
+                })
+                
+             }else {
+                
+                room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: users[(indexPath?.row)!].objectID, completion: { (data) -> Void in
+                    
+                    print("user objectID \(self.users[(indexPath?.row)!].objectID)")
+                    
+                    controller.objectId = data
+                })
+            }
+            
+        }
     }
-    */
+    
 
 }
