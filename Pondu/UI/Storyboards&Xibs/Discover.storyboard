@@ -78,6 +78,9 @@
                                         <include reference="eKv-6W-b8d"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="837-fA-ggp" kind="show" id="hdD-5I-8h2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWp-XQ-6dv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -604,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1L-s4-jUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774.5" y="2385"/>
+            <point key="canvasLocation" x="1710" y="2403"/>
         </scene>
         <!--Chat Image Controller-->
         <scene sceneID="5TQ-IW-Ir3">
@@ -1651,6 +1654,7 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="hdD-5I-8h2"/>
         <segue reference="jJ8-Kn-zNd"/>
         <segue reference="Lb5-lk-x21"/>
     </inferredMetricsTieBreakers>

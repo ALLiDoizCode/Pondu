@@ -307,11 +307,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/UI/ViewControllers/Discover/CameraViewController.swift"
-            timestampString = "476751350.301968"
+            timestampString = "479580084.335961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "CameraViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -18,6 +18,8 @@ class CameraViewController: UIViewController {
     var camera:LLSimpleCamera!
     var snapButton:UIButton!
     var exit:UIButton!
+    var flash:UIButton!
+    var toggleCam:UIButton!
     var switchButton:UIButton! = UIButton()
     var circleSlider:CircleSlider!
     var circleProgress: CircleSlider!
@@ -45,6 +47,8 @@ class CameraViewController: UIViewController {
         makeSnap()
         toggleCameraPosition()
         makeExit()
+        makeFlash()
+        makeToggle()
         
     }
     
@@ -53,12 +57,9 @@ class CameraViewController: UIViewController {
         tapRect = UITapGestureRecognizer(target: self, action: "tap:")
         tapRect.numberOfTapsRequired = 1
         tapRect.numberOfTouchesRequired = 1
-            
         
-        
-    
         self.snapButton = UIButton(type: .System)
-        self.snapButton = UIButton(frame: CGRect(x: self.view.layer.frame.midX - 30, y:400, width: 70, height: 70))
+        self.snapButton = UIButton(frame: CGRect(x: self.camera.view.frame.midX - 20, y:camera.view.frame.height - 60, width: 50, height: 50))
         self.snapButton.clipsToBounds = true
         self.snapButton.layer.cornerRadius = self.snapButton.frame.height/2
         self.snapButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -73,9 +74,27 @@ class CameraViewController: UIViewController {
     func makeExit(){
         
         self.exit = UIButton(type: .System)
-        self.exit = UIButton(frame: CGRect(x:270, y:10, width: 40, height: 40))
-        self.exit.setImage(UIImage(named: "exit"), forState: .Normal)
+        self.exit = UIButton(frame: CGRect(x: self.view.frame.width - 40, y: 10.0, width: 20.0, height: 20.0))
+        self.exit.setImage(UIImage(named: "x2"), forState: .Normal)
         self.view.addSubview(self.exit)
+    }
+    
+    func makeFlash(){
+        
+        self.flash = UIButton(type: .System)
+        self.flash = UIButton(frame: CGRect(x: 20, y: 10.0, width: 20.0, height: 20.0))
+        self.flash.setImage(UIImage(named:"flash-off"), forState: .Normal)
+        self.view.addSubview(self.flash)
+    }
+    
+    func makeToggle(){
+        
+        self.toggleCam = UIButton(type: .System)
+        self.toggleCam = UIButton(frame: CGRect(x: self.camera.view.frame.midX - 5, y: 10.0, width: 20.0, height: 20.0))
+        self.toggleCam.setImage(UIImage(named:"camera-1"), forState: .Normal)
+        self.toggleCam.layer.rasterizationScale = UIScreen.mainScreen().scale
+        self.toggleCam.layer.shouldRasterize = true
+        self.view.addSubview(self.toggleCam)
     }
     
     func tap(sender:UITapGestureRecognizer) {
