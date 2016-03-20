@@ -9,11 +9,10 @@
 import UIKit
 import LLSimpleCamera
 import CircleSlider
+import FXBlurView
 
 
 class CameraViewController: UIViewController {
-    
-    
     
     var camera:LLSimpleCamera!
     var snapButton:UIButton!
@@ -26,6 +25,7 @@ class CameraViewController: UIViewController {
     var timer:NSTimer!
     var progressValue:Float = 0
     var tapRect:UITapGestureRecognizer!
+    var blurView:FXBlurView!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,7 +49,7 @@ class CameraViewController: UIViewController {
         makeExit()
         makeFlash()
         makeToggle()
-        
+        makeBlur()
     }
     
     func makeSnap(){
@@ -95,6 +95,16 @@ class CameraViewController: UIViewController {
         self.toggleCam.layer.rasterizationScale = UIScreen.mainScreen().scale
         self.toggleCam.layer.shouldRasterize = true
         self.view.addSubview(self.toggleCam)
+    }
+    
+    func makeBlur(){
+        
+        self.blurView = FXBlurView(frame: CGRect(x: 0, y: self.camera.view.frame.height, width: self.camera.view.frame.width, height: 40))
+        self.blurView.blurRadius = 20
+        self.blurView.blurEnabled = true
+        self.blurView.backgroundColor = UIColor.blackColor()
+        self.blurView.tintColor = UIColor.blackColor()
+        self.camera.view.addSubview(self.blurView)
     }
     
     func tap(sender:UITapGestureRecognizer) {
