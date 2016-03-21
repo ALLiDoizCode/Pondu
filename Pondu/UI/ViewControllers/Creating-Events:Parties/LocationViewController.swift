@@ -148,6 +148,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
                 print(country)
                 
                 address.text = "\(locationName) \(city) \(state) \(zip)"
+                
+                let lat = containsPlacemark.location?.coordinate.latitude
+                let long = containsPlacemark.location?.coordinate.longitude
             }
             
             /*if let state = containsPlacemark.addressDictionary!["State"] as? NSString {

@@ -26,11 +26,15 @@ class createEvent {
             
             let createdEvent = result.object as! makeEvent
             
+            let location:PFGeoPoint = PFGeoPoint(latitude: createdEvent.lat, longitude: createdEvent.long)
+            
             wall["CreatedBy"] = currentUser
             wall["Post"] = createdEvent.post
             wall["Name"] = createdEvent.name
             wall["Live"] = createdEvent.live
             wall["Likes"] = 0
+            wall["Address"] = createdEvent.address
+            wall["loaciton"] = location
             wall["Privacy"] = createdEvent.privacy
 
             wall.saveInBackgroundWithBlock {

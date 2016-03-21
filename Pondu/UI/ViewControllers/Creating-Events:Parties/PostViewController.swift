@@ -27,6 +27,8 @@ class PostViewController: UIViewController,UITextViewDelegate {
     var timeEnd:String!
     var date:String!
     var address:String!
+    var lat:Double!
+    var long:Double!
     var privacy:Bool!
     
     let PLACEHOLDER_TEXT = "Type here"
@@ -151,7 +153,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
         if type == false && textVIew.text != ""{
             
             
-            makeEvent.event("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy)
+            makeEvent.event("", thePost: textVIew.text, theAddress: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy,theLat: lat,theLong: long)
             
         }else if type == true && textVIew.text != ""{
             
