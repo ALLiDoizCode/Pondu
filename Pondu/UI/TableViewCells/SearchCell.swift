@@ -9,23 +9,19 @@
 import UIKit
 
 class SearchCell: UITableViewCell {
+    
+    let presenter = theUser()
 
-    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var add: UIButton!
-    @IBOutlet weak var message: UIButton!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var label: UILabel!
+    
+    var objectId:String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        
        
-    }
-
- 
-    @IBAction func addBtn(sender: AnyObject) {
-    }
-    
-    @IBAction func messageBtn(sender: AnyObject) {
     }
     
     override func layoutSubviews() {
@@ -42,6 +38,23 @@ class SearchCell: UITableViewCell {
         
     }
     
+    @IBAction func follow(sender: AnyObject) {
+        
+        presenter.addUser(objectId) { (success) -> Void in
+            
+            if success == true {
+                
+                print("users added")
+                
+                
+                self.add.setBackgroundImage(UIImage(named: "Checkmark"), forState: .Normal)
+                
+            }else {
+                
+                print("the user was not added")
+            }
+        }
+    }
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

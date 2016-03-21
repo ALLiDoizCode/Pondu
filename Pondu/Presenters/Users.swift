@@ -54,5 +54,19 @@ class theUser {
         
         user.follow(objectId)
     }
+    
+    func myFollow(completion:(data:[String]) -> Void){
+        
+        SwiftEventBus.onMainThread(self, name: "myFollow") { (notification) -> Void in
+            
+            let info = notification.object as! [String]
+            
+            completion(data: info)
+            
+            SwiftEventBus.unregister("myFollow")
+        }
+        
+        user.myFollow()
+    }
    
 }

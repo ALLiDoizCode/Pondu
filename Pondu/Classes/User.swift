@@ -19,13 +19,11 @@ class userData {
     var phone:String = ""
     var email:String = ""
     var story:String = ""
-    var Favorites:[String] = []
-    var partyFavorites:[String] = []
     var photo:String = ""
     var fav:Bool!
     var year:String!
     
-    init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,theFavorites:[String],thePartyFavorites:[String],thePhoto:String,theFav:Bool,theYear:String){
+    init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,thePhoto:String,theFav:Bool,theYear:String){
         
         
         objectID = theObjectID
@@ -37,8 +35,6 @@ class userData {
         phone = thePhone
         email = theEmail
         story = theStory
-        Favorites = theFavorites
-        partyFavorites = thePartyFavorites
         photo = thePhoto
         fav = theFav
         year = theYear

@@ -38,7 +38,8 @@ class parseUser {
     func userQuery(){
         let query = PFUser.query()
         var userInfo:[userData] = []
-        //var theUser:userData!
+        
+        query?.whereKey("objectId", notEqualTo: (currentUser?.objectId)!)
         query!.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -55,7 +56,7 @@ class parseUser {
                         let photo = object.objectForKey("photo") as! PFFile!
                    
                         
-                        let theUser = userData(theObjectID: userID!, theArea: "", theFullName: "", theUserName: userName, thePassWord: "", theBio: "", thePhone: "", theEmail: "", theStory: "", theFavorites: [""], thePartyFavorites: [""], thePhoto: photo.url!,theFav:true,theYear:"" )
+                        let theUser = userData(theObjectID: userID!, theArea: "", theFullName: "", theUserName: userName, thePassWord: "", theBio: "", thePhone: "", theEmail: "", theStory: "", thePhoto: photo.url!,theFav:true,theYear:"" )
                      
                         userInfo.append(theUser)
       
@@ -104,6 +105,8 @@ class parseUser {
                 
                 print("user added to favorites")
                 
+                SwiftEventBus.post("addUser", sender: success)
+                
             }else {
                 
                 print("user was not added to favorites")
@@ -111,4 +114,30 @@ class parseUser {
         })
     }
     
+    func myFollow(){
+        
+        var following:[String] = []
+        
+        let relation = currentUser?.relationForKey("Following")
+        
+        let relationQuery = relation?.query()
+        
+        relationQuery?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            
+            guard (objects != nil) else {
+                
+                return
+            }
+            
+            for object in objects! {
+                
+                let objectId = object.objectId
+                
+                following.append(objectId!)
+            }
+            
+            SwiftEventBus.post("myFollow", sender: following)
+            
+        })
+    }
 }
