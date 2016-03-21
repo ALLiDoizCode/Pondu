@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("incoming job")
         
-       /* if UIApplication.sharedApplication().applicationState == .Active {
+       if UIApplication.sharedApplication().applicationState == .Active {
             
             SwiftEventBus.postToMainThread("NewComments")
             
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             PFPush.handlePush(userInfo)
             SwiftEventBus.postToMainThread("NewComments")
-        }*/
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

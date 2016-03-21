@@ -35,6 +35,17 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewWillAppear(animated: Bool) {
         
+        presenter.addUser("wicjUVVfyY") { (success) -> Void in
+            
+            if success == true {
+                
+                print("users added")
+            }else {
+                
+                print("the user was not added")
+            }
+        }
+        
         searchActive = false
         
         self.users.removeAll()

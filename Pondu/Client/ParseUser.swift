@@ -12,6 +12,8 @@ import Parse
 
 class parseUser {
     
+    let currentUser = PFUser.currentUser()
+    
     func saveUserInfo(name:String,userName:String,email:String,phone:String,bio:String){
         
         let user = PFUser.currentUser()
@@ -77,6 +79,36 @@ class parseUser {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
+    }
+    
+    func follow(objectId:String){
+        
+        let query = PFUser.query()
+        var user:PFUser!
+        
+        do {
+            
+            user = try query?.getObjectWithId(objectId) as! PFUser
+            
+        }catch _{
+            
+        }
+        
+        let relation = currentUser?.relationForKey("Following")
+        
+        relation?.addObject(user)
+        
+        currentUser?.saveInBackgroundWithBlock({ (success, error) -> Void in
+            
+            if success == true {
+                
+                print("user added to favorites")
+                
+            }else {
+                
+                print("user was not added to favorites")
+            }
+        })
     }
     
 }

@@ -40,5 +40,19 @@ class theUser {
         
         user.userQuery()
     }
+    
+    func addUser(objectId:String,completion:(success:Bool) -> Void){
+        
+        SwiftEventBus.onMainThread(self, name: "addUser") { (notification) -> Void in
+            
+            let result = notification.object as! Bool
+            
+            completion(success: result)
+            
+            SwiftEventBus.unregister("addUser")
+        }
+        
+        user.follow(objectId)
+    }
    
 }
