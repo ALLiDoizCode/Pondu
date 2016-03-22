@@ -155,200 +155,203 @@ class Messages {
                 
             }
             
-            guard let createdByIcon:PFFile = theCreatedBy.objectForKey("photo") as? PFFile else {
+            if theCreatedBy != nil {
                 
-                return
-            }
-            
-            print(createdByIcon.url)
-            
-            
-            guard let recipient:PFUser = list.objectForKey("Recipient") as? PFUser else {
-                
-                return
-            }
-            
-            do {
-                
-                try theRecipient = recipient.fetch()
-                
-            }catch _{
-                
-            }
-            
-            
-            guard let recipientIcon:PFFile = theRecipient.objectForKey("photo") as? PFFile else {
-                
-                return
-            }
-            
-            
-            
-            guard let status:Bool = list.objectForKey("Status") as? Bool else {
-                
-                return
-            }
-            
-            print("creator ",theCreatedBy.objectId)
-            print("current ", currentUser?.objectId)
-            
-            if theCreatedBy.objectId == currentUser?.objectId {
-                
-                print("I am creator")
-                
-                guard let messageRelation:PFRelation = list.relationForKey("Message") else {
+                guard let createdByIcon:PFFile = theCreatedBy.objectForKey("photo") as? PFFile else {
                     
                     return
                 }
                 
-                let messageQuery = messageRelation.query()
-                messageQuery?.orderByAscending("createdAt")
+                print(createdByIcon.url)
+                
+                
+                guard let recipient:PFUser = list.objectForKey("Recipient") as? PFUser else {
+                    
+                    return
+                }
                 
                 do {
                     
-                    try messageObject = messageQuery?.findObjects()
+                    try theRecipient = recipient.fetch()
                     
-                }catch _ {
+                }catch _{
                     
                 }
                 
-                guard let userMessages = messageObject else {
+                
+                guard let recipientIcon:PFFile = theRecipient.objectForKey("photo") as? PFFile else {
                     
                     return
                 }
                 
-                /*for userMessage in userMessages {
+                
+                
+                guard let status:Bool = list.objectForKey("Status") as? Bool else {
                     
-                    guard let sender:PFUser = userMessage.objectForKey("Sender") as? PFUser else {
+                    return
+                }
+                
+                print("creator ",theCreatedBy.objectId)
+                print("current ", currentUser?.objectId)
+                
+                if theCreatedBy.objectId == currentUser?.objectId {
+                    
+                    print("I am creator")
+                    
+                    guard let messageRelation:PFRelation = list.relationForKey("Message") else {
                         
                         return
                     }
                     
+                    let messageQuery = messageRelation.query()
+                    messageQuery?.orderByAscending("createdAt")
+                    
                     do {
                         
-                        try theSender = sender.fetch()
+                        try messageObject = messageQuery?.findObjects()
                         
+                    }catch _ {
+                        
+                    }
+                    
+                    guard let userMessages = messageObject else {
+                        
+                        return
+                    }
+                    
+                    /*for userMessage in userMessages {
+                    
+                    guard let sender:PFUser = userMessage.objectForKey("Sender") as? PFUser else {
+                    
+                    return
+                    }
+                    
+                    do {
+                    
+                    try theSender = sender.fetch()
+                    
                     }catch _{
-                        
+                    
                     }
                     
                     guard let userName = theSender.username else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     guard let userIcon:PFFile = theSender.objectForKey("photo") as? PFFile else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     guard let description:String = userMessage.objectForKey("Description") as? String else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     guard let date = userMessage.createdAt else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     if let media:PFFile = userMessage.objectForKey("Media") as? PFFile {
-                        
-                        let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: media.url!, theSender: userName, theIcon: userIcon.url!,theDate: date)
-                        
-                        messages.append(senderMessage)
-                        
+                    
+                    let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: media.url!, theSender: userName, theIcon: userIcon.url!,theDate: date)
+                    
+                    messages.append(senderMessage)
+                    
                     }else {
-                        
-                        let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: "", theSender: userName, theIcon: userIcon.url!,theDate: date)
-                        
-                        messages.append(senderMessage)
+                    
+                    let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: "", theSender: userName, theIcon: userIcon.url!,theDate: date)
+                    
+                    messages.append(senderMessage)
                     }
-                }*/
-                
-                let theList = MessageList(theIcon: recipientIcon.url, theName: theRecipient.username!, theTime: list.createdAt!, theStatus: status, theMessages: messages, theCreadtedBy: theCreatedBy.objectId!, theRecipient: theRecipient.objectId!, theObjectId: objectId)
-                
-                convo.append(theList)
-                
-                
-                
-            }else if theRecipient.objectId == currentUser?.objectId {
-                
-                guard let messageRelation:PFRelation = list.relationForKey("Message") else {
+                    }*/
                     
-                    return
-                }
-                
-                let messageQuery = messageRelation.query()
-                messageQuery?.orderByAscending("createdAt")
-                
-                do {
+                    let theList = MessageList(theIcon: recipientIcon.url, theName: theRecipient.username!, theTime: list.createdAt!, theStatus: status, theMessages: messages, theCreadtedBy: theCreatedBy.objectId!, theRecipient: theRecipient.objectId!, theObjectId: objectId)
                     
-                    try messageObject = messageQuery?.findObjects()
+                    convo.append(theList)
                     
-                }catch _ {
                     
-                }
-                
-                guard let userMessages = messageObject else {
                     
-                    return
-                }
-                
-                /*for userMessage in userMessages {
+                }else if theRecipient.objectId == currentUser?.objectId {
                     
-                    guard let sender:PFUser = userMessage.objectForKey("Sender") as? PFUser else {
+                    guard let messageRelation:PFRelation = list.relationForKey("Message") else {
                         
                         return
                     }
+                    
+                    let messageQuery = messageRelation.query()
+                    messageQuery?.orderByAscending("createdAt")
                     
                     do {
                         
-                        try theSender = sender.fetch()
+                        try messageObject = messageQuery?.findObjects()
                         
+                    }catch _ {
+                        
+                    }
+                    
+                    guard let userMessages = messageObject else {
+                        
+                        return
+                    }
+                    
+                    /*for userMessage in userMessages {
+                    
+                    guard let sender:PFUser = userMessage.objectForKey("Sender") as? PFUser else {
+                    
+                    return
+                    }
+                    
+                    do {
+                    
+                    try theSender = sender.fetch()
+                    
                     }catch _{
-                        
+                    
                     }
                     
                     guard let userName = sender.username else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     guard let userIcon:PFFile = theSender.objectForKey("photo") as? PFFile else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     guard let description:String = userMessage.objectForKey("Description") as? String else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     guard let date = userMessage.createdAt else {
-                        
-                        return
+                    
+                    return
                     }
                     
                     if let media:PFFile = userMessage.objectForKey("Media") as? PFFile {
-                        
-                        let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: media.url!, theSender: userName, theIcon: userIcon.url!,theDate: date)
-                        
-                        messages.append(senderMessage)
-                        
+                    
+                    let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: media.url!, theSender: userName, theIcon: userIcon.url!,theDate: date)
+                    
+                    messages.append(senderMessage)
+                    
                     }else {
-                        
-                        let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: "", theSender: userName, theIcon: userIcon.url!,theDate: date)
-                        
-                        messages.append(senderMessage)
+                    
+                    let senderMessage = Message(theObjectId: userMessage.objectId!, theDescription: description, theMedia: "", theSender: userName, theIcon: userIcon.url!,theDate: date)
+                    
+                    messages.append(senderMessage)
                     }
                     
-                }*/
-                
-                let theList = MessageList(theIcon: createdByIcon.url, theName: theRecipient.username!, theTime: list.createdAt!, theStatus: status, theMessages: messages, theCreadtedBy: theCreatedBy.objectId!, theRecipient: theRecipient.objectId!, theObjectId: objectId)
-                
-                convo.append(theList)
-                
+                    }*/
+                    
+                    let theList = MessageList(theIcon: createdByIcon.url, theName: theRecipient.username!, theTime: list.createdAt!, theStatus: status, theMessages: messages, theCreadtedBy: theCreatedBy.objectId!, theRecipient: theRecipient.objectId!, theObjectId: objectId)
+                    
+                    convo.append(theList)
+                    
+                }
             }
             
         }

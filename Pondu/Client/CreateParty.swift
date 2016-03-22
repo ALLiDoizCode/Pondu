@@ -24,11 +24,14 @@ class createParty {
         SwiftEventBus.onMainThread(self, name: "makeParty") { result in
             
             let createdParty = result.object as! makeParty
+            let location:PFGeoPoint = PFGeoPoint(latitude: createdParty.lat, longitude: createdParty.long)
             
             wall["CreatedBy"] = currentUser
             wall["Post"] = createdParty.post
             wall["Name"] = createdParty.name
             wall["Live"] = createdParty.live
+            wall["Address"] = createdParty.address
+            wall["location"] = location
             wall["Likes"] = 0
             wall["Privacy"] = createdParty.privacy
             

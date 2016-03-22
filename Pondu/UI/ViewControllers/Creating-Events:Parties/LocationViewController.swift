@@ -23,6 +23,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
     var timeEnd:String!
     var date:String!
     var privacy:Bool!
+    var lat:Double!
+    var long:Double!
     
     let locationManager = CLLocationManager()
     
@@ -149,8 +151,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
                 
                 address.text = "\(locationName) \(city) \(state) \(zip)"
                 
-                let lat = containsPlacemark.location?.coordinate.latitude
-                let long = containsPlacemark.location?.coordinate.longitude
+                lat = containsPlacemark.location?.coordinate.latitude
+                long = containsPlacemark.location?.coordinate.longitude
             }
             
             /*if let state = containsPlacemark.addressDictionary!["State"] as? NSString {
@@ -203,6 +205,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             nextViewController.date = date
             nextViewController.address = address.text
             nextViewController.privacy = privacy
+            nextViewController.lat = lat
+            nextViewController.long = long
             print("passing \(type)")
             print("passing \(wallType)")
             print("passing \(date)")

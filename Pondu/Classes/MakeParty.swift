@@ -15,19 +15,23 @@ class makeParty {
     var post:String = ""
     var profilePicture:PFFile!
     var likes:Int = 0
-    var location:String = ""
+    var lat:Double!
+    var long:Double!
+    var address:String!
     var live:Bool = false
     var date:String!
     var startTime:String!
     var endTime:String!
     var privacy:Bool!
     
-    init(theName:String,thePost:String,TheProfilePicture:PFFile,theLocation:String,theLive:Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool){
+    init(theName:String,thePost:String,TheProfilePicture:PFFile,theAddress:String,theLive:Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool,theLat:Double,theLong:Double){
         
         name = theName
         post = thePost
         profilePicture = TheProfilePicture
-        location = theLocation
+        address = theAddress
+        lat = theLat
+        long = theLong
         live = theLive
         likes = thelikes
         date = theDate

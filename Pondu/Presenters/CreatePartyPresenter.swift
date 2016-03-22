@@ -15,7 +15,7 @@ class MakingParty {
     
     let startParty = createParty()
     
-    func party(theName: String, thePost: String,theLocation: String, theLive: Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool){
+    func party(theName: String, thePost: String,theAddress: String, theLive: Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool,theLat:Double,theLong:Double){
         
         startParty.theParty()
         
@@ -23,7 +23,7 @@ class MakingParty {
         
         let profilePictureData = currentUser?.objectForKey("photo") as! PFFile
         
-        let theParty:makeParty = makeParty(theName: theName, thePost: thePost, TheProfilePicture: profilePictureData, theLocation: theLocation, theLive: theLive,thelikes:thelikes,theDate:theDate,theStartTime: theStartTime,theEndTime: theEndTime,thePrivacy:thePrivacy)
+        let theParty:makeParty = makeParty(theName: theName, thePost: thePost, TheProfilePicture: profilePictureData, theAddress:theAddress, theLive: theLive,thelikes:thelikes,theDate:theDate,theStartTime: theStartTime,theEndTime: theEndTime,thePrivacy:thePrivacy,theLat: theLat,theLong: theLong)
         
         SwiftEventBus.post("makeParty", sender: theParty)
     }

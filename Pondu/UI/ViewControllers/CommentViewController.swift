@@ -72,6 +72,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
             return
         }
         
+        print(text)
+        
         presenter.comment(objectId, description: text) { (success) -> Void in
             
             self.presenter.getComments(self.objectId) { (data) -> Void in

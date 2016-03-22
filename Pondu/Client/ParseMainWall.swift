@@ -76,42 +76,45 @@ class ParseMainWall {
                             
                         }
                         
-                        guard let theID = event.objectId else {
+                        if user != nil {
                             
-                            return
-                        }
-                        guard let post:String = event.objectForKey("Post") as! String! else {
+                            guard let theID = event.objectId else {
+                                
+                                return
+                            }
+                            guard let post:String = event.objectForKey("Post") as! String! else {
+                                
+                                return
+                            }
+                            guard let profileName:String = event.objectForKey("Name") as! String! else {
+                                
+                                return
+                            }
                             
-                            return
-                        }
-                        guard let profileName:String = event.objectForKey("Name") as! String! else {
+                            guard let profileImage:PFFile = user.objectForKey("photo") as? PFFile else {
+                                
+                                return
+                            }
                             
-                            return
-                        }
-                        
-                        guard let profileImage:PFFile = user.objectForKey("photo") as? PFFile else {
+                            guard let userName = user.objectForKey("username") as? String else {
+                                
+                                return
+                            }
+                            guard let comments:PFObject = event.objectForKey("Comments") as? PFObject else {
+                                
+                                return
+                            }
+                            guard let content:PFObject = event.objectForKey("LiveContent") as? PFObject else {
+                                
+                                return
+                            }
                             
-                            return
-                        }
-                        
-                        guard let userName = user.objectForKey("username") as? String else {
+                            print("the Event is firing \(post)")
                             
-                            return
-                        }
-                        guard let comments:PFObject = event.objectForKey("Comments") as? PFObject else {
+                            let theEvent = Event(theID: theID, theName: profileName,theUserName:userName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
                             
-                            return
+                            wall.append(theEvent)
                         }
-                        guard let content:PFObject = event.objectForKey("LiveContent") as? PFObject else {
-                            
-                            return
-                        }
-                        
-                        print("the Event is firing \(post)")
-                        
-                        let theEvent = Event(theID: theID, theName: profileName,theUserName:userName, thePost: post, TheProfilePicture: profileImage.url!,theComments:comment,theContent:liveContent)
-                        
-                        wall.append(theEvent)
                         
 
                     }

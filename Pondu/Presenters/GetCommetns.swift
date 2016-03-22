@@ -33,6 +33,8 @@ class Comments {
                 
                 completion(data: comments)
             }
+            
+            SwiftEventBus.unregister("EventComments")
         }
         
         client.comments(objectId)

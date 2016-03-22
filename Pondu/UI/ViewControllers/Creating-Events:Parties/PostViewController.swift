@@ -158,7 +158,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
         }else if type == true && textVIew.text != ""{
             
             
-            makeParty.party("", thePost: textVIew.text, theLocation: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy)
+            makeParty.party("", thePost: textVIew.text, theAddress: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy,theLat: lat,theLong: long)
         }else{
             
             
