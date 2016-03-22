@@ -162,8 +162,6 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             
             SwiftSpinner.show("Uploading Image...")
             
-            newAccount.AccounSetup("",fullName:fullName,userName:username,password:password,Bio:"",email:email,phone:"",photo:image!,stories:image!,theYear:graduation.text!,theSchool:(pickSchool.titleLabel?.text)! )
-            
             print(username)
             print(password)
             print(email)

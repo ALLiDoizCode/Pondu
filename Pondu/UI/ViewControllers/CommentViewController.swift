@@ -33,8 +33,6 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewWillAppear(animated: Bool) {
         
-        theCloud.addChannel(objectId)
-        
         SwiftEventBus.onMainThread(self, name: "NewComments") { result in
             
             self.presenter.getComments(self.objectId) { (data) -> Void in
@@ -62,7 +60,6 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewWillDisappear(animated: Bool) {
         
-        theCloud.removeChannel(objectId)
     }
     
     @IBAction func sendBtn(sender: AnyObject) {
@@ -85,7 +82,6 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
             self.textField.text = ""
             
-            self.theCloud.pushComment(self.objectId,type: "Comment")
         }
     }
     

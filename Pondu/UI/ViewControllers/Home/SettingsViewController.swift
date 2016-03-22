@@ -94,15 +94,13 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
                 email.text != "" &&
                 phone.text != "" &&
                 bio.text != "" {
-                    
-                    user.editProfile(name.text!, userName: userName.text!, email: email.text!, phone: phone.text!, bio: bio.text)
-                    
-                    name.hidden = true
-                    userName.hidden = true
-                    email.hidden = true
-                    phone.hidden = true
-                    bio.hidden = true
-                    editProfile.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+
+                name.hidden = true
+                userName.hidden = true
+                email.hidden = true
+                phone.hidden = true
+                bio.hidden = true
+                editProfile.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
                     
             }else {
                 
@@ -128,8 +126,6 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         if newPass.hidden == false {
             
             if newPass.text != ""  {
-                
-                user.changePassWord(newPass.text!)
                 
                     newPass.hidden = true
                     changePassWord.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)

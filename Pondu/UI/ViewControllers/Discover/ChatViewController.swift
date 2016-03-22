@@ -37,8 +37,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         print("msg id is \(objectId)")
         
-        theCloud.addChannel("M\(objectId)")
-        
         self.data.removeAll()
         
         self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
@@ -64,7 +62,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewWillDisappear(animated: Bool) {
         
-        theCloud.removeChannel("M\(objectId)")
         
     }
 
@@ -135,8 +132,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             self.cameraBtn.setImage(UIImage(named: "cameraImg"), forState: UIControlState.Normal)
             
             self.textField.text = ""
-            
-            self.theCloud.pushComment("M\(self.objectId)",type: "msg")
             
             SwiftEventBus.unregister(self, name: "updateMsg")
             

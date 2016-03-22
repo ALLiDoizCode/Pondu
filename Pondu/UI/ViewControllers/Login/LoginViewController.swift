@@ -59,7 +59,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewController
 
     @IBAction func loginBtn(sender: AnyObject) {
         
-        userLogin.beginLogin(username.text!, password: password.text!)
+        /*userLogin.beginLogin(username.text!, password: password.text!)
         
         SwiftEventBus.onMainThread(self, name: "login") { (result) -> Void in
             
@@ -70,7 +70,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewController
             
             print("login failed")
             SweetAlert().showAlert("Wrong Password or Email", subTitle: ":(", style: AlertStyle.Error)
-        }
+        }*/
+        
+         self.performSegueWithIdentifier(self.mainSegue, sender: self)
         
     }
     

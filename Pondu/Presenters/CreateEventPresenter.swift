@@ -16,7 +16,6 @@ class MakingEvent {
     
     func event(theName: String, thePost: String,theAddress: String, theLive: Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool,theLat:Double,theLong:Double){
         
-        SwiftEventBus.post("makeEvent", sender: theEvent)
     }
     
 }

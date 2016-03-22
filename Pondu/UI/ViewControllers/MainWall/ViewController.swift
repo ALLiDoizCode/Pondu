@@ -18,7 +18,6 @@ import FXBlurView
 
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate {
     
-    let mainWall = PresentMainWall.sharedInstance
     let eventID:[String] = []
     var count:Int = 0
     var objectId:String!
@@ -69,19 +68,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        mainWall.eventPost { (result) -> Void in
-            
-            self.array = result
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                self.collectionView.reloadData()
-                
-                self.detailImage.layer.cornerRadius = self.detailImage.layer.frame.height/2
-                self.detailImage.layer.masksToBounds = true
-            }
-        }
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
