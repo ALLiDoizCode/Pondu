@@ -6,6 +6,7 @@ PODS:
   - ImagePickerSheetController (0.9.1)
   - IQKeyboardManagerSwift (3.3.4)
   - Kingfisher (1.7.1)
+  - KinveyKit (1.40.5)
   - LLSimpleCamera (4.0.0)
   - LTMorphingLabel (0.0.9)
   - PagingMenuController (0.7.5)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - ImagePickerSheetController (~> 0.9.1)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 1.7)
+  - KinveyKit
   - LLSimpleCamera (~> 4.0)
   - LTMorphingLabel (~> 0.0.9)
   - PagingMenuController
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   ImagePickerSheetController: 3c58c9fee6dcf36485222358a021f6b734f997ba
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
+  KinveyKit: 4ce5923b143e9557bdeb1f91efeb6292dfa8f413
   LLSimpleCamera: 4acecd6fabca1cb5841302ee03e03123e290af3d
   LTMorphingLabel: 4235a403f99f0e0e503389da660e0fec324549d9
   PagingMenuController: ea590be94de2332a1f78fbbc45fa6f49405279ea
