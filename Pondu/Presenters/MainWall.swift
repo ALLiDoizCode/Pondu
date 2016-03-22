@@ -8,15 +8,10 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 
 class PresentMainWall {
     
-    
-    let mainWall = ParseMainWall.sharedInstance
-    
-    static let sharedInstance = PresentMainWall()
-    
+
     func eventPost(completion:(result:[Event]) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
@@ -33,8 +28,6 @@ class PresentMainWall {
             }
            
         }
-        
-        mainWall.postQuery()
 
     }
     
@@ -50,7 +43,6 @@ class PresentMainWall {
             
         }
         
-        mainWall.favEvents()
     }
 }
 

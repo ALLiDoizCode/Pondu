@@ -12,6 +12,5 @@
 
 #endif /* Header_h */
 
-#import <Parse/Parse.h>
 #import "FXBlurView/FXBlurView.h"
 

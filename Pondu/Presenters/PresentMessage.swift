@@ -11,8 +11,6 @@ import SwiftEventBus
 
 class PresentMessage {
     
-    let client = Messages.sharedInstance
-    
     func makeRoom(creator:String,recipient:String,completion:(data:String) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "RoomMade") { result in
@@ -26,7 +24,6 @@ class PresentMessage {
             SwiftEventBus.unregister("RoomMade")
         }
         
-        client.makeRoom(creator, recipient: recipient)
     }
     
     func getMessages(completion:(data:[MessageList]) -> Void){
@@ -44,7 +41,6 @@ class PresentMessage {
             SwiftEventBus.unregister("Messages")
         }
         
-        client.getMessages()
     }
     
     func messageWithId(objectId:String,completion:(data:[Message]) -> Void){
@@ -62,7 +58,6 @@ class PresentMessage {
             SwiftEventBus.unregister("MsgWithId")
         }
         
-        client.getMessageWithId(objectId)
     }
     
     func sendMessage(objectId:String,text:String,hasImage:Bool,image:UIImage?){
@@ -75,9 +70,6 @@ class PresentMessage {
             
             SwiftEventBus.unregister(self, name: "SentMsg")
         }
-        
-        client.sendMessages(objectId, text: text,hasImage: hasImage,image:image)
-        
         
     }
 }

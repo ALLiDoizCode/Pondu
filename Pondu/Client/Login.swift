@@ -8,29 +8,7 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 
 class Login {
     
-    func userLogin(UserName:String,password:String){
-    
-        PFUser.logInWithUsernameInBackground(UserName, password:password) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                // Do stuff after successful login.
-                
-                print("loged In")
-                print("user is \(user!.username)")
-                
-                SwiftEventBus.post("login")
-                
-            } else {
-                // The login failed. Check error to see why.
-                
-                //print(error?.localizedFailureReason)
-                
-                 SwiftEventBus.post("loginFailed")
-            }
-        }
-    }
 }

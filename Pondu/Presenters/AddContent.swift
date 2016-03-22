@@ -8,13 +8,12 @@
 
 import Foundation
 
-
 class AddContent {
     
     let liveContent = LiveContent()
     
     func newContent(objectId:String,title:String){
         
-        liveContent.content(objectId, title: title)
+       
     }
 }

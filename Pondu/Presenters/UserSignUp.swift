@@ -8,17 +8,8 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 import Kingfisher
 
 class SignUP {
     
-    let startSignUp = userSignUp()
-    
-    func AccounSetup(area:String,fullName:String,userName:String,password:String,Bio:String,email:String,phone:String,photo:UIImage,stories:UIImage,theYear:String,theSchool:String){
-        
-        startSignUp.SignUp(area,fullName: fullName,userName: userName,password: password,Bio: Bio,email: email,phone: phone,photo: photo,stories: stories,theYear:theYear,TheSchool:theSchool)
-    
-    
-    }
 }

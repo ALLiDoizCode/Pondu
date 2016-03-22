@@ -9,14 +9,11 @@
 import Foundation
 import SwiftEventBus
 
-
 class MakeStory {
     
     let story = CreateStory()
     
     func addStory(media:NSData){
-        
-        story.theStory(media)
         
         SwiftEventBus.post("MakeStory")
     }

@@ -8,23 +8,9 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 import Kingfisher
 
 class theUser {
-    
-    let user = parseUser()
-    let nilArray:[String]! = nil
-    
-    func editProfile(name:String,userName:String,email:String,phone:String,bio:String){
-        
-        user.saveUserInfo(name, userName: userName, email: email, phone: phone, bio: bio)
-    }
-    
-    func changePassWord(email:String){
-        
-        user.savePassWord(email)
-    }
     
     func getUsers(completion:(users:[userData]) -> Void){
         
@@ -38,7 +24,6 @@ class theUser {
             completion(users: data)
         }
         
-        user.userQuery()
     }
     
     func addUser(objectId:String,completion:(success:Bool) -> Void){
@@ -52,7 +37,6 @@ class theUser {
             SwiftEventBus.unregister("addUser")
         }
         
-        user.follow(objectId)
     }
     
     func myFollow(completion:(data:[String]) -> Void){
@@ -66,7 +50,6 @@ class theUser {
             SwiftEventBus.unregister("myFollow")
         }
         
-        user.myFollow()
     }
    
 }

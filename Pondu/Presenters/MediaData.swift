@@ -11,8 +11,6 @@ import SwiftEventBus
 
 class WallContent {
     
-    let client = ParseMainWall.sharedInstance
-    
     func getContent(objectId:String,completion:(Data:[String]) -> Void) {
         
         SwiftEventBus.onMainThread(self, name: "EventContent") { result in
@@ -23,6 +21,5 @@ class WallContent {
             }
         }
         
-        client.liveContent(objectId)
     }
 }

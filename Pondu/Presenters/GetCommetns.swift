@@ -12,16 +12,7 @@ import SwiftEventBus
 
 class Comments {
     
-    let client = ParseMainWall.sharedInstance
-    
-    let makeComment = comments()
-    
     func comment(objectId:String,description:String,completion:(success:Bool) -> Void){
-        
-        makeComment.addComment(objectId, description: description) { (success) -> Void in
-            
-            completion(success: success)
-        }
         
     }
     
@@ -37,6 +28,5 @@ class Comments {
             SwiftEventBus.unregister("EventComments")
         }
         
-        client.comments(objectId)
     }
 }

@@ -8,12 +8,9 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 import Kingfisher
 
 class PartiesMainWall {
-    
-    let Parties = ParseParties.sharedInstance
     
     func partiesPost(completion:(result:[Event]) -> Void){
         
@@ -27,13 +24,9 @@ class PartiesMainWall {
             
         }
         
-        Parties.postQuery()
-        
     }
     
     func favPost(completion:(result:[Event]) -> Void){
-        
-        let fav = ParseParties()
         
         SwiftEventBus.onMainThread(self, name: "FavoriteParties") { result in
             
@@ -44,8 +37,6 @@ class PartiesMainWall {
             completion(result: post)
             
         }
-        
-        fav.favParties()
         
     }
     

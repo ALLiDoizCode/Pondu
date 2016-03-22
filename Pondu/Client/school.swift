@@ -46,7 +46,7 @@ class college {
                         let lat = schoolList[i]["LATITUDE"].stringValue
                         let county = schoolList[i]["COUNTYNM"].stringValue
                         
-                        var theSchool = School(theName: names, theCity: city, theZip: zipcode, theAddress: address, theCounty: county, theLong: long, theLat: lat)
+                        let theSchool = School(theName: names, theCity: city, theZip: zipcode, theAddress: address, theCounty: county, theLong: long, theLat: lat)
                         
                         self.listSchool.append(theSchool)
 

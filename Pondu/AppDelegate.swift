@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Parse
-import Bolts
 import IQKeyboardManagerSwift
 import SwiftEventBus
 
@@ -27,16 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
         
-        
-        Parse.enableLocalDatastore()
-        
-        // Initialize Parse.
-        Parse.setApplicationId("jP23z6l3YNkvb4FtELq4wtEN0zzqcVyax7Dv32EG",
-            clientKey: "dPXW10bX7Apo9BwCvEeIx0RAWxDq0fN5OR1ZIyvl")
-        
-        // [Optional] Track statistics around application opens.
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
         //enables IQKeyboardManager
         IQKeyboardManager.sharedManager().enable = true
         
@@ -44,32 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let installation = PFInstallation.currentInstallation()
-        installation.setDeviceTokenFromData(deviceToken)
-        installation.channels = ["global"]
-        installation.saveInBackground()
+
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
-        SwiftEventBus.post("New")
-        
-        print("incoming job")
-        
-       if UIApplication.sharedApplication().applicationState == .Active {
-            
-            SwiftEventBus.postToMainThread("NewComments")
-            
-        }else if UIApplication.sharedApplication().applicationState == .Background {
-            
-            PFPush.handlePush(userInfo)
-            SwiftEventBus.postToMainThread("NewComments")
-            
-        }else if UIApplication.sharedApplication().applicationState == .Inactive {
-            
-            PFPush.handlePush(userInfo)
-            SwiftEventBus.postToMainThread("NewComments")
-        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

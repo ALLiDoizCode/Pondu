@@ -80,7 +80,6 @@
 		4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */; };
 		4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
-		4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */; };
 		4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */; };
 		4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5851BED312800F15C6C /* PartyViewController.swift */; };
 		4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5871BED338700F15C6C /* PartyCell.swift */; };
@@ -88,7 +87,6 @@
 		4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EEF1BDEC25F006055E9 /* Login.swift */; };
 		4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF11BDEC375006055E9 /* UserSignUp.swift */; };
 		4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF31BDEC7CF006055E9 /* userLogin.swift */; };
-		4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF51BDEF844006055E9 /* ParseComments.swift */; };
 		4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */; };
 		4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C21BEA7133009BCF55 /* Main.storyboard */; };
 		4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */; };
@@ -101,9 +99,7 @@
 		4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F11E1BFF93B6001A96C5 /* LocationViewController.swift */; };
 		4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F1201BFF93C0001A96C5 /* PostViewController.swift */; };
 		4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038B1BDDDC1E00A56A67 /* Users.swift */; };
-		4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */; };
 		4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038F1BDE99BF00A56A67 /* Parties.swift */; };
-		4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF203911BDE99EA00A56A67 /* ParseParties.swift */; };
 		4DF91A891C2B683B008E39AF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91A881C2B683B008E39AF /* SearchViewController.swift */; };
 		4DF91A8B1C2B68AD008E39AF /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */; };
 		4DFADB0F1C80FF3600A61AAA /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFADB0E1C80FF3600A61AAA /* Comments.storyboard */; };
@@ -208,7 +204,6 @@
 		4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavStoryListViewController.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4DD174A01BDD8C6600B64E0B /* MainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWall.swift; sourceTree = "<group>"; };
-		4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseMainWall.swift; sourceTree = "<group>"; };
 		4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4DD1E5851BED312800F15C6C /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		4DD1E5871BED338700F15C6C /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyCell.swift; sourceTree = "<group>"; };
@@ -216,7 +211,6 @@
 		4DD73EEF1BDEC25F006055E9 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4DD73EF11BDEC375006055E9 /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
 		4DD73EF31BDEC7CF006055E9 /* userLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userLogin.swift; sourceTree = "<group>"; };
-		4DD73EF51BDEF844006055E9 /* ParseComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseComments.swift; sourceTree = "<group>"; };
 		4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DE1A1C21BEA7133009BCF55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
@@ -229,9 +223,7 @@
 		4DF1F11E1BFF93B6001A96C5 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		4DF1F1201BFF93C0001A96C5 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4DF2038B1BDDDC1E00A56A67 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
-		4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUser.swift; sourceTree = "<group>"; };
 		4DF2038F1BDE99BF00A56A67 /* Parties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parties.swift; sourceTree = "<group>"; };
-		4DF203911BDE99EA00A56A67 /* ParseParties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseParties.swift; sourceTree = "<group>"; };
 		4DF91A881C2B683B008E39AF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCell.swift; path = Pondu/UI/TableViewCells/SearchCell.swift; sourceTree = SOURCE_ROOT; };
 		4DFADB0E1C80FF3600A61AAA /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
@@ -491,12 +483,8 @@
 				4D88281D1C7684EF00604DE3 /* CreateStory.swift */,
 				4D8668411BE9A9D100591DF6 /* CreateParty.swift */,
 				4D8668391BE989B500591DF6 /* CreateEvent.swift */,
-				4DD174A21BDD8E9800B64E0B /* ParseMainWall.swift */,
-				4DF2038D1BDDDCCA00A56A67 /* ParseUser.swift */,
-				4DF203911BDE99EA00A56A67 /* ParseParties.swift */,
 				4DD73EED1BDEC254006055E9 /* SignUp.swift */,
 				4DD73EEF1BDEC25F006055E9 /* Login.swift */,
-				4DD73EF51BDEF844006055E9 /* ParseComments.swift */,
 				4D32A8291C88D94A0053FBCD /* Messages.swift */,
 				4D8828231C76958400604DE3 /* LiveContent.swift */,
 				4DD1749D1BDD793F00B64E0B /* Presenters */,
@@ -790,7 +778,6 @@
 				4D91A9D01BE5F5A600C34281 /* Events.swift in Sources */,
 				4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */,
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,
-				4DF203921BDE99EA00A56A67 /* ParseParties.swift in Sources */,
 				4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */,
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
 				4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */,
@@ -799,7 +786,6 @@
 				4DE7CC961C82B19300D83075 /* Date.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
 				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
-				4DF2038E1BDDDCCA00A56A67 /* ParseUser.swift in Sources */,
 				4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */,
 				4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
@@ -853,7 +839,6 @@
 				4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */,
 				4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */,
 				4D0CC3D61C2746C000843328 /* VideoViewController.swift in Sources */,
-				4DD174A31BDD8E9800B64E0B /* ParseMainWall.swift in Sources */,
 				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4DF91A891C2B683B008E39AF /* SearchViewController.swift in Sources */,
 				4D32A82A1C88D94A0053FBCD /* Messages.swift in Sources */,
@@ -866,7 +851,6 @@
 				4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DFADB111C81006B00A61AAA /* CommentCell.swift in Sources */,
-				4DD73EF61BDEF844006055E9 /* ParseComments.swift in Sources */,
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
 				4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */,
