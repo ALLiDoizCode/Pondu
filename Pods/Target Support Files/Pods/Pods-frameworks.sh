@@ -85,7 +85,6 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
-  install_framework "Pods/Bolts.framework"
   install_framework "Pods/BubbleTransition.framework"
   install_framework "Pods/CircleSlider.framework"
   install_framework "Pods/FXBlurView.framework"
@@ -95,7 +94,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/LLSimpleCamera.framework"
   install_framework "Pods/LTMorphingLabel.framework"
   install_framework "Pods/PagingMenuController.framework"
-  install_framework "Pods/Parse.framework"
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftEventBus.framework"
@@ -103,7 +101,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
-  install_framework "Pods/Bolts.framework"
   install_framework "Pods/BubbleTransition.framework"
   install_framework "Pods/CircleSlider.framework"
   install_framework "Pods/FXBlurView.framework"
@@ -113,7 +110,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/LLSimpleCamera.framework"
   install_framework "Pods/LTMorphingLabel.framework"
   install_framework "Pods/PagingMenuController.framework"
-  install_framework "Pods/Parse.framework"
   install_framework "Pods/Spring.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftEventBus.framework"

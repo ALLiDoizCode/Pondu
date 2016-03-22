@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Bolts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BubbleTransition.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Parse.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,17 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0E3CB515EB886E5DE3FDA944C99685B0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>192C8C2413796E089B0A00D1D53C6C09</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>23C3401E0C7BD19DA994AC41B9306B6F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -123,6 +103,11 @@
 			<true/>
 		</dict>
 		<key>2AAAB9973850C35994DC04473435E1A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FA8769BE10B822DE136297CBB91DDED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,7 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>708E01B006A9F88B3C13711562282B5E</key>
+		<key>6A0A46A6E961F6B6C15971520459A364</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,17 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A96C9943E9B79454CF07CA41B7BF014</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B8A759F57254B6094CF99273E5ECEE8B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA1C4CC317FDA7DF80ABE51C32FC3728</key>
+		<key>BE11AD84CC40B703AE6D86B16B2A7BC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,7 +152,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9EA00B6B3B7E4B6D17B7DDCE408030A</key>
+		<key>EA43CADB7C511AF0EA089069B790A8F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBF6651E5382FFCF791F66D65FEACDFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

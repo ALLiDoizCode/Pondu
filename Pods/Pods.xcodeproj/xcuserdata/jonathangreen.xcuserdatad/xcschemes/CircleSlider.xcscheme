@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4A3C0CD03EE2D2910519D684'
+               BlueprintIdentifier = 'AC0B89E6C3916CAE4141DB41'
                BlueprintName = 'CircleSlider'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CircleSlider.framework'>
