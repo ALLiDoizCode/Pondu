@@ -14,15 +14,15 @@ class Wall:NSObject {
     var title:String?
     var post:String?
     var profilePicture:String?
-    var likes:Int?
-    var lat:Double?
-    var long:Double?
+    var likes:NSNumber?
+    var lat:NSNumber?
+    var long:NSNumber?
     var address:String?
-    var live:Bool?
+    var live:NSNumber?
     var date:NSDate?
     var startTime:NSDate?
     var endTime:NSDate?
-    var privacy:Bool?
+    var privacy:NSNumber?
     
     init(theTitle:String,theDescription:String,TheProfilePicture:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double){
         
@@ -55,7 +55,7 @@ class Wall:NSObject {
             "startTime" : "startTime",
             "endTime" : "endTime",
             "privacy" : "privacy",
-            "metadata" : KCSEntityKeyMetadata //optional _metadata field
+            //"metadata" : KCSEntityKeyMetadata //optional _metadata field
         ]
     }
 }

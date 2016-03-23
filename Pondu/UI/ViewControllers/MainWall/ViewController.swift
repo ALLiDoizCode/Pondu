@@ -94,7 +94,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         cell.post.text = array[indexPath.item].description
         cell.PostName.text = array[indexPath.item].title
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
+        //cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
         
         if array[indexPath.item].live == true {
         
@@ -165,7 +165,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             detailName.text = array[indexPath.item].title
             //detailTitle.text = cell.descriptionHead.text
             //detailTime.text = cell.time.text
-            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
+            //detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
             
             
             if array[indexPath.item].live == true {
