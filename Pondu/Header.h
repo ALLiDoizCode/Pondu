@@ -12,5 +12,6 @@
 
 #endif /* Header_h */
 
+#import <KinveyKit/KinveyKit.h>
 #import "FXBlurView/FXBlurView.h"
 

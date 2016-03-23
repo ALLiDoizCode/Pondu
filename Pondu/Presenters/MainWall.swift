@@ -12,13 +12,13 @@ import SwiftEventBus
 class PresentMainWall {
     
 
-    func eventPost(completion:(result:[Event]) -> Void){
+    func eventPost(completion:(result:[Wall]) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
             print("MainWall Fired")
             
-            if let post = result.object as? [Event] {
+            if let post = result.object as? [Wall] {
                 
                 print("event post \(post)")
                 //SwiftEventBus.post("updateCell", sender: post)
@@ -31,11 +31,11 @@ class PresentMainWall {
 
     }
     
-    func favPost(completion:(result:[Event]) -> Void){
+    func favPost(completion:(result:[Wall]) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "FavEvent") { result in
             
-            if let data:[Event] = result.object as? [Event] {
+            if let data:[Wall] = result.object as? [Wall] {
                 
                 SwiftEventBus.unregister(self, name: "FavEvent")
                 completion(result: data)

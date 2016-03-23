@@ -21,7 +21,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let eventID:[String] = []
     var count:Int = 0
     var objectId:String!
-    var array:[Event] = []
+    var array:[Wall] = []
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     var indexOfUrl:[Character] = []
@@ -91,10 +91,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        cell.post.text = array[indexPath.item].post
-        cell.PostName.text = array[indexPath.item].userName
+        cell.post.text = array[indexPath.item].description
+        cell.PostName.text = array[indexPath.item].title
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
         
         if array[indexPath.item].live == true {
         
@@ -158,14 +158,14 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             self.view!.addGestureRecognizer(swipeDownRect)
             
             print("featured")
-            objectId = array[indexPath.item].objectID
+            objectId = array[indexPath.item].entityId
             blur.hidden = false
             detailView.hidden = false
-            detailPost.text = array[indexPath.item].post
-            detailName.text = array[indexPath.item].userName
+            detailPost.text = array[indexPath.item].description
+            detailName.text = array[indexPath.item].title
             //detailTitle.text = cell.descriptionHead.text
             //detailTime.text = cell.time.text
-            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
             
             
             if array[indexPath.item].live == true {
@@ -233,7 +233,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
 
             let indexPath = self.collectionView!.indexPathForCell(cell)
             
-            liveController.eventId = array[(indexPath?.item)!].objectID
+            liveController.eventId = array[(indexPath?.item)!].entityId!
             
         }
         

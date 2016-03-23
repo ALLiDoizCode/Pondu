@@ -14,10 +14,29 @@ import SwiftEventBus
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let APP_ID = "kid_-15_5uSkxW"
+    let APP_SECERT = "b6db7e0dd4c74c8e9ba50f0f296a8fee"
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        KCSClient.sharedClient().initializeKinveyServiceForAppKey(
+            APP_ID,
+            withAppSecret: APP_SECERT,
+            usingOptions: nil
+        )
+        
+        
+        KCSPing.pingKinveyWithBlock { (result: KCSPingResult!) -> Void in
+            if result.pingWasSuccessful {
+                NSLog("Kinvey Ping Success")
+            } else {
+                NSLog("Kinvey Ping Failed")
+            }
+        }
         
         let userNotificationTypes: UIUserNotificationType = [.Alert, .Badge, .Sound]
         

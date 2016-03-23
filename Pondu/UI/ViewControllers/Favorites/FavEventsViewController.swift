@@ -28,7 +28,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
     @IBOutlet weak var detailTime: UILabel!
     @IBOutlet weak var detailDate: UILabel!
     
-    var array:[Event] = []
+    var array:[Wall] = []
     let eventID:[String] = []
     var count:Int = 0
     var objectId:String!
@@ -100,11 +100,11 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         
         let cell:FavEventCell = collectionView.dequeueReusableCellWithReuseIdentifier("FavEventCell", forIndexPath: indexPath) as! FavEventCell
         
-        cell.post.text = array[indexPath.row].post
-        cell.PostName.text = array[indexPath.item].userName
+        cell.post.text = array[indexPath.row].description
+        cell.PostName.text = array[indexPath.item].title
         cell.likes.text = "Likes:\(array[indexPath.row].likes)"
        
-        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+        cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
         
         if array[indexPath.item].live == true {
             
@@ -145,14 +145,14 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             self.view!.addGestureRecognizer(swipeDownRect)
             
             print("featured")
-            objectId = array[indexPath.item].objectID
+            objectId = array[indexPath.item].entityId
             blur.hidden = false
             detailView.hidden = false
-            detailPost.text = array[indexPath.item].post
-            detailName.text = array[indexPath.item].userName
+            detailPost.text = array[indexPath.item].description
+            detailName.text = array[indexPath.item].title
             //detailTitle.text = cell.descriptionHead.text
             //detailTime.text = cell.time.text
-            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture)!, placeholderImage: UIImage(named: "placeholder"))
+            detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
             
             
             if array[indexPath.item].live == true {
@@ -210,7 +210,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             liveController.modalPresentationStyle = .Custom
             
             let item = (sender as! NSIndexPath).item
-            liveController.eventId = array[item].objectID
+            liveController.eventId = array[item].entityId!
          
             print(item)
             

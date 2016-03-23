@@ -13,6 +13,8 @@ import Parse
 
 
 class WelcomeViewController: UIViewController {
+    
+    let client = WallClient()
 
     @IBOutlet weak var topLabel: LTMorphingLabel!
     @IBOutlet weak var bottomLabel: LTMorphingLabel!
@@ -41,6 +43,8 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        client.post()
         
         bg.image = bg.image?.blurredImageWithRadius(20, iterations: 15, tintColor: UIColor.blackColor())
        
