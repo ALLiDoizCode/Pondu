@@ -20,34 +20,23 @@ class WallClient {
         ])
 
     
-    func post(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool){
+    func post(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation){
         
-        let data = UIImageJPEGRepresentation(TheProfilePicture, 0.9)
-        
-        KCSFileStore.uploadData(
-            data,
-            options: nil,
-            completionBlock: { (uploadInfo: KCSFile!, error: NSError!) -> Void in
-                //NSLog("Upload finished. File id='%@', error='%@'.", uploadInfo.fileId, error)
-                
-                let wall = Wall(theTitle: theTitle, theDescription: theDescription, TheProfilePicture: uploadInfo.fileId, theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy, theLat: theLat, theLong: theLong,isEvent:isEvent)
-                self.store.saveObject(
-                    wall,
-                    withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
-                        if errorOrNil != nil {
-                            //save failed
-                            NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
-                        } else {
-                            //save was successful
-                            NSLog("Successfully saved event (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
-                            
-                            SwiftEventBus.post("makeWall", sender: true)
-                        }
-                    },
-                    withProgressBlock: nil
-                )
+        let wall = Wall(theTitle: theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo)
+        self.store.saveObject(
+            wall,
+            withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
+                if errorOrNil != nil {
+                    //save failed
+                    NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
+                } else {
+                    //save was successful
+                    NSLog("Successfully saved event (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
+                    
+                    SwiftEventBus.post("makeWall", sender: true)
+                }
             },
-            progressBlock: nil
+            withProgressBlock: nil
         )
     }
     

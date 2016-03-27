@@ -9,6 +9,7 @@
 import UIKit
 import LTMorphingLabel
 import SwiftEventBus
+import SwiftSpinner
 
 class PostViewController: UIViewController,UITextViewDelegate {
 
@@ -26,9 +27,12 @@ class PostViewController: UIViewController,UITextViewDelegate {
     var timeEnd:String!
     var date:String!
     var address:String!
-    var lat:Double!
-    var long:Double!
+    var geo:CLLocation!
+    var isCurrent:Bool!
     var privacy:Bool!
+    var eventBegins:NSDate!
+    var eventEnds:NSDate!
+    var eventDate:NSDate!
     
     let PLACEHOLDER_TEXT = "Type here"
     
@@ -118,32 +122,59 @@ class PostViewController: UIViewController,UITextViewDelegate {
     
     func postDidFinish(){
         
-        SwiftEventBus.onMainThread(self, name: "EventMade", handler: { (result) -> Void in
-            
-            //success
-            print("event post successful")
-            self.performSegueWithIdentifier("Home", sender: self)
-            
-        })
-        SwiftEventBus.onMainThread(self, name: "EventNotMade", handler: { (result) -> Void in
-            
-            //Failed
-            print("event did not post")
-        })
         
-        SwiftEventBus.onMainThread(self, name: "PartyMade", handler: { (result) -> Void in
+        if type == true {
             
-            //success
-            print("party post successful")
-            self.performSegueWithIdentifier("Home", sender: self)
+            SwiftSpinner.show("Creating Event")
             
-        })
+        }else {
+            
+            SwiftSpinner.show("Creating Party")
+        }
         
-        SwiftEventBus.onMainThread(self, name: "PartyNotMade", handler: { (result) -> Void in
+        
+        
+        makeEvent.event(textVIew.text, theDescription: textVIew.text, theAddress: address, theLive: live, thelikes: likes, theDate: eventDate, theStartTime: eventBegins, theEndTime: eventEnds, thePrivacy: privacy, isEvent: type, currentGeo: isCurrent, theGeo: geo) { (success) -> Void in
             
-            //Failed
-            print("party did not post")
-        })
+            if success {
+                
+                
+                SwiftSpinner.hide({ () -> Void in
+                    
+                    //success
+                    
+                    if self.type == true {
+                        
+                        print("event post successful")
+                        
+                    }else {
+                        
+                        print("party post successful")
+                    }
+                    
+                    
+                    self.performSegueWithIdentifier("Home", sender: self)
+                })
+                
+                
+            }else {
+                
+                SwiftSpinner.hide({ () -> Void in
+                    
+                    //Failed
+                    
+                    if self.type == true {
+                        
+                        print("event did not post")
+                        
+                    }else {
+                        
+                        print("party did not post")
+                    }
+                })
+                
+            }
+        }
 
     }
     

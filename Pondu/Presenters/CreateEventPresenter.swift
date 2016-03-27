@@ -9,12 +9,14 @@
 import UIKit
 import SwiftEventBus
 import Kingfisher
+import SwiftLocation
+import CoreLocation
 
 class MakingEvent {
     
     let client = WallClient()
     
-    func event(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool,CompletionHandler:(success:Bool) -> Void){
+    func event(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,currentGeo:Bool,theGeo:CLLocation,CompletionHandler:(success:Bool) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "makeWall") { (notification) -> Void in
             
@@ -23,7 +25,22 @@ class MakingEvent {
             CompletionHandler(success: success)
         }
         
-        client.post(theTitle, theDescription: theDescription, TheProfilePicture: TheProfilePicture, theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy, theLat: theLat, theLong: theLong,isEvent:isEvent)
+        if currentGeo {
+            
+            self.client.post(theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo)
+            
+        }else {
+            
+            SwiftLocation.shared.reverseAddress(Service.Apple, address: theAddress, region: nil, onSuccess: { (place) -> Void in
+                // our CLPlacemark is here
+                
+                 self.client.post(theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:(place?.location)!)
+                
+                }) { (error) -> Void in
+                    // something went wrong
+            }
+        }
+        
     }
     
 }

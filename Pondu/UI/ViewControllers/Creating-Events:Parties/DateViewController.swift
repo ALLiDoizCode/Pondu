@@ -18,9 +18,12 @@ class DateViewController: UIViewController {
     @IBOutlet weak var startTime: UITextField!
     @IBOutlet weak var endTime: UITextField!
     @IBOutlet weak var next: UIButton!
+    
     var type:Bool!
     var wallType:Bool!
     var eventBegins:NSDate!
+    var eventEnds:NSDate!
+    var eventDate:NSDate!
     var privacy:Bool!
     
     override func viewDidLoad() {
@@ -82,6 +85,8 @@ class DateViewController: UIViewController {
         
         date.text = dateformatter.stringFromDate(NSDate())
         
+        eventDate = NSDate()
+        
         date.resignFirstResponder()
     }
     
@@ -111,6 +116,8 @@ class DateViewController: UIViewController {
         dateformatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         endTime.text = dateformatter.stringFromDate(NSDate())
+        
+        eventEnds = NSDate()
         
         endTime.resignFirstResponder()
     }
@@ -162,7 +169,7 @@ class DateViewController: UIViewController {
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         
         date.text = dateFormatter.stringFromDate(sender.date)
-        
+        eventDate = sender.date
     }
      /////////////////////DateEnd////////////////////////////////
     
@@ -227,7 +234,7 @@ class DateViewController: UIViewController {
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         endTime.text = dateFormatter.stringFromDate(sender.date)
-        
+        eventBegins = sender.date
     }
     /////////////////////TimeEnd////////////////////////////////
     
@@ -380,6 +387,11 @@ class DateViewController: UIViewController {
             nextViewController.timeEnd = endTime.text
             nextViewController.date = date.text
             nextViewController.privacy = privacy
+            nextViewController.eventBegins = eventBegins
+            nextViewController.eventEnds = eventEnds
+            nextViewController.eventDate = eventDate
+            
+                
             
             print("passing \(type)")
             print("passing \(wallType)")

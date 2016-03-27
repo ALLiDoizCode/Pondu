@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B76C50CB765954AEFB6BA497'
-               BlueprintName = 'Kingfisher'
+               BlueprintIdentifier = '757BDDE0E2F63AA7E39ABE19'
+               BlueprintName = 'SwiftLocation'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Kingfisher.framework'>
+               BuildableName = 'SwiftLocation.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

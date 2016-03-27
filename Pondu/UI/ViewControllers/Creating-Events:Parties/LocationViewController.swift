@@ -23,8 +23,11 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
     var timeEnd:String!
     var date:String!
     var privacy:Bool!
-    var lat:Double!
-    var long:Double!
+    var geo:CLLocation!
+    var isCurrent:Bool!
+    var eventBegins:NSDate!
+    var eventEnds:NSDate!
+    var eventDate:NSDate!
     
     let locationManager = CLLocationManager()
     
@@ -150,24 +153,10 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
                 print(country)
                 
                 address.text = "\(locationName) \(city) \(state) \(zip)"
-                
-                lat = containsPlacemark.location?.coordinate.latitude
-                long = containsPlacemark.location?.coordinate.longitude
+                geo = placemark?.location
+                isCurrent = true
             }
             
-            /*if let state = containsPlacemark.addressDictionary!["State"] as? NSString {
-                print(state)
-            }
-            
-            // Zip code
-           if let zip = containsPlacemark.addressDictionary!["ZIP"] as? NSString {
-                print(zip)
-            }
-            
-            // Country
-            if let country = containsPlacemark.addressDictionary!["Country"] as? NSString {
-                print(country)
-            }*/
         }
         
     }
@@ -205,8 +194,11 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             nextViewController.date = date
             nextViewController.address = address.text
             nextViewController.privacy = privacy
-            nextViewController.lat = lat
-            nextViewController.long = long
+            nextViewController.geo = geo
+            nextViewController.isCurrent = isCurrent
+            nextViewController.eventBegins = eventBegins
+            nextViewController.eventEnds = eventEnds
+            nextViewController.eventDate = eventDate
             print("passing \(type)")
             print("passing \(wallType)")
             print("passing \(date)")

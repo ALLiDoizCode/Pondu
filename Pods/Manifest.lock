@@ -13,6 +13,7 @@ PODS:
   - Spring (1.0.3)
   - SwiftDate (1.2)
   - SwiftEventBus (1.1.0)
+  - SwiftLocation (0.2.0)
   - SwiftSpinner (0.8.0)
 
 DEPENDENCIES:
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftDate
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`)
+  - SwiftLocation
   - SwiftSpinner
 
 EXTERNAL SOURCES:
@@ -62,6 +64,7 @@ SPEC CHECKSUMS:
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftDate: 49ebd4efb5f82336cfc2b1d8a6622f47d4b17370
   SwiftEventBus: d334f7aecbddbd995c3de5c262cf35c72db550f3
+  SwiftLocation: ea78ae4a822581bde7379d98c8513273723c8840
   SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
 
 COCOAPODS: 0.39.0

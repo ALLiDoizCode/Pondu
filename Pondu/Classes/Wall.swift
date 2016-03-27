@@ -13,12 +13,10 @@ class Wall:NSObject {
     var entityId:String?
     var title:String?
     var post:String?
-    var profilePicture:String?
     var likes:NSNumber?
-    var lat:NSNumber?
-    var long:NSNumber?
     var address:String?
     var live:NSNumber?
+    var liveContent:Content?
     var date:NSDate?
     var startTime:NSDate?
     var endTime:NSDate?
@@ -27,14 +25,11 @@ class Wall:NSObject {
     var geocoord: CLLocation?
     var createdBy:KCSUser?
     
-    init(theTitle:String,theDescription:String,TheProfilePicture:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool){
+    init(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation){
         
         title = theTitle
         post = theDescription
-        profilePicture = TheProfilePicture
         address = theAddress
-        lat = theLat
-        long = theLong
         live = theLive
         likes = thelikes
         date = theDate
@@ -42,6 +37,7 @@ class Wall:NSObject {
         endTime = theEndTime
         privacy = thePrivacy
         event = isEvent
+        geocoord = theGeo
     }
     
     
@@ -49,11 +45,9 @@ class Wall:NSObject {
         return [
             "entityId" : KCSEntityKeyId, //the required _id field
             "title" : "title",
-            "profilePicture" : "profilePicture",
             "address" : "address",
-            "lat" : "lat",
-            "long" : "long",
             "live" : "live",
+            "liveContent":"liveContent",
             "likes" : "likes",
             "date" : "date",
             "startTime" : "startTime",
@@ -69,7 +63,15 @@ class Wall:NSObject {
         
         return [
             
-            "createdBy": KCSUserCollectionName
+            "createdBy": KCSUserCollectionName,
+            "liveContent":"LiveContent"
         ]
     }
+    
+    internal override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
+        
+        return [ "createdBy" ]
+    }
+    
+    
 }
