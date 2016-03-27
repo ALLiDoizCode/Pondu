@@ -23,8 +23,9 @@ class Wall:NSObject {
     var startTime:NSDate?
     var endTime:NSDate?
     var privacy:NSNumber?
+    var event:Bool?
     
-    init(theTitle:String,theDescription:String,TheProfilePicture:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double){
+    init(theTitle:String,theDescription:String,TheProfilePicture:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool){
         
         title = theTitle
         post = theDescription
@@ -38,6 +39,7 @@ class Wall:NSObject {
         startTime = theStartTime
         endTime = theEndTime
         privacy = thePrivacy
+        event = isEvent
     }
     
     

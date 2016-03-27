@@ -20,7 +20,7 @@ class WallClient {
         ])
 
     
-    func post(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double){
+    func post(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool){
         
         let data = UIImageJPEGRepresentation(TheProfilePicture, 0.9)
         
@@ -30,7 +30,7 @@ class WallClient {
             completionBlock: { (uploadInfo: KCSFile!, error: NSError!) -> Void in
                 //NSLog("Upload finished. File id='%@', error='%@'.", uploadInfo.fileId, error)
                 
-                let wall = Wall(theTitle: theTitle, theDescription: theDescription, TheProfilePicture: uploadInfo.fileId, theAddress: "test", theLive: true, thelikes: 1, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: true, theLat: 11.02, theLong: 52.10)
+                let wall = Wall(theTitle: theTitle, theDescription: theDescription, TheProfilePicture: uploadInfo.fileId, theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy, theLat: theLat, theLong: theLong,isEvent:isEvent)
                 self.store.saveObject(
                     wall,
                     withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
@@ -41,7 +41,7 @@ class WallClient {
                             //save was successful
                             NSLog("Successfully saved event (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
                             
-                            SwiftEventBus.post("makeEvent", sender: true)
+                            SwiftEventBus.post("makeWall", sender: true)
                         }
                     },
                     withProgressBlock: nil

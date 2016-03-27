@@ -14,16 +14,16 @@ class MakingEvent {
     
     let client = WallClient()
     
-    func event(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,CompletionHandler:(success:Bool) -> Void){
+    func event(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool,CompletionHandler:(success:Bool) -> Void){
         
-        SwiftEventBus.onMainThread(self, name: "makeEvent") { (notification) -> Void in
+        SwiftEventBus.onMainThread(self, name: "makeWall") { (notification) -> Void in
             
             let success = notification.object as! Bool
             
             CompletionHandler(success: success)
         }
         
-        client.post(theTitle, theDescription: theDescription, TheProfilePicture: TheProfilePicture, theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy, theLat: theLat, theLong: theLong)
+        client.post(theTitle, theDescription: theDescription, TheProfilePicture: TheProfilePicture, theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy, theLat: theLat, theLong: theLong,isEvent:isEvent)
     }
     
 }

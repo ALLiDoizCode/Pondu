@@ -57,7 +57,6 @@
 		4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */; };
 		4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
-		4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */; };
 		4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281F1C7689BF00604DE3 /* MakeStory.swift */; };
 		4D8828221C768FD900604DE3 /* AddComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828211C768FD900604DE3 /* AddComment.swift */; };
 		4D8828241C76958400604DE3 /* LiveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828231C76958400604DE3 /* LiveContent.swift */; };
@@ -174,7 +173,6 @@
 		4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
-		4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePartyPresenter.swift; sourceTree = "<group>"; };
 		4D88281F1C7689BF00604DE3 /* MakeStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeStory.swift; sourceTree = "<group>"; };
 		4D8828211C768FD900604DE3 /* AddComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddComment.swift; sourceTree = "<group>"; };
 		4D8828231C76958400604DE3 /* LiveContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveContent.swift; sourceTree = "<group>"; };
@@ -450,7 +448,6 @@
 				4DD73EF11BDEC375006055E9 /* UserSignUp.swift */,
 				4DD73EF31BDEC7CF006055E9 /* userLogin.swift */,
 				4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */,
-				4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */,
 				4D88281F1C7689BF00604DE3 /* MakeStory.swift */,
 				4D8828211C768FD900604DE3 /* AddComment.swift */,
 				4D8828251C7697D200604DE3 /* AddContent.swift */,
@@ -821,7 +818,6 @@
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,
 				4D8828241C76958400604DE3 /* LiveContent.swift in Sources */,
 				4D88282A1C76A90900604DE3 /* Content.swift in Sources */,
-				4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */,
 				4D8828221C768FD900604DE3 /* AddComment.swift in Sources */,
 				4D05125B1C07984200FB414D /* Player.swift in Sources */,
 				4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */,

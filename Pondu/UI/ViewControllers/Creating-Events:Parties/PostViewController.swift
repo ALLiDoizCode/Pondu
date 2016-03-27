@@ -17,7 +17,6 @@ class PostViewController: UIViewController,UITextViewDelegate {
     @IBOutlet weak var post: UIButton!
     
     let makeEvent = MakingEvent()
-    let makeParty = MakingParty()
     
     let likes = 0
     let live = false
@@ -156,7 +155,6 @@ class PostViewController: UIViewController,UITextViewDelegate {
         }else if type == true && textVIew.text != ""{
             
             
-            makeParty.party("", thePost: textVIew.text, theAddress: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy,theLat: lat,theLong: long)
         }else{
             
             
