@@ -12,8 +12,6 @@ import FXBlurView
 
 class WelcomeViewController: UIViewController {
     
-    let client = WallClient()
-
     @IBOutlet weak var topLabel: LTMorphingLabel!
     @IBOutlet weak var bottomLabel: LTMorphingLabel!
     @IBOutlet weak var bg: UIImageView!
@@ -36,33 +34,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        KCSUser.loginWithUsername(
-            "kinvey",
-            password: "12345",
-            withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
-                if errorOrNil == nil {
-                    //the log-in was successful and the user is now the active user and credentials saved
-                    //hide log-in view and show main app content
-                    
-                    self.client.getPost({ (imageData) -> Void in
-                        
-                        self.bg.image = imageData
-                    })
-            
-                } else {
-                    //there was an error with the update save
-                    let message = errorOrNil.localizedDescription
-                    let alert = UIAlertView(
-                        title: NSLocalizedString("Create account failed", comment: "Sign account failed"),
-                        message: message,
-                        delegate: nil,
-                        cancelButtonTitle: NSLocalizedString("OK", comment: "OK")
-                    )
-                    alert.show()
-                }
-            }
-        )
-    
         bg.image = bg.image?.blurredImageWithRadius(20, iterations: 15, tintColor: UIColor.blackColor())
        
         

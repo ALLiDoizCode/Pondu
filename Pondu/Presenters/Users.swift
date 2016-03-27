@@ -12,6 +12,32 @@ import Kingfisher
 
 class theUser {
     
+    let client = UserClient()
+    
+    func login(){
+        
+    }
+    
+    func signUp(){
+        
+    }
+    
+    func deleteAccount(){
+        
+    }
+    
+    func resetPassWord(){
+        
+    }
+    
+    func forgotUserName(){
+        
+    }
+    
+    func verify(){
+        
+    }
+    
     func getUsers(completion:(users:[userData]) -> Void){
         
         SwiftEventBus.onBackgroundThread(self, name: "User") { result in

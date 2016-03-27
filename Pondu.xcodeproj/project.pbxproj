@@ -48,6 +48,7 @@
 		4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */; };
 		4D4278841C9368240012B72D /* ChatImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278831C9368240012B72D /* ChatImageController.swift */; };
 		4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278851C952FD90012B72D /* DiscoverViewController.swift */; };
+		4D6494EC1CA77AFF005B4754 /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6494EB1CA77AFF005B4754 /* UserClient.swift */; };
 		4D70AA5B1CA226ED00BC23DC /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70AA5A1CA226ED00BC23DC /* Wall.swift */; };
 		4D70AA5D1CA227FA00BC23DC /* WallClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70AA5C1CA227FA00BC23DC /* WallClient.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
@@ -79,7 +80,6 @@
 		4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5851BED312800F15C6C /* PartyViewController.swift */; };
 		4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5871BED338700F15C6C /* PartyCell.swift */; };
 		4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF11BDEC375006055E9 /* UserSignUp.swift */; };
-		4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF31BDEC7CF006055E9 /* userLogin.swift */; };
 		4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */; };
 		4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C21BEA7133009BCF55 /* Main.storyboard */; };
 		4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */; };
@@ -164,6 +164,7 @@
 		4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4D4278831C9368240012B72D /* ChatImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatImageController.swift; sourceTree = "<group>"; };
 		4D4278851C952FD90012B72D /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		4D6494EB1CA77AFF005B4754 /* UserClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		4D70AA5A1CA226ED00BC23DC /* Wall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
 		4D70AA5C1CA227FA00BC23DC /* WallClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallClient.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -196,7 +197,6 @@
 		4DD1E5851BED312800F15C6C /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		4DD1E5871BED338700F15C6C /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyCell.swift; sourceTree = "<group>"; };
 		4DD73EF11BDEC375006055E9 /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
-		4DD73EF31BDEC7CF006055E9 /* userLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userLogin.swift; sourceTree = "<group>"; };
 		4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DE1A1C21BEA7133009BCF55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
@@ -446,7 +446,6 @@
 				4DF2038B1BDDDC1E00A56A67 /* Users.swift */,
 				4DF2038F1BDE99BF00A56A67 /* Parties.swift */,
 				4DD73EF11BDEC375006055E9 /* UserSignUp.swift */,
-				4DD73EF31BDEC7CF006055E9 /* userLogin.swift */,
 				4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */,
 				4D88281F1C7689BF00604DE3 /* MakeStory.swift */,
 				4D8828211C768FD900604DE3 /* AddComment.swift */,
@@ -462,6 +461,7 @@
 		4DD1749E1BDD794E00B64E0B /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				4D6494EB1CA77AFF005B4754 /* UserClient.swift */,
 				4D70AA5C1CA227FA00BC23DC /* WallClient.swift */,
 				4D14C6331C193E9200BAEA1F /* school.swift */,
 				4D32A8291C88D94A0053FBCD /* Messages.swift */,
@@ -800,7 +800,6 @@
 				4DC648A71C83CB1B00F92C74 /* Cloud.swift in Sources */,
 				4DF1C90E1C5BC35200F4269A /* MessagesCell.swift in Sources */,
 				4DC5FAEA1BFA5BF6006AFE00 /* MainStoryCell.swift in Sources */,
-				4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */,
 				4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */,
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
 				4D0CC3D81C27719900843328 /* ImageViewController.swift in Sources */,
@@ -824,6 +823,7 @@
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DFADB111C81006B00A61AAA /* CommentCell.swift in Sources */,
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,
+				4D6494EC1CA77AFF005B4754 /* UserClient.swift in Sources */,
 				4DE1A1C91BEA73AC009BCF55 /* MainCell.swift in Sources */,
 				4D1843E71BF246CD00B2AFA2 /* FavEventsViewController.swift in Sources */,
 				4D32A8361C8A0B1B0053FBCD /* ChatViewController.swift in Sources */,

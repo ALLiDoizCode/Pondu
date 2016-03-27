@@ -24,6 +24,7 @@ class Wall:NSObject {
     var endTime:NSDate?
     var privacy:NSNumber?
     var event:Bool?
+    var geocoord: CLLocation?
     
     init(theTitle:String,theDescription:String,TheProfilePicture:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool){
         
@@ -57,6 +58,7 @@ class Wall:NSObject {
             "startTime" : "startTime",
             "endTime" : "endTime",
             "privacy" : "privacy",
+            "geocoord" : KCSEntityKeyGeolocation
             //"metadata" : KCSEntityKeyMetadata //optional _metadata field
         ]
     }
