@@ -11,8 +11,6 @@ import SwiftEventBus
 
 class MakeStory {
     
-    let story = CreateStory()
-    
     func addStory(media:NSData){
         
         SwiftEventBus.post("MakeStory")

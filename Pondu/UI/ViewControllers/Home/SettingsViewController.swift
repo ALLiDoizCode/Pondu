@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 import BubbleTransition
 
 class SettingsViewController: UIViewController,UIViewControllerTransitioningDelegate,UITextFieldDelegate,UITextViewDelegate {
@@ -33,7 +32,6 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     @IBOutlet weak var editProfile: UIButton!
     @IBOutlet weak var changePassWord: UIButton!
     
-    var currentUser = PFUser.currentUser()
     let transition = BubbleTransition()
     let user = theUser()
     
@@ -65,11 +63,11 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
         
         
        
-        email.text = currentUser?.email
+        /*email.text = currentUser?.email
         userName.text = currentUser?.username
         bio.text = currentUser!["Bio"] as! String
         phone.text = currentUser!["Phone"] as? String
-        name.text = currentUser!["FullName"] as? String
+        name.text = currentUser!["FullName"] as? String*/
         
 
         // Do any additional setup after loading the view.
@@ -161,17 +159,13 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     }
     @IBAction func blockedBtn(sender: AnyObject) {
     }
+    
     @IBAction func logout(sender: AnyObject) {
         
-        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
-            
-            if error == nil {
-                
-                self.performSegueWithIdentifier("logout", sender: self)
-            }
-        }
+         self.performSegueWithIdentifier("logout", sender: self)
         
     }
+    
     @IBAction func deleteBtn(sender: AnyObject) {
         
         deleteUser()
@@ -180,7 +174,7 @@ class SettingsViewController: UIViewController,UIViewControllerTransitioningDele
     
     func deleteUser(){
         
-        currentUser?.deleteEventually()    
+        
     }
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

@@ -9,8 +9,6 @@
 import UIKit
 import LTMorphingLabel
 import FXBlurView
-import Parse
-
 
 class WelcomeViewController: UIViewController {
     
@@ -23,12 +21,6 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        let user = PFUser.currentUser()
-        
-        if user?.username != nil {
-            
-            self.performSegueWithIdentifier("Login", sender: self)
-        }
         
         topLabel.text = "Welcome"
         topLabel.morphingEffect = .Evaporate

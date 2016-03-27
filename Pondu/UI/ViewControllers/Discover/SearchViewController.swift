@@ -9,7 +9,6 @@
 import UIKit
 import Kingfisher
 import SwiftEventBus
-import Parse
 
 class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
@@ -241,7 +240,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             let indexPath = self.tableView.indexPathForSelectedRow
             
-             if searchActive {
+            /* if searchActive {
                 
                 room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: filtered[(indexPath?.row)!].objectID, completion: { (data) -> Void in
                     
@@ -258,7 +257,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
                     
                     controller.objectId = data
                 })
-            }
+            }*/
             
         }
     }

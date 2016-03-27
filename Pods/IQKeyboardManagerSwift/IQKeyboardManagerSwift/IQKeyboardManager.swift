@@ -723,9 +723,9 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
         
         if let unwrappedController = controller {
             //frame size needs to be adjusted on iOS8 due to orientation structure changes.
-            if #available(iOS 8.0, *) {
+            //if #available(iOS 8.0, *) {
                 frame.size = unwrappedController.view.frame.size
-            }
+            //}
             
             //Used UIViewAnimationOptionBeginFromCurrentState to minimize strange animations.
             UIView.animateWithDuration(_animationDuration, delay: 0, options: UIViewAnimationOptions.BeginFromCurrentState.union(_animationCurve), animations: { () -> Void in
@@ -1422,9 +1422,9 @@ public class IQKeyboardManager: NSObject, UIGestureRecognizerDelegate {
             if let rootViewController = _rootViewController {
                 
                 //frame size needs to be adjusted on iOS8 due to orientation API changes.
-                if #available(iOS 8.0, *) {
+                //if #available(iOS 8.0, *) {
                     _topViewBeginRect.size = rootViewController.view.frame.size
-                }
+                //}
                 
                 //Used UIViewAnimationOptionBeginFromCurrentState to minimize strange animations.
                 UIView.animateWithDuration(_animationDuration, delay: 0, options: UIViewAnimationOptions.BeginFromCurrentState.union(_animationCurve), animations: { () -> Void in

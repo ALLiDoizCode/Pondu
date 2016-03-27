@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import Parse
 import SwiftEventBus
 import ImagePickerSheetController
 import Photos
@@ -26,9 +25,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var theImage:UIImage!
     
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
-    let videoTypes:[String] = ["mov","mp4", "m4v","3gp","MOV"]
     
-    let currentUser = PFUser.currentUser()
     let dropShawdow = DropShadow()
     let presenter = PresentMessage()
     let theCloud = Cloud()
@@ -262,11 +259,11 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             cell.userName.text = data[indexPath.row].sender
             cell.time.text = time
             
-            if data[indexPath.row].sender != currentUser?.username {
+            /*if data[indexPath.row].sender != currentUser?.username {
                 
                 cell.bar.image = UIImage(named: "msgred")
                 cell.userName.textColor = UIColor.lightGrayColor()
-            }
+            }*/
             
             return cell
         }

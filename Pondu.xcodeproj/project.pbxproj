@@ -56,11 +56,8 @@
 		4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */; };
 		4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */; };
 		4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */; };
-		4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668391BE989B500591DF6 /* CreateEvent.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
-		4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668411BE9A9D100591DF6 /* CreateParty.swift */; };
 		4D8668441BE9AA5000591DF6 /* CreatePartyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */; };
-		4D88281E1C7684EF00604DE3 /* CreateStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281D1C7684EF00604DE3 /* CreateStory.swift */; };
 		4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281F1C7689BF00604DE3 /* MakeStory.swift */; };
 		4D8828221C768FD900604DE3 /* AddComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828211C768FD900604DE3 /* AddComment.swift */; };
 		4D8828241C76958400604DE3 /* LiveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828231C76958400604DE3 /* LiveContent.swift */; };
@@ -82,8 +79,6 @@
 		4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */; };
 		4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5851BED312800F15C6C /* PartyViewController.swift */; };
 		4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1E5871BED338700F15C6C /* PartyCell.swift */; };
-		4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EED1BDEC254006055E9 /* SignUp.swift */; };
-		4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EEF1BDEC25F006055E9 /* Login.swift */; };
 		4DD73EF21BDEC375006055E9 /* UserSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF11BDEC375006055E9 /* UserSignUp.swift */; };
 		4DD73EF41BDEC7CF006055E9 /* userLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD73EF31BDEC7CF006055E9 /* userLogin.swift */; };
 		4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */; };
@@ -178,11 +173,8 @@
 		4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
 		4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
 		4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
-		4D8668391BE989B500591DF6 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
-		4D8668411BE9A9D100591DF6 /* CreateParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateParty.swift; sourceTree = "<group>"; };
 		4D8668431BE9AA5000591DF6 /* CreatePartyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePartyPresenter.swift; sourceTree = "<group>"; };
-		4D88281D1C7684EF00604DE3 /* CreateStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStory.swift; sourceTree = "<group>"; };
 		4D88281F1C7689BF00604DE3 /* MakeStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeStory.swift; sourceTree = "<group>"; };
 		4D8828211C768FD900604DE3 /* AddComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddComment.swift; sourceTree = "<group>"; };
 		4D8828231C76958400604DE3 /* LiveContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveContent.swift; sourceTree = "<group>"; };
@@ -205,8 +197,6 @@
 		4DD1E5811BED0B9200F15C6C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4DD1E5851BED312800F15C6C /* PartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyViewController.swift; sourceTree = "<group>"; };
 		4DD1E5871BED338700F15C6C /* PartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyCell.swift; sourceTree = "<group>"; };
-		4DD73EED1BDEC254006055E9 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		4DD73EEF1BDEC25F006055E9 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4DD73EF11BDEC375006055E9 /* UserSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignUp.swift; sourceTree = "<group>"; };
 		4DD73EF31BDEC7CF006055E9 /* userLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userLogin.swift; sourceTree = "<group>"; };
 		4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -477,11 +467,6 @@
 			children = (
 				4D70AA5C1CA227FA00BC23DC /* WallClient.swift */,
 				4D14C6331C193E9200BAEA1F /* school.swift */,
-				4D88281D1C7684EF00604DE3 /* CreateStory.swift */,
-				4D8668411BE9A9D100591DF6 /* CreateParty.swift */,
-				4D8668391BE989B500591DF6 /* CreateEvent.swift */,
-				4DD73EED1BDEC254006055E9 /* SignUp.swift */,
-				4DD73EEF1BDEC25F006055E9 /* Login.swift */,
 				4D32A8291C88D94A0053FBCD /* Messages.swift */,
 				4D8828231C76958400604DE3 /* LiveContent.swift */,
 				4DD1749D1BDD793F00B64E0B /* Presenters */,
@@ -778,15 +763,12 @@
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
 				4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */,
 				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
-				4D86683A1BE989B500591DF6 /* CreateEvent.swift in Sources */,
 				4DE7CC961C82B19300D83075 /* Date.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
-				4DD73EF01BDEC25F006055E9 /* Login.swift in Sources */,
 				4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */,
 				4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
 				4DBF2E9A1BF4DB3D00BD9B2A /* StoryLayout.swift in Sources */,
-				4D8668421BE9A9D100591DF6 /* CreateParty.swift in Sources */,
 				4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */,
 				4D09D9691C26456D00D3FF81 /* WebViewController.swift in Sources */,
 				4DC9AFC01C7A7F4C00C205B8 /* MediaData.swift in Sources */,
@@ -828,14 +810,12 @@
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
 				4D32A8301C88E10D0053FBCD /* Message.swift in Sources */,
 				4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */,
-				4D88281E1C7684EF00604DE3 /* CreateStory.swift in Sources */,
 				4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */,
 				4D14C6341C193E9200BAEA1F /* school.swift in Sources */,
 				4D2BE9A91C1CF893001810BB /* School.swift in Sources */,
 				4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */,
 				4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */,
 				4D0CC3D61C2746C000843328 /* VideoViewController.swift in Sources */,
-				4DD73EEE1BDEC254006055E9 /* SignUp.swift in Sources */,
 				4DF91A891C2B683B008E39AF /* SearchViewController.swift in Sources */,
 				4D32A82A1C88D94A0053FBCD /* Messages.swift in Sources */,
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,

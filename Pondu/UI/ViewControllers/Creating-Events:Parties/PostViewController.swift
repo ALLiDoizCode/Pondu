@@ -153,8 +153,6 @@ class PostViewController: UIViewController,UITextViewDelegate {
         if type == false && textVIew.text != ""{
             
             
-            makeEvent.event("", thePost: textVIew.text, theAddress: address, theLive: live,thelikes:likes,theDate: date,theStartTime: timeStart,theEndTime: timeEnd,thePrivacy:privacy,theLat: lat,theLong: long)
-            
         }else if type == true && textVIew.text != ""{
             
             

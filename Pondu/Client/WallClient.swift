@@ -8,20 +8,21 @@
 
 import Foundation
 import UIKit
+import SwiftEventBus
 
 class WallClient {
     
-    let date = NSDate(timeIntervalSince1970: 1352149171)
-    let image = UIImage(named: "girl")
+    //let date = NSDate(timeIntervalSince1970: 1352149171)
+    //let image = UIImage(named: "girl")
     let store = KCSLinkedAppdataStore.storeWithOptions([
         KCSStoreKeyCollectionName : "Wall",
         KCSStoreKeyCollectionTemplateClass : Wall.self
         ])
 
     
-    func post(){
+    func post(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double){
         
-        let data = UIImageJPEGRepresentation(image!, 0.9)
+        let data = UIImageJPEGRepresentation(TheProfilePicture, 0.9)
         
         KCSFileStore.uploadData(
             data,
@@ -29,7 +30,7 @@ class WallClient {
             completionBlock: { (uploadInfo: KCSFile!, error: NSError!) -> Void in
                 //NSLog("Upload finished. File id='%@', error='%@'.", uploadInfo.fileId, error)
                 
-                let wall = Wall(theTitle: "test", theDescription: "test", TheProfilePicture: uploadInfo.fileId, theAddress: "test", theLive: true, thelikes: 1, theDate:self.date , theStartTime: self.date, theEndTime: self.date, thePrivacy: true, theLat: 11.02, theLong: 52.10)
+                let wall = Wall(theTitle: theTitle, theDescription: theDescription, TheProfilePicture: uploadInfo.fileId, theAddress: "test", theLive: true, thelikes: 1, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: true, theLat: 11.02, theLong: 52.10)
                 self.store.saveObject(
                     wall,
                     withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
@@ -39,6 +40,8 @@ class WallClient {
                         } else {
                             //save was successful
                             NSLog("Successfully saved event (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
+                            
+                            SwiftEventBus.post("makeEvent", sender: true)
                         }
                     },
                     withProgressBlock: nil

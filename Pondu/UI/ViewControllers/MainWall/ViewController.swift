@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftEventBus
-import Parse
 import Kingfisher
 import QuartzCore
 import SwiftDate

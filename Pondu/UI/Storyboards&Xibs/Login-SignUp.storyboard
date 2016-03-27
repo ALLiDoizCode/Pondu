@@ -22,9 +22,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUpBack" translatesAutoresizingMaskIntoConstraints="NO" id="Nl4-sT-sNR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="-14" width="400" height="814"/>
-                                </variation>
                             </imageView>
                             <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2b9-99-4ZC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -131,14 +128,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="asS-3v-0QO"/>
-                                        <exclude reference="MWB-8R-UD7"/>
-                                        <exclude reference="h5R-4G-EMI"/>
                                         <exclude reference="g1i-1p-3c4"/>
                                         <exclude reference="nBO-Ji-g4d"/>
-                                        <exclude reference="dKn-4L-22s"/>
-                                        <exclude reference="hDb-KK-IBZ"/>
                                         <exclude reference="fK1-4d-smT"/>
                                         <exclude reference="gfd-2N-7cb"/>
+                                        <exclude reference="MWB-8R-UD7"/>
+                                        <exclude reference="h5R-4G-EMI"/>
+                                        <exclude reference="dKn-4L-22s"/>
+                                        <exclude reference="hDb-KK-IBZ"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -150,14 +147,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="asS-3v-0QO"/>
-                                        <include reference="MWB-8R-UD7"/>
-                                        <include reference="h5R-4G-EMI"/>
                                         <include reference="g1i-1p-3c4"/>
                                         <include reference="nBO-Ji-g4d"/>
-                                        <include reference="dKn-4L-22s"/>
-                                        <include reference="hDb-KK-IBZ"/>
                                         <include reference="fK1-4d-smT"/>
                                         <include reference="gfd-2N-7cb"/>
+                                        <include reference="MWB-8R-UD7"/>
+                                        <include reference="h5R-4G-EMI"/>
+                                        <include reference="dKn-4L-22s"/>
+                                        <include reference="hDb-KK-IBZ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -277,10 +274,12 @@
                             <constraint firstItem="2b9-99-4ZC" firstAttribute="top" secondItem="EGt-bI-uYF" secondAttribute="bottom" constant="81" id="LyO-QJ-3ng"/>
                             <constraint firstItem="ukX-Mi-hGw" firstAttribute="top" secondItem="2b9-99-4ZC" secondAttribute="bottom" constant="9" id="PEg-33-G1H"/>
                             <constraint firstItem="ukX-Mi-hGw" firstAttribute="centerX" secondItem="yak-xh-KmY" secondAttribute="centerX" id="VXl-sh-ZGp"/>
+                            <constraint firstItem="Nl4-sT-sNR" firstAttribute="leading" secondItem="2b9-99-4ZC" secondAttribute="leading" id="WVq-tc-MVj"/>
                             <constraint firstItem="2b9-99-4ZC" firstAttribute="width" secondItem="yak-xh-KmY" secondAttribute="width" id="ZG4-Pw-qUV"/>
                             <constraint firstItem="Nl4-sT-sNR" firstAttribute="bottom" secondItem="GIr-dp-gEO" secondAttribute="top" id="lXs-X1-zHN"/>
                             <constraint firstItem="EGt-bI-uYF" firstAttribute="top" secondItem="VmB-Wn-ET6" secondAttribute="bottom" constant="85" id="mUt-jM-dcQ"/>
                             <constraint firstItem="2b9-99-4ZC" firstAttribute="centerX" secondItem="yak-xh-KmY" secondAttribute="centerX" id="nFx-F5-e85"/>
+                            <constraint firstItem="Nl4-sT-sNR" firstAttribute="trailing" secondItem="2b9-99-4ZC" secondAttribute="trailing" id="oZj-q4-fhM"/>
                             <constraint firstItem="aVz-Ny-kX9" firstAttribute="leading" secondItem="ukX-Mi-hGw" secondAttribute="trailing" constant="8" id="r2L-ob-ovl"/>
                             <constraint firstItem="Nl4-sT-sNR" firstAttribute="top" secondItem="yak-xh-KmY" secondAttribute="topMargin" constant="-14" id="rLx-oa-rFq"/>
                         </constraints>
@@ -294,7 +293,9 @@
                                 <exclude reference="aVz-Ny-kX9"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WVq-tc-MVj"/>
                                 <exclude reference="lXs-X1-zHN"/>
+                                <exclude reference="oZj-q4-fhM"/>
                                 <exclude reference="rLx-oa-rFq"/>
                                 <exclude reference="LLD-WR-Amw"/>
                                 <exclude reference="mUt-jM-dcQ"/>
@@ -319,7 +320,9 @@
                                 <include reference="aVz-Ny-kX9"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WVq-tc-MVj"/>
                                 <include reference="lXs-X1-zHN"/>
+                                <include reference="oZj-q4-fhM"/>
                                 <include reference="rLx-oa-rFq"/>
                                 <include reference="LLD-WR-Amw"/>
                                 <include reference="mUt-jM-dcQ"/>

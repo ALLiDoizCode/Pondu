@@ -12,10 +12,18 @@ import Kingfisher
 
 class MakingEvent {
     
-    let startEvent = createEvent()
+    let client = WallClient()
     
-    func event(theName: String, thePost: String,theAddress: String, theLive: Bool,thelikes:Int,theDate:String,theStartTime:String,theEndTime:String,thePrivacy:Bool,theLat:Double,theLong:Double){
+    func event(theTitle:String,theDescription:String,TheProfilePicture:UIImage,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,CompletionHandler:(success:Bool) -> Void){
         
+        SwiftEventBus.onMainThread(self, name: "makeEvent") { (notification) -> Void in
+            
+            let success = notification.object as! Bool
+            
+            CompletionHandler(success: success)
+        }
+        
+        client.post(theTitle, theDescription: theDescription, TheProfilePicture: TheProfilePicture, theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy, theLat: theLat, theLong: theLong)
     }
     
 }

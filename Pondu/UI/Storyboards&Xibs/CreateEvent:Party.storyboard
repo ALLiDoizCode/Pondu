@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0v5-BO-yHQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0v5-BO-yHQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -443,7 +443,7 @@
                                     <outlet property="delegate" destination="jr8-Vr-rHy" id="Ljk-kv-JXX"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leS-cJ-kBQ" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leS-cJ-kBQ" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                 <rect key="frame" x="134" y="115" width="132" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="132" id="pBT-v8-lUt">
@@ -463,7 +463,7 @@
                                     <constraint firstAttribute="height" constant="21" id="ca5-1P-FP3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -513,12 +513,12 @@
                                 <exclude reference="xoz-M3-TMY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="SUb-z0-O6C"/>
                                 <exclude reference="2eG-eh-4Z0"/>
                                 <exclude reference="9qf-ew-qJl"/>
                                 <exclude reference="PcV-A2-g3y"/>
                                 <exclude reference="hDA-T0-yNt"/>
                                 <exclude reference="wYh-d9-5q8"/>
-                                <exclude reference="SUb-z0-O6C"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -527,12 +527,12 @@
                                 <include reference="xoz-M3-TMY"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="SUb-z0-O6C"/>
                                 <include reference="2eG-eh-4Z0"/>
                                 <include reference="9qf-ew-qJl"/>
                                 <include reference="PcV-A2-g3y"/>
                                 <include reference="hDA-T0-yNt"/>
                                 <include reference="wYh-d9-5q8"/>
-                                <include reference="SUb-z0-O6C"/>
                             </mask>
                         </variation>
                     </view>
