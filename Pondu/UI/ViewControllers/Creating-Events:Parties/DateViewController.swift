@@ -205,6 +205,7 @@ class DateViewController: UIViewController {
             
             datePickerView.addTarget(self, action: Selector("endTimePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
             
+            
             //datePickerView.minimumDate = eventBegins
         }
         
@@ -234,7 +235,7 @@ class DateViewController: UIViewController {
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         endTime.text = dateFormatter.stringFromDate(sender.date)
-        eventBegins = sender.date
+        eventEnds = sender.date
     }
     /////////////////////TimeEnd////////////////////////////////
     

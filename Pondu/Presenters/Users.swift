@@ -14,28 +14,44 @@ class theUser {
     
     let client = UserClient()
     
-    func login(){
+    func login(userName:String,passWord:String,completion:(success:Bool) -> Void){
         
+        SwiftEventBus.onMainThread(self, name: "login") { (notification) -> Void in
+            
+            completion(success: notification.object as! Bool)
+        }
+        
+        client.login(userName, passWord: passWord)
     }
     
-    func signUp(){
+    func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage,completion:(success:Bool) -> Void){
         
+        SwiftEventBus.onMainThread(self, name: "signUp") { (notification) -> Void in
+            
+            completion(success: notification.object as! Bool)
+        }
+        
+        client.signUp(name, userName: userName, passWord: passWord, email: email, profileImage: profileImage)
     }
     
     func deleteAccount(){
         
+        client.delete()
     }
     
     func resetPassWord(){
         
+        client.resetPassword()
     }
     
     func forgotUserName(){
         
+        client.forgotUsername()
     }
     
     func verify(){
         
+        client.verifyUser()
     }
     
     func getUsers(completion:(users:[userData]) -> Void){

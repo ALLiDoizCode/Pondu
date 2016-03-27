@@ -25,7 +25,6 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
     @IBOutlet weak var verifyPassword: UITextField!
     @IBOutlet weak var next: UIBarButtonItem!
     
-    let newAccount = SignUP()
     let transition = BubbleTransition()
     let tapRect = UITapGestureRecognizer()
     

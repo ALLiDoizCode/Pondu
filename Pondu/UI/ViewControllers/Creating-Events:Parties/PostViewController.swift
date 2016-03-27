@@ -27,7 +27,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
     var timeEnd:String!
     var date:String!
     var address:String!
-    var geo:CLLocation!
+    var geo:CLLocation = CLLocation()
     var isCurrent:Bool!
     var privacy:Bool!
     var eventBegins:NSDate!

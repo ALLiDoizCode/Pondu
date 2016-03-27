@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SwiftEventBus
 
 class UserClient {
     
@@ -24,7 +24,7 @@ class UserClient {
             withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
                 if errorOrNil == nil {
                     //user is created
-                    
+                    SwiftEventBus.post("signUp", sender: true)
                     self.verifyUser()
                     
                 } else {
@@ -43,6 +43,8 @@ class UserClient {
                 if errorOrNil == nil {
                     //the log-in was successful and the user is now the active user and credentials saved
                     //hide log-in view and show main app content
+                    
+                    SwiftEventBus.post("login", sender: true)
                     
                     
                 } else {
@@ -105,6 +107,9 @@ class UserClient {
             withCompletionBlock: { (emailSent: Bool, errorOrNil: NSError!) -> Void in
                 if errorOrNil != nil {
                     //handle error
+                    
+                    
+                    
                 } // not much to do on success, for most apps
             }
         )

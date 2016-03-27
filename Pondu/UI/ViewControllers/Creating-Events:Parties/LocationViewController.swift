@@ -23,8 +23,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
     var timeEnd:String!
     var date:String!
     var privacy:Bool!
-    var geo:CLLocation!
-    var isCurrent:Bool!
+    var geo:CLLocation = CLLocation()
+    var isCurrent:Bool = false
     var eventBegins:NSDate!
     var eventEnds:NSDate!
     var eventDate:NSDate!
@@ -153,7 +153,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
                 print(country)
                 
                 address.text = "\(locationName) \(city) \(state) \(zip)"
-                geo = placemark?.location
+                geo = (placemark?.location)!
                 isCurrent = true
             }
             

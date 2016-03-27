@@ -18,7 +18,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
     
     let segueID = "Home"
     
-    let newAccount = SignUP()
+    let presenter = theUser()
     let transition = BubbleTransition()
     let client:college = college()
     
@@ -148,25 +148,34 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
 
     
     func createUser(){
-                
-        SwiftEventBus.onMainThread(self, name: "SignUpSucess") { (result) -> Void in
-            
-            SwiftSpinner.hide({
-                
-                self.performSegueWithIdentifier(self.segueID, sender: self)
-                
-            })
-        }
         
         if graduation.text != "" && pickSchool.titleLabel?.text != "Pick Your School"  {
             
-            SwiftSpinner.show("Uploading Image...")
+            SwiftSpinner.show("A verification link has been sent to your email...")
             
             print(username)
             print(password)
             print(email)
             print(fullName)
             print(pickSchool.titleLabel?.text)
+            
+            
+            presenter.signUp(fullName, userName: username, passWord: password, email: email, profileImage: image, completion: { (success) -> Void in
+                
+                if success == true {
+                    
+                    SwiftSpinner.hide({
+                        
+                        self.performSegueWithIdentifier(self.segueID, sender: self)
+                        
+                    })
+                    
+                }else {
+                    
+                    SweetAlert().showAlert("There was an issue Creating an Account", subTitle: ":(", style: AlertStyle.Error)
+                }
+            })
+            
         }else if pickSchool.titleLabel?.text == "Pick Your School" {
             
              SweetAlert().showAlert("Pick a School", subTitle: ":(", style: AlertStyle.Error)

@@ -22,7 +22,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewController
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    let user = theUser()
+    let presenter = theUser()
     let transition = BubbleTransition()
     
     let mainSegue = "Login"
@@ -59,20 +59,32 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewController
 
     @IBAction func loginBtn(sender: AnyObject) {
         
-        //userLogin.beginLogin(username.text!, password: password.text!)
-        
-        SwiftEventBus.onMainThread(self, name: "login") { (result) -> Void in
+        guard (username.text != nil) else {
             
-            self.performSegueWithIdentifier(self.mainSegue, sender: self)
-        }
-        
-        SwiftEventBus.onMainThread(self, name: "loginFailed") { (result) -> Void in
-            
-            print("login failed")
             SweetAlert().showAlert("Wrong Password or Email", subTitle: ":(", style: AlertStyle.Error)
+            
+            return
         }
         
-         self.performSegueWithIdentifier(self.mainSegue, sender: self)
+        guard (password.text != nil) else {
+            
+            SweetAlert().showAlert("Wrong Password or Email", subTitle: ":(", style: AlertStyle.Error)
+            
+            return
+        }
+        
+        presenter.login(username.text!, passWord: password.text!) { (success) -> Void in
+            
+            if success == true {
+                
+                self.performSegueWithIdentifier(self.mainSegue, sender: self)
+                
+            }else {
+                
+                print("login failed")
+                SweetAlert().showAlert("Wrong Password or Email", subTitle: ":(", style: AlertStyle.Error)
+            }
+        }
         
     }
     

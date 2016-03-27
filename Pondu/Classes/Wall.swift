@@ -16,7 +16,7 @@ class Wall:NSObject {
     var likes:NSNumber?
     var address:String?
     var live:NSNumber?
-    var liveContent:Content?
+    //var liveContent:Content = Content(theMedia: "", theTitle: "")
     var date:NSDate?
     var startTime:NSDate?
     var endTime:NSDate?
@@ -47,7 +47,7 @@ class Wall:NSObject {
             "title" : "title",
             "address" : "address",
             "live" : "live",
-            "liveContent":"liveContent",
+            //"liveContent":"liveContent",
             "likes" : "likes",
             "date" : "date",
             "startTime" : "startTime",
@@ -64,7 +64,7 @@ class Wall:NSObject {
         return [
             
             "createdBy": KCSUserCollectionName,
-            "liveContent":"LiveContent"
+            //"liveContent":"LiveContent"
         ]
     }
     
