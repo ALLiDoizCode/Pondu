@@ -25,6 +25,7 @@ class Wall:NSObject {
     var privacy:NSNumber?
     var event:Bool?
     var geocoord: CLLocation?
+    var createdBy:KCSUser?
     
     init(theTitle:String,theDescription:String,TheProfilePicture:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,theLat:Double,theLong:Double,isEvent:Bool){
         
@@ -58,8 +59,17 @@ class Wall:NSObject {
             "startTime" : "startTime",
             "endTime" : "endTime",
             "privacy" : "privacy",
-            "geocoord" : KCSEntityKeyGeolocation
+            "geocoord" : KCSEntityKeyGeolocation,
+            "createdBy": "createdBy"
             //"metadata" : KCSEntityKeyMetadata //optional _metadata field
+        ]
+    }
+    
+    override static func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
+        
+        return [
+            
+            "createdBy": KCSUserCollectionName
         ]
     }
 }
