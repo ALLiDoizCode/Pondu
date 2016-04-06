@@ -84,14 +84,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
             
-            
-            //let location = locationManager.location
-            
-            //let latitude: Double = location!.coordinate.latitude
-            //let longitude: Double = location!.coordinate.longitude
-            
-            //print("current latitude :: \(latitude)")
-            //print("current longitude :: \(longitude)")
            
         } else {
             locationManager.requestWhenInUseAuthorization()
@@ -132,16 +124,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             
             // Address dictionary
             print(containsPlacemark.addressDictionary)
-            
-            // Location name
-            /*if let locationName = containsPlacemark.addressDictionary!["Name"] as? NSString {
-                print(locationName)
-            }*/
-            
-            // Street address
-            /*if let street = containsPlacemark.addressDictionary!["Thoroughfare"] as? NSString {
-                print(street)
-            }*/
             
             // City
             if let locationName = containsPlacemark.addressDictionary!["Name"] as? NSString ,let city =  containsPlacemark.addressDictionary!["City"] as? NSString, let state = containsPlacemark.addressDictionary!["State"] as? NSString, let zip = containsPlacemark.addressDictionary!["ZIP"] as? NSString, let country = containsPlacemark.addressDictionary!["Country"] as? NSString {

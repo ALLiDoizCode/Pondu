@@ -13,25 +13,44 @@ class UserClient {
     
     func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage){
         
-        // Create a new user with the username 'kinvey' and the password '12345'
-        KCSUser.userWithUsername(
-            userName,
-            password: passWord,
-            fieldsAndValues: [
-                KCSUserAttributeEmail : email,
-                KCSUserAttributeGivenname : name,
-            ],
-            withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
-                if errorOrNil == nil {
-                    //user is created
-                    SwiftEventBus.post("signUp", sender: true)
-                    self.verifyUser()
-                    
-                } else {
-                    //there was an error with the create
+        self.uploadProfilePicture(profileImage) { (file) in
+            
+            // Create a new user with the username and the password
+            KCSUser.userWithUsername(
+                userName,
+                password: passWord,
+                fieldsAndValues: [
+                    KCSUserAttributeEmail : email,
+                    KCSUserAttributeGivenname : name,
+                ],
+                withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
+                    if errorOrNil == nil {
+                        //user is created
+                        
+                        user.setValue(file.fileId, forAttribute: "ProfileImage")
+                        user.saveWithCompletionBlock({ (objects, error) in
+                            
+                            if error == nil {
+                                
+                                SwiftEventBus.post("signUp", sender: true)
+                                self.verifyUser()
+
+                                
+                            }else {
+                                
+                                SwiftEventBus.post("signUp", sender: false)
+        
+
+                            }
+                        })
+                        
+                    } else {
+                        //there was an error with the create
+                    }
                 }
-            }
-        )
+            )
+        }
+        
     }
     
     func login(userName:String,passWord:String) {
@@ -60,6 +79,33 @@ class UserClient {
                 }
             }
         )
+    }
+    
+    // Upload the profile picture to the Kinvey file store
+    func uploadProfilePicture(photo:UIImage!,completion:(file:KCSFile!) -> ()) {
+        
+        // Initialize with the default initializer
+        let metadata = KCSMetadata();
+        
+        // Ensure that all users can access this file
+        metadata.setGloballyReadable(true);
+        
+        // This is added to a params object that is passed to the upload data method
+        let fileParams = [
+            KCSFileMimeType : "image/jpeg",
+            KCSFileACL : metadata
+        ];
+        
+        if(photo != nil) {
+            let photoData = UIImageJPEGRepresentation(photo, 0.9)
+            
+            KCSFileStore.uploadData(photoData, options: fileParams, completionBlock: { (file:KCSFile!, error:NSError!) -> Void in
+                completion(file: file);
+                }, progressBlock: nil);
+            
+        } else {
+            completion(file: nil);
+        }
     }
     
     func signOut(){

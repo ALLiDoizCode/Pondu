@@ -25,7 +25,7 @@ class Wall:NSObject {
     var geocoord: CLLocation?
     var createdBy:KCSUser?
     
-    init(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation){
+    init(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation,theCreatedBy:KCSUser){
         
         title = theTitle
         post = theDescription
@@ -38,6 +38,7 @@ class Wall:NSObject {
         privacy = thePrivacy
         event = isEvent
         geocoord = theGeo
+        createdBy = theCreatedBy
     }
     
     

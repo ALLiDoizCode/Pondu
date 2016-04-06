@@ -12,6 +12,8 @@ import SwiftEventBus
 
 class WallClient {
     
+    
+     let user = KCSUser.activeUser()
     //let date = NSDate(timeIntervalSince1970: 1352149171)
     //let image = UIImage(named: "girl")
     let store = KCSLinkedAppdataStore.storeWithOptions([
@@ -22,7 +24,7 @@ class WallClient {
     
     func post(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation){
         
-        let wall = Wall(theTitle: theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo)
+        let wall = Wall(theTitle: theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo,theCreatedBy:user)
         self.store.saveObject(
             wall,
             withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
@@ -61,7 +63,10 @@ class WallClient {
                         
                         let title = object.valueForKey("title") as? String
                         let image = object.valueForKey("profilePicture") as? String
+                        let creator = object.valueForKey("creator") as? String
                         
+                        
+                        print("the creator is \(creator)")
                         print("the title is \(title)")
                         print("the image is \(image)")
                         

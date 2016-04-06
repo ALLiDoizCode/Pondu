@@ -16,7 +16,7 @@ class MakingEvent {
     
     let client = WallClient()
     
-    func event(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,currentGeo:Bool,theGeo:CLLocation,CompletionHandler:(success:Bool) -> Void){
+    func event(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,currentGeo:Bool?,theGeo:CLLocation?,CompletionHandler:(success:Bool) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "makeWall") { (notification) -> Void in
             
@@ -25,9 +25,9 @@ class MakingEvent {
             CompletionHandler(success: success)
         }
         
-        if currentGeo {
+        if (currentGeo != nil) {
             
-            self.client.post(theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo)
+            self.client.post(theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate: theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo!)
             
         }else {
             
