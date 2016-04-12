@@ -13,6 +13,7 @@ import SwiftSpinner
 
 class PostViewController: UIViewController,UITextViewDelegate {
 
+    @IBOutlet weak var titlelable: UITextField!
     @IBOutlet weak var mainLabel: LTMorphingLabel!
     @IBOutlet weak var textVIew: UITextView!
     @IBOutlet weak var post: UIButton!
@@ -39,7 +40,6 @@ class PostViewController: UIViewController,UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postDidFinish()
         
         self.title = "Post"
         
@@ -180,11 +180,13 @@ class PostViewController: UIViewController,UITextViewDelegate {
     
     @IBAction func postBTn(sender: AnyObject) {
         
-        if type == false && textVIew.text != ""{
+        if type == false && (textVIew.text != "" && titlelable.text != ""){
             
+             postDidFinish()
             
-        }else if type == true && textVIew.text != ""{
+        }else if type == true && (textVIew.text != "" && titlelable.text != ""){
             
+             postDidFinish()
             
         }else{
             

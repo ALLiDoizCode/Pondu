@@ -28,6 +28,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     let liveConent = AddContent()
     
+    let presenter = PresentMainWall()
+    
     @IBOutlet weak var blur: UIView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailImage: UIImageView!
@@ -61,6 +63,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         blur.hidden = true
        // blur.blurRadius = 5
         
+        
+        presenter.eventPost { (result) in
+            
+            
+        }
         
     }
     

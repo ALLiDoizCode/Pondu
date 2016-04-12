@@ -23,9 +23,10 @@ class Wall:NSObject {
     var privacy:NSNumber?
     var event:Bool?
     var geocoord: CLLocation?
-    var createdBy:KCSUser?
+    var createdBy:String?
+    var creatorImage:String?
     
-    init(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation,theCreatedBy:KCSUser){
+    init(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation,theCreatedBy:String,theCreatorImage:String){
         
         title = theTitle
         post = theDescription
@@ -39,6 +40,7 @@ class Wall:NSObject {
         event = isEvent
         geocoord = theGeo
         createdBy = theCreatedBy
+        creatorImage = theCreatorImage
     }
     
     
@@ -55,12 +57,15 @@ class Wall:NSObject {
             "endTime" : "endTime",
             "privacy" : "privacy",
             "geocoord" : KCSEntityKeyGeolocation,
-            "createdBy": "createdBy"
+            "createdBy": "createdBy",
+            "creatorImage":"creatorImage"
             //"metadata" : KCSEntityKeyMetadata //optional _metadata field
         ]
     }
     
-    override static func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
+    
+    
+    /*override static func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
         
         return [
             
@@ -72,7 +77,7 @@ class Wall:NSObject {
     internal override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
         
         return [ "createdBy" ]
-    }
+    }*/
     
     
 }

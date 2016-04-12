@@ -20,11 +20,18 @@ class WallClient {
         KCSStoreKeyCollectionName : "Wall",
         KCSStoreKeyCollectionTemplateClass : Wall.self
         ])
+    
+    var currentWall:[Wall] = []
 
     
     func post(theTitle:String,theDescription:String,theAddress:String,theLive:Bool,thelikes:Int,theDate:NSDate,theStartTime:NSDate,theEndTime:NSDate,thePrivacy:Bool,isEvent:Bool,theGeo:CLLocation){
         
-        let wall = Wall(theTitle: theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo,theCreatedBy:user)
+        let profileImage = user.getValueForAttribute("ProfileImage") as! String
+        
+        print("user image \(profileImage)")
+        
+        let wall = Wall(theTitle: theTitle, theDescription: theDescription,theAddress: theAddress, theLive: theLive, thelikes: thelikes, theDate:theDate, theStartTime: theStartTime, theEndTime: theEndTime, thePrivacy: thePrivacy,isEvent:isEvent,theGeo:theGeo,theCreatedBy:user.username,theCreatorImage:profileImage)
+        
         self.store.saveObject(
             wall,
             withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
@@ -42,7 +49,7 @@ class WallClient {
         )
     }
     
-    func getPost(completion:(imageData:UIImage) -> Void){
+    func getPost(){
         
         let collection = KCSCollection(fromString: "Wall", ofClass: NSDictionary.self)
         let wallStore = KCSCachedStore(collection: collection, options: [ KCSStoreKeyCachePolicy : KCSCachePolicy.LocalFirst.rawValue ])
@@ -62,19 +69,35 @@ class WallClient {
                     for  object:NSDictionary in objectsOrNil as! [NSDictionary] {
                         
                         let title = object.valueForKey("title") as? String
-                        let image = object.valueForKey("profilePicture") as? String
-                        let creator = object.valueForKey("creator") as? String
+                        let address = object.valueForKey("address") as? String
+                        let live = object.valueForKey("live") as? Bool
+                        let likes = object.valueForKey("likes") as? Int
+                        let date = object.valueForKey("date") as? NSDate
+                        let startTime = object.valueForKey("startTime") as? NSDate
+                        let endTime = object.valueForKey("endTime") as? NSDate
+                        let privacy = object.valueForKey("privacy") as? Bool
+                        let creator = object.valueForKey("createdBy") as? String
+                        let geo = object.valueForKey("geocoord") as? CLLocation
                         
-                        
-                        print("the creator is \(creator)")
-                        print("the title is \(title)")
-                        print("the image is \(image)")
-                        
-                        self.getFile(image!, completion: { (data) -> Void in
+                        if let image = object.valueForKey("profileImage") as? String {
                             
-                            completion(imageData: data)
-                        })
+                            self.getFile(image , completion: { (data) -> Void in
+                                
+                                print("the image is \(image)")
+                                
+                                let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: date!, theStartTime: startTime!, theEndTime: endTime!, thePrivacy: privacy!, isEvent: true, theGeo: geo!, theCreatedBy: creator!,theCreatorImage:String(data))
+                                
+                                print("the url to the image is \(myEvent.creatorImage)")
+                                
+                                self.currentWall.append(myEvent)
+                                
+                                
+                            })
+                        }
+                        
                     }
+                    
+                    SwiftEventBus.post("MainWallEvent", sender: self.currentWall)
                 }
                 
             },
@@ -82,7 +105,7 @@ class WallClient {
         )
     }
     
-    func getFile(fileId:String,completion:(data:UIImage) -> Void){
+    func getFile(fileId:String,completion:(data:NSURL) -> Void){
         
         KCSFileStore.downloadFile(
             fileId,
@@ -91,10 +114,10 @@ class WallClient {
                 if error == nil {
                     let file = downloadedResources[0] as! KCSFile
                     let fileURL = file.localURL
-                    let image = UIImage(contentsOfFile: fileURL.path!) //note this blocks for awhile
-                    print("the url of the image \(image)")
+                    //let image = UIImage(contentsOfFile: fileURL.path!) //note this blocks for awhile
+                    print("the url of the image \(file.remoteURL)")
                     
-                    completion(data: image!)
+                    completion(data: file.remoteURL!)
                     
                 } else {
                     NSLog("Got an error: %@", error)

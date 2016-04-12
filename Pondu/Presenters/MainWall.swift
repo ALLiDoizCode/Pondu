@@ -11,6 +11,7 @@ import SwiftEventBus
 
 class PresentMainWall {
     
+    let client = WallClient()
 
     func eventPost(completion:(result:[Wall]) -> Void){
         
@@ -28,6 +29,8 @@ class PresentMainWall {
             }
            
         }
+        
+         self.client.getPost()
 
     }
     
