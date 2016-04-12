@@ -15,21 +15,24 @@ class PresentMainWall {
 
     func eventPost(completion:(result:[Wall]) -> Void){
         
+        print("setting up eventbus")
+        
         SwiftEventBus.onMainThread(self, name: "MainWallEvent") { result in
             
             print("MainWall Fired")
             
-            if let post = result.object as? [Wall] {
+            let post = result.object as! [Wall]
                 
-                print("event post \(post)")
+                print("event post \(post.count)")
                 //SwiftEventBus.post("updateCell", sender: post)
                 SwiftEventBus.unregister(self, name: "MainWallEvent")
                 
                 completion(result: post)
-            }
+            
            
         }
         
+        print("firing client")
          self.client.getPost()
 
     }

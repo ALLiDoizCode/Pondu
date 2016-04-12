@@ -68,18 +68,39 @@ class WallClient {
                     
                     for  object:NSDictionary in objectsOrNil as! [NSDictionary] {
                         
+                        //print("the object \(object.allKeys)")
+                        print("the object values \(object.allValues)")
+                        
+                        
                         let title = object.valueForKey("title") as? String
                         let address = object.valueForKey("address") as? String
                         let live = object.valueForKey("live") as? Bool
                         let likes = object.valueForKey("likes") as? Int
-                        let date = object.valueForKey("date") as? NSDate
-                        let startTime = object.valueForKey("startTime") as? NSDate
-                        let endTime = object.valueForKey("endTime") as? NSDate
+                        let date = object.valueForKey("date") as! String
+                        let startTime = object.valueForKey("startTime") as! String
+                        let endTime = object.valueForKey("endTime") as! String
                         let privacy = object.valueForKey("privacy") as? Bool
                         let creator = object.valueForKey("createdBy") as? String
-                        let geo = object.valueForKey("geocoord") as? CLLocation
+                        let geo = object.valueForKey("_geoloc") as? [Double]
+                        let image = object.valueForKey("creatorImage") as? String
+                        let long = geo![0]
+                        let lat = geo![1]
                         
-                        if let image = object.valueForKey("profileImage") as? String {
+                        let location = CLLocation(latitude: lat, longitude: long)
+                        
+                        let theDate = NSDate.dateFromISOString(date)
+                        let theStart = NSDate.dateFromISOString(startTime)
+                        let theEnd = NSDate.dateFromISOString(endTime)
+                        
+                        //print("the date \(NSDate.dateFromISOString(date))")
+                        
+                        let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: true, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
+                        
+                        //print("the url to the image is \(myEvent.creatorImage)")
+                        
+                        self.currentWall.append(myEvent)
+                        
+                        /*if let image = object.valueForKey("profileImage") as? String {
                             
                             self.getFile(image , completion: { (data) -> Void in
                                 
@@ -93,7 +114,7 @@ class WallClient {
                                 
                                 
                             })
-                        }
+                        }*/
                         
                     }
                     
@@ -102,6 +123,8 @@ class WallClient {
                 
             },
             withProgressBlock: nil
+            
+            
         )
     }
     
@@ -113,7 +136,7 @@ class WallClient {
             completionBlock: { (downloadedResources: [AnyObject]!, error: NSError!) -> Void in
                 if error == nil {
                     let file = downloadedResources[0] as! KCSFile
-                    let fileURL = file.localURL
+                    //let fileURL = file.localURL
                     //let image = UIImage(contentsOfFile: fileURL.path!) //note this blocks for awhile
                     print("the url of the image \(file.remoteURL)")
                     

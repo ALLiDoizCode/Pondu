@@ -62,11 +62,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         detailView.hidden = true
         blur.hidden = true
        // blur.blurRadius = 5
-        
-        
+    
         presenter.eventPost { (result) in
             
+           self.array = result
             
+            self.reload()
         }
         
     }
@@ -84,6 +85,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         // Dispose of any resources that can be recreated.
     }
     
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.collectionView.reloadData()
+        }
+    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -225,7 +233,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     
     @IBAction func commentBtn(sender: AnyObject) {
+    
     }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "Live" {

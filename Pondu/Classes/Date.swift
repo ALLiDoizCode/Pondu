@@ -40,4 +40,24 @@ extension NSDate {
         if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
         return ""
     }
+    
+    ///handling ISO 8601 strings
+    public class func ISOStringFromDate(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        
+        return dateFormatter.stringFromDate(date).stringByAppendingString("Z")
+    }
+    
+    public class func dateFromISOString(string: String) -> NSDate {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        if let parsedDate = formatter.dateFromString(string) {
+            return parsedDate
+        }
+        // you can handle as you wish
+        return NSDate()
+    }
 }

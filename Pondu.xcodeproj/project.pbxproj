@@ -200,7 +200,7 @@
 		4DE1A1C51BEA717B009BCF55 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		4DE1A1C81BEA73AC009BCF55 /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		4DE1A1CA1BEAB7D1009BCF55 /* LFTPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFTPulseAnimation.swift; sourceTree = "<group>"; };
-		4DE7CC951C82B19300D83075 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4DE7CC951C82B19300D83075 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = ../../Classes/Date.swift; sourceTree = "<group>"; };
 		4DF1C90D1C5BC35200F4269A /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
 		4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4DF1F11C1BFF922C001A96C5 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -419,7 +419,6 @@
 				4D2BE9A81C1CF893001810BB /* School.swift */,
 				4D8828271C76A7DA00604DE3 /* Comment.swift */,
 				4D8828291C76A90800604DE3 /* Content.swift */,
-				4DE7CC951C82B19300D83075 /* Date.swift */,
 				4D32A82D1C88DF7A0053FBCD /* MessageList.swift */,
 				4D32A82F1C88E10D0053FBCD /* Message.swift */,
 				4D70AA5A1CA226ED00BC23DC /* Wall.swift */,
@@ -472,6 +471,7 @@
 		4DE1A1BB1BEA6F85009BCF55 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7CC951C82B19300D83075 /* Date.swift */,
 				4D2BE9AA1C1D00F3001810BB /* SweetAlert.swift */,
 				4D05125A1C07984200FB414D /* Player.swift */,
 				4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */,
