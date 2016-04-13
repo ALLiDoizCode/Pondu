@@ -92,29 +92,9 @@ class WallClient {
                         let theStart = NSDate.dateFromISOString(startTime)
                         let theEnd = NSDate.dateFromISOString(endTime)
                         
-                        //print("the date \(NSDate.dateFromISOString(date))")
-                        
                         let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: true, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
                         
-                        //print("the url to the image is \(myEvent.creatorImage)")
-                        
                         self.currentWall.append(myEvent)
-                        
-                        /*if let image = object.valueForKey("profileImage") as? String {
-                            
-                            self.getFile(image , completion: { (data) -> Void in
-                                
-                                print("the image is \(image)")
-                                
-                                let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: date!, theStartTime: startTime!, theEndTime: endTime!, thePrivacy: privacy!, isEvent: true, theGeo: geo!, theCreatedBy: creator!,theCreatorImage:String(data))
-                                
-                                print("the url to the image is \(myEvent.creatorImage)")
-                                
-                                self.currentWall.append(myEvent)
-                                
-                                
-                            })
-                        }*/
                         
                     }
                     
@@ -130,11 +110,15 @@ class WallClient {
     
     func getFile(fileId:String,completion:(data:NSURL) -> Void){
         
+        print("will get file")
+        
         KCSFileStore.downloadFile(
             fileId,
             options: nil,
             completionBlock: { (downloadedResources: [AnyObject]!, error: NSError!) -> Void in
                 if error == nil {
+                    
+                    print("got file")
                     let file = downloadedResources[0] as! KCSFile
                     //let fileURL = file.localURL
                     //let image = UIImage(contentsOfFile: fileURL.path!) //note this blocks for awhile

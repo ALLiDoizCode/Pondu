@@ -50,5 +50,13 @@ class PresentMainWall {
         }
         
     }
+    
+    func getFile(fileId:String,completion:(data:NSURL) -> Void){
+        
+        client.getFile(fileId) { (data) in
+            
+            completion(data: data)
+        }
+    }
 }
 

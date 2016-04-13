@@ -105,10 +105,21 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         let cell:MainCell = collectionView.dequeueReusableCellWithReuseIdentifier("MainCell", forIndexPath: indexPath) as! MainCell
         
-        cell.post.text = array[indexPath.item].description
-        cell.PostName.text = array[indexPath.item].title
+        cell.post.text = array[indexPath.item].post
+        cell.eventTitle.text = array[indexPath.item].title
+        cell.descriptionHead.text = array[indexPath.item].title
+        cell.PostName.text = array[indexPath.item].createdBy
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
-        //cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
+        
+        let file = array[indexPath.item].creatorImage
+        
+        presenter.getFile(file!, completion: { (data) in
+            
+            print(data)
+            
+            cell.profileImage.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+            
+        })
         
         if array[indexPath.item].live == true {
         
