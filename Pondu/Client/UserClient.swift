@@ -100,10 +100,14 @@ class UserClient {
             let photoData = UIImageJPEGRepresentation(photo, 0.9)
             
             KCSFileStore.uploadData(photoData, options: fileParams, completionBlock: { (file:KCSFile!, error:NSError!) -> Void in
+                
+                print("successfully uploaded image")
                 completion(file: file);
                 }, progressBlock: nil);
             
         } else {
+            
+            print("failed to upload image")
             completion(file: nil);
         }
     }
