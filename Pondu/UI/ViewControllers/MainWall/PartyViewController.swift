@@ -15,7 +15,6 @@ import BubbleTransition
 
 class PartyViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UIViewControllerTransitioningDelegate{
 
-    let Parties = PartiesMainWall()
     let eventID:[String] = []
     var count:Int = 0
     var objectId:String!
@@ -40,6 +39,8 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewLayout: UltravisualLayout!
     
+    let presenter = PresentMainWall()
+    
     let swipeDownRect = UISwipeGestureRecognizer()
     
     override func viewWillAppear(animated: Bool) {
@@ -56,15 +57,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         detailView.hidden = true
         blur.hidden = true
         
-        Parties.partiesPost { (result) -> Void in
-            
-            self.array = result
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                self.collectionView.reloadData()
-            }
-        }
+        self.reload()
     }
     
     override func viewDidLoad() {
@@ -83,6 +76,29 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         // Dispose of any resources that can be recreated.
     }
     
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.presenter.eventPost { (result) in
+                
+                self.array = []
+                
+                for event in result {
+                    
+                    if event.event == true {
+                        
+                        self.array.append(event)
+                    }
+                }
+                
+                self.collectionView.reloadData()
+            }
+            
+            
+        }
+    }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -96,30 +112,40 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         let cell:PartyCell = collectionView.dequeueReusableCellWithReuseIdentifier("PartyCell", forIndexPath: indexPath) as! PartyCell
         
-       
-        
-        cell.post.text = array[indexPath.item].description
-        cell.PostName.text = array[indexPath.item].title
+        cell.post.text = array[indexPath.item].post
+        cell.eventTitle.text = array[indexPath.item].title
+        cell.descriptionHead.text = array[indexPath.item].title
+        cell.PostName.text = array[indexPath.item].createdBy
         cell.likes.text = "Likes:\(array[indexPath.item].likes)"
         
+        let file = array[indexPath.item].creatorImage
         
-        //cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
-
+        presenter.getFile(file!, completion: { (data) in
+            
+            print(data)
+            
+            cell.profileImage.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+            
+        })
+        
         if array[indexPath.item].live == true {
             
-            //cell.pulseEffect.hidden = false
+            cell.live.setTitle("Live", forState: UIControlState.Normal)
             
-             cell.live.setTitle("Live", forState: UIControlState.Normal)
+            
         }else {
             
             
             cell.live.setTitle("Peak", forState: UIControlState.Normal)
             cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+            
         }
         
-        cell.layoutSubviews()
+        
         
         print("post in array \(self.array.count)")
+        
+        cell.layoutSubviews()
         
         return cell
         

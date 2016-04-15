@@ -62,13 +62,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         detailView.hidden = true
         blur.hidden = true
        // blur.blurRadius = 5
-    
-        presenter.eventPost { (result) in
-            
-           self.array = result
-            
-            self.reload()
-        }
+        
+        self.reload()
         
     }
     
@@ -89,7 +84,22 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         dispatch_async(dispatch_get_main_queue()) {
             
-            self.collectionView.reloadData()
+            self.presenter.eventPost { (result) in
+                
+                self.array = []
+                
+                for event in result {
+                    
+                    if event.event == true {
+                        
+                        self.array.append(event)
+                    }
+                }
+                
+                self.collectionView.reloadData()
+            }
+            
+            
         }
     }
     
@@ -122,23 +132,21 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         })
         
         if array[indexPath.item].live == true {
-        
+            
             cell.live.setTitle("Live", forState: UIControlState.Normal)
-
+            
             
         }else {
             
-
+            
             cell.live.setTitle("Peak", forState: UIControlState.Normal)
             cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-          
+            
         }
         
         
         
         print("post in array \(self.array.count)")
-        
-        
         
         cell.layoutSubviews()
         

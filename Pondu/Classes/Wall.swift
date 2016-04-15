@@ -21,7 +21,7 @@ class Wall:NSObject {
     var startTime:NSDate?
     var endTime:NSDate?
     var privacy:NSNumber?
-    var event:Bool?
+    var event:NSNumber?
     var geocoord: CLLocation?
     var createdBy:String?
     var creatorImage:String?
@@ -58,7 +58,8 @@ class Wall:NSObject {
             "privacy" : "privacy",
             "geocoord" : KCSEntityKeyGeolocation,
             "createdBy": "createdBy",
-            "creatorImage":"creatorImage"
+            "creatorImage":"creatorImage",
+            "event":"event"
             //"metadata" : KCSEntityKeyMetadata //optional _metadata field
         ]
     }

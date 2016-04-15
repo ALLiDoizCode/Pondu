@@ -43,7 +43,7 @@ class CreateViewController: UIViewController {
 
     @IBAction func partyBtn(sender: AnyObject) {
         
-        type = true
+        type = false
         
         print(type)
         
@@ -56,7 +56,7 @@ class CreateViewController: UIViewController {
     
     @IBAction func eventBtn(sender: AnyObject) {
         
-        type = false
+        type = true
         
         print(type)
         

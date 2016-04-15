@@ -51,16 +51,18 @@ class WallClient {
     
     func getPost(){
         
+        currentWall = []
+        
         let collection = KCSCollection(fromString: "Wall", ofClass: NSDictionary.self)
-        let wallStore = KCSCachedStore(collection: collection, options: [ KCSStoreKeyCachePolicy : KCSCachePolicy.LocalFirst.rawValue ])
+        let wallStore = KCSCachedStore(collection: collection, options: nil)
         
         wallStore.queryWithQuery(
             KCSQuery(),
             withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
                 
-                if errorOrNil != nil || objectsOrNil.count == 0 {
+                if errorOrNil != nil {
                     
-                    print("the error \(errorOrNil)")
+                    print("no objects")
                     
                 }else{
                     
@@ -69,7 +71,7 @@ class WallClient {
                     for  object:NSDictionary in objectsOrNil as! [NSDictionary] {
                         
                         //print("the object \(object.allKeys)")
-                        print("the object values \(object.allValues)")
+                        //print("the object values \(object!.allValues)")
                         
                         
                         let title = object.valueForKey("title") as? String
@@ -83,6 +85,7 @@ class WallClient {
                         let creator = object.valueForKey("createdBy") as? String
                         let geo = object.valueForKey("_geoloc") as? [Double]
                         let image = object.valueForKey("creatorImage") as? String
+                        let event = object.valueForKey("event") as? Bool
                         let long = geo![0]
                         let lat = geo![1]
                         
@@ -92,7 +95,7 @@ class WallClient {
                         let theStart = NSDate.dateFromISOString(startTime)
                         let theEnd = NSDate.dateFromISOString(endTime)
                         
-                        let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: true, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
+                        let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: event!, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
                         
                         self.currentWall.append(myEvent)
                         
