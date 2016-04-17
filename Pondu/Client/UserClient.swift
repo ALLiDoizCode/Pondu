@@ -11,6 +11,46 @@ import SwiftEventBus
 
 class UserClient {
     
+    
+    func getUsers(){
+        
+        var users:[UserInfo] = []
+        
+        let collection = KCSCollection.userCollection()
+        let store = KCSAppdataStore(collection: collection, options: nil)
+        
+        store.queryWithQuery(KCSQuery(), withCompletionBlock: { (objects: [AnyObject]!, error: NSError!) -> Void in
+            //objectsOrNil is a list of users
+            
+            if error == nil {
+                
+                if let objects = objects {
+                    
+                    for object in objects {
+                        
+                        let user = object as! KCSUser
+                        
+                        let userName = user.username
+                        let proifleImage = user.valueForKey("ProfileImage") as! String
+                        
+                        print(userName)
+                        print(proifleImage)
+                        
+                        let theUser = UserInfo(theUserName: userName, theProfileImage: proifleImage)
+                        
+                        users.append(theUser)
+                    }
+                }
+                
+            }else {
+                
+            }
+            
+            
+            }, withProgressBlock: nil)
+    
+    }
+    
     func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage){
         
         self.uploadProfilePicture(profileImage) { (file) in
@@ -97,7 +137,7 @@ class UserClient {
         ];
         
         if(photo != nil) {
-            let photoData = UIImageJPEGRepresentation(photo, 0.9)
+            let photoData = UIImageJPEGRepresentation(photo, 0.6)
             
             KCSFileStore.uploadData(photoData, options: fileParams, completionBlock: { (file:KCSFile!, error:NSError!) -> Void in
                 

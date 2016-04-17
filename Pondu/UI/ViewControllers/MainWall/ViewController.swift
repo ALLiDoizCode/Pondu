@@ -29,6 +29,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     let liveConent = AddContent()
     
     let presenter = PresentMainWall()
+    //let user = UserClient()
     
     @IBOutlet weak var blur: UIView!
     @IBOutlet weak var detailView: UIView!
@@ -69,6 +70,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //user.getUsers()
         
         self.presenter.eventPost { (result) in
             

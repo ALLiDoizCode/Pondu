@@ -48,14 +48,14 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         self.users.removeAll()
         
-        presenter.getUsers { (usersInfo) -> Void in
+        /*presenter.getUsers { (usersInfo) -> Void in
             
             self.users = usersInfo
             
             print("we have \(self.users.count) users")
             
             self.reload()
-        }
+        }*/
         
     }
 

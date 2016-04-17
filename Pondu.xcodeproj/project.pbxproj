@@ -31,6 +31,7 @@
 		4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E81BF246DD00B2AFA2 /* FavPartiesViewController.swift */; };
 		4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */; };
 		4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */; };
+		4D1C79C21CC315ED00E3E53F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C79C11CC315ED00E3E53F /* UserInfo.swift */; };
 		4D1F8F6F1BFE593400C2A61F /* CreateEvent:Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */; };
 		4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */; };
 		4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */; };
@@ -146,6 +147,7 @@
 		4D1843E81BF246DD00B2AFA2 /* FavPartiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartiesViewController.swift; sourceTree = "<group>"; };
 		4D1843EC1BF24A4D00B2AFA2 /* FavEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavEventCell.swift; sourceTree = "<group>"; };
 		4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartyCell.swift; sourceTree = "<group>"; };
+		4D1C79C11CC315ED00E3E53F /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "CreateEvent:Party.storyboard"; sourceTree = "<group>"; };
 		4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login-SignUp.storyboard"; sourceTree = "<group>"; };
 		4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GradientView:Button.swift"; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				4D32A82D1C88DF7A0053FBCD /* MessageList.swift */,
 				4D32A82F1C88E10D0053FBCD /* Message.swift */,
 				4D70AA5A1CA226ED00BC23DC /* Wall.swift */,
+				4D1C79C11CC315ED00E3E53F /* UserInfo.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */,
 				4DD1E5821BED0B9200F15C6C /* BaseViewController.swift in Sources */,
 				4DC5FAEC1BFA5C05006AFE00 /* FavoriteStoryCell.swift in Sources */,
+				4D1C79C21CC315ED00E3E53F /* UserInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

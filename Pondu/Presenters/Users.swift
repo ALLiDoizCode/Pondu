@@ -54,11 +54,11 @@ class theUser {
         client.verifyUser()
     }
     
-    func getUsers(completion:(users:[userData]) -> Void){
+    func getUsers(completion:(users:[UserInfo]) -> Void){
         
         SwiftEventBus.onBackgroundThread(self, name: "User") { result in
             
-            let data:[userData] = (result.object as? [userData])!
+            let data:[UserInfo] = (result.object as? [UserInfo])!
             
             
             SwiftEventBus.unregister(self, name: "User")
