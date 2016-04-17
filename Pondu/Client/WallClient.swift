@@ -75,6 +75,7 @@ class WallClient {
                         
                         
                         let title = object.valueForKey("title") as? String
+                        let post = object.valueForKey("post") as? String
                         let address = object.valueForKey("address") as? String
                         let live = object.valueForKey("live") as? Bool
                         let likes = object.valueForKey("likes") as? Int
@@ -95,7 +96,7 @@ class WallClient {
                         let theStart = NSDate.dateFromISOString(startTime)
                         let theEnd = NSDate.dateFromISOString(endTime)
                         
-                        let myEvent = Wall(theTitle: title!, theDescription: "", theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: event!, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
+                        let myEvent = Wall(theTitle: title!, theDescription: post!, theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: event!, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
                         
                         self.currentWall.append(myEvent)
                         
@@ -115,25 +116,11 @@ class WallClient {
         
         print("will get file")
         
-        KCSFileStore.downloadFile(
-            fileId,
-            options: nil,
-            completionBlock: { (downloadedResources: [AnyObject]!, error: NSError!) -> Void in
-                if error == nil {
-                    
-                    print("got file")
-                    let file = downloadedResources[0] as! KCSFile
-                    //let fileURL = file.localURL
-                    //let image = UIImage(contentsOfFile: fileURL.path!) //note this blocks for awhile
-                    print("the url of the image \(file.remoteURL)")
-                    
-                    completion(data: file.remoteURL!)
-                    
-                } else {
-                    NSLog("Got an error: %@", error)
-                }
-            },
-            progressBlock: nil
-        )
+        
+        KCSFileStore.getStreamingURL(fileId) { (file, error) in
+            
+            completion(data: file.remoteURL)
+        }     
+       
     }
 }

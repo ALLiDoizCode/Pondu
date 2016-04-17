@@ -63,12 +63,27 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         blur.hidden = true
        // blur.blurRadius = 5
         
-        self.reload()
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.presenter.eventPost { (result) in
+            
+            self.array = []
+            
+            for event in result {
+                
+                if event.event == true {
+                    
+                    self.array.append(event)
+                }
+            }
+            
+            self.reload()
+        }
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
@@ -84,21 +99,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         
         dispatch_async(dispatch_get_main_queue()) {
             
-            self.presenter.eventPost { (result) in
-                
-                self.array = []
-                
-                for event in result {
-                    
-                    if event.event == true {
-                        
-                        self.array.append(event)
-                    }
-                }
-                
-                self.collectionView.reloadData()
-            }
-            
+            self.collectionView.reloadData()
             
         }
     }

@@ -59,7 +59,8 @@ class Wall:NSObject {
             "geocoord" : KCSEntityKeyGeolocation,
             "createdBy": "createdBy",
             "creatorImage":"creatorImage",
-            "event":"event"
+            "event":"event",
+            "post":"post"
             //"metadata" : KCSEntityKeyMetadata //optional _metadata field
         ]
     }

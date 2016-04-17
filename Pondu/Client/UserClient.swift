@@ -101,9 +101,17 @@ class UserClient {
             
             KCSFileStore.uploadData(photoData, options: fileParams, completionBlock: { (file:KCSFile!, error:NSError!) -> Void in
                 
-                print("successfully uploaded image")
-                completion(file: file);
-                }, progressBlock: nil);
+                if error == nil {
+                    
+                    print("successfully uploaded image")
+                    completion(file: file);
+                    
+                }else {
+                    print("the error is\(error)")
+                }
+                
+                
+            }, progressBlock: nil);
             
         } else {
             

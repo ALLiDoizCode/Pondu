@@ -57,13 +57,29 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         detailView.hidden = true
         blur.hidden = true
         
-        self.reload()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        self.presenter.eventPost { (result) in
+            
+            self.array = []
+            
+            for event in result {
+                
+                if event.event == true {
+                    
+                    print("got party")
+                    
+                    self.array.append(event)
+                }
+            }
+            
+            print("party reload")
+            
+            self.reload()
+        }
         
         transition.duration = 0.4
         collectionView.backgroundColor = UIColor.clearColor()
@@ -80,23 +96,12 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
         
         dispatch_async(dispatch_get_main_queue()) {
             
-            self.presenter.eventPost { (result) in
-                
-                self.array = []
-                
-                for event in result {
-                    
-                    if event.event == true {
-                        
-                        self.array.append(event)
-                    }
-                }
-                
-                self.collectionView.reloadData()
-            }
+            print("reloading")
             
+            self.collectionView.reloadData()
             
         }
+        
     }
     
     
