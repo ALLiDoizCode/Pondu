@@ -726,13 +726,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="FMD-dw-mJo"/>
                     <connections>
+                        <outlet property="goBack" destination="wXc-Ej-NQV" id="IcI-F8-MQn"/>
                         <outlet property="tableView" destination="tlc-38-q4c" id="MJT-8Q-zEC"/>
                         <segue destination="z9g-cS-2T5" kind="show" identifier="Messages" id="Kfl-j1-99f"/>
+                        <segue destination="GPQ-IE-Uyq" kind="show" identifier="goBack" id="6eS-gy-mjy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTS-TU-zkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745.5" y="2386.5"/>
+            <point key="canvasLocation" x="1096.5" y="2311.5"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="ZCo-cx-tZa">
@@ -1839,6 +1841,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xRK-j8-Vnl"/>
-        <segue reference="Lb5-lk-x21"/>
+        <segue reference="Kfl-j1-99f"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,10 +12,12 @@ import SwiftEventBus
 
 class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
     
+    @IBOutlet weak var goBack: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     let identifier = "Search"
     let identifier2 = "camera"
+    let tapBack = UITapGestureRecognizer()
     
     var users:[UserInfo] = []
     var filtered:[UserInfo] = []
@@ -81,11 +83,19 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.navigationItem.leftBarButtonItem = searchBtn
         self.navigationItem.setRightBarButtonItems([cameraRightBtn,messageRightBtn], animated: true)
         
+        goBack.userInteractionEnabled = true
+        goBack.addGestureRecognizer(tapBack)
+        tapBack.addTarget(self, action: #selector(SearchViewController.tappedBack(_:)))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tappedBack(sender:UITapGestureRecognizer) {
+        
+        self.performSegueWithIdentifier("goBack", sender: self)
     }
     
     

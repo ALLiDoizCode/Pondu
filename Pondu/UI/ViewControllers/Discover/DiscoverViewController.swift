@@ -24,8 +24,8 @@ class DiscoverViewController: UIViewController {
         search.userInteractionEnabled = true
         camera.userInteractionEnabled = true
         
-        tapCamera.addTarget(self, action: "tappedCamera:")
-        tapSearch.addTarget(self, action: "tappedSearch:")
+        tapCamera.addTarget(self, action: #selector(DiscoverViewController.tappedCamera(_:)))
+        tapSearch.addTarget(self, action: #selector(DiscoverViewController.tappedSearch(_:)))
         
         search.addGestureRecognizer(tapSearch)
         camera.addGestureRecognizer(tapCamera)
