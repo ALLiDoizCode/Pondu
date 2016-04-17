@@ -60,11 +60,12 @@ class theUser {
             
             let data:[UserInfo] = (result.object as? [UserInfo])!
             
-            
             SwiftEventBus.unregister(self, name: "User")
             
             completion(users: data)
         }
+        
+        client.getUsers()
         
     }
     

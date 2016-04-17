@@ -17,14 +17,15 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     let identifier = "Search"
     let identifier2 = "camera"
     
-    var users:[userData] = []
-    var filtered:[userData] = []
+    var users:[UserInfo] = []
+    var filtered:[UserInfo] = []
     var follows:[String] = []
     
     var searchActive : Bool = false
     
     let presenter = theUser()
     let room = PresentMessage()
+    let presenterFile = PresentMainWall()
     
     lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
     
@@ -48,14 +49,16 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         self.users.removeAll()
         
-        /*presenter.getUsers { (usersInfo) -> Void in
+        presenter.getUsers { (usersInfo) -> Void in
             
             self.users = usersInfo
             
             print("we have \(self.users.count) users")
+            print(self.users[0].userName)
+            print(self.users[0].profileImage)
             
             self.reload()
-        }*/
+        }
         
     }
 
@@ -146,7 +149,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         var tempArray:[String] = []
         var tempFilter:[String] = []
         
-        for var i = 0; i < users.count; i++ {
+        for i in 0 ..< users.count {
             
             tempArray.append(users[i].userName)
             
@@ -165,9 +168,9 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             filtered = []
             
-            for var i = 0; i < tempFilter.count; i++ {
+            for i in 0 ..< tempFilter.count {
                 
-                for var j = 0; j < users.count; j++ {
+                for j in 0 ..< users.count {
                     
                     if tempFilter[i] == users[j].userName {
                         
@@ -198,26 +201,35 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! SearchCell
         
-        if follows.contains(users[indexPath.row].objectID) {
+        /*if follows.contains(users[indexPath.row].objectID) {
             
             cell.add.setBackgroundImage(UIImage(named: "Checkmark"), forState: .Normal)
-        }
+        }*/
         
         if searchActive {
             
             if filtered.count != 0 {
                 
                 print(filtered.count)
-                cell.icon.kf_setImageWithURL(NSURL(string:filtered[indexPath.row].photo)!, placeholderImage: UIImage(named: "placeholder"))
+                
+                presenterFile.getFile(filtered[indexPath.row].profileImage, completion: { (data) in
+                    
+                    cell.icon.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+
+                })
+                
                 cell.label.text = filtered[indexPath.row].userName
-                cell.objectId = users[indexPath.row].objectID
             }
             
         }else {
             
-            cell.icon.kf_setImageWithURL(NSURL(string:users[indexPath.row].photo)!, placeholderImage: UIImage(named: "placeholder"))
+            presenterFile.getFile(users[indexPath.row].profileImage, completion: { (data) in
+                
+                cell.icon.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+                
+            })
+            
             cell.label.text = users[indexPath.row].userName
-            cell.objectId = users[indexPath.row].objectID
         }
         
         return cell;

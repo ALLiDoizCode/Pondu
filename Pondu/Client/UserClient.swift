@@ -31,15 +31,21 @@ class UserClient {
                         let user = object as! KCSUser
                         
                         let userName = user.username
-                        let proifleImage = user.valueForKey("ProfileImage") as! String
-                        
-                        print(userName)
-                        print(proifleImage)
-                        
-                        let theUser = UserInfo(theUserName: userName, theProfileImage: proifleImage)
-                        
-                        users.append(theUser)
+                        if  user.getValueForAttribute("ProfileImage") != nil {
+                            
+                            let proifleImage:String! = user.getValueForAttribute("ProfileImage") as!String
+                            
+                            print(userName)
+                            print(proifleImage)
+                            
+                            let theUser = UserInfo(theUserName: userName, theProfileImage: proifleImage)
+                            
+                            users.append(theUser)
+                        }
+                
                     }
+                    
+                    SwiftEventBus.post("User", sender: users)
                 }
                 
             }else {
