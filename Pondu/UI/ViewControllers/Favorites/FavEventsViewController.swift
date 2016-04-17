@@ -35,8 +35,10 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     var indexOfUrl:[Character] = []
+    var follows:[String] = []
     let transition = BubbleTransition()
-    let events = PresentMainWall()
+    let presenter = PresentMainWall()
+    let presenterUser = theUser()
     let swipeDownRect = UISwipeGestureRecognizer()
 
     
@@ -57,25 +59,34 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         detailView.hidden = true
         blur.hidden = true
         
-        events.favPost { (result) -> Void in
-            
-            self.array = result
-            print("favEvents fired")
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                self.collectionView.reloadData()
-                self.detailImage.layer.cornerRadius = self.detailImage.layer.frame.height/2
-                self.detailImage.layer.masksToBounds = true
-            }
-            
-        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        presenterUser.myFollow { (data) -> Void in
+            
+            print("getting follows")
+            
+            self.follows.removeAll()
+            self.follows = data
+            self.reload()
+        }
+        
+        self.presenter.eventPost { (result) in
+            
+            self.array = []
+            
+            for event in result {
+                
+                if event.event! == true && event.privacy! == true && self.follows.contains(event.createdBy!) {
+                    
+                    self.array.append(event)
+                }
+            }
+            
+            self.reload()
+        }
         
         transition.duration = 0.4
         
@@ -89,6 +100,15 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         // Dispose of any resources that can be recreated.
     }
     
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.collectionView.reloadData()
+            
+        }
+    }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -100,11 +120,21 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
         
         let cell:FavEventCell = collectionView.dequeueReusableCellWithReuseIdentifier("FavEventCell", forIndexPath: indexPath) as! FavEventCell
         
-        cell.post.text = array[indexPath.row].description
-        cell.PostName.text = array[indexPath.item].title
-        cell.likes.text = "Likes:\(array[indexPath.row].likes)"
-       
-        //cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
+        cell.post.text = array[indexPath.item].post
+        cell.eventTitle.text = array[indexPath.item].title
+        cell.descriptionHead.text = array[indexPath.item].title
+        cell.PostName.text = array[indexPath.item].createdBy
+        cell.likes.text = "Likes:\(array[indexPath.item].likes)"
+        
+        let file = array[indexPath.item].creatorImage
+        
+        presenter.getFile(file!, completion: { (data) in
+            
+            print(data)
+            
+            cell.profileImage.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+            
+        })
         
         if array[indexPath.item].live == true {
             
@@ -118,6 +148,8 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
             
         }
+        
+        
         
         print("post in array \(self.array.count)")
         
@@ -139,7 +171,7 @@ class FavEventsViewController: UIViewController,UICollectionViewDelegate,UIColle
             
             print("featured")
             
-            swipeDownRect.addTarget(self, action: "swippedDown:")
+            swipeDownRect.addTarget(self, action: #selector(FavEventsViewController.swippedDown(_:)))
             swipeDownRect.numberOfTouchesRequired = 1
             swipeDownRect.direction = .Down
             self.view!.addGestureRecognizer(swipeDownRect)

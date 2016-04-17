@@ -23,7 +23,6 @@ class PostViewController: UIViewController,UITextViewDelegate {
     let likes = 0
     let live = false
     var type:Bool!
-    var wallType:Bool!
     var timeStart:String!
     var timeEnd:String!
     var date:String!

@@ -35,8 +35,10 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
     var numOfCells:[String] = []
     var numOfPost:[String] = []
     var indexOfUrl:[Character] = []
+    var follows:[String] = []
     let transition = BubbleTransition()
-    let events = PresentMainWall()
+    let presenter = PresentMainWall()
+    let presenterUser = theUser()
     let swipeDownRect = UISwipeGestureRecognizer()
     let party = PartiesMainWall()
     
@@ -57,24 +59,34 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         detailView.hidden = true
         blur.hidden = true
         
-        party.favPost { (result) -> Void in
-            
-            self.array = result
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                self.collectionView.reloadData()
-                
-                self.detailImage.layer.cornerRadius = self.detailImage.layer.frame.height/2
-                self.detailImage.layer.masksToBounds = true
-            }
-            
-            print("we got the fav data")
-        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenterUser.myFollow { (data) -> Void in
+            
+            print("getting follows")
+            
+            self.follows.removeAll()
+            self.follows = data
+            self.reload()
+        }
+        
+        self.presenter.eventPost { (result) in
+            
+            self.array = []
+            
+            for event in result {
+                
+                if event.event! == false && event.privacy! == true && self.follows.contains(event.createdBy!) {
+                    
+                    self.array.append(event)
+                }
+            }
+            
+            self.reload()
+        }
         
         transition.duration = 0.4
         
@@ -88,6 +100,15 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         // Dispose of any resources that can be recreated.
     }
     
+    func reload(){
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.collectionView.reloadData()
+            
+        }
+    }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -99,12 +120,21 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         
         let cell:FavPartyCell = collectionView.dequeueReusableCellWithReuseIdentifier("FavPartyCell", forIndexPath: indexPath) as! FavPartyCell
         
-        cell.post.text = array[indexPath.row].description
-        cell.PostName.text = array[indexPath.item].title
-        cell.likes.text = "Likes:\(array[indexPath.row].likes)"
+        cell.post.text = array[indexPath.item].post
+        cell.eventTitle.text = array[indexPath.item].title
+        cell.descriptionHead.text = array[indexPath.item].title
+        cell.PostName.text = array[indexPath.item].createdBy
+        cell.likes.text = "Likes:\(array[indexPath.item].likes)"
         
-        //cell.profileImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
+        let file = array[indexPath.item].creatorImage
         
+        presenter.getFile(file!, completion: { (data) in
+            
+            print(data)
+            
+            cell.profileImage.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+            
+        })
         
         if array[indexPath.item].live == true {
             
@@ -118,6 +148,8 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
             cell.live.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
             
         }
+        
+        
         
         print("post in array \(self.array.count)")
         
@@ -137,7 +169,7 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
         
         if indexPath.item == layout.featuredItemIndex {
             
-            swipeDownRect.addTarget(self, action: "swippedDown:")
+            swipeDownRect.addTarget(self, action: #selector(FavPartiesViewController.swippedDown(_:)))
             swipeDownRect.numberOfTouchesRequired = 1
             swipeDownRect.direction = .Down
             self.view!.addGestureRecognizer(swipeDownRect)

@@ -18,7 +18,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var next: UIButton!
     var type:Bool!
-    var wallType:Bool!
     var timeStart:String!
     var timeEnd:String!
     var date:String!
@@ -170,7 +169,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             let nextViewController:PostViewController = segue.destinationViewController as! PostViewController
             
             nextViewController.type = type
-            nextViewController.wallType = wallType
             nextViewController.timeStart = timeStart
             nextViewController.timeEnd = timeEnd
             nextViewController.date = date
@@ -182,7 +180,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate,UIText
             nextViewController.eventEnds = eventEnds
             nextViewController.eventDate = eventDate
             print("passing \(type)")
-            print("passing \(wallType)")
             print("passing \(date)")
             print("passing \(timeEnd)")
             print("passing \(timeStart)")

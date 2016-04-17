@@ -76,7 +76,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             
             for event in result {
                 
-                if event.event == true {
+                if event.event == true && event.privacy == false {
                     
                     self.array.append(event)
                 }

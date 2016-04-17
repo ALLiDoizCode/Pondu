@@ -20,7 +20,6 @@ class DateViewController: UIViewController {
     @IBOutlet weak var next: UIButton!
     
     var type:Bool!
-    var wallType:Bool!
     var eventBegins:NSDate!
     var eventEnds:NSDate!
     var eventDate:NSDate!
@@ -33,7 +32,6 @@ class DateViewController: UIViewController {
         createStartPickerToolBar()
 
         print("retrieved \(type)")
-        print("retrieved \(wallType)")
         
         self.title = "Date"
         
@@ -383,7 +381,6 @@ class DateViewController: UIViewController {
             let nextViewController:LocationViewController = segue.destinationViewController as! LocationViewController
             
             nextViewController.type = type
-            nextViewController.wallType = wallType
             nextViewController.timeStart = startTime.text
             nextViewController.timeEnd = endTime.text
             nextViewController.date = date.text
@@ -395,7 +392,6 @@ class DateViewController: UIViewController {
                 
             
             print("passing \(type)")
-            print("passing \(wallType)")
             print("passing \(date.text)")
             print("passing \(endTime.text)")
             print("passing \(startTime.text)")
