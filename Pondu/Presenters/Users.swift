@@ -69,7 +69,7 @@ class theUser {
         
     }
     
-    func addUser(objectId:String,completion:(success:Bool) -> Void){
+    func addUser(userName:String,completion:(success:Bool) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "addUser") { (notification) -> Void in
             
@@ -80,18 +80,14 @@ class theUser {
             SwiftEventBus.unregister("addUser")
         }
         
+        client.addUser(userName)
     }
     
     func myFollow(completion:(data:[String]) -> Void){
         
-        SwiftEventBus.onMainThread(self, name: "myFollow") { (notification) -> Void in
-            
-            let info = notification.object as! [String]
-            
-            completion(data: info)
-            
-            SwiftEventBus.unregister("myFollow")
-        }
+        let following = client.activeUser.getValueForAttribute("Following") as! [String]
+        
+        completion(data: following)
         
     }
    

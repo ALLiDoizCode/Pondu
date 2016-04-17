@@ -11,6 +11,7 @@ import SwiftEventBus
 
 class UserClient {
     
+    let activeUser = KCSUser.activeUser()
     
     func getUsers(){
         
@@ -57,7 +58,41 @@ class UserClient {
     
     }
     
+    func addUser(userName:String) {
+            
+        var following = activeUser.getValueForAttribute("Following") as! [String]
+            
+        if following.contains(userName) {
+                
+            print("alreadying following \(userName)")
+        }else {
+            
+            following.append(userName)
+            activeUser.setValue(following, forAttribute: "Following")
+            
+            activeUser.saveWithCompletionBlock({ (objects, error) in
+                
+                if error == nil {
+                    
+                    print("updated user Sucess")
+                    
+                    SwiftEventBus.post("addUser", sender: true)
+                }else {
+                    
+                    print("updated user failed")
+                    
+                    SwiftEventBus.post("addUser", sender: false)
+                }
+            })
+            
+        }
+        
+        
+    }
+    
     func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage){
+        
+        let follow:[String] = []
         
         self.uploadProfilePicture(profileImage) { (file) in
             
@@ -68,12 +103,14 @@ class UserClient {
                 fieldsAndValues: [
                     KCSUserAttributeEmail : email,
                     KCSUserAttributeGivenname : name,
+        
                 ],
                 withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
                     if errorOrNil == nil {
                         //user is created
                         
                         user.setValue(file.fileId, forAttribute: "ProfileImage")
+                        user.setValue(follow, forAttribute: "Following")
                         user.saveWithCompletionBlock({ (objects, error) in
                             
                             if error == nil {

@@ -201,10 +201,10 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! SearchCell
         
-        /*if follows.contains(users[indexPath.row].objectID) {
+        if follows.contains(users[indexPath.row].userName) {
             
             cell.add.setBackgroundImage(UIImage(named: "Checkmark"), forState: .Normal)
-        }*/
+        }
         
         if searchActive {
             
@@ -219,6 +219,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 })
                 
                 cell.label.text = filtered[indexPath.row].userName
+                cell.userName = cell.label.text
             }
             
         }else {
@@ -230,6 +231,7 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             })
             
             cell.label.text = users[indexPath.row].userName
+            cell.userName = cell.label.text
         }
         
         return cell;

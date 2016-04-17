@@ -16,7 +16,7 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var label: UILabel!
     
-    var objectId:String!
+    var userName:String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,7 @@ class SearchCell: UITableViewCell {
     
     @IBAction func follow(sender: AnyObject) {
         
-        presenter.addUser(objectId) { (success) -> Void in
+        presenter.addUser(userName) { (success) -> Void in
             
             if success == true {
                 
