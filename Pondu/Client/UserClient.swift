@@ -11,7 +11,12 @@ import SwiftEventBus
 
 class UserClient {
     
-    let activeUser = KCSUser.activeUser()
+    func currentUser() -> KCSUser {
+        
+        let activeUser = KCSUser.activeUser()
+        
+        return activeUser
+    }
     
     func getUsers(){
         
@@ -60,7 +65,7 @@ class UserClient {
     
     func addUser(userName:String) {
             
-        var following = activeUser.getValueForAttribute("Following") as! [String]
+        var following = currentUser().getValueForAttribute("Following") as! [String]
             
         if following.contains(userName) {
                 
@@ -68,9 +73,9 @@ class UserClient {
         }else {
             
             following.append(userName)
-            activeUser.setValue(following, forAttribute: "Following")
+            currentUser().setValue(following, forAttribute: "Following")
             
-            activeUser.saveWithCompletionBlock({ (objects, error) in
+            currentUser().saveWithCompletionBlock({ (objects, error) in
                 
                 if error == nil {
                     
@@ -94,20 +99,20 @@ class UserClient {
         
         let follow:[String] = []
         
-        self.uploadProfilePicture(profileImage) { (file) in
-            
-            // Create a new user with the username and the password
-            KCSUser.userWithUsername(
-                userName,
-                password: passWord,
-                fieldsAndValues: [
-                    KCSUserAttributeEmail : email,
-                    KCSUserAttributeGivenname : name,
-        
-                ],
-                withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
-                    if errorOrNil == nil {
-                        //user is created
+        // Create a new user with the username and the password
+        KCSUser.userWithUsername(
+            userName,
+            password: passWord,
+            fieldsAndValues: [
+                KCSUserAttributeEmail : email,
+                KCSUserAttributeGivenname : name,
+                
+            ],
+            withCompletionBlock: { (user: KCSUser!, errorOrNil: NSError!, result: KCSUserActionResult) -> Void in
+                if errorOrNil == nil {
+                    //user is created
+                    
+                    self.uploadProfilePicture(profileImage) { (file) in
                         
                         user.setValue(file.fileId, forAttribute: "ProfileImage")
                         user.setValue(follow, forAttribute: "Following")
@@ -117,22 +122,23 @@ class UserClient {
                                 
                                 SwiftEventBus.post("signUp", sender: true)
                                 self.verifyUser()
-
+                                
                                 
                             }else {
                                 
                                 SwiftEventBus.post("signUp", sender: false)
-        
-
+                                
+                                
                             }
                         })
                         
-                    } else {
-                        //there was an error with the create
                     }
+                    
+                } else {
+                    //there was an error with the create
                 }
-            )
-        }
+            }
+        )
         
     }
     
@@ -180,7 +186,10 @@ class UserClient {
         ];
         
         if(photo != nil) {
-            let photoData = UIImageJPEGRepresentation(photo, 0.6)
+            
+            let photoData = UIImageJPEGRepresentation(photo, 0.9)
+            
+            
             
             KCSFileStore.uploadData(photoData, options: fileParams, completionBlock: { (file:KCSFile!, error:NSError!) -> Void in
                 

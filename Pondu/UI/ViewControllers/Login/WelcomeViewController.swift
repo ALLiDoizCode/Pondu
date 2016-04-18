@@ -34,6 +34,18 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if KCSUser.activeUser() != nil {
+            
+            KCSFileStore.clearCachedFiles()
+            KCSUser.clearSavedCredentials()
+            
+            print("we have user credentials")
+            
+        }else {
+            
+            print("no stored credentials")
+        }
+        
         bg.image = bg.image?.blurredImageWithRadius(20, iterations: 15, tintColor: UIColor.blackColor())
        
         

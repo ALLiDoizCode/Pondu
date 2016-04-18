@@ -85,7 +85,7 @@ class theUser {
     
     func myFollow(completion:(data:[String]) -> Void){
         
-        let following = client.activeUser.getValueForAttribute("Following") as! [String]
+        let following = client.currentUser().getValueForAttribute("Following") as! [String]
         
         completion(data: following)
         
