@@ -37,8 +37,11 @@ class Messages {
             
             if thread != nil {
                 
+                print("found thread")
+                
                 message.sender = myUserName
                 message.thread = thread
+                message.threadId = thread.entityId
                 
                 self.storeMessage.saveObject(
                     message,
@@ -57,8 +60,12 @@ class Messages {
                 )
             }else {
                 
+                print("thread is nil")
+                
+                let messageThread = Thread(firstUser: myUserName, secondUser: recipent)
                 message.sender = myUserName
-                message.thread = Thread(firstUser: myUserName, secondUser: recipent)
+                message.thread = messageThread
+                message.threadId = messageThread.entityId
                 
                 self.storeMessage.saveObject(
                     message,
@@ -82,7 +89,7 @@ class Messages {
     
     func getThread(user1:String,user2:String,completion:(thread:Thread!) -> Void) {
         
-        var thread:Thread = Thread()
+        var thread:Thread!
         
         let query = KCSQuery(onField: "user1", usingConditional: .KCSOr, forValue: [user1,user2])
         let query2 = KCSQuery(onField: "user2", usingConditional: .KCSOr, forValue: [user1,user2])

@@ -12,6 +12,7 @@ class Message:NSObject {
     
     var entityId:String?
     var thread:Thread?
+    var threadId:String?
     var messageText:String?
     var sender:String?
     var media:String = ""
@@ -29,17 +30,20 @@ class Message:NSObject {
             "messageText" : "messageText",
             "sender" : "sender",
             "thread" : "thread",
+            "threadId":"threadId",
             "metadata" : KCSEntityKeyMetadata
         ]
     }
     
     override class func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
+        
         return [
             "thread" : "MessageThread",
         ]
     }
     
     override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
+        
         return [ "thread" ]
     }
     

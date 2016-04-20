@@ -10,13 +10,9 @@ import Foundation
 
 class Thread: NSObject {
     
-    var entityId:String?
+    var entityId:String = NSUUID().UUIDString
     var user1:String?
     var user2:String?
-    
-    override init() {
-        super.init()
-    }
     
     init(firstUser:String,secondUser:String) {
         
@@ -28,7 +24,7 @@ class Thread: NSObject {
     // data store.
     override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
         return [
-            "entityId" : KCSEntityKeyId,
+            "entityId" : "entityId",
             "user1" : "user1",
             "user2" : "user2",
         ]
