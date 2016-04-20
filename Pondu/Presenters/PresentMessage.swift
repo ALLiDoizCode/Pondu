@@ -11,6 +11,8 @@ import SwiftEventBus
 
 class PresentMessage {
     
+    let client = Messages()
+    
     func makeRoom(creator:String,recipient:String,completion:(data:String) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "RoomMade") { result in
@@ -60,16 +62,20 @@ class PresentMessage {
         
     }
     
-    func sendMessage(objectId:String,text:String,hasImage:Bool,image:UIImage?){
+    func sendMessage(message:Message,recipent:String){
         
-        SwiftEventBus.onBackgroundThread(self, name: "SentMsg") { result in
-            
-            print("fire sent presenter")
-            
-            SwiftEventBus.postToMainThread("updateMsg")
-            
-            SwiftEventBus.unregister(self, name: "SentMsg")
-        }
+        print("Sending message to \(recipent)")
+        
+        client.sendMessage(message,recipent:recipent)
+        
+    }
+    
+    func sendMessageWithImage(message:Message,image:UIImage,recipent:String){
+        
+        print("Sending message with image")
+        
+        
+        client.sendMessage(message,recipent:recipent)
         
     }
 }

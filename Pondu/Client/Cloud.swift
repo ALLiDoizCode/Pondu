@@ -10,4 +10,11 @@ import Foundation
 
 class Cloud {
     
+    func newMessage(message:Message){
+        
+        KCSCustomEndpoints.callEndpoint("Comments", params: nil) { (result, error) in
+            
+            
+        }
+    }
 }

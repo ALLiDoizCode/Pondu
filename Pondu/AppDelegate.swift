@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             usingOptions: nil
         )
         
+        KCSPush.registerForPush()
+        
         
         KCSPing.pingKinveyWithBlock { (result: KCSPingResult!) -> Void in
             if result.pingWasSuccessful {
@@ -51,11 +53,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-
+        
+        KCSPush.sharedPush().application(
+            application,
+            didRegisterForRemoteNotificationsWithDeviceToken: deviceToken,
+            completionBlock: { (success: Bool, error: NSError!) -> Void in
+                //if there is an error, try again later
+            }
+        )
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        
+         KCSPush.sharedPush().application(application, didReceiveRemoteNotification: userInfo)
+        print("got push")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        KCSPush.sharedPush().application(application, didFailToRegisterForRemoteNotificationsWithError: error)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -73,10 +87,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        
+        KCSPush.sharedPush().registerForRemoteNotifications()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(application: UIApplication) {
+        
+         KCSPush.sharedPush().onUnloadHelper()
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 }

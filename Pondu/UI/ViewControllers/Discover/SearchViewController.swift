@@ -264,24 +264,15 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             let indexPath = self.tableView.indexPathForSelectedRow
             
-            /* if searchActive {
+            if searchActive {
                 
-                room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: filtered[(indexPath?.row)!].objectID, completion: { (data) -> Void in
-                    
-                   print("user objectID \(self.filtered[(indexPath?.row)!].objectID)")
-                    
-                    controller.objectId = data
-                })
+                controller.recipient = filtered[indexPath!.row].userName
                 
              }else {
                 
-                room.makeRoom((PFUser.currentUser()?.objectId)!, recipient: users[(indexPath?.row)!].objectID, completion: { (data) -> Void in
-                    
-                    print("user objectID \(self.users[(indexPath?.row)!].objectID)")
-                    
-                    controller.objectId = data
-                })
-            }*/
+                controller.recipient = users[indexPath!.row].userName
+        
+            }
             
         }
     }

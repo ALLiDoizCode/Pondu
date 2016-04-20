@@ -29,7 +29,6 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
 
         }
         
-       
     }
 
     override func viewDidLoad() {

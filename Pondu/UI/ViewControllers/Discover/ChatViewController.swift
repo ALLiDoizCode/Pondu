@@ -22,6 +22,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     var data:[Message] = []
     var objectId:String!
+    var recipient:String!
     var theImage:UIImage!
     
     let imageTypes:[String] = ["jpg","jpeg","png","tiff","tif"]
@@ -32,11 +33,11 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewWillAppear(animated: Bool) {
         
-        print("msg id is \(objectId)")
+        print("Recipient is \(recipient)")
         
         self.data.removeAll()
         
-        self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
+        /*self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
             
             self.data = msgData
             
@@ -48,7 +49,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             print("we have \(self.data.count) messages")
             
-        })
+        })*/
         
         self.navigationController?.navigationBarHidden = true
         
@@ -68,7 +69,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         
         
-        SwiftEventBus.onBackgroundThread(self, name: "New") { result in
+        /*SwiftEventBus.onBackgroundThread(self, name: "New") { result in
             
             print("incoming push")
             
@@ -89,7 +90,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 print("we have \(self.data.count) messages")
                 
             })
-        }
+        }*/
         
         dropShawdow.shadow(navView, color: UIColor.darkGrayColor())
 
@@ -122,7 +123,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBAction func send(sender: AnyObject) {
         
         
-        SwiftEventBus.onMainThread(self, name: "updateMsg") { result in
+        /*SwiftEventBus.onMainThread(self, name: "updateMsg") { result in
             
             print("sending push with Image")
             
@@ -132,17 +133,20 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             SwiftEventBus.unregister(self, name: "updateMsg")
             
-        }
+        }*/
         
         if theImage != nil {
-
-            presenter.sendMessage(objectId, text: textField.text!,hasImage:true,image:theImage)
+            
+            let message = Message(theDescription: textField.text!)
+            
+            presenter.sendMessageWithImage(message,image:theImage,recipent:recipient)
             startSpin()
             theImage = nil
             
         }else if textField.text != "" {
             
-            presenter.sendMessage(objectId, text: textField.text!,hasImage:false,image:nil)
+            let message = Message(theDescription: textField.text!)
+            presenter.sendMessage(message,recipent:recipient)
         
         }
         
@@ -236,14 +240,14 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let date:NSDate = self.data[indexPath.row].date
+        let date:NSDate = self.data[indexPath.row].date!
         let time = NSDate().offsetFrom(date)
         
         if data[indexPath.row].media != "" {
             
             let imageCell = tableView.dequeueReusableCellWithIdentifier("image") as! MessageImageCell
             
-            imageCell.sentImage.kf_setImageWithURL(NSURL(string: data[indexPath.row].media!)!, placeholderImage:UIImage(named: "placeholder"))
+            imageCell.sentImage.kf_setImageWithURL(NSURL(string: data[indexPath.row].media)!, placeholderImage:UIImage(named: "placeholder"))
             
             imageCell.msg.text = data[indexPath.row].description
             imageCell.name.text = data[indexPath.row].sender

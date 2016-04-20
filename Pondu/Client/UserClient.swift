@@ -151,6 +151,7 @@ class UserClient {
                 if errorOrNil == nil {
                     //the log-in was successful and the user is now the active user and credentials saved
                     //hide log-in view and show main app content
+
                     
                     SwiftEventBus.post("login", sender: true)
                     

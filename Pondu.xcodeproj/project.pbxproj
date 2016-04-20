@@ -23,6 +23,7 @@
 		4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09D96D1C26664200D3FF81 /* CameraViewController.swift */; };
 		4D0CC3D61C2746C000843328 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC3D51C2746C000843328 /* VideoViewController.swift */; };
 		4D0CC3D81C27719900843328 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CC3D71C27719900843328 /* ImageViewController.swift */; };
+		4D0F77A51CC540EC0006EC8D /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F77A41CC540EC0006EC8D /* Thread.swift */; };
 		4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */; };
 		4D14C6341C193E9200BAEA1F /* school.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D14C6331C193E9200BAEA1F /* school.swift */; };
 		4D1843E11BF2409000B2AFA2 /* MainViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */; };
@@ -139,6 +140,7 @@
 		4D09D96D1C26664200D3FF81 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4D0CC3D51C2746C000843328 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		4D0CC3D71C27719900843328 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		4D0F77A41CC540EC0006EC8D /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		4D128AA01C053B0F001C2CE9 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		4D14C6331C193E9200BAEA1F /* school.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = school.swift; sourceTree = "<group>"; };
 		4D1843E01BF2409000B2AFA2 /* MainViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewcontroller.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				4D32A82F1C88E10D0053FBCD /* Message.swift */,
 				4D70AA5A1CA226ED00BC23DC /* Wall.swift */,
 				4D1C79C11CC315ED00E3E53F /* UserInfo.swift */,
+				4D0F77A41CC540EC0006EC8D /* Thread.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */,
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
+				4D0F77A51CC540EC0006EC8D /* Thread.swift in Sources */,
 				4D1843ED1BF24A4D00B2AFA2 /* FavEventCell.swift in Sources */,
 				4D128AA11C053B0F001C2CE9 /* ZFRippleButton.swift in Sources */,
 				4D70AA5B1CA226ED00BC23DC /* Wall.swift in Sources */,

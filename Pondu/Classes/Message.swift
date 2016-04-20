@@ -8,22 +8,39 @@
 
 import Foundation
 
-class Message {
+class Message:NSObject {
     
-    var objectId:String!
-    var description:String!
-    var media:String?
-    var sender:String!
-    var icon:String!
-    var date:NSDate!
+    var entityId:String?
+    var thread:Thread?
+    var messageText:String?
+    var sender:String?
+    var media:String = ""
+    var date:NSDate?
+    var metadata:KCSMetadata?
     
-    init(theObjectId:String,theDescription:String,theMedia:String,theSender:String,theIcon:String,theDate:NSDate){
+    init(theDescription:String){
         
-        objectId = theObjectId
-        description = theDescription
-        media = theMedia
-        sender = theSender
-        icon = theIcon
-        date = theDate
+        messageText = theDescription
     }
+    
+    override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
+        return [
+            "entityId" : KCSEntityKeyId,
+            "messageText" : "messageText",
+            "sender" : "sender",
+            "thread" : "thread",
+            "metadata" : KCSEntityKeyMetadata
+        ]
+    }
+    
+    override class func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
+        return [
+            "thread" : "MessageThread",
+        ]
+    }
+    
+    override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
+        return [ "thread" ]
+    }
+    
 }
