@@ -11,7 +11,7 @@ import Foundation
 class Message:NSObject {
     
     var entityId:String?
-    var thread:Thread?
+    var thread:Thread!
     var threadId:String?
     var messageText:String?
     var sender:String?

@@ -62,10 +62,11 @@ class Messages {
                 
                 print("thread is nil")
                 
-                let messageThread = Thread(firstUser: myUserName, secondUser: recipent)
+                
                 message.sender = myUserName
-                message.thread = messageThread
-                message.threadId = messageThread.entityId
+                message.thread = Thread(firstUser: myUserName, secondUser: recipent)
+                
+                message.threadId = message.thread!.entityId
                 
                 self.storeMessage.saveObject(
                     message,

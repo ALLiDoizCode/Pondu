@@ -14,6 +14,10 @@ class Thread: NSObject {
     var user1:String?
     var user2:String?
     
+    override init() {
+        super.init()
+    }
+    
     init(firstUser:String,secondUser:String) {
         
         user1 = firstUser
