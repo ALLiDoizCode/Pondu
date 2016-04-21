@@ -79,7 +79,7 @@ class FavPartiesViewController: UIViewController,UICollectionViewDataSource,UICo
             
             for event in result {
                 
-                if event.event! == false && event.privacy! == true && self.follows.contains(event.createdBy!) {
+                if event.event! != true && event.privacy! == true && self.follows.contains(event.createdBy!) {
                     
                     self.array.append(event)
                 }
