@@ -33,20 +33,9 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewWillAppear(animated: Bool) {
         
+        getMessages()
+        
         print("Recipient is \(recipient)")
-        
-        self.data.removeAll()
-        
-        self.presenter.getMessages(recipient) { (data) in
-            
-            self.data = data
-            
-            self.reload()
-            
-            print("Reloaded Messges")
-            
-            print("we have \(self.data.count) messages")
-        }
         
         self.navigationController?.navigationBarHidden = true
         
@@ -65,6 +54,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.viewDidLoad()
         
         SwiftEventBus.onMainThread(self, name: "NewMessage") { (result) in
+            
+            self.getMessages()
             
             print("got new message")
         }
@@ -212,6 +203,22 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
                 
                 self.scrollToBottom(true)
             }
+        }
+    }
+    
+    func getMessages(){
+        
+        self.data.removeAll()
+        
+        self.presenter.getMessages(recipient) { (data) in
+            
+            self.data = data
+            
+            self.reload()
+            
+            print("Reloaded Messges")
+            
+            print("we have \(self.data.count) messages")
         }
     }
 
