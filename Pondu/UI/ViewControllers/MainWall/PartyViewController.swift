@@ -68,7 +68,7 @@ class PartyViewController: UIViewController,UICollectionViewDataSource,UICollect
             
             for event in result {
                 
-                if event.event == true && event.privacy == false {
+                if event.event != true && event.privacy == false {
                     
                     print("got party")
                     

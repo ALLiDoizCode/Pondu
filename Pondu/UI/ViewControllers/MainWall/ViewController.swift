@@ -195,9 +195,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             objectId = array[indexPath.item].entityId
             blur.hidden = false
             detailView.hidden = false
-            detailPost.text = array[indexPath.item].description
-            detailName.text = array[indexPath.item].title
-            //detailTitle.text = cell.descriptionHead.text
+            detailPost.text = array[indexPath.item].post
+            detailName.text = array[indexPath.item].createdBy
+            detailTitle.text = array[indexPath.item].title
             //detailTime.text = cell.time.text
             //detailImage.kf_setImageWithURL(NSURL(string:array[indexPath.row].profilePicture!)!, placeholderImage: UIImage(named: "placeholder"))
             

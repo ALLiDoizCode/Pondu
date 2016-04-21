@@ -133,7 +133,7 @@ class PostViewController: UIViewController,UITextViewDelegate {
         
         
         
-        makeEvent.event(textVIew.text, theDescription: textVIew.text, theAddress: address, theLive: live, thelikes: likes, theDate: eventDate, theStartTime: eventBegins, theEndTime: eventEnds, thePrivacy: privacy, isEvent: type, currentGeo: isCurrent, theGeo: geo) { (success) -> Void in
+        makeEvent.event(titlelable.text!, theDescription: textVIew.text, theAddress: address, theLive: live, thelikes: likes, theDate: eventDate, theStartTime: eventBegins, theEndTime: eventEnds, thePrivacy: privacy, isEvent: type, currentGeo: isCurrent, theGeo: geo) { (success) -> Void in
             
             if success {
                 
