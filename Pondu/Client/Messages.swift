@@ -96,17 +96,21 @@ class Messages {
         
         getThread(myUserName, user2: userName) { (thread) in
             
-            let query = KCSQuery(onField: "threadId", withExactMatchForValue: thread.entityId)
-            
-            self.storeMessage.queryWithQuery(query, withCompletionBlock: { (objects, error) in
+            if thread != nil {
                 
-                if let objects = objects {
+                let query = KCSQuery(onField: "threadId", withExactMatchForValue: thread.entityId)
+                
+                self.storeMessage.queryWithQuery(query, withCompletionBlock: { (objects, error) in
                     
-                    messages = objects as! [Message]
-                    SwiftEventBus.post("Messages", sender: messages)
-                }
-                
-            }, withProgressBlock: nil)
+                    if let objects = objects {
+                        
+                        messages = objects as! [Message]
+                        SwiftEventBus.post("Messages", sender: messages)
+                    }
+                    
+                    }, withProgressBlock: nil)
+            }
+            
         }
     }
     
@@ -114,11 +118,17 @@ class Messages {
         
         var thread:Thread!
         
-        let query = KCSQuery(onField: "user1", usingConditional: .KCSOr, forValue: [user1,user2])
-        let query2 = KCSQuery(onField: "user2", usingConditional: .KCSOr, forValue: [user1,user2])
-        let joinQuery = query.queryByJoiningQuery(query2, usingOperator: .KCSAnd)
+        let query = KCSQuery(onField: "user1", withExactMatchForValue: user1)
+        let query2 = KCSQuery(onField: "user2", withExactMatchForValue: user2)
+        let joinQuery1 = query.queryByJoiningQuery(query2, usingOperator: .KCSAnd)
         
-        storeMessageThread.queryWithQuery(joinQuery, withCompletionBlock: { (objects, error) in
+        let query3 = KCSQuery(onField: "user2", withExactMatchForValue: user1)
+        let query4 = KCSQuery(onField: "user1", withExactMatchForValue: user2)
+        let joinQuery2 = query3.queryByJoiningQuery(query4, usingOperator: .KCSAnd)
+        
+        let joinQuery3 = joinQuery1.queryByJoiningQuery(joinQuery2, usingOperator: .KCSOr)
+        
+        storeMessageThread.queryWithQuery(joinQuery3, withCompletionBlock: { (objects, error) in
             
             if error == nil {
                 

@@ -64,34 +64,19 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        /*SwiftEventBus.onBackgroundThread(self, name: "New") { result in
+        SwiftEventBus.onMainThread(self, name: "NewMessage") { (result) in
             
-            print("incoming push")
-            
-            self.data.removeAll()
-            
-            self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
-                
-                self.data = msgData
-                
-                self.reload()
-                
-                self.stopSpin()
-                
-                self.textField.text = ""
-                
-                print("Reloaded Messges")
-                
-                print("we have \(self.data.count) messages")
-                
-            })
-        }*/
+            print("got new message")
+        }
         
         dropShawdow.shadow(navView, color: UIColor.darkGrayColor())
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        
+        SwiftEventBus.unregister(self, name: "NewMessage")
     }
 
     override func didReceiveMemoryWarning() {

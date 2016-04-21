@@ -64,7 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-         KCSPush.sharedPush().application(application, didReceiveRemoteNotification: userInfo)
+        KCSPush.sharedPush().application(application, didReceiveRemoteNotification: userInfo)
+        
+        SwiftEventBus.post("NewMessage", sender: userInfo)
         print("got push")
     }
     
