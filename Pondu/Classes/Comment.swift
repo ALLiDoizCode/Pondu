@@ -8,18 +8,29 @@
 
 import Foundation
 
-class Comment {
+class Comment:NSObject {
     
-    var description:String!
-    var creatorImage:String!
-    var creatorName:String!
-    var time:NSDate!
+    var entityId:String?
+    var text:String?
+    var creatorImage:String?
+    var creatorName:String?
+    var time:NSDate = NSDate()
+    var postId:String?
     
-    init(theDescription:String,theCreatorImage:String,theCreatorName:String,theTime:NSDate){
+    init(theDescription:String,theCreatorName:String,thePostId:String){
         
-        description = theDescription
-        creatorImage = theCreatorImage
+        text = theDescription
         creatorName = theCreatorName
-        time = theTime
+        postId = thePostId
+    }
+    
+    override func hostToKinveyPropertyMapping() -> [NSObject : AnyObject]! {
+        return [
+            "entityId" : KCSEntityKeyId,
+            "text" : "text",
+            "creatorImage" : "creatorImage",
+            "creatorName" : "creatorName",
+            "postId":"postId",
+        ]
     }
 }

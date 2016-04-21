@@ -54,7 +54,7 @@ class ChatImageController: UIViewController {
         
         let controller = segue.destinationViewController as! ChatViewController
         
-        controller.objectId = objectId
+        controller.threadId = objectId
     }
 
 

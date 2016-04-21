@@ -283,6 +283,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             
             commentViewController.objectId = objectId
             
+            print("the objectId is \(objectId)")
         }
     }
     

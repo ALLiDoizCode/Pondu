@@ -73,7 +73,7 @@ class WallClient {
                         //print("the object \(object.allKeys)")
                         //print("the object values \(object!.allValues)")
                         
-                        
+                        let objectId = object.kinveyObjectId()
                         let title = object.valueForKey("title") as? String
                         let post = object.valueForKey("post") as? String
                         let address = object.valueForKey("address") as? String
@@ -97,6 +97,8 @@ class WallClient {
                         let theEnd = NSDate.dateFromISOString(endTime)
                         
                         let myEvent = Wall(theTitle: title!, theDescription: post!, theAddress: address!, theLive: live!, thelikes: likes!, theDate: theDate, theStartTime: theStart, theEndTime: theEnd, thePrivacy: privacy!, isEvent: event!, theGeo: location, theCreatedBy: creator!,theCreatorImage:image!)
+                        
+                        myEvent.entityId = objectId
                         
                         self.currentWall.append(myEvent)
                         

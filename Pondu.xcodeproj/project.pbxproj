@@ -61,7 +61,6 @@
 		4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */; };
 		4D86683C1BE98F2D00591DF6 /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */; };
 		4D8828201C7689BF00604DE3 /* MakeStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88281F1C7689BF00604DE3 /* MakeStory.swift */; };
-		4D8828221C768FD900604DE3 /* AddComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828211C768FD900604DE3 /* AddComment.swift */; };
 		4D8828241C76958400604DE3 /* LiveContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828231C76958400604DE3 /* LiveContent.swift */; };
 		4D8828261C7697D200604DE3 /* AddContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828251C7697D200604DE3 /* AddContent.swift */; };
 		4D8828281C76A7DA00604DE3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8828271C76A7DA00604DE3 /* Comment.swift */; };
@@ -74,7 +73,6 @@
 		4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */; };
 		4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */; };
 		4DC9AFC01C7A7F4C00C205B8 /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */; };
-		4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */; };
 		4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */; };
 		4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */; };
 		4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD174A01BDD8C6600B64E0B /* MainWall.swift */; };
@@ -94,6 +92,8 @@
 		4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1F1201BFF93C0001A96C5 /* PostViewController.swift */; };
 		4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038B1BDDDC1E00A56A67 /* Users.swift */; };
 		4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2038F1BDE99BF00A56A67 /* Parties.swift */; };
+		4DF8B6F11CC8B04A00D564BE /* PresentComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF8B6F01CC8B04A00D564BE /* PresentComments.swift */; };
+		4DF8B6F31CC8B3CA00D564BE /* CommentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF8B6F21CC8B3CA00D564BE /* CommentClient.swift */; };
 		4DF91A891C2B683B008E39AF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91A881C2B683B008E39AF /* SearchViewController.swift */; };
 		4DF91A8B1C2B68AD008E39AF /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */; };
 		4DFADB0F1C80FF3600A61AAA /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFADB0E1C80FF3600A61AAA /* Comments.storyboard */; };
@@ -178,7 +178,6 @@
 		4D85CE121C14D8C500F3BDF1 /* SignUp2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2ViewController.swift; sourceTree = "<group>"; };
 		4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventPresenter.swift; sourceTree = "<group>"; };
 		4D88281F1C7689BF00604DE3 /* MakeStory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeStory.swift; sourceTree = "<group>"; };
-		4D8828211C768FD900604DE3 /* AddComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddComment.swift; sourceTree = "<group>"; };
 		4D8828231C76958400604DE3 /* LiveContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveContent.swift; sourceTree = "<group>"; };
 		4D8828251C7697D200604DE3 /* AddContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContent.swift; sourceTree = "<group>"; };
 		4D8828271C76A7DA00604DE3 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -191,7 +190,6 @@
 		4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
-		4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCommetns.swift; sourceTree = "<group>"; };
 		4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListViewController.swift; sourceTree = "<group>"; };
 		4DCCF8531BF8F73800686B31 /* FavStoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavStoryListViewController.swift; sourceTree = "<group>"; };
 		4DD1749F1BDD7F5400B64E0B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -212,6 +210,8 @@
 		4DF1F1201BFF93C0001A96C5 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4DF2038B1BDDDC1E00A56A67 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		4DF2038F1BDE99BF00A56A67 /* Parties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parties.swift; sourceTree = "<group>"; };
+		4DF8B6F01CC8B04A00D564BE /* PresentComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentComments.swift; sourceTree = "<group>"; };
+		4DF8B6F21CC8B3CA00D564BE /* CommentClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentClient.swift; sourceTree = "<group>"; };
 		4DF91A881C2B683B008E39AF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4DF91A8A1C2B68AD008E39AF /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCell.swift; path = Pondu/UI/TableViewCells/SearchCell.swift; sourceTree = SOURCE_ROOT; };
 		4DFADB0E1C80FF3600A61AAA /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
@@ -450,11 +450,10 @@
 				4DF2038F1BDE99BF00A56A67 /* Parties.swift */,
 				4D86683B1BE98F2D00591DF6 /* CreateEventPresenter.swift */,
 				4D88281F1C7689BF00604DE3 /* MakeStory.swift */,
-				4D8828211C768FD900604DE3 /* AddComment.swift */,
 				4D8828251C7697D200604DE3 /* AddContent.swift */,
 				4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */,
-				4DC9AFC11C7A88D600C205B8 /* GetCommetns.swift */,
 				4D32A8331C89E6EF0053FBCD /* PresentMessage.swift */,
+				4DF8B6F01CC8B04A00D564BE /* PresentComments.swift */,
 			);
 			name = Presenters;
 			path = ../Presenters;
@@ -468,6 +467,7 @@
 				4D14C6331C193E9200BAEA1F /* school.swift */,
 				4D32A8291C88D94A0053FBCD /* Messages.swift */,
 				4D8828231C76958400604DE3 /* LiveContent.swift */,
+				4DF8B6F21CC8B3CA00D564BE /* CommentClient.swift */,
 				4DD1749D1BDD793F00B64E0B /* Presenters */,
 				4DC648A61C83CB1B00F92C74 /* Cloud.swift */,
 			);
@@ -757,7 +757,6 @@
 				4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */,
 				4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */,
 				4D4278841C9368240012B72D /* ChatImageController.swift in Sources */,
-				4DC9AFC21C7A88D600C205B8 /* GetCommetns.swift in Sources */,
 				4DCCF8541BF8F73800686B31 /* FavStoryListViewController.swift in Sources */,
 				4D2BE9AB1C1D00F3001810BB /* SweetAlert.swift in Sources */,
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
@@ -765,6 +764,7 @@
 				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
 				4DE7CC961C82B19300D83075 /* Date.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
+				4DF8B6F11CC8B04A00D564BE /* PresentComments.swift in Sources */,
 				4D32A82E1C88DF7A0053FBCD /* MessageList.swift in Sources */,
 				4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */,
 				4DE1A1CB1BEAB7D1009BCF55 /* LFTPulseAnimation.swift in Sources */,
@@ -802,6 +802,7 @@
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
 				4DC648A71C83CB1B00F92C74 /* Cloud.swift in Sources */,
 				4DF1C90E1C5BC35200F4269A /* MessagesCell.swift in Sources */,
+				4DF8B6F31CC8B3CA00D564BE /* CommentClient.swift in Sources */,
 				4DC5FAEA1BFA5BF6006AFE00 /* MainStoryCell.swift in Sources */,
 				4DD1E5861BED312800F15C6C /* PartyViewController.swift in Sources */,
 				4DF2038C1BDDDC1E00A56A67 /* Users.swift in Sources */,
@@ -820,7 +821,6 @@
 				4D1843E91BF246DD00B2AFA2 /* FavPartiesViewController.swift in Sources */,
 				4D8828241C76958400604DE3 /* LiveContent.swift in Sources */,
 				4D88282A1C76A90900604DE3 /* Content.swift in Sources */,
-				4D8828221C768FD900604DE3 /* AddComment.swift in Sources */,
 				4D05125B1C07984200FB414D /* Player.swift in Sources */,
 				4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,

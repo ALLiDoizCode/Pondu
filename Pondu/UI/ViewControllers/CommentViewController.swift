@@ -12,8 +12,9 @@ import SwiftEventBus
 
 class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let presenter = Comments()
+    let presenter = PresentComments()
     let theCloud = Cloud()
+    let currentUser = UserClient().currentUser()
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -35,14 +36,7 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         SwiftEventBus.onMainThread(self, name: "NewComments") { result in
             
-            self.presenter.getComments(self.objectId) { (data) -> Void in
-                
-                self.comments = data
-                
-                self.reload()
-                
-                print("reloaded comments")
-            }
+           
         }
         
         self.title = "Comments"
@@ -50,12 +44,6 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0
         
-        presenter.getComments(objectId) { (data) -> Void in
-            
-            self.comments = data
-            
-            self.reload()
-        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -71,17 +59,12 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         print(text)
         
-        presenter.comment(objectId, description: text) { (success) -> Void in
-            
-            self.presenter.getComments(self.objectId) { (data) -> Void in
-                
-                self.comments = data
-                
-                self.reload()
-            }
-            
-            self.textField.text = ""
-            
+        let comment = Comment(theDescription: textField.text!, theCreatorName: currentUser.username, thePostId: objectId)
+        
+       presenter.comment(comment) { (success) in
+        
+        
+        
         }
     }
     
@@ -104,7 +87,7 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell:CommentCell = tableView.dequeueReusableCellWithIdentifier("Comments") as! CommentCell
         
         cell.comment.text = comments[indexPath.row].description
-        cell.userImage.kf_setImageWithURL(NSURL(string: comments[indexPath.row].creatorImage)!)
+        cell.userImage.kf_setImageWithURL(NSURL(string: comments[indexPath.row].creatorImage!)!)
         cell.userName.text = comments[indexPath.row].creatorName
         
         let date:NSDate = comments[indexPath.row].time
