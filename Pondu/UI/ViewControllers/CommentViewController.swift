@@ -36,7 +36,12 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         SwiftEventBus.onMainThread(self, name: "NewComments") { result in
             
-           
+            self.presenter.getComments(self.objectId) { (data) in
+                
+                self.comments = data
+                
+                self.reload()
+            }
         }
         
         self.title = "Comments"
@@ -44,15 +49,26 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0
         
+        presenter.getComments(objectId) { (data) in
+            
+            self.comments = data
+            
+            print("creator name is \(self.comments[0].creatorName)")
+            
+            self.reload()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
         
+        SwiftEventBus.unregister(self, name: "NewComments")
     }
     
     @IBAction func sendBtn(sender: AnyObject) {
         
         guard let text:String = textField.text else {
+            
+            print("text field is empty")
             
             return
         }
@@ -61,11 +77,10 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let comment = Comment(theDescription: textField.text!, theCreatorName: currentUser.username, thePostId: objectId)
         
-       presenter.comment(comment) { (success) in
+        presenter.comment(comment)
         
-        
-        
-        }
+        textField.text = ""
+    
     }
     
     func reload(){
@@ -86,19 +101,19 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let cell:CommentCell = tableView.dequeueReusableCellWithIdentifier("Comments") as! CommentCell
         
-        cell.comment.text = comments[indexPath.row].description
-        cell.userImage.kf_setImageWithURL(NSURL(string: comments[indexPath.row].creatorImage!)!)
+        cell.comment.text = comments[indexPath.row].text
+        //cell.userImage.kf_setImageWithURL(NSURL(string: comments[indexPath.row].creatorImage!)!)
         cell.userName.text = comments[indexPath.row].creatorName
         
-        let date:NSDate = comments[indexPath.row].time
+        //let date:NSDate = comments[indexPath.row].time
         /*let dateFormatter:NSDateFormatter = NSDateFormatter()
         let theTimeFormat = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = theTimeFormat
         let DateInFormat:String = dateFormatter.stringFromDate(Date)*/
         
-        let time = NSDate().offsetFrom(date)
+        //let time = NSDate().offsetFrom(date)
         
-        cell.time.text = time
+        //cell.time.text = time
         
         cell.layoutSubviews()
         return cell

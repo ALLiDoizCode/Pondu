@@ -17,6 +17,10 @@ class Comment:NSObject {
     var time:NSDate = NSDate()
     var postId:String?
     
+    override init() {
+        super.init()
+    }
+    
     init(theDescription:String,theCreatorName:String,thePostId:String){
         
         text = theDescription

@@ -11,22 +11,25 @@ import SwiftEventBus
 
 class PresentComments {
     
-    func comment(comment:Comment,completion:(success:Bool) -> Void){
+    let client = CommentClient()
+    
+    func comment(comment:Comment){
         
-        
+        client.saveComment(comment)
     }
     
-    func getComments(objectId:String,completion:(data:[Comment]) -> Void){
+    func getComments(postId:String,completion:(data:[Comment]) -> Void){
         
-        SwiftEventBus.onMainThread(self, name: "EventComments") { result in
+        SwiftEventBus.onMainThread(self, name: "Comment") { result in
             
             if let comments:[Comment] = result.object as? [Comment] {
                 
                 completion(data: comments)
             }
             
-            SwiftEventBus.unregister("EventComments")
+            SwiftEventBus.unregister("Comment")
         }
         
+        client.getComments(postId)
     }
 }

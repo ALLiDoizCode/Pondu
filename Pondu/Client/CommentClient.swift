@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftEventBus
 
 class CommentClient {
     
@@ -37,7 +38,10 @@ class CommentClient {
         
         self.store.queryWithQuery(query, withCompletionBlock: { (objects, error) in
             
-            
+            if let objects:[Comment] = objects as? [Comment] {
+                
+                SwiftEventBus.post("Comment", sender: objects)
+            }
             
             }, withProgressBlock: nil)
     }
