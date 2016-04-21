@@ -30,6 +30,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     let dropShawdow = DropShadow()
     let presenter = PresentMessage()
     let theCloud = Cloud()
+    let currentUser = UserClient().currentUser()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -252,11 +253,16 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             cell.userName.text = data[indexPath.row].sender
             //cell.time.text = time
             
-            /*if data[indexPath.row].sender != currentUser?.username {
+            if data[indexPath.row].sender != currentUser.username  {
                 
                 cell.bar.image = UIImage(named: "msgred")
                 cell.userName.textColor = UIColor.lightGrayColor()
-            }*/
+                
+            }else {
+                
+                cell.bar.image = UIImage(named: "msgblue")
+                cell.userName.textColor = UIColor.darkTextColor()
+            }
             
             return cell
         }

@@ -1925,20 +1925,20 @@
                                 <exclude reference="Cvg-Pf-vId"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="a2t-s7-lQs"/>
-                                <exclude reference="bAQ-CQ-4tA"/>
-                                <exclude reference="jEO-VK-XPa"/>
+                                <exclude reference="1HL-q1-1PQ"/>
+                                <exclude reference="W0y-8z-Kws"/>
                                 <exclude reference="7Ak-A9-20d"/>
                                 <exclude reference="Y9g-Kg-S9u"/>
+                                <exclude reference="JZi-8N-6G4"/>
+                                <exclude reference="f1u-g5-fX5"/>
                                 <exclude reference="5ZX-2G-iec"/>
                                 <exclude reference="7q2-pz-max"/>
                                 <exclude reference="8rr-gB-kwC"/>
                                 <exclude reference="kHL-2X-bDU"/>
                                 <exclude reference="mCT-jT-237"/>
-                                <exclude reference="JZi-8N-6G4"/>
-                                <exclude reference="f1u-g5-fX5"/>
-                                <exclude reference="1HL-q1-1PQ"/>
-                                <exclude reference="W0y-8z-Kws"/>
+                                <exclude reference="a2t-s7-lQs"/>
+                                <exclude reference="bAQ-CQ-4tA"/>
+                                <exclude reference="jEO-VK-XPa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1950,20 +1950,20 @@
                                 <include reference="Cvg-Pf-vId"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="a2t-s7-lQs"/>
-                                <include reference="bAQ-CQ-4tA"/>
-                                <include reference="jEO-VK-XPa"/>
+                                <include reference="1HL-q1-1PQ"/>
+                                <include reference="W0y-8z-Kws"/>
                                 <include reference="7Ak-A9-20d"/>
                                 <include reference="Y9g-Kg-S9u"/>
+                                <include reference="JZi-8N-6G4"/>
+                                <include reference="f1u-g5-fX5"/>
                                 <include reference="5ZX-2G-iec"/>
                                 <include reference="7q2-pz-max"/>
                                 <include reference="8rr-gB-kwC"/>
                                 <include reference="kHL-2X-bDU"/>
                                 <include reference="mCT-jT-237"/>
-                                <include reference="JZi-8N-6G4"/>
-                                <include reference="f1u-g5-fX5"/>
-                                <include reference="1HL-q1-1PQ"/>
-                                <include reference="W0y-8z-Kws"/>
+                                <include reference="a2t-s7-lQs"/>
+                                <include reference="bAQ-CQ-4tA"/>
+                                <include reference="jEO-VK-XPa"/>
                             </mask>
                         </variation>
                     </view>
@@ -1975,7 +1975,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r9-tU-ryc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580.5" y="3165"/>
+            <point key="canvasLocation" x="718.5" y="3159"/>
         </scene>
     </scenes>
     <resources>
@@ -1992,8 +1992,8 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bsc-zi-TlL"/>
-        <segue reference="fLG-Tk-zvW"/>
-        <segue reference="EJQ-JW-wKP"/>
+        <segue reference="1CZ-c5-C7P"/>
+        <segue reference="xRK-j8-Vnl"/>
+        <segue reference="Lb5-lk-x21"/>
     </inferredMetricsTieBreakers>
 </document>
