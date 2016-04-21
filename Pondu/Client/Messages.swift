@@ -88,6 +88,28 @@ class Messages {
         
     }
     
+    func getMessage(userName:String) {
+        
+        var messages:[Message] = []
+        
+        let myUserName = user.currentUser().username
+        
+        getThread(myUserName, user2: userName) { (thread) in
+            
+            let query = KCSQuery(onField: "threadId", withExactMatchForValue: thread.entityId)
+            
+            self.storeMessage.queryWithQuery(query, withCompletionBlock: { (objects, error) in
+                
+                if let objects = objects {
+                    
+                    messages = objects as! [Message]
+                    SwiftEventBus.post("Messages", sender: messages)
+                }
+                
+            }, withProgressBlock: nil)
+        }
+    }
+    
     func getThread(user1:String,user2:String,completion:(thread:Thread!) -> Void) {
         
         var thread:Thread!

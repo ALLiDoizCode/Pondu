@@ -19,7 +19,7 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
     
     override func viewWillAppear(animated: Bool) {
         
-        presenter.getMessages { (data) -> Void in
+        /*presenter.getMessages { (data) -> Void in
             
             self.myMessages = data
             
@@ -27,7 +27,7 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
             
             self.reload()
 
-        }
+        }*/
         
     }
 

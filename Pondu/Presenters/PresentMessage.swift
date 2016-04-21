@@ -28,11 +28,11 @@ class PresentMessage {
         
     }
     
-    func getMessages(completion:(data:[MessageList]) -> Void){
+    func getMessages(userName:String,completion:(data:[Message]) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "Messages") { result in
             
-            guard let messageData:[MessageList] = result.object as? [MessageList] else {
+            guard let messageData:[Message] = result.object as? [Message] else {
                 
                 return
             }
@@ -43,6 +43,7 @@ class PresentMessage {
             SwiftEventBus.unregister("Messages")
         }
         
+        client.getMessage(userName)
     }
     
     func messageWithId(objectId:String,completion:(data:[Message]) -> Void){

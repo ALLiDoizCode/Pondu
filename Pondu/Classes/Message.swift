@@ -19,6 +19,10 @@ class Message:NSObject {
     var date:NSDate?
     var metadata:KCSMetadata?
     
+    override init() {
+        super.init()
+    }
+    
     init(theDescription:String){
         
         messageText = theDescription

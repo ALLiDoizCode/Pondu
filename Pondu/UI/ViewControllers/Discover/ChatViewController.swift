@@ -37,19 +37,16 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         self.data.removeAll()
         
-        /*self.presenter.messageWithId(self.objectId, completion: { (msgData) -> Void in
+        self.presenter.getMessages(recipient) { (data) in
             
-            self.data = msgData
+            self.data = data
             
             self.reload()
-            
-            self.textField.text = ""
             
             print("Reloaded Messges")
             
             print("we have \(self.data.count) messages")
-            
-        })*/
+        }
         
         self.navigationController?.navigationBarHidden = true
         
@@ -240,8 +237,8 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let date:NSDate = self.data[indexPath.row].date!
-        let time = NSDate().offsetFrom(date)
+       // let date:NSDate = self.data[indexPath.row].date!
+        //let time = NSDate().offsetFrom(date)
         
         if data[indexPath.row].media != "" {
             
@@ -249,9 +246,9 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             
             imageCell.sentImage.kf_setImageWithURL(NSURL(string: data[indexPath.row].media)!, placeholderImage:UIImage(named: "placeholder"))
             
-            imageCell.msg.text = data[indexPath.row].description
+            imageCell.msg.text = data[indexPath.row].messageText
             imageCell.name.text = data[indexPath.row].sender
-            imageCell.time.text = time
+            //imageCell.time.text = time
             
             return imageCell
         
@@ -259,9 +256,9 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             
             let cell = tableView.dequeueReusableCellWithIdentifier("ChatCell") as! ChatCell
             
-            cell.message.text = data[indexPath.row].description
+            cell.message.text = data[indexPath.row].messageText
             cell.userName.text = data[indexPath.row].sender
-            cell.time.text = time
+            //cell.time.text = time
             
             /*if data[indexPath.row].sender != currentUser?.username {
                 
