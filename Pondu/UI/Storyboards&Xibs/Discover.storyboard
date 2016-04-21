@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3b8-JZ-ASk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.5" y="2386.5"/>
+            <point key="canvasLocation" x="-319.5" y="2403.75"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Kh5-vD-PQb">
@@ -529,6 +529,9 @@
                                                 <include reference="n9i-dB-Kzm"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <segue destination="z9g-cS-2T5" kind="show" identifier="Threads" id="fLG-Tk-zvW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jK3-k0-mKh">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -734,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTS-TU-zkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="2386.5"/>
+            <point key="canvasLocation" x="691.5" y="2382.75"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="ZCo-cx-tZa">
@@ -792,7 +795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1L-s4-jUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="2386.5"/>
+            <point key="canvasLocation" x="1357.5" y="2377.5"/>
         </scene>
         <!--Chat Image Controller-->
         <scene sceneID="5TQ-IW-Ir3">
@@ -1548,7 +1551,7 @@
                 </imageView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8U7-ly-IqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="3125.25"/>
+            <point key="canvasLocation" x="114" y="3111.75"/>
         </scene>
         <!--Messages-->
         <scene sceneID="kvA-ED-pA8">
@@ -1823,7 +1826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r9-tU-ryc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970.5" y="3125.25"/>
+            <point key="canvasLocation" x="897" y="3211.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1840,7 +1843,7 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kfl-j1-99f"/>
+        <segue reference="fLG-Tk-zvW"/>
         <segue reference="xRK-j8-Vnl"/>
     </inferredMetricsTieBreakers>
 </document>

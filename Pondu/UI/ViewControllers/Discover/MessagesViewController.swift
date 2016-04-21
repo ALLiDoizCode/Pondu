@@ -11,7 +11,7 @@ import Kingfisher
 
 class MessagesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var myThreads:[Thread]!
+    var myThreads:[Thread] = []
     
     let presenter = PresentMessage()
     
@@ -24,6 +24,8 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
         presenter.getThreads { (threads) in
             
             self.myThreads = threads
+            
+            self.reload()
         }
         
     }
