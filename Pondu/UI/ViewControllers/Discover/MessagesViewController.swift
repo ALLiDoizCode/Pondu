@@ -91,8 +91,6 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
             
             let controller = segue.destinationViewController as! ChatViewController
             
-            //controller.data = self.myMessages[(index?.row)!].messages
-            
             if self.myThreads[(index?.row)!].user1 == currentUser.username {
                 
                 controller.recipient = self.myThreads[(index?.row)!].user2
