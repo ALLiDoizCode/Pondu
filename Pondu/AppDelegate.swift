@@ -66,7 +66,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         KCSPush.sharedPush().application(application, didReceiveRemoteNotification: userInfo)
         
-        SwiftEventBus.post("NewMessage", sender: userInfo)
+        if let aps = userInfo["aps"] as? NSDictionary {
+            if let alert = aps["alert"] as? NSDictionary {
+                
+                print("the alert is \(alert)")
+                
+                if let message = alert["message"] as? NSString {
+                    
+                    print("the message is \(message)")
+                }
+            } else if let alert = aps["alert"] as? NSString {
+                //Do stuff
+                
+                let newMessage = "New Message"
+                let newComment = "New Comment"
+                
+                if alert == newMessage {
+                    
+                    SwiftEventBus.post("NewMessage", sender: userInfo)
+                    
+                }else if alert == newComment {
+                    
+                    SwiftEventBus.post("NewComments", sender: userInfo)
+                }
+                
+                print("the message is \(alert)")
+            }
+        }
+        
+        
         print("got push")
     }
     

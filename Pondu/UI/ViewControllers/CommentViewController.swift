@@ -40,6 +40,8 @@ class CommentViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 
                 self.comments = data
                 
+                print("incoming Comments")
+                
                 self.reload()
             }
         }
