@@ -114,7 +114,24 @@ class Messages {
         }
     }
     
-    func getThread(user1:String,user2:String,completion:(thread:Thread!) -> Void) {
+    func threads(user:String,completion:(thread:[Thread]!) -> Void) {
+        
+        let query = KCSQuery(onField: "user1", withExactMatchForValue: user)
+        let query2 = KCSQuery(onField: "user2", withExactMatchForValue: user)
+        let joinQuery = query.queryByJoiningQuery(query2, usingOperator: .KCSOr)
+        
+        storeMessageThread.queryWithQuery(joinQuery, withCompletionBlock: { (objects, error) in
+            
+            if let objects:[Thread] = objects as? [Thread] {
+                
+                completion(thread: objects)
+            }
+            
+            
+            }, withProgressBlock: nil)
+    }
+    
+    func getThread(user1:String!,user2:String!,completion:(thread:Thread!) -> Void) {
         
         var thread:Thread!
         

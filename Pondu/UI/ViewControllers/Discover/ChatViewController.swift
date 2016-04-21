@@ -21,7 +21,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var cameraBtn: UIButton!
     
     var data:[Message] = []
-    var objectId:String!
+    var threadId:String!
     var recipient:String!
     var theImage:UIImage!
     
@@ -120,7 +120,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             let message = Message(theDescription: textField.text!)
             presenter.sendMessage(message,recipent:recipient)
-        
+            textField.text = ""
         }
         
     }
@@ -290,7 +290,7 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             print(data[indexPath.row].media)
             
             controller.image = data[indexPath.row].media
-            controller.objectId = objectId
+            //controller.objectId = objectId
         }
         
     }

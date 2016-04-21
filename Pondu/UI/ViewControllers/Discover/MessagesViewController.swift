@@ -11,23 +11,20 @@ import Kingfisher
 
 class MessagesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    var myMessages:[MessageList]!
+    var myThreads:[Thread]!
     
     let presenter = PresentMessage()
+    
+    let currentUser = UserClient().currentUser()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(animated: Bool) {
         
-        /*presenter.getMessages { (data) -> Void in
+        presenter.getThreads { (threads) in
             
-            self.myMessages = data
-            
-            print("\( self.myMessages.count) Messages")
-            
-            self.reload()
-
-        }*/
+            self.myThreads = threads
+        }
         
     }
 
@@ -47,23 +44,29 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.myMessages.count
+        return self.myThreads.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell:MessagesCell = tableView.dequeueReusableCellWithIdentifier("Messages") as! MessagesCell
         
-        cell.icon.kf_setImageWithURL(NSURL(string: self.myMessages[indexPath.row].icon)!, placeholderImage: UIImage(named: "placeholder"))
+        //cell.icon.kf_setImageWithURL(NSURL(string: self.myThreads[indexPath.row].icon)!, placeholderImage: UIImage(named: "placeholder"))
         
-        cell.userName.text = self.myMessages[indexPath.row].name
+        if self.myThreads[indexPath.row].user1 == currentUser.username {
+         
+             cell.userName.text = self.myThreads[indexPath.row].user2
+            
+        }else {
+            
+             cell.userName.text = self.myThreads[indexPath.row].user1
+        }
         
+        //let date:NSDate = self.myThreads[indexPath.row].time
         
-        let date:NSDate = self.myMessages[indexPath.row].time
+        //let time = NSDate().offsetFrom(date)
         
-        let time = NSDate().offsetFrom(date)
-        
-        cell.time.text = time
+        //cell.time.text = time
         
         return cell
     }
@@ -87,7 +90,17 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
             let controller = segue.destinationViewController as! ChatViewController
             
             //controller.data = self.myMessages[(index?.row)!].messages
-            controller.objectId = self.myMessages[(index?.row)!].objectId
+            
+            if self.myThreads[(index?.row)!].user1 == currentUser.username {
+                
+                controller.recipient = self.myThreads[(index?.row)!].user2
+                
+            }else {
+                
+                controller.recipient = self.myThreads[(index?.row)!].user1
+            }
+            
+            
         }
     }
     

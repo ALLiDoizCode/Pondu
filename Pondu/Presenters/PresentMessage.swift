@@ -12,6 +12,7 @@ import SwiftEventBus
 class PresentMessage {
     
     let client = Messages()
+    let currentUser = UserClient()
     
     func makeRoom(creator:String,recipient:String,completion:(data:String) -> Void){
         
@@ -46,21 +47,14 @@ class PresentMessage {
         client.getMessage(userName)
     }
     
-    func messageWithId(objectId:String,completion:(data:[Message]) -> Void){
+    func getThreads(completion:(threads:[Thread]!) -> Void){
         
-        SwiftEventBus.onMainThread(self, name: "MsgWithId") { result in
+        let userName = currentUser.currentUser().username
+        
+        client.threads(userName) { (thread) in
             
-            guard let messageData:[Message] = result.object as? [Message] else {
-                
-                return
-            }
-            
-            print("presenting \(messageData.count) messages")
-            
-            completion(data: messageData)
-            SwiftEventBus.unregister("MsgWithId")
+            completion(threads: thread)
         }
-        
     }
     
     func sendMessage(message:Message,recipent:String){
