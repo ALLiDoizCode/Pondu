@@ -19,6 +19,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
 
     
     let options = PagingMenuOptions()
+    var pagingMenuController:PagingMenuController!
     let dropShadow = DropShadow()
     var discover:DiscoverViewController!
     var Favorite:FavoriteViewController!
@@ -28,7 +29,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        options
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         SwiftEventBus.onMainThread(self, name:"Title") { (result) -> Void in
@@ -95,7 +96,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             options.selectedFont = UIFont(name: "Avenir", size: 20)!
             options.menuPosition = .Bottom
             options.menuItemMode = .RoundRect(radius: 0, horizontalPadding: 0, verticalPadding: 0, selectedColor: UIColor.darkGrayColor())
-            let pagingMenuController = self.childViewControllers.first as! PagingMenuController
+            pagingMenuController = self.childViewControllers.first as! PagingMenuController
             pagingMenuController.delegate = self
             pagingMenuController.setup(viewControllers: viewControllers, options: options)
             
@@ -108,12 +109,10 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             options.selectedFont = UIFont(name: "Avenir", size: 20)!
             options.menuPosition = .Bottom
             options.menuItemMode = .RoundRect(radius: 0, horizontalPadding: 4, verticalPadding: 0.5, selectedColor: UIColor.groupTableViewBackgroundColor())
-            let pagingMenuController = self.childViewControllers.first as! PagingMenuController
+            pagingMenuController = self.childViewControllers.first as! PagingMenuController
             pagingMenuController.delegate = self
             pagingMenuController.setup(viewControllers: viewControllers, options: options)
         }
-
-        
     }
     
     func gotoCommetns(){
@@ -195,6 +194,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             self.navigationItem.leftBarButtonItem = message*/
             
             self.navigationController?.navigationBarHidden = true
+            
             
             
         case 3:

@@ -225,7 +225,7 @@
                         <outlet property="bgImage" destination="k2h-HJ-x1B" id="ELM-DA-wae"/>
                         <outlet property="camera" destination="ju0-a6-h0t" id="cVf-6b-mkA"/>
                         <outlet property="search" destination="Yg7-7F-Ff5" id="Zyp-3I-sNB"/>
-                        <segue destination="RZd-5L-UbZ" kind="show" identifier="search" id="1CZ-c5-C7P"/>
+                        <segue destination="RZd-5L-UbZ" kind="presentation" identifier="search" id="1CZ-c5-C7P"/>
                         <segue destination="837-fA-ggp" kind="show" identifier="camera" id="HEk-kM-Xvo"/>
                     </connections>
                 </viewController>
@@ -1551,7 +1551,7 @@
                 </imageView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8U7-ly-IqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213" y="3125.25"/>
+            <point key="canvasLocation" x="10.5" y="3181.5"/>
         </scene>
         <!--Messages-->
         <scene sceneID="kvA-ED-pA8">
@@ -1975,7 +1975,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r9-tU-ryc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="3211.5"/>
+            <point key="canvasLocation" x="580.5" y="3165"/>
         </scene>
     </scenes>
     <resources>
@@ -1992,8 +1992,8 @@
         <image name="msgblue" width="955" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1CZ-c5-C7P"/>
+        <segue reference="Bsc-zi-TlL"/>
         <segue reference="fLG-Tk-zvW"/>
-        <segue reference="xRK-j8-Vnl"/>
+        <segue reference="EJQ-JW-wKP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -95,7 +95,11 @@ class SearchViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func tappedBack(sender:UITapGestureRecognizer) {
         
-        self.performSegueWithIdentifier("goBack", sender: self)
+        //self.performSegueWithIdentifier("goBack", sender: self)
+        
+        self.dismissViewControllerAnimated(true) {
+            
+        }
     }
     
     
