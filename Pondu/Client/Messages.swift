@@ -40,7 +40,7 @@ class Messages {
                 print("found thread")
                 
                 message.sender = myUserName
-                message.thread = thread
+                //message.thread = thread
                 message.threadId = thread.entityId
                 
                 self.storeMessage.saveObject(
