@@ -23,7 +23,7 @@ class Messages {
         KCSStoreKeyCollectionTemplateClass : Thread.self
         ])
     
-    func sendMessage(message:Message,recipent:String){
+    func sendMessage(message:Message,recipent:String,image:UIImage!){
         
         let myUserName = user.currentUser().username
         
@@ -60,29 +60,41 @@ class Messages {
                 )
             }else {
                 
+                if image != nil {
+                    
+                }else {
+                    
+                }
+                
                 print("thread is nil")
                 
+                thread.user1 = self.user.currentUser().username
+                thread.user2 = recipent
                 
-                message.sender = myUserName
-                message.thread = Thread(firstUser: myUserName, secondUser: recipent)
-                
-                message.threadId = message.thread!.entityId
-                
-                self.storeMessage.saveObject(
-                    message,
-                    withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
-                        if errorOrNil != nil {
-                            //save failed
-                            NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
-                        } else {
-                            //save was successful
-                            NSLog("Successfully saved message thread (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
-                            
-                            //SwiftEventBus.post("makeWall", sender: true)
-                        }
-                    },
-                    withProgressBlock: nil
-                )
+                self.storeMessageThread.saveObject(thread, withCompletionBlock: { (objects, error) in
+                    
+                    message.sender = myUserName
+                    //message.thread = Thread(firstUser: myUserName, secondUser: recipent)
+                    
+                    message.threadId = thread!.entityId
+                    
+                    self.storeMessage.saveObject(
+                        message,
+                        withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
+                            if errorOrNil != nil {
+                                //save failed
+                                NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
+                            } else {
+                                //save was successful
+                                NSLog("Successfully saved message thread (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
+                        
+                            }
+                        },
+                        withProgressBlock: nil
+                    )
+                    
+                }, withProgressBlock: nil)
+        
             }
         }
         

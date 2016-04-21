@@ -11,7 +11,6 @@ import Foundation
 class Message:NSObject {
     
     var entityId:String?
-    var thread:Thread!
     var threadId:String?
     var messageText:String?
     var sender:String?
@@ -32,14 +31,14 @@ class Message:NSObject {
         return [
             "entityId" : KCSEntityKeyId,
             "messageText" : "messageText",
+            "media" : "media",
             "sender" : "sender",
-            "thread" : "thread",
             "threadId":"threadId",
             "metadata" : KCSEntityKeyMetadata
         ]
     }
     
-    override class func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
+    /*override class func kinveyPropertyToCollectionMapping() -> [NSObject : AnyObject]! {
         
         return [
             "thread" : "MessageThread",
@@ -49,6 +48,6 @@ class Message:NSObject {
     override func referenceKinveyPropertiesOfObjectsToSave() -> [AnyObject]! {
         
         return [ "thread" ]
-    }
+    }*/
     
 }
