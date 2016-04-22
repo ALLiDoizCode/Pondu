@@ -14,7 +14,7 @@ class Message:NSObject {
     var threadId:String?
     var messageText:String?
     var sender:String?
-    var media:String = ""
+    var media:String?
     var date:NSDate?
     var metadata:KCSMetadata?
     

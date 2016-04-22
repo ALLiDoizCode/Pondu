@@ -31,6 +31,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     let presenter = PresentMessage()
     let theCloud = Cloud()
     let currentUser = UserClient().currentUser()
+    let file = WallClient()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -57,6 +58,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         SwiftEventBus.onMainThread(self, name: "NewMessage") { (result) in
             
             self.getMessages()
+            
+            self.stopSpin()
             
             print("got new message")
         }
@@ -233,11 +236,14 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
        // let date:NSDate = self.data[indexPath.row].date!
         //let time = NSDate().offsetFrom(date)
         
-        if data[indexPath.row].media != "" {
+        if data[indexPath.row].media != nil {
             
             let imageCell = tableView.dequeueReusableCellWithIdentifier("image") as! MessageImageCell
             
-            imageCell.sentImage.kf_setImageWithURL(NSURL(string: data[indexPath.row].media)!, placeholderImage:UIImage(named: "placeholder"))
+            file.getFile(data[indexPath.row].media!, completion: { (data) in
+                
+                imageCell.sentImage.kf_setImageWithURL(data, placeholderImage:UIImage(named: "placeholder"))
+            })
             
             imageCell.msg.text = data[indexPath.row].messageText
             imageCell.name.text = data[indexPath.row].sender

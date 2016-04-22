@@ -61,7 +61,7 @@ class PresentMessage {
         
         print("Sending message to \(recipent)")
         
-        client.sendMessage(message,recipent:recipent)
+        client.sendMessage(message,recipent:recipent,image:nil)
         
     }
     
@@ -70,7 +70,7 @@ class PresentMessage {
         print("Sending message with image")
         
         
-        client.sendMessage(message,recipent:recipent)
+        client.sendMessage(message,recipent:recipent,image:image)
         
     }
 }

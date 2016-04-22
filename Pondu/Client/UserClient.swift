@@ -112,7 +112,7 @@ class UserClient {
                 if errorOrNil == nil {
                     //user is created
                     
-                    self.uploadProfilePicture(profileImage) { (file) in
+                    self.uploadPicture(profileImage) { (file) in
                         
                         user.setValue(file.fileId, forAttribute: "ProfileImage")
                         user.setValue(follow, forAttribute: "Following")
@@ -172,7 +172,7 @@ class UserClient {
     }
     
     // Upload the profile picture to the Kinvey file store
-    func uploadProfilePicture(photo:UIImage!,completion:(file:KCSFile!) -> ()) {
+    func uploadPicture(photo:UIImage!,completion:(file:KCSFile!) -> ()) {
         
         // Initialize with the default initializer
         let metadata = KCSMetadata();

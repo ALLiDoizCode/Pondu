@@ -37,67 +37,95 @@ class Messages {
             
             if thread != nil {
                 
-                print("found thread")
+                if image != nil {
+                    
+                    self.user.uploadPicture(image, completion: { (file) in
+                        
+                        message.media = file.fileId
+                        
+                        self.messageStore(message, userName: myUserName, thread: thread)
+                    })
+                    
+                }else {
+                    
+                    self.messageStore(message, userName: myUserName, thread: thread)
+                }
                 
-                message.sender = myUserName
-                //message.thread = thread
-                message.threadId = thread.entityId
-                
-                self.storeMessage.saveObject(
-                    message,
-                    withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
-                        if errorOrNil != nil {
-                            //save failed
-                            NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
-                        } else {
-                            //save was successful
-                            NSLog("Successfully saved message thread (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
-                            
-                            //SwiftEventBus.post("makeWall", sender: true)
-                        }
-                    },
-                    withProgressBlock: nil
-                )
             }else {
                 
                 if image != nil {
                     
+                    self.user.uploadPicture(image, completion: { (file) in
+                        
+                        message.media = file.fileId
+                        
+                        self.threadStore(message, userName: myUserName, recipent: recipent, thread: thread)
+                    })
+                    
                 }else {
                     
+                    self.threadStore(message, userName: myUserName, recipent: recipent, thread: thread)
                 }
-                
-                print("thread is nil")
-                
-                thread.user1 = self.user.currentUser().username
-                thread.user2 = recipent
-                
-                self.storeMessageThread.saveObject(thread, withCompletionBlock: { (objects, error) in
-                    
-                    message.sender = myUserName
-                    //message.thread = Thread(firstUser: myUserName, secondUser: recipent)
-                    
-                    message.threadId = thread!.entityId
-                    
-                    self.storeMessage.saveObject(
-                        message,
-                        withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
-                            if errorOrNil != nil {
-                                //save failed
-                                NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
-                            } else {
-                                //save was successful
-                                NSLog("Successfully saved message thread (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
-                        
-                            }
-                        },
-                        withProgressBlock: nil
-                    )
-                    
-                }, withProgressBlock: nil)
-        
             }
         }
         
+    }
+    
+    func messageStore(message:Message,userName:String,thread:Thread!){
+        
+        print("found thread")
+        
+        message.sender = userName
+        //message.thread = thread
+        message.threadId = thread.entityId
+        
+        self.storeMessage.saveObject(
+            message,
+            withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
+                if errorOrNil != nil {
+                    //save failed
+                    NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
+                } else {
+                    //save was successful
+                    NSLog("Successfully saved message thread (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
+                    
+                    //SwiftEventBus.post("makeWall", sender: true)
+                }
+            },
+            withProgressBlock: nil
+        )
+    }
+    func threadStore(message:Message,userName:String,recipent:String,thread:Thread!) {
+        
+        print("thread is nil")
+        
+        thread.user1 = userName
+        thread.user2 = recipent
+        
+        self.storeMessageThread.saveObject(thread, withCompletionBlock: { (objects, error) in
+            
+            message.sender = userName
+            //message.thread = Thread(firstUser: myUserName, secondUser: recipent)
+            
+            message.threadId = thread.entityId
+            
+            self.storeMessage.saveObject(
+                message,
+                withCompletionBlock: { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
+                    if errorOrNil != nil {
+                        //save failed
+                        NSLog("Save failed, with error: %@", errorOrNil.localizedFailureReason!)
+                    } else {
+                        //save was successful
+                        NSLog("Successfully saved message thread (id='%@').", (objectsOrNil[0] as! NSObject).kinveyObjectId())
+                        
+                    }
+                },
+                withProgressBlock: nil
+            )
+            
+            }, withProgressBlock: nil)
+
     }
     
     func getMessage(userName:String) {
@@ -145,7 +173,7 @@ class Messages {
     
     func getThread(user1:String!,user2:String!,completion:(thread:Thread!) -> Void) {
         
-        var thread:Thread!
+        var thread:Thread = Thread()
         
         let query = KCSQuery(onField: "user1", withExactMatchForValue: user1)
         let query2 = KCSQuery(onField: "user2", withExactMatchForValue: user2)
