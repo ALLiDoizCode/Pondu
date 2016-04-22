@@ -507,14 +507,18 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="A40-gi-RGM" secondAttribute="trailing" constant="42" id="0Ad-Up-Vhr"/>
+                                            <constraint firstAttribute="trailing" secondItem="A40-gi-RGM" secondAttribute="trailing" constant="42" id="0Ad-Up-Vhr">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="58"/>
+                                            </constraint>
                                             <constraint firstItem="Nkv-Ey-IS0" firstAttribute="top" secondItem="ZLk-yv-RfP" secondAttribute="top" constant="17" id="DJV-Nh-WKq"/>
                                             <constraint firstItem="Nkv-Ey-IS0" firstAttribute="leading" secondItem="ZLk-yv-RfP" secondAttribute="leading" constant="8" id="OzV-Y8-nIQ"/>
                                             <constraint firstItem="A9S-Ox-gmw" firstAttribute="baseline" secondItem="A40-gi-RGM" secondAttribute="firstBaseline" id="Pgp-Lx-MWW">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="2"/>
                                             </constraint>
                                             <constraint firstItem="Nkv-Ey-IS0" firstAttribute="top" secondItem="A40-gi-RGM" secondAttribute="top" id="QNf-Ie-MbV"/>
-                                            <constraint firstItem="A40-gi-RGM" firstAttribute="leading" secondItem="Nkv-Ey-IS0" secondAttribute="trailing" constant="8" symbolic="YES" id="g4B-H2-Pls"/>
+                                            <constraint firstItem="A40-gi-RGM" firstAttribute="leading" secondItem="Nkv-Ey-IS0" secondAttribute="trailing" constant="8" symbolic="YES" id="g4B-H2-Pls">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                            </constraint>
                                             <constraint firstItem="A9S-Ox-gmw" firstAttribute="trailing" secondItem="ZLk-yv-RfP" secondAttribute="trailingMargin" id="rkf-pe-Snh"/>
                                         </constraints>
                                         <variation key="default">
@@ -1750,8 +1754,12 @@
                                             </constraint>
                                             <constraint firstItem="0Yg-eM-ZHw" firstAttribute="top" secondItem="dYI-WM-Smn" secondAttribute="top" constant="17" id="EjI-9e-3tu"/>
                                             <constraint firstItem="jS0-jM-YKP" firstAttribute="trailing" secondItem="dYI-WM-Smn" secondAttribute="trailingMargin" id="Pqo-PZ-fza"/>
-                                            <constraint firstAttribute="trailing" secondItem="NKM-rY-CuN" secondAttribute="trailing" constant="42" id="c2X-Ax-C2i"/>
-                                            <constraint firstItem="NKM-rY-CuN" firstAttribute="leading" secondItem="0Yg-eM-ZHw" secondAttribute="trailing" constant="8" symbolic="YES" id="gp7-tQ-eAx"/>
+                                            <constraint firstAttribute="trailing" secondItem="NKM-rY-CuN" secondAttribute="trailing" constant="42" id="c2X-Ax-C2i">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="58"/>
+                                            </constraint>
+                                            <constraint firstItem="NKM-rY-CuN" firstAttribute="leading" secondItem="0Yg-eM-ZHw" secondAttribute="trailing" constant="8" symbolic="YES" id="gp7-tQ-eAx">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                            </constraint>
                                             <constraint firstItem="0Yg-eM-ZHw" firstAttribute="top" secondItem="NKM-rY-CuN" secondAttribute="top" id="mqZ-Lg-MzL"/>
                                         </constraints>
                                         <variation key="default">
@@ -2730,9 +2738,13 @@
                                             <constraint firstItem="Mz1-x1-TOS" firstAttribute="baseline" secondItem="ZJB-Ap-odZ" secondAttribute="firstBaseline" id="6pV-gW-vfe">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="1"/>
                                             </constraint>
-                                            <constraint firstAttribute="trailing" secondItem="ZJB-Ap-odZ" secondAttribute="trailing" constant="42" id="7IK-wo-ebT"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZJB-Ap-odZ" secondAttribute="trailing" constant="42" id="7IK-wo-ebT">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="58"/>
+                                            </constraint>
                                             <constraint firstItem="J3f-Gb-dkC" firstAttribute="top" secondItem="e2Y-uU-96n" secondAttribute="top" constant="17" id="LM6-TB-FKc"/>
-                                            <constraint firstItem="ZJB-Ap-odZ" firstAttribute="leading" secondItem="J3f-Gb-dkC" secondAttribute="trailing" constant="8" symbolic="YES" id="NJQ-bs-kkO"/>
+                                            <constraint firstItem="ZJB-Ap-odZ" firstAttribute="leading" secondItem="J3f-Gb-dkC" secondAttribute="trailing" constant="8" symbolic="YES" id="NJQ-bs-kkO">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                            </constraint>
                                             <constraint firstItem="J3f-Gb-dkC" firstAttribute="leading" secondItem="e2Y-uU-96n" secondAttribute="leading" constant="8" id="VbO-bL-3u1"/>
                                             <constraint firstItem="J3f-Gb-dkC" firstAttribute="top" secondItem="ZJB-Ap-odZ" secondAttribute="top" id="lfx-73-hmt"/>
                                         </constraints>
@@ -3612,9 +3624,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="FOe-GL-fYP" firstAttribute="leading" secondItem="vgq-cu-ds3" secondAttribute="trailing" constant="8" symbolic="YES" id="D1k-ew-l1N"/>
+                                            <constraint firstItem="FOe-GL-fYP" firstAttribute="leading" secondItem="vgq-cu-ds3" secondAttribute="trailing" constant="8" symbolic="YES" id="D1k-ew-l1N">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                                            </constraint>
                                             <constraint firstItem="vgq-cu-ds3" firstAttribute="leading" secondItem="dCv-BT-rG1" secondAttribute="leading" constant="8" id="FZN-st-g0i"/>
-                                            <constraint firstAttribute="trailing" secondItem="FOe-GL-fYP" secondAttribute="trailing" constant="42" id="LeI-d1-Xfg"/>
+                                            <constraint firstAttribute="trailing" secondItem="FOe-GL-fYP" secondAttribute="trailing" constant="42" id="LeI-d1-Xfg">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="58"/>
+                                            </constraint>
                                             <constraint firstItem="vgq-cu-ds3" firstAttribute="top" secondItem="FOe-GL-fYP" secondAttribute="top" id="N3V-vj-e8s"/>
                                             <constraint firstItem="8b1-Qe-Izf" firstAttribute="trailing" secondItem="dCv-BT-rG1" secondAttribute="trailingMargin" id="SR6-Xt-1KE"/>
                                             <constraint firstItem="vgq-cu-ds3" firstAttribute="top" secondItem="dCv-BT-rG1" secondAttribute="top" constant="17" id="Txi-27-to9"/>
@@ -4347,7 +4363,7 @@
         <image name="story" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fgx-ZS-8G6"/>
-        <segue reference="E6b-nJ-iMp"/>
+        <segue reference="0vF-wX-q9b"/>
+        <segue reference="YhB-De-rNi"/>
     </inferredMetricsTieBreakers>
 </document>
