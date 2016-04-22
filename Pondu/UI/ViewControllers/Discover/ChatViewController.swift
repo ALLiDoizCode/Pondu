@@ -302,7 +302,7 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingImag
             print(data[indexPath.row].media)
             
             controller.image = data[indexPath.row].media
-            //controller.objectId = objectId
+            controller.recipient = recipient
         }
         
     }

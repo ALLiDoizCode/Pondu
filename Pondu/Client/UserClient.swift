@@ -188,7 +188,7 @@ class UserClient {
         
         if(photo != nil) {
             
-            let photoData = UIImageJPEGRepresentation(photo, 0.9)
+            let photoData = UIImageJPEGRepresentation(photo, 0.5)
             
             
             

@@ -15,8 +15,10 @@ class ChatImageController: UIViewController {
     
     let swipeDownRect = UISwipeGestureRecognizer()
     
+    let file = WallClient()
+    
     var image:String!
-    var objectId:String!
+    var recipient:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,10 @@ class ChatImageController: UIViewController {
         swipeDownRect.direction = .Down
         self.view!.addGestureRecognizer(swipeDownRect)
         
-        theImage.kf_setImageWithURL(NSURL(string: image)!, placeholderImage: UIImage(named: "placeholder"))
+        file.getFile(image, completion: { (data) in
+            
+            self.theImage.kf_setImageWithURL(data, placeholderImage:UIImage(named: "placeholder"))
+        })
         
         // Do any additional setup after loading the view.
     }
@@ -54,7 +59,7 @@ class ChatImageController: UIViewController {
         
         let controller = segue.destinationViewController as! ChatViewController
         
-        controller.threadId = objectId
+        controller.recipient = recipient
     }
 
 
