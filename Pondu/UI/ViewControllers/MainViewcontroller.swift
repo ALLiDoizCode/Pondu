@@ -23,6 +23,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     let dropShadow = DropShadow()
     var discover:DiscoverViewController!
     var Favorite:FavoriteViewController!
+    var Messages:MessageViewController!
     var home:HomeViewController!
     var Mainwall:BaseViewController!
     
@@ -79,11 +80,15 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
         
         Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
+        Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
+        
+        Messages = self.storyboard?.instantiateViewControllerWithIdentifier("MessageView") as! MessageViewController
+        
         discover = discoverBoard.instantiateViewControllerWithIdentifier("Discover") as! DiscoverViewController
         
         home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
         
-        let viewControllers = [Mainwall,Favorite,discover,home]
+        let viewControllers = [Mainwall,Favorite,discover,Messages,home]
         
         options.backgroundColor = UIColor.lightGrayColor()
         
