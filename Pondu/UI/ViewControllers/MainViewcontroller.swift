@@ -118,6 +118,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             pagingMenuController.delegate = self
             pagingMenuController.setup(viewControllers: viewControllers, options: options)
         }
+        
     }
     
     func gotoCommetns(){

@@ -341,9 +341,6 @@
 				4D0CC3D51C2746C000843328 /* VideoViewController.swift */,
 				4D0CC3D71C27719900843328 /* ImageViewController.swift */,
 				4DF91A881C2B683B008E39AF /* SearchViewController.swift */,
-				4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */,
-				4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */,
-				4D4278831C9368240012B72D /* ChatImageController.swift */,
 				4D4278851C952FD90012B72D /* DiscoverViewController.swift */,
 			);
 			path = Discover;
@@ -387,6 +384,9 @@
 			isa = PBXGroup;
 			children = (
 				4D2E610A1CD92A0C00831A22 /* MessageViewController.swift */,
+				4DF1C90F1C5BC5BD00F4269A /* MessagesViewController.swift */,
+				4D32A8351C8A0B1B0053FBCD /* ChatViewController.swift */,
+				4D4278831C9368240012B72D /* ChatImageController.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";

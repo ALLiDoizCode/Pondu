@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        setupUI()
+        
         self.navigationController?.navigationBarHidden = true
         
         /*storyUser.theUsers { (theData) -> Void in
@@ -50,6 +52,17 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setupUI(){
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            
+            self.image.layer.cornerRadius = self.image.layer.frame.height/2
+            self.image.layer.masksToBounds = true
+        });
+
+    }
 
     /*
     // MARK: - Navigation

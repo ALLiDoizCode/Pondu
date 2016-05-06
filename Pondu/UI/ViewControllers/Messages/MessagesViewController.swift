@@ -87,6 +87,8 @@ class MessagesViewController: UIViewController,UITableViewDataSource,UITableView
         
         let index = tableView.indexPathForSelectedRow
         
+
+        
         if segue.identifier == "message" {
             
             let controller = segue.destinationViewController as! ChatViewController
