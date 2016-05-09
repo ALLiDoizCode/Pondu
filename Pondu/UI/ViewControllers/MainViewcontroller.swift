@@ -205,6 +205,11 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
             
         case 3:
             
+            self.navigationItem.title = "Messages"
+            self.navigationController?.navigationBarHidden = true
+            
+        case 4:
+            
             self.navigationItem.title = "Home"
             self.navigationController?.navigationBarHidden = true
             

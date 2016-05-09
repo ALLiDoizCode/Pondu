@@ -28,12 +28,12 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBg-P0-6dz" customClass="DesignableView" customModule="Pondu" customModuleProvider="target">
+                            <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBg-P0-6dz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yQ-3i-Pd1">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -155,14 +155,52 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class of 2017 Live Life Fully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ0-rE-jJ5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="6th-P8-lTu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6th-P8-lTu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6th-P8-lTu"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike simmons " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2e-b9-MJ5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RRh-ne-ZaM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RRh-ne-ZaM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="RRh-ne-ZaM"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bokeh" translatesAutoresizingMaskIntoConstraints="NO" id="W6U-MX-L0b">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Gav-Jz-x8r">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="250"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="300" id="OFQ-y6-Qup">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="250"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
@@ -178,25 +216,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class of 2017 Live Life Fully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ0-rE-jJ5">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="6th-P8-lTu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6th-P8-lTu"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="6th-P8-lTu"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -208,7 +227,11 @@
                             <constraint firstItem="KBg-P0-6dz" firstAttribute="top" secondItem="sjH-6I-o9I" secondAttribute="top" id="Ogp-zP-ah8"/>
                             <constraint firstItem="xgm-Dd-qgJ" firstAttribute="bottom" secondItem="KBg-P0-6dz" secondAttribute="bottom" id="Xnq-kq-zP9"/>
                             <constraint firstItem="xgm-Dd-qgJ" firstAttribute="leading" secondItem="KBg-P0-6dz" secondAttribute="leading" id="ZkB-pd-gVg"/>
-                            <constraint firstItem="hZ0-rE-jJ5" firstAttribute="top" secondItem="W6U-MX-L0b" secondAttribute="bottom" constant="8" id="aRI-NK-1hJ"/>
+                            <constraint firstItem="hZ0-rE-jJ5" firstAttribute="top" secondItem="W6U-MX-L0b" secondAttribute="bottom" constant="8" id="aRI-NK-1hJ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="23"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="U2e-b9-MJ5" secondAttribute="trailing" id="hhY-0G-P4V"/>
+                            <constraint firstItem="fet-Un-58c" firstAttribute="top" secondItem="U2e-b9-MJ5" secondAttribute="bottom" constant="15" id="kIJ-fv-owc"/>
                             <constraint firstItem="hZ0-rE-jJ5" firstAttribute="centerX" secondItem="sjH-6I-o9I" secondAttribute="centerX" id="xZu-98-Spn"/>
                             <constraint firstItem="W6U-MX-L0b" firstAttribute="centerY" secondItem="sjH-6I-o9I" secondAttribute="centerY" id="yW3-na-KxI"/>
                         </constraints>
@@ -216,8 +239,9 @@
                             <mask key="subviews">
                                 <exclude reference="xgm-Dd-qgJ"/>
                                 <exclude reference="KBg-P0-6dz"/>
-                                <exclude reference="W6U-MX-L0b"/>
                                 <exclude reference="hZ0-rE-jJ5"/>
+                                <exclude reference="U2e-b9-MJ5"/>
+                                <exclude reference="W6U-MX-L0b"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0xf-ek-asC"/>
@@ -231,14 +255,17 @@
                                 <exclude reference="yW3-na-KxI"/>
                                 <exclude reference="aRI-NK-1hJ"/>
                                 <exclude reference="xZu-98-Spn"/>
+                                <exclude reference="kIJ-fv-owc"/>
+                                <exclude reference="hhY-0G-P4V"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="xgm-Dd-qgJ"/>
                                 <include reference="KBg-P0-6dz"/>
-                                <include reference="W6U-MX-L0b"/>
                                 <include reference="hZ0-rE-jJ5"/>
+                                <include reference="U2e-b9-MJ5"/>
+                                <include reference="W6U-MX-L0b"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0xf-ek-asC"/>
@@ -252,6 +279,8 @@
                                 <include reference="yW3-na-KxI"/>
                                 <include reference="aRI-NK-1hJ"/>
                                 <include reference="xZu-98-Spn"/>
+                                <include reference="kIJ-fv-owc"/>
+                                <include reference="hhY-0G-P4V"/>
                             </mask>
                         </variation>
                     </view>
