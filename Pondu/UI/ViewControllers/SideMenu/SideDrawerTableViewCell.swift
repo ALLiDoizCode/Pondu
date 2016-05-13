@@ -20,17 +20,29 @@ class SideDrawerTableViewCell: UITableViewCell {
         self.commonSetup()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        var frame = self.imageView!.frame
+        let imageSize = 20 as CGFloat
+        frame.size.height = imageSize
+        frame.size.width  = imageSize
+        frame.origin.y = frame.origin.y + 10
+        self.imageView!.frame = frame
+        self.imageView!.clipsToBounds = true
+    }
+    
     func commonSetup() {
         //self.accessoryCheckmarkColor = UIColor.whiteColor()
         let backgroundView = UIView(frame: self.bounds)
         backgroundView.autoresizingMask = [ .FlexibleHeight, .FlexibleWidth ]
-        let backgroundColor = UIColor(red: 122 / 255, green: 126 / 255, blue: 128 / 255, alpha: 1.0)
+        let backgroundColor = UIColor.purpleColor()
         backgroundView.backgroundColor = backgroundColor
         
         self.backgroundView = backgroundView
         
         self.textLabel?.backgroundColor = UIColor.clearColor()
-        self.textLabel?.textColor = UIColor(red: 230 / 255, green: 236 / 255, blue: 242 / 255, alpha: 1.0)
+        self.textLabel?.textColor = UIColor.whiteColor()
     }
     
      func updateContentForNewContentSize() {

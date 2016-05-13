@@ -22,23 +22,31 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var tableView: UITableView!
     let drawerWidths: [CGFloat] = [160, 200, 240, 280, 320]
+    
+    let accountDetails = ["Edit Pofile","Account Settings","Notifications"]
+    let accoutIcons = ["round","cogwheel","sound"]
+    let accoutIcon = "key"
+    
+    let legal = ["Help","Terms of Service","Privacy Policy","Pondu-app.com"]
+    let legalIcons = ["people","tool","security","window"]
+    let legalIcon = "legal"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.tableView = UITableView(frame: self.view.bounds, style: .Grouped)
+        
+        self.tableView = UITableView(frame: self.view.frame, style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         self.tableView.autoresizingMask = [ .FlexibleWidth, .FlexibleHeight ]
         
-        self.tableView.backgroundColor = UIColor(red: 110 / 255, green: 113 / 255, blue: 115 / 255, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor.darkGrayColor()
         self.tableView.separatorStyle = .None
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 161 / 255, green: 164 / 255, blue: 166 / 255, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 55 / 255, green: 70 / 255, blue: 77 / 255, alpha: 1.0)]
         
-        self.view.backgroundColor = UIColor.clearColor()
+        //self.view.backgroundColor = UIColor.darkGrayColor()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -57,29 +65,20 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - UITableViewDataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 7
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case DrawerSection.ViewSelection.rawValue:
-            return 2
-        case DrawerSection.DrawerWidth.rawValue:
-            return self.drawerWidths.count
-        case DrawerSection.ShadowToggle.rawValue:
-            return 1
-        case DrawerSection.OpenDrawerGestures.rawValue:
-            return 3
-        case DrawerSection.CloseDrawerGestures.rawValue:
-            return 6
-        case DrawerSection.CenterHiddenInteraction.rawValue:
-            return 3
-        case DrawerSection.StretchDrawer.rawValue:
-            return 1
+        case 0:
+            return accountDetails.count
+        case 1:
+            return legal.count
         default:
             return 0
         }
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let CellIdentifier = "Cell"
@@ -91,34 +90,49 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.selectionStyle = .Blue
         }
         
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
+        switch indexPath.section {
+        case 0:
+            
+            cell.textLabel?.text = accountDetails[indexPath.row]
+            cell.imageView?.image = UIImage(named: accoutIcons[indexPath.row])
+            
+        case 1:
+            
+            cell.textLabel?.text = legal[indexPath.row]
+            
+            cell.imageView?.image = UIImage(named: legalIcons[indexPath.row])
+
+            
+        default: break
+            
+        }
         
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        tableView.headerViewForSection(section)?.textLabel?.textColor = UIColor.whiteColor()
+        
         switch section {
         case DrawerSection.ViewSelection.rawValue:
-            return "New Center View"
+            return "Account Details"
         case DrawerSection.DrawerWidth.rawValue:
-            return "Drawer Width"
-        case DrawerSection.ShadowToggle.rawValue:
-            return "Shadow"
-        case DrawerSection.OpenDrawerGestures.rawValue:
-            return "Drawer Open Gestures"
-        case DrawerSection.CloseDrawerGestures.rawValue:
-            return "Drawer Close Gestures"
-        case DrawerSection.CenterHiddenInteraction.rawValue:
-            return "Open Center Interaction Mode"
-        case DrawerSection.StretchDrawer.rawValue:
-            return "Stretch Drawer"
+            return "Legal"
+
         default:
             return nil
         }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 56
+        return 20
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -128,6 +142,16 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
+    
+    func imageWithImage(image:UIImage,scaledToSize newSize:CGSize)->UIImage{
+        
+        UIGraphicsBeginImageContext( newSize )
+        image.drawInRect(CGRect(x: 0,y: 0,width: newSize.width,height: newSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage.imageWithRenderingMode(.AlwaysTemplate)
+    }
+
     
     // MARK: - UITableViewDelegate
 
