@@ -116,7 +116,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    /*func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         tableView.headerViewForSection(section)?.textLabel?.textColor = UIColor.whiteColor()
         
@@ -129,7 +129,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             return nil
         }
-    }*/
+    }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
@@ -158,6 +158,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return newImage.imageWithRenderingMode(.AlwaysTemplate)
     }
     
+    
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let frame = CGRect(x: 10, y: view.frame.midY - 15, width: 20, height: 20)
         let title = UILabel(frame: CGRect(x: frame.origin.x + 200, y: view.frame.midY - 15, width: 20, height: 20))
@@ -170,21 +171,20 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         title.font = UIFont(name: "Optima", size: 17)!
         title.textColor = UIColor.whiteColor()
         
-        switch section {
+        /*switch section {
         case 0:
             imageView.image = UIImage(named:accoutIcon)
         case 1:
             imageView.image = UIImage(named:legalIcon)
         default: break
             
-        }
+        }*/
         
         
         
-        //let header = view as! UITableViewHeaderFooterView
-        tableView.headerViewForSection(section)?.addSubview(view)
+        let header = view as! UITableViewHeaderFooterView
         //header.addSubview(view)
-        //header.textLabel?.textColor=title.textColor
+        header.textLabel?.textColor = title.textColor
         //header.textLabel?.frame.origin.x = imageView.frame.origin.x + 50
     }
 
