@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftEventBus
 
 class HomeViewController: UIViewController {
     
@@ -64,6 +65,10 @@ class HomeViewController: UIViewController {
 
     }
 
+    @IBAction func toggleSettings(sender: AnyObject) {
+        
+        SwiftEventBus.post("SideMenu")
+    }
     /*
     // MARK: - Navigation
 

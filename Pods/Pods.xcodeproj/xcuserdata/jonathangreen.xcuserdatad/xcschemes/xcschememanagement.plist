@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ENSwiftSideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FXBlurView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,22 +102,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>08EE41E9BE00374D6A03874E3A4C6A2B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0DCBD6C869DCC15AF62D43471CB4592C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1191B2D8B1E5B672628C45FD340F17EE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>192C8C2413796E089B0A00D1D53C6C09</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>196576F49B7BDE62CC4803CE0BDE3463</key>
+		<key>1CFACAE8A549A851EB15F3C60F2F7A13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,7 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35F0D334EEF3D6A77B50441525FB4EA8</key>
+		<key>30EF667A419DBB82286E1DDB3007A742</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>356509A09EF1C460214C63D302E62883</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,22 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43984CAE15283FBBAFB963AC49DD637C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>47C6CB3A610165BEDF36B872548E38C2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4EDC922667D21990480B5D5B8889AE25</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5BBB34170986C897E8931C1768FD6EE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E40B80F0FA7BDA9FBB0AB7DDCD07249</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,7 +162,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DB0B5097EE47A8B4864041C35CFAC9A</key>
+		<key>7F996D3AC18BEFCD4B0C8A473FEE5ECE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8ED55A16FADB5374F99DE3EAF324D452</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9215C072E9A2F79332AFA7F670CC9B09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF74A4911469BA5A713BA8EF0AA3CC62</key>
 		<dict>
 			<key>primary</key>
 			<true/>

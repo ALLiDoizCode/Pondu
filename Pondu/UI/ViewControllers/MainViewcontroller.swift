@@ -10,7 +10,7 @@ import UIKit
 import PagingMenuController
 import SwiftEventBus
 
-class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
+class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMenuDelegate{
 
     var CommentBtn:UIButton!
     
@@ -30,7 +30,17 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        options
+         self.sideMenuController()?.sideMenu?.delegate = self
+        
+        
+        
+        SwiftEventBus.onMainThread(self, name: "SideMenu") { (result) -> Void in
+            
+            self.toggleSideMenuView()
+            
+        }
+        
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         SwiftEventBus.onMainThread(self, name:"Title") { (result) -> Void in

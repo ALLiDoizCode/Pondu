@@ -56,7 +56,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="TaJ-fc-Buu" kind="show" id="Ugo-5i-bEP"/>
+                                            <action selector="toggleSettings:" destination="cUe-gl-agj" eventType="touchUpInside" id="0Hp-Fk-jo3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZK-X7-Sal">
@@ -244,19 +244,19 @@
                                 <exclude reference="W6U-MX-L0b"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="kIJ-fv-owc"/>
+                                <exclude reference="hhY-0G-P4V"/>
+                                <exclude reference="aRI-NK-1hJ"/>
+                                <exclude reference="xZu-98-Spn"/>
                                 <exclude reference="0xf-ek-asC"/>
                                 <exclude reference="8V4-sE-Dgi"/>
                                 <exclude reference="Ogp-zP-ah8"/>
+                                <exclude reference="J8f-x0-Des"/>
+                                <exclude reference="yW3-na-KxI"/>
                                 <exclude reference="3Uz-2f-3FG"/>
                                 <exclude reference="G3K-Ic-DQj"/>
                                 <exclude reference="Xnq-kq-zP9"/>
                                 <exclude reference="ZkB-pd-gVg"/>
-                                <exclude reference="J8f-x0-Des"/>
-                                <exclude reference="yW3-na-KxI"/>
-                                <exclude reference="aRI-NK-1hJ"/>
-                                <exclude reference="xZu-98-Spn"/>
-                                <exclude reference="kIJ-fv-owc"/>
-                                <exclude reference="hhY-0G-P4V"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -268,19 +268,19 @@
                                 <include reference="W6U-MX-L0b"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="kIJ-fv-owc"/>
+                                <include reference="hhY-0G-P4V"/>
+                                <include reference="aRI-NK-1hJ"/>
+                                <include reference="xZu-98-Spn"/>
                                 <include reference="0xf-ek-asC"/>
                                 <include reference="8V4-sE-Dgi"/>
                                 <include reference="Ogp-zP-ah8"/>
+                                <include reference="J8f-x0-Des"/>
+                                <include reference="yW3-na-KxI"/>
                                 <include reference="3Uz-2f-3FG"/>
                                 <include reference="G3K-Ic-DQj"/>
                                 <include reference="Xnq-kq-zP9"/>
                                 <include reference="ZkB-pd-gVg"/>
-                                <include reference="J8f-x0-Des"/>
-                                <include reference="yW3-na-KxI"/>
-                                <include reference="aRI-NK-1hJ"/>
-                                <include reference="xZu-98-Spn"/>
-                                <include reference="kIJ-fv-owc"/>
-                                <include reference="hhY-0G-P4V"/>
                             </mask>
                         </variation>
                     </view>

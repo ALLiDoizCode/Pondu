@@ -34,6 +34,11 @@
 		4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */; };
 		4D1C79C21CC315ED00E3E53F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C79C11CC315ED00E3E53F /* UserInfo.swift */; };
 		4D1F8F6F1BFE593400C2A61F /* CreateEvent:Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */; };
+		4D2320F51CE5A09F00CA331A /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2320F41CE5A09F00CA331A /* SideViewController.swift */; };
+		4D2321001CE5A32D00CA331A /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2320FE1CE5A32D00CA331A /* ENSideMenu.swift */; };
+		4D2321011CE5A32D00CA331A /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2320FF1CE5A32D00CA331A /* ENSideMenuNavigationController.swift */; };
+		4D2321031CE5A5D100CA331A /* SideMenuNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2321021CE5A5D100CA331A /* SideMenuNav.swift */; };
+		4D2321051CE5A71200CA331A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2321041CE5A71200CA331A /* Home.storyboard */; };
 		4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */; };
 		4D2436271C13BF5E0032FB27 /* GradientView:Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */; };
 		4D24362A1C13D0330032FB27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2436291C13D0330032FB27 /* LoginViewController.swift */; };
@@ -71,7 +76,6 @@
 		4DC5FAEA1BFA5BF6006AFE00 /* MainStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FAE91BFA5BF6006AFE00 /* MainStoryCell.swift */; };
 		4DC5FAEC1BFA5C05006AFE00 /* FavoriteStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5FAEB1BFA5C05006AFE00 /* FavoriteStoryCell.swift */; };
 		4DC648A71C83CB1B00F92C74 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC648A61C83CB1B00F92C74 /* Cloud.swift */; };
-		4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */; };
 		4DC8BC221C1E2F6B00E6D2F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */; };
 		4DC9AFC01C7A7F4C00C205B8 /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */; };
 		4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */; };
@@ -152,6 +156,11 @@
 		4D1843EE1BF24A5B00B2AFA2 /* FavPartyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavPartyCell.swift; sourceTree = "<group>"; };
 		4D1C79C11CC315ED00E3E53F /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "CreateEvent:Party.storyboard"; sourceTree = "<group>"; };
+		4D2320F41CE5A09F00CA331A /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		4D2320FE1CE5A32D00CA331A /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
+		4D2320FF1CE5A32D00CA331A /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
+		4D2321021CE5A5D100CA331A /* SideMenuNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuNav.swift; sourceTree = "<group>"; };
+		4D2321041CE5A71200CA331A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Login-SignUp.storyboard"; sourceTree = "<group>"; };
 		4D2436261C13BF5E0032FB27 /* GradientView:Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GradientView:Button.swift"; sourceTree = "<group>"; };
 		4D2436291C13D0330032FB27 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +198,6 @@
 		4DC5FAE91BFA5BF6006AFE00 /* MainStoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryCell.swift; sourceTree = "<group>"; };
 		4DC5FAEB1BFA5C05006AFE00 /* FavoriteStoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStoryCell.swift; sourceTree = "<group>"; };
 		4DC648A61C83CB1B00F92C74 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
-		4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4DC8BC211C1E2F6B00E6D2F5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4DC9AFBF1C7A7F4C00C205B8 /* MediaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
 		4DCCF8511BF8289B00686B31 /* StoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +376,17 @@
 			path = MainWall;
 			sourceTree = "<group>";
 		};
+		4D2320F31CE5A07200CA331A /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4D2320FE1CE5A32D00CA331A /* ENSideMenu.swift */,
+				4D2320FF1CE5A32D00CA331A /* ENSideMenuNavigationController.swift */,
+				4D2320F41CE5A09F00CA331A /* SideViewController.swift */,
+				4D2321021CE5A5D100CA331A /* SideMenuNav.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		4D2436281C13D0150032FB27 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +537,7 @@
 		4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D2320F31CE5A07200CA331A /* SideMenu */,
 				4D2E61071CD9297100831A22 /* Messages */,
 				4D09D96C1C2665FF00D3FF81 /* Discover */,
 				4DC8BC201C1E2F5200E6D2F5 /* Home */,
@@ -536,10 +556,10 @@
 			isa = PBXGroup;
 			children = (
 				4DE1A1C11BEA7133009BCF55 /* LaunchScreen.storyboard */,
+				4D2321041CE5A71200CA331A /* Home.storyboard */,
 				4DE1A1C21BEA7133009BCF55 /* Main.storyboard */,
 				4DFADB0E1C80FF3600A61AAA /* Comments.storyboard */,
 				4D09D96A1C26575D00D3FF81 /* Discover.storyboard */,
-				4DC8BC1E1C1E226200E6D2F5 /* Home.storyboard */,
 				4D0512561C078FAB00FB414D /* Live.storyboard */,
 				4D1F8F6E1BFE593400C2A61F /* CreateEvent:Party.storyboard */,
 				4D2436241C13B8660032FB27 /* Login-SignUp.storyboard */,
@@ -685,9 +705,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DFADB0F1C80FF3600A61AAA /* Comments.storyboard in Resources */,
-				4DC8BC1F1C1E226200E6D2F5 /* Home.storyboard in Resources */,
 				4D09D96B1C26575D00D3FF81 /* Discover.storyboard in Resources */,
 				4D2436251C13B8660032FB27 /* Login-SignUp.storyboard in Resources */,
+				4D2321051CE5A71200CA331A /* Home.storyboard in Resources */,
 				4DE1A1C41BEA7133009BCF55 /* Main.storyboard in Resources */,
 				4D01DB721BDD639100B30C0D /* Assets.xcassets in Resources */,
 				4DE1A1C31BEA7133009BCF55 /* LaunchScreen.storyboard in Resources */,
@@ -795,6 +815,7 @@
 				4DFADB131C81014400A61AAA /* CommentViewController.swift in Sources */,
 				4D8828261C7697D200604DE3 /* AddContent.swift in Sources */,
 				4D1843E31BF2449A00B2AFA2 /* FavoriteViewController.swift in Sources */,
+				4D2321031CE5A5D100CA331A /* SideMenuNav.swift in Sources */,
 				4DD1E5881BED338700F15C6C /* PartyCell.swift in Sources */,
 				4DD174A11BDD8C6600B64E0B /* MainWall.swift in Sources */,
 				4D0F77A51CC540EC0006EC8D /* Thread.swift in Sources */,
@@ -812,6 +833,7 @@
 				4D70AA5D1CA227FA00BC23DC /* WallClient.swift in Sources */,
 				4D01DB6D1BDD639100B30C0D /* ViewController.swift in Sources */,
 				4DE1A1C61BEA717B009BCF55 /* UltravisualLayout.swift in Sources */,
+				4D2320F51CE5A09F00CA331A /* SideViewController.swift in Sources */,
 				4DC648A71C83CB1B00F92C74 /* Cloud.swift in Sources */,
 				4DF1C90E1C5BC35200F4269A /* MessagesCell.swift in Sources */,
 				4DF8B6F31CC8B3CA00D564BE /* CommentClient.swift in Sources */,
@@ -821,6 +843,7 @@
 				4D0CC3D81C27719900843328 /* ImageViewController.swift in Sources */,
 				4DF203901BDE99BF00A56A67 /* Parties.swift in Sources */,
 				4D32A8301C88E10D0053FBCD /* Message.swift in Sources */,
+				4D2321011CE5A32D00CA331A /* ENSideMenuNavigationController.swift in Sources */,
 				4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */,
 				4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */,
 				4D14C6341C193E9200BAEA1F /* school.swift in Sources */,
@@ -835,6 +858,7 @@
 				4D88282A1C76A90900604DE3 /* Content.swift in Sources */,
 				4D05125B1C07984200FB414D /* Player.swift in Sources */,
 				4D09D96E1C26664200D3FF81 /* CameraViewController.swift in Sources */,
+				4D2321001CE5A32D00CA331A /* ENSideMenu.swift in Sources */,
 				4D01DB6B1BDD639100B30C0D /* AppDelegate.swift in Sources */,
 				4DFADB111C81006B00A61AAA /* CommentCell.swift in Sources */,
 				4DF1F11F1BFF93B6001A96C5 /* LocationViewController.swift in Sources */,

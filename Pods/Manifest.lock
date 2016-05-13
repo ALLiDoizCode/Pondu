@@ -2,6 +2,7 @@ PODS:
   - Alamofire (3.1.3)
   - BubbleTransition (1.0.1)
   - CircleSlider (0.1.0)
+  - ENSwiftSideMenu (0.1.1)
   - FXBlurView (1.6.4)
   - ImagePickerSheetController (0.9.1)
   - IQKeyboardManagerSwift (3.3.4)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.1.3)
   - BubbleTransition (~> 1.0.0)
   - CircleSlider
+  - ENSwiftSideMenu (~> 0.1.1)
   - FXBlurView (~> 1.6.4)
   - ImagePickerSheetController (~> 0.9.1)
   - IQKeyboardManagerSwift
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
   BubbleTransition: 76d5e306dbda0f622260ea7d082c971d976422ab
   CircleSlider: d195e672f7b7a644bb07743c90f271d939ef63f0
+  ENSwiftSideMenu: a934caefbe811e4925f172009349da4a49901307
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   ImagePickerSheetController: 3c58c9fee6dcf36485222358a021f6b734f997ba
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738

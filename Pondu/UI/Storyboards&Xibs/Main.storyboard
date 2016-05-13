@@ -2130,10 +2130,10 @@
             </objects>
             <point key="canvasLocation" x="5407.5" y="-357"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Side Menu Nav-->
         <scene sceneID="KXI-wD-zs4">
             <objects>
-                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="8pl-pP-hVW" customClass="SideMenuNav" customModule="Pondu" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3f-J6-7kH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -4942,7 +4942,8 @@
                                                     <exclude reference="OCt-g0-a6E"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
                                                 <mask key="subviews">
                                                     <include reference="A4W-wB-hmN"/>
                                                     <include reference="pKJ-no-VOW"/>
@@ -5182,6 +5183,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="GiM-jn-9s6" id="x4U-a7-wiZ"/>
                                     <outlet property="delegate" destination="GiM-jn-9s6" id="fNE-jn-pMr"/>
@@ -5207,7 +5211,8 @@
                                                 <exclude reference="oGo-56-8gj"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="546" y="10" width="46" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="I7L-87-ql9"/>
                                                 <include reference="oGo-56-8gj"/>
@@ -5248,6 +5253,9 @@
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="60" y="10" width="478" height="30"/>
+                                        </variation>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -5284,7 +5292,8 @@
                                         <exclude reference="S17-w2-zXI"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                     <mask key="subviews">
                                         <include reference="8JB-dc-vJu"/>
                                         <include reference="uuE-Jv-50W"/>
@@ -5339,7 +5348,8 @@
                                         <exclude reference="eKw-72-cNe"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="550" y="14" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="chj-c5-jab"/>
                                         <include reference="eKw-72-cNe"/>
@@ -5359,7 +5369,8 @@
                                         <exclude reference="N37-uO-jgL"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="244" y="19" width="112" height="27"/>
                                     <mask key="constraints">
                                         <include reference="N37-uO-jgL"/>
                                     </mask>
@@ -5486,6 +5497,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-oZ-zZg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -5545,7 +5559,7 @@
         <image name="msgblue" width="955" height="20"/>
         <image name="post" width="148" height="74"/>
         <image name="speech-balloon-oval-symbol" width="64" height="64"/>
-        <image name="story" width="1242" height="2208"/>
+        <image name="story" width="1174" height="1220"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0vF-wX-q9b"/>
