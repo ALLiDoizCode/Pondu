@@ -90,8 +90,6 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
         
         Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
         
-        Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
-        
         Messages = self.storyboard?.instantiateViewControllerWithIdentifier("MessageView") as! MessageViewController
         
         discover = discoverBoard.instantiateViewControllerWithIdentifier("Discover") as! DiscoverViewController
