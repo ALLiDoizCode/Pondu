@@ -132,7 +132,7 @@ public class ENSideMenu : NSObject, UIGestureRecognizerDelegate {
         }
     }
     private var menuPosition:ENSideMenuPosition = .Left
-    private var blurStyle: UIBlurEffectStyle = .Light
+    //private var blurStyle: UIBlurEffectStyle = .Light
     ///  A Boolean value indicating whether the bouncing effect is enabled. The default value is TRUE.
     public var bouncingEnabled :Bool = true
     /// The duration of the slide animation. Used only when `bouncingEnabled` is FALSE.
@@ -164,7 +164,7 @@ public class ENSideMenu : NSObject, UIGestureRecognizerDelegate {
         super.init()
         self.sourceView = sourceView
         self.menuPosition = menuPosition
-        self.blurStyle = blurStyle
+        //self.blurStyle = blurStyle
         self.setupMenuView()
     
         animator = UIDynamicAnimator(referenceView:sourceView)
@@ -266,10 +266,10 @@ public class ENSideMenu : NSObject, UIGestureRecognizerDelegate {
         
         if (NSClassFromString("UIVisualEffectView") != nil) {
             // Add blur view
-            let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: blurStyle)) as UIVisualEffectView
+            /*let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: blurStyle)) as UIVisualEffectView
             visualEffectView.frame = sideMenuContainerView.bounds
             visualEffectView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-            sideMenuContainerView.addSubview(visualEffectView)
+            sideMenuContainerView.addSubview(visualEffectView)*/
         }
         else {
             // TODO: add blur for ios 7

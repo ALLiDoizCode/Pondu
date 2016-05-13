@@ -30,9 +30,8 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.sideMenuController()?.sideMenu?.delegate = self
-        
-        
+        self.sideMenuController()?.sideMenu?.delegate = self
+        self.sideMenuController()?.sideMenu?.menuWidth = 250
         
         SwiftEventBus.onMainThread(self, name: "SideMenu") { (result) -> Void in
             
