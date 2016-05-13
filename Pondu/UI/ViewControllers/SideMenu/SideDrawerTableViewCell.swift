@@ -36,7 +36,7 @@ class SideDrawerTableViewCell: UITableViewCell {
         //self.accessoryCheckmarkColor = UIColor.whiteColor()
         let backgroundView = UIView(frame: self.bounds)
         backgroundView.autoresizingMask = [ .FlexibleHeight, .FlexibleWidth ]
-        let backgroundColor = UIColor.purpleColor()
+        let backgroundColor = UIColor(red:0.34, green:0.29, blue:0.36, alpha:1.0)
         backgroundView.backgroundColor = backgroundColor
         
         self.backgroundView = backgroundView

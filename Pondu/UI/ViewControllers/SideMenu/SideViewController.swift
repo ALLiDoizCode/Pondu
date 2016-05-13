@@ -23,12 +23,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var tableView: UITableView!
     let drawerWidths: [CGFloat] = [160, 200, 240, 280, 320]
     
-    let accountDetails = ["Edit Pofile","Account Settings","Notifications"]
-    let accoutIcons = ["round","cogwheel","sound"]
+    let accountDetails = ["Edit Pofile","Account Settings","Notifications",""]
+    let accoutIcons = ["round","cogwheel","sound",""]
     let accoutIcon = "key"
     
-    let legal = ["Help","Terms of Service","Privacy Policy","Pondu-app.com"]
-    let legalIcons = ["people","tool","security","window"]
+    let legal = ["Help","Terms of Service","Privacy Policy","Pondu-app.com",""]
+    let legalIcons = ["people","tool","security","window",""]
     let legalIcon = "legal"
 
     override func viewDidLoad() {
@@ -116,23 +116,29 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         tableView.headerViewForSection(section)?.textLabel?.textColor = UIColor.whiteColor()
         
         switch section {
-        case DrawerSection.ViewSelection.rawValue:
+        case 0:
             return "Account Details"
-        case DrawerSection.DrawerWidth.rawValue:
+        case 1:
             return "Legal"
 
         default:
             return nil
         }
-    }
+    }*/
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        
+        switch section {
+        case 0:
+            return 30
+        default:
+            return 20
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -150,6 +156,36 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage.imageWithRenderingMode(.AlwaysTemplate)
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let frame = CGRect(x: 10, y: view.frame.midY - 15, width: 20, height: 20)
+        let title = UILabel(frame: CGRect(x: frame.origin.x + 200, y: view.frame.midY - 15, width: 20, height: 20))
+        let imageView = UIImageView(frame:frame)
+        imageView.contentMode = .ScaleAspectFit
+        imageView.clipsToBounds = true
+        view.addSubview(imageView)
+        view.addSubview(title)
+        
+        title.font = UIFont(name: "Optima", size: 17)!
+        title.textColor = UIColor.whiteColor()
+        
+        switch section {
+        case 0:
+            imageView.image = UIImage(named:accoutIcon)
+        case 1:
+            imageView.image = UIImage(named:legalIcon)
+        default: break
+            
+        }
+        
+        
+        
+        //let header = view as! UITableViewHeaderFooterView
+        tableView.headerViewForSection(section)?.addSubview(view)
+        //header.addSubview(view)
+        //header.textLabel?.textColor=title.textColor
+        //header.textLabel?.frame.origin.x = imageView.frame.origin.x + 50
     }
 
     
