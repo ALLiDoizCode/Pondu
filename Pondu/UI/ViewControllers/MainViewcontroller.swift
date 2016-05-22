@@ -11,12 +11,12 @@ import PagingMenuController
 import SwiftEventBus
 
 class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMenuDelegate{
-
+    
     var CommentBtn:UIButton!
     
     let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
     let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-
+    
     
     let options = PagingMenuOptions()
     var pagingMenuController:PagingMenuController!
@@ -54,7 +54,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
             
             
             self.options.backgroundColor = UIColor.clearColor()
-    
+            
             
         }
         
@@ -63,12 +63,12 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
             
             self.navigationController?.navigationBarHidden = false
             
-           
+            
             
         }
         
         createPostBtn()
-    
+        
         for parent in self.navigationController!.navigationBar.subviews {
             for childView in parent.subviews {
                 if(childView is UIImageView) {
@@ -78,13 +78,13 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
         }
         
         print(UIScreen.screens())
-
+        
         UIApplication.sharedApplication().statusBarHidden = true
         
         let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
         
         //let homeBoard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-
+        
         Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
         
         Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
@@ -135,12 +135,12 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
     
     func createPostBtn(){
         
-        CommentBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 45, height: 18))
+        CommentBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         CommentBtn.setImage(UIImage(named: "ColumPost"), forState: UIControlState.Normal)
         CommentBtn.addTarget(self, action: "gotoCommetns", forControlEvents: .TouchUpInside)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -153,9 +153,25 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
         switch page {
             
         case 0:
-
+            
             self.navigationItem.title = "MainWall"
-            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor(hue: 0.6111, saturation: 0.71, brightness: 0.97, alpha: 1.0) /* #4882f9 */]
+            
+            //if let font = UIFont(name: "Arial", size: 32) {
+            
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HelveticaNeue", size: 21)!, NSForegroundColorAttributeName: UIColor(hue: 0.6111, saturation: 0.71, brightness: 0.97, alpha: 1.0) /* #4882f9 */]
+            
+            
+            
+            //(red:0.576, green:0.851, blue:0.745, alpha:1)] /*#93d9be*/
+            
+            //(hue: 0.6111, saturation: 0.71, brightness: 0.97, alpha: 1.0) /* #4882f9 */]
+            
+            
+            
+            
+            
+            
+            
             self.navigationController?.navigationBarHidden = false
             self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
             
@@ -165,7 +181,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
             createPostBtn()
             let comment = UIBarButtonItem(customView: CommentBtn)
             self.navigationItem.rightBarButtonItem = comment
-          
+            
             
         case 1:
             
@@ -178,33 +194,33 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
             createPostBtn()
             let comment = UIBarButtonItem(customView: CommentBtn)
             self.navigationItem.rightBarButtonItem = comment
-           
+            
             
         case 2:
             
             
             /*let cameraBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-            let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-            let messageBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-            
-            cameraBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
-            cameraBtn.setImage(UIImage(named: "camera"), forState: .Normal)
-            
-            searchBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
-            searchBtn.setImage(UIImage(named: "Search"), forState: .Normal)
-            
-            messageBtn.addTarget(self, action: "messages", forControlEvents: .TouchUpInside)
-            messageBtn.setImage(UIImage(named: "message-1"), forState: .Normal)
-
-            let camera = UIBarButtonItem(customView: cameraBtn)
-            let search = UIBarButtonItem(customView: searchBtn)
-            let message = UIBarButtonItem(customView: messageBtn)
-            
-            self.navigationItem.title = "Discover"
-            self.navigationController?.navigationBarHidden = false
-            self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-            self.navigationItem.rightBarButtonItems = [search,camera]
-            self.navigationItem.leftBarButtonItem = message*/
+             let searchBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+             let messageBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+             
+             cameraBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
+             cameraBtn.setImage(UIImage(named: "camera"), forState: .Normal)
+             
+             searchBtn.addTarget(self, action: "cameraSelected", forControlEvents: .TouchUpInside)
+             searchBtn.setImage(UIImage(named: "Search"), forState: .Normal)
+             
+             messageBtn.addTarget(self, action: "messages", forControlEvents: .TouchUpInside)
+             messageBtn.setImage(UIImage(named: "message-1"), forState: .Normal)
+             
+             let camera = UIBarButtonItem(customView: cameraBtn)
+             let search = UIBarButtonItem(customView: searchBtn)
+             let message = UIBarButtonItem(customView: messageBtn)
+             
+             self.navigationItem.title = "Discover"
+             self.navigationController?.navigationBarHidden = false
+             self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+             self.navigationItem.rightBarButtonItems = [search,camera]
+             self.navigationItem.leftBarButtonItem = message*/
             
             self.navigationController?.navigationBarHidden = true
             
@@ -245,15 +261,15 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
         
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

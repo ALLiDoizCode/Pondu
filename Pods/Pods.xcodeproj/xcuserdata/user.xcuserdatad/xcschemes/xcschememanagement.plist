@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>ENSwiftSideMenu.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
 		<key>FXBlurView.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -89,6 +94,16 @@
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
+		<key>SwiftLocation-SwiftLocation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>SwiftLocation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -97,6 +112,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>08EE41E9BE00374D6A03874E3A4C6A2B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0DCBD6C869DCC15AF62D43471CB4592C</key>
 		<dict>
 			<key>primary</key>
@@ -108,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>192C8C2413796E089B0A00D1D53C6C09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CFACAE8A549A851EB15F3C60F2F7A13</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +152,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>30EF667A419DBB82286E1DDB3007A742</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>356509A09EF1C460214C63D302E62883</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5BBB34170986C897E8931C1768FD6EE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E40B80F0FA7BDA9FBB0AB7DDCD07249</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -153,6 +193,26 @@
 			<true/>
 		</dict>
 		<key>7A96C9943E9B79454CF07CA41B7BF014</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F996D3AC18BEFCD4B0C8A473FEE5ECE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8ED55A16FADB5374F99DE3EAF324D452</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9215C072E9A2F79332AFA7F670CC9B09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF74A4911469BA5A713BA8EF0AA3CC62</key>
 		<dict>
 			<key>primary</key>
 			<true/>

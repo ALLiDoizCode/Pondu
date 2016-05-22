@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -37,7 +37,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7F-U1-VN8">
+                                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7F-U1-VN8">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="26" id="1SN-W8-8cc">
@@ -155,7 +155,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class of 2017 Live Life Fully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ0-rE-jJ5">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class of 2017 Live Life Fully" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ0-rE-jJ5">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="6th-P8-lTu"/>
@@ -174,13 +174,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike simmons " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2e-b9-MJ5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike Simmons " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2e-b9-MJ5">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RRh-ne-ZaM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.70980392160000005" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -193,14 +193,14 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bokeh" translatesAutoresizingMaskIntoConstraints="NO" id="W6U-MX-L0b">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="W6U-MX-L0b">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Gav-Jz-x8r">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="250"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="300" id="OFQ-y6-Qup">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="250"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
@@ -228,12 +228,14 @@
                             <constraint firstItem="xgm-Dd-qgJ" firstAttribute="bottom" secondItem="KBg-P0-6dz" secondAttribute="bottom" id="Xnq-kq-zP9"/>
                             <constraint firstItem="xgm-Dd-qgJ" firstAttribute="leading" secondItem="KBg-P0-6dz" secondAttribute="leading" id="ZkB-pd-gVg"/>
                             <constraint firstItem="hZ0-rE-jJ5" firstAttribute="top" secondItem="W6U-MX-L0b" secondAttribute="bottom" constant="8" id="aRI-NK-1hJ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="23"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="18.5"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="U2e-b9-MJ5" secondAttribute="trailing" id="hhY-0G-P4V"/>
                             <constraint firstItem="fet-Un-58c" firstAttribute="top" secondItem="U2e-b9-MJ5" secondAttribute="bottom" constant="15" id="kIJ-fv-owc"/>
                             <constraint firstItem="hZ0-rE-jJ5" firstAttribute="centerX" secondItem="sjH-6I-o9I" secondAttribute="centerX" id="xZu-98-Spn"/>
-                            <constraint firstItem="W6U-MX-L0b" firstAttribute="centerY" secondItem="sjH-6I-o9I" secondAttribute="centerY" id="yW3-na-KxI"/>
+                            <constraint firstItem="W6U-MX-L0b" firstAttribute="centerY" secondItem="sjH-6I-o9I" secondAttribute="centerY" id="yW3-na-KxI">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-10.5"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1750,8 +1752,8 @@ Effective: February 07, 2015</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Bokeh" width="640" height="1136"/>
+        <image name="bike" width="2048" height="1356"/>
         <image name="circle-with-dots-forming-a-spiral-in-perspective (1)" width="64" height="64"/>
-        <image name="settings20" width="32" height="32"/>
+        <image name="settings20" width="64" height="64"/>
     </resources>
 </document>

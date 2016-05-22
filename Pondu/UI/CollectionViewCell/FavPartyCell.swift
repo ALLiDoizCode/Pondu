@@ -21,6 +21,9 @@ class FavPartyCell: UICollectionViewCell {
     @IBOutlet weak var live: UIButton!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var line: UILabel!
+    @IBOutlet weak var dropShadow: UIImageView!
+    
     var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
     
@@ -61,19 +64,23 @@ class FavPartyCell: UICollectionViewCell {
         let maxAlpha: CGFloat = 0.75
         
         
-        let scale = max(delta, 0.5)
+        let scale = max(delta, 1)
         descriptionHead.transform = CGAffineTransformMakeScale(scale, scale)
         post.transform = CGAffineTransformMakeScale(scale, scale)
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         iconView.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
+        dropShadow.transform = CGAffineTransformMakeScale(scale, scale)
+        
         
         descriptionHead.alpha = delta
         live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
+        dropShadow.alpha = delta
+        
         
         if delta > 0.1 {
             

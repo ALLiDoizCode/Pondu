@@ -21,7 +21,10 @@ class PartyCell: UICollectionViewCell {
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var descriptionHead: UILabel!
     @IBOutlet weak var iconView: UIView!
-
+    @IBOutlet weak var line: UILabel!
+    @IBOutlet weak var dropShadow: UIImageView!
+    
+    
     var blurView:UIVisualEffectView!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
@@ -53,7 +56,7 @@ class PartyCell: UICollectionViewCell {
         let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
         
-        let scale = max(delta, 0.5)
+        let scale = max(delta, 1)
         
         iconView.transform = CGAffineTransformMakeScale(scale, scale)
         descriptionHead.transform = CGAffineTransformMakeScale(scale, scale)
@@ -61,12 +64,16 @@ class PartyCell: UICollectionViewCell {
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
+        dropShadow.transform = CGAffineTransformMakeScale(scale, scale)
+        
         
         descriptionHead.alpha = delta
         live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
+        dropShadow.alpha = delta
+        
         
         if delta > 0.1 {
             
@@ -80,8 +87,8 @@ class PartyCell: UICollectionViewCell {
         }
         
         eventTitle.alpha = 1 - delta
-
-
+        
+        
     }
     
     
@@ -89,5 +96,5 @@ class PartyCell: UICollectionViewCell {
         
         
     }
-
+    
 }

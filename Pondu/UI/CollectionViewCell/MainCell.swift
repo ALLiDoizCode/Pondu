@@ -21,12 +21,15 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var live: UIButton!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var line: UILabel!
+    @IBOutlet weak var dropShadow: UIImageView!
+    
     var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
     
     
     override func awakeFromNib() {
         
-       
+        
         
     }
     
@@ -37,8 +40,8 @@ class MainCell: UICollectionViewCell {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             
             self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2
-            self.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
-            self.profileImage.layer.borderWidth = 1.5
+            self.profileImage.layer.borderColor = UIColor.clearColor().CGColor
+            self.profileImage.layer.borderWidth = 0.5
             self.profileImage.layer.masksToBounds = true
             self.live.layer.cornerRadius = self.live.frame.size.height/2
             self.live.layer.borderColor = UIColor.grayColor().CGColor
@@ -59,25 +62,32 @@ class MainCell: UICollectionViewCell {
         // Based on the range constants, update the cell’s alpha based on the delta value.
         let minAlpha: CGFloat = 0.47
         let maxAlpha: CGFloat = 0.75
-    
         
-        let scale = max(delta, 0.5)
+        
+        let scale = max(delta, 1)
         descriptionHead.transform = CGAffineTransformMakeScale(scale, scale)
         post.transform = CGAffineTransformMakeScale(scale, scale)
         comments.transform = CGAffineTransformMakeScale(scale, scale)
         likes.transform = CGAffineTransformMakeScale(scale, scale)
         iconView.transform = CGAffineTransformMakeScale(scale, scale)
         live.transform = CGAffineTransformMakeScale(scale, scale)
+        dropShadow.transform = CGAffineTransformMakeScale(scale, scale)
+        
         
         descriptionHead.alpha = delta
         live.alpha = delta
         post.alpha = delta
         comments.alpha = delta
         likes.alpha = delta
+        dropShadow.alpha = delta
+        
+        
+        
         
         if delta > 0.1 {
             
             eventTitle.hidden = true
+            
             
             
         }else{
@@ -87,7 +97,7 @@ class MainCell: UICollectionViewCell {
         }
         
         eventTitle.alpha = 1 - delta
-                
+        
     }
 }
 
