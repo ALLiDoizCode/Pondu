@@ -62,6 +62,7 @@
 		4D70AA5D1CA227FA00BC23DC /* WallClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70AA5C1CA227FA00BC23DC /* WallClient.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
+		4D80B56C1CF2169600EB61FD /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80B56B1CF2169600EB61FD /* EditProfileVC.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
 		4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */; };
 		4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */; };
@@ -185,6 +186,7 @@
 		4D70AA5C1CA227FA00BC23DC /* WallClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallClient.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
+		4D80B56B1CF2169600EB61FD /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
 		4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		4D80B56A1CF2166D00EB61FD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4D80B56B1CF2169600EB61FD /* EditProfileVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4D80BCDF1BFE8677000EAB33 /* Creating-Events/Parties */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +550,7 @@
 		4DE1A1BF1BEA6FBE009BCF55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D80B56A1CF2166D00EB61FD /* Settings */,
 				4D2320F31CE5A07200CA331A /* SideMenu */,
 				4D2E61071CD9297100831A22 /* Messages */,
 				4D09D96C1C2665FF00D3FF81 /* Discover */,
@@ -789,6 +800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */,
+				4D80B56C1CF2169600EB61FD /* EditProfileVC.swift in Sources */,
 				4D2E610B1CD92A0C00831A22 /* MessageViewController.swift in Sources */,
 				4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */,
 				4D4278841C9368240012B72D /* ChatImageController.swift in Sources */,
@@ -1006,7 +1018,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Mission8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/user/Desktop/NewUiPondu/Pondu/Pondu/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1026,7 +1038,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pondu.Mission8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/user/Desktop/NewUiPondu/Pondu/Pondu/Header.h;
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/jonathangreen/Documents/Apps/Pondu/Pondu/Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

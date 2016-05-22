@@ -16,7 +16,8 @@ pod 'LLSimpleCamera', '~> 4.0'
 pod "CircleSlider"
 pod 'KinveyKit'
 pod "SwiftLocation"
-
+pod 'Material', '~> 1.0'
+pod 'Cartography', '~> 0.6.0'
 
 
 

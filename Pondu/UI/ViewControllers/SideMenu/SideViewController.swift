@@ -20,6 +20,8 @@ enum DrawerSection: Int {
 
 class SideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let editProfileVC = EditProfileVC()
+    
     var tableView: UITableView!
     let drawerWidths: [CGFloat] = [160, 200, 240, 280, 320]
     
@@ -114,6 +116,47 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        
+        switch indexPath.section {
+        case 0:
+            
+            switch indexPath.row {
+                
+            case 0:
+                print(accountDetails[0])
+                
+                sideMenuController()?.setContentViewController(editProfileVC)
+            case 1:
+                
+                print(accountDetails[1])
+                
+            case 3:
+                
+                print(accountDetails[2])
+                
+
+            default:
+                break
+            }
+            
+        case 1:
+            
+            switch indexPath.row {
+            case 0:
+                print(legal[0])
+            case 1:
+                print(legal[1])
+            case 2:
+                print(legal[2])
+            case 3:
+                print(legal[3])
+            default:
+                break
+            }
+            
+        default: break
+            
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
