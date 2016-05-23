@@ -123,52 +123,68 @@ class EditProfileVC: UIViewController {
         bottomView.addSubview(bio)
         bottomView.addSubview(bioLbl)
         
+        firstName.font = UIFont(name: "Optima", size: 14)
         firstName.placeholder = "First Name"
         firstName.placeholderActiveColor = MaterialColor.grey.lighten1
         firstName.layer.borderWidth = 1
         firstName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        firstName.backgroundColor = MaterialColor.white
+        
         lastName.placeholder = "Last Name"
         lastName.placeholderActiveColor = MaterialColor.grey.lighten1
         lastName.layer.borderWidth = 1
         lastName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        lastName.font = UIFont(name: "Optima", size: 14)
+        lastName.backgroundColor = MaterialColor.white
+        
         username.placeholder = "Username"
         username.placeholderActiveColor = MaterialColor.grey.lighten1
         username.layer.borderWidth = 1
         username.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        username.font = UIFont(name: "Optima", size: 14)
+        username.backgroundColor = MaterialColor.white
+        
         email.placeholder = "Email"
         email.placeholderActiveColor = MaterialColor.grey.lighten1
         email.layer.borderWidth = 1
         email.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        email.font = UIFont(name: "Optima", size: 14)
+        email.backgroundColor = MaterialColor.white
+        
         phoneNumber.placeholder = "Phone Number"
         phoneNumber.textAlignment = .Center
         phoneNumber.placeholderActiveColor = MaterialColor.grey.lighten1
         phoneNumber.layer.borderWidth = 1
         phoneNumber.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        phoneNumber.font = UIFont(name: "Optima", size: 14)
+        phoneNumber.backgroundColor = MaterialColor.white
+        
         password.placeholder = "Password"
         password.placeholderActiveColor = MaterialColor.grey.lighten1
         password.secureTextEntry = true
         password.layer.borderWidth = 1
         password.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        password.font = UIFont(name: "Optima", size: 14)
+        password.backgroundColor = MaterialColor.white
+        
         password2.placeholder = "Password Again"
         password2.placeholderActiveColor = MaterialColor.grey.lighten1
         password2.secureTextEntry = true
         password2.layer.borderWidth = 1
         password2.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        password2.font = UIFont(name: "Optima", size: 14)
+        password2.backgroundColor = MaterialColor.white
+        
         bio.placeholderLabel?.text = "Bio"
+        bio.textAlignment = .Center
         bio.layer.borderWidth = 1
         bio.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        bio.font = UIFont(name: "Optima", size: 14)
+        bio.backgroundColor = MaterialColor.white
+        bio.clipsToBounds = true
+        
         bioLbl.text = "Bio"
         bioLbl.textColor = MaterialColor.grey.lighten1
-        firstName.backgroundColor = MaterialColor.white
-        lastName.backgroundColor = MaterialColor.white
-        username.backgroundColor = MaterialColor.white
-        email.backgroundColor = MaterialColor.white
-        phoneNumber.backgroundColor = MaterialColor.white
-        password.backgroundColor = MaterialColor.white
-        password2.backgroundColor = MaterialColor.white
-        bio.backgroundColor = MaterialColor.white
-        //bio.placeholderLabel = bioLbl
-        bio.clipsToBounds = true
         
         constrain(firstName,lastName,username,email,phoneNumber) { firstName,lastName,username,email,phoneNumber in
             
