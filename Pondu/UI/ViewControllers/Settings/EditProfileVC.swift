@@ -21,6 +21,7 @@ class EditProfileVC: UIViewController {
     var changeProfileImage:MaterialButton!
     
     var currentTitle:UILabel!
+    var bioLbl:MaterialLabel!
     
     var firstName:TextField!
     var lastName:TextField!
@@ -50,6 +51,7 @@ class EditProfileVC: UIViewController {
         password2 = TextField()
         
         bio = TextView()
+        bioLbl = MaterialLabel()
         
         makeViews()
         makeTextFields()
@@ -119,23 +121,44 @@ class EditProfileVC: UIViewController {
         bottomView.addSubview(password)
         bottomView.addSubview(password2)
         bottomView.addSubview(bio)
+        bottomView.addSubview(bioLbl)
         
         firstName.placeholder = "First Name"
         firstName.placeholderActiveColor = MaterialColor.grey.lighten1
+        firstName.layer.borderWidth = 1
+        firstName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         lastName.placeholder = "Last Name"
         lastName.placeholderActiveColor = MaterialColor.grey.lighten1
+        lastName.layer.borderWidth = 1
+        lastName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         username.placeholder = "Username"
         username.placeholderActiveColor = MaterialColor.grey.lighten1
+        username.layer.borderWidth = 1
+        username.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         email.placeholder = "Email"
         email.placeholderActiveColor = MaterialColor.grey.lighten1
+        email.layer.borderWidth = 1
+        email.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         phoneNumber.placeholder = "Phone Number"
         phoneNumber.textAlignment = .Center
         phoneNumber.placeholderActiveColor = MaterialColor.grey.lighten1
+        phoneNumber.layer.borderWidth = 1
+        phoneNumber.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         password.placeholder = "Password"
         password.placeholderActiveColor = MaterialColor.grey.lighten1
+        password.secureTextEntry = true
+        password.layer.borderWidth = 1
+        password.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         password2.placeholder = "Password Again"
         password2.placeholderActiveColor = MaterialColor.grey.lighten1
+        password2.secureTextEntry = true
+        password2.layer.borderWidth = 1
+        password2.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         bio.placeholderLabel?.text = "Bio"
+        bio.layer.borderWidth = 1
+        bio.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        bioLbl.text = "Bio"
+        bioLbl.textColor = MaterialColor.grey.lighten1
         firstName.backgroundColor = MaterialColor.white
         lastName.backgroundColor = MaterialColor.white
         username.backgroundColor = MaterialColor.white
@@ -144,7 +167,7 @@ class EditProfileVC: UIViewController {
         password.backgroundColor = MaterialColor.white
         password2.backgroundColor = MaterialColor.white
         bio.backgroundColor = MaterialColor.white
-        bio.placeholderLabel?.textColor = MaterialColor.grey.lighten1
+        //bio.placeholderLabel = bioLbl
         bio.clipsToBounds = true
         
         constrain(firstName,lastName,username,email,phoneNumber) { firstName,lastName,username,email,phoneNumber in
@@ -176,7 +199,7 @@ class EditProfileVC: UIViewController {
 
         }
         
-        constrain(password,password2,phoneNumber,bio) { (password,password2,phoneNumber,bio) in
+        constrain(password,password2,phoneNumber,bio,bioLbl) { (password,password2,phoneNumber,bio,bioLbl) in
             
             password.width == (password.superview?.width)! * 0.42
             password.height == (password.superview?.height)! * 0.08
@@ -192,7 +215,10 @@ class EditProfileVC: UIViewController {
             bio.height == (bio.superview?.height)! * 0.25
             bio.bottom == (bio.superview?.bottom)! - 10
             bio.left == bio.superview!.left + 10
-
+            
+            bioLbl.width == 30
+            bioLbl.left == bioLbl.superview!.left + 10
+            bioLbl.bottom == bio.top
         }
     }
     
