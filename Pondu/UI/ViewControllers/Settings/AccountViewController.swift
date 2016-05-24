@@ -51,6 +51,13 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.tableView.reloadSections(NSIndexSet(indexesInRange: NSRange(location: 0, length: self.tableView.numberOfSections - 1)), withRowAnimation: .None)
     }
     
+    func goHome(){
+        
+        let mainStorybord = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewcontroller = mainStorybord.instantiateViewControllerWithIdentifier("Base")
+        self.navigationController?.pushViewController(mainViewcontroller, animated: true)
+    }
+    
     func setupUI() {
         
         currentTitle = UILabel()
@@ -58,6 +65,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         currentTitle.textAlignment = .Center
         backBtn = MaterialButton()
         backBtn.setImage(UIImage(named:"arrows"), forState: UIControlState.Normal)
+        backBtn.addTarget(self, action: "goHome", forControlEvents: UIControlEvents.TouchUpInside)
         topView = UIView()
         
         self.view.addSubview(topView)
