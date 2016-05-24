@@ -24,6 +24,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = MaterialColor.white
         self.tableView = UITableView(frame: CGRectMake(0, 0, 0, 0), style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -31,7 +32,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         setupUI()
         self.tableView.autoresizingMask = [ .FlexibleWidth, .FlexibleHeight ]
         
-        self.tableView.backgroundColor = UIColor.darkGrayColor()
+        self.tableView.backgroundColor = MaterialColor.grey.lighten2
         self.tableView.separatorStyle = .None
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 161 / 255, green: 164 / 255, blue: 166 / 255, alpha: 1.0)
@@ -143,7 +144,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        tableView.headerViewForSection(section)?.textLabel?.textColor = UIColor.whiteColor()
+        //tableView.headerViewForSection(section)?.textLabel?.textColor = MaterialColor.grey.lighten2
         
         switch section {
         case 0:
@@ -200,7 +201,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         let header = view as! UITableViewHeaderFooterView
         
-        header.textLabel?.textColor = title.textColor
+        header.textLabel?.textColor = MaterialColor.grey.base
         
     }
     

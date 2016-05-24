@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 class AccountTableViewCell: UITableViewCell {
     
@@ -36,13 +37,12 @@ class AccountTableViewCell: UITableViewCell {
         //self.accessoryCheckmarkColor = UIColor.whiteColor()
         let backgroundView = UIView(frame: self.bounds)
         backgroundView.autoresizingMask = [ .FlexibleHeight, .FlexibleWidth ]
-        let backgroundColor = UIColor(red:0.34, green:0.29, blue:0.36, alpha:1.0)
-        backgroundView.backgroundColor = backgroundColor
+        backgroundView.backgroundColor = MaterialColor.white
         
         self.backgroundView = backgroundView
         
         self.textLabel?.backgroundColor = UIColor.clearColor()
-        self.textLabel?.textColor = UIColor.whiteColor()
+        self.textLabel?.textColor = MaterialColor.grey.darken2
     }
     
     func updateContentForNewContentSize() {
@@ -52,6 +52,7 @@ class AccountTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
