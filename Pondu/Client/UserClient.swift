@@ -213,39 +213,44 @@ class UserClient {
         }
     }
     
-    func signOut(){
+    func signOut(completion:(result:Bool) -> Void){
         
         // Logout the active user
         KCSUser.activeUser().logout()
+        completion(result:true)
     }
     
-    func delete(){
+    func delete(completion:(result:Bool) -> Void){
         
         KCSUser.activeUser().removeWithCompletionBlock { (objectsOrNil: [AnyObject]!, errorOrNil: NSError!) -> Void in
             if errorOrNil != nil {
                 NSLog("error %@ when deleting active user", errorOrNil)
             } else {
+                completion(result:true)
                 NSLog("active user deleted")
             }
         }
     }
     
-    func resetPassword(){
+    func resetPassword(completion:(result:Bool) -> Void){
         
         KCSUser.sendPasswordResetForUser(
              KCSUser.activeUser().email,
             withCompletionBlock: { (emailSent: Bool, errorOrNil: NSError!) -> Void in
                 // handle error
+                completion(result: emailSent)
             }
         )
     }
     
-    func forgotUsername(){
+    func forgotUsername(completion:(result:Bool) -> Void){
         
         KCSUser.sendForgotUsername(
             KCSUser.activeUser().email,
             withCompletionBlock: { (emailSent: Bool, errorOrNil: NSError!) -> Void in
                 //display success or error
+                
+                completion(result: emailSent)
             }
         )
     }

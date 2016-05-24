@@ -12,6 +12,9 @@ import Cartography
 
 class EditProfileViewcontroller: UIViewController {
     
+    
+    let presenter = theUser()
+    
     var topView:UIView!
     var bottomView:UIView!
     var profileImage:UIImageView!
@@ -19,6 +22,7 @@ class EditProfileViewcontroller: UIViewController {
     var cancle:MaterialButton!
     var save:MaterialButton!
     var changeProfileImage:MaterialButton!
+    var resetPassword:MaterialButton!
     
     var currentTitle:UILabel!
     var bioLbl:MaterialLabel!
@@ -28,8 +32,6 @@ class EditProfileViewcontroller: UIViewController {
     var username:TextField!
     var email:TextField!
     var phoneNumber:TextField!
-    var password:TextField!
-    var password2:TextField!
     var bio:TextView!
 
     override func viewDidLoad() {
@@ -38,6 +40,7 @@ class EditProfileViewcontroller: UIViewController {
         cancle = MaterialButton()
         save = MaterialButton()
         changeProfileImage = MaterialButton()
+        resetPassword = MaterialButton()
         topView = UIView()
         bottomView = UIView()
         currentTitle = UILabel()
@@ -47,8 +50,7 @@ class EditProfileViewcontroller: UIViewController {
         username = TextField()
         email = TextField()
         phoneNumber = TextField()
-        password = TextField()
-        password2 = TextField()
+        
         
         bio = TextView()
         bioLbl = MaterialLabel()
@@ -64,6 +66,24 @@ class EditProfileViewcontroller: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func resetPass() {
+        
+        presenter.resetPassWord { (result) in
+            
+            if result == true {
+                
+                let alert = UIAlertController(title: "Instructions Have Been Sent To Your Email", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+                
+                let OK = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+              
+                alert.addAction(OK)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     func makeViews() {
@@ -118,8 +138,7 @@ class EditProfileViewcontroller: UIViewController {
         bottomView.addSubview(username)
         bottomView.addSubview(email)
         bottomView.addSubview(phoneNumber)
-        bottomView.addSubview(password)
-        bottomView.addSubview(password2)
+        bottomView.addSubview(resetPassword)
         bottomView.addSubview(bio)
         bottomView.addSubview(bioLbl)
         
@@ -158,22 +177,6 @@ class EditProfileViewcontroller: UIViewController {
         phoneNumber.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         phoneNumber.font = UIFont(name: "Optima", size: 14)
         phoneNumber.backgroundColor = MaterialColor.white
-        
-        password.placeholder = " Password"
-        password.placeholderActiveColor = MaterialColor.grey.lighten1
-        password.secureTextEntry = true
-        password.layer.borderWidth = 1
-        password.layer.borderColor = MaterialColor.grey.lighten1.CGColor
-        password.font = UIFont(name: "Optima", size: 14)
-        password.backgroundColor = MaterialColor.white
-        
-        password2.placeholder = " Password Again"
-        password2.placeholderActiveColor = MaterialColor.grey.lighten1
-        password2.secureTextEntry = true
-        password2.layer.borderWidth = 1
-        password2.layer.borderColor = MaterialColor.grey.lighten1.CGColor
-        password2.font = UIFont(name: "Optima", size: 14)
-        password2.backgroundColor = MaterialColor.white
         
         bio.placeholderLabel?.text = "Bio"
         bio.textAlignment = .Center
@@ -216,18 +219,13 @@ class EditProfileViewcontroller: UIViewController {
 
         }
         
-        constrain(password,password2,phoneNumber,bio,bioLbl) { (password,password2,phoneNumber,bio,bioLbl) in
+        constrain(resetPassword,phoneNumber,bio,bioLbl) { (resetPassword,phoneNumber,bio,bioLbl) in
             
-            password.width == (password.superview?.width)! * 0.42
-            password.height == (password.superview?.height)! * 0.08
-            password.top == phoneNumber.bottom + 20
-            password.left == password.superview!.left + 10
-            
-            password2.width == (password2.superview?.width)! * 0.42
-            password2.height == (password2.superview?.height)! * 0.08
-            password2.top == phoneNumber.bottom + 20
-            password2.right == password2.superview!.right - 10
-            
+            resetPassword.width == (resetPassword.superview?.width)! * 0.42
+            resetPassword.height == (resetPassword.superview?.height)! * 0.08
+            resetPassword.top == phoneNumber.bottom + 20
+            resetPassword.centerX == resetPassword.superview!.centerX
+
             bio.width == (bio.superview?.width)! * 0.944
             bio.height == (bio.superview?.height)! * 0.25
             bio.bottom == (bio.superview?.bottom)! - 10
@@ -242,11 +240,16 @@ class EditProfileViewcontroller: UIViewController {
     
     func makeBtns(){
         
+        resetPassword.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
+        resetPassword.cornerRadiusPreset = .Radius2
+        resetPassword.setTitle("Reset Password", forState: UIControlState.Normal)
+        resetPassword.addTarget(self, action: "resetPass", forControlEvents: UIControlEvents.TouchUpInside)
+        
         cancle.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
         cancle.cornerRadiusPreset = .Radius2
         cancle.setTitle("Cancle", forState: UIControlState.Normal)
 
-        save.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
+        save.setTitleColor(MaterialColor.purple.lighten3, forState: UIControlState.Normal)
         save.cornerRadiusPreset = .Radius2
         save.setTitle("Save", forState: UIControlState.Normal)
         

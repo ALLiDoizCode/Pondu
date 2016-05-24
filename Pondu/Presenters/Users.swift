@@ -34,19 +34,28 @@ class theUser {
         client.signUp(name, userName: userName, passWord: passWord, email: email, profileImage: profileImage)
     }
     
-    func deleteAccount(){
+    func deleteAccount(completion:(result:Bool) -> Void){
         
-        client.delete()
+        client.delete { (result) in
+            
+            completion(result: result)
+        }
     }
     
-    func resetPassWord(){
+    func resetPassWord(completion:(result:Bool) -> Void){
         
-        client.resetPassword()
+        client.resetPassword { (result) in
+            
+            completion(result: result)
+        }
     }
     
-    func forgotUserName(){
+    func forgotUserName(completion:(result:Bool) -> Void){
         
-        client.forgotUsername()
+        client.forgotUsername { (result) in
+            
+            completion(result: result)
+        }
     }
     
     func verify(){
