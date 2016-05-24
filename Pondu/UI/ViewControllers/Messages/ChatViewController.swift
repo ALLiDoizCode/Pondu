@@ -99,19 +99,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBAction func send(sender: AnyObject) {
         
-        
-        /*SwiftEventBus.onMainThread(self, name: "updateMsg") { result in
-            
-            print("sending push with Image")
-            
-            self.cameraBtn.setImage(UIImage(named: "cameraImg"), forState: UIControlState.Normal)
-            
-            self.textField.text = ""
-            
-            SwiftEventBus.unregister(self, name: "updateMsg")
-            
-        }*/
-        
         if theImage != nil {
             
             let message = Message(theDescription: textField.text!)
@@ -171,6 +158,25 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 
                 
         }))
+        
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Photo Library", comment: "Action Title"), secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("ImagePickerSheet.button1.Send %lu Photo", comment: "Action Title"), $0) as String}, handler: { _ in
+            presentImagePickerController(.PhotoLibrary)
+            }, secondaryHandler: { _, numberOfPhotos in
+                print("Comment \(numberOfPhotos) photos")
+                
+                let size = CGSize(width: controller.selectedImageAssets[0].pixelWidth, height: controller.selectedImageAssets[0].pixelHeight)
+                
+                manager.requestImageForAsset(controller.selectedImageAssets[0],
+                    targetSize: size,
+                    contentMode: .AspectFill,
+                options:initialRequestOptions) { (finalResult, _) in
+                    
+                    self.theImage = finalResult
+                    self.cameraBtn.setImage(self.theImage, forState: UIControlState.Normal)
+                    print(finalResult)
+                }
+        }))
+        
         controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
             print("Cancelled")
         }))

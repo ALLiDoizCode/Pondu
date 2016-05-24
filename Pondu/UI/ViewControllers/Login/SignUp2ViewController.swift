@@ -116,6 +116,23 @@ class SignUp2ViewController: UIViewController,UITextFieldDelegate,UIImagePickerC
                 
         
         }))
+        
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Photo Library", comment: "Action Title"), secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("ImagePickerSheet.button1.Send %lu Photo", comment: "Action Title"), $0) as String}, handler: { _ in
+            presentImagePickerController(.PhotoLibrary)
+            }, secondaryHandler: { _, numberOfPhotos in
+                print("Comment \(numberOfPhotos) photos")
+                
+                let size = CGSize(width: controller.selectedImageAssets[0].pixelWidth, height: controller.selectedImageAssets[0].pixelHeight)
+                
+                manager.requestImageForAsset(controller.selectedImageAssets[0],
+                    targetSize: size,
+                    contentMode: .AspectFill,
+                options:initialRequestOptions) { (finalResult, _) in
+                    
+                    self.profileImage.image = finalResult
+                    print(finalResult)
+                }
+        }))
             controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
             print("Cancelled")
         }))

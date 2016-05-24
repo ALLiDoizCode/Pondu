@@ -9,9 +9,11 @@
 import UIKit
 import Material
 import Cartography
+import ImagePickerSheetController
+import Photos
+import SwiftSpinner
 
-class EditProfileViewcontroller: UIViewController {
-    
+class EditProfileViewcontroller: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate {
     
     let presenter = theUser()
     var currentImage:UIImage!
@@ -65,6 +67,106 @@ class EditProfileViewcontroller: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func startSpin(){
+        
+        SwiftSpinner.show("Uploading").addTapHandler({
+            SwiftSpinner.hide()
+            }, subtitle: "Tap to hide while connecting! This will affect only the current operation.")
+    }
+    
+    func stopSpin(){
+        
+        SwiftSpinner.hide()
+    }
+
+    
+    func addImage() {
+        
+        let manager = PHImageManager.defaultManager()
+        let initialRequestOptions = PHImageRequestOptions()
+        initialRequestOptions.resizeMode = .Fast
+        initialRequestOptions.deliveryMode = .HighQualityFormat
+        
+        let presentImagePickerController: UIImagePickerControllerSourceType -> () = { source in
+            let controller = UIImagePickerController()
+            controller.delegate = self
+            var sourceType = source
+            if (!UIImagePickerController.isSourceTypeAvailable(sourceType)) {
+                sourceType = .PhotoLibrary
+                print("Fallback to camera roll as a source since the simulator doesn't support taking pictures")
+            }
+            controller.sourceType = sourceType
+            
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+        
+        let controller = ImagePickerSheetController(mediaType: .Image)
+        controller.maximumSelection = 1
+        
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Take Photo", comment: "Action Title"), secondaryTitle: NSLocalizedString("Use This Image", comment: "Action Title"), handler: { _ in
+            presentImagePickerController(.Camera)
+          
+            }, secondaryHandler: { action, numberOfPhotos in
+                print("Comment \(numberOfPhotos) photos")
+                
+                let size = CGSize(width: controller.selectedImageAssets[0].pixelWidth, height: controller.selectedImageAssets[0].pixelHeight)
+                
+                manager.requestImageForAsset(controller.selectedImageAssets[0],
+                    targetSize: size,
+                    contentMode: .AspectFill,
+                options:initialRequestOptions) { (finalResult, _) in
+                    
+                    self.profileImage.image = finalResult
+                    self.currentImage = finalResult
+                    print(finalResult)
+                }
+                
+                
+        }))
+        
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Photo Library", comment: "Action Title"), secondaryTitle: { NSString.localizedStringWithFormat(NSLocalizedString("ImagePickerSheet.button1.Send %lu Photo", comment: "Action Title"), $0) as String}, handler: { _ in
+            presentImagePickerController(.PhotoLibrary)
+            }, secondaryHandler: { _, numberOfPhotos in
+                print("Comment \(numberOfPhotos) photos")
+                
+                let size = CGSize(width: controller.selectedImageAssets[0].pixelWidth, height: controller.selectedImageAssets[0].pixelHeight)
+                
+                manager.requestImageForAsset(controller.selectedImageAssets[0],
+                    targetSize: size,
+                    contentMode: .AspectFill,
+                options:initialRequestOptions) { (finalResult, _) in
+                    
+                    self.profileImage.image = finalResult
+                    self.currentImage = finalResult
+                    print(finalResult)
+                }
+        }))
+        
+        controller.addAction(ImagePickerAction(title: NSLocalizedString("Cancel", comment: "Action Title"), style: .Cancel, handler: { _ in
+            print("Cancelled")
+        }))
+        
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            controller.modalPresentationStyle = .Popover
+            controller.popoverPresentationController?.sourceView = view
+            controller.popoverPresentationController?.sourceRect = CGRect(origin: view.center, size: CGSize())
+        }
+        
+        presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    // MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        profileImage.image = image
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func saveChange(){
         
         if fullName.text == "" && username.text == "" && email.text == "" && phoneNumber.text == "" && bio.text == "" && currentImage == nil {
@@ -73,13 +175,19 @@ class EditProfileViewcontroller: UIViewController {
             
         }else {
             
+            self.startSpin()
+            
             presenter.saveChanges(fullName.text, userName: username.text, email: email.text, phone: phoneNumber.text, profileImage: currentImage, bio: bio.text) { (result) in
                 
                 if result == true {
                     
                     print("changes saved")
                     
+                    self.stopSpin()
+                    
                 }else {
+                    
+                    self.stopSpin()
                     
                     print("there was an issue saving the changes")
                 }
@@ -148,7 +256,6 @@ class EditProfileViewcontroller: UIViewController {
         
         }
         
-        
     }
     
     func makeTextFields(){
@@ -163,20 +270,17 @@ class EditProfileViewcontroller: UIViewController {
         
         fullName.font = UIFont(name: "Optima", size: 14)
         fullName.placeholder = " Full Name"
-        //fullName.placeholderActiveColor = MaterialColor.grey.lighten1
         fullName.layer.borderWidth = 1
         fullName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         fullName.backgroundColor = MaterialColor.white
         
         username.placeholder = " Username"
-        //username.placeholderActiveColor = MaterialColor.grey.lighten1
         username.layer.borderWidth = 1
         username.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         username.font = UIFont(name: "Optima", size: 14)
         username.backgroundColor = MaterialColor.white
         
         email.placeholder = " Email"
-        //email.placeholderActiveColor = MaterialColor.grey.lighten1
         email.layer.borderWidth = 1
         email.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         email.font = UIFont(name: "Optima", size: 14)
@@ -184,7 +288,6 @@ class EditProfileViewcontroller: UIViewController {
         
         phoneNumber.placeholder = " Phone Number"
         phoneNumber.textAlignment = .Center
-        //phoneNumber.placeholderActiveColor = MaterialColor.grey.lighten1
         phoneNumber.layer.borderWidth = 1
         phoneNumber.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         phoneNumber.font = UIFont(name: "Optima", size: 14)
@@ -244,7 +347,6 @@ class EditProfileViewcontroller: UIViewController {
         }
     }
     
-    
     func makeBtns(){
         
         resetPassword.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
@@ -264,6 +366,7 @@ class EditProfileViewcontroller: UIViewController {
         changeProfileImage.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
         changeProfileImage.cornerRadiusPreset = .Radius2
         changeProfileImage.setTitle("Change Profile Image", forState: UIControlState.Normal)
+        changeProfileImage.addTarget(self, action: "addImage", forControlEvents: UIControlEvents.TouchUpInside)
         
         constrain(cancle,save,changeProfileImage) { cancle,save,changeProfileImage in
             
@@ -288,15 +391,4 @@ class EditProfileViewcontroller: UIViewController {
             currentTitle.centerX == (currentTitle.superview?.centerX)!
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

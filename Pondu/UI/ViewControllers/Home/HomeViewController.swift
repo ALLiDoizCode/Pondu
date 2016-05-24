@@ -12,12 +12,11 @@ import SwiftEventBus
 
 class HomeViewController: UIViewController {
     
-    var storyUser:theUser = theUser()
+    var presenter = theUser()
     
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var favorites: UILabel!
     @IBOutlet weak var location: UILabel!
     
     override func viewWillAppear(animated: Bool) {
@@ -26,20 +25,10 @@ class HomeViewController: UIViewController {
         
         self.navigationController?.navigationBarHidden = true
         
-        /*storyUser.theUsers { (theData) -> Void in
+        presenter.getImage { (data) in
             
-            for user in theData {
-                
-                if user.objectID == PFUser.currentUser()?.objectId {
-                    
-                    self.userName.text = user.userName
-                    self.favorites.text = "\(user.Favorites.count) Favorites"
-                    self.location.text = "I Live In \(user.area)"
-                    self.image.kf_setImageWithURL(NSURL(string:user.photo)!, placeholderImage: UIImage(named: "placeholder"))
-                }
-            }
-            
-        }*/
+            self.image.kf_setImageWithURL(data, placeholderImage: UIImage(named: "placeholder"))
+        }
     }
 
     override func viewDidLoad() {

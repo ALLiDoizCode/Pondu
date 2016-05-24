@@ -98,11 +98,19 @@ class UserClient {
     func userChanges(var fullName:String!,var userName:String!,var email:String!,var phone:String!,var profileImage:UIImage!,var bio:String!,completion:(result:Bool) -> Void) {
         
         if fullName == nil {
+            var currentName:String!
             
-            if fullName != nil {
+            currentName = self.currentUser().getValueForAttribute("first_name") as! String
+            
+            if currentName != nil {
                 
-                fullName = self.currentUser().getValueForAttribute("first_name") as! String
+                fullName = currentName
+            }else {
+                
+                fullName = ""
             }
+            
+            
         }
         
         if userName == nil {
@@ -117,28 +125,55 @@ class UserClient {
         
         if phone == nil {
             
-            if phone != nil {
-                
-                phone = self.currentUser().getValueForAttribute("Phone") as! String
-            }
+            var currentPhone:String!
             
+            currentPhone = self.currentUser().getValueForAttribute("Phone") as! String
+            
+            if currentPhone != nil {
+                
+                phone = currentPhone
+                
+            }else {
+                
+                phone = ""
+            }
         }
         
         if bio == nil {
-            if bio != nil {
-                
-                bio = self.currentUser().getValueForAttribute("Bio") as! String
-            }
+        
+            var currentBio:String!
             
+            currentBio = self.currentUser().getValueForAttribute("Bio") as! String
+            
+            if currentBio != nil  {
+                
+                bio = currentBio
+                
+            }else {
+                
+                bio = ""
+            }
         }
         
         if profileImage == nil {
             
-            self.currentUser().email = email
-            self.currentUser().username = userName
-            self.currentUser().setValue(fullName, forAttribute: "first_name")
-            self.currentUser().setValue(bio, forAttribute: "Bio")
-            self.currentUser().setValue(phone, forAttribute: "Phone")
+            if userName == self.currentUser().username || userName == "" {
+                
+                self.currentUser().email = email
+                self.currentUser().setValue(fullName, forAttribute: "first_name")
+                self.currentUser().setValue(bio, forAttribute: "Bio")
+                self.currentUser().setValue(phone, forAttribute: "Phone")
+                
+            }else {
+                
+                self.currentUser().email = email
+                self.currentUser().username = userName
+                self.currentUser().setValue(fullName, forAttribute: "first_name")
+                self.currentUser().setValue(bio, forAttribute: "Bio")
+                self.currentUser().setValue(phone, forAttribute: "Phone")
+            }
+            
+           
             
             self.currentUser().saveWithCompletionBlock({ (objets, error) in
                 
@@ -146,6 +181,8 @@ class UserClient {
                     
                     completion(result: true)
                 }else {
+                    
+                    print(error)
                     
                     completion(result: false)
                 }
@@ -155,12 +192,21 @@ class UserClient {
             
             self.uploadPicture(profileImage, completion: { (file) in
                 
-                self.currentUser().email = email
-                self.currentUser().username = userName
-                self.currentUser().setValue(file.fileId, forAttribute: "ProfileImage")
-                self.currentUser().setValue(fullName, forAttribute: "first_name")
-                self.currentUser().setValue(bio, forAttribute: "Bio")
-                self.currentUser().setValue(phone, forAttribute: "Phone")
+                if userName == self.currentUser().username || userName == "" {
+                    
+                    self.currentUser().email = email
+                    self.currentUser().setValue(file.fileId, forAttribute: "ProfileImage")
+                    self.currentUser().setValue(fullName, forAttribute: "first_name")
+                    self.currentUser().setValue(bio, forAttribute: "Bio")
+                    self.currentUser().setValue(phone, forAttribute: "Phone")
+                }else {
+                    self.currentUser().email = email
+                    self.currentUser().username = userName
+                    self.currentUser().setValue(file.fileId, forAttribute: "ProfileImage")
+                    self.currentUser().setValue(fullName, forAttribute: "first_name")
+                    self.currentUser().setValue(bio, forAttribute: "Bio")
+                    self.currentUser().setValue(phone, forAttribute: "Phone")
+                }
                 
                 self.currentUser().saveWithCompletionBlock({ (objets, error) in
                     
@@ -169,6 +215,7 @@ class UserClient {
                         completion(result: true)
                     }else {
                         
+                        print(error)
                         completion(result: false)
                     }
                 })

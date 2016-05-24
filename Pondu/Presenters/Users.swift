@@ -8,11 +8,28 @@
 
 import UIKit
 import SwiftEventBus
-import Kingfisher
 
 class theUser {
     
     let client = UserClient()
+    let Client2 = WallClient()
+    
+    func currentUser() -> KCSUser {
+        
+        let currentUser = client.currentUser()
+        
+        return currentUser
+    }
+    
+    func getImage(completion:(data:NSURL) -> Void) {
+        
+        let imageID = currentUser().getValueForAttribute("ProfileImage") as! String
+        
+        Client2.getFile(imageID) { (data) in
+            
+            completion(data: data)
+        }
+    }
     
     func login(userName:String,passWord:String,completion:(success:Bool) -> Void){
         
