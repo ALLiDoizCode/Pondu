@@ -20,7 +20,7 @@ enum DrawerSection: Int {
 
 class SideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let editProfileVC = EditProfileVC()
+    let editProfileVC = EditProfileViewcontroller()
     
     var tableView: UITableView!
     let drawerWidths: [CGFloat] = [160, 200, 240, 280, 320]

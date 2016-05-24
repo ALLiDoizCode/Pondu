@@ -10,7 +10,7 @@ import UIKit
 import Material
 import Cartography
 
-class EditProfileVC: UIViewController {
+class EditProfileViewcontroller: UIViewController {
     
     var topView:UIView!
     var bottomView:UIView!
@@ -124,34 +124,34 @@ class EditProfileVC: UIViewController {
         bottomView.addSubview(bioLbl)
         
         firstName.font = UIFont(name: "Optima", size: 14)
-        firstName.placeholder = "First Name"
+        firstName.placeholder = " First Name"
         firstName.placeholderActiveColor = MaterialColor.grey.lighten1
         firstName.layer.borderWidth = 1
         firstName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         firstName.backgroundColor = MaterialColor.white
         
-        lastName.placeholder = "Last Name"
+        lastName.placeholder = " Last Name"
         lastName.placeholderActiveColor = MaterialColor.grey.lighten1
         lastName.layer.borderWidth = 1
         lastName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         lastName.font = UIFont(name: "Optima", size: 14)
         lastName.backgroundColor = MaterialColor.white
         
-        username.placeholder = "Username"
+        username.placeholder = " Username"
         username.placeholderActiveColor = MaterialColor.grey.lighten1
         username.layer.borderWidth = 1
         username.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         username.font = UIFont(name: "Optima", size: 14)
         username.backgroundColor = MaterialColor.white
         
-        email.placeholder = "Email"
+        email.placeholder = " Email"
         email.placeholderActiveColor = MaterialColor.grey.lighten1
         email.layer.borderWidth = 1
         email.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         email.font = UIFont(name: "Optima", size: 14)
         email.backgroundColor = MaterialColor.white
         
-        phoneNumber.placeholder = "Phone Number"
+        phoneNumber.placeholder = " Phone Number"
         phoneNumber.textAlignment = .Center
         phoneNumber.placeholderActiveColor = MaterialColor.grey.lighten1
         phoneNumber.layer.borderWidth = 1
@@ -159,7 +159,7 @@ class EditProfileVC: UIViewController {
         phoneNumber.font = UIFont(name: "Optima", size: 14)
         phoneNumber.backgroundColor = MaterialColor.white
         
-        password.placeholder = "Password"
+        password.placeholder = " Password"
         password.placeholderActiveColor = MaterialColor.grey.lighten1
         password.secureTextEntry = true
         password.layer.borderWidth = 1
@@ -167,7 +167,7 @@ class EditProfileVC: UIViewController {
         password.font = UIFont(name: "Optima", size: 14)
         password.backgroundColor = MaterialColor.white
         
-        password2.placeholder = "Password Again"
+        password2.placeholder = " Password Again"
         password2.placeholderActiveColor = MaterialColor.grey.lighten1
         password2.secureTextEntry = true
         password2.layer.borderWidth = 1
@@ -181,6 +181,7 @@ class EditProfileVC: UIViewController {
         bio.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         bio.font = UIFont(name: "Optima", size: 14)
         bio.backgroundColor = MaterialColor.white
+        bio.textColor = MaterialColor.grey.lighten1
         bio.clipsToBounds = true
         
         bioLbl.text = "Bio"
@@ -242,16 +243,17 @@ class EditProfileVC: UIViewController {
     func makeBtns(){
         
         cancle.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
-        save.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
-        changeProfileImage.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
         cancle.cornerRadiusPreset = .Radius2
-        save.cornerRadiusPreset = .Radius2
-        changeProfileImage.cornerRadiusPreset = .Radius2
-        
         cancle.setTitle("Cancle", forState: UIControlState.Normal)
+
+        save.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
+        save.cornerRadiusPreset = .Radius2
         save.setTitle("Save", forState: UIControlState.Normal)
+        
+        changeProfileImage.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
+        changeProfileImage.cornerRadiusPreset = .Radius2
         changeProfileImage.setTitle("Change Profile Image", forState: UIControlState.Normal)
-     
+        
         constrain(cancle,save,changeProfileImage) { cancle,save,changeProfileImage in
             
             cancle.top  == cancle.superview!.top + 5
@@ -268,7 +270,7 @@ class EditProfileVC: UIViewController {
     func makeLbls(){
         
         currentTitle.text = "Edit Profile"
-        
+        currentTitle.font = UIFont(name: "Optima", size: 14)
         constrain(currentTitle) { currentTitle in
             
             currentTitle.top == (currentTitle.superview?.top)! + 10

@@ -62,7 +62,7 @@
 		4D70AA5D1CA227FA00BC23DC /* WallClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D70AA5C1CA227FA00BC23DC /* WallClient.swift */; };
 		4D7B58D51C192251006B71CA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B58D41C192251006B71CA /* SwiftyJSON.swift */; };
 		4D7E0B361BFAEF3300FB5289 /* StoryIconVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */; };
-		4D80B56C1CF2169600EB61FD /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80B56B1CF2169600EB61FD /* EditProfileVC.swift */; };
+		4D80B56C1CF2169600EB61FD /* EditProfileViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80B56B1CF2169600EB61FD /* EditProfileViewcontroller.swift */; };
 		4D80BCE11BFE86C8000EAB33 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */; };
 		4D80BCE31BFE95EE000EAB33 /* WallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */; };
 		4D85CE111C14D89A00F3BDF1 /* SignUp1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */; };
@@ -186,7 +186,7 @@
 		4D70AA5C1CA227FA00BC23DC /* WallClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallClient.swift; sourceTree = "<group>"; };
 		4D7B58D41C192251006B71CA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4D7E0B351BFAEF3300FB5289 /* StoryIconVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIconVIew.swift; sourceTree = "<group>"; };
-		4D80B56B1CF2169600EB61FD /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		4D80B56B1CF2169600EB61FD /* EditProfileViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewcontroller.swift; sourceTree = "<group>"; };
 		4D80BCE01BFE86C8000EAB33 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		4D80BCE21BFE95EE000EAB33 /* WallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallViewController.swift; sourceTree = "<group>"; };
 		4D85CE101C14D89A00F3BDF1 /* SignUp1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp1ViewController.swift; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 		4D80B56A1CF2166D00EB61FD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4D80B56B1CF2169600EB61FD /* EditProfileVC.swift */,
+				4D80B56B1CF2169600EB61FD /* EditProfileViewcontroller.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -800,7 +800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1843EF1BF24A5B00B2AFA2 /* FavPartyCell.swift in Sources */,
-				4D80B56C1CF2169600EB61FD /* EditProfileVC.swift in Sources */,
+				4D80B56C1CF2169600EB61FD /* EditProfileViewcontroller.swift in Sources */,
 				4D2E610B1CD92A0C00831A22 /* MessageViewController.swift in Sources */,
 				4D2ED5001C8FD216007B6632 /* MessageImageCell.swift in Sources */,
 				4D4278841C9368240012B72D /* ChatImageController.swift in Sources */,
