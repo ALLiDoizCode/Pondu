@@ -95,6 +95,72 @@ class UserClient {
         
     }
     
+    func userChanges(var fullName:String!,var userName:String!,var email:String!,var phone:String!,var profileImage:UIImage!,var bio:String!,completion:(result:Bool) -> Void) {
+        
+        if fullName == nil {
+            
+            if fullName != nil {
+                
+                fullName = self.currentUser().getValueForAttribute("first_name") as! String
+            }
+        }
+        
+        if userName == nil {
+            
+            userName = self.currentUser().username
+        }
+        
+        if email == nil {
+            
+            email = self.currentUser().email
+        }
+        
+        if phone == nil {
+            
+            if phone != nil {
+                
+                phone = self.currentUser().getValueForAttribute("Phone") as! String
+            }
+            
+        }
+        
+        if bio == nil {
+            if bio != nil {
+                
+                bio = self.currentUser().getValueForAttribute("Bio") as! String
+            }
+            
+        }
+        
+        if profileImage == nil {
+    
+            
+        }else {
+            
+            self.uploadPicture(profileImage, completion: { (file) in
+                
+                self.currentUser().email = email
+                self.currentUser().username = userName
+                self.currentUser().setValue(file.fileId, forAttribute: "ProfileImage")
+                self.currentUser().setValue(fullName, forAttribute: "first_name")
+                self.currentUser().setValue(bio, forAttribute: "Bio")
+                self.currentUser().setValue(phone, forAttribute: "Phone")
+                
+                self.currentUser().saveWithCompletionBlock({ (objets, error) in
+                    
+                    if error == nil {
+                        
+                        completion(result: true)
+                    }else {
+                        
+                        completion(result: false)
+                    }
+                })
+            
+            })
+        }
+    }
+    
     func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage){
         
         let follow:[String] = []

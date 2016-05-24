@@ -27,11 +27,10 @@ class EditProfileViewcontroller: UIViewController {
     var currentTitle:UILabel!
     var bioLbl:MaterialLabel!
     
-    var firstName:TextField!
-    var lastName:TextField!
-    var username:TextField!
-    var email:TextField!
-    var phoneNumber:TextField!
+    var fullName:UITextField!
+    var username:UITextField!
+    var email:UITextField!
+    var phoneNumber:UITextField!
     var bio:TextView!
 
     override func viewDidLoad() {
@@ -45,12 +44,10 @@ class EditProfileViewcontroller: UIViewController {
         bottomView = UIView()
         currentTitle = UILabel()
         
-        firstName = TextField()
-        lastName = TextField()
-        username = TextField()
-        email = TextField()
-        phoneNumber = TextField()
-        
+        fullName = UITextField()
+        username = UITextField()
+        email = UITextField()
+        phoneNumber = UITextField()
         
         bio = TextView()
         bioLbl = MaterialLabel()
@@ -66,6 +63,18 @@ class EditProfileViewcontroller: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func saveChange(){
+        
+        presenter.saveChanges(fullName.text, userName: username.text, email: email.text, phone: phoneNumber.text, profileImage: profileImage.image, bio: bio.text) { (result) in
+            
+            if result == true {
+                
+            }else {
+                
+            }
+        }
     }
     
     func resetPass() {
@@ -133,8 +142,7 @@ class EditProfileViewcontroller: UIViewController {
     
     func makeTextFields(){
         
-        bottomView.addSubview(firstName)
-        bottomView.addSubview(lastName)
+        bottomView.addSubview(fullName)
         bottomView.addSubview(username)
         bottomView.addSubview(email)
         bottomView.addSubview(phoneNumber)
@@ -142,29 +150,22 @@ class EditProfileViewcontroller: UIViewController {
         bottomView.addSubview(bio)
         bottomView.addSubview(bioLbl)
         
-        firstName.font = UIFont(name: "Optima", size: 14)
-        firstName.placeholder = " First Name"
-        firstName.placeholderActiveColor = MaterialColor.grey.lighten1
-        firstName.layer.borderWidth = 1
-        firstName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
-        firstName.backgroundColor = MaterialColor.white
-        
-        lastName.placeholder = " Last Name"
-        lastName.placeholderActiveColor = MaterialColor.grey.lighten1
-        lastName.layer.borderWidth = 1
-        lastName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
-        lastName.font = UIFont(name: "Optima", size: 14)
-        lastName.backgroundColor = MaterialColor.white
+        fullName.font = UIFont(name: "Optima", size: 14)
+        fullName.placeholder = " Full Name"
+        //fullName.placeholderActiveColor = MaterialColor.grey.lighten1
+        fullName.layer.borderWidth = 1
+        fullName.layer.borderColor = MaterialColor.grey.lighten1.CGColor
+        fullName.backgroundColor = MaterialColor.white
         
         username.placeholder = " Username"
-        username.placeholderActiveColor = MaterialColor.grey.lighten1
+        //username.placeholderActiveColor = MaterialColor.grey.lighten1
         username.layer.borderWidth = 1
         username.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         username.font = UIFont(name: "Optima", size: 14)
         username.backgroundColor = MaterialColor.white
         
         email.placeholder = " Email"
-        email.placeholderActiveColor = MaterialColor.grey.lighten1
+        //email.placeholderActiveColor = MaterialColor.grey.lighten1
         email.layer.borderWidth = 1
         email.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         email.font = UIFont(name: "Optima", size: 14)
@@ -172,7 +173,7 @@ class EditProfileViewcontroller: UIViewController {
         
         phoneNumber.placeholder = " Phone Number"
         phoneNumber.textAlignment = .Center
-        phoneNumber.placeholderActiveColor = MaterialColor.grey.lighten1
+        //phoneNumber.placeholderActiveColor = MaterialColor.grey.lighten1
         phoneNumber.layer.borderWidth = 1
         phoneNumber.layer.borderColor = MaterialColor.grey.lighten1.CGColor
         phoneNumber.font = UIFont(name: "Optima", size: 14)
@@ -190,20 +191,15 @@ class EditProfileViewcontroller: UIViewController {
         bioLbl.text = "Bio"
         bioLbl.textColor = MaterialColor.grey.lighten1
         
-        constrain(firstName,lastName,username,email,phoneNumber) { firstName,lastName,username,email,phoneNumber in
+        constrain(fullName,username,email,phoneNumber) { fullName,username,email,phoneNumber in
             
-            firstName.width == (firstName.superview?.width)! * 0.42
-            firstName.height == (firstName.superview?.height)! * 0.08
-            firstName.top  == firstName.superview!.top + 21
-            firstName.left == firstName.superview!.left + 10
-            
-            lastName.width == (lastName.superview?.width)! * 0.42
-            lastName.height == (lastName.superview?.height)! * 0.08
-            lastName.top  == lastName.superview!.top + 21
-            lastName.right == lastName.superview!.right - 10
+            fullName.width == (fullName.superview?.width)! * 0.944
+            fullName.height == (fullName.superview?.height)! * 0.08
+            fullName.top  == fullName.superview!.top + 21
+            fullName.left == fullName.superview!.left + 10
             
             username.left == (username.superview?.left)! + 10
-            username.top == firstName.bottom + 20
+            username.top == fullName.bottom + 20
             username.width == (username.superview?.width)! * 0.944
             username.height == (username.superview?.height)! * 0.08
             

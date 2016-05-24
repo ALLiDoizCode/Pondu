@@ -42,6 +42,14 @@ class theUser {
         }
     }
     
+    func saveChanges( fullName:String!, userName:String!, email:String!, phone:String!, profileImage:UIImage!, bio:String!,completon:(result:Bool) -> Void) {
+        
+        client.userChanges(fullName, userName: userName, email: email, phone: phone, profileImage: profileImage, bio: bio) { (result) in
+            
+            completon(result: result)
+        }
+    }
+    
     func resetPassWord(completion:(result:Bool) -> Void){
         
         client.resetPassword { (result) in
