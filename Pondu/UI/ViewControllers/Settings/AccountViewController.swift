@@ -15,6 +15,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
     var tableView: UITableView!
     var currentTitle:UILabel!
     var backBtn:MaterialButton!
+    var topView:UIView!
     
     let sections = ["Prefrences","Privacy/Blocked","Actions"]
     let prefences = ["Home School"]
@@ -50,10 +51,26 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         currentTitle = UILabel()
         currentTitle.text = "Account Settings"
+        currentTitle.textAlignment = .Center
         backBtn = MaterialButton()
         backBtn.setImage(UIImage(named:"arrows"), forState: UIControlState.Normal)
+        topView = UIView()
         
-        constrain(tableView,currentTitle) { tableView,currentTitle in
+        self.view.addSubview(topView)
+        self.topView.addSubview(currentTitle)
+        self.topView.addSubview(backBtn)
+        
+        constrain(tableView,currentTitle,backBtn,topView) { tableView,currentTitle,backBtn,topView in
+            
+            topView.top == (topView.superview?.top)!
+            topView.left == (topView.superview?.left)!
+            topView.height == (topView.superview?.height)! * 0.07
+            topView.width == (topView.superview?.width)!
+            currentTitle.center == (currentTitle.superview?.center)!
+            backBtn.left == (backBtn.superview?.left)! + 5
+            backBtn.centerY == (backBtn.superview?.centerY)!
+            backBtn.width == 25
+            backBtn.height == 25
             
             tableView.left == (tableView.superview?.left)!
             tableView.height == (tableView.superview?.height)! * 0.93
