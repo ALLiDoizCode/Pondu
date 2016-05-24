@@ -133,7 +133,23 @@ class UserClient {
         }
         
         if profileImage == nil {
-    
+            
+            self.currentUser().email = email
+            self.currentUser().username = userName
+            self.currentUser().setValue(fullName, forAttribute: "first_name")
+            self.currentUser().setValue(bio, forAttribute: "Bio")
+            self.currentUser().setValue(phone, forAttribute: "Phone")
+            
+            self.currentUser().saveWithCompletionBlock({ (objets, error) in
+                
+                if error == nil {
+                    
+                    completion(result: true)
+                }else {
+                    
+                    completion(result: false)
+                }
+            })
             
         }else {
             

@@ -14,7 +14,7 @@ class EditProfileViewcontroller: UIViewController {
     
     
     let presenter = theUser()
-    
+    var currentImage:UIImage!
     var topView:UIView!
     var bottomView:UIView!
     var profileImage:UIImageView!
@@ -67,14 +67,25 @@ class EditProfileViewcontroller: UIViewController {
     
     func saveChange(){
         
-        presenter.saveChanges(fullName.text, userName: username.text, email: email.text, phone: phoneNumber.text, profileImage: profileImage.image, bio: bio.text) { (result) in
+        if fullName.text == "" && username.text == "" && email.text == "" && phoneNumber.text == "" && bio.text == "" && currentImage == nil {
             
-            if result == true {
+            print("At least one field needs to be changed")
+            
+        }else {
+            
+            presenter.saveChanges(fullName.text, userName: username.text, email: email.text, phone: phoneNumber.text, profileImage: currentImage, bio: bio.text) { (result) in
                 
-            }else {
-                
+                if result == true {
+                    
+                    print("changes saved")
+                    
+                }else {
+                    
+                    print("there was an issue saving the changes")
+                }
             }
         }
+        
     }
     
     func resetPass() {
@@ -248,6 +259,7 @@ class EditProfileViewcontroller: UIViewController {
         save.setTitleColor(MaterialColor.purple.lighten3, forState: UIControlState.Normal)
         save.cornerRadiusPreset = .Radius2
         save.setTitle("Save", forState: UIControlState.Normal)
+        save.addTarget(self, action: "saveChange", forControlEvents: UIControlEvents.TouchUpInside)
         
         changeProfileImage.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
         changeProfileImage.cornerRadiusPreset = .Radius2

@@ -433,11 +433,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/UI/ViewControllers/Settings/EditProfileViewcontroller.swift"
-            timestampString = "485749552.71034"
+            timestampString = "485751308.530913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "resetPass()"
             landmarkType = "5">
          </BreakpointContent>
@@ -449,11 +449,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pondu/UI/ViewControllers/Settings/EditProfileViewcontroller.swift"
-            timestampString = "485749552.71034"
+            timestampString = "485751308.530913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "resetPass()"
             landmarkType = "5">
          </BreakpointContent>
