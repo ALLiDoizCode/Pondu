@@ -12,15 +12,18 @@ import Cartography
 
 class AccountViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    
+    let presenter = theUser()
+    
     var tableView: UITableView!
     var currentTitle:UILabel!
     var backBtn:MaterialButton!
     var topView:UIView!
     
-    let sections = ["Prefrences","Privacy/Blocked","Actions"]
+    let sections = ["Prefrences","Privacy/Blocked","Actions","",""]
     let prefences = ["Home School"]
     let privacyBlocked = ["Private Account","Blocked Users"]
-    let actions = ["Clear Messages","Logout","Delete Account"]
+    let actions = ["Clear Messages","Logout"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +106,10 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
             return privacyBlocked.count
         case 2:
             return actions.count
+        case 3:
+            return 0
+        case 4:
+            return 1
         default:
             break
         }
@@ -129,6 +136,8 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
             cell.textLabel?.text = privacyBlocked[indexPath.row]
         case 2:
             cell.textLabel?.text = actions[indexPath.row]
+        case 4:
+            cell.textLabel?.text = "Delete Account"
         default:
             break
         }
@@ -140,6 +149,39 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        let loginStoryBoard = UIStoryboard(name: "Login-SignUp", bundle: nil)
+        let welcomeVC = loginStoryBoard.instantiateViewControllerWithIdentifier("Welcome") as! WelcomeViewController
+        
+        switch indexPath.section {
+            
+        case 2:
+            
+            switch indexPath.row {
+     
+            case 1:
+                presenter.currentUser().logout()
+                self.navigationController?.pushViewController(welcomeVC, animated: true)
+            default:
+                break
+            }
+        case 4:
+            
+            switch indexPath.row {
+            case 0:
+                
+                presenter.deleteAccount({ (result) in
+                    
+                    if result == true {
+                        
+                        self.navigationController?.pushViewController(welcomeVC, animated: true)
+                    }
+                })
+            default:
+                break
+            }
+        default:
+            break
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

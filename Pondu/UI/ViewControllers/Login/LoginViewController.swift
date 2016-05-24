@@ -30,6 +30,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate,UIViewController
     override func viewWillAppear(animated: Bool) {
         
         self.navigationController?.navigationBarHidden = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.darkGrayColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
     
     override func viewDidLayoutSubviews() {
