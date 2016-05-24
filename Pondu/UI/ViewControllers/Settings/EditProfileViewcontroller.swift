@@ -12,6 +12,7 @@ import Cartography
 import ImagePickerSheetController
 import Photos
 import SwiftSpinner
+import SwiftEventBus
 
 class EditProfileViewcontroller: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate {
     
@@ -167,6 +168,19 @@ class EditProfileViewcontroller: UIViewController,UIImagePickerControllerDelegat
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func goHome(){
+        
+        let mainStorybord = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewcontroller = mainStorybord.instantiateViewControllerWithIdentifier("Base")
+        SwiftEventBus.post("Home", sender: 4)
+        self.navigationController?.pushViewController(mainViewcontroller, animated: true)
+    }
+    
+    func cancleBtn() {
+        
+        goHome()
+    }
+    
     func saveChange(){
         
         if fullName.text == "" && username.text == "" && email.text == "" && phoneNumber.text == "" && bio.text == "" && currentImage == nil {
@@ -185,11 +199,15 @@ class EditProfileViewcontroller: UIViewController,UIImagePickerControllerDelegat
                     
                     self.stopSpin()
                     
+                    self.goHome()
+                    
                 }else {
                     
                     self.stopSpin()
                     
                     print("there was an issue saving the changes")
+                    
+                    
                 }
             }
         }
@@ -357,6 +375,7 @@ class EditProfileViewcontroller: UIViewController,UIImagePickerControllerDelegat
         cancle.setTitleColor(MaterialColor.grey.lighten1, forState: UIControlState.Normal)
         cancle.cornerRadiusPreset = .Radius2
         cancle.setTitle("Cancle", forState: UIControlState.Normal)
+        cancle.addTarget(self, action: "cancleBtn", forControlEvents: UIControlEvents.TouchUpInside)
 
         save.setTitleColor(MaterialColor.purple.lighten3, forState: UIControlState.Normal)
         save.cornerRadiusPreset = .Radius2
