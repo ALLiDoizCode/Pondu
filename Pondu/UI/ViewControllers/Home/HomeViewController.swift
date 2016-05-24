@@ -56,7 +56,9 @@ class HomeViewController: UIViewController {
 
     @IBAction func toggleSettings(sender: AnyObject) {
         
-        SwiftEventBus.post("SideMenu")
+        //SwiftEventBus.post("SideMenu")
+        
+        self.navigationController!.toggleSideMenuView()
     }
     /*
     // MARK: - Navigation

@@ -27,48 +27,28 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
     var home:HomeViewController!
     var Mainwall:BaseViewController!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.sideMenuController()?.sideMenu?.delegate = self
         self.sideMenuController()?.sideMenu?.menuWidth = 250
         
-        SwiftEventBus.onMainThread(self, name: "SideMenu") { (result) -> Void in
+        /*SwiftEventBus.onMainThread(self, name: "SideMenu") { (result) -> Void in
             
-            self.toggleSideMenuView()
+            self.navigationController!.toggleSideMenuView()
             
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        }*/
         
-        let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
-        
-        Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
-        
-        Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
-        
-        Messages = self.storyboard?.instantiateViewControllerWithIdentifier("MessageView") as! MessageViewController
-        
-        discover = discoverBoard.instantiateViewControllerWithIdentifier("Discover") as! DiscoverViewController
-        
-        home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
-        
-        let viewControllers = [Mainwall,Favorite,discover,Messages,home]
-        
-         setupNav(viewControllers)
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        
         
         SwiftEventBus.onMainThread(self, name: "NavHide") { (result) -> Void in
             
             self.navigationController?.navigationBarHidden = true
-            
+        
             self.options.backgroundColor = UIColor.clearColor()
             
         }
-        
         
         SwiftEventBus.onMainThread(self, name: "NavShow") { (result) -> Void in
             
@@ -90,9 +70,19 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
         
         UIApplication.sharedApplication().statusBarHidden = true
         
-    }
-    
-    func setupNav(viewControllers:[UIViewController]){
+        let discoverBoard:UIStoryboard = UIStoryboard(name: "Discover", bundle: nil)
+        
+        Mainwall = self.storyboard?.instantiateViewControllerWithIdentifier("MainWall") as! BaseViewController
+        
+        Favorite = self.storyboard?.instantiateViewControllerWithIdentifier("FavWall") as! FavoriteViewController
+        
+        Messages = self.storyboard?.instantiateViewControllerWithIdentifier("MessageView") as! MessageViewController
+        
+        discover = discoverBoard.instantiateViewControllerWithIdentifier("Discover") as! DiscoverViewController
+        
+        home = homeBoard.instantiateViewControllerWithIdentifier("Profile") as! HomeViewController
+        
+        let viewControllers = [Mainwall,Favorite,discover,Messages,home]
         
         options.backgroundColor = UIColor.lightGrayColor()
         
@@ -122,6 +112,7 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
             pagingMenuController.delegate = self
             pagingMenuController.setup(viewControllers: viewControllers, options: options)
         }
+        
     }
     
     func gotoCommetns(){
