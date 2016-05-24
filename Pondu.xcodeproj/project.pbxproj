@@ -55,6 +55,8 @@
 		4D32A8381C8A0B620053FBCD /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32A8371C8A0B620053FBCD /* ChatCell.swift */; };
 		4D33BB5E1C23B0DE00B17D63 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */; };
 		4D3DAD041CE5AC6F00A343DC /* SideDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3DAD031CE5AC6F00A343DC /* SideDrawerTableViewCell.swift */; };
+		4D3F42BE1CF4D5A9004007AA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F42BD1CF4D5A9004007AA /* AccountViewController.swift */; };
+		4D3F42C01CF4DB1E004007AA /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F42BF1CF4DB1E004007AA /* AccountTableViewCell.swift */; };
 		4D4278841C9368240012B72D /* ChatImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278831C9368240012B72D /* ChatImageController.swift */; };
 		4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4278851C952FD90012B72D /* DiscoverViewController.swift */; };
 		4D6494EC1CA77AFF005B4754 /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6494EB1CA77AFF005B4754 /* UserClient.swift */; };
@@ -179,6 +181,8 @@
 		4D32A8371C8A0B620053FBCD /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		4D33BB5D1C23B0DE00B17D63 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4D3DAD031CE5AC6F00A343DC /* SideDrawerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideDrawerTableViewCell.swift; sourceTree = "<group>"; };
+		4D3F42BD1CF4D5A9004007AA /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4D3F42BF1CF4DB1E004007AA /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		4D4278831C9368240012B72D /* ChatImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatImageController.swift; sourceTree = "<group>"; };
 		4D4278851C952FD90012B72D /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		4D6494EB1CA77AFF005B4754 /* UserClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
@@ -441,6 +445,8 @@
 			isa = PBXGroup;
 			children = (
 				4D80B56B1CF2169600EB61FD /* EditProfileViewcontroller.swift */,
+				4D3F42BD1CF4D5A9004007AA /* AccountViewController.swift */,
+				4D3F42BF1CF4DB1E004007AA /* AccountTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -809,6 +815,8 @@
 				4DF1F1211BFF93C0001A96C5 /* PostViewController.swift in Sources */,
 				4D4278861C952FD90012B72D /* DiscoverViewController.swift in Sources */,
 				4D85CE131C14D8C500F3BDF1 /* SignUp2ViewController.swift in Sources */,
+				4D3F42C01CF4DB1E004007AA /* AccountTableViewCell.swift in Sources */,
+				4D3F42BE1CF4D5A9004007AA /* AccountViewController.swift in Sources */,
 				4DE7CC961C82B19300D83075 /* Date.swift in Sources */,
 				4DCCF8521BF8289B00686B31 /* StoryListViewController.swift in Sources */,
 				4DF8B6F11CC8B04A00D564BE /* PresentComments.swift in Sources */,
