@@ -227,7 +227,7 @@ class UserClient {
     func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage){
         
         let follow:[String] = []
-        
+        let privateStatus:NSNumber = false
         // Create a new user with the username and the password
         KCSUser.userWithUsername(
             userName,
@@ -245,6 +245,7 @@ class UserClient {
                         
                         user.setValue(file.fileId, forAttribute: "ProfileImage")
                         user.setValue(follow, forAttribute: "Following")
+                        user.setValue(privateStatus, forAttribute: "Private")
                         user.saveWithCompletionBlock({ (objects, error) in
                             
                             if error == nil {

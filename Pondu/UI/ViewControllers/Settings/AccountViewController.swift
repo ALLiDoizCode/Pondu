@@ -23,7 +23,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
     let sections = ["Prefrences","Privacy/Blocked","Actions","",""]
     let prefences = ["Home School"]
     let privacyBlocked = ["Private Account","Blocked Users"]
-    let actions = ["Clear Messages","Logout"]
+    let actions = ["Logout"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +129,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         let CellIdentifier = "Cell"
         
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell?
+        var cell: MaterialTableViewCell! = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! MaterialTableViewCell?
         
         if cell == nil {
             cell = AccountTableViewCell(style: .Default, reuseIdentifier: CellIdentifier)
@@ -142,6 +142,7 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
             cell.textLabel?.text = prefences[indexPath.row]
         case 1:
             cell.textLabel?.text = privacyBlocked[indexPath.row]
+            
         case 2:
             cell.textLabel?.text = actions[indexPath.row]
         case 4:
@@ -157,10 +158,70 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        let CellIdentifier = "Cell"
+        
+        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell?
+        
+        if cell == nil {
+            cell = AccountTableViewCell(style: .Default, reuseIdentifier: CellIdentifier)
+            cell.selectionStyle = .Blue
+        }
+        
         let loginStoryBoard = UIStoryboard(name: "Login-SignUp", bundle: nil)
         let welcomeVC = loginStoryBoard.instantiateViewControllerWithIdentifier("Welcome") as! WelcomeViewController
         
         switch indexPath.section {
+            
+        case 1:
+            
+            switch indexPath.row {
+            case 0:
+                
+                print("Private Account")
+                
+                presenter.isPrivate({ (result) in
+                    
+                    if result == true {
+                        
+                        let status:NSNumber = false
+                        
+                         self.presenter.currentUser().setValue(status, forAttribute: "Private")
+                        
+                        self.presenter.currentUser().saveWithCompletionBlock({ (objects, error) in
+                            
+                            let alertController = UIAlertController(title: "Privacy", message:
+                                "Your Status is Now Public", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                        
+                    }else {
+                        
+                        let status:NSNumber = true
+                        
+                        self.presenter.currentUser().setValue(status, forAttribute: "Private")
+                        
+                        self.presenter.currentUser().saveWithCompletionBlock({ (objects, error) in
+                            
+                            let alertController = UIAlertController(title: "Privacy", message:
+                                "Your Status is Now Private", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        })
+                    }
+                })
+                
+               
+            
+            case 1:
+                
+                print("Blocked Users")
+                
+            default:
+                break
+            }
             
         case 2:
             

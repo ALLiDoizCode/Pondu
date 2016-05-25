@@ -27,9 +27,15 @@ class MainViewcontroller: UIViewController,PagingMenuControllerDelegate,ENSideMe
     var home:HomeViewController!
     var Mainwall:BaseViewController!
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.hideSideMenuView()
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.hideSideMenuView()
         self.sideMenuController()?.sideMenu?.delegate = self
         self.sideMenuController()?.sideMenu?.menuWidth = 250
         

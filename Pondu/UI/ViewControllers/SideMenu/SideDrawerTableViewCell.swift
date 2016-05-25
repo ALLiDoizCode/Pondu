@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Material
 
-class SideDrawerTableViewCell: UITableViewCell {
+class SideDrawerTableViewCell: MaterialTableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -9,7 +9,7 @@
 import UIKit
 import Material
 
-class AccountTableViewCell: UITableViewCell {
+class AccountTableViewCell: MaterialTableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

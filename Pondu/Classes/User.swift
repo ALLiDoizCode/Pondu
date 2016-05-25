@@ -22,8 +22,9 @@ class userData {
     var photo:String = ""
     var fav:Bool!
     var year:String!
+    var privateStatus:NSNumber!
     
-    init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,thePhoto:String,theFav:Bool,theYear:String){
+    init(theObjectID:String,theArea:String,theFullName:String,theUserName:String,thePassWord:String,theBio:String,thePhone:String,theEmail:String,theStory:String,thePhoto:String,theFav:Bool,theYear:String,thePrivateStatus:Bool){
         
         
         objectID = theObjectID
@@ -38,6 +39,7 @@ class userData {
         photo = thePhoto
         fav = theFav
         year = theYear
+        privateStatus = thePrivateStatus
         
     }
     

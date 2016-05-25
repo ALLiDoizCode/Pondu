@@ -119,10 +119,22 @@ class theUser {
     
     func myFollow(completion:(data:[String]) -> Void){
         
-        let following = client.currentUser().getValueForAttribute("Following") as! [String]
+        let following = currentUser().getValueForAttribute("Following") as! [String]
         
         completion(data: following)
         
+    }
+    
+    func isPrivate(completion:(result:Bool) -> Void){
+        
+        if let status:Bool = currentUser().getValueForAttribute("Private") as? Bool {
+            
+            completion(result: status)
+            
+        }else {
+            
+            completion(result: false)
+        }
     }
    
 }

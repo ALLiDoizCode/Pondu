@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Material
 
 enum DrawerSection: Int {
     case ViewSelection
@@ -86,7 +87,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let CellIdentifier = "Cell"
         
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell?
+        var cell: MaterialTableViewCell! = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as! MaterialTableViewCell?
         
         if cell == nil {
             cell = SideDrawerTableViewCell(style: .Default, reuseIdentifier: CellIdentifier)
