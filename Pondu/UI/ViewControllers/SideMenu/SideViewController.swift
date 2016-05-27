@@ -154,6 +154,8 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(legal[2])
             case 3:
                 print(legal[3])
+                let ponduWebSite = WebViewController()
+                sideMenuController()?.setContentViewController(ponduWebSite)
             default:
                 break
             }

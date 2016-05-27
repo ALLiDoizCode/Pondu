@@ -29,6 +29,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
     var image:UIImage!
     
     var schools:[School] = []
+    var currentSchool:String!
 
     @IBOutlet weak var pickerView: UIPickerView!
   
@@ -160,7 +161,7 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
             print(pickSchool.titleLabel?.text)
             
             
-            presenter.signUp(fullName, userName: username, passWord: password, email: email, profileImage: image, completion: { (success) -> Void in
+            presenter.signUp(fullName, userName: username, passWord: password, email: email, profileImage: image,school: currentSchool, completion: { (success) -> Void in
                 
                 if success == true {
                     
@@ -218,6 +219,8 @@ class SignUp3ViewController: UIViewController,UIViewControllerTransitioningDeleg
         if schools.count > 0 {
             
             pickSchool.setTitle(schools[row].name, forState: UIControlState.Normal)
+            
+            currentSchool = schools[row].name
             
         }else {
             

@@ -10,10 +10,16 @@ import UIKit
 import Material
 import Cartography
 
-class AccountViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class AccountViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate {
     
     
     let presenter = theUser()
+    let client:college = college()
+    let helper = AccountHelpers()
+    
+    var schools:[School] = []
+    
+    var pickerView:UIPickerView!
     
     var tableView: UITableView!
     var currentTitle:UILabel!
@@ -27,7 +33,11 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = MaterialColor.white
+        self.view.backgroundColor = MaterialColor.grey.lighten2
+        self.pickerView = UIPickerView()
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
+        self.pickerView.hidden = true
         self.tableView = UITableView(frame: CGRectMake(0, 0, 0, 0), style: .Grouped)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -58,6 +68,8 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         self.navigationController?.pushViewController(mainViewcontroller, animated: true)
     }
     
+    
+    
     func setupUI() {
         
         currentTitle = UILabel()
@@ -67,12 +79,14 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         backBtn.setImage(UIImage(named:"arrows"), forState: UIControlState.Normal)
         backBtn.addTarget(self, action: "goHome", forControlEvents: UIControlEvents.TouchUpInside)
         topView = UIView()
-        
+        self.topView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(topView)
         self.topView.addSubview(currentTitle)
         self.topView.addSubview(backBtn)
+        self.view.addSubview(pickerView)
+        //self.pickerView.backgroundColor = UIColor.blackColor()
         
-        constrain(tableView,currentTitle,backBtn,topView) { tableView,currentTitle,backBtn,topView in
+        constrain(tableView,currentTitle,backBtn,topView,pickerView) { tableView,currentTitle,backBtn,topView,pickerView in
             
             topView.top == (topView.superview?.top)!
             topView.left == (topView.superview?.left)!
@@ -85,9 +99,15 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
             backBtn.height == 25
             
             tableView.left == (tableView.superview?.left)!
-            tableView.height == (tableView.superview?.height)! * 0.93
+            //tableView.height == (tableView.superview?.height)! * 0.65
             tableView.width == (tableView.superview?.width)!
-            tableView.bottom == (tableView.superview?.bottom)!
+            tableView.bottom == (pickerView.top)
+            tableView.top == topView.bottom
+            
+            pickerView.left == (pickerView.superview?.left)!
+            pickerView.height == (pickerView.superview?.height)! * 0.25
+            pickerView.width == (pickerView.superview?.width)!
+            pickerView.bottom == (pickerView.superview?.bottom)!
         }
     }
     
@@ -171,6 +191,25 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         let welcomeVC = loginStoryBoard.instantiateViewControllerWithIdentifier("Welcome") as! WelcomeViewController
         
         switch indexPath.section {
+        
+        case 0:
+            
+            switch indexPath.row {
+            case 0:
+                
+                self.pickerView.hidden = false
+                
+                helper.pickSchool(pickerView, controller: self, completion: { (result) in
+                    
+                    self.schools = result
+                    
+                    self.pickerView.reloadAllComponents()
+                    
+                })
+                
+            default:
+                break
+            }
             
         case 1:
             
@@ -313,6 +352,57 @@ class AccountViewController: UIViewController,UITableViewDataSource,UITableViewD
         let header = view as! UITableViewHeaderFooterView
         
         header.textLabel?.textColor = MaterialColor.grey.base
+        
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return schools.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        
+        if schools.count > 0 {
+            
+            return schools[row].name
+            
+        }else {
+            
+            return ""
+        }
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if schools.count > 0 {
+            
+           let schoolName = schools[row].name
+            
+            presenter.currentUser().setValue(schoolName, forAttribute: "School")
+            
+            presenter.currentUser().saveWithCompletionBlock({ (objects, error) in
+                
+                print("Saved School")
+                self.pickerView.hidden = true
+                let alertController = UIAlertController(title: "Privacy", message:
+                    "Your School is Now \(schoolName)", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            })
+            
+        }else {
+            
+            SweetAlert().showAlert(":(", subTitle: "Sorry We Can't Find Your School", style: AlertStyle.Error)
+        }
         
     }
     

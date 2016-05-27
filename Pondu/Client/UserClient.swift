@@ -224,7 +224,7 @@ class UserClient {
         }
     }
     
-    func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage){
+    func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage,school:String){
         
         let follow:[String] = []
         let privateStatus:NSNumber = false
@@ -246,6 +246,7 @@ class UserClient {
                         user.setValue(file.fileId, forAttribute: "ProfileImage")
                         user.setValue(follow, forAttribute: "Following")
                         user.setValue(privateStatus, forAttribute: "Private")
+                        user.setValue(school, forAttribute: "School")
                         user.saveWithCompletionBlock({ (objects, error) in
                             
                             if error == nil {

@@ -41,14 +41,14 @@ class theUser {
         client.login(userName, passWord: passWord)
     }
     
-    func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage,completion:(success:Bool) -> Void){
+    func signUp(name:String,userName:String,passWord:String,email:String,profileImage:UIImage,school:String,completion:(success:Bool) -> Void){
         
         SwiftEventBus.onMainThread(self, name: "signUp") { (notification) -> Void in
             
             completion(success: notification.object as! Bool)
         }
         
-        client.signUp(name, userName: userName, passWord: passWord, email: email, profileImage: profileImage)
+        client.signUp(name, userName: userName, passWord: passWord, email: email, profileImage: profileImage,school:school)
     }
     
     func deleteAccount(completion:(result:Bool) -> Void){
