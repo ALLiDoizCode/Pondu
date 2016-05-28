@@ -8,17 +8,64 @@
 
 import UIKit
 
+import Material
+import Cartography
+import SwiftEventBus
+
 class WebViewController: UIViewController,UIWebViewDelegate {
+    
+    var backBtn:MaterialButton!
+    var topView:UIView!
+    var webV:UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let webV:UIWebView = UIWebView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+        backBtn = MaterialButton()
+        topView = UIView()
+        webV = UIWebView()
         webV.loadRequest(NSURLRequest(URL: NSURL(string: "http://pondu-app.com/")!))
         webV.delegate = self
         self.view.addSubview(webV)
+        self.view.addSubview(topView)
+        self.topView.addSubview(backBtn)
+        
+        self.backBtn.setImage(UIImage(named:"arrows"), forState: UIControlState.Normal)
+        self.backBtn.addTarget(self, action: "cancleBtn", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        constrain(backBtn,topView,webV) { backBtn,topView,webV in
+            
+            topView.top == (topView.superview?.top)!
+            topView.left == (topView.superview?.left)!
+            topView.height == (topView.superview?.height)! * 0.07
+            topView.width == (topView.superview?.width)!
+            
+            backBtn.left == (backBtn.superview?.left)! + 5
+            backBtn.centerY == (backBtn.superview?.centerY)!
+            backBtn.width == 25
+            backBtn.height == 25
+            
+            webV.left == (webV.superview?.left)!
+            webV.width == (webV.superview?.width)!
+            webV.bottom == (webV.superview?.bottom)!
+            webV.top == topView.bottom
+            
+        }
+
 
         // Do any additional setup after loading the view.
+    }
+    
+    func goHome(){
+        
+        let mainStorybord = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewcontroller = mainStorybord.instantiateViewControllerWithIdentifier("Base")
+        SwiftEventBus.post("Home", sender: 4)
+        self.navigationController?.pushViewController(mainViewcontroller, animated: true)
+    }
+    
+    func cancleBtn() {
+        
+        goHome()
     }
 
     override func didReceiveMemoryWarning() {
